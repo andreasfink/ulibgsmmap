@@ -1,0 +1,5 @@
+MSISDN-BS ::= SEQUENCE { 
+	msisdn ISDN-AddressString,
+     basicServiceList [0] BasicServiceList OPTIONAL,
+     extensionContainer [1] ExtensionContainer OPTIONAL,
+     ...}

@@ -1,0 +1,6 @@
+MAP-OpenInfo ::= SEQUENCE { 
+	destinationReference 	[0]  AddressString  OPTIONAL,
+	originationReference	[1]  AddressString  OPTIONAL,
+	..., 
+	extensionContainer  ExtensionContainer  OPTIONAL,
+}

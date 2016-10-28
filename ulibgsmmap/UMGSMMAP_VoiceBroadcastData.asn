@@ -1,0 +1,6 @@
+VoiceBroadcastData ::= SEQUENCE { 
+   groupid GroupId, 
+   broadcastInitEntitlement NULL OPTIONAL, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...}
+

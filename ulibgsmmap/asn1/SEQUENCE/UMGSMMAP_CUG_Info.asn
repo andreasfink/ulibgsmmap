@@ -1,0 +1,6 @@
+CUG-Info ::= SEQUENCE { 
+   cug-SubscriptionList CUG-SubscriptionList, 
+   cug-FeatureList CUG-FeatureList OPTIONAL, 
+   extensionContainer [0] ExtensionContainer OPTIONAL, 
+   ...}
+

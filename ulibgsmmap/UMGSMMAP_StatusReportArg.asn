@@ -1,0 +1,7 @@
+StatusReportArg ::= SEQUENCE {
+   imsi [0] IMSI,
+   eventReportData [1] EventReportData OPTIONAL,
+   callReportdata [2] CallReportData OPTIONAL,
+   extensionContainer [3] ExtensionContainer OPTIONAL,
+   ... }
+

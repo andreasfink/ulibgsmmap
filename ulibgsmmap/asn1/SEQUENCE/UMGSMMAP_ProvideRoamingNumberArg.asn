@@ -1,0 +1,20 @@
+ProvideRoamingNumberArg ::=  SEQUENCE { 
+         imsi                         [0] IMPLICIT OCTET STRING ( SIZE( 3 .. 8 ) ),  
+         msc-Number                   [1] IMPLICIT OCTET STRING ( SIZE( 1 .. 20 ) ) ( SIZE( 1 .. 9 ) ),  
+         msisdn                       [2] IMPLICIT OCTET STRING ( SIZE( 1 .. 20 ) ) ( SIZE( 1 .. 9 ) ) OPTIONAL,  
+         lmsi                         [4] IMPLICIT OCTET STRING ( SIZE( 4 ) ) OPTIONAL,  
+         gsm-BearerCapability         [5] IMPLICIT ExternalSignalInfo OPTIONAL,  
+         networkSignalInfo            [6] IMPLICIT ExternalSignalInfo OPTIONAL,  
+         suppressionOfAnnouncement    [7] IMPLICIT NULL OPTIONAL,  
+         gmsc-Address                 [8] IMPLICIT OCTET STRING ( SIZE( 1 .. 20 ) ) ( SIZE( 1 .. 9 ) ) OPTIONAL,  
+         callReferenceNumber          [9] IMPLICIT OCTET STRING ( SIZE( 1 .. 8 ) ) OPTIONAL,  
+         or-Interrogation             [10] IMPLICIT NULL OPTIONAL,  
+         extensionContainer           [11] IMPLICIT ExtensionContainer OPTIONAL, 
+         ... , 
+         alertingPattern              [12] IMPLICIT OCTET STRING ( SIZE( 1 ) ) OPTIONAL,  
+         ccbs-Call                    [13] IMPLICIT NULL OPTIONAL,  
+         supportedCamelPhasesInGMSC   [15] IMPLICIT SupportedCamelPhases OPTIONAL,  
+         additionalSignalInfo         [14] IMPLICIT Ext-ExternalSignalInfo OPTIONAL,  
+         orNotSupportedInGMSC         [16] IMPLICIT NULL OPTIONAL
+} 
+

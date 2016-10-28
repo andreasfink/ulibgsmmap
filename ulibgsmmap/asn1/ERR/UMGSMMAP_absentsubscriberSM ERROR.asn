@@ -1,0 +1,5 @@
+absentsubscriberSM ERROR ::= {
+PARAMETER AbsentSubscriberSM-Param
+CODE local:6
+} 
+

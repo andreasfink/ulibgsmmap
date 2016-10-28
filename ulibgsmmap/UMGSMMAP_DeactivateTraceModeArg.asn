@@ -1,0 +1,6 @@
+DeactivateTraceModeArg ::= SEQUENCE {
+   imsi [0] IMSI,
+   traceReference [1] TraceReference,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

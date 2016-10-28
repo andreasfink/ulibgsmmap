@@ -1,0 +1,11 @@
+RequestedSubscriptionInfo ::= SEQUENCE { 
+	requestedSS-Info				[1] SS-ForBS-Code OPTIONAL,
+	odb								[2] NULL OPTIONAL,
+	requestedCAMEL-SubscriptionInfo	[3] RequestedCAMEL-SubscriptionInfo OPTIONAL,
+	supportedVLR-CAMEL-Phases 		[4] NULL	 OPTIONAL,
+	 supportedSGSN-CAMEL-Phases		[5] NULL	 OPTIONAL,
+	extensionContainer	 			[6] ExtensionContainer	OPTIONAL,
+	..., 
+	additionalRequestedCAMEL-SubscriptionInfo	[7] AdditionalRequestedCAMEL-SubscriptionInfo OPTIONAL,
+	msisdn-BS-List [8] NULL OPTIONAL
+}

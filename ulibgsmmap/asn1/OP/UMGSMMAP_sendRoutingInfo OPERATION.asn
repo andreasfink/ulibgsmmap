@@ -1,0 +1,23 @@
+sendRoutingInfo OPERATION ::= {
+ARGUMENT SendRoutingInfoArg
+RESULT SendRoutingInfoRes
+ERRORS {
+   systemFailure | 
+   dataMissing |
+   unexpectedDataValue |
+   facilityNotSupported |
+   or-NotAllowed |
+   unknownSubscriber |
+   numberChanged |
+   bearerServiceNotProvisioned |
+   teleserviceNotProvisioned |
+   absentSubscriber |
+   busySubscriber |
+   noSubscriberReply |
+   callBarred |
+   cug-Reject |
+   forwardingViolation}
+CODE  local:22
+}
+
+

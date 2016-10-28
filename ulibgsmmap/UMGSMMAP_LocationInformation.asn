@@ -1,0 +1,17 @@
+LocationInformation ::=  SEQUENCE {
+    ageOfLocationInformation            INTEGER (0..32767)                     OPTIONAL,
+    geographicalInformation             [0] IMPLICIT GeographicalInformation    OPTIONAL,
+    vlr-number                          [1] IMPLICIT ISDN-AddressString         OPTIONAL,
+    locationNumber                      [2] IMPLICIT LocationNumber             OPTIONAL,
+    cellGlobalIdOrServiceAreaIdOrLAI    [3] CellGlobalIdOrServiceAreaIdOrLAI    OPTIONAL,
+    extensionContainer                  [4] IMPLICIT ExtensionContainer         OPTIONAL,
+    ... ,
+    selectedLSA-Id                      [5] IMPLICIT LSAIdentity                OPTIONAL,
+    msc-Number                          [6] IMPLICIT ISDN-AddressString         OPTIONAL,
+    geodeticInformation                 [7] IMPLICIT GeodeticInformation        OPTIONAL,
+    currentLocationRetrieved            [8] IMPLICIT NULL                       OPTIONAL,
+    sai-Present                         [9] IMPLICIT NULL                       OPTIONAL,
+    locationInformationEPS              [10] IMPLICIT LocationInformationEPS    OPTIONAL,
+    userCSGInformation                  [11] IMPLICIT UserCSGInformation        OPTIONAL
+}
+

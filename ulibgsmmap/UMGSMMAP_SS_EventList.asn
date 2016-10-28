@@ -1,0 +1,2 @@
+SS-EventList ::= SEQUENCE SIZE (1..maxNumOfCamelSSEvents) OF SS-Code
+

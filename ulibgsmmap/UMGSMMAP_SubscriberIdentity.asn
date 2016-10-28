@@ -1,0 +1,5 @@
+SubscriberIdentity ::= CHOICE { 
+   imsi [0] IMSI, 
+   msisdn [1] ISDN-AddressString 
+}
+

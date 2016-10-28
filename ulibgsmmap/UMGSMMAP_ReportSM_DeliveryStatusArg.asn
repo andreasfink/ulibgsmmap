@@ -1,0 +1,12 @@
+ReportSM-DeliveryStatusArg ::= SEQUENCE {
+msisdn ISDN-AddressString,
+serviceCentreAddress AddressString,
+sm-DeliveryOutcome SM-DeliveryOutcome,
+absentSubscriberDiagnosticSM [0] AbsentSubscriberDiagnosticSM,
+extensionContainer ExtensionContainer OPTIONAL,
+... ,
+gprsSupportIndicator [2] NULL OPTIONAL,
+deliveryOutcomeIndicator [3] NULL OPTIONAL,
+additionalSM-DeliveryOutcome [4] SM-DeliveryOutcome OPTIONAL,
+additionalAbsentSubscriberDiagnosticSM [5] AbsentSubscriberDiagnosticSM OPTIONAL}
+

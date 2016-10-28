@@ -1,0 +1,5 @@
+ati-NotAllowed ERROR ::= {
+PARAMETER Ati-NotAllowedParam
+CODE local:49
+} 
+

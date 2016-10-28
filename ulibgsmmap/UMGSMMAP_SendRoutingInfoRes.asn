@@ -1,0 +1,17 @@
+SendRoutingInfoRes ::= [3] IMPLICIT SEQUENCE {
+   imsi [9] IMSI OPTIONAL,
+   extendedRoutingInfo ExtendedRoutingInfo OPTIONAL,
+   cug-CheckInfo [3] CUG-CheckInfo OPTIONAL,
+   cugSubscriptionFlag [6] NULL OPTIONAL,
+   subscriberInfo [7] SubscriberInfo OPTIONAL,
+   ss-List [1] SS-List OPTIONAL,
+   basicService [5] Ext-BasicServiceCode OPTIONAL,
+   forwardingInterrogationRequired [4] NULL OPTIONAL,
+   vmsc-Address [2] ISDN-AddressString OPTIONAL,
+   extensionContainer [0] ExtensionContainer OPTIONAL,
+   ... ,
+   naea-PreferredCI [10] NAEA-PreferredCI OPTIONAL,
+   ccbs-Indicators [11] CCBS-Indicators OPTIONAL,
+   msisdn [12] ISDN-AddressString OPTIONAL,
+   numberPortabilityStatus [13] NumberPortabilityStatus OPTIONAL}
+

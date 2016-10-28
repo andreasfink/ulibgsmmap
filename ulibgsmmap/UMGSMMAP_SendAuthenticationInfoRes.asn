@@ -1,0 +1,7 @@
+SendAuthenticationInfoRes ::= SEQUENCE {
+	authenticationSetList       AuthenticationSetList OPTIONAL, 
+	extensionContainer          ExtensionContainer OPTIONAL,                       
+	... , 
+	eps-AuthenticationSetList   [2] Eps-AuthenticationSetList OPTIONAL
+}
+

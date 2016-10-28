@@ -1,0 +1,8 @@
+Ext-SS-Data ::= SEQUENCE { 
+   ss-Code SS-Code, 
+   ss-Status [4] Ext-SS-Status, 
+   ss-SubscriptionOption SS-SubscriptionOption OPTIONAL, 
+   basicServiceGroupList Ext-BasicServiceGroupList OPTIONAL, 
+   extensionContainer [5] ExtensionContainer OPTIONAL, 
+   ...}
+

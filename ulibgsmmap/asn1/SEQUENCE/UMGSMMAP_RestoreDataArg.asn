@@ -1,0 +1,8 @@
+RestoreDataArg ::= SEQUENCE {
+   imsi IMSI,
+-- made this optional, was that a mistake? or is it just the newer GSMMAP version?
+   lmsi LMSI OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... ,
+   vlr-Capability [6] VLR-Capability OPTIONAL}
+

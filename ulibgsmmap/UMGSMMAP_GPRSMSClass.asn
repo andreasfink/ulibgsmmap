@@ -1,0 +1,5 @@
+GPRSMSClass ::= SEQUENCE {
+    mSNetworkCapability     [0] IMPLICIT MSNetworkCapability,
+    mSRadioAccessCapability [1] IMPLICIT MSRadioAccessCapability OPTIONAL
+}
+

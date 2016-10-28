@@ -1,0 +1,5 @@
+ForwardingInfo ::= SEQUENCE { 
+   ss-Code SS-Code OPTIONAL, 
+   forwardingFeatureList ForwardingFeatureList, 
+   ...}
+

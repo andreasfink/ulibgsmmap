@@ -1,0 +1,3 @@
+--SM-RP-SMEA ::= OCTET STRING ( SIZE( 1 .. 12 ) )
+
+

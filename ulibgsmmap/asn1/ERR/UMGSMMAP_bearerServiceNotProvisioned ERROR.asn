@@ -1,0 +1,5 @@
+bearerServiceNotProvisioned ERROR ::= {
+PARAMETER BearerServNotProvParam
+CODE local:10 
+}
+

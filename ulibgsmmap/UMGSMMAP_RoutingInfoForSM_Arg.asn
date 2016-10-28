@@ -1,0 +1,10 @@
+ RoutingInfoForSM-Arg ::= SEQUENCE {
+         msisdn                 [0] ISDN-AddressString,
+         sm-RP-PRI              [1] BOOLEAN,
+         serviceCentreAddress   [2] AddressString,
+         extensionContainer     [6] ExtensionContainer OPTIONAL,
+         gprsSupportIndicator   [7] NULL OPTIONAL,
+         sm-RP-MTI              [8] SM-RP-MTI OPTIONAL,
+         sm-RP-SMEA             [9] SM-RP-SMEA OPTIONAL}
+         
+         

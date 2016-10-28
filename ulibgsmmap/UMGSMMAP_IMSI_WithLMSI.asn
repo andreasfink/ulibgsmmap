@@ -1,0 +1,5 @@
+IMSI-WithLMSI ::= SEQUENCE {
+imsi IMSI,
+lmsi LMSI,
+... }
+

@@ -1,0 +1,6 @@
+AbsentSubscriberReason ::= ENUMERATED { 
+   imsiDetach (0), 
+   restrictedArea (1), 
+   noPageResponse (2), 
+   ...}
+

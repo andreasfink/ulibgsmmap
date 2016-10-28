@@ -1,0 +1,18 @@
+deactivateSS OPERATION ::= {
+ARGUMENT Ss-ForBS 
+RESULT Ss-Info 
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   bearerServiceNotProvisioned |
+   teleserviceNotProvisioned |
+   callBarred |
+   illegalSS-Operation |
+   ss-ErrorStatus |
+   ss-SubscriptionViolation |
+   negativePW-Check |
+   numberOfPW-AttemptsViolation}
+CODE local:13
+}
+

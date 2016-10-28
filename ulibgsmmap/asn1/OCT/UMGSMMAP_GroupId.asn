@@ -1,0 +1,4 @@
+GroupId ::= TBCD-STRING (SIZE (3)) 
+-- Refers to the Group Identification as specified in GSM TS 03.03 1008
+-- and 03.68/ 03.69
+

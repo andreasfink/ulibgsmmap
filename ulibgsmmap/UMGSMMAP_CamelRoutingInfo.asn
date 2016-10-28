@@ -1,0 +1,6 @@
+CamelRoutingInfo ::= SEQUENCE { 
+   forwardingData ForwardingData OPTIONAL, 
+   gmscCamelSubscriptionInfo [0] GmscCamelSubscriptionInfo, 
+   extensionContainer [1] ExtensionContainer OPTIONAL, 
+   ...}
+

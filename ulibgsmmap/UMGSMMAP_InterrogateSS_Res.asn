@@ -1,0 +1,6 @@
+InterrogateSS-Res ::= CHOICE {
+   ss-Status [0] SS-Status,
+   basicServiceGroupList [2] BasicServiceGroupList,
+   forwardingFeatureList [3] ForwardingFeatureList,
+   genericServiceInfo [4] GenericServiceInfo}
+

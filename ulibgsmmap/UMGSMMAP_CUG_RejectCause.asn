@@ -1,0 +1,6 @@
+CUG-RejectCause ::= ENUMERATED { 
+   incomingCallsBarredWithinCUG (0), 
+   subscriberNotMemberOfCUG (1), 
+   requestedBasicServiceViolatesCUG-Constraints (5), 
+   calledPartySS-InteractionViolation (7)}
+

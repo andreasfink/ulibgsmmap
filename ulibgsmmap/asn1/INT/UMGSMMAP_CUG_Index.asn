@@ -1,0 +1,3 @@
+CUG-Index ::= INTEGER (0..32767) 
+-- The internal structure is defined in ETS 300 138. 
+

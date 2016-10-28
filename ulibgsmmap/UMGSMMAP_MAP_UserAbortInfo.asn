@@ -1,0 +1,6 @@
+MAP-UserAbortInfo ::= SEQUENCE 
+{
+	map-UserAbortChoice MAP-UserAbortChoice,
+	...,
+	extensionContainer ExtensionContainer OPTIONAL
+}

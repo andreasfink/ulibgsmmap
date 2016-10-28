@@ -1,0 +1,6 @@
+RestoreDataRes ::= SEQUENCE {
+   hlr-Number ISDN-AddressString,
+   msNotReachable NULL OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

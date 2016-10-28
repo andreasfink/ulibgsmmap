@@ -1,0 +1,7 @@
+PurgeMS-Arg ::= [3] IMPLICIT SEQUENCE {
+imsi IMSI,
+vlr-Number [0] ISDN-AddressString OPTIONAL,
+sgsn-Number [1] ISDN-AddressString OPTIONAL,
+extensionContainer ExtensionContainer OPTIONAL,
+... }
+

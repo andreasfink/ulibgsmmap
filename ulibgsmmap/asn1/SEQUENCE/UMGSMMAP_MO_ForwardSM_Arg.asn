@@ -1,0 +1,10 @@
+MO-ForwardSM-Arg ::= SEQUENCE
+{
+	sm-RP-DA		SM-RP-DA,
+	sm-RP-OA		SM-RP-OA,
+	sm-RP-UI		SignalInfo,
+	extensionContainer	ExtensionContainer	OPTIONAL,
+	... ,
+	imsi	IMSI	OPTIONAL
+}
+

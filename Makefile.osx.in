@@ -1,0 +1,38 @@
+##
+# File: Makefile
+# Project "@PROJECT_NAME@"
+# (c) 2016 Andreas Fink
+# Create: Andreas Fink (andreas@fink.org)
+#
+#
+
+PROJECT_NAME=@PROJECT_NAME@
+VERSION=`cat VERSION`
+PROJECT_ID=me.fink.@PROJECT_NAME@
+CONFIGURATION=@CONFIGURATION@
+CC=@CC@
+
+all:
+	xcodebuild $(CONFIGURATION) ${XCODESIGN}
+	
+unlock:
+	security unlock-keychain ~/Library/Keychains/login.keychain
+
+clean:
+	rm -f $(BUILD_DIR)
+
+install:
+	xcodebuild $(CONFIGURATION)  install
+
+
+install_root_prepare:
+	-rm -rf install_root
+	mkdir -p install_root
+	./codesign_environment.sh
+	xcodebuild ${XCODESIGN} DSTROOT="install_root" install
+
+pkg:	install_root_prepare
+	./make_pkg.sh "$(PROJECT_NAME$)" "$(PROJECT_ID)" install_root "`cat VERSION`" "$(PROJECT_NAME)_`cat VERSION`_`date +%Y%m%d%H%M`.pkg"
+
+pkg2: install_root_prepare
+	./make_pkg.sh "$(PROJECT_NAME$)" "$(PROJECT_ID)" install_root "`cat VERSION`" "$(PROJECT_NAME).pkg"

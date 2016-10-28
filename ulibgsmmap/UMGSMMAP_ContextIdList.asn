@@ -1,0 +1,2 @@
+ContextIdList ::= SEQUENCE SIZE (1..maxNumOfPDP-Contexts) OF ContextId 
+

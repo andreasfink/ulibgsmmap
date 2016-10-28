@@ -1,0 +1,5 @@
+AnyTimeInterrogationRes ::= SEQUENCE {
+	subscriberInfo       SubscriberInfo,
+	extensionContainer	 ExtensionContainer	OPTIONAL,
+	...}
+

@@ -1,0 +1,6 @@
+CancelLocationArg ::= [3] SEQUENCE {
+identity Identity,
+cancellationType CancellationType OPTIONAL,
+extensionContainer ExtensionContainer OPTIONAL,
+... }
+

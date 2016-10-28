@@ -1,0 +1,4 @@
+ActivateTraceModeRes ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

@@ -1,0 +1,14 @@
+SendAuthenticationInfoArg ::= SEQUENCE {
+	imsi                                  [0] IMPLICIT IMSI, 
+	numberOfRequestedVectors              NumberOfRequestedVectors, 
+	segmentationProhibited                NULL OPTIONAL, 
+	immediateResponsePreferred            [1] IMPLICIT NULL OPTIONAL, 
+	re-synchronisationInfo                Re-SynchronisationInfo OPTIONAL, 
+	extensionContainer                    [2] IMPLICIT ExtensionContainer OPTIONAL,
+	... , 
+	requestingNodeType                    [3] IMPLICIT ENUMERATED OPTIONAL, 
+	requestingPLMN-Id                     [4] IMPLICIT OCTET STRING ( SIZE( 3 ) ) OPTIONAL, 
+	numberOfRequestedAdditional-Vectors   [5] IMPLICIT NumberOfRequestedVectors OPTIONAL, 
+	additionalVectorsAreForEPS            [6] IMPLICIT NULL OPTIONAL
+}
+

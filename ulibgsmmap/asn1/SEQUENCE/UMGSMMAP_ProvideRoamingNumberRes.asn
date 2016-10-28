@@ -1,0 +1,5 @@
+ProvideRoamingNumberRes ::= SEQUENCE {
+   roamingNumber ISDN-AddressString,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

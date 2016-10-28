@@ -1,0 +1,5 @@
+RoamingNotAllowedParam ::= SEQUENCE {
+   roamingNotAllowedCause RoamingNotAllowedCause,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

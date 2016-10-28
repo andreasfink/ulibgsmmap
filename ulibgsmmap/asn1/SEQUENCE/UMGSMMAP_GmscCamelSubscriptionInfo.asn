@@ -1,0 +1,8 @@
+GmscCamelSubscriptionInfo ::= SEQUENCE { 
+   t-CSI [0] T-CSI OPTIONAL, 
+   o-CSI [1] O-CSI OPTIONAL, 
+   extensionContainer [2] ExtensionContainer OPTIONAL, 
+   ... , 
+   o-BcsmCamelTDP-CriteriaList [3] O-BcsmCamelTDPCriteriaList OPTIONAL 
+}
+

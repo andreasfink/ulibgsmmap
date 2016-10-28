@@ -1,0 +1,10 @@
+RemoteUserFreeArg ::= SEQUENCE {
+   imsi [0] IMSI,
+   callInfo [1] ExternalSignalInfo,
+   ccbs-Feature [2] CCBS-Feature,
+   translatedB-Number [3] ISDN-AddressString,
+   replaceB-Number [4] NULL OPTIONAL,
+   alertingPattern [5] AlertingPattern OPTIONAL,
+   extensionContainer [6] ExtensionContainer OPTIONAL,
+   ... }
+

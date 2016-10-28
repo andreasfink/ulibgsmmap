@@ -1,0 +1,2 @@
+SS-EventSpecification ::= SEQUENCE SIZE (1..maxEventSpecification) OF AddressString 
+

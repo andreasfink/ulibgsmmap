@@ -1,0 +1,9 @@
+Ss-InvocationNotificationArg ::= SEQUENCE {
+   imsi [0] IMSI,
+   msisdn [1] ISDN-AddressString,
+   ss-Event [2] SS-Code,
+   ss-EventSpecification [3] SS-EventSpecification,
+   extensionContainer [4] ExtensionContainer OPTIONAL,
+   ... }
+
+-- The following SS-Code values are allowed in the field 'SS-Code': 

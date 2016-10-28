@@ -1,0 +1,4 @@
+IST-CommandRes ::= SEQUENCE {
+	extensionContainer   [1] ExtensionContainer OPTIONAL,
+	...
+}

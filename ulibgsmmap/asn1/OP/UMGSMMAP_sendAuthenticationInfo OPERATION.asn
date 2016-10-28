@@ -1,0 +1,11 @@
+sendAuthenticationInfo OPERATION ::= { 
+ARGUMENT SendAuthenticationInfoArg
+RESULT SendAuthenticationInfoRes
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   unknownSubscriber}
+CODE local:56
+}
+

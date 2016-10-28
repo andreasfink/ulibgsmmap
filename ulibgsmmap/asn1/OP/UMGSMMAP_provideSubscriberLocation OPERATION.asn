@@ -1,0 +1,18 @@
+provideSubscriberLocation OPERATION ::= { 
+ARGUMENT ProvideSubscriberLocation-Arg
+RESULT ProvideSubscriberLocation-Res
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   facilityNotSupported |
+   unidentifiedSubscriber |
+   illegalSubscriber |
+   illegalEquipment |
+   absentSubscriber |
+   unauthorizedRequestingNetwork |
+   unauthorizedLCSClient |
+   positionMethodFailure}
+CODE local:83
+}
+

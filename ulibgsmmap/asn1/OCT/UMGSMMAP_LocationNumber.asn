@@ -1,0 +1,3 @@
+LocationNumber ::= OCTET STRING (SIZE (2..10))
+-- the internal structure is defined in CCITT Rec Q.763
+

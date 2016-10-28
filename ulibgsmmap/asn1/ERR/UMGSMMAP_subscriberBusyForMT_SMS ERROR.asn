@@ -1,0 +1,5 @@
+subscriberBusyForMT-SMS ERROR ::= {
+PARAMETER SubBusyForMT-SMS-Param
+CODE local:31 
+}
+

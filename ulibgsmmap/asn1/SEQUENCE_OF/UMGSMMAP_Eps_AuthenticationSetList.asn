@@ -1,0 +1,2 @@
+Eps-AuthenticationSetList::= SEQUENCE SIZE (1..5) OF Eps-AuthenticationSet
+

@@ -1,0 +1,8 @@
+AuthenticationQuintuplet ::= SEQUENCE {
+   rand RAND, 
+   xres XRES, 
+   ck CK, 
+   ik IK, 
+   autn AUTN, 
+... }
+

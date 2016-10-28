@@ -1,0 +1,6 @@
+LCSInformation ::= SEQUENCE { 
+   gmlc-List [0] GMLC-List OPTIONAL, 
+   lcs-PrivacyExceptionList [1] LCS-PrivacyExceptionList OPTIONAL, 
+   molr-List [2] MOLR-List OPTIONAL, 
+   ...} 
+

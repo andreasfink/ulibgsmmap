@@ -1,0 +1,8 @@
+GenericServiceInfo ::= SEQUENCE { 
+   ss-Status SS-Status, 
+   cliRestrictionOption CliRestrictionOption OPTIONAL, 
+   ..., 
+   maximumEntitledPriority [0] EMLPP-Priority OPTIONAL, 
+   defaultPriority [1] EMLPP-Priority OPTIONAL, 
+   ccbs-FeatureList [2] CCBS-FeatureList OPTIONAL }
+

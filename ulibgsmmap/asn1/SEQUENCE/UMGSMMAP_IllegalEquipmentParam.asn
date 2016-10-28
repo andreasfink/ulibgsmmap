@@ -1,0 +1,4 @@
+IllegalEquipmentParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

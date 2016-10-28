@@ -1,0 +1,6 @@
+InformServiceCentreArg ::= SEQUENCE {
+   storedMSISDN ISDN-AddressString OPTIONAL,
+   mw-Status MW-Status  OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

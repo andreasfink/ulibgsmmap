@@ -1,0 +1,3 @@
+ASNTime ::= OCTET STRING (SIZE (4))
+	-- Octets are coded according to IETF RFC 3588 [139]
+

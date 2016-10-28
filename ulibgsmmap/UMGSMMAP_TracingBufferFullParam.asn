@@ -1,0 +1,4 @@
+TracingBufferFullParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

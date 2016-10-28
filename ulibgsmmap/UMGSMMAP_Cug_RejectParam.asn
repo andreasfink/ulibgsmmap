@@ -1,0 +1,5 @@
+Cug-RejectParam ::= SEQUENCE {
+   cug-RejectCause CUG-RejectCause OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

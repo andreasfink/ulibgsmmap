@@ -1,0 +1,5 @@
+pw-RegistrationFailure ERROR ::= {
+PARAMETER Pw-RegistrationFailureCause
+CODE local:37
+} 
+

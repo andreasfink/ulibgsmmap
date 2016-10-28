@@ -1,0 +1,13 @@
+eraseCC-Entry OPERATION ::= {
+ARGUMENT EraseCC-EntryArg
+RESULT EraseCC-EntryRes
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   callBarred |
+   illegalSS-Operation |
+   ss-ErrorStatus}
+CODE local:77
+}
+

@@ -1,0 +1,5 @@
+shortTermDenial ERROR ::= {
+PARAMETER ShortTermDenialParam
+CODE local:29
+} 
+

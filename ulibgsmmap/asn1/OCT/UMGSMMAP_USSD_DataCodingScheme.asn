@@ -1,0 +1,5 @@
+USSD-DataCodingScheme ::= OCTET STRING (SIZE (1)) 
+-- The structure of the USSD-DataCodingScheme is defined by 
+-- the Cell Broadcast Data Coding Scheme as described in 
+-- TS GSM 03.38
+

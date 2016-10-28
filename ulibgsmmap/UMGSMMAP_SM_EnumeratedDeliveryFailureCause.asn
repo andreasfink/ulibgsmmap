@@ -1,0 +1,9 @@
+SM-EnumeratedDeliveryFailureCause ::= ENUMERATED { 
+   memoryCapacityExceeded (0), 
+   equipmentProtocolError (1), 
+   equipmentNotSM-Equipped (2), 
+   unknownServiceCentre (3), 
+   sc-Congestion (4), 
+   invalidSME-Address (5), 
+   subscriberNotSC-Subscriber (6)}
+

@@ -1,0 +1,6 @@
+LCSLocationInfo ::= SEQUENCE { 
+   msc-Number ISDN-AddressString, 
+   lmsi [0] LMSI OPTIONAL, 
+   extensionContainer [1] ExtensionContainer OPTIONAL, 
+   ...}
+

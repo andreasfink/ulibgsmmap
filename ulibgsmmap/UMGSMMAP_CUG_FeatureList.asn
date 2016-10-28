@@ -1,0 +1,2 @@
+CUG-FeatureList ::= SEQUENCE SIZE (1..maxNumOfExt-BasicServiceGroups) OF CUG-Feature
+

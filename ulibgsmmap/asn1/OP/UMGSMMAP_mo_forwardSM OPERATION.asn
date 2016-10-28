@@ -1,0 +1,11 @@
+mo-forwardSM OPERATION ::= {
+ARGUMENT MO-ForwardSM-Arg
+RESULT MO-ForwardSM-Res
+ERRORS {
+   systemFailure |
+   unexpectedDataValue |
+   facilityNotSupported |
+   sm-DeliveryFailure}
+CODE local:46
+}
+

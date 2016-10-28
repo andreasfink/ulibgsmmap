@@ -1,0 +1,12 @@
+PrepareGroupCallArg ::= SEQUENCE {
+   teleservice Ext-TeleserviceCode,
+   asciCallReference ASCI-CallReference,
+   codec-Info CODEC-Info,
+   cipheringAlgorithm CipheringAlgorithm,
+   groupKeyNumber [0] GroupKeyNumber OPTIONAL,
+   groupKey [1] Kc OPTIONAL,
+   priority [2] EMLPP-Priority OPTIONAL,
+   uplinkFree [3] NULL OPTIONAL,
+   extensionContainer [4] ExtensionContainer OPTIONAL,
+   ... }
+

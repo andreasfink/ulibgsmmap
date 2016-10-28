@@ -1,0 +1,6 @@
+CCBS-SubscriberStatus ::= ENUMERATED { 
+   ccbsNotIdle (0), 
+   ccbsIdle (1), 
+   ccbsNotReachable (2), 
+   ...}
+

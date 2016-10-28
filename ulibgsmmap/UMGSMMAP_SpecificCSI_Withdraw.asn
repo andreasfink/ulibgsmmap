@@ -1,0 +1,15 @@
+SpecificCSI-Withdraw ::= BIT STRING {
+ 	o-csi (0),
+     ss-csi (1),
+     tif-csi (2),
+     d-csi (3),
+     vt-csi (4),
+     mo-sms-csi (5),
+     m-csi (6),
+     gprs-csi (7),
+     t-csi (8),
+     mt-sms-csi (9),
+     mg-csi (10),
+     o-IM-CSI (11),
+     d-IM-CSI (12),
+     vt-IM-CSI (13) } (SIZE(8..32))

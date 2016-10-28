@@ -1,0 +1,6 @@
+Sm-DeliveryFailureCause ::= SEQUENCE {
+   sm-EnumeratedDeliveryFailureCause SM-EnumeratedDeliveryFailureCause,
+   diagnosticInfo SignalInfo OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

@@ -1,0 +1,7 @@
+ReadyForSM-Arg ::= SEQUENCE {
+   imsi [0] IMSI,
+   alertReason AlertReason,
+   alertReasonIndicator NULL OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

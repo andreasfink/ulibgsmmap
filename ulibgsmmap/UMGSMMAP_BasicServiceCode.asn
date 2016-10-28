@@ -1,0 +1,4 @@
+BasicServiceCode ::= CHOICE { 
+   bearerService [2] BearerServiceCode, 
+   teleservice [3] TeleserviceCode} 
+

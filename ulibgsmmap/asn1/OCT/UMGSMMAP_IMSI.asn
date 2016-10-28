@@ -1,0 +1,1 @@
+IMSI ::= TBCD-STRING ( SIZE( 3 .. 8 ) )

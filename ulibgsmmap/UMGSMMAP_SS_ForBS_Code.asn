@@ -1,0 +1,6 @@
+SS-ForBS-Code ::= SEQUENCE {
+	ss-Code			SS-Code,
+	basicService	BasicServiceCode OPTIONAL,
+	...,
+	longFTN-Supported	[4] NULL OPTIONAL
+ }

@@ -1,0 +1,1 @@
+AuthenticationQuintupletList::=  SEQUENCE  ( SIZE( 1 .. 5 ) ) OF AuthenticationQuintuplet

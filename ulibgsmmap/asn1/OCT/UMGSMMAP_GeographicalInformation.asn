@@ -1,0 +1,10 @@
+GeographicalInformation ::= OCTET STRING (SIZE (8))
+-- Refers to geographical Information defined in GSM 03.32. 
+-- Only the description of an ellipsoid point with uncertainty circle 
+-- as specified in GSM 03.32 is allowed to be used 
+-- The internal structure according to GSM 03.32 is as follows: 
+-- Type of shape (ellipsoid point with uncertainty circle) 1 octet 
+-- Degrees of Latitude 3 octets 
+-- Degrees of Longitude 3 octets 
+-- Uncertainty code 1 octet
+

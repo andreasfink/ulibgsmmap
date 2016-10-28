@@ -1,0 +1,6 @@
+CamelInfo ::= SEQUENCE { 
+   supportedCamelPhases SupportedCamelPhases, 
+   suppress-T-CSI NULL OPTIONAL, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...}
+

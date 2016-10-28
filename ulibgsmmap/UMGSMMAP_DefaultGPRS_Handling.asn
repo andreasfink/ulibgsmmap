@@ -1,0 +1,4 @@
+DefaultGPRS-Handling ::= ENUMERATED {
+	 continueTransaction (0) ,
+	  releaseTransaction (1) 
+}

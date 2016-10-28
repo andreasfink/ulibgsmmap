@@ -1,0 +1,10 @@
+InsertSubscriberDataRes ::= SEQUENCE { 
+   teleserviceList [1] TeleserviceList OPTIONAL, 
+   bearerServiceList [2] BearerServiceList OPTIONAL, 
+   ss-List [3] SS-List OPTIONAL, 
+   odb-GeneralData [4] ODB-GeneralData OPTIONAL, 
+   regionalSubscriptionResponse [5] RegionalSubscriptionResponse OPTIONAL, 
+   supportedCamelPhases [6] SupportedCamelPhases OPTIONAL, 
+   extensionContainer [7] ExtensionContainer OPTIONAL, 
+   ...}
+

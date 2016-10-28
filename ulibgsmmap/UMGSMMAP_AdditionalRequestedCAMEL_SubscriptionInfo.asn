@@ -1,0 +1,7 @@
+AdditionalRequestedCAMEL-SubscriptionInfo ::= ENUMERATED { 
+	mt-sms-CSI (0),
+	mg-csi (1),
+	o-IM-CSI (2),
+	d-IM-CSI (3),
+	vt-IM-CSI (4)
+}

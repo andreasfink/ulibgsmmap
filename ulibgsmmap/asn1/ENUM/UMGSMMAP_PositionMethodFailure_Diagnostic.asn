@@ -1,0 +1,12 @@
+PositionMethodFailure-Diagnostic ::= ENUMERATED { 
+   congestion (0), 
+   insufficientResources (1), 
+   insufficientMeasurementData (2), 
+   inconsistentMeasurementData (3), 
+   locationProcedureNotCompleted (4), 
+   locationProcedureNotSupportedByTargetMS (5), 
+   qoSNotAttainable (6), 
+   positionMethodNotAvailableInNetwork (7), 
+   positionMethodNotAvailableInLocationArea (8), 
+   ... }
+

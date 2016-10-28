@@ -1,0 +1,13 @@
+updateLocation OPERATION ::= {
+ARGUMENT UpdateLocationArg
+RESULT UpdateLocationRes
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   unknownSubscriber |
+   roamingNotAllowed }
+
+CODE local:2
+}
+   

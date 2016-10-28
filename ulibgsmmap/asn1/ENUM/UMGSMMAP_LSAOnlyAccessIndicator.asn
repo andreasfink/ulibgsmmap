@@ -1,0 +1,4 @@
+LSAOnlyAccessIndicator ::= ENUMERATED { 
+   accessOutsideLSAsAllowed (0), 
+   accessOutsideLSAsRestricted (1)}
+

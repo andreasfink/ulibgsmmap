@@ -1,0 +1,4 @@
+--O-BcsmTriggerDetectionPoint ::= ENUMERATED { 
+--   collectedInfo (2), 
+--   ... }
+

@@ -1,0 +1,1 @@
+GPRSChargingID ::= OCTET STRING (SIZE (4))

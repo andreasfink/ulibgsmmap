@@ -1,0 +1,5 @@
+PrepareHO-Res ::= SEQUENCE {
+handoverNumber ISDN-AddressString OPTIONAL,
+bss-APDU ExternalSignalInfo OPTIONAL,
+... }
+

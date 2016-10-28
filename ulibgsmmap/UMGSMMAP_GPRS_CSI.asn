@@ -1,0 +1,8 @@
+GPRS-CSI ::= SEQUENCE { 
+	gprs-CamelTDPDataList 			[0] GPRS-CamelTDPDataList OPTIONAL,
+	camelCapabilityHandling 		[1] CamelCapabilityHandling OPTIONAL,
+	extensionContainer 				[2] ExtensionContainer OPTIONAL,
+	notificationToCSE 				[3] NULL OPTIONAL,
+	csi-Active						[3] NULL OPTIONAL,
+	...
+}

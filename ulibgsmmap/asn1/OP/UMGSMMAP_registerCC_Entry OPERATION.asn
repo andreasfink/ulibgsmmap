@@ -1,0 +1,17 @@
+registerCC-Entry OPERATION ::= {
+ARGUMENT RegisterCC-EntryArg
+RESULT RegisterCC-EntryRes
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   callBarred |
+   illegalSS-Operation |
+   ss-ErrorStatus |
+   ss-Incompatibility |
+   shortTermDenial |
+   longTermDenial |
+   facilityNotSupported}
+CODE local:76
+}
+

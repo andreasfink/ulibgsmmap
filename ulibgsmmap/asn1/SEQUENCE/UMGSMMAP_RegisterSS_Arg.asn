@@ -1,0 +1,9 @@
+RegisterSS-Arg ::= SEQUENCE {
+   ss-Code SS-Code,
+   basicService BasicServiceCode OPTIONAL,
+   forwardedToNumber [4] AddressString OPTIONAL,
+   forwardedToSubaddress [6] ISDN-SubaddressString OPTIONAL,
+   noReplyConditionTime [5] NoReplyConditionTime OPTIONAL,
+   ... ,
+   defaultPriority [7] EMLPP-Priority OPTIONAL}
+

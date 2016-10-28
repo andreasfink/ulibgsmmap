@@ -1,0 +1,11 @@
+updateGprsLocation OPERATION ::= { 
+ARGUMENT UpdateGprsLocationArg
+RESULT UpdateGprsLocationRes
+ERRORS {
+   systemFailure |
+   unexpectedDataValue |
+   unknownSubscriber |
+   roamingNotAllowed}
+CODE local: 23
+}
+

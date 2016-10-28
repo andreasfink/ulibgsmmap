@@ -1,0 +1,12 @@
+readyForSM OPERATION ::= {
+ARGUMENT ReadyForSM-Arg
+RESULT ReadyForSM-Res
+ERRORS {
+   dataMissing |
+   unexpectedDataValue |
+   facilityNotSupported |
+   unknownSubscriber}
+CODE local:66
+}
+
+

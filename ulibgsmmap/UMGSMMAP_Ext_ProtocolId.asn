@@ -1,0 +1,5 @@
+Ext-ProtocolId ::= ENUMERATED { 
+   ets-300356 (1), 
+   ... 
+}
+

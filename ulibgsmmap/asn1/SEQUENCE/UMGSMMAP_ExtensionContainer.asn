@@ -1,0 +1,8 @@
+ExtensionContainer ::= SEQUENCE {
+  privateExtensionList [0] PrivateExtensionList OPTIONAL,
+  pcs-Extensions [1] PCS-Extensions OPTIONAL,
+  ...
+}
+
+
+

@@ -1,0 +1,6 @@
+EMLPP-Info ::= SEQUENCE { 
+   maximumentitledPriority EMLPP-Priority, 
+   defaultPriority EMLPP-Priority, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...} 
+

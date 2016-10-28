@@ -1,0 +1,7 @@
+NetDetNotReachable ::= ENUMERATED {
+		   msPurged          ( 0 ), 
+		   imsiDetached      ( 1 ), 
+		   restrictedArea    ( 2 ), 
+		   notRegistered     ( 3 )
+}
+

@@ -1,0 +1,2 @@
+maxSignalInfoLength INTEGER ::= 200
+

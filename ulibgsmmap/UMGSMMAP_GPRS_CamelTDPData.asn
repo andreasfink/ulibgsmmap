@@ -1,0 +1,8 @@
+GPRS-CamelTDPData ::= SEQUENCE { 
+	gprs-TriggerDetectionPoint [0] GPRS-TriggerDetectionPoint,
+	serviceKey [1] ServiceKey,
+	gsmSCF-Address  [2] ISDN-AddressString,
+	defaultSessionHandling [3] DefaultGPRS-Handling,
+	extensionContainer [4] ExtensionContainer OPTIONAL,
+	...
+ }

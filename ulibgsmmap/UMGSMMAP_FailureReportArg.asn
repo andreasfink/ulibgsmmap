@@ -1,0 +1,7 @@
+FailureReportArg ::= SEQUENCE {
+   imsi [0] IMSI,
+   ggsn-Number [1] ISDN-AddressString,
+   ggsn-Address [2] GSN-Address OPTIONAL,
+   extensionContainer [3] ExtensionContainer OPTIONAL,
+   ... }
+

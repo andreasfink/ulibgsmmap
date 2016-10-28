@@ -1,0 +1,4 @@
+Ext-BasicServiceCode ::= CHOICE { 
+   ext-BearerService [2] Ext-BearerServiceCode, 
+   ext-Teleservice [3] Ext-TeleserviceCode}
+

@@ -1,0 +1,2 @@
+CCBS-Index ::= INTEGER (1..maxNumOfCCBS-Requests)
+

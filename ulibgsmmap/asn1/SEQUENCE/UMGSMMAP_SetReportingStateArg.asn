@@ -1,0 +1,7 @@
+SetReportingStateArg ::= SEQUENCE {
+   imsi [0] IMSI OPTIONAL,
+   lmsi [1] LMSI OPTIONAL,
+   ccbs-Monitoring [2] ReportingState OPTIONAL,
+   extensionContainer [3] ExtensionContainer OPTIONAL,
+   ... }
+

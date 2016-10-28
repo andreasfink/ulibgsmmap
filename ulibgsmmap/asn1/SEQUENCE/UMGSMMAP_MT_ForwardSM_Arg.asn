@@ -1,0 +1,8 @@
+MT-ForwardSM-Arg ::= SEQUENCE {
+   sm-RP-DA SM-RP-DA,
+   sm-RP-OA SM-RP-OA,
+   sm-RP-UI SignalInfo,
+   moreMessagesToSend NULL OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

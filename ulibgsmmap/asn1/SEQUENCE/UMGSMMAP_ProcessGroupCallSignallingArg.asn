@@ -1,0 +1,7 @@
+ProcessGroupCallSignallingArg ::= SEQUENCE {
+   uplinkRequest [0] NULL OPTIONAL,
+   uplinkReleaseIndication [1] NULL OPTIONAL,
+   releaseGroupCall [2] NULL OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

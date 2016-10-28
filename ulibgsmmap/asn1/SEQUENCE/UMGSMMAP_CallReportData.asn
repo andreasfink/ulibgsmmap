@@ -1,0 +1,6 @@
+CallReportData ::= SEQUENCE{ 
+   monitoringMode [0] MonitoringMode OPTIONAL, 
+   callOutcome [1] CallOutcome OPTIONAL, 
+   extensionContainer [2] ExtensionContainer OPTIONAL, 
+   ...} 
+

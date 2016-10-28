@@ -1,0 +1,5 @@
+ResourceUnavailableReason ::= ENUMERATED
+{ 
+	shortTermResourceLimitation (0), 
+	longTermResourceLimitation (1)
+}

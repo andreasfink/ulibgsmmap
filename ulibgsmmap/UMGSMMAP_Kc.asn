@@ -1,0 +1,2 @@
+Kc ::= OCTET STRING ( SIZE( 8 ) )
+

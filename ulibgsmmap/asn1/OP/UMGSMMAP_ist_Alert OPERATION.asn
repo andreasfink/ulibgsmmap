@@ -1,0 +1,13 @@
+ist-Alert OPERATION ::= {
+	ARGUMENT IST-AlertArg
+	RESULT IST-AlertRes
+	ERRORS {
+		unexpectedDataValue | 
+		resourceLimitation | 
+		unknownSubscriber | 
+		systemFailure | 
+		facilityNotSupported
+	}
+	CODE local:87
+}
+

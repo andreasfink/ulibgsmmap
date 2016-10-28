@@ -1,0 +1,6 @@
+CallDirection ::= OCTET STRING (SIZE (1)) 
+-- OCTET 1 
+-- bit 1 (direction of call) 
+-- 0 Mobile Originated Call (MOC) 
+-- 1 Mobile Terminated Call (MTC)
+

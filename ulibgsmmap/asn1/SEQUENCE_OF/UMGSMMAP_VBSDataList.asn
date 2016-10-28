@@ -1,0 +1,2 @@
+VBSDataList ::= SEQUENCE SIZE (1..maxNumOfVBSGroupIds) OF VoiceBroadcastData
+

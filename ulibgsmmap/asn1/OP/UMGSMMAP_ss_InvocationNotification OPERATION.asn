@@ -1,0 +1,10 @@
+ss-InvocationNotification OPERATION ::= {
+ARGUMENT Ss-InvocationNotificationArg
+RESULT Ss-InvocationNotificationRes
+ERRORS {
+   dataMissing |
+   unexpectedDataValue | 
+   unknownSubscriber}
+CODE local:72
+}
+

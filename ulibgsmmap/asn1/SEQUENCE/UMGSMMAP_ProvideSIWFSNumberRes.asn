@@ -1,0 +1,5 @@
+ProvideSIWFSNumberRes ::= SEQUENCE {
+   sIWFSNumber [0] ISDN-AddressString,
+   extensionContainer [1] ExtensionContainer OPTIONAL,
+   ... }
+

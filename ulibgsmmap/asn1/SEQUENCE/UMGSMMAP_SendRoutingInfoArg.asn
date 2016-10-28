@@ -1,0 +1,21 @@
+SendRoutingInfoArg ::= SEQUENCE {
+   msisdn [0] ISDN-AddressString,
+   cug-CheckInfo [1] CUG-CheckInfo OPTIONAL,
+   numberOfForwarding [2] NumberOfForwarding OPTIONAL,
+   interrogationType [3] InterrogationType OPTIONAL,
+   or-Interrogation [4] NULL OPTIONAL,
+   or-Capability [5] OR-Phase OPTIONAL,
+   gmsc-Address [6] ISDN-AddressString OPTIONAL,
+   callReferenceNumber [7] CallReferenceNumber OPTIONAL,
+   forwardingReason [8] ForwardingReason OPTIONAL,
+   basicServiceGroup [9] Ext-BasicServiceCode OPTIONAL,
+   networkSignalInfo [10] ExternalSignalInfo OPTIONAL,
+   camelInfo [11] CamelInfo OPTIONAL,
+   suppressionOfAnnouncement [12] NULL OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... ,
+   alertingPattern [14] AlertingPattern OPTIONAL,
+   ccbs-Call [15] NULL OPTIONAL,
+   supportedCCBS-Phase [16] SupportedCCBS-Phase OPTIONAL,
+   additionalSignalInfo [17] Ext-ExternalSignalInfo OPTIONAL}
+

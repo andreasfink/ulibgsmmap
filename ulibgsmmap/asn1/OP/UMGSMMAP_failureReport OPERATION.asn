@@ -1,0 +1,11 @@
+failureReport OPERATION ::= {
+ARGUMENT FailureReportArg
+RESULT FailureReportRes  
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   unknownSubscriber}
+CODE local:25 
+}
+

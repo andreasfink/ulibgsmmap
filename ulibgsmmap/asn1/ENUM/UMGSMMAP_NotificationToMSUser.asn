@@ -1,0 +1,6 @@
+NotificationToMSUser ::= ENUMERATED { 
+   notifyLocationAllowed (0), 
+   notifyAndVerify-LocationAllowedIfNoResponse (1), 
+   notifyAndVerify-LocationNotAllowedIfNoResponse (2), 
+   ... } 
+

@@ -1,0 +1,6 @@
+NetworkAccessMode ::= ENUMERATED { 
+   bothMSCAndSGSN (0), 
+   onlyMSC (1), 
+   onlySGSN (2), 
+   ...}
+

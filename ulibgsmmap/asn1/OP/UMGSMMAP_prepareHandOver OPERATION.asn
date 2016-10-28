@@ -1,0 +1,11 @@
+prepareHandOver OPERATION ::= {
+ARGUMENT PrepareHO-Arg
+RESULT PrepareHO-Res
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   noHandoverNumberAvailable}
+CODE local:68
+}
+

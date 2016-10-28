@@ -1,0 +1,8 @@
+UserCSGInformation ::= SEQUENCE {
+    csg-Id              [0] IMPLICIT CSG-Id,
+    extensionContainer  [1] IMPLICIT ExtensionContainer  OPTIONAL,
+    ... ,
+	accessMode          [2] IMPLICIT OCTET STRING (SIZE(1))		OPTIONAL,
+	cmi                 [3] IMPLICIT OCTET STRING (SIZE(1))		OPTIONAL
+}
+

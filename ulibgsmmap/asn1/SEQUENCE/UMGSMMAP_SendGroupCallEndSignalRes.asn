@@ -1,0 +1,4 @@
+SendGroupCallEndSignalRes ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

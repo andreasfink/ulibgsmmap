@@ -1,0 +1,2 @@
+APN ::= OCTET STRING (SIZE (2..63))
+

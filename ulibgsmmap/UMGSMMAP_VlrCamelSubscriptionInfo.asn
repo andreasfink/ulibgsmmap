@@ -1,0 +1,9 @@
+VlrCamelSubscriptionInfo ::= SEQUENCE { 
+   o-CSI [0] O-CSI OPTIONAL, 
+   extensionContainer [1] ExtensionContainer OPTIONAL, 
+   ..., 
+   ss-CSI [2] SS-CSI OPTIONAL, 
+   o-BcsmCamelTDP-CriteriaList [4] O-BcsmCamelTDPCriteriaList OPTIONAL, 
+   tif-CSI [3] NULL OPTIONAL 
+} 
+

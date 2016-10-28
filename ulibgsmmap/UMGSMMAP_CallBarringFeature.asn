@@ -1,0 +1,5 @@
+CallBarringFeature ::= SEQUENCE { 
+   basicService BasicServiceCode OPTIONAL, 
+   ss-Status [4] SS-Status OPTIONAL, 
+   ...}
+

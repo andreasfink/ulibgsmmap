@@ -1,0 +1,8 @@
+Ext-ExternalSignalInfo ::= SEQUENCE { 
+   ext-ProtocolId Ext-ProtocolId, 
+   signalInfo SignalInfo, 
+-- Information about the internal structure is given in MAP
+-- subclause 7.6.9.10 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...}
+

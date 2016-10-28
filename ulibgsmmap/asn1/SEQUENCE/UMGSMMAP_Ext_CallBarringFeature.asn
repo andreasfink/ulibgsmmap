@@ -1,0 +1,6 @@
+Ext-CallBarringFeature ::= SEQUENCE { 
+   basicService Ext-BasicServiceCode OPTIONAL, 
+   ss-Status [4] Ext-SS-Status, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...}
+

@@ -1,0 +1,10 @@
+PDP-Context ::= SEQUENCE { 
+   pdp-ContextId ContextId, 
+   pdp-Type [16] PDP-Type, 
+   pdp-Address [17] PDP-Address OPTIONAL, 
+   qos-Subscribed [18] QoS-Subscribed, 
+   vplmnAddressAllowed [19] NULL OPTIONAL, 
+   apn [20] APN , 
+   extensionContainer [21] ExtensionContainer OPTIONAL, 
+   ...}
+

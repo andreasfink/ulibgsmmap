@@ -1,0 +1,12 @@
+sendRoutingInfoForGprs OPERATION ::= {
+ARGUMENT SendRoutingInfoForGprsArg
+RESULT SendRoutingInfoForGprsRes
+ERRORS {
+   absentSubscriber |
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   unknownSubscriber}
+CODE local:24
+}
+

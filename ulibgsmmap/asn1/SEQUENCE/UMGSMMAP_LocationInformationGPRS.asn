@@ -1,0 +1,15 @@
+LocationInformationGPRS ::= SEQUENCE {
+	cellGlobalIdOrServiceAreaIdOrLAI	[0] EXPLICIT CellGlobalIdOrServiceAreaIdOrLAI OPTIONAL,
+	routeingAreaIdentity	[1] IMPLICIT RAIdentity	OPTIONAL,
+	geographicalInformation	[2] IMPLICIT GeographicalInformation	OPTIONAL,
+	sgsn-Number	[3] IMPLICIT ISDN-AddressString	OPTIONAL,
+	selectedLSAIdentity	[4] IMPLICIT LSAIdentity	OPTIONAL,
+	extensionContainer	[5] IMPLICIT ExtensionContainer	OPTIONAL,
+	...,
+	sai-Present	[6] IMPLICIT NULL		OPTIONAL,
+	geodeticInformation	[7] IMPLICIT GeodeticInformation	OPTIONAL,
+	currentLocationRetrieved	[8] IMPLICIT NULL		OPTIONAL,
+	ageOfLocationInformation	[9] IMPLICIT AgeOfLocationInformation	OPTIONAL,
+	userCSGInformation	[10] IMPLICIT UserCSGInformation	OPTIONAL
+}
+

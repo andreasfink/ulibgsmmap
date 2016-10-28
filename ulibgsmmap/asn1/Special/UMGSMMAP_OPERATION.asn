@@ -1,0 +1,29 @@
+OPERATION ::= CLASS {
+  &ArgumentType          OPTIONAL,
+  &argumentTypeOptional  BOOLEAN OPTIONAL,
+  &returnResult          BOOLEAN DEFAULT TRUE,
+  &ResultType            OPTIONAL,
+  &resultTypeOptional    BOOLEAN OPTIONAL,
+  &Errors                ERROR OPTIONAL,
+  &Linked                OPERATION OPTIONAL,
+  &synchronous           BOOLEAN DEFAULT FALSE,
+  &alwaysReturns         BOOLEAN DEFAULT TRUE,
+  &InvokePriority        Priority OPTIONAL,
+  &ResultPriority        Priority OPTIONAL,
+  &operationCode         Code UNIQUE OPTIONAL
+}
+WITH SYNTAX {
+  [ARGUMENT &ArgumentType
+   [OPTIONAL &argumentTypeOptional]]
+  [RESULT &ResultType
+   [OPTIONAL &resultTypeOptional]]
+  [RETURN RESULT &returnResult]
+  [ERRORS &Errors]
+  [LINKED &Linked]
+  [SYNCHRONOUS &synchronous]
+  [ALWAYS RESPONDS &alwaysReturns]
+  [INVOKE PRIORITY &InvokePriority]
+  [RESULT-PRIORITY &ResultPriority]
+  [CODE &operationCode]
+}
+

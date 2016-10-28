@@ -1,0 +1,1 @@
+ GPRS-CamelTDPDataList ::= SEQUENCE SIZE (1..maxNumOfCamelTDPData) OF GPRS-CamelTDPData

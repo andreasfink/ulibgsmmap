@@ -1,0 +1,5 @@
+SS-CSI ::= SEQUENCE { 
+   ss-CamelData SS-CamelData, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...}
+

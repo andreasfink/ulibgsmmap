@@ -1,0 +1,4 @@
+ServiceIndicator ::= BIT STRING { 
+   clir-invoked (0), 
+   camel-invoked (1)} (SIZE(2..32))
+

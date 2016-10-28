@@ -1,0 +1,2 @@
+NoReplyConditionTime ::= INTEGER (5..30)
+

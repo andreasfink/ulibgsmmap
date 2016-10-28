@@ -1,0 +1,9 @@
+LSAInformation ::= SEQUENCE { 
+   completeDataListIncluded NULL OPTIONAL, 
+-- If segmentation is used, completeDataListIncluded may only be present in the 
+-- first segment. 
+   lsaOnlyAccessIndicator [1] LSAOnlyAccessIndicator OPTIONAL, 
+   lsaDataList [2] LSADataList OPTIONAL, 
+   extensionContainer [3] ExtensionContainer OPTIONAL, 
+   ...}
+

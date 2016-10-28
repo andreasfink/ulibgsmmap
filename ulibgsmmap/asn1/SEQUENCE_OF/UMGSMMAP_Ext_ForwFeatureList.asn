@@ -1,0 +1,2 @@
+Ext-ForwFeatureList ::= SEQUENCE SIZE (1..maxNumOfExt-BasicServiceGroups) OF Ext-ForwFeature
+

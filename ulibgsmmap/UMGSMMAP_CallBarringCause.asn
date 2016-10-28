@@ -1,0 +1,4 @@
+CallBarringCause ::= ENUMERATED { 
+   barringServiceActive (0), 
+   operatorBarring (1)}
+

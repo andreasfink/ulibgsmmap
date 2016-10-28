@@ -1,0 +1,6 @@
+BusySubscriberParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... ,
+   ccbs-Possible [0] NULL OPTIONAL,
+   ccbs-Busy [1] NULL OPTIONAL}
+

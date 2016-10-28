@@ -1,0 +1,12 @@
+RequestedCAMEL-SubscriptionInfo ::= ENUMERATED {
+ o-CSI (0),
+ t-CSI (1),
+ vt-CSI (2),
+ tif-CSI (3),
+ gprs-CSI (4),
+ mo-sms-CSI (5),
+ ss-CSI (6),
+ m-CSI (7),
+ d-csi (8)
+}
+ 

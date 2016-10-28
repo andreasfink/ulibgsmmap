@@ -1,0 +1,5 @@
+CamelCapabilityHandling ::= INTEGER(1..16) 
+-- value 1 = CAMEL phase 1, 
+-- value 2 = CAMEL phase 2: 
+-- reception of values greater than 2 shall be treated as CAMEL phase 2
+

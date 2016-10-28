@@ -1,0 +1,8 @@
+Eps-AuthenticationSet ::= SEQUENCE {
+	rand                 OCTET STRING ( SIZE( 16 ) ), 
+	xres                 OCTET STRING ( SIZE( 4 .. 16 ) ), 
+	autn                 OCTET STRING ( SIZE( 16 ) ), 
+	kasme                OCTET STRING ( SIZE( 16 ) ), 
+	extensionContainer   ExtensionContainer OPTIONAL, 
+... }
+

@@ -1,0 +1,2 @@
+PLMNClientList ::= SEQUENCE SIZE (1..maxNumOfPLMNClient) OF LCSClientInternalID 
+

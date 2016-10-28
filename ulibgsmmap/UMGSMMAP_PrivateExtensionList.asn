@@ -1,0 +1,2 @@
+PrivateExtensionList ::= SEQUENCE SIZE (1..maxNumOfPrivateExtensions) OF PrivateExtension
+

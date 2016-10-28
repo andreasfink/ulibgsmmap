@@ -1,0 +1,4 @@
+maxExt-GeographicalInformation INTEGER ::= 20 
+-- the maximum length allows for further shapes in GSM 03.32 to be included in later versions 
+-- of GSM 09.02
+

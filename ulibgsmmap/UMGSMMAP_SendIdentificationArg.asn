@@ -1,0 +1,11 @@
+SendIdentificationArg ::= SEQUENCE {
+   tmsi                       Tmsi, 
+   numberOfRequestedVectors   NumberOfRequestedVectors OPTIONAL, 
+   segmentationProhibited     NULL OPTIONAL, 
+   extensionContainer         ExtensionContainer OPTIONAL, 
+   ... , 
+   msc-Number                 ISDN-AddressString OPTIONAL, 
+   previous-LAI               [0] IMPLICIT LAIFixedLength OPTIONAL, 
+   hopCounter                 [1] IMPLICIT INTEGER ( 0 .. 3 ) OPTIONAL
+}
+

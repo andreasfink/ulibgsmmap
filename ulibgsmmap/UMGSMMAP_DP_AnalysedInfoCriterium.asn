@@ -1,0 +1,8 @@
+DP-AnalysedInfoCriterium ::= SEQUENCE { 
+	dialledNumber	ISDN-AddressString,
+     serviceKey		ServiceKey,
+     gsmSCF-Address		ISDN-AddressString,
+     defaultCallHandling	DefaultCallHandling,
+     extensionContainer		ExtensionContainer OPTIONAL,
+     ...
+}

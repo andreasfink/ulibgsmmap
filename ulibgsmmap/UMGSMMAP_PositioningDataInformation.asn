@@ -1,0 +1,2 @@
+PositioningDataInformation ::= OCTET STRING (SIZE (2..maxPositioningDataInformation))
+

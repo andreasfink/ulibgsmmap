@@ -1,0 +1,6 @@
+NumberPortabilityStatus ::= ENUMERATED { 
+   notKnownToBePorted (0), 
+   ownNumberPortedOut (1), 
+   foreignNumberPortedToForeignNetwork (2), 
+   ...}
+

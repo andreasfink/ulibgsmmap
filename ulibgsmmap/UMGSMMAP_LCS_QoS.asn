@@ -1,0 +1,8 @@
+LCS-QoS ::= SEQUENCE { 
+   horizontal-accuracy [0] Horizontal-Accuracy OPTIONAL, 
+   verticalCoordinateRequest [1] NULL OPTIONAL, 
+   vertical-accuracy [2] Vertical-Accuracy OPTIONAL, 
+   responseTime [3] ResponseTime OPTIONAL, 
+   extensionContainer [4] ExtensionContainer OPTIONAL, 
+   ...}
+

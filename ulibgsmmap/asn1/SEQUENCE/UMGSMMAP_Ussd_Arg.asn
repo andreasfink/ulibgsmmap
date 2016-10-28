@@ -1,0 +1,7 @@
+Ussd-Arg ::= SEQUENCE {
+   ussd-DataCodingScheme USSD-DataCodingScheme,
+   ussd-String USSD-String,
+   ... ,
+   alertingPattern OCTET STRING ( SIZE( 1 ) ) OPTIONAL,
+   msisdn [0] ISDN-AddressString OPTIONAL}
+

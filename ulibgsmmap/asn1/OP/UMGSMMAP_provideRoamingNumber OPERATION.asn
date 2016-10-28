@@ -1,0 +1,14 @@
+provideRoamingNumber OPERATION ::= {
+ARGUMENT ProvideRoamingNumberArg
+RESULT ProvideRoamingNumberRes 
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   facilityNotSupported |
+   or-NotAllowed |
+   absentSubscriber |
+   noRoamingNumberAvailable}
+CODE local:4
+}
+

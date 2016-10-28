@@ -1,0 +1,2 @@
+CallBarringFeatureList ::= SEQUENCE SIZE (1..maxNumOfBasicServiceGroups) OF CallBarringFeature 
+

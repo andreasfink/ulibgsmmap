@@ -1,0 +1,5 @@
+MAP-ProviderAbortReason ::= ENUMERATED 
+{ 
+	abnormalDialogue (0),
+	invalidPDU (1)
+}

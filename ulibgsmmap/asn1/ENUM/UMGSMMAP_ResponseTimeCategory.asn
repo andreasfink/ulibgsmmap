@@ -1,0 +1,7 @@
+ResponseTimeCategory ::= ENUMERATED { 
+   lowdelay (0), 
+   delaytolerant (1), 
+   ... } 
+-- exception handling: 
+-- an unrecognized value shall be treated the same as value 1 (delaytolerant)
+

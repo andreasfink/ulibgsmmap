@@ -1,0 +1,4 @@
+AlertReason ::= ENUMERATED {
+   ms-Present ( 0 ),
+   memoryAvailable ( 1 ) }
+

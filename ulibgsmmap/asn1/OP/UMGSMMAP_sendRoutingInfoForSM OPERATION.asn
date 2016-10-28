@@ -1,0 +1,15 @@
+sendRoutingInfoForSM OPERATION ::= {
+ARGUMENT RoutingInfoForSM-Arg
+RESULT RoutingInfoForSM-Res
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   facilityNotSupported |
+   unknownSubscriber | 
+   teleserviceNotProvisioned |
+   callBarred |
+   absentsubscriberSM}
+CODE local:45
+}
+

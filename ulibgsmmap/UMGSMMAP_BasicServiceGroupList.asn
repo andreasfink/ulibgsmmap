@@ -1,0 +1,2 @@
+BasicServiceGroupList ::= SEQUENCE SIZE (1..maxNumOfBasicServiceGroups) OF BasicServiceCode 
+

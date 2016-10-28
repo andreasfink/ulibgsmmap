@@ -1,0 +1,4 @@
+IllegalSubscriberParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

@@ -1,0 +1,6 @@
+O-BcsmCamelTDPDataList ::= SEQUENCE SIZE (1..maxNumOfCamelTDPData) OF O-BcsmCamelTDPData 
+--- O-BcsmCamelTDPDataList shall not contain more than one instance of 
+--- O-BcsmCamelTDPData containing the same value for o-BcsmTriggerDetectionPoint. 
+--- For CAMEL Phase 2, this means that only one instance of O-BcsmCamelTDPData is allowed 
+--- with o-BcsmTriggerDetectionPoint being equal to DP2. 
+

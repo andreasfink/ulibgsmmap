@@ -1,0 +1,5 @@
+IST-SupportIndicator ::= ENUMERATED {
+	 basicISTSupported (0),
+	 istCommandSupported (1)
+}
+

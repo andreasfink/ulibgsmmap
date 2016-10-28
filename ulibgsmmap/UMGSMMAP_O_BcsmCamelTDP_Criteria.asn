@@ -1,0 +1,7 @@
+O-BcsmCamelTDP-Criteria ::= SEQUENCE { 
+   o-BcsmTriggerDetectionPoint O-BcsmTriggerDetectionPoint, 
+   destinationNumberCriteria [0] DestinationNumberCriteria OPTIONAL, 
+   basicServiceCriteria [1] BasicServiceCriteria OPTIONAL, 
+   callTypeCriteria [2] CallTypeCriteria OPTIONAL, 
+   ... }
+

@@ -1,0 +1,11 @@
+checkIMEI OPERATION ::= {
+ARGUMENT IMEI
+RESULT EquipmentStatus
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unknownEquipment}
+CODE local:43
+}
+
+-- defined by MAP-SS-cCde

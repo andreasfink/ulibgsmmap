@@ -1,0 +1,1 @@
+MT-smsCAMELTDP-CriteriaList ::= SEQUENCE SIZE (1.. maxNumOfCamelTDPData) OF MT-smsCAMELTDP-Criteria

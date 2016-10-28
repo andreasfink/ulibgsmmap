@@ -1,0 +1,1 @@
+RAIdentity ::= OCTET STRING (SIZE (6))

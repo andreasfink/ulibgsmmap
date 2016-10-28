@@ -1,0 +1,12 @@
+deactivateTraceMode OPERATION ::= {
+ARGUMENT DeactivateTraceModeArg
+RESULT DeactivateTraceModeRes 
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   facilityNotSupported |
+   unidentifiedSubscriber}
+CODE local:51
+}
+

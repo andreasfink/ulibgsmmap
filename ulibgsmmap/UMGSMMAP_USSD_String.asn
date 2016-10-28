@@ -1,0 +1,4 @@
+USSD-String ::= OCTET STRING (SIZE (1..maxUSSD-StringLength)) 
+-- The structure of the contents of the USSD-String is dependent 
+-- on the USSD-DataCodingScheme as described in TS GSM 03.38. 
+

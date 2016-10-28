@@ -1,0 +1,3 @@
+Ext-GeographicalInformation ::= OCTET STRING (SIZE (1..maxExt-GeographicalInformation)) 
+-- Refers to geographical Information defined in GSM 03.32.
+

@@ -1,0 +1,5 @@
+GSM-SecurityContextData ::= SEQUENCE {
+			kc         Kc, 
+			cksn       CKSN, 
+		... }
+		

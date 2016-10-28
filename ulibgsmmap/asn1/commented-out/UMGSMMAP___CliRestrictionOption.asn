@@ -1,0 +1,5 @@
+--CliRestrictionOption ::= ENUMERATED { 
+--   permanent (0), 
+--   temporaryDefaultRestricted (1), 
+--   temporaryDefaultAllowed (2)} 
+

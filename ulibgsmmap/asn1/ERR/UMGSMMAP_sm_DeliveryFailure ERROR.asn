@@ -1,0 +1,5 @@
+sm-DeliveryFailure ERROR ::= {
+PARAMETER Sm-DeliveryFailureCause
+CODE local:32
+} 
+

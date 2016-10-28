@@ -1,0 +1,15 @@
+unstructuredSS-Request OPERATION ::= {
+ARGUMENT Ussd-Arg
+RESULT Ussd-Res 
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   absentSubscriber |
+   illegalSubscriber |
+   illegalEquipment |
+   unknownAlphabet |
+   ussd-Busy}
+CODE local:60
+}
+

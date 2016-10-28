@@ -1,0 +1,9 @@
+GPRS-TriggerDetectionPoint ::= ENUMERATED 
+{ 
+	attach (1),
+	attachChangeOfPosition (2),
+	pdp-ContextEstablishment (11),
+	pdp-ContextEstablishmentAcknowledgement (12),
+	pdp-ContextChangeOfPosition (14)
+}
+

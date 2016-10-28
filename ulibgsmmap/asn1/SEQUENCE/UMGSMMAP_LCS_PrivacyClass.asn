@@ -1,0 +1,15 @@
+LCS-PrivacyClass ::= SEQUENCE { 
+   ss-Code SS-Code, 
+   ss-Status Ext-SS-Status, 
+   notificationToMSUser [0] NotificationToMSUser OPTIONAL, 
+-- notificationToMSUser may be sent only for SS-codes callrelated 
+-- and callunrelated. If not received for SS-codes callrelated and callunrelated, 
+-- the default values according to GSM 03.71 shall be assumed. 
+   externalClientList [1] ExternalClientList OPTIONAL, 
+-- externalClientList may be sent only for SS-code callunrelated. 
+   plmnClientList [2] PLMNClientList OPTIONAL, 
+-- plmnClientList may be sent only for SS-code plmnoperator. 
+   extensionContainer [3] ExtensionContainer OPTIONAL, 
+...} 
+-- if segmentation is used, the complete LCS-PrivacyClass shall be sent in one segment
+

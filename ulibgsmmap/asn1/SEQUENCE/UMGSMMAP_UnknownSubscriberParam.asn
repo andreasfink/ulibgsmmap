@@ -1,0 +1,6 @@
+UnknownSubscriberParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... ,
+   unknownSubscriberDiagnostic UnknownSubscriberDiagnostic OPTIONAL}                                 
+
+

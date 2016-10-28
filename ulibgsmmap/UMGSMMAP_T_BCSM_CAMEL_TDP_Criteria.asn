@@ -1,0 +1,6 @@
+T-BCSM-CAMEL-TDP-Criteria ::= SEQUENCE {
+	 t-BCSM-TriggerDetectionPoint 	T-BcsmTriggerDetectionPoint,
+	 basicServiceCriteria			[0] BasicServiceCriteria OPTIONAL,
+	  t-CauseValueCriteria			[1] T-CauseValueCriteria OPTIONAL,
+	... 
+}

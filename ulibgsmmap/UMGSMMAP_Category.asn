@@ -1,0 +1,3 @@
+Category ::= OCTET STRING (SIZE (1)) 
+-- The internal structure is defined in CCITT Rec Q.763.
+

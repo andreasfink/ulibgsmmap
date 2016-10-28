@@ -1,0 +1,12 @@
+processUnstructuredSS-Request OPERATION ::= {
+ARGUMENT Ussd-Arg
+RESULT Ussd-Res
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   unknownAlphabet |
+   callBarred}
+CODE local:59
+}
+

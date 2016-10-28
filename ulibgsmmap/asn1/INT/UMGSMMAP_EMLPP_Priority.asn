@@ -1,0 +1,6 @@
+EMLPP-Priority ::= INTEGER (0..15) 
+-- The mapping from the values A,B,0,1,2,3,4 to the integer-value is 
+-- specified as follows where A is the highest and 4 is the lowest 
+-- priority level 
+-- the integer values 7-15 are spare and shall be mapped to value 4
+

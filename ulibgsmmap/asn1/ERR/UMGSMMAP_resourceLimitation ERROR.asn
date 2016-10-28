@@ -1,0 +1,5 @@
+resourceLimitation ERROR ::= {
+PARAMETER ResourceLimitationParam
+CODE local:51
+} 
+

@@ -1,0 +1,13 @@
+activateTraceMode OPERATION ::= {
+ARGUMENT ActivateTraceModeArg
+RESULT ActivateTraceModeRes
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   facilityNotSupported |
+   unidentifiedSubscriber |
+   tracingBufferFull}
+CODE local:50
+}
+

@@ -1,0 +1,5 @@
+ExtendedRoutingInfo ::= CHOICE { 
+   routingInfo RoutingInfo, 
+   camelRoutingInfo [8] CamelRoutingInfo}
+
+ 

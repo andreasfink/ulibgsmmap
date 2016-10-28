@@ -1,0 +1,10 @@
+prepareGroupCall OPERATION ::= {
+ARGUMENT PrepareGroupCallArg
+RESULT PrepareGroupCallRes
+ERRORS {
+   systemFailure |
+   noGroupCallNumberAvailable |
+   unexpectedDataValue}
+CODE local:39
+}
+

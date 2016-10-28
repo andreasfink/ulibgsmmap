@@ -1,0 +1,13 @@
+anyTimeInterrogation OPERATION  ::=  {
+   ARGUMENT     AnyTimeInterrogationArg
+   RESULT       AnyTimeInterrogationRes
+   ERRORS     {
+      systemFailure | 
+      ati-NotAllowed | 
+      dataMissing | 
+      unexpectedDataValue | 
+      unknownSubscriber }
+   CODE     local      : 71
+}
+
+

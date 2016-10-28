@@ -1,0 +1,11 @@
+restoreData OPERATION ::= {
+ARGUMENT RestoreDataArg
+RESULT RestoreDataRes
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   unknownSubscriber}
+CODE local:57
+}
+

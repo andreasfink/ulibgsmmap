@@ -1,0 +1,9 @@
+LCS-Event ::= ENUMERATED { 
+   emergencyCallOrigination (0), 
+   emergencyCallRelease (1), 
+   mo-lr (2), 
+   ... } 
+-- exception handling: 
+-- a SubscriberLocationReport-Arg containing an unrecognized LCS-Event 
+-- shall be rejected by a receiver with a return error cause of unexpected data value
+

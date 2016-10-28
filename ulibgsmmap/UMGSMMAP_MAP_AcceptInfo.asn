@@ -1,0 +1,4 @@
+MAP-AcceptInfo ::= SEQUENCE { 
+	...,
+	extensionContainer ExtensionContainer OPTIONAL
+}

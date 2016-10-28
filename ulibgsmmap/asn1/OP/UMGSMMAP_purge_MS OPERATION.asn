@@ -1,0 +1,10 @@
+purge-MS OPERATION ::= {
+ARGUMENT PurgeMS-Arg
+RESULT PurgeMS-Res
+ERRORS {
+   dataMissing |
+   unexpectedDataValue |
+   unknownSubscriber}
+CODE local:67
+}
+

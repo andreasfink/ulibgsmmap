@@ -1,0 +1,4 @@
+CODEC-Info ::= OCTET STRING (SIZE (5..10)) 
+-- Refers to channel type 
+-- coded according to GSM 08.08 and including Element identifier and Length
+

@@ -1,0 +1,5 @@
+ExtensibleSystemFailureParam ::= SEQUENCE { 
+   networkResource NetworkResource OPTIONAL, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...}
+

@@ -1,0 +1,14 @@
+unstructuredSS-Notify OPERATION ::= {
+ARGUMENT Ussd-Arg
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   absentSubscriber |
+   illegalSubscriber |
+   illegalEquipment |
+   unknownAlphabet |
+   ussd-Busy}
+CODE local:61
+}
+

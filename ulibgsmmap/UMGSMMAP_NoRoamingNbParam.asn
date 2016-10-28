@@ -1,0 +1,4 @@
+NoRoamingNbParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

@@ -1,0 +1,10 @@
+ RoutingInfoForSM-Arg ::= SEQUENCE {
+         msisdn                 [0] IMPLICIT OCTET STRING ( SIZE( 1 .. 20 ) ) ( SIZE( 1 .. 9 ) ), 
+         sm-RP-PRI              [1] IMPLICIT BOOLEAN, 
+         serviceCentreAddress   [2] IMPLICIT OCTET STRING ( SIZE( 1 .. 20 ) ), 
+         extensionContainer     [6] IMPLICIT SEQUENCE { ... } OPTIONAL,
+         gprsSupportIndicator   [7] IMPLICIT NULL OPTIONAL, 
+         sm-RP-MTI              [8] IMPLICIT INTEGER ( 0 .. 10 ) OPTIONAL, 
+         sm-RP-SMEA             [9] IMPLICIT OCTET STRING ( SIZE( 1 .. 12 ) ) OPTIONAL}
+         
+         

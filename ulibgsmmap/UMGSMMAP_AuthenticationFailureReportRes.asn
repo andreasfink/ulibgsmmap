@@ -1,0 +1,4 @@
+AuthenticationFailureReportRes ::= SEQUENCE {
+	extensionContainer   ExtensionContainer OPTIONAL, 
+... }
+

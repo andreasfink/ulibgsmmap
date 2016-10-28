@@ -1,0 +1,6 @@
+MW-Status ::= BIT STRING {
+   sc-AddressNotIncluded (0 ),
+   mnrf-Set (1 ),
+   mcef-Set (2 ),
+   mnrg-Set (3 )} ( SIZE( 6 .. 16 ) )
+

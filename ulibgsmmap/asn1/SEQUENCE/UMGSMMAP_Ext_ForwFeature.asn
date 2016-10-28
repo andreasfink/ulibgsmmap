@@ -1,0 +1,13 @@
+Ext-ForwFeature ::= SEQUENCE { 
+   basicService Ext-BasicServiceCode OPTIONAL, 
+   ss-Status [4] Ext-SS-Status, 
+   forwardedToNumber [5] ISDN-AddressString OPTIONAL, 
+-- When this data type is sent from an HLR which supports CAMEL Phase 2 
+-- to a VLR that supports CAMEL Phase 2 the VLR shall not check the 
+-- format of the number 
+   forwardedToSubaddress [8] ISDN-SubaddressString OPTIONAL, 
+   forwardingOptions [6] Ext-ForwOptions OPTIONAL, 
+   noReplyConditionTime [7] Ext-NoRepCondTime OPTIONAL, 
+   extensionContainer [9] ExtensionContainer OPTIONAL, 
+   ...}
+

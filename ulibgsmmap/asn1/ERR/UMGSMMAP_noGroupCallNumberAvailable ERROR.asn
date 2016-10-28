@@ -1,0 +1,5 @@
+noGroupCallNumberAvailable ERROR ::= {
+PARAMETER NoGroupCallNbParam
+CODE local:50 
+}
+

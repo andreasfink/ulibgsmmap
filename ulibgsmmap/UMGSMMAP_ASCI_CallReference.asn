@@ -1,0 +1,3 @@
+ASCI-CallReference ::= TBCD-STRING (SIZE (1..8)) 
+-- digits of VGCS/VBC-area,Group-ID are concatenated in this order.
+

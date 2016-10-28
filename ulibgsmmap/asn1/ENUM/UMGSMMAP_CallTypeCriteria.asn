@@ -1,0 +1,4 @@
+CallTypeCriteria ::= ENUMERATED { 
+   forwarded (0), 
+   notForwarded (1)}
+

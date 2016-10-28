@@ -1,0 +1,21 @@
+SubscriberInfo ::=  SEQUENCE {
+    locationInformation                 [0]  IMPLICIT LocationInformation             OPTIONAL,
+    subscriberState                     [1] SubscriberState                          OPTIONAL,
+    extensionContainer                  [2] IMPLICIT ExtensionContainer              OPTIONAL,
+    ... ,
+    locationInformationGPRS             [3] IMPLICIT LocationInformationGPRS         OPTIONAL,
+    ps-SubscriberState                  [4] PS-SubscriberState              OPTIONAL,
+    imei                                [5] IMPLICIT IMEI                            OPTIONAL,
+    ms-Classmark2                       [6] IMPLICIT MS-Classmark2                   OPTIONAL,
+    gprs-MS-Class                       [7] IMPLICIT GPRSMSClass                     OPTIONAL,
+    mnpInfoRes                          [8] IMPLICIT MNPInfoRes                      OPTIONAL,
+    imsVoiceOverPS-SessionsIndication   [9] IMPLICIT IMS-VoiceOverPS-SessionsInd     OPTIONAL,
+    lastUE-ActivityTime                 [10] IMPLICIT ASNTime                        OPTIONAL,
+    lastRAT-Type                        [11] IMPLICIT Used-RAT-Type                  OPTIONAL,
+    eps-SubscriberState                 [12] PS-SubscriberState             OPTIONAL,
+    locationInformationEPS              [13] IMPLICIT LocationInformationEPS         OPTIONAL,
+    timeZone                            [14] IMPLICIT ASNTimeZone                    OPTIONAL,
+    daylightSavingTime                  [15] IMPLICIT DaylightSavingTime             OPTIONAL
+}
+
+

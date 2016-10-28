@@ -1,0 +1,2 @@
+Ext-SS-InfoList ::= SEQUENCE SIZE (1..maxNumOfSS) OF Ext-SS-Info
+

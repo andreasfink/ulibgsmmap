@@ -1,0 +1,11 @@
+provideSIWFSNumber OPERATION ::= { 
+ARGUMENT ProvideSIWFSNumberArg 
+RESULT ProvideSIWFSNumberRes
+ERRORS {
+   resourceLimitation |
+   dataMissing |
+   unexpectedDataValue |
+   systemFailure}
+CODE local:31
+}
+

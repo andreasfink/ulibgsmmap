@@ -1,0 +1,11 @@
+sIWFSSignallingModify OPERATION ::= {
+ARGUMENT SIWFSSignallingModifyArg 
+RESULT SIWFSSignallingModifyRes
+ERRORS {
+   resourceLimitation |
+   dataMissing |
+   unexpectedDataValue |
+   systemFailure}
+CODE local:32
+}
+

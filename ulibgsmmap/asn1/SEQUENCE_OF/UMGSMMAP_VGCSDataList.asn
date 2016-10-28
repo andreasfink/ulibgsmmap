@@ -1,0 +1,2 @@
+VGCSDataList ::= SEQUENCE SIZE (1..maxNumOfVGCSGroupIds) OF VoiceGroupCallData
+

@@ -1,0 +1,5 @@
+MT-ForwardSM-Res ::= SEQUENCE {
+   sm-RP-UI SignalInfo OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

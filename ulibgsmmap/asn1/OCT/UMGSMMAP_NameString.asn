@@ -1,0 +1,2 @@
+NameString ::= USSD-String (SIZE (1..maxNameStringLength)) 
+

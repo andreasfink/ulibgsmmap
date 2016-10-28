@@ -1,0 +1,11 @@
+reportSM-DeliveryStatus OPERATION ::= {
+ARGUMENT ReportSM-DeliveryStatusArg
+RESULT ReportSM-DeliveryStatusRes
+ERRORS {
+   dataMissing |
+   unexpectedDataValue |
+   unknownSubscriber |
+   messageWaitingListFull}
+CODE local:47
+}
+

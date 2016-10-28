@@ -1,0 +1,2 @@
+AUTN ::= OCTET STRING ( SIZE( 16 ) )
+

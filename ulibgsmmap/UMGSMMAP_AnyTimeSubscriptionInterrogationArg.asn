@@ -1,0 +1,8 @@
+AnyTimeSubscriptionInterrogationArg ::= SEQUENCE {
+	subscriberIdentity	[0] SubscriberIdentity,
+	requestedSubscriptionInfo	[1] RequestedSubscriptionInfo,
+	gsmSCF-Address				[2] ISDN-AddressString,
+	extensionContainer			[3] ExtensionContainer OPTIONAL,
+	longFTN-Supported			[4] NULL OPTIONAL,
+	...
+}

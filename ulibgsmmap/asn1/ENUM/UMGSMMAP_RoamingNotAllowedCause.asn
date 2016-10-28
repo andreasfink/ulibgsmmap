@@ -1,0 +1,4 @@
+RoamingNotAllowedCause ::= ENUMERATED { 
+   plmnRoamingNotAllowed (0), 
+   operatorDeterminedBarring (3)}
+

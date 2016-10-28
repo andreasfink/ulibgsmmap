@@ -1,0 +1,16 @@
+registerSS OPERATION ::= {
+ARGUMENT RegisterSS-Arg
+RESULT Ss-Info
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   bearerServiceNotProvisioned |
+   teleserviceNotProvisioned |
+   callBarred |
+   illegalSS-Operation |
+   ss-ErrorStatus | 
+   ss-Incompatibility}
+CODE local:10
+}
+

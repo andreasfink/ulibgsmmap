@@ -1,0 +1,5 @@
+Reason ::= ENUMERATED {
+	noReasonGiven (0), 
+	invalidDestinationReference (1),
+	invalidOriginatingReference (2)
+}

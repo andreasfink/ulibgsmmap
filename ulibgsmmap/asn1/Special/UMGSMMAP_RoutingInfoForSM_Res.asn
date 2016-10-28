@@ -1,0 +1,19 @@
+RoutingInfoForSM-Res ::= SEQUENCE
+{
+	imsi					IMSI,
+	locationInfoWithLMSI	[0] IMPLICIT SEQUENCE {
+			networkNode-Number		[1] IMPLICIT ISDN-AddressString,
+			lmsi					LMSI			OPTIONAL,
+			extensionContainer		ExtensionContainer	OPTIONAL,
+			...,
+			gprsNodeIndicator		[5]	NULL		OPTIONAL,
+			-- gprsNodeIndicator is set only if the SGSN number is sent as the 
+			-- Network Node Number
+			additional-Number		[6] Additional-Number	OPTIONAL 
+			-- NetworkNode-number can be either msc-number or sgsn-number
+			} ,
+	extensionContainer		[4] ExtensionContainer	OPTIONAL,
+	...
+}
+	
+

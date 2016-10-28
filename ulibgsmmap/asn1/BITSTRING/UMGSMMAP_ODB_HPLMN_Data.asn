@@ -1,0 +1,6 @@
+ODB-HPLMN-Data ::= BIT STRING { 
+   plmn-SpecificBarringType1 (0), 
+   plmn-SpecificBarringType2 (1), 
+   plmn-SpecificBarringType3 (2), 
+   plmn-SpecificBarringType4 (3)} (SIZE (4..32))
+

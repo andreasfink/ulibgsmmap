@@ -1,0 +1,13 @@
+remoteUserFree OPERATION ::= {
+ARGUMENT RemoteUserFreeArg
+RESULT RemoteUserFreeRes
+ERRORS {
+   unexpectedDataValue |
+   dataMissing |
+   incompatibleTerminal |
+   absentSubscriber |
+   systemFailure |
+   busySubscriber}
+CODE local:75
+}
+

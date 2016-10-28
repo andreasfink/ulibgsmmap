@@ -1,0 +1,1 @@
+TPDU-TypeCriterion ::= SEQUENCE SIZE (1..maxNumOfTPDUTypes) OF MT-SMS-TPDU-Type

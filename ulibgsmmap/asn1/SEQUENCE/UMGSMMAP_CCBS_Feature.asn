@@ -1,0 +1,7 @@
+CCBS-Feature ::= SEQUENCE { 
+   ccbs-Index [0] CCBS-Index OPTIONAL, 
+   b-subscriberNumber [1] ISDN-AddressString OPTIONAL, 
+   b-subscriberSubaddress [2] ISDN-SubaddressString OPTIONAL, 
+   basicServiceGroup [3] BasicServiceCode OPTIONAL, 
+   ...} 
+

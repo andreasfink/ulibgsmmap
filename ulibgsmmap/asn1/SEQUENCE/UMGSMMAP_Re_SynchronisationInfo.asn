@@ -1,0 +1,5 @@
+Re-SynchronisationInfo ::= SEQUENCE {
+	rand                              OCTET STRING ( SIZE( 16 ) ), 
+	auts                              OCTET STRING ( SIZE( 14 ) ), 
+... }
+

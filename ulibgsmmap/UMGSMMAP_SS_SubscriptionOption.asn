@@ -1,0 +1,4 @@
+SS-SubscriptionOption ::= CHOICE { 
+   cliRestrictionOption [2] CliRestrictionOption, 
+   overrideCategory [1] OverrideCategory} 
+

@@ -1,0 +1,14 @@
+subscriberLocationReport OPERATION ::= {
+ARGUMENT SubscriberLocationReport-Arg
+RESULT SubscriberLocationReport-Res
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   resourceLimitation |
+   unknownSubscriber |
+   unauthorizedRequestingNetwork |
+   unknownOrUnreachableLCSClient}
+CODE local:86
+}
+

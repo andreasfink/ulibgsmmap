@@ -1,0 +1,5 @@
+Pw-RegistrationFailureCause ::= ENUMERATED {
+   undetermined ( 0 ),
+   invalidFormat ( 1 ),
+   newPasswordsMismatch ( 2 ) }
+

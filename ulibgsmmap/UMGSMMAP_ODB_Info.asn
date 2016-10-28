@@ -1,0 +1,6 @@
+ODB-Info ::= SEQUENCE { 
+	odb-Data		ODB-Data,
+     notificationToCSE	NULL OPTIONAL,
+     extensionContainer	ExtensionContainer OPTIONAL,
+     ...
+}

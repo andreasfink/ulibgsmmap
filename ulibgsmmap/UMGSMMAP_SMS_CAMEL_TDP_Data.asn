@@ -1,0 +1,8 @@
+SMS-CAMEL-TDP-Data ::= SEQUENCE {
+	sms-TriggerDetectionPoint 	[0] SMS-TriggerDetectionPoint,
+	serviceKey					[1] ServiceKey,
+	gsmSCF-Address 				[2] ISDN-AddressString,
+	defaultSMS-Handling 		[3] DefaultSMS-Handling,
+	extensionContainer			[4] ExtensionContainer OPTIONAL,
+	... 
+}

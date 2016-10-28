@@ -1,0 +1,5 @@
+forwardGroupCallSignalling OPERATION ::= {
+ARGUMENT ForwardGroupCallSignallingArg
+CODE local:42
+}
+

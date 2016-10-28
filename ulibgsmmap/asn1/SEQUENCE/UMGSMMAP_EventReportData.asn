@@ -1,0 +1,5 @@
+EventReportData ::= SEQUENCE{ 
+   ccbs-SubscriberStatus [0] CCBS-SubscriberStatus OPTIONAL, 
+   extensionContainer [1] ExtensionContainer OPTIONAL, 
+   ...} 
+

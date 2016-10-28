@@ -1,0 +1,10 @@
+ForwardGroupCallSignallingArg ::= SEQUENCE {
+   imsi IMSI OPTIONAL,
+   uplinkRequestAck [0] NULL OPTIONAL,
+   uplinkReleaseIndication [1] NULL OPTIONAL,
+   uplinkRejectCommand [2] NULL OPTIONAL,
+   uplinkSeizedCommand [3] NULL OPTIONAL,
+   uplinkReleaseCommand [4] NULL OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

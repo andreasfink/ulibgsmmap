@@ -1,0 +1,4 @@
+NumberChangedParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

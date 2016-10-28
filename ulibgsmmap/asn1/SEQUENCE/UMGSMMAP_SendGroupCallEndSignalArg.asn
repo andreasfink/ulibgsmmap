@@ -1,0 +1,5 @@
+SendGroupCallEndSignalArg ::= SEQUENCE {
+   imsi IMSI OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

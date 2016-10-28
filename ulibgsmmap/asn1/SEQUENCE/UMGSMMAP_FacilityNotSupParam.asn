@@ -1,0 +1,4 @@
+FacilityNotSupParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

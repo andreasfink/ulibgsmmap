@@ -1,0 +1,13 @@
+setReportingState OPERATION ::= {
+ARGUMENT SetReportingStateArg
+RESULT SetReportingStateRes
+ERRORS {
+   systemFailure |
+   unidentifiedSubscriber | 
+   unexpectedDataValue |
+   dataMissing |
+   resourceLimitation |
+   facilityNotSupported}
+CODE local:73
+}
+

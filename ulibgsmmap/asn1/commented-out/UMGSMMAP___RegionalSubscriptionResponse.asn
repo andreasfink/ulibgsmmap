@@ -1,0 +1,6 @@
+--RegionalSubscriptionResponse ::=  ENUMERATED {
+--   networkNode-AreaRestricted ( 0 ),
+--   tooManyZoneCodes ( 1 ),
+--   zoneCodesConflict ( 2 ),
+--   regionalSubscNotSupported ( 3 ) }
+

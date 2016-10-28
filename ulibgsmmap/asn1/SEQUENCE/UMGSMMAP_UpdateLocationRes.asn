@@ -1,0 +1,5 @@
+UpdateLocationRes ::= SEQUENCE {
+	hlr-Number ISDN-AddressString,
+	extensionContainer ExtensionContainer OPTIONAL,
+... }
+

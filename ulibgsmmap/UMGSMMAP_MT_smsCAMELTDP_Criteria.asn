@@ -1,0 +1,6 @@
+MT-smsCAMELTDP-Criteria ::= SEQUENCE {
+	sms-TriggerDetectionPoint	SMS-TriggerDetectionPoint,
+	tpdu-TypeCriterion [0] TPDU-TypeCriterion OPTIONAL,
+	...
+}
+       

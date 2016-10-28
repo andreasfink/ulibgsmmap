@@ -1,0 +1,5 @@
+CellIdOrLAI ::= CHOICE { 
+   cellIdFixedLength [0] CellIdFixedLength, 
+   laiFixedLength [1] LAIFixedLength}
+
+

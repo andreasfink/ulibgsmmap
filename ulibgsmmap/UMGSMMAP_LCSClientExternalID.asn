@@ -1,0 +1,5 @@
+LCSClientExternalID ::= SEQUENCE { 
+   externalAddress [0] AddressString OPTIONAL, 
+   extensionContainer [1] ExtensionContainer OPTIONAL, 
+   ... }
+

@@ -1,0 +1,4 @@
+unknownEquipment ERROR ::= {
+CODE local:7
+}
+

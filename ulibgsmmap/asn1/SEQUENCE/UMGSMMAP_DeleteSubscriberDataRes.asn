@@ -1,0 +1,5 @@
+DeleteSubscriberDataRes ::= SEQUENCE {
+   regionalSubscriptionResponse [0] RegionalSubscriptionResponse OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

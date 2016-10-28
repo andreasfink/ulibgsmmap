@@ -1,0 +1,14 @@
+ResumeCallHandlingArg ::= SEQUENCE {
+   callReferenceNumber [0] CallReferenceNumber OPTIONAL,
+   basicServiceGroup [1] Ext-BasicServiceCode OPTIONAL,
+   forwardingData [2] ForwardingData OPTIONAL,
+   imsi [3] IMSI OPTIONAL,
+   cug-CheckInfo [4] CUG-CheckInfo OPTIONAL,
+   o-CSI [5] O-CSI OPTIONAL,
+   extensionContainer [7] ExtensionContainer OPTIONAL,
+   ccbs-Possible [8] NULL OPTIONAL,
+   msisdn [9] ISDN-AddressString OPTIONAL,
+   uu-Data [10] UU-Data OPTIONAL,
+   allInformationSent [11] NULL OPTIONAL,
+   ... }
+

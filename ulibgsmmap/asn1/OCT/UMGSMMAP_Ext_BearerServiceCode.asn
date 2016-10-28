@@ -1,0 +1,2 @@
+Ext-BearerServiceCode ::= OCTET STRING (SIZE (1..5))
+

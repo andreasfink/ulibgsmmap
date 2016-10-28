@@ -1,0 +1,15 @@
+interrogateSS OPERATION ::= {
+ARGUMENT Ss-ForBS
+RESULT InterrogateSS-Res
+ERRORS {
+   systemFailure |
+   dataMissing | 
+   unexpectedDataValue |
+   bearerServiceNotProvisioned |
+   teleserviceNotProvisioned |
+   callBarred | 
+   illegalSS-Operation |
+   ss-NotAvailable}
+CODE local:14
+}
+

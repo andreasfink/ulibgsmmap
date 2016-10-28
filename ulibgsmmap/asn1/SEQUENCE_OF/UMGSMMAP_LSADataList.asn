@@ -1,0 +1,2 @@
+LSADataList ::= SEQUENCE SIZE (1..maxNumOfLSAs) OF LSAData 
+

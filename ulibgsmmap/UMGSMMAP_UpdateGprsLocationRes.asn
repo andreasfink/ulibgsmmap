@@ -1,0 +1,5 @@
+UpdateGprsLocationRes ::= SEQUENCE {
+   hlr-Number ISDN-AddressString,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

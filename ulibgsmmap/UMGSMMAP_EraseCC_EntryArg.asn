@@ -1,0 +1,5 @@
+EraseCC-EntryArg ::= SEQUENCE {
+   ss-Code [0] SS-Code,
+   ccbs-Index [1] CCBS-Index OPTIONAL,
+   ... }
+

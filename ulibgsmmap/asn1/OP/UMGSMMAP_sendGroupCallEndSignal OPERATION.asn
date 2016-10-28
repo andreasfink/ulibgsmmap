@@ -1,0 +1,6 @@
+sendGroupCallEndSignal OPERATION ::= { 
+ARGUMENT SendGroupCallEndSignalArg
+RESULT SendGroupCallEndSignalRes
+CODE local:40
+}
+

@@ -1,0 +1,7 @@
+SendRoutingInfoForGprsArg ::= SEQUENCE {
+   imsi [0] IMSI,
+   ggsn-Address [1] GSN-Address OPTIONAL,
+   ggsn-Number [2] ISDN-AddressString,
+   extensionContainer [3] ExtensionContainer OPTIONAL,
+   ... }
+

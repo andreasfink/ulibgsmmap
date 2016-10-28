@@ -1,0 +1,7 @@
+IMS-VoiceOverPS-SessionsInd ::= ENUMERATED {
+	imsVoiceOverPS-SessionsNotSupported	(0),
+	imsVoiceOverPS-SessionsSupported	(1),
+	unknown		(2)
+	}
+--	"unknown" shall not be used within ProvideSubscriberInfoRes
+

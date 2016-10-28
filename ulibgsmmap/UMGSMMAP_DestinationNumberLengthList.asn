@@ -1,0 +1,3 @@
+DestinationNumberLengthList ::= SEQUENCE SIZE (1..maxNumOfCamelDestinationNumberLengths) OF
+INTEGER(1..maxNumOfISDN-AddressDigits)
+

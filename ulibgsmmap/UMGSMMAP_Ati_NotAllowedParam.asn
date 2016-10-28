@@ -1,0 +1,4 @@
+Ati-NotAllowedParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

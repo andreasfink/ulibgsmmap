@@ -1,0 +1,1 @@
+MobilityTriggers ::= SEQUENCE SIZE (1..maxNumOfMobilityTriggers) OF MM-Code

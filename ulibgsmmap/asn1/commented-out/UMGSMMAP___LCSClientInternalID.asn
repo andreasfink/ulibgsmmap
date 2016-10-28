@@ -1,0 +1,8 @@
+--LCSClientInternalID ::= ENUMERATED { 
+--   broadcastService (0), 
+--   o-andM-HPLMN (1), 
+--   o-andM-VPLMN (2), 
+--   anonymousLocation (3), 
+--   targetMSsubscribedService (4), 
+--   ... }
+

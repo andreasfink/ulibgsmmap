@@ -1,0 +1,1 @@
+ISDN-AddressString ::= AddressString ( SIZE(1 .. maxISDN-AddressLength ) )

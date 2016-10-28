@@ -1,0 +1,9 @@
+sendIdentification OPERATION ::= {
+ARGUMENT SendIdentificationArg
+RESULT SendIdentificationRes
+ERRORS {
+   dataMissing |
+   unidentifiedSubscriber}
+CODE local:55
+}
+

@@ -1,0 +1,10 @@
+ForwardingData ::= SEQUENCE { 
+   forwardedToNumber [5] ISDN-AddressString OPTIONAL, 
+-- When this datatype is sent from an HLR which supports CAMEL Phase 2 
+-- to a GMSC which supports CAMEL Phase 2 the GMSC shall not check the 
+-- format of the number 
+   forwardedToSubaddress [4] ISDN-SubaddressString OPTIONAL, 
+   forwardingOptions [6] ForwardingOptions OPTIONAL, 
+   extensionContainer [7] ExtensionContainer OPTIONAL, 
+   ...}
+

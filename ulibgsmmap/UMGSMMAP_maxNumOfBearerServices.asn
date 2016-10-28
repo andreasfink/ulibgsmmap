@@ -1,0 +1,2 @@
+maxNumOfBearerServices INTEGER ::= 50
+

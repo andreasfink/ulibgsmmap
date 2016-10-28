@@ -1,0 +1,7 @@
+SM-RP-OA ::= CHOICE
+{
+   msisdn 					[2] ISDN-AddressString,
+   serviceCentreAddressOA	[4] AddressString,
+   noSM-RP-OA				[5] NULL
+}
+

@@ -1,0 +1,5 @@
+systemFailure ERROR ::= { 
+PARAMETER SystemFailureParam
+CODE local : 34
+}
+ 

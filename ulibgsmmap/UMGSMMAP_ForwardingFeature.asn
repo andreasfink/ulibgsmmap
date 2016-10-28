@@ -1,0 +1,9 @@
+ForwardingFeature ::= SEQUENCE { 
+   basicService BasicServiceCode OPTIONAL, 
+   ss-Status [4] SS-Status OPTIONAL, 
+   forwardedToNumber [5] ISDN-AddressString OPTIONAL, 
+   forwardedToSubaddress [8] ISDN-SubaddressString OPTIONAL, 
+   forwardingOptions [6] ForwardingOptions OPTIONAL, 
+   noReplyConditionTime [7] NoReplyConditionTime OPTIONAL, 
+   ...}
+

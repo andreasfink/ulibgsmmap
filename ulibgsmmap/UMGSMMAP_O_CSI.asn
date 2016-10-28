@@ -1,0 +1,7 @@
+O-CSI ::= SEQUENCE { 
+   o-BcsmCamelTDPDataList O-BcsmCamelTDPDataList, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ..., 
+   camelCapabilityHandling [0] CamelCapabilityHandling OPTIONAL 
+}
+

@@ -1,0 +1,4 @@
+Identity ::= CHOICE {
+imsi IMSI,
+imsi-WithLMSI IMSI-WithLMSI}
+

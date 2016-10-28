@@ -1,0 +1,8 @@
+IST-AlertRes ::= SEQUENCE {
+	istAlertTimer              [0] IMPLICIT INTEGER ( 15 .. 255 ) OPTIONAL, 
+	istInformationWithdraw     [1] IMPLICIT NULL OPTIONAL, 
+	callTerminationIndicator   [2] IMPLICIT ENUMERATED OPTIONAL,
+	extensionContainer         [3] ExtensionContainer OPTIONAL, 
+	...
+}
+

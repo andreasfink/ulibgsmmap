@@ -1,0 +1,7 @@
+CUG-Feature ::= SEQUENCE { 
+   basicService Ext-BasicServiceCode OPTIONAL, 
+   preferentialCUG-Indicator CUG-Index OPTIONAL, 
+   interCUG-Restrictions InterCUG-Restrictions, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...}
+

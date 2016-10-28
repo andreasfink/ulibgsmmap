@@ -1,0 +1,9 @@
+ExternalClient ::= SEQUENCE { 
+   clientIdentity LCSClientExternalID, 
+   gmlc-Restriction [0] GMLC-Restriction OPTIONAL, 
+   notificationToMSUser [1] NotificationToMSUser OPTIONAL, 
+-- If notificationToMSUser is not received, the default value according to 
+-- GSM 03.71 shall be assumed. 
+   extensionContainer [2] ExtensionContainer OPTIONAL, 
+   ... }
+

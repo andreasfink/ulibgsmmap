@@ -1,0 +1,6 @@
+LocationEstimateType ::= ENUMERATED { 
+   currentLocation (0), 
+   currentOrLastKnownLocation (1), 
+   initialLocation (2), 
+   ... } 
+

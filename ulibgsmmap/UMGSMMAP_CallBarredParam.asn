@@ -1,0 +1,4 @@
+CallBarredParam ::= CHOICE {
+   callBarringCause CallBarringCause,
+   extensibleCallBarredParam ExtensibleCallBarredParam}
+

@@ -1,0 +1,5 @@
+illegalSubscriber ERROR ::= {
+PARAMETER IllegalSubscriberParam
+CODE local:9
+} 
+

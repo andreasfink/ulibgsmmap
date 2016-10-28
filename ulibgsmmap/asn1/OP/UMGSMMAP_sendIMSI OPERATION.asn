@@ -1,0 +1,10 @@
+sendIMSI OPERATION ::= {
+ARGUMENT Msisdn
+RESULT IMSI
+ERRORS {
+   dataMissing |
+   unexpectedDataValue |
+   unknownSubscriber}
+CODE local:58
+}
+

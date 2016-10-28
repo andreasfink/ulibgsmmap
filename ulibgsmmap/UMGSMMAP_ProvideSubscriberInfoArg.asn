@@ -1,0 +1,7 @@
+ProvideSubscriberInfoArg ::= SEQUENCE {
+   imsi [0] IMSI,
+   lmsi [1] LMSI OPTIONAL,
+   requestedInfo [2] RequestedInfo,
+   extensionContainer [3] ExtensionContainer OPTIONAL,
+   ... }
+

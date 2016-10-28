@@ -1,0 +1,5 @@
+MAP-ProviderAbortInfo ::= SEQUENCE {
+	map-ProviderAbortReason MAP-ProviderAbortReason,
+	...,
+	extensionContainer ExtensionContainer OPTIONAL
+}

@@ -1,0 +1,5 @@
+CellGlobalIdOrServiceAreaIdOrLAI ::= CHOICE {
+    cellGlobalIdOrServiceAreaIdFixedLength     [0] IMPLICIT OCTET STRING ( SIZE( 7 ) ),
+    laiFixedLength                             [1] IMPLICIT OCTET STRING ( SIZE( 5 ) )
+}
+               

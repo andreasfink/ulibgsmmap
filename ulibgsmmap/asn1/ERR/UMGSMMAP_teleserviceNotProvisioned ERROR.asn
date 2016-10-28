@@ -1,0 +1,5 @@
+teleserviceNotProvisioned ERROR ::= {
+PARAMETER TeleservNotProvParam
+CODE local:11 
+}
+

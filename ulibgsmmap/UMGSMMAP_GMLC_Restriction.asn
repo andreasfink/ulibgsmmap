@@ -1,0 +1,5 @@
+GMLC-Restriction ::= ENUMERATED { 
+   gmlc-List (0), 
+   home-Country (1), 
+   ... } 
+

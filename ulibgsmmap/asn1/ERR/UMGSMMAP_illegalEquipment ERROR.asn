@@ -1,0 +1,5 @@
+illegalEquipment ERROR ::= {
+PARAMETER IllegalEquipmentParam
+CODE local:12
+} 
+

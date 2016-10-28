@@ -1,0 +1,2 @@
+ISDN-SubaddressString ::= OCTET STRING (SIZE (1..maxISDN-SubaddressLength))
+

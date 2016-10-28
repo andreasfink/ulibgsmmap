@@ -1,0 +1,5 @@
+Additional-Number ::=  CHOICE {
+   msc-Number [0] ISDN-AddressString,
+   sgsn-Number [1] ISDN-AddressString}
+
+

@@ -1,0 +1,6 @@
+CCBS-Indicators ::= SEQUENCE { 
+   ccbs-Possible [0] NULL OPTIONAL, 
+   keepCCBS-CallIndicator [1] NULL OPTIONAL, 
+   extensionContainer [2] ExtensionContainer OPTIONAL, 
+   ...}
+

@@ -1,0 +1,12 @@
+AuthenticationFailureReportArg ::= SEQUENCE {
+	imsi                 IMSI, 
+	failureCause         ENUMERATED , 
+	extensionContainer   ExtensionContainer OPTIONAL, 
+	... , 
+	re-attempt           BOOLEAN OPTIONAL, 
+	accessType           ENUMERATED  OPTIONAL, 
+	rand                 RAND OPTIONAL, 
+	vlr-Number           [0] IMPLICIT ISDN-AddressString OPTIONAL, 
+	sgsn-Number          [1] IMPLICIT ISDN-AddressString OPTIONAL
+}
+

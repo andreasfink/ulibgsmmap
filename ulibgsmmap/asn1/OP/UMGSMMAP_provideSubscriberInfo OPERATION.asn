@@ -1,0 +1,9 @@
+provideSubscriberInfo OPERATION ::= { 
+ARGUMENT ProvideSubscriberInfoArg
+RESULT ProvideSubscriberInfoRes
+ERRORS {
+   dataMissing |
+   unexpectedDataValue}
+CODE local:70
+}
+

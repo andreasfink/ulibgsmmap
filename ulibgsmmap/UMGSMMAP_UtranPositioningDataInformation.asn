@@ -1,0 +1,2 @@
+UtranPositioningDataInfo ::= OCTET STRING (SIZE (3..maxUtranPositioningDataInfo))
+

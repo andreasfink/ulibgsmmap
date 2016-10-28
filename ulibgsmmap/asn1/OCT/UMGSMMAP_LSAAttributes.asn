@@ -1,0 +1,2 @@
+LSAAttributes ::= OCTET STRING (SIZE (1)) 
+

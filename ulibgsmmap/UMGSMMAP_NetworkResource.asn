@@ -1,0 +1,10 @@
+NetworkResource ::= ENUMERATED { 
+   plmn (0), 
+   hlr (1), 
+   vlr (2), 
+   pvlr (3), 
+   controllingMSC (4), 
+   vmsc (5), 
+   eir (6), 
+   rss (7)}
+

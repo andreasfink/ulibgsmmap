@@ -1,0 +1,50 @@
+PDP-ContextInfo ::= SEQUENCE {
+	pdp-ContextIdentifier	[0] IMPLICIT ContextId,
+	pdp-ContextActive       [1] IMPLICIT NULL		OPTIONAL,
+	pdp-Type                [2] IMPLICIT PDP-Type,
+	pdp-Address             [3] IMPLICIT PDP-Address	OPTIONAL,
+	apn-Subscribed          [4] IMPLICIT APN		OPTIONAL,
+	apn-InUse               [5] IMPLICIT APN		OPTIONAL,
+	nsapi                   [6] IMPLICIT NSAPI		OPTIONAL,
+	transactionId           [7] IMPLICIT TransactionId	OPTIONAL,
+	teid-ForGnAndGp         [8] IMPLICIT TEID		OPTIONAL,
+	teid-ForIu              [9] IMPLICIT TEID		OPTIONAL,
+	ggsn-Address            [10] IMPLICIT GSN-Address 	OPTIONAL,
+	qos-Subscribed          [11] IMPLICIT Ext-QoS-Subscribed	OPTIONAL,
+	qos-Requested           [12] IMPLICIT Ext-QoS-Subscribed	OPTIONAL,
+	qos-Negotiated          [13] IMPLICIT Ext-QoS-Subscribed	OPTIONAL,
+	chargingId              [14] IMPLICIT GPRSChargingID	OPTIONAL,
+	chargingCharacteristics	[15] IMPLICIT ChargingCharacteristics	OPTIONAL,
+	rnc-Address             [16] IMPLICIT GSN-Address	OPTIONAL,
+	extensionContainer      [17] IMPLICIT ExtensionContainer	OPTIONAL,
+	...,
+	qos2-Subscribed         [18] IMPLICIT Ext2-QoS-Subscribed	OPTIONAL,
+	-- qos2-Subscribed may be present only if qos-Subscribed is present.
+	qos2-Requested          [19] IMPLICIT Ext2-QoS-Subscribed	OPTIONAL,
+	-- qos2-Requested may be present only if qos-Requested is present.
+	qos2-Negotiated         [20] IMPLICIT Ext2-QoS-Subscribed	OPTIONAL,
+	-- qos2-Negotiated may be present only if qos-Negotiated is present.
+	qos3-Subscribed         [21] IMPLICIT Ext3-QoS-Subscribed	OPTIONAL,
+	-- qos3-Subscribed may be present only if qos2-Subscribed is present.
+	qos3-Requested          [22] IMPLICIT Ext3-QoS-Subscribed	OPTIONAL,
+	-- qos3-Requested may be present only if qos2-Requested is present.
+	qos3-Negotiated         [23] IMPLICIT Ext3-QoS-Subscribed	OPTIONAL,
+	-- qos3-Negotiated may be present only if qos2-Negotiated is present.
+	qos4-Subscribed         [25] IMPLICIT Ext4-QoS-Subscribed	OPTIONAL,
+	-- qos4-Subscribed may be present only if qos3-Subscribed is present.
+	qos4-Requested          [26] IMPLICIT Ext4-QoS-Subscribed	OPTIONAL,
+	-- qos4-Requested may be present only if qos3-Requested is present.
+	qos4-Negotiated         [27] IMPLICIT Ext4-QoS-Subscribed	OPTIONAL,
+	-- qos4-Negotiated may be present only if qos3-Negotiated is present. 
+	ext-pdp-Type            [28] IMPLICIT Ext-PDP-Type	OPTIONAL,
+	-- contains the value IPv4v6 defined in 3GPP TS 29.060 [105], if the PDP can be
+	-- accessed by dual-stack UEs.
+	ext-pdp-Address         [29] IMPLICIT PDP-Address	OPTIONAL
+	-- contains an additional IP address in case of dual-stack static IP address assignment
+	-- for the UE.
+	-- it may contain an IPv4 or an IPv6 address/prefix, and it may be present
+	-- only if pdp-Address is present; if both are present, each parameter shall
+	-- contain a different type of address (IPv4 or IPv6).
+
+}
+

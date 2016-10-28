@@ -1,0 +1,4 @@
+RoutingInfo ::= CHOICE { 
+   roamingNumber ISDN-AddressString, 
+   forwardingData ForwardingData}
+

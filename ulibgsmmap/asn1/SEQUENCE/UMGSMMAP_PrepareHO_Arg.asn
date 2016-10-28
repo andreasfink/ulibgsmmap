@@ -1,0 +1,6 @@
+PrepareHO-Arg ::= SEQUENCE {
+targetCellId GlobalCellId OPTIONAL,
+ho-NumberNotRequired NULL OPTIONAL,
+bss-APDU ExternalSignalInfo OPTIONAL,
+... }
+

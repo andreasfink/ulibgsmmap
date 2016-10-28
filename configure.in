@@ -1,0 +1,166 @@
+dnl /* ==================================================================== 
+dnl  * Project "ulibtcap"
+dnl  * (c) 2016 Andreas Fink AG
+dnl  * ==================================================================== 
+dnl  */ 
+dnl initialization
+
+AC_PREREQ([2.69])
+AC_INIT([ulibgsmmap],[1.0],[afink])
+dnl generic parameters
+COPYRIGHT="Copyright 2016 Andreas Fink"
+PROJECT_NAME="ulibgsmmap"
+AUTHOR="Andreas Fink <andreas@fink.org>"
+CONFIG_DEFINE="ULIBGSMMAP_CONFIG"
+VERSION=`head -n 1 VERSION`
+CONFIG_HEADER=ulibgsmmap_config.h
+DEPENDENT_PKGCONFIGS="ulibtcapi ulibasn1"
+PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+export PKG_CONFIG_PATH
+
+AC_SUBST(SHELL)
+AC_CONFIG_AUX_DIR(.)
+AC_SET_TERMINAL_SEQUENCES()
+AC_CONFIG_HEADER(${CONFIG_HEADER})
+AC_SUBST(COPYRIGHT)
+AC_SUBST(PROJECT_NAME)
+AC_SUBST(AUTHOR)
+AC_SUBST(CONFIG_DEFINE)
+AC_SUBST(CONFIG_HEADER)
+AC_SUBST(VERSION)
+
+dnl Set user who runs ./configure
+CUSER=`id -un`
+AC_SUBST(VERSION)
+AC_SUBST(CUSER)
+
+AC_CONFIG_SECTION([Configuring for $PROJECT_NAME version $VERSION])
+
+dnl Checks system type.
+AC_CONFIG_SECTION([Running system checks])
+AC_CANONICAL_HOST
+
+dnl Apply system specific rules.
+dnl Executable extension for systems that need one, i.e. Cygwin
+dnl Set the LIBTOOL to be used to create libs
+EXE_EXT=""
+LIBTOOL="ar rc"
+RANLIB="ranlib"
+LIBRARY_NAME=$PROJECT_NAME
+BUILD_DIR=.
+FRAMEWORKS="-framework ulib -framework ulibsctp -framework ulibm2pa -framework ulibmtp3 -framework ulibm3ua -framework ulibsccp -framework ulibtcap -ulibasn1"
+dnl Apply system specific rules.
+dnl Executable extension for systems that need one, i.e. Cygwin
+dnl Set the LIBTOOL to be used to create libs
+EXE_EXT=""
+LIBTOOL="ar rc"
+RANLIB="ranlib"
+case "$host" in
+  *apple-darwin*) 
+	ARCH="-arch x86_64"
+	OSX_DEVTOOL_DIR=`xcode-select -p`
+	CFLAGS="$CFLAGS -D_REENTRANT=1 -DDARWIN=1 ${ARCH}"
+	LDFLAGS="-framework CoreFoundation -framework IOKit -framework Security  -F /Library/Frameworks ${FRAMEWORK}"
+	LIBTOOL="libtool -static -o" 
+    ;;
+
+  *-linux-*)
+	CC=clang
+	CXX=clang++
+    CFLAGS="${CFLAGS} -DLINUX=1 -DHAVE_LIBSSL=1 -D_XOPEN_SOURCE=700 -D_BSD_SOURCE"
+	CFLAGS="${CFLAGS} -std=c99 -fPIC -DLINUX=1  -DSCTP_IN_KERNEL=1"
+	CFLAGS="${CFLAGS} -Wno-trigraphs  -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties"
+	CFLAGS="${CFLAGS} -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label"
+	CFLAGS="${CFLAGS} -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow"
+	CFLAGS="${CFLAGS} -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion"
+	CFLAGS="${CFLAGS} -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector"
+	CFLAGS="${CFLAGS} -Wno-deprecated-implementations -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion "
+	CFLAGS="${CFLAGS} -fasm-blocks -fblocks -fstrict-aliasing -fobjc-arc -fobjc-runtime=gnustep"
+	CFLAGS="${CFLAGS} -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0"
+	CFLAGS+=" -fpascal-strings"
+	if [[ -x /usr/local/bin/gnustep-config ]] 
+	then
+		CFLAGS="$CFLAGS `/usr/local/bin/gnustep-config --objc-flags | sed 's/-fobjc-exceptions/ /g'`"
+	    LDFLAGS="$LDFLAGS `/usr/local/bin/gnustep-config --base-libs --objc-libs`"
+    else
+		CFLAGS="$CFLAGS `/usr/bin/gnustep-config --objc-flags | sed 's/-fobjc-exceptions/ /g'`"
+	    LDFLAGS="$LDFLAGS `/usr/bin/gnustep-config--base-libs --objc-libs`"
+    fi
+	CFLAGS="$CFLAGS `pkg-config  --cflags $DEPENDENT_PKGCONFIGS`"
+	LDFLAGS="$LDFLAGS `pkg-config --libs $DEPENDENT_PKGCONFIGS`"
+	LDFLAGS="$LDFLAGS `xml2-config --libs`"
+    SHARED_LIBRARY_EXTENSION=so
+    SHARED_FLAGS="-shared"
+    ;;
+esac
+
+
+AC_SUBST(EXE_EXT)
+AC_SUBST(LIBTOOL)
+AC_SUBST(RANLIB)
+AC_ARG_WITH(cflags,
+[  --with-cflags=FLAGS     use FLAGS for CFLAGS],
+CFLAGS="$CFLAGS $withval")
+
+AC_ARG_WITH(libs,
+[  --with-libs=FLAGS       use FLAGS for extra libraries],
+LIBS="$LIBS $withval")
+
+
+dnl Checks for programs.
+
+AC_PROG_CC
+AC_PROG_INSTALL
+AC_PROG_RANLIB
+
+
+dnl Checks for libraries.
+dnl -------------------------------------
+AC_CONFIG_SECTION([Checking libraries])
+AC_CHECK_LIB(ulib, ulib_cpu_count)
+
+dnl Implement --enable-debug option.
+AC_ARG_ENABLE(debug,
+[  --enable-debug	  enable debugging configuration [disabled]], [
+	echo Using Debuging target
+	CFLAGS="$CFLAGS -g  -O0  -D${CONFIG_DEFINE}=Debug"
+	LDFLAGS="$LDFLAGS -g"
+	AC_DEFINE(WS_DEBUG)
+]
+,
+[
+	echo Using Release target
+	CFLAGS="$CFLAGS -Os -D${CONFIG_DEFINE}=Release"
+])
+
+dnl Outputing
+dnl -------------------------------------
+AC_CONFIG_SECTION([Generating output files]) 
+
+dnl Final Output
+AC_SUBST(CONFIGURATION)
+AC_SUBST(PROJECT_NAME)
+AC_CONFIG_SECTION([Generating output files]) 
+AC_CONFIG_FILES([Makefile.osx])
+AC_CONFIG_FILES([Makefile.linux])
+AC_CONFIG_FILES([ulibgsmmap.pc])
+AC_OUTPUT
+case "$host" in
+  *apple-darwin*) 
+    cp Makefile.osx Makefile
+    ;;
+  *-linux-*)
+    cp Makefile.linux Makefile
+    ;;
+esac
+
+dnl LICENSE notice
+
+AC_CONFIG_SECTION([License information])
+cat <<X
++--------------------------------------------------------------------
+| Project: ${PROJECT_NAME} ${VERSION}
+| ${COPYRIGHT}
++--------------------------------------------------------------------
+X
+

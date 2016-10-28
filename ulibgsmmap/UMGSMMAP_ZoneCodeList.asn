@@ -1,0 +1,2 @@
+ZoneCodeList ::= SEQUENCE SIZE (1..maxNumOfZoneCodes) OF ZoneCode 
+

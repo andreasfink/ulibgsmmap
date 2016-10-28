@@ -1,0 +1,8 @@
+ActivateTraceModeArg ::= SEQUENCE {
+   imsi [0] IMSI,
+   traceReference [1] TraceReference,
+   traceType [2] TraceType,
+   omc-Id [3]  AddressString OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

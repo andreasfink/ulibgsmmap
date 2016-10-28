@@ -1,0 +1,1 @@
+ChargingCharacteristics ::= OCTET STRING (SIZE (2))

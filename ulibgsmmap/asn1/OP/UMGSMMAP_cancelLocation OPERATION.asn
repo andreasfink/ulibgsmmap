@@ -1,0 +1,9 @@
+cancelLocation OPERATION ::= {
+ARGUMENT CancelLocationArg 
+RESULT CancelLocationRes
+ERRORS {
+   dataMissing |
+   unexpectedDataValue}
+CODElocal:3
+}
+

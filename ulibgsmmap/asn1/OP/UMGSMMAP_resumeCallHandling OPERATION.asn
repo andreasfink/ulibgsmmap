@@ -1,0 +1,11 @@
+resumeCallHandling OPERATION ::= {
+ARGUMENT ResumeCallHandlingArg
+RESULT ResumeCallHandlingRes 
+ERRORS {
+   forwardingFailed |
+   or-NotAllowed |
+   unexpectedDataValue |
+   dataMissing}
+CODE local:6
+}
+

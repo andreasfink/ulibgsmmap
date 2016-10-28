@@ -1,0 +1,6 @@
+SubscriberState ::= CHOICE { 
+   assumedIdle [0] IMPLICIT NULL,
+   camelBusy [1] IMPLICIT NULL,
+   netDetNotReachable NotReachableReason, 
+   notProvidedFromVLR [2] IMPLICIT NULL}
+

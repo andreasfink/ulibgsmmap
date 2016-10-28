@@ -1,0 +1,2 @@
+maxNumOfExternalClient INTEGER ::= 5
+

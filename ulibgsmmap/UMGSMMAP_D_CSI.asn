@@ -1,0 +1,8 @@
+D-CSI ::= SEQUENCE { 
+	dp-AnalysedInfoCriteriaList 	[0] DP-AnalysedInfoCriteriaList 	OPTIONAL,
+	camelCapabilityHandling 		[1] CamelCapabilityHandling	OPTIONAL,
+	extensionContainer 				[2] ExtensionContainer	OPTIONAL,
+	notificationToCSE 				[3] NULL	OPTIONAL,
+	csi-Active						[4] NULL	OPTIONAL,
+	...
+}

@@ -1,0 +1,4 @@
+HLR-Id ::= IMSI 
+-- leading digits of IMSI, i.e. (MCC, MNC, leading digits of 
+-- MSIN) forming HLR Id defined in TS GSM 03.03. 
+

@@ -1,0 +1,13 @@
+AnyTimeSubscriptionInterrogationRes ::= SEQUENCE {
+	callForwardingData 	[1] CallForwardingData	OPTIONAL,
+	callBarringData	[2] CallBarringData	OPTIONAL,
+	odb-Info	[3] ODB-Info	OPTIONAL,
+	camel-SubscriptionInfo	[4] CAMEL-SubscriptionInfo	OPTIONAL,
+	supportedVLR-CAMEL-Phases	[5] SupportedCamelPhases	OPTIONAL,
+	supportedSGSN-CAMEL-Phases	[6] SupportedCamelPhases	OPTIONAL,
+	extensionContainer	[7] ExtensionContainer	OPTIONAL,
+	... ,
+	offeredCamel4CSIsInVLR	[8] OfferedCamel4CSIs	OPTIONAL,
+	offeredCamel4CSIsInSGSN	[9] OfferedCamel4CSIs	OPTIONAL,
+	msisdn-BS-List	[10] MSISDN-BS-List	OPTIONAL
+}

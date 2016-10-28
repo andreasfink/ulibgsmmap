@@ -1,0 +1,2 @@
+VelocityEstimate ::= OCTET STRING (SIZE (4..7))
+

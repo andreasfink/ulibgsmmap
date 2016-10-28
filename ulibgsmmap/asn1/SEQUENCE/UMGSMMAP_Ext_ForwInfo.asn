@@ -1,0 +1,6 @@
+Ext-ForwInfo ::= SEQUENCE { 
+   ss-Code SS-Code, 
+   forwardingFeatureList Ext-ForwFeatureList, 
+   extensionContainer [0] ExtensionContainer OPTIONAL, 
+   ...}
+

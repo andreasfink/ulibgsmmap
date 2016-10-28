@@ -1,0 +1,6 @@
+PrepareSubsequentHO-Arg ::= SEQUENCE {
+targetCellId GlobalCellId,
+targetMSC-Number ISDN-AddressString,
+bss-APDU ExternalSignalInfo,
+... }
+

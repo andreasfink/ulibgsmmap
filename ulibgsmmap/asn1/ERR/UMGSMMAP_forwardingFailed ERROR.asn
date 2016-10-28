@@ -1,0 +1,5 @@
+forwardingFailed ERROR ::= {
+PARAMETER ForwardingFailedParam
+CODE local:47
+} 
+

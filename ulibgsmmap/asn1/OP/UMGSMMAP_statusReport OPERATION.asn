@@ -1,0 +1,11 @@
+statusReport OPERATION ::= {
+ARGUMENT StatusReportArg
+RESULT StatusReportRes
+ERRORS {
+   unknownSubscriber |
+   systemFailure |
+   unexpectedDataValue |
+   dataMissing}
+CODE local:74
+}
+

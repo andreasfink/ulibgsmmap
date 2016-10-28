@@ -1,0 +1,2 @@
+QoS-Subscribed ::= OCTET STRING (SIZE (3))
+

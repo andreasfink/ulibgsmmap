@@ -1,0 +1,6 @@
+MAP-RefuseInfo  ::= SEQUENCE { 
+	reason Reason,
+	...,
+	extensionContainer ExtensionContainer
+	alternativeApplicationContext OBJECT IDENTIFIER
+}

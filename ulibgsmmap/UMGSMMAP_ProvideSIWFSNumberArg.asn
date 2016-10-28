@@ -1,0 +1,11 @@
+ProvideSIWFSNumberArg ::= SEQUENCE {
+   gsm-BearerCapability [0] ExternalSignalInfo,
+   isdn-BearerCapability [1] ExternalSignalInfo,
+   call-Direction [2] CallDirection,
+   b-Subscriber-Address [3] ISDN-AddressString,
+   chosenChannel [4] ExternalSignalInfo,
+   lowerLayerCompatibility [5] ExternalSignalInfo OPTIONAL,
+   highLayerCompatibility [6] ExternalSignalInfo OPTIONAL,
+   extensionContainer [7] ExtensionContainer OPTIONAL,
+   ... }
+

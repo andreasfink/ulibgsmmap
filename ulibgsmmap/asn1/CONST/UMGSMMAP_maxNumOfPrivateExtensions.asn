@@ -1,0 +1,3 @@
+maxNumOfPrivateExtensions INTEGER ::= 10
+
+

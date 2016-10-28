@@ -1,0 +1,15 @@
+erase-SS OPERATION ::= {
+ARGUMENT Ss-ForBS
+RESULT Ss-Info
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   bearerServiceNotProvisioned |
+   teleserviceNotProvisioned |
+   callBarred |
+   illegalSS-Operation |
+   ss-ErrorStatus}
+CODE local:11
+}
+

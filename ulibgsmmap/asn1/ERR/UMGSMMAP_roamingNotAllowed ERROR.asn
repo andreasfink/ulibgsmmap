@@ -1,0 +1,5 @@
+roamingNotAllowed ERROR ::= {
+PARAMETER RoamingNotAllowedParam
+CODE local:8
+} 
+

@@ -1,0 +1,15 @@
+SubscriberLocationReport-Arg ::= SEQUENCE {
+   lcs-Event LCS-Event,
+   lcs-ClientID LCS-ClientID,
+   lcsLocationInfo LCSLocationInfo,
+   msisdn [0] ISDN-AddressString OPTIONAL,
+   imsi [1] IMSI OPTIONAL,
+   imei [2] IMEI OPTIONAL,
+   na-ESRD [3] ISDN-AddressString OPTIONAL,
+   na-ESRK [4] ISDN-AddressString OPTIONAL,
+   locationEstimate [5] Ext-GeographicalInformation OPTIONAL,
+   ageOfLocationEstimate [6] AgeOfLocationInformation OPTIONAL,
+   extensionContainer [7] ExtensionContainer OPTIONAL,
+   ...
+  }
+

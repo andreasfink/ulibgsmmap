@@ -1,0 +1,2 @@
+maxNameStringLength INTEGER ::= 63
+

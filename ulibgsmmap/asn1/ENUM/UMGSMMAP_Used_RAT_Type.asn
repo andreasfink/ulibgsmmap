@@ -1,0 +1,9 @@
+Used-RAT-Type::= ENUMERATED {
+	utran  (0),
+	geran  (1),
+	gan    (2),
+	i-hspa-evolution (3),
+	e-utran	(4),
+	...
+}
+

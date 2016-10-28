@@ -1,0 +1,6 @@
+SuppressMTSS ::= BIT STRING {
+	suppressCUG (0),
+	suppressCCBS (1) 
+} (SIZE (2..16)) 
+-- Other bits than listed above shall be discarded
+

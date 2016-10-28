@@ -1,0 +1,1 @@
+RouteingNumber ::= TBCD-STRING (SIZE (1..5))

@@ -1,0 +1,7 @@
+MG-CSI ::= SEQUENCE { mobilityTriggers MobilityTriggers,
+     serviceKey  ServiceKey,
+     gsmSCF-Address [0] ISDN-AddressString,
+     extensionContainer [1] ExtensionContainer OPTIONAL,
+     notificationToCSE [2] NULL OPTIONAL,
+     csi-Active [4] NULL OPTIONAL,
+...}

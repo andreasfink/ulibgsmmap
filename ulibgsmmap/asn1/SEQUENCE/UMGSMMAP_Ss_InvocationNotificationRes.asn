@@ -1,0 +1,4 @@
+Ss-InvocationNotificationRes ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+... }
+

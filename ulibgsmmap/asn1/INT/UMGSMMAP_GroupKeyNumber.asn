@@ -1,0 +1,2 @@
+GroupKeyNumber ::= INTEGER (0..15)
+

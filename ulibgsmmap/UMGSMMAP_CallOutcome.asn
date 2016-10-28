@@ -1,0 +1,10 @@
+CallOutcome ::= ENUMERATED { 
+   success (0), 
+   failure (1), 
+   busy (2), 
+   ...} 
+-- exception handling: 
+-- reception of values 3-10 shall be mapped to 'success' 
+-- reception of values 11-20 shall be mapped to 'failure' 
+-- reception of values > 20 shall be mapped to 'busy'
+

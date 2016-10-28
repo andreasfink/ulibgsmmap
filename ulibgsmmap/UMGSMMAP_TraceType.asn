@@ -1,0 +1,3 @@
+TraceType ::= INTEGER (0..255) 
+-- Trace types are fully defined in TS GSM 12.08.
+

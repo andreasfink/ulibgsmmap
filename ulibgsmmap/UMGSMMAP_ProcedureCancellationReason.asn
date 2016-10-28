@@ -1,0 +1,9 @@
+ProcedureCancellationReason ::= ENUMERATED {
+	 handoverCancellation (0), 
+	 radioChannelRelease (1),
+	networkPathRelease (2),
+	callRelease (3),
+	associatedProcedureFailure (4), 
+	tandemDialogueRelease (5),
+	remoteOperationsFailure (6)
+}

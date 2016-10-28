@@ -1,0 +1,6 @@
+CallForwardingData ::= SEQUENCE { 
+	forwardingFeatureList 	Ext-ForwFeatureList,
+	notificationToCSE		NULL	OPTIONAL,
+	extensionContainer		[0] ExtensionContainer OPTIONAL,
+	...
+}

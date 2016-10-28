@@ -1,0 +1,4 @@
+MAP-CloseInfo  ::= SEQUENCE { 
+	...,
+	extensionContainer ExtensionContainer OPTIONAL
+}

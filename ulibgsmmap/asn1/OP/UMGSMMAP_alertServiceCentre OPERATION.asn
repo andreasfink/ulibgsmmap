@@ -1,0 +1,9 @@
+alertServiceCentre OPERATION ::= {
+ARGUMENT AlertServiceCentreArg
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue}
+CODE local:64
+}
+

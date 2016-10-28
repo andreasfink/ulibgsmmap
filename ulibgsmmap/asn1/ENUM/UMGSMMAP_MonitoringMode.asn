@@ -1,0 +1,8 @@
+MonitoringMode ::= ENUMERATED { 
+   a-side (0), 
+   b-side (1), 
+   ...} 
+-- exception handling: 
+-- reception of values 2-10 shall be mapped 'a-side' 
+-- reception of values > 10 shall be mapped to 'b-side'
+

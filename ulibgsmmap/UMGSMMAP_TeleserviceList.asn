@@ -1,0 +1,2 @@
+TeleserviceList ::= SEQUENCE SIZE (1..maxNumOfTeleservices) OF Ext-TeleserviceCode 
+

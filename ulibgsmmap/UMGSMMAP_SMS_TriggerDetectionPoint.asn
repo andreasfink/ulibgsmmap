@@ -1,0 +1,4 @@
+SMS-TriggerDetectionPoint ::= ENUMERATED {
+	sms-CollectedInfo (1),
+	sms-DeliveryRequest (2)
+}

@@ -1,0 +1,1 @@
+ T-CauseValueCriteria ::= SEQUENCE SIZE(1..maxNumOfCAMEL-T-CauseValueCriteria) OF CauseValue

@@ -1,0 +1,7 @@
+NoteMsPresentForGprsArg ::= SEQUENCE {
+   imsi [0] IMSI,
+   sgsn-Address [1] GSN-Address,
+   ggsn-Address [2] GSN-Address OPTIONAL,
+   extensionContainer [3] ExtensionContainer OPTIONAL,
+   ... }
+

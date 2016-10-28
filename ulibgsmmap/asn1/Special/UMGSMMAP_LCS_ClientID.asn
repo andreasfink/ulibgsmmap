@@ -1,0 +1,8 @@
+LCS-ClientID ::= SEQUENCE { 
+   lcsClientType [0] LCSClientType, 
+   lcsClientExternalID [1] LCSClientExternalID OPTIONAL, 
+   lcsClientDialedByMS [2] AddressString OPTIONAL, 
+   lcsClientInternalID [3] LCSClientInternalID OPTIONAL, 
+   lcsClientName [4] LCSClientName OPTIONAL, 
+   ... }
+

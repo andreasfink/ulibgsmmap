@@ -1,0 +1,17 @@
+mt-forwardSM OPERATION ::= {
+ARGUMENT MT-ForwardSM-Arg
+RESULT MT-ForwardSM-Res
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   facilityNotSupported |
+   unidentifiedSubscriber |
+   illegalSubscriber |
+   illegalEquipment |
+   subscriberBusyForMT-SMS |
+   sm-DeliveryFailure | 
+   absentsubscriberSM}
+CODE local:44
+}
+

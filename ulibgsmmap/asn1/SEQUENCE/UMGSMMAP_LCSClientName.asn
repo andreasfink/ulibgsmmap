@@ -1,0 +1,9 @@
+LCSClientName ::= SEQUENCE { 
+   dataCodingScheme [0] USSD-DataCodingScheme, 
+   nameString [2] NameString, 
+   ...} 
+-- The USSD-DataCodingScheme shall indicate use of the default alphabet through the 3
+-- following encoding 
+-- bit 7 6 5 4 3 2 1 0 
+--     0 0 0 0 1 1 1 1 
+

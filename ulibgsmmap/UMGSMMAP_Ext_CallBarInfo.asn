@@ -1,0 +1,6 @@
+Ext-CallBarInfo ::= SEQUENCE { 
+   ss-Code SS-Code, 
+   callBarringFeatureList Ext-CallBarFeatureList, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...}
+

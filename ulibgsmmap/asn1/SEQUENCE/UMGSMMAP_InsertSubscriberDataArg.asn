@@ -1,0 +1,34 @@
+InsertSubscriberDataArg ::= SEQUENCE { 
+   imsi [0] IMSI OPTIONAL, 
+-- COMPONENTS OF SubscriberData, 
+      msisdn [1] ISDN-AddressString OPTIONAL, 
+   category [2] Category OPTIONAL, 
+   subscriberStatus [3] SubscriberStatus OPTIONAL, 
+   bearerServiceList [4] BearerServiceList OPTIONAL, 
+-- The exception handling for reception of unsupported / not allocated 
+-- bearerServiceCodes is defined in MAP section 6.8.1 
+   teleserviceList [6] TeleserviceList OPTIONAL, 
+-- The exception handling for reception of unsupported / not allocated 
+-- teleserviceCodes is defined in section 6.8.1 
+   provisionedSS [7] Ext-SS-InfoList OPTIONAL, 
+   odb-Data [8] ODB-Data OPTIONAL, 
+   roamingRestrictionDueToUnsupportedFeature [9] NULL OPTIONAL, 
+   regionalSubscriptionData [10] ZoneCodeList OPTIONAL, 
+   vbsSubscriptionData [11] VBSDataList OPTIONAL, 
+   vgcsSubscriptionData [12] VGCSDataList OPTIONAL, 
+   vlrCamelSubscriptionInfo [13] VlrCamelSubscriptionInfo OPTIONAL,
+--
+   extensionContainer [14] ExtensionContainer OPTIONAL, 
+   ... , 
+   naea-PreferredCI [15] NAEA-PreferredCI OPTIONAL, 
+-- naea-PreferredCI is included at the discretion of the HLR operator. 
+   gprsSubscriptionData [16] GPRSSubscriptionData OPTIONAL, 
+   roamingRestrictedInSgsnDueToUnsupportedFeature [23] NULL OPTIONAL, 
+   networkAccessMode [24] NetworkAccessMode OPTIONAL, 
+   lsaInformation [25] LSAInformation OPTIONAL, 
+   lmu-Indicator [21] NULL OPTIONAL, 
+   lcsInformation [22] LCSInformation OPTIONAL 
+} 
+-- If the Network Access Mode parameter is sent, it shall be present only in 310
+-- the first sequence if the seqmentation is used
+

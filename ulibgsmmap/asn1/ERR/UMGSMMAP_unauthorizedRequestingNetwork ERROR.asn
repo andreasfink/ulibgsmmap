@@ -1,0 +1,5 @@
+unauthorizedRequestingNetwork ERROR ::= {
+PARAMETER UnauthorizedRequestingNetwork-Param
+CODE local:52
+} 
+

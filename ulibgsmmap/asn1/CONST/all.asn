@@ -1,0 +1,69 @@
+maxAddressLength INTEGER ::= 20
+maxEventSpecification INTEGER ::= 2
+
+maxExt-GeographicalInformation INTEGER ::= 20 
+-- the maximum length allows for further shapes in GSM 03.32 to be included in later versions 
+-- of GSM 09.02
+
+maxISDN-AddressLength INTEGER ::= 9
+maxISDN-SubaddressLength INTEGER ::= 21
+
+maxNameStringLength INTEGER ::= 63
+
+maxNumOfBasicServiceGroups INTEGER ::= 13
+
+maxNumOfBasicServices INTEGER ::= 70
+
+maxNumOfBearerServices INTEGER ::= 50
+
+maxNumOfCCBS-Requests INTEGER ::= 5
+
+maxNumOfCUG INTEGER ::= 10
+
+maxNumOfCamelBasicServiceCriteria INTEGER ::= 5
+
+maxNumOfCamelDestinationNumberLengths INTEGER ::= 3
+
+maxNumOfCamelDestinationNumbers INTEGER ::= 10
+
+maxNumOfCamelSSEvents INTEGER ::= 10
+
+maxNumOfCamelTDPData INTEGER ::= 10
+
+maxNumOfExt-BasicServiceGroups INTEGER ::= 32
+
+maxNumOfExternalClient INTEGER ::= 5
+
+maxNumOfGMLC INTEGER ::= 5
+
+maxNumOfHLR-Id INTEGER ::= 50
+
+maxNumOfISDN-AddressDigits INTEGER ::= 15
+
+maxNumOfLSAs INTEGER ::= 20
+
+maxNumOfMOLR-Class INTEGER ::= 3 
+
+maxNumOfPDP-Contexts INTEGER ::= 50 
+
+maxNumOfPLMNClient INTEGER ::= 5
+
+maxNumOfPrivacyClass INTEGER ::= 4
+
+maxNumOfPrivateExtensions INTEGER ::= 10
+
+
+maxNumOfSS INTEGER ::= 30
+
+maxNumOfTeleservices INTEGER ::= 20
+
+maxNumOfVBSGroupIds INTEGER ::= 50
+
+maxNumOfVGCSGroupIds INTEGER ::= 50
+
+maxNumOfZoneCodes INTEGER ::= 10
+
+maxSignalInfoLength INTEGER ::= 200
+
+maxUSSD-StringLength INTEGER ::= 160
+

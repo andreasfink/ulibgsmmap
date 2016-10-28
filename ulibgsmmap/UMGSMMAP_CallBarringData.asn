@@ -1,0 +1,8 @@
+CallBarringData ::= SEQUENCE { 
+	callBarringFeatureList 		Ext-CallBarFeatureList,
+	password 					Password  OPTIONAL,
+	wrongPasswordAttemptsCounter 	WrongPasswordAttemptsCounter  OPTIONAL,
+	notificationToCSE 				NULL OPTIONAL,
+	extensionContainer				ExtensionContainer	OPTIONAL,
+	...
+}

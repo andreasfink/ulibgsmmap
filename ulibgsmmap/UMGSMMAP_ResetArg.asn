@@ -1,0 +1,5 @@
+ResetArg ::= SEQUENCE {
+   hlr-Number ISDN-AddressString,
+   hlr-List HLR-List OPTIONAL,
+   ... }
+

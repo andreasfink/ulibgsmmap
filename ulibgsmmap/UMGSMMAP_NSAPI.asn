@@ -1,0 +1,1 @@
+NSAPI ::= INTEGER ( 0 .. 15 )

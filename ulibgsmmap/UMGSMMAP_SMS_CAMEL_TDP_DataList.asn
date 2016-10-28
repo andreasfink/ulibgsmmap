@@ -1,0 +1,1 @@
+SMS-CAMEL-TDP-DataList ::= SEQUENCE SIZE (1..maxNumOfCamelTDPData) OF SMS-CAMEL-TDP-Data

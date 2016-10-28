@@ -1,0 +1,4 @@
+Or-NotAllowedParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

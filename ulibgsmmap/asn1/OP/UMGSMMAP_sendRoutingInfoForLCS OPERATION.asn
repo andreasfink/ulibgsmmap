@@ -1,0 +1,14 @@
+sendRoutingInfoForLCS OPERATION ::= {
+ARGUMENT RoutingInfoForLCS-Arg
+RESULT RoutingInfoForLCS-Res
+ERRORS {
+   systemFailure | 
+   dataMissing |
+   unexpectedDataValue |
+   facilityNotSupported |
+   unknownSubscriber |
+   absentSubscriber |
+   unauthorizedRequestingNetwork}
+CODE local:85
+}
+

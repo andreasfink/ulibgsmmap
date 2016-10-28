@@ -1,0 +1,2 @@
+O-BcsmCamelTDPCriteriaList ::= SEQUENCE SIZE (1..maxNumOfCamelTDPData) OF O-BcsmCamelTDP-Criteria
+

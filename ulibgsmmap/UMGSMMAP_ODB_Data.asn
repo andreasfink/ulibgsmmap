@@ -1,0 +1,6 @@
+ODB-Data ::= SEQUENCE { 
+   odb-GeneralData ODB-GeneralData, 
+   odb-HPLMN-Data ODB-HPLMN-Data OPTIONAL, 
+   extensionContainer ExtensionContainer OPTIONAL, 
+   ...}
+

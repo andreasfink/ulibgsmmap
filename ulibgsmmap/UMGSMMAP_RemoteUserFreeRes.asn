@@ -1,0 +1,5 @@
+RemoteUserFreeRes ::= SEQUENCE {
+   ruf-Outcome [0] RUF-Outcome,
+   extensionContainer [1] ExtensionContainer OPTIONAL,
+   ... }
+

@@ -1,0 +1,15 @@
+UpdateLocationArg ::= SEQUENCE {
+	imsi IMSI,
+	msc-Number [1] ISDN-AddressString,
+	vlr-Number ISDN-AddressString,
+	lmsi [10] LMSI OPTIONAL,
+	extensionContainer ExtensionContainer OPTIONAL,
+	... ,
+	vlr-Capability [6] VLR-Capability OPTIONAL
+}
+
+UpdateLocationRes ::= SEQUENCE {
+	hlr-Number ISDN-AddressString,
+	extensionContainer ExtensionContainer OPTIONAL,
+... }
+

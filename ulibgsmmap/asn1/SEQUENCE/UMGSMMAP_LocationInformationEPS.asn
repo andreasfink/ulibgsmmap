@@ -1,0 +1,14 @@
+LocationInformationEPS ::= SEQUENCE {
+	e-utranCellGlobalIdentity	[0] IMPLICIT E-UTRAN-CGI		OPTIONAL,
+	trackingAreaIdentity        [1] IMPLICIT TA-Id		OPTIONAL,
+	extensionContainer          [2] IMPLICIT ExtensionContainer		OPTIONAL,
+	geographicalInformation     [3] IMPLICIT GeographicalInformation		OPTIONAL,
+	geodeticInformation         [4] IMPLICIT GeodeticInformation		OPTIONAL,
+	currentLocationRetrieved	[5] IMPLICIT NULL			OPTIONAL,
+	ageOfLocationInformation	[6] IMPLICIT AgeOfLocationInformation		OPTIONAL,
+	...,
+	mme-Name                    [7] IMPLICIT DiameterIdentity		OPTIONAL
+}
+-- currentLocationRetrieved shall be present if the location information
+-- was retrieved after successful paging.
+

@@ -1,0 +1,4 @@
+ResourceLimitationParam ::= SEQUENCE {
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... }
+

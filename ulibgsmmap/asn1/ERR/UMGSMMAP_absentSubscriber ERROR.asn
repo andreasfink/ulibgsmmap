@@ -1,0 +1,5 @@
+absentSubscriber ERROR ::= {
+PARAMETER AbsentSubscriberParam
+CODE local:27
+} 
+

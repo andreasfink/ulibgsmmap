@@ -1,0 +1,7 @@
+LSAData ::= SEQUENCE { 
+   lsaIdentity [0] LSAIdentity, 
+   lsaAttributes [1] LSAAttributes, 
+   lsaActiveModeIndicator [2] NULL OPTIONAL, 
+   extensionContainer [3] ExtensionContainer OPTIONAL, 
+   ...}
+

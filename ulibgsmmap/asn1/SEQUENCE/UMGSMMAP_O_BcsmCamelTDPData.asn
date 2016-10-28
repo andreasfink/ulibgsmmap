@@ -1,0 +1,9 @@
+O-BcsmCamelTDPData ::= SEQUENCE { 
+   o-BcsmTriggerDetectionPoint O-BcsmTriggerDetectionPoint, 
+   serviceKey ServiceKey, 
+   gsmSCF-Address [0] ISDN-AddressString, 
+   defaultCallHandling [1] DefaultCallHandling, 
+   extensionContainer [2] ExtensionContainer OPTIONAL, 
+   ... 
+}
+

@@ -1,0 +1,1 @@
+  T-BCSM-CAMEL-TDP-CriteriaList ::= SEQUENCE SIZE (1..maxNumOfCamelTDPData) OF T-BCSM-CAMEL-TDP-Criteria

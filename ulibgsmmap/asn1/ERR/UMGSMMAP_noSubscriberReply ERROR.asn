@@ -1,0 +1,5 @@
+noSubscriberReply ERROR ::= {
+PARAMETER NoSubscriberReplyParam
+CODE local:46
+} 
+

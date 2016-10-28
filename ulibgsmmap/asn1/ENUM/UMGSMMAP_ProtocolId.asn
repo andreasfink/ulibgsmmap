@@ -1,0 +1,6 @@
+ProtocolId ::= ENUMERATED {
+   gsm-0408 ( 1 ),
+   gsm-0806 ( 2 ),
+   gsm-BSSMAP ( 3 ),
+   ets-300102-1 ( 4 ) }
+

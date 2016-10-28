@@ -1,0 +1,11 @@
+noteMsPresentForGprs OPERATION ::= { 
+ARGUMENT NoteMsPresentForGprsArg
+RESULT NoteMsPresentForGprsRes
+ERRORS {
+   systemFailure |
+   dataMissing |
+   unexpectedDataValue |
+   unknownSubscriber}
+CODE local:26
+}
+

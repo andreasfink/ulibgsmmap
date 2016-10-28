@@ -1,0 +1,10 @@
+insertSubscriberData OPERATION ::= {
+ARGUMENT InsertSubscriberDataArg 
+RESULT InsertSubscriberDataRes
+ERRORS {
+   dataMissing |
+   unexpectedDataValue |
+   unidentifiedSubscriber}
+CODE local:7
+}
+

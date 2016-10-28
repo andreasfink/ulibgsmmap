@@ -1,0 +1,8 @@
+UpdateGprsLocationArg ::= SEQUENCE {
+   imsi IMSI,
+   sgsn-Number ISDN-AddressString,
+   sgsn-Address GSN-Address,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... ,
+   sgsn-Capability [0] SGSN-Capability OPTIONAL}
+

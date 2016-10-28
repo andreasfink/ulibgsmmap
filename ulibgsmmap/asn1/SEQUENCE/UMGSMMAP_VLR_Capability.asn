@@ -1,0 +1,6 @@
+VLR-Capability ::= SEQUENCE {
+   supportedCamelPhases [0] SupportedCamelPhases OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... ,
+   solsaSupportIndicator [2] NULL OPTIONAL}
+

@@ -1,0 +1,6 @@
+AbsentSubscriberSM-Param ::= SEQUENCE {
+   absentSubscriberDiagnosticSM AbsentSubscriberDiagnosticSM OPTIONAL,
+   extensionContainer ExtensionContainer OPTIONAL,
+   ... ,
+   additionalAbsentSubscriberDiagnosticSM [0] AbsentSubscriberDiagnosticSM OPTIONAL}
+

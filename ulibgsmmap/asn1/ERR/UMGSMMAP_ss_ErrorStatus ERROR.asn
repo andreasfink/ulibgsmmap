@@ -1,0 +1,5 @@
+ss-ErrorStatus ERROR ::= {
+PARAMETER SS-Status
+CODE local:17 
+}
+

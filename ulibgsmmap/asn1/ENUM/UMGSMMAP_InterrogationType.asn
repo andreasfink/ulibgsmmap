@@ -1,0 +1,4 @@
+InterrogationType ::= ENUMERATED { 
+   basicCall (0), 
+   forwarding (1)}
+

@@ -1,0 +1,8 @@
+GPRSSubscriptionData ::= SEQUENCE { 
+   completeDataListIncluded NULL OPTIONAL, 
+-- If segmentation is used, completeDataListIncluded may only be present in the 354
+-- first segment. 
+   gprsDataList [1] GPRSDataList, 
+   extensionContainer [2] ExtensionContainer OPTIONAL, 
+   ...}
+

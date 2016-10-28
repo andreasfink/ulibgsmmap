@@ -1,0 +1,8 @@
+AnyTimeInterrogationArg ::= SEQUENCE {
+  subscriberIdentity   [0] EXPLICIT SubscriberIdentity,
+  requestedInfo        [1] IMPLICIT RequestedInfo,
+  gsmSCF-Address       [3] IMPLICIT OCTET STRING ( SIZE( 1 .. 20 ) ) ( SIZE( 1 .. 9 ) ),
+  extensionContainer   [2] IMPLICIT ExtensionContainer OPTIONAL,
+  ... }
+
+

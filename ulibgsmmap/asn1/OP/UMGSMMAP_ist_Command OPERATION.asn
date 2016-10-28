@@ -1,0 +1,13 @@
+ist-Command OPERATION ::= {
+	ARGUMENT IST-CommandArg
+	RESULT IST-CommandRes
+	ERRORS {
+		unexpectedDataValue | 
+		resourceLimitation | 
+		unknownSubscriber | 
+		systemFailure | 
+		facilityNotSupported
+	}
+	CODE local:88
+}
+

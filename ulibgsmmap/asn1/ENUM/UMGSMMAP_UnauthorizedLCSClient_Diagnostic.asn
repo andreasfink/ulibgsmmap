@@ -1,0 +1,8 @@
+UnauthorizedLCSClient-Diagnostic ::= ENUMERATED { 
+   noAdditionalInformation (0), 
+   clientNotInMSPrivacyExceptionList (1), 
+   callToClientNotSetup (2), 
+   privacyOverrideNotApplicable (3), 
+   disallowedByLocalRegulatoryRequirements (4), 
+   ... }
+

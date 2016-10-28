@@ -1,0 +1,12 @@
+authenticationFailureReport OPERATION  ::=  {
+	ARGUMENT AuthenticationFailureReportArg
+	RESULT AuthenticationFailureReportRes
+	ERRORS {
+		systemFailure | 
+		unexpectedDataValue | 
+		unknownSubscriber
+	}
+	CODE local:15
+}
+
+

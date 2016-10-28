@@ -1,0 +1,5 @@
+ss-Incompatibility ERROR ::= {
+PARAMETER Ss-IncompatibilityCause
+CODE local:20
+} 
+

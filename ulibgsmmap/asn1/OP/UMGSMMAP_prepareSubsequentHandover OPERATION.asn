@@ -1,0 +1,11 @@
+prepareSubsequentHandover OPERATION ::= {
+ARGUMENT PrepareSubsequentHO-Arg
+RESULT ExternalSignalInfo
+ERRORS {
+   unexpectedDataValue |
+   dataMissing |
+   unknownMSC |
+   subsequentHandoverFailure}
+CODE local:69
+}
+

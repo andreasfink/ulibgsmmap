@@ -1,0 +1,5 @@
+ResponseTime ::= SEQUENCE { 
+   responseTimeCategory ResponseTimeCategory, 
+   ...} 
+-- note: an expandable SEQUENCE simplifies later addition of a numeric response time. 
+

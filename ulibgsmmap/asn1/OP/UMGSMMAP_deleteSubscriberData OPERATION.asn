@@ -1,0 +1,10 @@
+deleteSubscriberData OPERATION ::= {
+ARGUMENT DeleteSubscriberDataArg
+RESULT DeleteSubscriberDataRes
+ERRORS {
+   dataMissing |
+   unexpectedDataValue |
+   unidentifiedSubscriber}
+CODE local:8
+}
+

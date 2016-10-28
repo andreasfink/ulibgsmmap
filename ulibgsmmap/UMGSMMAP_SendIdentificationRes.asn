@@ -1,0 +1,7 @@
+SendIdentificationRes ::= SEQUENCE {
+	imsi                     IMSI OPTIONAL, 
+	authenticationSetList    AuthenticationSetList OPTIONAL,
+	currentSecurityContext   [2] CurrentSecurityContext,
+	extensionContainer       [3] ExtensionContainer OPTIONAL, 
+... }
+

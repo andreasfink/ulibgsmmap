@@ -1,0 +1,6 @@
+ProvideSubscriberLocation-Res ::= SEQUENCE {
+   locationEstimate Ext-GeographicalInformation,
+   ageOfLocationEstimate [0] AgeOfLocationInformation,
+   extensionContainer [1] ExtensionContainer OPTIONAL,
+   ... }
+

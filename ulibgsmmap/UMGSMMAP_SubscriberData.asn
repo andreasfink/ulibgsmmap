@@ -1,0 +1,19 @@
+SubscriberData ::= SEQUENCE { 
+   msisdn [1] ISDN-AddressString OPTIONAL, 
+   category [2] Category OPTIONAL, 
+   subscriberStatus [3] SubscriberStatus OPTIONAL, 
+   bearerServiceList [4] BearerServiceList OPTIONAL, 
+-- The exception handling for reception of unsupported / not allocated 
+-- bearerServiceCodes is defined in MAP section 6.8.1 
+   teleserviceList [6] TeleserviceList OPTIONAL, 
+-- The exception handling for reception of unsupported / not allocated 
+-- teleserviceCodes is defined in section 6.8.1 
+   provisionedSS [7] Ext-SS-InfoList OPTIONAL, 
+   odb-Data [8] ODB-Data OPTIONAL, 
+   roamingRestrictionDueToUnsupportedFeature [9] NULL OPTIONAL, 
+   regionalSubscriptionData [10] ZoneCodeList OPTIONAL, 
+   vbsSubscriptionData [11] VBSDataList OPTIONAL, 
+   vgcsSubscriptionData [12] VGCSDataList OPTIONAL, 
+   vlrCamelSubscriptionInfo [13] VlrCamelSubscriptionInfo OPTIONAL 
+}
+

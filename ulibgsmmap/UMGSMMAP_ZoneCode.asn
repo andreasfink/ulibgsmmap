@@ -1,0 +1,3 @@
+ZoneCode ::= OCTET STRING (SIZE (2)) 
+-- internal structure is defined in TS GSM 03.03
+

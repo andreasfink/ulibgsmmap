@@ -1,0 +1,8 @@
+CUG-Subscription ::= SEQUENCE { 
+   cug-Index CUG-Index, 
+   cug-Interlock CUG-Interlock, 
+   intraCUG-Options IntraCUG-Options, 
+   basicServiceGroupList Ext-BasicServiceGroupList OPTIONAL, 
+   extensionContainer [0] ExtensionContainer OPTIONAL, 
+   ...} 
+

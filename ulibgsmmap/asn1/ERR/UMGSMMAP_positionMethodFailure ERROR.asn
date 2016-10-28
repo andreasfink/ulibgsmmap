@@ -1,0 +1,5 @@
+positionMethodFailure ERROR ::= {
+PARAMETER PositionMethodFailure-Param
+CODE local:54
+} 
+

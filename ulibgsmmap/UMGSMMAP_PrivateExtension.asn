@@ -1,0 +1,6 @@
+PrivateExtension ::= SEQUENCE { ... }
+--  extId MAP-EXTENSION.&extensionId
+--  ({ExtensionSet}),
+--  extType MAP-EXTENSION.&ExtensionType
+--  ({ExtensionSet}{@extId}) OPTIONAL}
+

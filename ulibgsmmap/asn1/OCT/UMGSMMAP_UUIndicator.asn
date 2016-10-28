@@ -1,0 +1,3 @@
+UUIndicator ::= OCTET STRING (SIZE (1)) 
+-- Octets are coded according to ETS 300 356 
+

@@ -1,0 +1,6 @@
+Ss-IncompatibilityCause ::= SEQUENCE {
+   ss-Code [1] SS-Code OPTIONAL,
+   basicService BasicServiceCode OPTIONAL,
+   ss-Status [4] SS-Status OPTIONAL,
+   ... }
+

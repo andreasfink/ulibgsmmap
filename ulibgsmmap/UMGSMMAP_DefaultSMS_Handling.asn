@@ -1,0 +1,4 @@
+DefaultSMS-Handling ::= ENUMERATED { 
+	continueTransaction (0) , 
+	releaseTransaction (1) 
+}

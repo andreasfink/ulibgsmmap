@@ -1,0 +1,6 @@
+RoutingInfoForLCS-Res ::= SEQUENCE {
+   targetMS [0] SubscriberIdentity,
+   lcsLocationInfo [1] LCSLocationInfo,
+   extensionContainer [2] ExtensionContainer OPTIONAL,
+   ... }
+
