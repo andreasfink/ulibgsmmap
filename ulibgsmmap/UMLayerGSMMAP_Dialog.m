@@ -58,9 +58,9 @@
 
 - (int64_t)nextInvokeId
 {
-    lastInvokeId = lastInvokeId +1;
-    lastInvokeId = lastInvokeId % 0xFF;
-    return lastInvokeId;
+    int64_t inv = lastInvokeId;
+    lastInvokeId = lastInvokeId+1 % 0xFF;
+    return inv;
 }
 
 - (NSString *)getNewUserDialogId
