@@ -157,6 +157,8 @@
 @optional
 -(void) MAP_InsertSubscriberData:GSMMAP_INVOKE_INDICATION_PARAMETERS;
 -(void) MAP_CancelLocation:GSMMAP_INVOKE_INDICATION_PARAMETERS;
+-(void) MAP_UnstructuredSS_Request:GSMMAP_INVOKE_INDICATION_PARAMETERS;
+-(void) MAP_UnstructuredSS_Notify:GSMMAP_INVOKE_INDICATION_PARAMETERS;
 
 #pragma mark -
 #pragma mark helper methods
