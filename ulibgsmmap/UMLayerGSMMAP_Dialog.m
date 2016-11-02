@@ -46,7 +46,7 @@
     self = [super init];
     if(self)
     {
-        lastInvokeId = 0;
+        lastInvokeId = -1;
         pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
         timeoutValue = 90;
         createdDate = [NSDate dateWithTimeIntervalSinceNow:0];
@@ -58,8 +58,8 @@
 
 - (int64_t)nextInvokeId
 {
-    int64_t inv = lastInvokeId;
-    lastInvokeId = lastInvokeId+1 % 0xFF;
+    int64_t inv = ++lastInvokeId % 0xFF;
+    lastInvokeId = inv;
     return inv;
 }
 
