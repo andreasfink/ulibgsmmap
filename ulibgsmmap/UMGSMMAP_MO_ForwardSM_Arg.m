@@ -60,22 +60,26 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if(o) /* implicit mandatory field of type UMGSMMAP_SM_RP_DA */
 	{
-		sm_RP_DA = [[UMGSMMAP_SM_RP_DA alloc]initWithASN1Object:o context:context encoding:UMASN1EncodingType_implicitlyEncoded];
+        UMASN1Object *o2 = [o getObjectAtPosition:0];
+		sm_RP_DA = [[UMGSMMAP_SM_RP_DA alloc]initWithASN1Object:o2 context:context encoding:UMASN1EncodingType_implicitlyEncoded];
 		o = [self getObjectAtPosition:p++];
 	}
 	if(o) /* implicit mandatory field of type UMGSMMAP_SM_RP_OA */
 	{
-		sm_RP_OA = [[UMGSMMAP_SM_RP_OA alloc]initWithASN1Object:o context:context encoding:UMASN1EncodingType_implicitlyEncoded];
+        UMASN1Object *o2 = [o getObjectAtPosition:0];
+		sm_RP_OA = [[UMGSMMAP_SM_RP_OA alloc]initWithASN1Object:o2 context:context encoding:UMASN1EncodingType_implicitlyEncoded];
 		o = [self getObjectAtPosition:p++];
 	}
 	if(o) /* implicit mandatory field of type UMGSMMAP_SignalInfo */
 	{
-		sm_RP_UI = [[UMGSMMAP_SignalInfo alloc]initWithASN1Object:o context:context encoding:UMASN1EncodingType_implicitlyEncoded];
+        UMASN1Object *o2 = [o getObjectAtPosition:0];
+		sm_RP_UI = [[UMGSMMAP_SignalInfo alloc]initWithASN1Object:o2 context:context encoding:UMASN1EncodingType_implicitlyEncoded];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && ([UMGSMMAP_ExtensionContainer tagMatch:o.asn1_tag])) /* implicit optional field of type UMGSMMAP_ExtensionContainer */
 	{
-		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context encoding:UMASN1EncodingType_implicitlyEncoded];
+        UMASN1Object *o2 = [o getObjectAtPosition:0];
+		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o2 context:context encoding:UMASN1EncodingType_implicitlyEncoded];
 		o = [self getObjectAtPosition:p++];
 	}
 	while(o)

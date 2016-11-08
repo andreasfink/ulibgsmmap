@@ -55,7 +55,8 @@
 - (UMGSMMAP_MT_ForwardSM_Arg *) processAfterDecodeWithContext:(id)context
 {
 	int p=0;
-	UMASN1Object *o = [self getObjectAtPosition:p++];
+    UMASN1Object *o = [self getObjectAtPosition:p++];
+    
 	if(o)
 	{
 		sm_RP_DA = [[UMGSMMAP_SM_RP_DA alloc]initWithASN1Object:o context:context];
@@ -78,7 +79,8 @@
 	}
 	if(o)
 	{
-		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
+        UMASN1Object *o2 = [o getObjectAtPosition:0];
+		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o2 context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	while(o)

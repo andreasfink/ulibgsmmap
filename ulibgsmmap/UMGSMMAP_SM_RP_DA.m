@@ -152,7 +152,7 @@
 - (UMGSMMAP_SM_RP_DA *) processAfterDecodeWithContext:(id)context
 {
 	int p=0;
-	UMASN1Object *o;
+    UMASN1Object *o;
 	BOOL isImplicit = YES;
 	if(encodingType == UMASN1EncodingType_implicitlyEncoded)
 	{
@@ -177,12 +177,12 @@
 	}
 	if(isImplicit)
 	{
-		o = [self getObjectAtPosition:p++];
+        o = [self getObjectAtPosition:p++];
 	}
 	else
 	{
-		o = self;
-	}
+        o = self;
+    }
 	
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{

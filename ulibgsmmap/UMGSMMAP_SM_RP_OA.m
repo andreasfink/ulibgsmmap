@@ -127,7 +127,7 @@
 - (UMGSMMAP_SM_RP_OA *) processAfterDecodeWithContext:(id)context
 {
 	int p=0;
-	UMASN1Object *o;
+    UMASN1Object *o;
 	BOOL isImplicit = YES;
 	if(encodingType == UMASN1EncodingType_implicitlyEncoded)
 	{
@@ -161,11 +161,13 @@
 	
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
+        UMASN1Object *o2 = [o getObjectAtPosition:0];
+		msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o2 context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		serviceCentreAddressOA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+        UMASN1Object *o2 = [o getObjectAtPosition:0];
+        serviceCentreAddressOA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o2 context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 5) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
