@@ -337,8 +337,8 @@
                               userDialogId:userDialogId
                                    variant:self.variant
                                       user:self
-                            callingAddress:callingAddress
-                             calledAddress:calledAddress
+                            callingAddress:src
+                             calledAddress:dst
                         applicationContext: (dialogResponseRequired ? applicationContext : NULL)
                                   userInfo:NULL
                                 components:components

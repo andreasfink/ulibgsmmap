@@ -65,6 +65,8 @@
     {
         dialog = [self getNewDialogForUser:user];
     }
+    
+    dialog.applicationContext = appContext;
     NSLog(@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId);
     [dialog MAP_Open_Ind_forUser:user
                             tcap:tcapLayer
@@ -94,6 +96,10 @@
                      userInfo:xuserInfo
                 transactionId:localTransactionId
           remoteTransactionId:remoteTransactionId];
+    if(components.count==0)
+    {
+        [dialog MAP_Delimiter_Req:options];
+    }
 }
 
 - (void)tcapContinueIndication:(NSString *)dialogId
