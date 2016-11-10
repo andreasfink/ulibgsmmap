@@ -328,33 +328,50 @@
         }
         if(openEstablished==NO)
         {
+            UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
+            if(dialogRequestRequired)
+            {
+                itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
+                itu_dialoguePortion.dialogRequest = [[UMTCAP_asn1_AARQ_apdu alloc]init];
+                itu_dialoguePortion.dialogRequest.protocolVersion = dialogProtocolVersion;
+                itu_dialoguePortion.dialogRequest.objectIdentifier = applicationContext;
+                itu_dialoguePortion.dialogRequest.user_information = userInfo;
+            }
+
             [tcapLayer tcapBeginRequest:tcapTransactionId
                            userDialogId:userDialogId
                                 variant:self.variant
                                    user:self
                          callingAddress:src
                           calledAddress:dst
-                     applicationContext:applicationContext
-                               userInfo:userInfo
-                  dialogProtocolVersion:dialogProtocolVersion
+                        dialoguePortion:itu_dialoguePortion
                              components:components
                                 options:xoptions];
             openEstablished = YES;
+            dialogRequestRequired = NO;
             dialogResponseRequired = NO;
         }
         else
         {
+            UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
+            if(dialogResponseRequired)
+            {
+                itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
+                itu_dialoguePortion.dialogResponse = [[UMTCAP_asn1_AARE_apdu alloc]init];
+                itu_dialoguePortion.dialogResponse.protocolVersion = dialogProtocolVersion;
+                itu_dialoguePortion.dialogResponse.objectIdentifier = applicationContext;
+                itu_dialoguePortion.dialogResponse.user_information = userInfo;
+            }
             [tcapLayer tcapContinueRequest:tcapTransactionId
                               userDialogId:userDialogId
                                    variant:self.variant
                                       user:self
                             callingAddress:src
                              calledAddress:dst
-                        applicationContext: (dialogResponseRequired ? applicationContext : NULL)
-                                  userInfo:NULL
-                     dialogProtocolVersion:dialogProtocolVersion
+                           dialoguePortion:itu_dialoguePortion
                                 components:components
                                    options:xoptions];
+            dialogRequestRequired = NO;
             dialogResponseRequired = NO;
         }
     }
@@ -393,18 +410,26 @@
     NSMutableArray *components  = [pendingOutgoingComponents mutableCopy];
     pendingOutgoingComponents   = [[UMSynchronizedArray alloc] init];
 
+    UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
+    if(dialogResponseRequired)
+    {
+        itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
+        itu_dialoguePortion.dialogResponse = [[UMTCAP_asn1_AARE_apdu alloc]init];
+        itu_dialoguePortion.dialogResponse.protocolVersion = dialogProtocolVersion;
+        itu_dialoguePortion.dialogResponse.objectIdentifier = applicationContext;
+        itu_dialoguePortion.dialogResponse.user_information = userInfo;
+    }
     [tcapLayer tcapEndRequest:tcapTransactionId
                  userDialogId:userDialogId
                       variant:self.variant
                          user:self
                callingAddress:src
                 calledAddress:dst
-           applicationContext: (dialogResponseRequired ? applicationContext : NULL)
-                     userInfo:userInfo
-        dialogProtocolVersion:dialogProtocolVersion
+              dialoguePortion:itu_dialoguePortion
                    components:components
                       options:xoptions];
     dialogIsClosed = YES;
+    dialogRequestRequired = NO;
     dialogResponseRequired = NO;
     openEstablished = NO;
     [self touch];
@@ -630,8 +655,7 @@
 - (void)MAP_Error_Req:(UMASN1Object *)param
        callingAddress:(SccpAddress *)src
         calledAddress:(SccpAddress *)dst
-   applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-             userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+      dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
             operation:(int64_t)operation
               options:(NSDictionary *)options
 {
@@ -643,8 +667,7 @@
 - (void)MAP_Reject_Req:(UMASN1Object *)param
         callingAddress:(SccpAddress *)src
          calledAddress:(SccpAddress *)dst
-    applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-              userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+       dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
               invokeId:(int64_t)invokeId
                problem:(UMGSMMAP_asn1 *)problem
                options:(NSDictionary *)options
@@ -833,17 +856,13 @@
 }
 
 
-
-
-
 - (void)tcapContinueIndication:(NSString *)userDialogId
              tcapTransactionId:(NSString *)localTransactionId
        tcapRemoteTransactionId:(NSString *)remoteTransactionId
                        variant:(UMTCAP_Variant)var
                 callingAddress:(SccpAddress *)src
                  calledAddress:(SccpAddress *)dst
-            applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                      userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+               dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                   callingLayer:(UMLayer *)tcapLayer
                     components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                        options:(NSDictionary *)options
@@ -857,8 +876,7 @@
                   variant:(UMTCAP_Variant)var
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
-       applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                 userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+          dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
              callingLayer:(UMLayer *)tcapLayer
                components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                   options:(NSDictionary *)options
@@ -888,8 +906,7 @@
                      variant:(UMTCAP_Variant)variant
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
-          applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                    userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                 callingLayer:(UMLayer *)tcapLayer
                   components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                       reason:(SCCP_ReturnCause)reason
@@ -906,8 +923,7 @@
                      variant:(UMTCAP_Variant)variant
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
-          applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                    userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                 callingLayer:(UMLayer *)tcapLayer
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
@@ -924,8 +940,7 @@
                      variant:(UMTCAP_Variant)variant
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
-          applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                    userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
        dialogProtocolVersion:(UMASN1BitString *)xdialogProtocolVersion
                 callingLayer:(UMLayer *)tcapLayer
                         asn1:(UMASN1Object *)asn1

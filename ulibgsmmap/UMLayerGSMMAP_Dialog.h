@@ -46,6 +46,7 @@
     BOOL    initiatedOutgoing;
     BOOL    openEstablished;
     BOOL    returnResultLastSent;
+    BOOL    dialogRequestRequired;
     BOOL    dialogResponseRequired;
     BOOL    dialogIsClosed;
 }

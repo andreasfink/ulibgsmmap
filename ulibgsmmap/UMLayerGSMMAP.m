@@ -26,6 +26,7 @@
 @synthesize ssn;
 @synthesize user;
 
+
 - (UMLayerGSMMAP *)init
 {
     self = [super init];
@@ -46,6 +47,8 @@
     }
     return self;
 }
+
+
 
 
 - (void)tcapBeginIndication:(NSString *)dialogId
@@ -104,7 +107,7 @@
                        variant:(UMTCAP_Variant)var
                 callingAddress:(SccpAddress *)src
                  calledAddress:(SccpAddress *)dst
-               dialoguePortoin:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+               dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                   callingLayer:(UMLayerTCAP *)tcapLayer
                     components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                        options:(NSDictionary *)options
@@ -126,38 +129,6 @@
             dialog.tcapTransactionId = xlocalTransactionId;
         }
         if(dialog.tcapRemoteTransactionId == NULL)
-        {
-            dialog.tcapRemoteTransactionId = xremoteTransactionId;
-        }
-        /* if we get continue, the dialog must already be established so no open ind needed */
-        if(0)
-        {
-        [dialog MAP_Open_Ind_forUser:user
-                                tcap:tcapLayer
-                                 map:self
-                             variant:var
-                      callingAddress:src
-                       calledAddress:dst
-                     dialoguePortion:xdialoguePortion
-                       transactionId:xlocalTransactionId
-                 remoteTransactionId:xremoteTransactionId
-                             options:options];
-            [dialog MAP_Open_Ind_forUser:user
-                                    tcap:tcapLayer
-                                     map:self
-                                 variant:var
-                          callingAddress:src
-                           calledAddress:dst
-                         dialoguePortion:xdialoguePortion
-                           transactionId:xlocalTransactionId
-                     remoteTransactionId:xremoteTransactionId
-                                 options:options];
-        }
-        if(dialog.tcapTransactionId == NULL)
-        {
-            dialog.tcapTransactionId = xlocalTransactionId;
-        }
-        if(dialog.tcapRemoteTransactionId==NULL)
         {
             dialog.tcapRemoteTransactionId = xremoteTransactionId;
         }
@@ -278,7 +249,6 @@
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
-       dialogProtocolVersion:(UMASN1BitString *)xdialogProtocolVersion
                 callingLayer:(UMLayer *)tcapLayer
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
@@ -370,6 +340,7 @@
                      variant:(UMTCAP_Variant)variant
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
           applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
                     userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
                 callingLayer:(UMLayerTCAP *)tcapLayer
@@ -701,6 +672,7 @@
     }
     [dialog MAP_U_Abort_Req:options];
 }
+
 
 -(NSString *) MAP_Open_Req_forUser:(id<UMLayerGSMMAP_UserProtocol>)xuser
                            variant:(UMTCAP_Variant)variant

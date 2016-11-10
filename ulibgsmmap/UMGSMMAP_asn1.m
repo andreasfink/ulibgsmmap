@@ -176,7 +176,7 @@
                                              operationName:(NSString **)xop
                                                withContext:(id)context
 {
-    UMGSMMAP_asn1<UMGSMMAP_asn1_protocol> *asn1 = self;
+    UMASN1Object *<UMGSMMAP_asn1_protocol> *asn1 = self;
     switch(opcode)
     {
         case 0:
@@ -186,6 +186,11 @@
                 case UMTCAP_Operation_Error:
                     /* generic object, probably empty */
                     asn1 = NULL;
+                    break;
+                case UMTCAP_Operation_Response:
+                case UMTCAP_Operation_Request:
+                case UMTCAP_Operation_Reject:
+                case UMTCAP_Operation_Unidirectional:
                     break;
             }
         }
