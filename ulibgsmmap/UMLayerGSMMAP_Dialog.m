@@ -290,7 +290,15 @@
     [self touch];
 }
 
+
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
+{
+    return [self MAP_Delimiter_Req:options result:NULL diagnostic:NULL];
+}
+
+- (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
+                   result:(UMTCAP_asn1_Associate_result *)result
+               diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
     @synchronized (self)
     {
@@ -361,6 +369,8 @@
                 itu_dialoguePortion.dialogResponse.protocolVersion = dialogProtocolVersion;
                 itu_dialoguePortion.dialogResponse.objectIdentifier = applicationContext;
                 itu_dialoguePortion.dialogResponse.user_information = userInfo;
+                itu_dialoguePortion.dialogResponse.result = result;
+                itu_dialoguePortion.dialogResponse.result_source_diagnostic = result_source_diagnostic;
             }
             [tcapLayer tcapContinueRequest:tcapTransactionId
                               userDialogId:userDialogId
