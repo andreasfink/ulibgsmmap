@@ -83,6 +83,11 @@
 - (void)MAP_Close_Req:(NSString *)dialogId
               options:(NSDictionary *)options;
 
+- (void)MAP_Close_Req:(NSString *)dialogId
+              options:(NSDictionary *)options
+               result:(UMTCAP_asn1_Associate_result *)result
+           diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
+
 - (void) MAP_Invoke_Req:(UMASN1Object *)param
                  dialog:(NSString *)dialogId
                invokeId:(int64_t)xinvokeId

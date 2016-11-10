@@ -380,6 +380,15 @@
 
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
 {
+    [self MAP_Close_Req:xoptions
+                 result:NULL
+             diagnostic: NULL];
+}
+
+-(void) MAP_Close_Req:(NSDictionary *)xoptions
+               result:(UMTCAP_asn1_Associate_result *)result
+           diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+{
     if(dialogIsClosed==YES)
     {
         NSLog(@"MAP_Close_Req: closing a already closed dialog");
@@ -418,6 +427,9 @@
         itu_dialoguePortion.dialogResponse.protocolVersion = dialogProtocolVersion;
         itu_dialoguePortion.dialogResponse.objectIdentifier = applicationContext;
         itu_dialoguePortion.dialogResponse.user_information = userInfo;
+        itu_dialoguePortion.dialogResponse.result = result;
+        itu_dialoguePortion.dialogResponse.result_source_diagnostic = result_source_diagnostic;
+        
     }
     [tcapLayer tcapEndRequest:tcapTransactionId
                  userDialogId:userDialogId

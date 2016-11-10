@@ -708,9 +708,20 @@
     [dialog MAP_Delimiter_Req:options];
 }
 
+
 - (void)MAP_Close_Req:(NSString *)dialogId
               options:(NSDictionary *)options
+{
+    [self MAP_Close_Req:dialogId
+                options:options
+                 result:NULL
+             diagnostic:NULL];
+}
 
+- (void)MAP_Close_Req:(NSString *)dialogId
+              options:(NSDictionary *)options
+               result:(UMTCAP_asn1_Associate_result *)result
+           diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
