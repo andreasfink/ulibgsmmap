@@ -80,27 +80,24 @@
               variant:(UMTCAP_Variant)xvariant
        callingAddress:(SccpAddress *)src
         calledAddress:(SccpAddress *)dst
-   applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-             userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+      dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
               options:(NSDictionary *)options;
 
-- (void) MAP_Open_Resp:(NSString *)userIdentifier
+- (void) MAP_Open_Resp:(NSString *)uidstr
                 dialog:(NSString *)dialogId
            transaction:(NSString *)tcapTransactionId
-     remoteTransaction:(NSString *)tcapTransactionId
+     remoteTransaction:(NSString *)tcapRemoteTransactionId
                    map:(id<UMLayerGSMMAP_ProviderProtocol>)map
                variant:(UMTCAP_Variant)xvariant
         callingAddress:(SccpAddress *)src
          calledAddress:(SccpAddress *)dst
-    applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-              userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
-               options:(NSDictionary *)options;
+       dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+               options:(NSDictionary *)xoptions;
 
 -(void)MAP_Delimiter_Ind:(NSString *)userIdentifier
           callingAddress:(SccpAddress *)src
            calledAddress:(SccpAddress *)dst
-      applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+         dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
            transactionId:(NSString *)localTransactionId
      remoteTransactionId:(NSString *)remoteTransactionId
                  options:(NSDictionary *)options;
@@ -108,8 +105,7 @@
 -(void)MAP_Continue_Ind:(NSString *)userIdentifier
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
-     applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-               userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+        dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
                 options:(NSDictionary *)options;
@@ -117,8 +113,7 @@
 -(void)MAP_Unidirectional_Ind:(NSDictionary *)options
                callingAddress:(SccpAddress *)src
                 calledAddress:(SccpAddress *)dst
-           applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                     userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                 transactionId:(NSString *)localTransactionId
           remoteTransactionId:(NSString *)remoteTransactionId;
 
@@ -130,19 +125,17 @@
                 options:(NSDictionary *)options;
 
 -(void)MAP_U_Abort_Ind:(NSString *)userIdentifier
-          callingAddress:(SccpAddress *)src
-           calledAddress:(SccpAddress *)dst
-      applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
-           transactionId:(NSString *)localTransactionId
-     remoteTransactionId:(NSString *)remoteTransactionId
-                 options:(NSDictionary *)options;
+        callingAddress:(SccpAddress *)src
+         calledAddress:(SccpAddress *)dst
+       dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+         transactionId:(NSString *)localTransactionId
+   remoteTransactionId:(NSString *)remoteTransactionId
+               options:(NSDictionary *)options;
 
 -(void) MAP_P_Abort_Ind:(NSString *)userIdentifier
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
-     applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-               userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+        dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
                 options:(NSDictionary *)options;

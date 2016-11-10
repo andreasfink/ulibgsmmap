@@ -75,8 +75,7 @@
                     variant:(UMTCAP_Variant)var
              callingAddress:(SccpAddress *)src
               calledAddress:(SccpAddress *)dst
-         applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                   userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+            dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                callingLayer:(UMLayerTCAP *)tcapLayer
                  components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                     options:(NSDictionary *)options
@@ -179,8 +178,7 @@
                      variant:(UMTCAP_Variant)xvariant
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
-          applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                    userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                transactionId:(NSString *)localTransactionId
          remoteTransactionId:(NSString *)remoteTransactionId
                      options:(NSDictionary *)xoptions
@@ -197,8 +195,8 @@
     self.variant = xvariant;
     self.callingAddress = src;
     self.calledAddress = dst;
-    self.applicationContext = appContext;
-    self.userInfo = xuserInfo;
+ //   self.applicationContext = appContext;
+//    self.userInfo = xuserInfo;
     self.options = xoptions;
     self.tcapTransactionId = localTransactionId;
     if(self.applicationContext)
@@ -230,8 +228,7 @@
                variant:xvariant
         callingAddress:src
          calledAddress:dst
-    applicationContext:appContext
-              userInfo:xuserInfo
+       dialoguePortion:xdialoguePortion
                options:xoptions];
     [self touch];
 }
@@ -242,8 +239,7 @@
                       variant:(UMTCAP_Variant)xvariant
                callingAddress:(SccpAddress *)src
                 calledAddress:(SccpAddress *)dst
-           applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                     userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                 transactionId:(NSString *)localTransactionId
           remoteTransactionId:(NSString *)remoteTransactionId
                       options:(NSDictionary *)xoptions
@@ -260,8 +256,8 @@
     self.variant = xvariant;
     self.callingAddress = src;
     self.calledAddress = dst;
-    self.applicationContext = appContext;
-    self.userInfo = xuserInfo;
+   // self.applicationContext = appContext;
+   // self.userInfo = xuserInfo;
     self.options = xoptions;
     self.tcapTransactionId = localTransactionId;
     self.tcapRemoteTransactionId = remoteTransactionId;
@@ -282,8 +278,7 @@
                 variant:xvariant
          callingAddress:src
           calledAddress:dst
-     applicationContext:appContext
-               userInfo:xuserInfo
+        dialoguePortion:xdialoguePortion
                 options:xoptions];
     [self touch];
 }
@@ -433,16 +428,14 @@
 -(void) MAP_Delimiter_Ind:(NSDictionary *)options
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
-       applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                 userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+          dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
             transactionId:(NSString *)localTransactionId
       remoteTransactionId:(NSString *)remoteTransactionId
 {
     [mapUser MAP_Delimiter_Ind:userIdentifier
                 callingAddress:src
                  calledAddress:dst
-            applicationContext:appContext
-                      userInfo:xuserInfo
+               dialoguePortion:xdialoguePortion
                  transactionId:localTransactionId
            remoteTransactionId:remoteTransactionId
                        options:options];
@@ -453,16 +446,14 @@
 -(void) MAP_Continue_Ind:(NSDictionary *)options
           callingAddress:(SccpAddress *)src
            calledAddress:(SccpAddress *)dst
-      applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+         dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
            transactionId:(NSString *)localTransactionId
      remoteTransactionId:(NSString *)remoteTransactionId
 {
     [mapUser MAP_Continue_Ind:userIdentifier
                callingAddress:src
                 calledAddress:dst
-           applicationContext:appContext
-                     userInfo:xuserInfo
+              dialoguePortion:xdialoguePortion
                 transactionId:localTransactionId
           remoteTransactionId:remoteTransactionId
                       options:options];
@@ -482,16 +473,14 @@
 -(void) MAP_P_Abort_Ind:(NSDictionary *)options
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
-     applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-               userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+        dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
 {
     [mapUser MAP_P_Abort_Ind:self.userIdentifier
               callingAddress:src
                calledAddress:dst
-          applicationContext:appContext
-                    userInfo:xuserInfo
+             dialoguePortion:xdialoguePortion
                transactionId:localTransactionId
          remoteTransactionId:remoteTransactionId
                      options:options];
@@ -504,8 +493,7 @@
 -(void) MAP_U_Abort_Ind:(NSDictionary *)options
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
-     applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-               userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+        dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
 {
@@ -514,8 +502,7 @@
         [mapUser MAP_U_Abort_Ind:self.userIdentifier
                   callingAddress:src
                    calledAddress:dst
-              applicationContext:appContext
-                        userInfo:xuserInfo
+                 dialoguePortion:xdialoguePortion
                    transactionId:localTransactionId
              remoteTransactionId:remoteTransactionId
                          options:options];
@@ -878,8 +865,7 @@
                              variant:(UMTCAP_Variant)variant
                       callingAddress:(SccpAddress *)src
                        calledAddress:(SccpAddress *)dst
-                  applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                            userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+                     dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                         callingLayer:(UMLayer *)tcapLayer
                           components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                              options:(NSDictionary *)options
@@ -947,8 +933,7 @@
     [mapUser MAP_P_Abort_Ind:self.userIdentifier
               callingAddress:self.callingAddress
                calledAddress:self.calledAddress
-          applicationContext:self.applicationContext
-                    userInfo:NULL
+             dialoguePortion:NULL
                transactionId:self.tcapTransactionId
          remoteTransactionId:self.tcapRemoteTransactionId
                      options:options];

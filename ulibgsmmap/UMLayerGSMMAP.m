@@ -54,8 +54,7 @@
                     variant:(UMTCAP_Variant)var
              callingAddress:(SccpAddress *)src
               calledAddress:(SccpAddress *)dst
-         applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                   userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+            dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                callingLayer:(UMLayerTCAP *)tcapLayer
                  components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                     options:(NSDictionary *)options
@@ -65,8 +64,14 @@
     {
         dialog = [self getNewDialogForUser:user];
     }
-    
-    dialog.applicationContext = appContext;
+    if(xdialoguePortion && var==TCAP_VARIANT_ITU)
+    {
+        UMTCAP_itu_asn1_dialoguePortion *itu = (UMTCAP_itu_asn1_dialoguePortion *)xdialoguePortion;
+        dialog.applicationContext = itu.dialogRequest.objectIdentifier;
+        dialog.userInfo = itu.dialogRequest.user_information;
+        dialog.dialogProtocolVersion = itu.dialogRequest.protocolVersion;
+    }
+
     NSLog(@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId);
     [dialog MAP_Open_Ind_forUser:user
                             tcap:tcapLayer
@@ -74,8 +79,7 @@
                          variant:var
                   callingAddress:src
                    calledAddress:dst
-              applicationContext:appContext
-                        userInfo:xuserInfo
+                 dialoguePortion:xdialoguePortion
                    transactionId:localTransactionId
              remoteTransactionId:remoteTransactionId
                          options:options];
@@ -92,8 +96,7 @@
     [dialog MAP_Delimiter_Ind:options
                callingAddress:src
                 calledAddress:dst
-           applicationContext:appContext
-                     userInfo:xuserInfo
+              dialoguePortion:xdialoguePortion
                 transactionId:localTransactionId
           remoteTransactionId:remoteTransactionId];
     if(components.count==0)
@@ -108,8 +111,7 @@
                        variant:(UMTCAP_Variant)var
                 callingAddress:(SccpAddress *)src
                  calledAddress:(SccpAddress *)dst
-            applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                      userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+               dialoguePortoin:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                   callingLayer:(UMLayerTCAP *)tcapLayer
                     components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                        options:(NSDictionary *)options
@@ -143,8 +145,7 @@
                              variant:var
                       callingAddress:src
                        calledAddress:dst
-                  applicationContext:appContext
-                            userInfo:xuserInfo
+                     dialoguePortion:xdialoguePortion
                        transactionId:xlocalTransactionId
                  remoteTransactionId:xremoteTransactionId
                              options:options];
@@ -154,8 +155,7 @@
                                  variant:var
                           callingAddress:src
                            calledAddress:dst
-                      applicationContext:appContext
-                                userInfo:xuserInfo
+                         dialoguePortion:xdialoguePortion
                            transactionId:xlocalTransactionId
                      remoteTransactionId:xremoteTransactionId
                                  options:options];
@@ -173,16 +173,14 @@
         [dialog MAP_Delimiter_Ind:options
                    callingAddress:src
                     calledAddress:dst
-               applicationContext:appContext
-                         userInfo:xuserInfo
+                  dialoguePortion:xdialoguePortion
                     transactionId:xlocalTransactionId
               remoteTransactionId:xremoteTransactionId];
 
         [dialog MAP_Continue_Ind:options
                   callingAddress:src
                    calledAddress:dst
-              applicationContext:appContext
-                        userInfo:xuserInfo
+                 dialoguePortion:xdialoguePortion
                    transactionId:xlocalTransactionId
              remoteTransactionId:xremoteTransactionId];
     }
@@ -194,8 +192,7 @@
                   variant:(UMTCAP_Variant)var
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
-       applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                 userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+          dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
              callingLayer:(UMLayerTCAP *)tcapLayer
                components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                   options:(NSDictionary *)options
@@ -233,8 +230,7 @@
             [dialog MAP_Delimiter_Ind:options
                        callingAddress:src
                         calledAddress:dst
-                   applicationContext:appContext
-                             userInfo:xuserInfo
+                      dialoguePortion:xdialoguePortion
                         transactionId:transactionId
                   remoteTransactionId:remoteTransactionId];
         }
@@ -259,8 +255,7 @@
                              variant:(UMTCAP_Variant)var
                       callingAddress:(SccpAddress *)src
                        calledAddress:(SccpAddress *)dst
-                  applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                            userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+                     dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                         callingLayer:(UMLayerTCAP *)tcapLayer
                           components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                              options:(NSDictionary *)options
@@ -271,12 +266,11 @@
     @try
     {
         [user MAP_Unidirectional_Ind:options
-                        callingAddress:src
-                         calledAddress:dst
-                    applicationContext:appContext
-                              userInfo:xuserInfo
-                         transactionId:localTransactionId
-                   remoteTransactionId:remoteTransactionId];
+                      callingAddress:src
+                       calledAddress:dst
+                     dialoguePortion:xdialoguePortion
+                       transactionId:localTransactionId
+                 remoteTransactionId:remoteTransactionId];
     }
     @catch(NSException *ex)
     {
