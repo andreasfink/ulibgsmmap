@@ -176,7 +176,7 @@
                                              operationName:(NSString **)xop
                                                withContext:(id)context
 {
-    UMASN1Object *<UMGSMMAP_asn1_protocol> *asn1 = self;
+    UMASN1Object<UMGSMMAP_asn1_protocol> *asn1 = self;
     switch(opcode)
     {
         case 0:

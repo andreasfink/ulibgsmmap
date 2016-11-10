@@ -436,7 +436,7 @@
 }
 
 
--(void) MAP_Close_Ind:(NSDictionary *)options
+-(void) MAP_Close_Ind:(NSDictionary *)xoptions
 {
     if(openEstablished==NO)
     {
@@ -448,7 +448,7 @@
         NSLog(@"MAP_Close_Ind: closing a non existing transation");
         return;
     }
-    [mapUser MAP_Close_Ind:userIdentifier options:options];
+    [mapUser MAP_Close_Ind:userIdentifier options:xoptions];
     dialogIsClosed = YES;
     dialogResponseRequired = NO;
     openEstablished = NO;
@@ -457,7 +457,7 @@
 }
 
 
--(void) MAP_Delimiter_Ind:(NSDictionary *)options
+-(void) MAP_Delimiter_Ind:(NSDictionary *)xoptions
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
           dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -470,12 +470,12 @@
                dialoguePortion:xdialoguePortion
                  transactionId:localTransactionId
            remoteTransactionId:remoteTransactionId
-                       options:options];
+                       options:xoptions];
     [self touch];
 
  }
 
--(void) MAP_Continue_Ind:(NSDictionary *)options
+-(void) MAP_Continue_Ind:(NSDictionary *)xoptions
           callingAddress:(SccpAddress *)src
            calledAddress:(SccpAddress *)dst
          dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -488,21 +488,22 @@
               dialoguePortion:xdialoguePortion
                 transactionId:localTransactionId
           remoteTransactionId:remoteTransactionId
-                      options:options];
+                      options:xoptions];
     [self touch];
 
 }
--(void) MAP_U_Abort_Req:(NSDictionary *)options
+
+
+-(void) MAP_U_Abort_Req:(NSDictionary *)xoptions
 {
     NSLog(@"MAP_U_Abort_Req not yet implemented");
     [self touch];
     dialogIsClosed = YES;
     dialogResponseRequired = NO;
     openEstablished = NO;
-
 }
 
--(void) MAP_P_Abort_Ind:(NSDictionary *)options
+-(void) MAP_P_Abort_Ind:(NSDictionary *)xoptions
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
         dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -515,14 +516,14 @@
              dialoguePortion:xdialoguePortion
                transactionId:localTransactionId
          remoteTransactionId:remoteTransactionId
-                     options:options];
+                     options:xoptions];
     [self touch];
     dialogIsClosed = YES;
     dialogResponseRequired = NO;
     openEstablished = NO;
 }
 
--(void) MAP_U_Abort_Ind:(NSDictionary *)options
+-(void) MAP_U_Abort_Ind:(NSDictionary *)xoptions
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
         dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -537,7 +538,7 @@
                  dialoguePortion:xdialoguePortion
                    transactionId:localTransactionId
              remoteTransactionId:remoteTransactionId
-                         options:options];
+                         options:xoptions];
     }
     @catch(NSException *e)
     {
@@ -941,7 +942,6 @@
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
-       dialogProtocolVersion:(UMASN1BitString *)xdialogProtocolVersion
                 callingLayer:(UMLayer *)tcapLayer
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options

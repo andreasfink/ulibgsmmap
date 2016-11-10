@@ -341,8 +341,6 @@
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
-          applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                    userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
                 callingLayer:(UMLayerTCAP *)tcapLayer
                   components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                       reason:(SCCP_ReturnCause)reason

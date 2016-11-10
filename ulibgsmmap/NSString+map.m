@@ -259,6 +259,13 @@
     // except "/" since that's used explicitly in format strings.
     CFStringRef escapeChars = (CFStringRef)@":/?#[]@!$&'()*+,;=";
     
+    
+    
+/*FIXME (maybe, check GnuStep...)
+    'CFURLCreateStringByAddingPercentEscapes' is deprecated: first deprecated in macOS 10.11 - Use [NSString stringByAddingPercentEncodingWithAllowedCharacters:] instead, which always uses the recommended UTF-8 encoding, and which encodes for a specific URL component or subcomponent (since each URL component or subcomponent has different rules for what characters are valid).
+
+*/
+    
     return (NSString*)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, escapeChars, kCFStringEncodingUTF8));
 }
 
