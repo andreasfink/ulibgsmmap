@@ -107,16 +107,14 @@
 - (void)MAP_Error_Req:(UMASN1Object *)param
        callingAddress:(SccpAddress *)src
         calledAddress:(SccpAddress *)dst
-   applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-             userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+      dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
             operation:(int64_t)operation
               options:(NSDictionary *)options;
 
 - (void)MAP_Reject_Req:(UMASN1Object *)param
         callingAddress:(SccpAddress *)src
          calledAddress:(SccpAddress *)dst
-    applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-              userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+       dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
               invokeId:(int64_t)invokeId
                problem:(UMGSMMAP_asn1 *)problem
                options:(NSDictionary *)options;
@@ -124,16 +122,14 @@
 -(void) MAP_U_Abort_Ind:(NSDictionary *)options
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
-     applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-               userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+        dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId;
 
 -(void) MAP_P_Abort_Ind:(NSDictionary *)options
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
-     applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-               userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+        dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId;
 

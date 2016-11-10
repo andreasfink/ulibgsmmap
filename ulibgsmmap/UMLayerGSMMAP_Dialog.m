@@ -196,9 +196,15 @@
     self.variant = xvariant;
     self.callingAddress = src;
     self.calledAddress = dst;
- //   self.applicationContext = appContext;
-//    self.userInfo = xuserInfo;
-    self.options = xoptions;
+    
+    if(xdialoguePortion && xvariant==TCAP_VARIANT_ITU)
+    {
+        UMTCAP_itu_asn1_dialoguePortion *itu = (UMTCAP_itu_asn1_dialoguePortion *)xdialoguePortion;
+        self.applicationContext = itu.dialogRequest.objectIdentifier;
+        self.userInfo = itu.dialogRequest.user_information;
+        self.dialogProtocolVersion = itu.dialogRequest.protocolVersion;
+    }
+    self.tcapRemoteTransactionId = remoteTransactionId;
     self.tcapTransactionId = localTransactionId;
     if(self.applicationContext)
     {
@@ -586,6 +592,7 @@
             UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self];
             tcapTransactionId = t.localTransactionId;
         }
+        /* FIXME: is this correct here?? */
         if(xinvokeId == AUTO_ASSIGN_INVOKE_ID)
         {
             xinvokeId = [self nextInvokeId];

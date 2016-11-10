@@ -64,14 +64,7 @@
     {
         dialog = [self getNewDialogForUser:user];
     }
-    if(xdialoguePortion && var==TCAP_VARIANT_ITU)
-    {
-        UMTCAP_itu_asn1_dialoguePortion *itu = (UMTCAP_itu_asn1_dialoguePortion *)xdialoguePortion;
-        dialog.applicationContext = itu.dialogRequest.objectIdentifier;
-        dialog.userInfo = itu.dialogRequest.user_information;
-        dialog.dialogProtocolVersion = itu.dialogRequest.protocolVersion;
-    }
-
+    
     NSLog(@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId);
     [dialog MAP_Open_Ind_forUser:user
                             tcap:tcapLayer
@@ -284,8 +277,7 @@
                      variant:(UMTCAP_Variant)variant
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
-          applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                    userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
        dialogProtocolVersion:(UMASN1BitString *)xdialogProtocolVersion
                 callingLayer:(UMLayer *)tcapLayer
                         asn1:(UMASN1Object *)asn1
@@ -306,9 +298,8 @@
         [dialog MAP_U_Abort_Ind:options
                  callingAddress:src
                    calledAddress:dst
-              applicationContext:appContext
-                        userInfo:xuserInfo
-                   transactionId:localTransactionId
+                dialoguePortion:xdialoguePortion
+                  transactionId:localTransactionId
              remoteTransactionId:remoteTransactionId];
     }
     @catch(NSException *ex)
@@ -332,8 +323,7 @@
                      variant:(UMTCAP_Variant)variant
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
-          applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                    userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                 callingLayer:(UMLayerTCAP *)tcapLayer
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
@@ -354,8 +344,7 @@
         [dialog MAP_P_Abort_Ind:options
                  callingAddress:src
                   calledAddress:dst
-             applicationContext:appContext
-                       userInfo:xuserInfo
+                dialoguePortion:xdialoguePortion
                   transactionId:localTransactionId
             remoteTransactionId:remoteTransactionId];
     }
