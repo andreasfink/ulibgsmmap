@@ -702,6 +702,20 @@
 }
 
 -(void) MAP_Delimiter_Req:(NSString *)dialogId
+                  options:(NSDictionary *)options
+                   result:(UMTCAP_asn1_Associate_result *)result
+               diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+{
+    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+    if(dialog==NULL)
+    {
+        NSLog(@"Dialog ID %@ not found. Ignoring",dialogId);
+        return;
+    }
+    [dialog MAP_Delimiter_Req:options result:result diagnostic:result_source_diagnostic];
+}
+
+-(void) MAP_Delimiter_Req:(NSString *)dialogId
                   options:(NSDictionary *)options;
 {
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];

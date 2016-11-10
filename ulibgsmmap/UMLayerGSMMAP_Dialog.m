@@ -334,9 +334,9 @@
             src = calledAddress;
             dst = callingAddress;
         }
+        UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
         if(openEstablished==NO)
         {
-            UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
             if(dialogRequestRequired)
             {
                 itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
@@ -361,7 +361,6 @@
         }
         else
         {
-            UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
             if(dialogResponseRequired)
             {
                 itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
