@@ -28,6 +28,7 @@
 @synthesize callingAddress;
 @synthesize calledAddress;
 @synthesize userInfo;
+@synthesize dialogProtocolVersion;
 @synthesize variant;
 @synthesize tcapRemoteTransactionId;
 
@@ -151,6 +152,13 @@
     self.calledAddress = dst;
     self.applicationContext = appContext;
     self.userInfo = xuserInfo;
+    if((appContext) || (xuserInfo))
+    {
+        uint8_t ver[]  = { 0x07,0x80 };
+        UMASN1BitString *v = [[UMASN1BitString alloc]init];
+        v.asn1_data = [NSData dataWithBytes:ver  length:sizeof(ver)];
+        self.dialogProtocolVersion = v;
+    }
     self.options = xoptions;
     self.userIdentifier  = xuserIdentifier;
 
@@ -326,6 +334,7 @@
                           calledAddress:dst
                      applicationContext:applicationContext
                                userInfo:userInfo
+                  dialogProtocolVersion:dialogProtocolVersion
                              components:components
                                 options:xoptions];
             openEstablished = YES;
@@ -341,6 +350,7 @@
                              calledAddress:dst
                         applicationContext: (dialogResponseRequired ? applicationContext : NULL)
                                   userInfo:NULL
+                     dialogProtocolVersion:dialogProtocolVersion
                                 components:components
                                    options:xoptions];
             dialogResponseRequired = NO;
@@ -389,6 +399,7 @@
                 calledAddress:dst
            applicationContext: (dialogResponseRequired ? applicationContext : NULL)
                      userInfo:userInfo
+        dialogProtocolVersion:dialogProtocolVersion
                    components:components
                       options:xoptions];
     dialogIsClosed = YES;
@@ -921,6 +932,7 @@
                calledAddress:(SccpAddress *)dst
           applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
                     userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+       dialogProtocolVersion:(UMASN1BitString *)xdialogProtocolVersion
                 callingLayer:(UMLayer *)tcapLayer
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options

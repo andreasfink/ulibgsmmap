@@ -31,6 +31,7 @@
     UMTCAP_asn1_objectIdentifier *applicationContext;
     UMTCAP_asn1_objectIdentifier *applicationContext2;
     UMTCAP_asn1_userInformation *userInfo;
+    UMASN1BitString *dialogProtocolVersion;
     SccpAddress *callingAddress;
     SccpAddress *calledAddress;
     NSDictionary *options;
@@ -61,6 +62,7 @@
 @property(readwrite,strong) UMTCAP_asn1_objectIdentifier *applicationContext;
 @property(readwrite,strong) UMTCAP_asn1_objectIdentifier *applicationContext2;
 @property(readwrite,strong) UMTCAP_asn1_userInformation *userInfo;
+@property(readwrite,strong) UMASN1BitString *dialogProtocolVersion;
 @property(readwrite,strong) SccpAddress *callingAddress;
 @property(readwrite,strong) SccpAddress *calledAddress;
 @property(readwrite,strong) NSDictionary *options;

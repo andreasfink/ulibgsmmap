@@ -292,6 +292,7 @@
                calledAddress:(SccpAddress *)dst
           applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
                     userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+       dialogProtocolVersion:(UMASN1BitString *)xdialogProtocolVersion
                 callingLayer:(UMLayer *)tcapLayer
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
