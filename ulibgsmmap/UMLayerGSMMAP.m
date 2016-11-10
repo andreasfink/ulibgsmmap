@@ -729,7 +729,9 @@
         NSLog(@"Dialog ID %@ not found. Ignoring",dialogId);
         return;
     }
-    [dialog MAP_Close_Req:options];
+    [dialog MAP_Close_Req:options
+                   result:result
+               diagnostic:result_source_diagnostic];
 }
 
 - (void) MAP_Invoke_Req:(UMASN1Object *)param
