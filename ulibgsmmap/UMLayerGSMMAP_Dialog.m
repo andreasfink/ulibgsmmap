@@ -151,6 +151,7 @@
     self.calledAddress = dst;
     self.applicationContext = appContext;
     self.userInfo = xuserInfo;
+    
     if((appContext) || (xuserInfo))
     {
         uint8_t ver[]  = { 0x07,0x80 };

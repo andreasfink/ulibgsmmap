@@ -26,6 +26,14 @@
                     userIdentifier:(NSString *)xuserIdentifier
                            options:(NSDictionary *)options;
 
+-(NSString *) MAP_Open_Req_forUser:(id<UMLayerGSMMAP_UserProtocol>)user
+                           variant:(UMTCAP_Variant)variant
+                    callingAddress:(SccpAddress *)src
+                     calledAddress:(SccpAddress *)dst
+                   dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+                    userIdentifier:(NSString *)xuserIdentifier
+                           options:(NSDictionary *)options;
+
 -(void) MAP_Delimiter_Req:(NSString *)dialogId
                   options:(NSDictionary *)options;
 
