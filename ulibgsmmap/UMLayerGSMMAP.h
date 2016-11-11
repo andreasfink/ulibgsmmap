@@ -46,7 +46,9 @@
                operationName:(NSString **)operationName
                      context:(id)context;
 
+- (UMLayerGSMMAP_Dialog *)getNewDialogForUser:(id<UMLayerGSMMAP_UserProtocol>)u withId:(NSString *)dialogId;
 - (UMLayerGSMMAP_Dialog *)getNewDialogForUser:(id<UMLayerGSMMAP_UserProtocol>)u;
+
 /* old
 - (UMTCAP_generic_asn1_componentPDU *)handleComponent:(UMTCAP_generic_asn1_componentPDU *)component
                                    tcapTransactionId:(NSString *)localTransactionId

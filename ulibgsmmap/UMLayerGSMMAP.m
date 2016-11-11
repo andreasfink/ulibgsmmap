@@ -62,11 +62,7 @@
                  components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                     options:(NSDictionary *)options
 {
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    if(dialog==NULL)
-    {
-        dialog = [self getNewDialogForUser:user];
-    }
+    UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:user withId:dialogId];
     
     NSLog(@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId);
     [dialog MAP_Open_Ind_forUser:user
@@ -503,17 +499,21 @@
     return [NSString stringWithFormat:@"D%08llX",(long long)did];
 }
 
-
-- (UMLayerGSMMAP_Dialog *)getNewDialogForUser:(id<UMLayerGSMMAP_UserProtocol>)u
+- (UMLayerGSMMAP_Dialog *)getNewDialogForUser:(id<UMLayerGSMMAP_UserProtocol>)u withId:(NSString *)dialogId
 {
     UMLayerGSMMAP_Dialog *d = [[UMLayerGSMMAP_Dialog alloc]init];
-    d.userDialogId = [self getNewUserDialogId];
+    d.userDialogId = dialogId;
     d.tcapLayer = tcap;
     d.gsmmapLayer = self;
     d.mapUser = u;
     dialogs[d.userDialogId] = d;
+    return d;
+}
 
-    NSLog(@"getNewDialogForUser created a new dialog: %@\n",d.userDialogId);
+- (UMLayerGSMMAP_Dialog *)getNewDialogForUser:(id<UMLayerGSMMAP_UserProtocol>)u
+{
+    NSString *dialogId  = [self getNewUserDialogId];
+    UMLayerGSMMAP_Dialog *d =[self getNewDialogForUser:u withId:dialogId];
     return d;
 }
 
