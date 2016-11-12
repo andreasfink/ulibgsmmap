@@ -177,11 +177,11 @@
 	}
 	if(isImplicit)
 	{
-        o = [self getObjectAtPosition:p++];
+        o = self;
 	}
 	else
 	{
-        o = self;
+        o = [self getObjectAtPosition:p++];
     }
 	
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))

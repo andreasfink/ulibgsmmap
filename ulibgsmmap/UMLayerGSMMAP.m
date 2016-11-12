@@ -114,6 +114,35 @@
                        options:(NSDictionary *)options
 {
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+
+    if((dialog==NULL) && (options[@"inected"]))
+    {
+        /*  if we are using sccp injecting into the stack to debug
+            decoding incoming packets, then we might not have a previous transaction.
+            For example if we submit a sccp pdu with tcapContinue without previous tcapBegin.
+            In this case we enfore to decode it anyway by creating the missing transaction on the fly
+            so the decoding runs through.
+        */
+        if(dialogId)
+        {
+            dialog = [self getNewDialogForUser:user withId:dialogId];
+        }
+        else
+        {
+            dialog = [self getNewDialogForUser:user];
+        }
+        [dialog MAP_Open_Ind_forUser:user
+                                tcap:tcapLayer
+                                 map:self
+                             variant:var
+                      callingAddress:src
+                       calledAddress:dst
+                     dialoguePortion:xdialoguePortion
+                       transactionId:xlocalTransactionId
+                 remoteTransactionId:xremoteTransactionId
+                             options:options];
+        dialogId = dialog.userDialogId;
+    }
     if(dialog==NULL)
     {
         NSLog(@"tcapContinueIndication: DialogNotFound %@",dialogId);

@@ -152,22 +152,22 @@
 	}
 	if(isImplicit)
 	{
-		o = [self getObjectAtPosition:p++];
+        o = self;
 	}
 	else
 	{
-		o = self;
+        o = [self getObjectAtPosition:p++];
 	}
 	
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-        UMASN1Object *o2 = [o getObjectAtPosition:0];
-		msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o2 context:context];
+        //UMASN1Object *o2 = [o getObjectAtPosition:0];
+		msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-        UMASN1Object *o2 = [o getObjectAtPosition:0];
-        serviceCentreAddressOA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o2 context:context];
+        //UMASN1Object *o2 = [o getObjectAtPosition:0];
+        serviceCentreAddressOA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 5) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{

@@ -43,6 +43,7 @@
         UMLayerGSMMAP *map = (UMLayerGSMMAP *)context;
         map_user = map.user;
     }
+    
     if(map_user)
     {
         decoded_sms = [map_user decodeSmsObject:asn1_data context:context];
