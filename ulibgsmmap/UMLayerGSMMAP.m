@@ -678,6 +678,11 @@
 
 - (void)housekeeping
 {
+    if(houseKeepingRunning)
+    {
+        return;
+    }
+    houseKeepingRunning = YES;
     NSArray *keys = [dialogs allKeys];
     for(NSString *key in keys)
     {
@@ -691,6 +696,7 @@
             [dialog timeOut];
         }
     }
+    houseKeepingRunning = NO;
 }
 
 -(void) MAP_U_Abort_Req:(NSString *)dialogId
