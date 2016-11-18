@@ -722,7 +722,6 @@
                            options:(NSDictionary *)options
 {
     UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:xuser];
-
     [dialog MAP_Open_Req_forUser:xuser
                             tcap:self.tcap
                              map:self

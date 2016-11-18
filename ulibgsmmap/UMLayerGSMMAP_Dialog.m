@@ -151,9 +151,10 @@
     self.calledAddress = dst;
     self.applicationContext = appContext;
     self.userInfo = xuserInfo;
-    
+
     if((appContext) || (xuserInfo))
     {
+        dialogRequestRequired=YES;
         uint8_t ver[]  = { 0x07,0x80 };
         UMASN1BitString *v = [[UMASN1BitString alloc]init];
         v.asn1_data = [NSData dataWithBytes:ver  length:sizeof(ver)];
