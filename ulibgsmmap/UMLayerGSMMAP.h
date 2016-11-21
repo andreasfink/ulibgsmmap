@@ -27,7 +27,6 @@
     UMSynchronizedArray *operations;
     id<UMLayerGSMMAP_UserProtocol> user;
     UMTimer *houseKeepingTimer;
-    BOOL houseKeepingRunning;
     UMSynchronizedDictionary *dialogs;
 }
 

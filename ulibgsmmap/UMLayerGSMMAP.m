@@ -428,7 +428,7 @@
         }
     }
     /* lets call housekeeping once per second */
-    houseKeepingTimer = [[UMTimer alloc]initWithTarget:self selector:@selector(housekeeping) object:NULL duration:1000000 name:@"gsmmap-housekeeping" repeats:YES];
+    houseKeepingTimer = [[UMTimer alloc]initWithTarget:self selector:@selector(housekeeping) object:NULL duration:1000000 name:@"gsmmap-housekeeping" repeats:NO];
     [houseKeepingTimer start];
 }
 
@@ -678,11 +678,6 @@
 
 - (void)housekeeping
 {
-    if(houseKeepingRunning)
-    {
-        return;
-    }
-    houseKeepingRunning = YES;
     NSArray *keys = [dialogs allKeys];
     for(NSString *key in keys)
     {
@@ -696,7 +691,7 @@
             [dialog timeOut];
         }
     }
-    houseKeepingRunning = NO;
+    [houseKeepingTimer start];
 }
 
 -(void) MAP_U_Abort_Req:(NSString *)dialogId
