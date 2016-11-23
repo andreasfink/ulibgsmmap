@@ -62,4 +62,6 @@ typedef enum GSMMAP_NpiType
 - (UMGSMMAP_AddressString *)initWithImsi:(NSString *)digits;
 
 - (UMGSMMAP_AddressString *)initWithAddress:(NSString *)msisdn ton:(GSMMAP_TonType)ton npi:(GSMMAP_NpiType)npi;
+- (NSString *)stringValue;
+
 @end
