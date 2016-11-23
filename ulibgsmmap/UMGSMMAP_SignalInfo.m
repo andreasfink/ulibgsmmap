@@ -21,11 +21,6 @@
 	return @"UMGSMMAP_SignalInfo";
 }
 
-- (id) objectValue
-{
-    return decoded_sms;
-}
-
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_Operation)operation
                                              operationName:(NSString **)xop
@@ -41,15 +36,24 @@
     else if([context isKindOfClass:[UMLayerGSMMAP class]])
     {
         UMLayerGSMMAP *map = (UMLayerGSMMAP *)context;
-        map_user = map.user;
+        decoded_sms = [map.user decodeSmsObject:asn1_data context:context];
     }
-    
-    if(map_user)
+    else if([context respondsToSelector:@selector(decodeSmsObject:context:)])
     {
-        decoded_sms = [map_user decodeSmsObject:asn1_data context:context];
-        decoded_sms[@"rawData"] = asn1_data;
+        decoded_sms = [context decodeSmsObject:asn1_data context:context];
     }
     return self;
 }
 
+- (id)objectValue
+{
+    UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
+
+    dict[@"rawData"] = asn1_data;
+    if(decoded_sms)
+    {
+        dict[@"decoded-sms"] = decoded_sms;
+    }
+    return dict;
+}
 @end

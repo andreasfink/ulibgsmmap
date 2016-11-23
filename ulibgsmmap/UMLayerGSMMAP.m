@@ -115,7 +115,7 @@
 {
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
 
-    if((dialog==NULL) && (options[@"inected"]))
+    if((dialog==NULL) && (options[@"injected"]))
     {
         /*  if we are using sccp injecting into the stack to debug
             decoding incoming packets, then we might not have a previous transaction.
