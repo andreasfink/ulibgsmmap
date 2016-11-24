@@ -15,7 +15,6 @@
 + (int) nibbleToInt:(char)c;
 - (NSString *) hex;
 - (NSString *) unhex;
-- (NSString *) urlencode;
 - (NSData *) unhexData;
 - (NSMutableData *) gsm16;
 - (NSMutableData *) gsm8;
