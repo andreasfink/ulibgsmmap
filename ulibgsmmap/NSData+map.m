@@ -115,7 +115,205 @@
     return result;
 }
 
--(NSString *) stringFromGsm8
+
+- (NSString *)stringFromGsm8
+{
+    NSMutableString *out = [[NSMutableString alloc]init];
+    uint8_t *inBytes = self.bytes;
+    NSInteger i;
+    NSInteger len = self.length;
+    BOOL escape = NO;
+    for(i=0;i<len;i++)
+    {
+        NSString *c = @"";
+        if(escape)
+        {
+            escape = NO;
+            switch(inBytes[i])
+            {
+                case 0x14:
+                    c = @"^";
+                    break;
+                case 0x28:
+                    c = @"{";
+                    break;
+                case 0x29:
+                    c = @"}";
+                    break;
+                case 0x2F:
+                    c = @"\\";
+                    break;
+                case 0x3C:
+                    c = @"[";
+                    break;
+                case 0x3D:
+                    c = @"~";
+                    break;
+                case 0x3E:
+                    c = @"]";
+                    break;
+                case 0x40:
+                    c = @"|";
+                    break;
+                case 0x65:
+                    c = @"€";
+                    break;
+                case 0x0A:
+                    c = @"\n";
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            switch(inBytes[i])
+            {
+                case 0x00:
+                    c = @"@";
+                    break;
+                case 0x01:
+                    c = @"£";
+                    break;
+                case 0x02:
+                    c = @"$";
+                    break;
+                case 0x03:
+                    c = @"¥";
+                    break;
+                case 0x04:
+                    c = @"è";
+                    break;
+                case 0x05:
+                    c = @"é";
+                    break;
+                case 0x06:
+                    c = @"ù";
+                    break;
+                case 0x07:
+                    c = @"ì";
+                    break;
+                case 0x08:
+                    c = @"ò";
+                    break;
+                case 0x09:
+                    c = @"Ç";
+                    break;
+                case 0x0A:
+                    c = @"\n";
+                    break;
+                case 0x0B:
+                    c = @"Ø";
+                case 0x0C:
+                    c = @"ø";
+                    break;
+                case 0x0D:
+                    c = @"\r";
+                    break;
+                case 0x0E:
+                    c = @"Å";
+                    break;
+                case 0x0F:
+                    c = @"å";
+                    break;
+                case 0x10:
+                    c = @"Δ";
+                    break;
+                case 0x11:
+                    c = @"_";
+                    break;
+                case 0x12:
+                    c = @"Φ";
+                    break;
+                case  0x13:
+                    c = @"Γ";
+                    break;
+                case  0x14:
+                    c = @"Λ";
+                    break;
+                case  0x15:
+                    c = @"Ω";
+                    break;
+                case  0x16:
+                    c = @"Π";
+                    break;
+                case  0x17:
+                    c = @"Ψ";
+                    break;
+                case  0x18:
+                    c = @"Σ";
+                    break;
+                case  0x19:
+                    c = @"Θ";
+                    break;
+                case 0x1A:
+                    c = @"Ξ";
+                    break;
+                case 0x01B:
+                    escape = YES;
+                    break;
+                case 0x1C:
+                    c = @"Æ";
+                    break;
+                case 0x1D:
+                    c = @"æ";
+                    break;
+                case 0x1E:
+                    c = @"ß";
+                    break;
+                case 0x1F:
+                    c = @"É";
+                    break;
+                case 0x24:
+                    c = @"¤";
+                    break;
+                case 0x40:
+                    c = @"¡";
+                    break;
+                case 0x5B:
+                    c = @"Ä";
+                    break;
+                case 0x5C:
+                    c = @"Ö";
+                    break;
+                case 0x5D:
+                    c = @"Ñ";
+                    break;
+                case 0x5E:
+                    c = @"Ü";
+                    break;
+                case 0x5F:
+                    c = @"§";
+                    break;
+                case 0x60:
+                    c = @"¿";
+                    break;
+                case 0x7B:
+                    c = @"ä";
+                    break;
+                case 0x7C:
+                    c = @"ö";
+                    break;
+                case 0x7D:
+                    c = @"ñ";
+                    break;
+                case 0x7E:
+                    c = @"ü";
+                    break;
+                case 0x7F:
+                    c = @"à";
+                    break;
+                default:
+                    c = [NSString stringWithFormat:@"%c",inBytes[i]];
+                    break;
+            }
+        }
+        [out appendString:c];
+    }
+    return out;
+}
+
+-(NSString *) stringFromGsm8_old
 {
     ssize_t i;
     ssize_t j;
