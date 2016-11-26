@@ -427,8 +427,8 @@
             [tcap setUser:self forOperation:[op longLongValue]];
         }
     }
-    /* lets call housekeeping once per second */
-    houseKeepingTimer = [[UMTimer alloc]initWithTarget:self selector:@selector(housekeeping) object:NULL duration:1000000 name:@"gsmmap-housekeeping" repeats:NO];
+    /* lets call housekeeping once per 2.8second */
+    houseKeepingTimer = [[UMTimer alloc]initWithTarget:self selector:@selector(housekeeping) object:NULL duration:2800000 name:@"gsmmap-housekeeping" repeats:NO];
     [houseKeepingTimer start];
 }
 
