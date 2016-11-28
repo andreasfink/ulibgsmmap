@@ -530,6 +530,17 @@
 {
     @synchronized(self)
     {
+        /* update calling/called from the incoming continue of the transaction */
+        if(initiatedOutgoing)
+        {
+            calledAddress = src;
+            callingAddress = dst;
+        }
+        else
+        {
+            calledAddress = dst;
+            callingAddress = src;
+        }
         [mapUser MAP_Continue_Ind:userIdentifier
                    callingAddress:src
                     calledAddress:dst
