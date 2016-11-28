@@ -32,8 +32,8 @@
     UMTCAP_asn1_objectIdentifier *applicationContext2;
     UMTCAP_asn1_userInformation *userInfo;
     UMASN1BitString *dialogProtocolVersion;
-    SccpAddress *callingAddress;
-    SccpAddress *calledAddress;
+    SccpAddress *localAddress;
+    SccpAddress *remoteAddress;
     NSDictionary *options;
     int64_t  lastInvokeId;
     NSTimeInterval timeoutValue;
@@ -64,8 +64,8 @@
 @property(readwrite,strong) UMTCAP_asn1_objectIdentifier *applicationContext2;
 @property(readwrite,strong) UMTCAP_asn1_userInformation *userInfo;
 @property(readwrite,strong) UMASN1BitString *dialogProtocolVersion;
-@property(readwrite,strong) SccpAddress *callingAddress;
-@property(readwrite,strong) SccpAddress *calledAddress;
+@property(readwrite,strong) SccpAddress *localAddress;
+@property(readwrite,strong) SccpAddress *remoteAddress;
 @property(readwrite,strong) NSDictionary *options;
 @property(readwrite,assign) UMTCAP_Variant variant;
 @property(readwrite,assign) BOOL    initiatedOutgoing;

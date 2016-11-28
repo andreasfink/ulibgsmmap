@@ -25,8 +25,8 @@
 @synthesize applicationContext;
 @synthesize applicationContext2;
 @synthesize options;
-@synthesize callingAddress;
-@synthesize calledAddress;
+@synthesize localAddress;
+@synthesize remoteAddress;
 @synthesize userInfo;
 @synthesize dialogProtocolVersion;
 @synthesize variant;
@@ -156,8 +156,8 @@
         self.tcapLayer = xtcap;
         self.gsmmapLayer = xgsmmap;
         self.variant = xvariant;
-        self.callingAddress = src;
-        self.calledAddress = dst;
+        self.localAddress = src;
+        self.remoteAddress = dst;
         self.applicationContext = appContext;
         self.userInfo = xuserInfo;
 
@@ -207,8 +207,8 @@
         self.tcapLayer = xtcap;
         self.gsmmapLayer = xgsmmap;
         self.variant = xvariant;
-        self.callingAddress = src;
-        self.calledAddress = dst;
+        self.remoteAddress = src;
+        self.localAddress = dst;
 
         if(xdialoguePortion && xvariant==TCAP_VARIANT_ITU)
         {
@@ -277,8 +277,8 @@
         self.tcapLayer = xtcap;
         self.gsmmapLayer = xgsmmap;
         self.variant = xvariant;
-        self.callingAddress = src;
-        self.calledAddress = dst;
+        self.localAddress = src;
+        self.remoteAddress = dst;
         // self.applicationContext = appContext;
         // self.userInfo = xuserInfo;
         self.options = xoptions;
@@ -339,18 +339,8 @@
         NSMutableArray *components = [pendingOutgoingComponents mutableCopy];
         pendingOutgoingComponents = [[UMSynchronizedArray alloc] init];
 
-        SccpAddress *src;
-        SccpAddress *dst;
-        if(initiatedOutgoing)
-        {
-            src = callingAddress;
-            dst = calledAddress;
-        }
-        else
-        {
-            src = calledAddress;
-            dst = callingAddress;
-        }
+        SccpAddress *src = localAddress;
+        SccpAddress *dst = remoteAddress;
         UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
         if(openEstablished==NO)
         {
@@ -432,18 +422,8 @@
             NSLog(@"MAP_Close_Req: closing a non existing transation");
             return;
         }
-        SccpAddress *src;
-        SccpAddress *dst;
-        if(initiatedOutgoing)
-        {
-            src = callingAddress;
-            dst = calledAddress;
-        }
-        else
-        {
-            src = calledAddress;
-            dst = callingAddress;
-        }
+        SccpAddress *src = localAddress;
+        SccpAddress *dst = remoteAddress;
         NSMutableArray *components  = [pendingOutgoingComponents mutableCopy];
         pendingOutgoingComponents   = [[UMSynchronizedArray alloc] init];
 
@@ -531,16 +511,8 @@
     @synchronized(self)
     {
         /* update calling/called from the incoming continue of the transaction */
-        if(initiatedOutgoing)
-        {
-            calledAddress = src;
-            callingAddress = dst;
-        }
-        else
-        {
-            calledAddress = dst;
-            callingAddress = src;
-        }
+        remoteAddress = src;
+        localAddress = dst;
         [mapUser MAP_Continue_Ind:userIdentifier
                    callingAddress:src
                     calledAddress:dst
@@ -1023,8 +995,8 @@
                      options:(NSDictionary *)options
 {
     [mapUser MAP_P_Abort_Ind:self.userIdentifier
-              callingAddress:self.callingAddress
-               calledAddress:self.calledAddress
+              callingAddress:src
+               calledAddress:dst
              dialoguePortion:NULL
                transactionId:self.tcapTransactionId
          remoteTransactionId:self.tcapRemoteTransactionId
@@ -1062,8 +1034,8 @@
     @synchronized(self)
     {
         [mapUser MAP_P_Abort_Ind:self.userIdentifier
-                  callingAddress:self.callingAddress
-                   calledAddress:self.calledAddress
+                  callingAddress:remoteAddress
+                   calledAddress:localAddress
                  dialoguePortion:NULL
                    transactionId:self.tcapTransactionId
              remoteTransactionId:self.tcapRemoteTransactionId
