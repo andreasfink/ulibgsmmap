@@ -339,8 +339,6 @@
         NSMutableArray *components = [pendingOutgoingComponents mutableCopy];
         pendingOutgoingComponents = [[UMSynchronizedArray alloc] init];
 
-        SccpAddress *src = localAddress;
-        SccpAddress *dst = remoteAddress;
         UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
         if(openEstablished==NO)
         {
@@ -357,8 +355,8 @@
                            userDialogId:userDialogId
                                 variant:self.variant
                                    user:self
-                         callingAddress:src
-                          calledAddress:dst
+                         callingAddress:localAddress
+                          calledAddress:remoteAddress
                         dialoguePortion:itu_dialoguePortion
                              components:components
                                 options:xoptions];
@@ -382,8 +380,8 @@
                               userDialogId:userDialogId
                                    variant:self.variant
                                       user:self
-                            callingAddress:src
-                             calledAddress:dst
+                            callingAddress:localAddress
+                             calledAddress:remoteAddress
                            dialoguePortion:itu_dialoguePortion
                                 components:components
                                    options:xoptions];
