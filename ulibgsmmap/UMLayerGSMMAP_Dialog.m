@@ -490,6 +490,9 @@
 {
     @synchronized(self)
     {
+        /* update the GT's based on the response */
+        remoteAddress = src;
+        localAddress = dst;
         [mapUser MAP_Delimiter_Ind:userIdentifier
                     callingAddress:src
                      calledAddress:dst
