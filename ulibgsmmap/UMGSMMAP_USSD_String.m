@@ -45,4 +45,15 @@
     return self;
 }
 
+- (NSString *)stringValue
+{
+    NSString *s = [self.asn1_data stringFromGsm7:(self.asn1_data.length * 2)];
+    return s;
+}
+
+-(id) objectValue
+{
+    return [self stringValue];
+}
+
 @end
