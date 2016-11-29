@@ -21,7 +21,7 @@
     invokeId:(int64_t)xinvokeId\
     linkedId:(int64_t)xlinkedId\
     last:(BOOL)xlast\
-    options:(NSDictionary *)xoptions\
+    options:(NSDictionary *)xoptions
 
 @protocol UMLayerGSMMAP_ProviderProtocol;
 @protocol UMLayerGSMMAP_UserProtocol <NSObject,UMLayerUserProtocol>
