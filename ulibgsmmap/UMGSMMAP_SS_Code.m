@@ -327,4 +327,86 @@
     self = [super initWithString:s];
     return self;
 }
+
++ (NSString *)webSelector
+{
+    NSMutableString *s =  [[NSMutableString alloc] init];
+
+    [s appendString:@"    <select name=\"ss-code\">\n"];
+    [s appendString:@"    <option value=\"allSS\">allSS</option>\n"];
+    [s appendString:@"    <option value=\"allLineIdentificationSS\">allLineIdentificationSS</option>\n"];
+    [s appendString:@"    <option value=\"clip\">clip</option>\n"];
+    [s appendString:@"    <option value=\"clir\">clir</option>\n"];
+    [s appendString:@"    <option value=\"colp\">colp</option>\n"];
+    [s appendString:@"    <option value=\"colr\">colr</option>\n"];
+    [s appendString:@"    <option value=\"mci\">mci</option>\n"];
+    [s appendString:@"    <option value=\"allNameIdentificationSS\">allNameIdentificationSS</option>\n"];
+    [s appendString:@"    <option value=\"cnap\">cnap</option>\n"];
+    [s appendString:@"    <option value=\"allForwardingSS\">allForwardingSS</option>\n"];
+    [s appendString:@"    <option value=\"cfu\">cfu</option>\n"];
+    [s appendString:@"    <option value=\"allCondForwardingSS\">allCondForwardingSS</option>\n"];
+    [s appendString:@"    <option value=\"cfb\">cfb</option>\n"];
+    [s appendString:@"    <option value=\"cfnry\">cfnry</option>\n"];
+    [s appendString:@"    <option value=\"cfnrc\">cfnrc</option>\n"];
+    [s appendString:@"    <option value=\"cd\">cd</option>\n"];
+    [s appendString:@"    <option value=\"allCallOfferingsSS\">allCallOfferingsSS</option>\n"];
+    [s appendString:@"    <option value=\"ect\">ect</option>\n"];
+    [s appendString:@"    <option value=\"mah\">mah</option>\n"];
+    [s appendString:@"    <option value=\"allCallCompletionSS\">allCallCompletionSS</option>\n"];
+    [s appendString:@"    <option value=\"cw\">cw</option>\n"];
+    [s appendString:@"    <option value=\"hold\">hold</option>\n"];
+    [s appendString:@"    <option value=\"ccbs-A\">ccbs-A</option>\n"];
+    [s appendString:@"    <option value=\"ccbs-B\">ccbs-B</option>\n"];
+    [s appendString:@"    <option value=\"mc\">mc</option>\n"];
+    [s appendString:@"    <option value=\"allMultiPartySS\">allMultiPartySS</option>\n"];
+    [s appendString:@"    <option value=\"multiPTY\">multiPTY</option>\n"];
+    [s appendString:@"    <option value=\"allCommunityOfInterest-SS\">allCommunityOfInterest-SS</option>\n"];
+    [s appendString:@"    <option value=\"cug\">cug</option>\n"];
+    [s appendString:@"    <option value=\"allChargingSS\">allChargingSS</option>\n"];
+    [s appendString:@"    <option value=\"aoci\">aoci</option>\n"];
+    [s appendString:@"    <option value=\"aocc\">aocc</option>\n"];
+    [s appendString:@"    <option value=\"allAdditionalInfoTransferSS\">allAdditionalInfoTransferSS</option>\n"];
+    [s appendString:@"    <option value=\"uus1\">uus1</option>\n"];
+    [s appendString:@"    <option value=\"uus2\">uus2</option>\n"];
+    [s appendString:@"    <option value=\"uus3\">uus3</option>\n"];
+    [s appendString:@"    <option value=\"uus4\">uus4</option>\n"];
+    [s appendString:@"    <option value=\"allBarringSS\">allBarringSS</option>\n"];
+    [s appendString:@"    <option value=\"barringOfOutgoingCalls\">barringOfOutgoingCalls</option>\n"];
+    [s appendString:@"    <option value=\"baoc\">baoc</option>\n"];
+    [s appendString:@"    <option value=\"boic\">boic</option>\n"];
+    [s appendString:@"    <option value=\"boicExHC\">boicExHC</option>\n"];
+    [s appendString:@"    <option value=\"barringOfIncomingCalls\">barringOfIncomingCalls</option>\n"];
+    [s appendString:@"    <option value=\"baic\">baic</option>\n"];
+    [s appendString:@"    <option value=\"bicRoam\">bicRoam</option>\n"];
+    [s appendString:@"    <option value=\"allPLMN-specificSS\">allPLMN-specificSS</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-1\">plmn-specificSS-1</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-2\">plmn-specificSS-2</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-3\">plmn-specificSS-3</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-4\">plmn-specificSS-4</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-5\">plmn-specificSS-5</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-6\">plmn-specificSS-6</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-7\">plmn-specificSS-7</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-8\">plmn-specificSS-8</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-9\">plmn-specificSS-9</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-A\">plmn-specificSS-A</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-B\">plmn-specificSS-B</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-C\">plmn-specificSS-C</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-D\">plmn-specificSS-D</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-E\">plmn-specificSS-E</option>\n"];
+    [s appendString:@"    <option value=\"plmn-specificSS-F\">plmn-specificSS-F</option>\n"];
+    [s appendString:@"    <option value=\"allCallPrioritySS\">allCallPrioritySS</option>\n"];
+    [s appendString:@"    <option value=\"emlpp\">emlpp</option>\n"];
+    [s appendString:@"    <option value=\"allLCSPrivacyException\">allLCSPrivacyException</option>\n"];
+    [s appendString:@"    <option value=\"universal\">universal</option>\n"];
+    [s appendString:@"    <option value=\"callSessionRelated\">callSessionRelated</option>\n"];
+    [s appendString:@"    <option value=\"callSessionUnrelated\">callSessionUnrelated</option>\n"];
+    [s appendString:@"    <option value=\"plmnoperator\">plmnoperator</option>\n"];
+    [s appendString:@"    <option value=\"serviceType\">serviceType</option>\n"];
+    [s appendString:@"    <option value=\"allMOLR-SS\">allMOLR-SS</option>\n"];
+    [s appendString:@"    <option value=\"basicSelfLocation\">basicSelfLocation</option>\n"];
+    [s appendString:@"    <option value=\"autonomousSelfLocation\">autonomousSelfLocation</option>\n"];
+    [s appendString:@"    <option value=\"transferToThirdParty\">transferToThirdParty</option>\n"];
+    [s appendString:@"    </selector>\n"];
+    return s;
+}
 @end

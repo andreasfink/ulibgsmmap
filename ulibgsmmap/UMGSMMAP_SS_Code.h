@@ -18,4 +18,6 @@
 @property(readwrite,strong)    NSString *operationName;
 
 - (UMGSMMAP_SS_Code *)initWithString:(NSString *)s;
++ (NSString *)webSelector;
+
 @end
