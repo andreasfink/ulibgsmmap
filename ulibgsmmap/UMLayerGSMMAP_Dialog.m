@@ -478,7 +478,6 @@
     }
 }
 
-
 -(void) MAP_Delimiter_Ind:(NSDictionary *)xoptions
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
