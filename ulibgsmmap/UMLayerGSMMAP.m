@@ -213,6 +213,8 @@
         {
             dialog.tcapRemoteTransactionId = remoteTransactionId;
         }
+        dialog.remoteAddress = src;
+        dialog.localAddress = dst;
         @try
         {
             [dialog MAP_ProcessComponents:components options:options];
