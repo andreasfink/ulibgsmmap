@@ -20,6 +20,7 @@
 #import "UMLayerGSMMAP_UserProtocol.h"
 #import "UMLayerGSMMAP_ProviderProtocol.h"
 #import "UMLayerGSMMAP_OpCode.h"
+#import "UMLayerGSMMAP_ErrorCode.h"
 
 #import "UMGSMMAP_APN.h"
 #import "UMGSMMAP_ASCI_CallReference.h"

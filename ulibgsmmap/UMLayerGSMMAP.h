@@ -109,6 +109,15 @@
                          last:(int64_t)xlast
                       options:(NSDictionary *)xoptions;
 
+- (void)MAP_ReturnError_Req:(UMASN1Object *)param
+                     dialog:(NSString *)dialogId
+                   invokeId:(int64_t)xinvokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
+                   linkedId:(int64_t)xlinkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
+                     opCode:(UMLayerGSMMAP_OpCode *)opcode
+                  errorCode:(int64_t)errorCode
+                    options:(NSDictionary *)options;
+
+
 /*
 -(void)MAP_Delimiter_Ind:(NSString *)userIdentifier
           callingAddress:(SccpAddress *)src

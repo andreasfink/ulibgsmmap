@@ -666,7 +666,6 @@
         {
             xinvokeId = [self nextInvokeId];
         }
-        lastInvokeId = xinvokeId;
 
         UMASN1Object *r;
         if(last)
@@ -727,14 +726,36 @@
 }
 
 - (void)MAP_ReturnError_Req:(UMASN1Object *)param
-                   invokeId:(int64_t)invokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
-                   linkedId:(int64_t)linkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
+                   invokeId:(int64_t)xinvokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
+                   linkedId:(int64_t)xlinkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
                      opCode:(UMLayerGSMMAP_OpCode *)opcode
                   errorCode:(int64_t)errorCode
                     options:(NSDictionary *)options
 {
-    NSLog(@"Missing implementation: MAP_ReturnError_Req");
-    [self touch];
+    @synchronized (self)
+    {
+        if(tcapTransactionId == NULL)
+        {
+
+            UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self];
+            tcapTransactionId = t.localTransactionId;
+        }
+        /* FIXME: is this correct here?? */
+        if(xinvokeId == AUTO_ASSIGN_INVOKE_ID)
+        {
+            xinvokeId = [self nextInvokeId];
+        }
+
+        UMASN1Object *r;
+        r =  [tcapLayer tcapUErrorRequest:param
+                                  variant:TCAP_VARIANT_DEFAULT
+                                 invokeId:xinvokeId
+                                errorCode:errorCode
+                           isPrivateError:NO];
+        [pendingOutgoingComponents addObject:r];
+        [self touch];
+    }
+
 }
 
 - (void)MAP_ReturnError_Ind:(UMGSMMAP_asn1 *)params

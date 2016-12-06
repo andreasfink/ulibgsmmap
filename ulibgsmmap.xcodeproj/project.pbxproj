@@ -183,6 +183,7 @@
 		A69629B01D56CE5D00211137 /* NSData+map.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE72BC1D3B94EC00211137 /* NSData+map.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A69629B11D56CE6000211137 /* NSString+map.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE72BE1D3B94EC00211137 /* NSString+map.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A69629B21D57987000211137 /* GsmCharSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE72BB1D3B94EC00211137 /* GsmCharSet.m */; };
+		A69EDF6D1DF71EB900E486B7 /* UMLayerGSMMAP_ErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = A69EDF6B1DF71EAA00E486B7 /* UMLayerGSMMAP_ErrorCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6B7FBBE1B44B28600854472 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C701B435B0C00854472 /* ulib.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A6B7FBBF1B44B29600854472 /* ulibsccp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C7A1B435B4800854472 /* ulibsccp.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A6B7FBC01B44B29E00854472 /* ulibm3ua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C781B435B3900854472 /* ulibm3ua.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -1755,6 +1756,7 @@
 		A69596261D7FB4E500211137 /* UMGSMMAP_TPDU_TypeCriterion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_TPDU_TypeCriterion.h; sourceTree = "<group>"; };
 		A69596271D7FB4E500211137 /* UMGSMMAP_TPDU_TypeCriterion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_TPDU_TypeCriterion.m; sourceTree = "<group>"; };
 		A69596281D7FB4E500211137 /* UMGSMMAP_TPDU_TypeCriterion.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_TPDU_TypeCriterion.asn; sourceTree = "<group>"; };
+		A69EDF6B1DF71EAA00E486B7 /* UMLayerGSMMAP_ErrorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAP_ErrorCode.h; sourceTree = "<group>"; };
 		A6B7FBC41B44B34700854472 /* sctp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sctp.framework; path = /Library/Frameworks/sctp.framework; sourceTree = "<absolute>"; };
 		A6C6E8841CC79F9800ADA9E0 /* ulibgt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ulibgt.framework; sourceTree = "<group>"; };
 		A6CE5D901D4012AC00211137 /* UMGSMMAP_Add_GeographicalInformation.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_Add_GeographicalInformation.asn; sourceTree = "<group>"; };
@@ -3223,6 +3225,7 @@
 				A6EE72BE1D3B94EC00211137 /* NSString+map.h */,
 				A6EE72BF1D3B94EC00211137 /* NSString+map.m */,
 				A6EE72C61D3B94F300211137 /* ulibgsmmap.h */,
+				A69EDF6B1DF71EAA00E486B7 /* UMLayerGSMMAP_ErrorCode.h */,
 				A6EE67191D3B6BE200211137 /* UMLayerGSMMAP.h */,
 				A6EE67181D3B6BE200211137 /* UMLayerGSMMAP.m */,
 				A67BA19B1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h */,
@@ -5240,6 +5243,7 @@
 				A6EE70EC1D3B6BFF00211137 /* UMGSMMAP_FacilityNotSupParam.h in Headers */,
 				A6EE6DE71D3B6BFE00211137 /* UMGSMMAP_SM_RP_OA.h in Headers */,
 				A6EE6CF11D3B6BFE00211137 /* UMGSMMAP_ZoneCode.h in Headers */,
+				A69EDF6D1DF71EB900E486B7 /* UMLayerGSMMAP_ErrorCode.h in Headers */,
 				A6EE72621D3B6BFF00211137 /* UMGSMMAP_AuthenticationSetList.h in Headers */,
 				A6EE70241D3B6BFF00211137 /* UMGSMMAP_LCS_ReferenceNumber.h in Headers */,
 				A6EE6F001D3B6BFE00211137 /* UMGSMMAP_PCS_Extensions.h in Headers */,

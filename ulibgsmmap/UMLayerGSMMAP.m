@@ -832,6 +832,27 @@
                          options:xoptions];
 }
 
+- (void)MAP_ReturnError_Req:(UMASN1Object *)xparam
+                     dialog:(NSString *)xdialogId
+                   invokeId:(int64_t)xinvokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
+                   linkedId:(int64_t)xlinkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
+                     opCode:(UMLayerGSMMAP_OpCode *)xopcode
+                  errorCode:(int64_t)xerrorCode
+                    options:(NSDictionary *)xoptions
+{
+    UMLayerGSMMAP_Dialog *dialog = [self dialogById:xdialogId];
+    if(dialog==NULL)
+    {
+        NSLog(@"Dialog ID %@ not found. Ignoring",xdialogId);
+        return;
+    }
+    [dialog MAP_ReturnError_Req:xparam
+                       invokeId:xinvokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
+                       linkedId:xlinkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
+                         opCode:xopcode
+                      errorCode:xerrorCode
+                        options:xoptions];
+}
 
 - (NSString *)status
 {
