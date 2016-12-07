@@ -30,6 +30,13 @@
 @synthesize	supportedCamelPhasesInGMSC;
 @synthesize	additionalSignalInfo;
 @synthesize	orNotSupportedInGMSC;
+@synthesize pre_pagingSupported;
+@synthesize longFTN_Supported;
+@synthesize suppress_VT_CSI;
+@synthesize offeredCamel4CSIsInInterrogatingNode;
+@synthesize mtRoamingRetrySupported;
+@synthesize pagingArea;
+@synthesize callPriority;
 
 
 - (void) processBeforeEncode
