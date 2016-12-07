@@ -146,22 +146,22 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		imsi = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+		imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		msc_Number = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+		msc_Number = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		msisdn = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+		msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		lmsi = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+		lmsi = [[UMGSMMAP_LMSI alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 5) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
@@ -181,12 +181,12 @@
 	}
 	if((o) && (o.asn1_tag.tagNumber == 8) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		gmsc_Address = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+		gmsc_Address = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 9) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		callReferenceNumber = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+		callReferenceNumber = [[UMGSMMAP_CallReferenceNumber alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 10) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
@@ -203,7 +203,7 @@
 	{
 		if((o) && (o.asn1_tag.tagNumber == 12) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 		{
-			alertingPattern = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+			alertingPattern = [[UMGSMMAP_AlertingPattern alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
 		}
 		else if((o) && (o.asn1_tag.tagNumber == 13) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
@@ -226,6 +226,36 @@
 			orNotSupportedInGMSC = YES;
 			o = [self getObjectAtPosition:p++];
 		}
+        else if((o) && (o.asn1_tag.tagNumber == 17) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            pre_pagingSupported = YES;
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 18) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            longFTN_Supported = YES;
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 19) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            suppress_VT_CSI = YES;
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 20) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            offeredCamel4CSIsInInterrogatingNode = [[UMGSMMAP_OfferedCamel4CSIs alloc]initWithASN1Object:o context:context];;
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 21) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            mtRoamingRetrySupported = YES;
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 20) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            pagingArea = [[UMGSMMAP_PagingArea alloc]initWithASN1Object:o context:context];;
+            o = [self getObjectAtPosition:p++];
+        }
         else
         {
             o = [self getObjectAtPosition:p++];

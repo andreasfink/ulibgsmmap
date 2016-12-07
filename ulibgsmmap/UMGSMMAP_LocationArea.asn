@@ -1,0 +1,4 @@
+LocationArea ::= CHOICE {
+    laiFixedLength [0] LAIFixedLength,
+    lac [1] LAC
+}

@@ -1,0 +1,1 @@
+PagingArea ::= SEQUENCE SIZE (1..5) OF LocationArea
