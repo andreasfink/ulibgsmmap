@@ -193,7 +193,6 @@
 		A69EDF7A1DF7EFD700E486B7 /* UMGSMMAP_LocationArea.asn in Resources */ = {isa = PBXBuildFile; fileRef = A69EDF791DF7EFD700E486B7 /* UMGSMMAP_LocationArea.asn */; };
 		A6B7FBBE1B44B28600854472 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C701B435B0C00854472 /* ulib.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A6B7FBBF1B44B29600854472 /* ulibsccp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C7A1B435B4800854472 /* ulibsccp.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		A6B7FBC01B44B29E00854472 /* ulibm3ua.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C781B435B3900854472 /* ulibm3ua.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A6B7FBC11B44B2B300854472 /* ulibsctp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C721B435B1E00854472 /* ulibsctp.framework */; };
 		A6B7FBC21B44B2B600854472 /* ulibm2pa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C741B435B2600854472 /* ulibm2pa.framework */; };
 		A6B7FBC31B44B2BA00854472 /* ulibmtp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C761B435B2F00854472 /* ulibmtp3.framework */; };
@@ -1791,7 +1790,6 @@
 		A6ED5C721B435B1E00854472 /* ulibsctp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibsctp.framework; path = /Library/Frameworks/ulibsctp.framework; sourceTree = "<absolute>"; };
 		A6ED5C741B435B2600854472 /* ulibm2pa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibm2pa.framework; path = /Library/Frameworks/ulibm2pa.framework; sourceTree = "<absolute>"; };
 		A6ED5C761B435B2F00854472 /* ulibmtp3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibmtp3.framework; path = /Library/Frameworks/ulibmtp3.framework; sourceTree = "<absolute>"; };
-		A6ED5C781B435B3900854472 /* ulibm3ua.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibm3ua.framework; path = /Library/Frameworks/ulibm3ua.framework; sourceTree = "<absolute>"; };
 		A6ED5C7A1B435B4800854472 /* ulibsccp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibsccp.framework; path = /Library/Frameworks/ulibsccp.framework; sourceTree = "<absolute>"; };
 		A6ED5C981B4364B200854472 /* ulibtcap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibtcap.framework; path = /Library/Frameworks/ulibtcap.framework; sourceTree = "<absolute>"; };
 		A6EE67181D3B6BE200211137 /* UMLayerGSMMAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMLayerGSMMAP.m; sourceTree = "<group>"; };
@@ -3181,7 +3179,6 @@
 				A6C6E8851CC79F9800ADA9E0 /* ulibgt.framework in Frameworks */,
 				A6B7FBC21B44B2B600854472 /* ulibm2pa.framework in Frameworks */,
 				A6B7FBC31B44B2BA00854472 /* ulibmtp3.framework in Frameworks */,
-				A6B7FBC01B44B29E00854472 /* ulibm3ua.framework in Frameworks */,
 				A6B7FBBF1B44B29600854472 /* ulibsccp.framework in Frameworks */,
 				A6ED5C991B4364B200854472 /* ulibtcap.framework in Frameworks */,
 				A6955FC91CC7577A00211137 /* ulibasn1.framework in Frameworks */,
@@ -4825,7 +4822,6 @@
 				A6ED5C721B435B1E00854472 /* ulibsctp.framework */,
 				A6ED5C741B435B2600854472 /* ulibm2pa.framework */,
 				A6ED5C761B435B2F00854472 /* ulibmtp3.framework */,
-				A6ED5C781B435B3900854472 /* ulibm3ua.framework */,
 				A6ED5C7A1B435B4800854472 /* ulibsccp.framework */,
 				A6ED5C981B4364B200854472 /* ulibtcap.framework */,
 			);
