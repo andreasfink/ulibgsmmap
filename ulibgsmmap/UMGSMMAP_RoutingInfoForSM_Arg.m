@@ -34,12 +34,14 @@
 		msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[asn1_list addObject:msisdn];
 	}
-	if(sm_RP_PRI)
+	if(sm_RP_PRI == NULL) /* mandatory */
 	{
-		sm_RP_PRI.asn1_tag.tagNumber = 1;
-		sm_RP_PRI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:sm_RP_PRI];
-	}
+        sm_RP_PRI =  [[UMASN1Boolean alloc]initAsNo];
+    }
+    sm_RP_PRI.asn1_tag.tagNumber = 1;
+    sm_RP_PRI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+    [asn1_list addObject:sm_RP_PRI];
+
 	if(serviceCentreAddress)
 	{
 		serviceCentreAddress.asn1_tag.tagNumber = 2;
