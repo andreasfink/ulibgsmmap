@@ -11,6 +11,7 @@
 
 typedef enum UMGSMMAP_ApplicationContext
 {
+    UMGSMMAP_ApplicationContext_undefined = 0,
     UMGSMMAP_ApplicationContext_networkLocUpContext = 1,
     UMGSMMAP_ApplicationContext_locationCancellationContext = 2,
     UMGSMMAP_ApplicationContext_roamingNumberEnquiryContext = 3,
