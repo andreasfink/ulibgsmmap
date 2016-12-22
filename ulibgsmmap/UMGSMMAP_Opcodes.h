@@ -9,6 +9,7 @@
 
 typedef enum UMGSMMAP_Opcode
 {
+    UMGSMMAP_Opcode_noOpcode = 0,
     UMGSMMAP_Opcode_updateLocation = 2,
     UMGSMMAP_Opcode_cancelLocation = 3,
     UMGSMMAP_Opcode_provideRoamingNumber = 4,
