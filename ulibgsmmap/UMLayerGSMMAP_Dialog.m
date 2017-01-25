@@ -524,7 +524,6 @@
     }
 }
 
-
 -(void) MAP_U_Abort_Req:(NSDictionary *)xoptions
 {
     @synchronized (self)

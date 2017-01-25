@@ -35,7 +35,7 @@
 @property(readwrite,strong) SccpSubSystemNumber *ssn;
 @property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> user;
 
-- (void) setConfig:(NSDictionary *)cfg;
+- (void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMSS7Stack_ApplicationContext_protocol>)appContext;
 - (void) startUp;
 - (NSString *)status;
 

@@ -388,7 +388,7 @@
                     reason:reason];
 }
 
--(void) setConfig:(NSDictionary *)cfg
+-(void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMSS7Stack_ApplicationContext_protocol>)appContext
 {
     [self readLayerConfig:cfg];
     if (cfg[@"address"])

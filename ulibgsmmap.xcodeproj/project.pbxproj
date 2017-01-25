@@ -1792,8 +1792,8 @@
 		A6ED5C761B435B2F00854472 /* ulibmtp3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibmtp3.framework; path = /Library/Frameworks/ulibmtp3.framework; sourceTree = "<absolute>"; };
 		A6ED5C7A1B435B4800854472 /* ulibsccp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibsccp.framework; path = /Library/Frameworks/ulibsccp.framework; sourceTree = "<absolute>"; };
 		A6ED5C981B4364B200854472 /* ulibtcap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibtcap.framework; path = /Library/Frameworks/ulibtcap.framework; sourceTree = "<absolute>"; };
-		A6EE67181D3B6BE200211137 /* UMLayerGSMMAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMLayerGSMMAP.m; sourceTree = "<group>"; };
-		A6EE67191D3B6BE200211137 /* UMLayerGSMMAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAP.h; sourceTree = "<group>"; };
+		A6EE67181D3B6BE200211137 /* UMLayerGSMMAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UMLayerGSMMAP.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		A6EE67191D3B6BE200211137 /* UMLayerGSMMAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UMLayerGSMMAP.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		A6EE671A1D3B6BE200211137 /* UMGSMMAP_ZoneCodeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_ZoneCodeList.m; sourceTree = "<group>"; };
 		A6EE671B1D3B6BE200211137 /* UMGSMMAP_ZoneCodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_ZoneCodeList.h; sourceTree = "<group>"; };
 		A6EE671C1D3B6BE200211137 /* UMGSMMAP_ZoneCodeList.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_ZoneCodeList.asn; sourceTree = "<group>"; };
