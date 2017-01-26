@@ -8,6 +8,16 @@
 
 #import <ulib/ulib.h>
 
+@class UMLayerGSMMAP;
+@class UMLayerGSMMAP_Dialog;
+
 @interface UMGSMMAP_TimeoutTask : UMLayerTask
+{
+    UMLayerGSMMAP *gsmmapLayer;
+    UMLayerGSMMAP_Dialog *dialog;
+}
+
+- (UMGSMMAP_TimeoutTask *)initForGSMMAP:(UMLayerGSMMAP *)g dialog:(UMLayerGSMMAP_Dialog *)d;
+- (void)main;
 
 @end

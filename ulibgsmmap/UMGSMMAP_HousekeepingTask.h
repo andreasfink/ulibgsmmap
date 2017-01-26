@@ -8,6 +8,14 @@
 
 #import <ulib/ulib.h>
 
+@class UMLayerGSMMAP;
+
 @interface UMGSMMAP_HousekeepingTask : UMLayerTask
+{
+    UMLayerGSMMAP *gsmmapLayer;
+}
+
+- (UMGSMMAP_HousekeepingTask *)initForGSMMAP:(UMLayerGSMMAP *)g;
+- (void)main;
 
 @end

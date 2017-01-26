@@ -15,6 +15,7 @@
 #import "NSString+map.h"
 #import "NSData+map.h"
 #import "UMLayerGSMMAP.h"
+#import "UMLayerGSMMAPApplicationContextProtocol.h"
 
 #import "UMLayerGSMMAP_Dialog.h"
 #import "UMLayerGSMMAP_UserProtocol.h"

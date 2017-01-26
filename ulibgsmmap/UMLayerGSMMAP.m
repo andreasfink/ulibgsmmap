@@ -18,6 +18,9 @@
 #import "UMGSMMAP_asn1.h"
 #import "UMLayerGSMMAP_Dialog.h"
 #import "UMLayerGSMMAP_OpCode.h"
+#import "UMLayerGSMMAPApplicationContextProtocol.h"
+#import "UMGSMMAP_HousekeepingTask.h"
+#import "UMGSMMAP_TimeoutTask.h"
 
 @implementation UMLayerGSMMAP
 
@@ -388,7 +391,7 @@
                     reason:reason];
 }
 
--(void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMSS7Stack_ApplicationContext_protocol>)appContext
+-(void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMLayerGSMMAPApplicationContextProtocol>)appContext
 {
     [self readLayerConfig:cfg];
     if (cfg[@"address"])
@@ -433,7 +436,7 @@
         }
     }
     /* lets call housekeeping once per 2.8second */
-    houseKeepingTimer = [[UMTimer alloc]initWithTarget:self selector:@selector(housekeeping) object:NULL duration:2800000 name:@"gsmmap-housekeeping" repeats:NO];
+    houseKeepingTimer = [[UMTimer alloc]initWithTarget:self selector:@selector(housekeepingTask) object:NULL duration:2800000 name:@"gsmmap-housekeeping" repeats:YES];
     [houseKeepingTimer start];
 }
 
@@ -681,24 +684,6 @@
     return [NSString stringWithFormat:@"unknown-error(%d)",err];
 }
 
-- (void)housekeeping
-{
-    NSArray *keys = [dialogs allKeys];
-    for(NSString *key in keys)
-    {
-        UMLayerGSMMAP_Dialog *dialog = dialogs[key];
-        if(dialog.dialogIsClosed)
-        {
-            [dialogs removeObjectForKey:key];
-        }
-        if([dialog isTimedOut]==YES)
-        {
-            [dialog timeOut];
-        }
-    }
-    [houseKeepingTimer start];
-}
-
 -(void) MAP_U_Abort_Req:(NSString *)dialogId
                 options:(NSDictionary *)options
 {
@@ -859,5 +844,44 @@
     return [NSString stringWithFormat:@"IS:%lu",[dialogs count]];
 }
 
+- (void)housekeepingTask
+{
+    UMGSMMAP_HousekeepingTask *task = [[UMGSMMAP_HousekeepingTask alloc]initForGSMMAP:self];
+    [self queueFromLower:task];
+}
+
+
+- (void)housekeeping
+{
+    NSLog(@"Housekeeping for %@",self.layerName);
+    @synchronized(self)
+    {
+        if(housekeeping_running)
+        {
+            return;
+        }
+        housekeeping_running = YES;
+    }
+
+    NSArray *keys = [dialogs allKeys];
+    for(NSString *key in keys)
+    {
+        UMLayerGSMMAP_Dialog *dialog = dialogs[key];
+        if(dialog.dialogIsClosed)
+        {
+            [dialogs removeObjectForKey:key];
+        }
+        if([dialog isTimedOut]==YES)
+        {
+            UMGSMMAP_TimeoutTask *task = [[UMGSMMAP_TimeoutTask alloc]initForGSMMAP:self dialog:dialog];
+            [self queueFromLower:task];
+        }
+    }
+
+    @synchronized (self)
+    {
+        housekeeping_running = NO;
+    }
+}
 
 @end

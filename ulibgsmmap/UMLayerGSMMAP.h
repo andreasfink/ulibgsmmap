@@ -17,7 +17,8 @@
 #import "UMLayerGSMMAP_UserProtocol.h"
 #import "UMLayerGSMMAP_ProviderProtocol.h"
 #import "UMLayerGSMMAP_Dialog.h"
-
+#import "UMLayerGSMMAPApplicationContextProtocol.h"
+ 
 @class UMLayerGSMMAP_Dialog;
 
 @interface UMLayerGSMMAP : UMLayer<UMTCAP_UserProtocol,UMLayerGSMMAP_ProviderProtocol>
@@ -28,6 +29,7 @@
     id<UMLayerGSMMAP_UserProtocol> user;
     UMTimer *houseKeepingTimer;
     UMSynchronizedDictionary *dialogs;
+    BOOL housekeeping_running;
 }
 
 @property(readwrite,strong) UMLayerTCAP *tcap;
@@ -35,7 +37,7 @@
 @property(readwrite,strong) SccpSubSystemNumber *ssn;
 @property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> user;
 
-- (void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMSS7Stack_ApplicationContext_protocol>)appContext;
+- (void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMLayerGSMMAPApplicationContextProtocol>)appContext;
 - (void) startUp;
 - (NSString *)status;
 
@@ -129,6 +131,7 @@
                  options:(NSDictionary *)options;
 */
 - (UMLayerGSMMAP_Dialog *)dialogById:(NSString *)did;
+- (void)housekeeping;
 
 @end
 

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UMLayerGSMMAPApplicationContextProtocol : NSObject
+@class UMLayerTCAP;
 
+@protocol UMLayerGSMMAPApplicationContextProtocol<NSObject>
+- (UMLayerTCAP *)getTCAP:(NSString *)name;
 @end
