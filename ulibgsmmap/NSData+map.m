@@ -119,7 +119,7 @@
 - (NSString *)stringFromGsm8
 {
     NSMutableString *out = [[NSMutableString alloc]init];
-    uint8_t *inBytes = self.bytes;
+    const uint8_t *inBytes = self.bytes;
     NSInteger i;
     NSInteger len = self.length;
     BOOL escape = NO;

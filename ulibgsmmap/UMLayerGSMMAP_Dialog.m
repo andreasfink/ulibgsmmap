@@ -1012,7 +1012,7 @@
              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                 callingLayer:(UMLayer *)tcapLayer
                         asn1:(UMASN1Object *)asn1
-                     options:(NSDictionary *)options
+                     options:(NSDictionary *)xoptions
 {
     [mapUser MAP_P_Abort_Ind:self.userIdentifier
               callingAddress:src
@@ -1020,7 +1020,7 @@
              dialoguePortion:NULL
                transactionId:self.tcapTransactionId
          remoteTransactionId:self.tcapRemoteTransactionId
-                     options:options];
+                     options:xoptions];
     @synchronized(self)
     {
         dialogIsClosed = YES;
