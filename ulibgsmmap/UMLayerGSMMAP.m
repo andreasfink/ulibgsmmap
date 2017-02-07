@@ -847,13 +847,13 @@
 - (void)housekeepingTask
 {
     UMGSMMAP_HousekeepingTask *task = [[UMGSMMAP_HousekeepingTask alloc]initForGSMMAP:self];
-    [self queueFromLower:task];
+    //[self queueFromLower:task];
+    [task main];
 }
 
 
 - (void)housekeeping
 {
-    NSLog(@"Housekeeping for %@",self.layerName);
     @synchronized(self)
     {
         if(housekeeping_running)
