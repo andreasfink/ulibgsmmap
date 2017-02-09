@@ -1,6 +1,6 @@
 dnl /* ==================================================================== 
 dnl  * Project "ulibtcap"
-dnl  * (c) 2016 Andreas Fink AG
+dnl  * Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 dnl  * ==================================================================== 
 dnl  */ 
 dnl initialization
@@ -8,7 +8,7 @@ dnl initialization
 AC_PREREQ([2.69])
 AC_INIT([ulibgsmmap],[1.0],[afink])
 dnl generic parameters
-COPYRIGHT="Copyright 2016 Andreas Fink"
+COPYRIGHT="Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved."
 PROJECT_NAME="ulibgsmmap"
 AUTHOR="Andreas Fink <andreas@fink.org>"
 CONFIG_DEFINE="ULIBGSMMAP_CONFIG"
