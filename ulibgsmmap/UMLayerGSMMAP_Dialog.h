@@ -68,11 +68,11 @@
 @property(readwrite,strong) SccpAddress *remoteAddress;
 @property(readwrite,strong) NSDictionary *options;
 @property(readwrite,assign) UMTCAP_Variant variant;
-@property(readwrite,assign) BOOL    initiatedOutgoing;
-@property(readwrite,assign) BOOL    openEstablished;
-@property(readwrite,assign) BOOL    returnResultLastSent;
-@property(readwrite,assign) BOOL    dialogResponseRequired;
-@property(readwrite,assign) BOOL    dialogIsClosed;
+@property(readwrite,assign,atomic) BOOL    initiatedOutgoing;
+@property(readwrite,assign,atomic) BOOL    openEstablished;
+@property(readwrite,assign,atomic) BOOL    returnResultLastSent;
+@property(readwrite,assign,atomic) BOOL    dialogResponseRequired;
+@property(readwrite,assign,atomic) BOOL    dialogIsClosed;
 
 
 @property(readwrite,strong)    NSString *tcapRemoteTransactionId;
