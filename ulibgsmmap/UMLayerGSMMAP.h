@@ -29,13 +29,15 @@
     id<UMLayerGSMMAP_UserProtocol> user;
     UMTimer *houseKeepingTimer;
     UMSynchronizedDictionary *dialogs;
-    BOOL housekeeping_running;
+    BOOL _housekeeping_running;
 }
 
 @property(readwrite,strong) UMLayerTCAP *tcap;
 @property(readwrite,strong) NSString *address;
 @property(readwrite,strong) SccpSubSystemNumber *ssn;
 @property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> user;
+@property(readwrite,assign,atomic) BOOL housekeeping_running;
+
 
 - (void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMLayerGSMMAPApplicationContextProtocol>)appContext;
 - (void) startUp;

@@ -854,14 +854,11 @@
 
 - (void)housekeeping
 {
-    @synchronized(self)
+    if(self.housekeeping_running)
     {
-        if(housekeeping_running)
-        {
-            return;
-        }
-        housekeeping_running = YES;
+        return;
     }
+    self.housekeeping_running = YES;
 
     NSArray *keys = [dialogs allKeys];
     for(NSString *key in keys)
@@ -877,11 +874,7 @@
             [self queueFromLower:task];
         }
     }
-
-    @synchronized (self)
-    {
-        housekeeping_running = NO;
-    }
+    self.housekeeping_running = NO;
 }
 
 @end
