@@ -43,12 +43,12 @@
     UMSynchronizedArray *pendingOutgoingComponents;
     UMSynchronizedArray *pendingIncomingComponents;
 
-    BOOL    initiatedOutgoing;
-    BOOL    openEstablished;
-    BOOL    returnResultLastSent;
-    BOOL    dialogRequestRequired;
-    BOOL    dialogResponseRequired;
-    BOOL    dialogIsClosed;
+    BOOL    _initiatedOutgoing;
+    BOOL    _openEstablished;
+    BOOL    _returnResultLastSent;
+    BOOL    _dialogRequestRequired;
+    BOOL    _dialogResponseRequired;
+    BOOL    _dialogIsClosed;
 }
 
 #pragma mark -
@@ -71,6 +71,7 @@
 @property(readwrite,assign,atomic) BOOL    initiatedOutgoing;
 @property(readwrite,assign,atomic) BOOL    openEstablished;
 @property(readwrite,assign,atomic) BOOL    returnResultLastSent;
+@property(readwrite,assign,atomic) BOOL    dialogRequestRequired;
 @property(readwrite,assign,atomic) BOOL    dialogResponseRequired;
 @property(readwrite,assign,atomic) BOOL    dialogIsClosed;
 

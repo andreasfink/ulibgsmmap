@@ -32,12 +32,6 @@
 @synthesize variant;
 @synthesize tcapRemoteTransactionId;
 
-@synthesize initiatedOutgoing;
-@synthesize openEstablished;
-@synthesize returnResultLastSent;
-@synthesize dialogResponseRequired;
-@synthesize dialogIsClosed;
-
 #pragma mark -
 #pragma mark Initialisation
 
@@ -163,7 +157,7 @@
 
         if((appContext) || (xuserInfo))
         {
-            dialogRequestRequired=YES;
+            self.dialogRequestRequired=YES;
             uint8_t ver[]  = { 0x07,0x80 };
             UMASN1BitString *v = [[UMASN1BitString alloc]init];
             v.asn1_data = [NSData dataWithBytes:ver  length:sizeof(ver)];
@@ -175,8 +169,8 @@
         UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self.gsmmapLayer];
         self.tcapTransactionId = t.localTransactionId;
 
-        initiatedOutgoing = YES;
-        openEstablished = NO;
+        self.initiatedOutgoing = YES;
+        self.openEstablished = NO;
         pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
         pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
         [self touch];
@@ -221,11 +215,11 @@
         self.tcapTransactionId = localTransactionId;
         if(self.applicationContext)
         {
-            dialogResponseRequired = YES;
+            self.dialogResponseRequired = YES;
         }
 
-        initiatedOutgoing = NO;
-        openEstablished = YES;
+        self.initiatedOutgoing = NO;
+        self.openEstablished = YES;
         pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
         pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
 
@@ -285,7 +279,7 @@
         self.tcapTransactionId = localTransactionId;
         self.tcapRemoteTransactionId = remoteTransactionId;
 
-        openEstablished = YES;
+        self.openEstablished = YES;
         pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
         pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
 
@@ -319,7 +313,7 @@
 {
     @synchronized (self)
     {
-        if(openEstablished==NO)
+        if(self.openEstablished==NO)
         {
             if(tcapTransactionId == NULL)
             {
@@ -340,9 +334,9 @@
         pendingOutgoingComponents = [[UMSynchronizedArray alloc] init];
 
         UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
-        if(openEstablished==NO)
+        if(self.openEstablished==NO)
         {
-            if(dialogRequestRequired)
+            if(self.dialogRequestRequired)
             {
                 itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
                 itu_dialoguePortion.dialogRequest = [[UMTCAP_asn1_AARQ_apdu alloc]init];
@@ -360,13 +354,13 @@
                         dialoguePortion:itu_dialoguePortion
                              components:components
                                 options:xoptions];
-            openEstablished = YES;
-            dialogRequestRequired = NO;
-            dialogResponseRequired = NO;
+            self.openEstablished = YES;
+            self.dialogRequestRequired = NO;
+            self.dialogResponseRequired = NO;
         }
         else
         {
-            if(dialogResponseRequired)
+            if(self.dialogResponseRequired)
             {
                 itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
                 itu_dialoguePortion.dialogResponse = [[UMTCAP_asn1_AARE_apdu alloc]init];
@@ -385,8 +379,8 @@
                            dialoguePortion:itu_dialoguePortion
                                 components:components
                                    options:xoptions];
-            dialogRequestRequired = NO;
-            dialogResponseRequired = NO;
+            self.dialogRequestRequired = NO;
+            self.dialogResponseRequired = NO;
         }
         [self touch];
     }
@@ -405,12 +399,12 @@
 {
     @synchronized(self)
     {
-        if(dialogIsClosed==YES)
+        if(self.dialogIsClosed==YES)
         {
             NSLog(@"MAP_Close_Req: closing a already closed dialog");
             return;
         }
-        if(openEstablished==NO)
+        if(self.openEstablished==NO)
         {
             NSLog(@"MAP_Close_Req: closing a never opened dialog");
             return;
@@ -426,7 +420,7 @@
         pendingOutgoingComponents   = [[UMSynchronizedArray alloc] init];
 
         UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
-        if(dialogResponseRequired)
+        if(self.dialogResponseRequired)
         {
             itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
             itu_dialoguePortion.dialogResponse = [[UMTCAP_asn1_AARE_apdu alloc]init];
@@ -446,10 +440,10 @@
                   dialoguePortion:itu_dialoguePortion
                        components:components
                           options:xoptions];
-        dialogIsClosed = YES;
-        dialogRequestRequired = NO;
-        dialogResponseRequired = NO;
-        openEstablished = NO;
+        self.dialogIsClosed = YES;
+        self.dialogRequestRequired = NO;
+        self.dialogResponseRequired = NO;
+        self.openEstablished = NO;
         [self touch];
     }
 }
@@ -459,7 +453,7 @@
 {
     @synchronized(self)
     {
-        if(openEstablished==NO)
+        if(self.openEstablished==NO)
         {
             NSLog(@"MAP_Close_Ind: closing a never opened dialog");
             return;
@@ -470,9 +464,9 @@
             return;
         }
         [mapUser MAP_Close_Ind:userIdentifier options:xoptions];
-        dialogIsClosed = YES;
-        dialogResponseRequired = NO;
-        openEstablished = NO;
+        self.dialogIsClosed = YES;
+        self.dialogResponseRequired = NO;
+        self.openEstablished = NO;
         pendingOutgoingComponents   = [[UMSynchronizedArray alloc] init];
         [self touch];
     }
@@ -530,9 +524,9 @@
     {
         NSLog(@"MAP_U_Abort_Req not yet implemented");
         [self touch];
-        dialogIsClosed = YES;
-        dialogResponseRequired = NO;
-        openEstablished = NO;
+        self.dialogIsClosed = YES;
+        self.dialogResponseRequired = NO;
+        self.openEstablished = NO;
     }
 }
 
@@ -553,9 +547,9 @@
              remoteTransactionId:remoteTransactionId
                          options:xoptions];
         [self touch];
-        dialogIsClosed = YES;
-        dialogResponseRequired = NO;
-        openEstablished = NO;
+        self.dialogIsClosed = YES;
+        self.dialogResponseRequired = NO;
+        self.openEstablished = NO;
     }
 }
 
@@ -583,9 +577,9 @@
             NSLog(@"Exception: %@",e);
         }
         [self touch];
-        dialogIsClosed = YES;
-        dialogResponseRequired = NO;
-        openEstablished = NO;
+        self.dialogIsClosed = YES;
+        self.dialogResponseRequired = NO;
+        self.openEstablished = NO;
     }
 }
 
@@ -1023,9 +1017,9 @@
                      options:xoptions];
     @synchronized(self)
     {
-        dialogIsClosed = YES;
-        dialogResponseRequired = NO;
-        openEstablished = NO;
+        self.dialogIsClosed = YES;
+        self.dialogResponseRequired = NO;
+        self.openEstablished = NO;
     }
 }
 
@@ -1043,9 +1037,9 @@
 {
     @synchronized(self)
     {
-        dialogIsClosed = YES;
-        dialogResponseRequired = NO;
-        openEstablished = NO;
+        self.dialogIsClosed = YES;
+        self.dialogResponseRequired = NO;
+        self.openEstablished = NO;
     }
 }
 
@@ -1060,9 +1054,9 @@
                    transactionId:self.tcapTransactionId
              remoteTransactionId:self.tcapRemoteTransactionId
                          options:options];
-        dialogIsClosed = YES;
-        dialogResponseRequired = NO;
-        openEstablished = NO;
+        self.dialogIsClosed = YES;
+        self.dialogResponseRequired = NO;
+        self.openEstablished = NO;
     }
 }
 
