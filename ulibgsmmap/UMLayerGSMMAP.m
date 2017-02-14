@@ -436,7 +436,11 @@
         }
     }
     /* lets call housekeeping once per 2.8second */
-    houseKeepingTimer = [[UMTimer alloc]initWithTarget:self selector:@selector(housekeepingTask) object:NULL duration:2800000 name:@"gsmmap-housekeeping" repeats:YES];
+    houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
+                                              selector:@selector(housekeepingTask)
+                                                object:NULL duration:2800000
+                                                  name:@"gsmmap-housekeeping"
+                                               repeats:YES];
     [houseKeepingTimer start];
 }
 
