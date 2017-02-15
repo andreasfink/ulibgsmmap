@@ -187,6 +187,7 @@
         dict[@"lac"] = [NSString stringWithFormat:@"%d",((int)b[3])*256+b[4]];
         dict[@"ci"] = [NSString stringWithFormat:@"%d",((int)b[5])*256+b[6]];
     }
+
     return dict;
 }
 
@@ -194,6 +195,7 @@
 {
     UMASN1Object *o = laiFixedLength;
     /*
+     LAIFixedLength ::= OCTET STRING (SIZE (5))
      -- Refers to Location Area Identification defined in TS 3GPP TS 23.003 [17].
      -- The internal structure is defined as follows:
      -- octet 1 bits 4321 Mobile Country Code 1st digit
@@ -218,8 +220,8 @@
     {
         dict[@"rawData"] = [data hexString];
     }
-    
-    if(data.length >= 6)
+
+    if(data.length >= 5)
     {
         unsigned const char *b = [data bytes];
         mcc = ( b[0] & 0x0F ) * 100 + ( b[0] >> 4 & 0x0F ) * 10 +  ( b[1] & 0x0F ) * 1;
