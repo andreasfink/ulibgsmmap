@@ -35,7 +35,7 @@
     SccpAddress *localAddress;
     SccpAddress *remoteAddress;
     NSDictionary *options;
-    int64_t  lastInvokeId;
+    int64_t  _nextInvokeId;
     NSTimeInterval timeoutValue;
     NSDate *timeoutDate;
     NSDate *createdDate;

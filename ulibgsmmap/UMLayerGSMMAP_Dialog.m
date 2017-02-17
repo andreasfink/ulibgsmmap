@@ -41,7 +41,7 @@
     self = [super init];
     if(self)
     {
-        lastInvokeId = -1;
+        _nextInvokeId = 0;
         pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
         timeoutValue = 90;
         createdDate = [NSDate dateWithTimeIntervalSinceNow:0];
@@ -53,9 +53,16 @@
 
 - (int64_t)nextInvokeId
 {
-    int64_t inv = ++lastInvokeId % 0xFF;
-    lastInvokeId = inv;
+
+    int64_t inv = _nextInvokeId;
+    _nextInvokeId++;
+    _nextInvokeId = _nextInvokeId % 0xFF;
     return inv;
+}
+
+- (void) setThisInvokeId:(int64_t)iid
+{
+    _nextInvokeId = (iid + 1) % 0xFF;
 }
 
 - (NSString *)getNewUserDialogId
@@ -623,7 +630,10 @@
         {
             xinvokeId = [self nextInvokeId];
         }
-        lastInvokeId = xinvokeId;
+        else
+        {
+            [self setThisInvokeId:xinvokeId];
+        }
 
         UMASN1Object *invoke = [tcapLayer tcapInvoke:param
                                              variant:TCAP_VARIANT_DEFAULT
