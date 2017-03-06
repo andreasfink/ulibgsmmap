@@ -15,7 +15,7 @@
 #import "UMGSMMAP_NumberOfRequestedVectors.h"
 #import "UMGSMMAP_Re_SynchronisationInfo.h"
 #import "UMGSMMAP_ExtensionContainer.h"
-
+#import "UMGSMMAP_RequestingNodeType.h"
 @interface UMGSMMAP_SendAuthenticationInfoArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
@@ -25,7 +25,7 @@
 	BOOL immediateResponsePreferred;
 	UMGSMMAP_Re_SynchronisationInfo *re_synchronisationInfo;
 	UMGSMMAP_ExtensionContainer *extensionContainer;
-	UMASN1Boolean *requestingNodeType;
+	UMGSMMAP_RequestingNodeType *requestingNodeType;
 	UMASN1OctetString *requestingPLMN_Id;
 	UMGSMMAP_NumberOfRequestedVectors *numberOfRequestedAdditional_Vectors;
 	BOOL additionalVectorsAreForEPS;
@@ -38,7 +38,7 @@
 @property(readwrite,assign)	BOOL immediateResponsePreferred;
 @property(readwrite,strong)	UMGSMMAP_Re_SynchronisationInfo *re_synchronisationInfo;
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
-@property(readwrite,strong)	UMASN1Boolean *requestingNodeType;
+@property(readwrite,strong)	UMGSMMAP_RequestingNodeType  *requestingNodeType;
 @property(readwrite,strong)	UMASN1OctetString *requestingPLMN_Id;
 @property(readwrite,strong)	UMGSMMAP_NumberOfRequestedVectors *numberOfRequestedAdditional_Vectors;
 @property(readwrite,assign)	BOOL additionalVectorsAreForEPS;

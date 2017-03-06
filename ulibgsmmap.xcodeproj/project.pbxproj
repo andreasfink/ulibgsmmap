@@ -203,6 +203,8 @@
 		A6B7FBC31B44B2BA00854472 /* ulibmtp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C761B435B2F00854472 /* ulibmtp3.framework */; };
 		A6B7FBC51B44B34700854472 /* sctp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B7FBC41B44B34700854472 /* sctp.framework */; };
 		A6C6E8851CC79F9800ADA9E0 /* ulibgt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C6E8841CC79F9800ADA9E0 /* ulibgt.framework */; };
+		A6C734541E6DF6120043B267 /* UMGSMMAP_RequestingNodeType.h in Headers */ = {isa = PBXBuildFile; fileRef = A6C734521E6DF6110043B267 /* UMGSMMAP_RequestingNodeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6C734551E6DF6120043B267 /* UMGSMMAP_RequestingNodeType.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C734531E6DF6110043B267 /* UMGSMMAP_RequestingNodeType.m */; };
 		A6CE5D931D4012AD00211137 /* UMGSMMAP_Add_GeographicalInformation.asn in Resources */ = {isa = PBXBuildFile; fileRef = A6CE5D901D4012AC00211137 /* UMGSMMAP_Add_GeographicalInformation.asn */; };
 		A6CE5D941D4012AD00211137 /* UMGSMMAP_Add_GeographicalInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CE5D911D4012AC00211137 /* UMGSMMAP_Add_GeographicalInformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CE5D951D4012AD00211137 /* UMGSMMAP_Add_GeographicalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE5D921D4012AD00211137 /* UMGSMMAP_Add_GeographicalInformation.m */; };
@@ -1781,6 +1783,8 @@
 		A6A2B8DA1E389E0800E8F0AB /* UMLayerGSMMAPApplicationContextProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAPApplicationContextProtocol.h; sourceTree = "<group>"; };
 		A6B7FBC41B44B34700854472 /* sctp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sctp.framework; path = /Library/Frameworks/sctp.framework; sourceTree = "<absolute>"; };
 		A6C6E8841CC79F9800ADA9E0 /* ulibgt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ulibgt.framework; sourceTree = "<group>"; };
+		A6C734521E6DF6110043B267 /* UMGSMMAP_RequestingNodeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_RequestingNodeType.h; sourceTree = "<group>"; };
+		A6C734531E6DF6110043B267 /* UMGSMMAP_RequestingNodeType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_RequestingNodeType.m; sourceTree = "<group>"; };
 		A6CE5D901D4012AC00211137 /* UMGSMMAP_Add_GeographicalInformation.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_Add_GeographicalInformation.asn; sourceTree = "<group>"; };
 		A6CE5D911D4012AC00211137 /* UMGSMMAP_Add_GeographicalInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Add_GeographicalInformation.h; sourceTree = "<group>"; };
 		A6CE5D921D4012AD00211137 /* UMGSMMAP_Add_GeographicalInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Add_GeographicalInformation.m; sourceTree = "<group>"; };
@@ -3284,6 +3288,8 @@
 		A67BA1A71D86D5E9007FF9E5 /* asn1 */ = {
 			isa = PBXGroup;
 			children = (
+				A6C734521E6DF6110043B267 /* UMGSMMAP_RequestingNodeType.h */,
+				A6C734531E6DF6110043B267 /* UMGSMMAP_RequestingNodeType.m */,
 				A69EDF731DF7EDB700E486B7 /* UMGSMMAP_LocationArea.h */,
 				A69EDF741DF7EDB700E486B7 /* UMGSMMAP_LocationArea.m */,
 				A69EDF771DF7EFAB00E486B7 /* UMGSMMAP_PagingArea.asn */,
@@ -5349,6 +5355,7 @@
 				A6EE6F091D3B6BFE00211137 /* UMGSMMAP_Or_NotAllowedParam.h in Headers */,
 				A6EE6D891D3B6BFE00211137 /* UMGSMMAP_SupportedGADShapes.h in Headers */,
 				A6EE6EED1D3B6BFE00211137 /* UMGSMMAP_PeriodicLDRInfo.h in Headers */,
+				A6C734541E6DF6120043B267 /* UMGSMMAP_RequestingNodeType.h in Headers */,
 				A695960B1D7FAABA00211137 /* UMGSMMAP_OfferedCamel4CSIs.h in Headers */,
 				A6EE70681D3B6BFF00211137 /* UMGSMMAP_InformServiceCentreArg.h in Headers */,
 				A6EE6E5F1D3B6BFE00211137 /* UMGSMMAP_ResponseTime.h in Headers */,
@@ -6159,6 +6166,7 @@
 				A6EE6D1B1D3B6BFE00211137 /* UMGSMMAP_Ussd_Res.m in Sources */,
 				A6EE727A1D3B6BFF00211137 /* UMGSMMAP_ASNTime.m in Sources */,
 				A6EE6FFC1D3B6BFF00211137 /* UMGSMMAP_LocationInformationGPRS.m in Sources */,
+				A6C734551E6DF6120043B267 /* UMGSMMAP_RequestingNodeType.m in Sources */,
 				A6EE70251D3B6BFF00211137 /* UMGSMMAP_LCS_QoS.m in Sources */,
 				A6EE71731D3B6BFF00211137 /* UMGSMMAP_DiameterIdentity.m in Sources */,
 				A6CE5DA51D40155B00211137 /* UMGSMMAP_VelocityEstimate.m in Sources */,
