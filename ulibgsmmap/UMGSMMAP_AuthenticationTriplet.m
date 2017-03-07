@@ -41,6 +41,7 @@
 
 - (UMGSMMAP_AuthenticationTriplet *) processAfterDecodeWithContext:(id)context
 {
+    [super processAfterDecodeWithContext:context];
 	int p=0;
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if(o)

@@ -88,19 +88,9 @@
 - (UMGSMMAP_AuthenticationSetList *) processAfterDecodeWithContext:(id)context
 {
 	int p=0;
-	UMASN1Object *o;
-	BOOL isImplicit = YES;
-	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
-	{
-		isImplicit = NO;
-		o = [self getObjectAtPosition:p++];
-	}
-	else
-	{
-		o = self;
-	}
+    UMASN1Object *o = self;
 	
-	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+	if((o) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
 	{
 		tripletList = [[UMGSMMAP_AuthenticationTripletList alloc]initWithASN1Object:o context:context];
 	}

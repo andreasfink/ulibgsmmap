@@ -9,6 +9,7 @@
 // the author.
 //
 #import "UMGSMMAP_AuthenticationTripletList.h"
+#import "UMGSMMAP_AuthenticationTriplet.h"
 
 @implementation UMGSMMAP_AuthenticationTripletList
 
@@ -34,8 +35,10 @@
 	sequenceEntries = [[NSMutableArray alloc]init];
 	while(o)
 	{
-		[sequenceEntries addObject:o];
+        UMGSMMAP_AuthenticationTriplet *triplet = [[UMGSMMAP_AuthenticationTriplet alloc]initWithASN1Object:o context:context];
+		[sequenceEntries addObject:triplet];
 		o = [self getObjectAtPosition:p++];
+
 	}
 	return self;
 }
@@ -44,9 +47,17 @@
 {
 	return @"AuthenticationTripletList";
 }
+
+
 - (id) objectValue
 {
-	 return sequenceEntries;
+    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    int n = [sequenceEntries count];
+    for(int i=0;i<n;i++)
+    {
+        [arr addObject:[sequenceEntries[i] objectValue]];
+    }
+    return arr;
 }
 
 

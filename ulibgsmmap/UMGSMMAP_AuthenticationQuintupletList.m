@@ -9,6 +9,7 @@
 // the author.
 //
 #import "UMGSMMAP_AuthenticationQuintupletList.h"
+#import "UMGSMMAP_AuthenticationQuintuplet.h"
 
 @implementation UMGSMMAP_AuthenticationQuintupletList
 
@@ -34,19 +35,28 @@
 	sequenceEntries = [[NSMutableArray alloc]init];
 	while(o)
 	{
-		[sequenceEntries addObject:o];
+        UMGSMMAP_AuthenticationQuintuplet *quintuplet = [[UMGSMMAP_AuthenticationQuintuplet alloc]initWithASN1Object:o context:context];
+        [sequenceEntries addObject:quintuplet];
 		o = [self getObjectAtPosition:p++];
 	}
 	return self;
 }
 
+
 - (NSString *) objectName
 {
 	return @"AuthenticationQuintupletList";
 }
+
 - (id) objectValue
 {
-	 return sequenceEntries;
+    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    int n = [sequenceEntries count];
+    for(int i=0;i<n;i++)
+    {
+        [arr addObject:[sequenceEntries[i] objectValue]];
+    }
+    return arr;
 }
 
 
