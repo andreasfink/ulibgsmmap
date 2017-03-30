@@ -398,6 +398,9 @@
     [self MAP_Close_Req:xoptions
                  result:NULL
              diagnostic: NULL];
+    [mapUser MAP_Close_Ind:self.userIdentifier
+                   options:xoptions];
+
 }
 
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
@@ -480,6 +483,7 @@
 }
 
 -(void) MAP_Delimiter_Ind:(NSDictionary *)xoptions
+                   dialog:(NSString *)dialogId
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
           dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -492,6 +496,7 @@
         remoteAddress = src;
         localAddress = dst;
         [mapUser MAP_Delimiter_Ind:userIdentifier
+                            dialog:dialogId
                     callingAddress:src
                      calledAddress:dst
                    dialoguePortion:xdialoguePortion
@@ -530,6 +535,8 @@
     @synchronized (self)
     {
         NSLog(@"MAP_U_Abort_Req not yet implemented");
+        [mapUser MAP_Close_Ind:self.userIdentifier
+                         options:xoptions];
         [self touch];
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;

@@ -124,6 +124,7 @@
 
 /*
 -(void)MAP_Delimiter_Ind:(NSString *)userIdentifier
+                  dialog:(NSString *)dialogId
           callingAddress:(SccpAddress *)src
            calledAddress:(SccpAddress *)dst
       applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext

@@ -201,6 +201,7 @@
                options:(NSDictionary *)options;
 
 -(void) MAP_Delimiter_Ind:(NSDictionary *)options
+                   dialog:(NSString *)dialogId
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
           dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion

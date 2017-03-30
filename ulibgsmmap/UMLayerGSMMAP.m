@@ -89,6 +89,7 @@
     [dialog MAP_ProcessComponents:components
                           options:options];
     [dialog MAP_Delimiter_Ind:options
+                       dialog:(NSString *)dialogId
                callingAddress:src
                 calledAddress:dst
               dialoguePortion:xdialoguePortion
@@ -170,6 +171,7 @@
         [dialog MAP_ProcessComponents:components
                               options:options];
         [dialog MAP_Delimiter_Ind:options
+                           dialog:dialogId
                    callingAddress:src
                     calledAddress:dst
                   dialoguePortion:xdialoguePortion
@@ -230,6 +232,7 @@
         @try
         {
             [dialog MAP_Delimiter_Ind:options
+                               dialog:dialogId
                        callingAddress:src
                         calledAddress:dst
                       dialoguePortion:xdialoguePortion
