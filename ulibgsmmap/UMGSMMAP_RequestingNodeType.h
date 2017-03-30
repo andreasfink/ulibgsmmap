@@ -31,9 +31,11 @@ typedef enum UMGSMMAP_RequestingNodeType_enum
 - (UMGSMMAP_RequestingNodeType *)initWithString:(NSString *)s;
 - (NSString *)objectName;
 - (id)objectValue;
+/*
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_Operation)operation
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
+ */
 
 @end

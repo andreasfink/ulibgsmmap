@@ -131,7 +131,7 @@
 	{
 		if((o) && (o.asn1_tag.tagNumber == 3) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 		{
-			requestingNodeType = [[UMASN1Boolean alloc]initWithASN1Object:o context:context];
+			requestingNodeType = [[UMGSMMAP_RequestingNodeType alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
 		}
 		else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))

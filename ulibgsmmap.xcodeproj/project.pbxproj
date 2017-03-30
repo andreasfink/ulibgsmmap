@@ -1015,8 +1015,8 @@
 		A6EE704D1D3B6BFF00211137 /* UMGSMMAP_IST_AlertArg.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE6A7C1D3B6BEE00211137 /* UMGSMMAP_IST_AlertArg.m */; };
 		A6EE704E1D3B6BFF00211137 /* UMGSMMAP_IST_AlertArg.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE6A7D1D3B6BEE00211137 /* UMGSMMAP_IST_AlertArg.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EE704F1D3B6BFF00211137 /* UMGSMMAP_IST_AlertArg.asn in Resources */ = {isa = PBXBuildFile; fileRef = A6EE6A7E1D3B6BEE00211137 /* UMGSMMAP_IST_AlertArg.asn */; };
-		A6EE70501D3B6BFF00211137 /* UMGSMMAP_ISDN_SubAddressString.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE6A7F1D3B6BEE00211137 /* UMGSMMAP_ISDN_SubAddressString.m */; };
-		A6EE70511D3B6BFF00211137 /* UMGSMMAP_ISDN_SubAddressString.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE6A801D3B6BEF00211137 /* UMGSMMAP_ISDN_SubAddressString.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6EE70501D3B6BFF00211137 /* UMGSMMAP_ISDN_SubaddressString.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE6A7F1D3B6BEE00211137 /* UMGSMMAP_ISDN_SubaddressString.m */; };
+		A6EE70511D3B6BFF00211137 /* UMGSMMAP_ISDN_SubaddressString.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE6A801D3B6BEF00211137 /* UMGSMMAP_ISDN_SubaddressString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EE70521D3B6BFF00211137 /* UMGSMMAP_ISDN_SubaddressString.asn in Resources */ = {isa = PBXBuildFile; fileRef = A6EE6A811D3B6BEF00211137 /* UMGSMMAP_ISDN_SubaddressString.asn */; };
 		A6EE70531D3B6BFF00211137 /* UMGSMMAP_ISDN_AddressString.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE6A821D3B6BEF00211137 /* UMGSMMAP_ISDN_AddressString.m */; };
 		A6EE70541D3B6BFF00211137 /* UMGSMMAP_ISDN_AddressString.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE6A831D3B6BEF00211137 /* UMGSMMAP_ISDN_AddressString.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1580,7 +1580,6 @@
 		A6EE72B21D3B6BFF00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.asn in Resources */ = {isa = PBXBuildFile; fileRef = A6EE6CE11D3B6BFE00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.asn */; };
 		A6EE72B41D3B6BFF00211137 /* NSString+map.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE6CE31D3B6BFE00211137 /* NSString+map.m */; };
 		A6EE72C31D3B94EC00211137 /* NSData+map.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE72BD1D3B94EC00211137 /* NSData+map.m */; };
-		A6EE72C51D3B94EC00211137 /* NSString+map.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE72BF1D3B94EC00211137 /* NSString+map.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1639,7 +1638,7 @@
 		A6790F441D92629A00304445 /* UMLayerGSMMAP_OpCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMLayerGSMMAP_OpCode.m; sourceTree = "<group>"; };
 		A67BA19B1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAP_UserProtocol.h; sourceTree = "<group>"; };
 		A67BA19F1D86CFB9007FF9E5 /* UMLayerGSMMAP_ProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAP_ProviderProtocol.h; sourceTree = "<group>"; };
-		A6955FC81CC7577A00211137 /* ulibasn1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ulibasn1.framework; sourceTree = "<group>"; };
+		A6955FC81CC7577A00211137 /* ulibasn1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibasn1.framework; path = /Library/Frameworks/ulibasn1.framework; sourceTree = "<absolute>"; };
 		A695952A1D7E379500211137 /* UMGSMMAP_SuppressMTSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_SuppressMTSS.h; sourceTree = "<group>"; };
 		A695952B1D7E379500211137 /* UMGSMMAP_SuppressMTSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_SuppressMTSS.m; sourceTree = "<group>"; };
 		A695952C1D7E379500211137 /* UMGSMMAP_SuppressMTSS.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_SuppressMTSS.asn; sourceTree = "<group>"; };
@@ -1782,7 +1781,7 @@
 		A69EDF791DF7EFD700E486B7 /* UMGSMMAP_LocationArea.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_LocationArea.asn; sourceTree = "<group>"; };
 		A6A2B8DA1E389E0800E8F0AB /* UMLayerGSMMAPApplicationContextProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAPApplicationContextProtocol.h; sourceTree = "<group>"; };
 		A6B7FBC41B44B34700854472 /* sctp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sctp.framework; path = /Library/Frameworks/sctp.framework; sourceTree = "<absolute>"; };
-		A6C6E8841CC79F9800ADA9E0 /* ulibgt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ulibgt.framework; sourceTree = "<group>"; };
+		A6C6E8841CC79F9800ADA9E0 /* ulibgt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibgt.framework; path = /Library/Frameworks/ulibgt.framework; sourceTree = "<absolute>"; };
 		A6C734521E6DF6110043B267 /* UMGSMMAP_RequestingNodeType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_RequestingNodeType.h; sourceTree = "<group>"; };
 		A6C734531E6DF6110043B267 /* UMGSMMAP_RequestingNodeType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_RequestingNodeType.m; sourceTree = "<group>"; };
 		A6CE5D901D4012AC00211137 /* UMGSMMAP_Add_GeographicalInformation.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_Add_GeographicalInformation.asn; sourceTree = "<group>"; };
@@ -2600,8 +2599,8 @@
 		A6EE6A7C1D3B6BEE00211137 /* UMGSMMAP_IST_AlertArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_IST_AlertArg.m; sourceTree = "<group>"; };
 		A6EE6A7D1D3B6BEE00211137 /* UMGSMMAP_IST_AlertArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_IST_AlertArg.h; sourceTree = "<group>"; };
 		A6EE6A7E1D3B6BEE00211137 /* UMGSMMAP_IST_AlertArg.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_IST_AlertArg.asn; sourceTree = "<group>"; };
-		A6EE6A7F1D3B6BEE00211137 /* UMGSMMAP_ISDN_SubAddressString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_ISDN_SubAddressString.m; sourceTree = "<group>"; };
-		A6EE6A801D3B6BEF00211137 /* UMGSMMAP_ISDN_SubAddressString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_ISDN_SubAddressString.h; sourceTree = "<group>"; };
+		A6EE6A7F1D3B6BEE00211137 /* UMGSMMAP_ISDN_SubaddressString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_ISDN_SubaddressString.m; sourceTree = "<group>"; };
+		A6EE6A801D3B6BEF00211137 /* UMGSMMAP_ISDN_SubaddressString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_ISDN_SubaddressString.h; sourceTree = "<group>"; };
 		A6EE6A811D3B6BEF00211137 /* UMGSMMAP_ISDN_SubaddressString.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_ISDN_SubaddressString.asn; sourceTree = "<group>"; };
 		A6EE6A821D3B6BEF00211137 /* UMGSMMAP_ISDN_AddressString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_ISDN_AddressString.m; sourceTree = "<group>"; };
 		A6EE6A831D3B6BEF00211137 /* UMGSMMAP_ISDN_AddressString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_ISDN_AddressString.h; sourceTree = "<group>"; };
@@ -3983,8 +3982,8 @@
 				A6EE6A831D3B6BEF00211137 /* UMGSMMAP_ISDN_AddressString.h */,
 				A6EE6A821D3B6BEF00211137 /* UMGSMMAP_ISDN_AddressString.m */,
 				A6EE6A811D3B6BEF00211137 /* UMGSMMAP_ISDN_SubaddressString.asn */,
-				A6EE6A801D3B6BEF00211137 /* UMGSMMAP_ISDN_SubAddressString.h */,
-				A6EE6A7F1D3B6BEE00211137 /* UMGSMMAP_ISDN_SubAddressString.m */,
+				A6EE6A801D3B6BEF00211137 /* UMGSMMAP_ISDN_SubaddressString.h */,
+				A6EE6A7F1D3B6BEE00211137 /* UMGSMMAP_ISDN_SubaddressString.m */,
 				A6EE6A7E1D3B6BEE00211137 /* UMGSMMAP_IST_AlertArg.asn */,
 				A6EE6A7D1D3B6BEE00211137 /* UMGSMMAP_IST_AlertArg.h */,
 				A6EE6A7C1D3B6BEE00211137 /* UMGSMMAP_IST_AlertArg.m */,
@@ -4889,7 +4888,7 @@
 				A69595661D7E9B3500211137 /* UMGSMMAP_CAMEL_SubscriptionInfo.h in Headers */,
 				A6EE704B1D3B6BFF00211137 /* UMGSMMAP_IST_AlertRes.h in Headers */,
 				A6EE6D911D3B6BFE00211137 /* UMGSMMAP_SubscriberStatus.h in Headers */,
-				A6EE70511D3B6BFF00211137 /* UMGSMMAP_ISDN_SubAddressString.h in Headers */,
+				A6EE70511D3B6BFF00211137 /* UMGSMMAP_ISDN_SubaddressString.h in Headers */,
 				A69595871D7E9EB400211137 /* UMGSMMAP_SS_ForBS_Code.h in Headers */,
 				A6EE6ECD1D3B6BFE00211137 /* UMGSMMAP_PrivateExtension.h in Headers */,
 				A6EE6F651D3B6BFE00211137 /* UMGSMMAP_NAEA_PreferredCI.h in Headers */,
@@ -5442,7 +5441,7 @@
 		A641CEDA1B42019900854472 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Andreas Fink (andreas@fink.org)";
 				TargetAttributes = {
 					A641CEE21B42019900854472 = {
@@ -6193,7 +6192,7 @@
 				A69595ED1D7FA86900211137 /* UMGSMMAP_MM_Code.m in Sources */,
 				A6EE6D181D3B6BFE00211137 /* UMGSMMAP_USSD_String.m in Sources */,
 				A6EE72891D3B6BFF00211137 /* UMGSMMAP_AnyTimeInterrogationRes.m in Sources */,
-				A6EE70501D3B6BFF00211137 /* UMGSMMAP_ISDN_SubAddressString.m in Sources */,
+				A6EE70501D3B6BFF00211137 /* UMGSMMAP_ISDN_SubaddressString.m in Sources */,
 				A6EE70441D3B6BFF00211137 /* UMGSMMAP_IST_CommandRes.m in Sources */,
 				A6EE700B1D3B6BFF00211137 /* UMGSMMAP_LCSServiceTypeID.m in Sources */,
 				A6EE6DCD1D3B6BFE00211137 /* UMGSMMAP_SS_EventList.m in Sources */,
@@ -6507,7 +6506,6 @@
 				A6EE6E391D3B6BFE00211137 /* UMGSMMAP_RoutingInfoForLCSRes.m in Sources */,
 				A6EE723E1D3B6BFF00211137 /* UMGSMMAP_BearerServiceList.m in Sources */,
 				A6EE71FD1D3B6BFF00211137 /* UMGSMMAP_CCBS_Feature.m in Sources */,
-				A6EE72C51D3B94EC00211137 /* NSString+map.m in Sources */,
 				A6EE71621D3B6BFF00211137 /* UMGSMMAP_Eps_AuthenticationSetList.m in Sources */,
 				A6EE6EBB1D3B6BFE00211137 /* UMGSMMAP_ProvideRoamingNumberRes.m in Sources */,
 				A6EE720C1D3B6BFF00211137 /* UMGSMMAP_CancellationType.m in Sources */,
@@ -6566,8 +6564,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -6613,8 +6613,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -6642,7 +6644,7 @@
 		A641CEFA1B42019900854472 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -6670,7 +6672,7 @@
 		A641CEFB1B42019900854472 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;

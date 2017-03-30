@@ -51,8 +51,8 @@
 - (id) objectValue
 {
     NSMutableArray *arr = [[NSMutableArray alloc]init];
-    int n = [sequenceEntries count];
-    for(int i=0;i<n;i++)
+    NSUInteger n = [sequenceEntries count];
+    for(NSUInteger i=0;i<n;i++)
     {
         [arr addObject:[sequenceEntries[i] objectValue]];
     }

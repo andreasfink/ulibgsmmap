@@ -87,7 +87,6 @@
 
 - (UMGSMMAP_AuthenticationSetList *) processAfterDecodeWithContext:(id)context
 {
-	int p=0;
     UMASN1Object *o = self;
 	
 	if((o) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
