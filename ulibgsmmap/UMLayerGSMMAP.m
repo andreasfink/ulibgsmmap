@@ -575,72 +575,36 @@
 {
     switch(err)
     {
-        case 34:
-            return @"systemFailure";
-        case 35:
-            return @"dataMissing";
-        case 36:
-            return @"unexpectedDataValue";
-        case 21:
-            return @"facilityNotSupported";
-        case 28:
-            return @"incompatibleTerminal";
-        case 51:
-            return @"resourceLimitation";
         case 1:
             return @"unknownSubscriber";
-        case 44:
-            return @"numberChanged";
+        case 2:
+            return @"unknownBaseStation";
         case 3:
             return @"unknownMSC";
+        case 4:
+            return @"secureTransportError";
         case 5:
             return @"unidentifiedSubscriber";
+        case 6:
+            return @"absentSubscriberSM";
         case 7:
             return @"unknownEquipment";
         case 8:
             return @"roamingNotAllowed";
         case 9:
             return @"illegalSubscriber";
-        case 12:
-            return @"illegalEquipment";
         case 10:
             return @"bearerServiceNotProvisioned";
         case 11:
             return @"teleserviceNotProvisioned";
-        case 25:
-            return @"noHandoverNumberAvailable";
-        case 26:
-            return @"subsequentHandoverFailure";
-        case 42:
-            return @"targetCellOutsideGroupCallArea";
-        case 40:
-            return @"tracingBufferFull";
-        case 39:
-            return @"noRoamingNumberAvailable";
-        case 27:
-            return @"absentSubscriber";
-        case 45:
-            return @"busySubscriber";
-        case 46:
-            return @"noSubscriberReply";
+        case 12:
+            return @"illegalEquipment";
         case 13:
             return @"callBarred";
         case 14:
             return @"forwardingViolation";
-        case 47:
-            return @"forwardingFailed";
         case 15:
             return @"cug-Reject";
-        case 48:
-            return @"or-NotAllowed";
-        case 49:
-            return @"ati-NotAllowed";
-        case 60:
-            return @"atsi-NotAllowed";
-        case 61:
-            return @"atm-NotAllowed";
-        case 62:
-            return @"informationNotAvailable";
         case 16:
             return @"illegalSS-Operation";
         case 17:
@@ -648,19 +612,25 @@
         case 18:
             return @"ss-NotAvailable";
         case 19:
-            return @"ss-SubscriptionViolation";
+            return @"ss-SubscriptionViolatio";
         case 20:
             return @"ss-Incompatibility";
-        case 71:
-            return @"unknownAlphabet";
-        case 72:
-            return @"ussd-Busy";
-        case 37:
-            return @"pw-RegistrationFailure";
-        case 38:
-            return @"negativePW-Check";
-        case 43:
-            return @"numberOfPW-AttemptsViolation";
+        case 21:
+            return @"facilityNotSupported";
+        case 22:
+            return @"ongoingGroupCall";
+        case 23:
+            return @"invalidTargetBaseStation";
+        case 24:
+            return @"noRadioResourceAvailable";
+        case 25:
+            return @"noHandoverNumberAvailable";
+        case 26:
+            return @"subsequentHandoverFailure";
+        case 27:
+            return @"absentSubscriber";
+        case 28:
+            return @"incompatibleTerminal";
         case 29:
             return @"shortTermDenial";
         case 30:
@@ -671,12 +641,40 @@
             return @"sm-DeliveryFailure";
         case 33:
             return @"messageWaitingListFull";
-        case 6:
-            return @"absentSubscriberSM";
+        case 34:
+            return @"systemFailure";
+        case 35:
+            return @"dataMissing";
+        case 36:
+            return @"unexpectedDataValue";
+        case 37:
+            return @"pw-RegistrationFailur";
+        case 38:
+            return @"negativePW-Check";
+        case 39:
+            return @"noRoamingNumberAvailable";
+        case 40:
+            return @"tracingBufferFull";
+        case 42:
+            return @"targetCellOutsideGroupCallArea";
+        case 43:
+            return @"numberOfPW-AttemptsViolation";
+        case 44:
+            return @"numberChanged";
+        case 45:
+            return @"busySubscriber";
+        case 46:
+            return @"noSubscriberReply";
+        case 47:
+            return @"forwardingFailed";
+        case 48:
+            return @"or-NotAllowed";
+        case 49:
+            return @"ati-NotAllowed";
         case 50:
             return @"noGroupCallNumberAvailable";
-        case 22:
-            return @"ongoingGroupCall";
+        case 51:
+            return @"resourceLimitation";
         case 52:
             return @"unauthorizedRequestingNetwork";
         case 53:
@@ -687,6 +685,17 @@
             return @"unknownOrUnreachableLCSClient";
         case 59:
             return @"mm-EventNotSupported";
+        case 60:
+            return @"atsi-NotAllowed";
+        case 61:
+            return @"atm-NotAllowed";
+        case 62:
+            return @"informationNotAvailabl";
+        case 71:
+            return @"unknownAlphabe";
+        case 72:
+            return @"ussd-Busy";
+
     }
     return [NSString stringWithFormat:@"unknown-error(%d)",err];
 }
