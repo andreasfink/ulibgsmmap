@@ -23,6 +23,18 @@
     last:(BOOL)xlast\
     options:(NSDictionary *)xoptions
 
+#define GSMMAP_INVOKE_CALL_PARAMETERS \
+                param \
+         userId:userIdentifier \
+         dialog:xdialogId \
+    transaction:xtcapTransactionId \
+         opCode:xopcode \
+       invokeId:xinvokeId \
+       linkedId:xlinkedId \
+           last:xlast \
+        options:xoptions
+
+
 @protocol UMLayerGSMMAP_ProviderProtocol;
 @protocol UMLayerGSMMAP_UserProtocol <NSObject,UMLayerUserProtocol>
 
@@ -30,8 +42,6 @@
 #pragma mark identifier handling
 
 - (NSString *)getNewUserIdentifier;
-
-
 
 #pragma mark -
 #pragma mark handle incoming components
