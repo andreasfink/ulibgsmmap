@@ -37,7 +37,7 @@
 @property(readwrite,strong) SccpSubSystemNumber *ssn;
 @property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> user;
 @property(readwrite,assign,atomic) BOOL housekeeping_running;
-
+-(UMMTP3Variant) variant;
 
 - (void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMLayerGSMMAPApplicationContextProtocol>)appContext;
 - (void) startUp;

@@ -29,6 +29,10 @@
 @synthesize ssn;
 @synthesize user;
 
+-(UMMTP3Variant) variant
+{
+    return tcap.variant;
+}
 
 - (UMLayerGSMMAP *)init
 {
