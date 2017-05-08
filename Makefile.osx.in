@@ -32,7 +32,7 @@ install_root_prepare:
 	xcodebuild ${XCODESIGN} DSTROOT="install_root" install
 
 pkg:	install_root_prepare
-	./make_pkg.sh "$(PROJECT_NAME$)" "$(PROJECT_ID)" install_root "`cat VERSION`" "$(PROJECT_NAME)_`cat VERSION`_`date +%Y%m%d%H%M`.pkg"
+	./make_pkg.sh "$(PROJECT_NAME)" "$(PROJECT_ID)" install_root "`cat VERSION`"
 
 pkg2: install_root_prepare
-	./make_pkg.sh "$(PROJECT_NAME$)" "$(PROJECT_ID)" install_root "`cat VERSION`" "$(PROJECT_NAME).pkg"
+	./make_pkg.sh "$(PROJECT_NAME)" "$(PROJECT_ID)" install_root "`cat VERSION`" "$(PROJECT_NAME).pkg"
