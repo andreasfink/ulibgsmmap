@@ -58,6 +58,7 @@ RANLIB="ranlib"
 case "$host" in
   *apple-darwin*) 
 	ARCH="-arch x86_64"
+	PLATFORM=macos
 	OSX_DEVTOOL_DIR=`xcode-select -p`
 	CFLAGS="$CFLAGS -D_REENTRANT=1 -DDARWIN=1 ${ARCH}"
 	LDFLAGS="-framework CoreFoundation -framework IOKit -framework Security  -F /Library/Frameworks ${FRAMEWORK}"
@@ -65,6 +66,7 @@ case "$host" in
     ;;
 
   *-linux-*)
+    PLATFORM=linux
 	CC=clang
 	CXX=clang++
     CFLAGS="${CFLAGS} -DLINUX=1 -DHAVE_LIBSSL=1 -D_XOPEN_SOURCE=700 -D_BSD_SOURCE"
@@ -132,6 +134,13 @@ AC_ARG_ENABLE(debug,
 	echo Using Release target
 	CFLAGS="$CFLAGS -Os -D${CONFIG_DEFINE}=Release"
 ])
+
+dnl Checks for latest version.
+dnl -------------------------------------
+UPDATE_URL="http://universalss7.ch/version.php?version=${VERSION}&os=${PLATFORM}&module=${PROJECT_NAME}&user=${CUSER}&arch="`arch`
+LATEST_VER=`curl --  "${UPDATE_URL}" 2> /dev/null`
+
+echo "Is it latest version: ${LATEST_VER}"
 
 dnl Outputing
 dnl -------------------------------------

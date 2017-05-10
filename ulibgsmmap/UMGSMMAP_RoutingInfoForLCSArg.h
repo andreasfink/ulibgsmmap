@@ -8,9 +8,9 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-#include "UMGSMMAP_AddressString.h"
-#include "UMGSMMAP_SubscriberIdentity.h"
-#include "UMGSMMAP_ExtensionContainer.h"
+#import "UMGSMMAP_AddressString.h"
+#import "UMGSMMAP_SubscriberIdentity.h"
+#import "UMGSMMAP_ExtensionContainer.h"
 
 @interface UMGSMMAP_RoutingInfoForLCSArg : UMASN1Sequence
 {
