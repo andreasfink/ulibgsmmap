@@ -1812,7 +1812,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $
 ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
-COPYRIGHT="Copyright 2016 Andreas Fink"
+COPYRIGHT="Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved."
 PROJECT_NAME="ulibgsmmap"
 AUTHOR="Andreas Fink <andreas@fink.org>"
 CONFIG_DEFINE="ULIBGSMMAP_CONFIG"
@@ -1976,6 +1976,7 @@ RANLIB="ranlib"
 case "$host" in
   *apple-darwin*)
 	ARCH="-arch x86_64"
+	PLATFORM=macos
 	OSX_DEVTOOL_DIR=`xcode-select -p`
 	CFLAGS="$CFLAGS -D_REENTRANT=1 -DDARWIN=1 ${ARCH}"
 	LDFLAGS="-framework CoreFoundation -framework IOKit -framework Security  -F /Library/Frameworks ${FRAMEWORK}"
@@ -1983,6 +1984,7 @@ case "$host" in
     ;;
 
   *-linux-*)
+    PLATFORM=linux
 	CC=clang
 	CXX=clang++
     CFLAGS="${CFLAGS} -DLINUX=1 -DHAVE_LIBSSL=1 -D_XOPEN_SOURCE=700 -D_BSD_SOURCE"
@@ -3077,6 +3079,11 @@ else
 
 fi
 
+
+UPDATE_URL="http://universalss7.ch/version.php?version=${VERSION}&os=${PLATFORM}&module=${PROJECT_NAME}&user=${CUSER}&arch="`arch`
+LATEST_VER=`curl --  "${UPDATE_URL}" 2> /dev/null`
+
+echo "Is it latest version: ${LATEST_VER}"
 
 
   nl='
