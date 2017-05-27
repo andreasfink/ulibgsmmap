@@ -24,8 +24,12 @@
 	UMGSMMAP_SignalInfo *sm_RP_UI;
 	BOOL moreMessagesToSend;
 	UMGSMMAP_ExtensionContainer *extensionContainer;
+/* FIXME:   
+    UMGSMMAP_SM_DeliveryTimerValue *smDeliveryTimer;
+    UMGSMMAP_Time *smDeliveryStartTime; 
+*/
 }
-@property(readwrite,strong)    NSString *operationName;
+@property(readwrite,strong) NSString *operationName;
 
 @property(readwrite,strong)	UMGSMMAP_SM_RP_DA *sm_RP_DA;
 @property(readwrite,strong)	UMGSMMAP_SM_RP_OA *sm_RP_OA;
