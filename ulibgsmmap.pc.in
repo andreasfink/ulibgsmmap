@@ -6,7 +6,7 @@ libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 
 Cflags: -I${includedir} 
-Libs: -lulibgsmmap
+Libs: -l:libulibgsmmap.@SHARED_LIBRARY_EXTENSION@.@MAJORVER@.@MINORVER@
 
 Name: ulibgsmmap
 Description: universal SS7 GSMMAP library
