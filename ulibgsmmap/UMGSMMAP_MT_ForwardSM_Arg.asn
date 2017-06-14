@@ -4,5 +4,7 @@ MT-ForwardSM-Arg ::= SEQUENCE {
    sm-RP-UI SignalInfo,
    moreMessagesToSend NULL OPTIONAL,
    extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-
+   ...
+   smDeliveryTimer SM-DeliveryTimerValue OPTIONAL,
+   smDeliveryStartTime Time OPTIONAL,
+}

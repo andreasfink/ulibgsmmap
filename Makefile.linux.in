@@ -9,8 +9,11 @@ CC=@CC@
 CFLAGS=@CFLAGS@ -D_POSIX_SOURCE
 LDFLAGS=@LDFLAGS@
 PROJECT_NAME=@PROJECT_NAME@
+MAJORVER=@MAJORVER@
+MINORVER=@MINORVER@
+REVISION=@REVISION@
 
-LIB=lib@PROJECT_NAME@.so
+LIB=lib@PROJECT_NAME@.@SHARED_LIBRARY_EXTENSION@
 PKGCONFIGFILE=@PROJECT_NAME@.pc
 
 MFILES = $(wildcard @PROJECT_NAME@/*.m) $(wildcard @PROJECT_NAME@/*/*.m)
@@ -25,7 +28,14 @@ lib@PROJECT_NAME@.so: ${OFILES}
 
 install: ${LIB}
 	-mkdir -p ${DESTDIR}/usr/local/lib/pkgconfig
-	-install -b -g root -o root -m 644 ${LIB} ${DESTDIR}/usr/local/lib/
+	rm -f "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}.${REVISION}"
+	rm -f "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}"
+	rm -f "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}"
+	rm -f "${DESTDIR}/usr/local/lib/${LIB}"
+	install -b -g root -o root -m 644 "${LIB}" "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}.${REVISION}"	
+	ln -s "${LIB}.${MAJORVER}.${MINORVER}.${REVISION}" "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}"
+	ln -s "${LIB}.${MAJORVER}.${MINORVER}"             "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}"
+	ln -s "${LIB}.${MAJORVER}"                         "${DESTDIR}/usr/local/lib/${LIB}"
 	-install -b -g root -o root -m 644 ${PKGCONFIGFILE} ${DESTDIR}/usr/local/lib/pkgconfig/
 	-mkdir -p ${DESTDIR}/usr/local/include/@PROJECT_NAME@
 	cp $(HFILES) ${DESTDIR}/usr/local/include/@PROJECT_NAME@

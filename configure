@@ -585,6 +585,10 @@ PACKAGE_URL=''
 
 ac_subst_vars='LTLIBOBJS
 LIBOBJS
+SHARED_LIBRARY_EXTENSION
+REVISION
+MINORVER
+MAJORVER
 CONFIGURATION
 INSTALL_DATA
 INSTALL_SCRIPT
@@ -1817,6 +1821,9 @@ PROJECT_NAME="ulibgsmmap"
 AUTHOR="Andreas Fink <andreas@fink.org>"
 CONFIG_DEFINE="ULIBGSMMAP_CONFIG"
 VERSION=`head -n 1 VERSION`
+MAJORVER=`echo $VERSION | cut -f1 -d.`
+MINORVER=`echo $VERSION | cut -f2 -d.`
+REVISION=`echo $VERSION | cut -f3 -d.`
 CONFIG_HEADER=ulibgsmmap_config.h
 DEPENDENT_PKGCONFIGS="ulibtcapi ulibasn1"
 PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
@@ -1869,7 +1876,6 @@ ac_configure="$SHELL $ac_aux_dir/configure"  # Please don't use this var.
   esac
 
 ac_config_headers="$ac_config_headers ${CONFIG_HEADER}"
-
 
 
 
@@ -1981,6 +1987,7 @@ case "$host" in
 	CFLAGS="$CFLAGS -D_REENTRANT=1 -DDARWIN=1 ${ARCH}"
 	LDFLAGS="-framework CoreFoundation -framework IOKit -framework Security  -F /Library/Frameworks ${FRAMEWORK}"
 	LIBTOOL="libtool -static -o"
+	SHARED_LIBRARY_EXTENSION=dylib
     ;;
 
   *-linux-*)
@@ -3089,6 +3096,11 @@ echo "Is it latest version: ${LATEST_VER}"
   nl='
 '
   echo "${nl}${T_MD}Generating output files ...${T_ME}"
+
+
+
+
+
 
 
 

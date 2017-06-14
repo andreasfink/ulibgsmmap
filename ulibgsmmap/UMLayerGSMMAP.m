@@ -235,20 +235,6 @@
         }
         @try
         {
-            [dialog MAP_Delimiter_Ind:options
-                               dialog:dialogId
-                       callingAddress:src
-                        calledAddress:dst
-                      dialoguePortion:xdialoguePortion
-                        transactionId:transactionId
-                  remoteTransactionId:remoteTransactionId];
-        }
-        @catch(NSException *ex)
-        {
-            NSLog(@"Exception: %@",ex);
-        }
-        @try
-        {
             [dialog MAP_Close_Ind:options];
         }
         @catch(NSException *ex)
