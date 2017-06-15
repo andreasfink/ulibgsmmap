@@ -53,8 +53,8 @@
         @throw([NSException exceptionWithName:@"locationInfoWithLMSI is missing in RoutingInfoForSM_Res" reason:NULL userInfo:@{@"backtrace": UMBacktrace(NULL,0)}] );
     }
     
-    imsi.asn1_tag.tagNumber = 0;
-    imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+    //imsi.asn1_tag.tagNumber = 0;
+    //imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
     [asn1_list addObject:imsi];
     
     if(locationInfoWithLMSI == NULL)
@@ -62,7 +62,7 @@
         @throw([NSException exceptionWithName:@"locationInfoWithLMSI is missing in RoutingInfoForSM_Res" reason:NULL userInfo:@{@"backtrace": UMBacktrace(NULL,0)}] );
     }
     locationInfoWithLMSI.asn1_tag.tagNumber = 0;
-//? locationInfoWithLMSI.asn1_tag.agClass = UMASN1Class_ContextSpecific;
+    locationInfoWithLMSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 
     [asn1_list addObject:locationInfoWithLMSI];
     

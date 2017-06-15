@@ -107,11 +107,22 @@
 
 -(void) MAP_Delimiter_Req:(NSDictionary *)options;
 -(void)MAP_Delimiter_Req:(NSDictionary *)xoptions
+                  result:(UMTCAP_asn1_Associate_result *)result
+              diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
+
+-(void)MAP_Delimiter_Req:(NSDictionary *)xoptions
+          callingAddress:(SccpAddress *)src
+           calledAddress:(SccpAddress *)dst
                    result:(UMTCAP_asn1_Associate_result *)result
                diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
 
 -(void) MAP_Close_Req:(NSDictionary *)options;
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
+               result:(UMTCAP_asn1_Associate_result *)result
+           diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
+-(void) MAP_Close_Req:(NSDictionary *)xoptions
+       callingAddress:(SccpAddress *)src
+        calledAddress:(SccpAddress *)dst
                result:(UMTCAP_asn1_Associate_result *)result
            diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
 

@@ -314,7 +314,21 @@
     return [self MAP_Delimiter_Req:options result:NULL diagnostic:NULL];
 }
 
+
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
+                   result:(UMTCAP_asn1_Associate_result *)result
+               diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+{
+    [self MAP_Delimiter_Req:xoptions
+             callingAddress:NULL
+              calledAddress:NULL
+                     result:result
+                 diagnostic:result_source_diagnostic];
+}
+
+- (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
+           callingAddress:(SccpAddress *)src
+            calledAddress:(SccpAddress *)dst
                    result:(UMTCAP_asn1_Associate_result *)result
                diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
@@ -377,6 +391,14 @@
                 itu_dialoguePortion.dialogResponse.result = result;
                 itu_dialoguePortion.dialogResponse.result_source_diagnostic = result_source_diagnostic;
             }
+            if(src)
+            {
+                localAddress = src;
+            }
+            if(dst)
+            {
+                remoteAddress = dst;
+            }
             [tcapLayer tcapContinueRequest:tcapTransactionId
                               userDialogId:userDialogId
                                    variant:self.variant
@@ -396,14 +418,29 @@
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
 {
     [self MAP_Close_Req:xoptions
+         callingAddress:NULL
+          calledAddress:NULL
                  result:NULL
-             diagnostic: NULL];
+             diagnostic:NULL];
     [mapUser MAP_Close_Ind:self.userIdentifier
                    options:xoptions];
 
 }
 
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
+               result:(UMTCAP_asn1_Associate_result *)result
+           diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+{
+    [self MAP_Close_Req:xoptions
+         callingAddress:NULL
+          calledAddress:NULL
+                 result:result
+             diagnostic:result_source_diagnostic];
+}
+
+-(void) MAP_Close_Req:(NSDictionary *)xoptions
+       callingAddress:(SccpAddress *)src
+        calledAddress:(SccpAddress *)dst
                result:(UMTCAP_asn1_Associate_result *)result
            diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
@@ -424,8 +461,14 @@
             NSLog(@"MAP_Close_Req: closing a non existing transation");
             return;
         }
-        SccpAddress *src = localAddress;
-        SccpAddress *dst = remoteAddress;
+        if(src==NULL)
+        {
+            src = localAddress;
+        }
+        if(dst==NULL)
+        {
+            dst = remoteAddress;
+        }
         NSMutableArray *components  = [pendingOutgoingComponents mutableCopy];
         pendingOutgoingComponents   = [[UMSynchronizedArray alloc] init];
 
@@ -765,7 +808,6 @@
         [pendingOutgoingComponents addObject:r];
         [self touch];
     }
-
 }
 
 - (void)MAP_ReturnError_Ind:(UMGSMMAP_asn1 *)params

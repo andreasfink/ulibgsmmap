@@ -38,7 +38,7 @@
     UMGSMMAP_LocationInfoWithLMSI *locationInfoWithLMSI;
     UMGSMMAP_ExtensionContainer *extensionContainer;
     
-/*    UMGSMMAP_Address    *msisdn;
+/*  UMGSMMAP_Address    *msisdn;
     UMGSMMAP_sm_RP_PRI  *sm_RP_PRI;
     UMGSMMAP_Address    *serviceCenterAddress;
     UMGSMMAP_extensionContainer *extensionContainer;
