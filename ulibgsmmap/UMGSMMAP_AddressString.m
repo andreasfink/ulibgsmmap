@@ -128,39 +128,39 @@ static inline unsigned char	nibble2hex(unsigned char b)
     {
         if(digits == nil)
         {
-            address = @"";
-            ton = 0;
-            npi = 0;
+            _address = @"";
+            _ton = 0;
+            _npi = 0;
         }
         else if([digits length] < 2)
         {
-            address = @"";
-            ton = 0;
-            npi = 0;
+            _address = @"";
+            _ton = 0;
+            _npi = 0;
         }
         else if ([digits compare:@"+" options:NSLiteralSearch range:NSMakeRange(0,1)] == NSOrderedSame )
         {
-            address = [digits substringFromIndex:1];
-            ton = GSMMAP_TON_INTERNATIONAL;
-            npi = GSMMAP_NPI_ISDN_E164;
+            _address = [digits substringFromIndex:1];
+            _ton = GSMMAP_TON_INTERNATIONAL;
+            _npi = GSMMAP_NPI_ISDN_E164;
         }
         else if(([digits length] >= 2) && ( [digits compare:@"00" options:NSLiteralSearch  range:NSMakeRange(0,2)] == NSOrderedSame ))
         {
-            address = [digits substringFromIndex:2];
-            ton = GSMMAP_TON_INTERNATIONAL;
-            npi = GSMMAP_NPI_ISDN_E164;
+            _address = [digits substringFromIndex:2];
+            _ton = GSMMAP_TON_INTERNATIONAL;
+            _npi = GSMMAP_NPI_ISDN_E164;
         }
         else if ( [digits compare:@"0" options:NSLiteralSearch range:NSMakeRange(0,1)] == NSOrderedSame )
         {
-            address = [digits substringFromIndex:1];
-            ton = GSMMAP_TON_NATIONAL;
-            npi = GSMMAP_NPI_ISDN_E164;
+            _address = [digits substringFromIndex:1];
+            _ton = GSMMAP_TON_NATIONAL;
+            _npi = GSMMAP_NPI_ISDN_E164;
         }
         else if ([digits isEqualToString:@":EMPTY:"])
         {
-            address = @":EMPTY:";
-            ton = GSMMAP_TON_EMPTY;
-            npi = GSMMAP_NPI_UNKNOWN;
+            _address = @":EMPTY:";
+            _ton = GSMMAP_TON_EMPTY;
+            _npi = GSMMAP_NPI_UNKNOWN;
         }
         else if ([digits compare:@":" options:NSLiteralSearch range:NSMakeRange(0,1)] == NSOrderedSame )
         {
@@ -193,9 +193,9 @@ static inline unsigned char	nibble2hex(unsigned char b)
             }
             if(colon_index < 3)
             {
-                address = @":EMPTY:";
-                ton = GSMMAP_TON_EMPTY;
-                npi = GSMMAP_NPI_UNKNOWN;
+                _address = @":EMPTY:";
+                _ton = GSMMAP_TON_EMPTY;
+                _npi = GSMMAP_NPI_UNKNOWN;
                 return self;
             }
             numstr[colon_pos[1]]='\0';
@@ -204,12 +204,12 @@ static inline unsigned char	nibble2hex(unsigned char b)
             anpi = atoi(&numstr[colon_pos[1]+1]);
             strncpy(number,&numstr[colon_pos[2]+1],(sizeof(number)-1));
             
-            ton = aton % 8;
-            npi = anpi % 16;
+            _ton = aton % 8;
+            _npi = anpi % 16;
             size_t len = strlen(number);
-            if(ton==GSMMAP_TON_ALPHANUMERIC)
+            if(_ton==GSMMAP_TON_ALPHANUMERIC)
             {
-                address = [[NSString alloc] initWithBytes:number length:len encoding:(NSUTF8StringEncoding)];
+                _address = [[NSString alloc] initWithBytes:number length:len encoding:(NSUTF8StringEncoding)];
             }
             else
             {
@@ -263,22 +263,22 @@ static inline unsigned char	nibble2hex(unsigned char b)
                     }
                 }
                 number[j] = '\0';
-                address = @(number);
+                _address = @(number);
             }
         }
         else
         {
             if(is_all_digits(digits.UTF8String, 0,digits.length)==0)
             {
-                ton = GSMMAP_TON_ALPHANUMERIC;
-                npi = GSMMAP_NPI_UNKNOWN;
-                address = [[[digits gsm8]gsm8to7withNibbleLengthPrefix]hexString];
+                _ton = GSMMAP_TON_ALPHANUMERIC;
+                _npi = GSMMAP_NPI_UNKNOWN;
+                _address = [[[digits gsm8]gsm8to7withNibbleLengthPrefix]hexString];
             }
             else
             {
-                ton = GSMMAP_TON_INTERNATIONAL;
-                npi = GSMMAP_NPI_ISDN_E164;
-                address = digits;
+                _ton = GSMMAP_TON_INTERNATIONAL;
+                _npi = GSMMAP_NPI_ISDN_E164;
+                _address = digits;
             }
         }
     }
@@ -290,9 +290,9 @@ static inline unsigned char	nibble2hex(unsigned char b)
     self = [super init];
     if(self)
     {
-        ton = xton;
-        npi = xnpi;
-        address = msisdn;
+        _ton = xton;
+        _npi = xnpi;
+        _address = msisdn;
     }
     return self;
 }
@@ -308,7 +308,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
     NSUInteger len=0;
     int odd=0;
     
-    if((ton==GSMMAP_TON_EMPTY) || (ton==GSMMAP_TON_MISSING))
+    if((_ton==GSMMAP_TON_EMPTY) || (_ton==GSMMAP_TON_MISSING))
     {
         [data appendByte:0x81]; /* ton=0/npi = 1,no extension */
         [data appendByte:0xFF];
@@ -316,16 +316,16 @@ static inline unsigned char	nibble2hex(unsigned char b)
         return;
     }
     
-    c = (ton & 0x07) << 4;
-    c |= (npi & 0x0F);
+    c = (_ton & 0x07) << 4;
+    c |= (_npi & 0x0F);
     c |= 0x80;	/* no extension */
     [data appendByte:c];
     
-    NSData *ad = [address dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *ad = [_address dataUsingEncoding:NSUTF8StringEncoding];
     len = ad.length;
     const uint8_t *bytes = ad.bytes;
     
-    if(ton == 5) /* alpha */
+    if(_ton == 5) /* alpha */
     {
         for(i=1;i<len;i++)
         {
@@ -375,9 +375,9 @@ static inline unsigned char	nibble2hex(unsigned char b)
     NSUInteger len = asn1_data.length;
     const uint8_t *str = asn1_data.bytes;
     
-    ton = str[pos++];
-    npi = ton & 0x0F;
-    ton =  (ton >> 4) & 0x07;
+    _ton = str[pos++];
+    _npi = _ton & 0x0F;
+    _ton =  (_ton >> 4) & 0x07;
     
     NSMutableData *tmp = [[NSMutableData alloc]init];
     while(--len)
@@ -396,7 +396,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
             [tmp appendByte:nibble2hex(b)];
         }
     }
-    address = [[NSString alloc]initWithData:tmp encoding:NSUTF8StringEncoding];
+    _address = [[NSString alloc]initWithData:tmp encoding:NSUTF8StringEncoding];
     return self;
 }
 
@@ -408,32 +408,32 @@ static inline unsigned char	nibble2hex(unsigned char b)
 - (id)objectValue
 {
     UMSynchronizedSortedDictionary *a = [[UMSynchronizedSortedDictionary alloc]init];
-    a[@"ton"] = @(ton);
-    a[@"npi"] = @(npi);
-    if(address)
+    a[@"ton"] = @(_ton);
+    a[@"npi"] = @(_npi);
+    if(_address)
     {
-        a[@"address"] = address;
+        a[@"address"] = _address;
     }
     return a;
 }
 
 - (NSString *)stringValue
 {
-    if((ton==GSMMAP_TON_INTERNATIONAL) && (npi==GSMMAP_NPI_ISDN_E164))
+    if((_ton==GSMMAP_TON_INTERNATIONAL) && (_npi==GSMMAP_NPI_ISDN_E164))
     {
-        return [NSString stringWithFormat:@"+%@",address];
+        return [NSString stringWithFormat:@"+%@",_address];
     }
-    else if(ton==GSMMAP_NPI_UNKNOWN)
+    else if(_ton==GSMMAP_NPI_UNKNOWN)
     {
-        return address;
+        return _address;
     }
-    else if(ton==GSMMAP_NPI_E212)
+    else if(_ton==GSMMAP_NPI_E212)
     {
-        return [NSString stringWithFormat:@"imsi:%@",address];
+        return [NSString stringWithFormat:@"imsi:%@",_address];
     }
     else
     {
-        return [NSString stringWithFormat:@"ton=%d npi=%d digits=%@",ton,npi,address];
+        return [NSString stringWithFormat:@"ton=%d npi=%d digits=%@",_ton,_npi,_address];
     }
 }
 
