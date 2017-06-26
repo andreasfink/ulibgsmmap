@@ -310,7 +310,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
     
     if((ton==GSMMAP_TON_EMPTY) || (ton==GSMMAP_TON_MISSING))
     {
-        [data appendByte:0x80]; /* ton/npi = 0,no extension */
+        [data appendByte:0x81]; /* ton=0/npi = 1,no extension */
         [data appendByte:0xFF];
         asn1_data = data;
         return;
