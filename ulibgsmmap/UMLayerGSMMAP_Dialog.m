@@ -844,6 +844,17 @@
 {
     @synchronized (self)
     {
+        NSMutableDictionary *yoptions;
+        if(xoptions)
+        {
+             yoptions = [xoptions mutableCopy];
+        }
+        else
+        {
+            yoptions = [[NSMutableDictionary alloc]init];
+        }
+        yoptions[@"sccp-remote"] = remoteAddress;
+        yoptions[@"sccp-local"] = localAddress;
         [mapUser MAP_Invoke_Ind:params
                          userId:userIdentifier
                          dialog:userDialogId
@@ -852,7 +863,7 @@
                        invokeId:xinvokeId
                        linkedId:xlinkedId
                            last:xlast
-                        options:xoptions];
+                        options:yoptions];
         [self touch];
     }
 }
