@@ -70,8 +70,11 @@
                     options:(NSDictionary *)options
 {
     UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:user withId:dialogId];
-    
-    NSLog(@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId);
+
+    if(logLevel <= UMLOG_DEBUG)
+    {
+        [logFeed debugText:[NSString stringWithFormat:@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId]];
+    }
     [dialog MAP_Open_Ind_forUser:user
                             tcap:tcapLayer
                              map:self
@@ -153,15 +156,23 @@
     }
     if(dialog==NULL)
     {
-        NSLog(@"tcapContinueIndication: DialogNotFound %@",dialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapContinueIndication: DialogNotFound %@",dialogId]];
     }
     else
     {
-        NSLog(@"tcapContinueIndication\n");
-        NSLog(@"    dialogId: %@\n",dialog.userDialogId);
-        NSLog(@"    localTransactionId: %@\n",dialog.tcapTransactionId);
-        NSLog(@"    remoteTransactionId: %@\n",dialog.tcapRemoteTransactionId);
-        NSLog(@"    userIdentifier: %@\n",dialog.userIdentifier);
+        if(logLevel <= UMLOG_DEBUG)
+        {
+            NSString *s = [NSString stringWithFormat:@"tcapContinueIndication\n"
+                           @"    dialogId: %@\n"
+                           @"    localTransactionId: %@\n"
+                           @"    remoteTransactionId: %@\n"
+                           @"    userIdentifier: %@\n",
+                           dialog.userDialogId,
+                           dialog.tcapTransactionId,
+                           dialog.tcapRemoteTransactionId,
+                           dialog.userIdentifier];
+            [logFeed debugText:s];
+        }
         if(dialog.tcapTransactionId == NULL)
         {
             dialog.tcapTransactionId = xlocalTransactionId;
@@ -205,15 +216,23 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        NSLog(@"tcapEndIndication: DialogNotFound %@",dialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapEndIndication: DialogNotFound %@",dialogId]];
     }
     else
     {
-        NSLog(@"tcapEndIndication\n");
-        NSLog(@"    dialogId: %@\n",dialog.userDialogId);
-        NSLog(@"    localTransactionId: %@\n",dialog.tcapTransactionId);
-        NSLog(@"    remoteTransactionId: %@\n",dialog.tcapRemoteTransactionId);
-        NSLog(@"    userIdentifier: %@\n",dialog.userIdentifier);
+        if(logLevel <= UMLOG_DEBUG)
+        {
+            NSString *s = [NSString stringWithFormat:@"tcapEndIndication\n"
+                           @"    dialogId: %@\n"
+                           @"    localTransactionId: %@\n"
+                           @"    remoteTransactionId: %@\n"
+                           @"    userIdentifier: %@\n",
+                           dialog.userDialogId,
+                           dialog.tcapTransactionId,
+                           dialog.tcapRemoteTransactionId,
+                           dialog.userIdentifier];
+            [logFeed debugText:s];
+        }
         if(dialog.tcapTransactionId == NULL)
         {
             dialog.tcapTransactionId = transactionId;
@@ -231,7 +250,7 @@
         }
         @catch(NSException *ex)
         {
-            NSLog(@"Exception: %@",ex);
+            [logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
         }
         @try
         {
@@ -239,7 +258,7 @@
         }
         @catch(NSException *ex)
         {
-            NSLog(@"Exception: %@",ex);
+            [logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
         }
     }
 }
@@ -256,8 +275,11 @@
                              options:(NSDictionary *)options
 {
 
+    if(logLevel <= UMLOG_DEBUG)
+    {
+        [logFeed debugText:@"tcapUnidirectionalIndication received"];
+    }
 
-    NSLog(@"tcapUnidirectionalIndication received");
     @try
     {
         [user MAP_Unidirectional_Ind:options
@@ -269,7 +291,7 @@
     }
     @catch(NSException *ex)
     {
-        NSLog(@"Exception: %@",ex);
+        [logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
     }
 }
 
@@ -284,12 +306,14 @@
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
 {
-    NSLog(@"tcapUAbortIndication received");
-
+    if(logLevel <= UMLOG_DEBUG)
+    {
+        [logFeed debugText:@"tcapUAbortIndication received"];
+    }
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:userDialogId];
     if(dialog==NULL)
     {
-        NSLog(@"tcapUAbortIndication DialogNotFound %@",userDialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapUAbortIndication DialogNotFound %@",userDialogId]];
         return;
     }
 
@@ -305,7 +329,7 @@
     }
     @catch(NSException *ex)
     {
-        NSLog(@"Exception: %@",ex);
+        [logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
     }
     @try
     {
@@ -313,7 +337,7 @@
     }
     @catch(NSException *ex)
     {
-        NSLog(@"Exception: %@",ex);
+        [logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
     }
 }
 
@@ -329,12 +353,14 @@
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
 {
-    NSLog(@"tcapPAbortIndication received");
-
+    if(logLevel <=UMLOG_DEBUG)
+    {
+        [logFeed debugText:[NSString stringWithFormat:@"tcapPAbortIndication for dialog %@",userDialogId]];
+    }
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:userDialogId];
     if(dialog==NULL)
     {
-        NSLog(@"tcapPAbortIndication DialogNotFound %@",userDialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapPAbortIndication DialogNotFound %@",userDialogId]];
         return;
     }
 
@@ -351,7 +377,7 @@
     }
     @catch(NSException *ex)
     {
-        NSLog(@"Exception: %@",ex);
+        [logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
     }
 
     @try
@@ -360,7 +386,7 @@
     }
     @catch(NSException *ex)
     {
-        NSLog(@"Exception: %@",ex);
+        [logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
     }
 }
 
@@ -696,7 +722,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        NSLog(@"Dialog ID %@ not found. Ignoring",dialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_U_Abort_Req:options];
@@ -749,7 +775,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        NSLog(@"Dialog ID %@ not found. Ignoring",dialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_Delimiter_Req:options
@@ -765,7 +791,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        NSLog(@"Dialog ID %@ not found. Ignoring",dialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_Delimiter_Req:options];
@@ -806,7 +832,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        NSLog(@"Dialog ID %@ not found. Ignoring",dialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_Close_Req:options
@@ -827,7 +853,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        NSLog(@"Dialog ID %@ not found. Ignoring",dialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
 
@@ -850,7 +876,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        NSLog(@"Dialog ID %@ not found. Ignoring",dialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_ReturnResult_Req:xparam
@@ -872,7 +898,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:xdialogId];
     if(dialog==NULL)
     {
-        NSLog(@"Dialog ID %@ not found. Ignoring",xdialogId);
+        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",xdialogId]];
         return;
     }
     [dialog MAP_ReturnError_Req:xparam

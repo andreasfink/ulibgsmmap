@@ -198,12 +198,19 @@
 {
     @synchronized (self)
     {
-        NSLog(@"MAP_Open_Ind_forUser\n");
-        NSLog(@"\tlocalTransactionId: %@\n",localTransactionId);
-        NSLog(@"\tremoteTransactionId: %@\n",remoteTransactionId);
-        NSLog(@"\tuserDialogId: %@\n",self.userDialogId);
-        NSLog(@"\tuserIdentifier: %@\n",self.userIdentifier);
-
+        if(xgsmmap.logLevel <= UMLOG_DEBUG)
+        {
+            NSString *s = [NSString stringWithFormat:@"MAP_Open_Ind_forUser\n"
+                           @"\tlocalTransactionId: %@\n"
+                           @"\tremoteTransactionId: %@\n"
+                           @"\tuserDialogId: %@\n"
+                           @"\tuserIdentifier: %@\n",
+                           localTransactionId,
+                           remoteTransactionId,
+                           self.userDialogId,
+                           self.userIdentifier];
+            [xgsmmap.logFeed debugText:s];
+        }
         self.mapUser = user;
         self.tcapLayer = xtcap;
         self.gsmmapLayer = xgsmmap;
@@ -234,12 +241,19 @@
         {
             NSString *uid = [user getNewUserIdentifier];
             self.userIdentifier = uid;
-            NSLog(@"newUserIdentifier: %@",uid);
+            if(xgsmmap.logLevel <= UMLOG_DEBUG)
+            {
+                NSString *s = [NSString stringWithFormat:@"newUserIdentifier: %@",uid];
+                [xgsmmap.logFeed debugText:s];
+            }
         }
         else
         {
-            NSLog(@"existingUserIdentifier: %@",self.userIdentifier);
-
+            if(xgsmmap.logLevel <= UMLOG_DEBUG)
+            {
+                NSString *s = [NSString stringWithFormat:@"existingUserIdentifier: %@",self.userIdentifier];
+                [xgsmmap.logFeed debugText:s];
+            }
         }
         [user MAP_Open_Ind:self.userIdentifier
                     dialog:self.userDialogId
@@ -268,12 +282,19 @@
 {
     @synchronized (self)
     {
-        NSLog(@"MAP_Open_Resp_forUser\n");
-        NSLog(@"\tlocalTransactionId: %@\n",localTransactionId);
-        NSLog(@"\tremoteTransactionId: %@\n",remoteTransactionId);
-        NSLog(@"\tuserDialogId: %@\n",self.userDialogId);
-        NSLog(@"\tuserIdentifier: %@\n",self.userIdentifier);
-
+        if(xgsmmap.logLevel <= UMLOG_DEBUG)
+        {
+            NSString *s = [NSString stringWithFormat:@"MAP_Open_Resp_forUser\n"
+                           @"\tlocalTransactionId: %@\n"
+                           @"\tremoteTransactionId: %@\n"
+                           @"\tuserDialogId: %@\n"
+                           @"\tuserIdentifier: %@\n",
+                           localTransactionId,
+                           remoteTransactionId,
+                           self.userDialogId,
+                           self.userIdentifier];
+            [xgsmmap.logFeed debugText:s];
+        }
         self.mapUser = user;
         self.tcapLayer = xtcap;
         self.gsmmapLayer = xgsmmap;
@@ -346,7 +367,7 @@
         {
             if(tcapTransactionId == NULL)
             {
-                NSLog(@"MAP_Continue_Req: continuing a non existing transation");
+                [gsmmapLayer.logFeed minorErrorText:@"MAP_Continue_Req: continuing a non existing transation"];
                 return;
             }
         }
@@ -448,17 +469,17 @@
     {
         if(self.dialogIsClosed==YES)
         {
-            NSLog(@"MAP_Close_Req: closing a already closed dialog");
+            [gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Req: closing a already closed dialog"];
             return;
         }
         if(self.openEstablished==NO)
         {
-            NSLog(@"MAP_Close_Req: closing a never opened dialog");
+            [gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Req: closing a never opened dialog"];
             return;
         }
         if(tcapTransactionId == NULL)
         {
-            NSLog(@"MAP_Close_Req: closing a non existing transation");
+            [gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Req: closing a non existing transation"];
             return;
         }
         if(src==NULL)
@@ -508,12 +529,12 @@
     {
         if(self.openEstablished==NO)
         {
-            NSLog(@"MAP_Close_Ind: closing a never opened dialog");
+            [gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Ind: closing a never opened dialog"];
             return;
         }
         if(tcapTransactionId == NULL)
         {
-            NSLog(@"MAP_Close_Ind: closing a non existing transation");
+            [gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Ind: closing a non existing transation"];
             return;
         }
         [mapUser MAP_Close_Ind:userIdentifier options:xoptions];
@@ -577,7 +598,7 @@
 {
     @synchronized (self)
     {
-        NSLog(@"MAP_U_Abort_Req not yet implemented");
+        [gsmmapLayer.logFeed minorErrorText:@"MAP_U_Abort_Req: not yet implemented"];
         [mapUser MAP_Close_Ind:self.userIdentifier
                          options:xoptions];
         [self touch];
@@ -631,7 +652,8 @@
         }
         @catch(NSException *e)
         {
-            NSLog(@"Exception: %@",e);
+            [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+
         }
         [self touch];
         self.dialogIsClosed = YES;
@@ -673,7 +695,7 @@
     {
         if(tcapTransactionId == NULL)
         {
-            NSLog(@"MAP_Invoke: adding to a non existing transation");
+            [gsmmapLayer.logFeed majorErrorText:@"MAP_Invoke: adding to a non existing transation"];
             return;
         }
         if(xinvokeId == AUTO_ASSIGN_INVOKE_ID)
@@ -757,7 +779,7 @@
 {
     @synchronized(self)
     {
-        NSLog(@"Missing implementation: MAP_Error_Req");
+        [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_Error_Req"];
         [self touch];
     }
 }
@@ -773,7 +795,7 @@
 {
     @synchronized(self)
     {
-        NSLog(@"Missing implementation: MAP_Reject_Req");
+        [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_Reject_Req"];
         [self touch];
     }
 }
@@ -817,7 +839,7 @@
                   errorCode:(int64_t)errorCode
                     options:(NSDictionary *)options
 {
-    NSLog(@"Missing implementation: MAP_ReturnError_Ind");
+    [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_ReturnError_Ind"];
     [self touch];
 }
 
@@ -828,7 +850,7 @@
              errorCode:(int64_t)errorCode
                options:(NSDictionary *)options
 {
-    NSLog(@"Missing implementation: MAP_Reject_Ind");
+    [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_Reject_Ind"];
     [self touch];
 }
 
