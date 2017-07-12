@@ -853,8 +853,14 @@
         {
             yoptions = [[NSMutableDictionary alloc]init];
         }
-        yoptions[@"sccp-remote"] = remoteAddress;
-        yoptions[@"sccp-local"] = localAddress;
+        if(remoteAddress)
+        {
+            yoptions[@"sccp-remote"] = remoteAddress;
+        }
+        if(localAddress)
+        {
+            yoptions[@"sccp-local"] = localAddress;
+        }
         [mapUser MAP_Invoke_Ind:params
                          userId:userIdentifier
                          dialog:userDialogId
