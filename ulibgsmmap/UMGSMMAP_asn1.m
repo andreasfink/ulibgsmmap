@@ -193,6 +193,7 @@
                 case UMTCAP_Operation_Unidirectional:
                     break;
             }
+            break;
         }
         case UMGSMMAP_Opcode_updateLocation:
             switch(operation)
