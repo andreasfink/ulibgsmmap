@@ -27,7 +27,6 @@
 @synthesize options;
 @synthesize localAddress;
 @synthesize remoteAddress;
-@synthesize userInfo;
 @synthesize dialogProtocolVersion;
 @synthesize variant;
 @synthesize tcapRemoteTransactionId;
@@ -160,7 +159,7 @@
         self.localAddress = src;
         self.remoteAddress = dst;
         self.applicationContext = appContext;
-        self.userInfo = xuserInfo;
+        self.requestUserInfo = xuserInfo;
 
         if((appContext) || (xuserInfo))
         {
@@ -222,7 +221,7 @@
         {
             UMTCAP_itu_asn1_dialoguePortion *itu = (UMTCAP_itu_asn1_dialoguePortion *)xdialoguePortion;
             self.applicationContext = itu.dialogRequest.objectIdentifier;
-            self.userInfo = itu.dialogRequest.user_information;
+            self.requestUserInfo = itu.dialogRequest.user_information;
             self.dialogProtocolVersion = itu.dialogRequest.protocolVersion;
         }
         self.tcapRemoteTransactionId = remoteTransactionId;
@@ -301,11 +300,17 @@
         self.variant = xvariant;
         self.localAddress = src;
         self.remoteAddress = dst;
-        // self.applicationContext = appContext;
-        // self.userInfo = xuserInfo;
         self.options = xoptions;
         self.tcapTransactionId = localTransactionId;
         self.tcapRemoteTransactionId = remoteTransactionId;
+
+
+        if(xdialoguePortion && xvariant==TCAP_VARIANT_ITU)
+        {
+            UMTCAP_itu_asn1_dialoguePortion *itu = (UMTCAP_itu_asn1_dialoguePortion *)xdialoguePortion;
+            self.responseApplicationContext = itu.dialogRequest.objectIdentifier;
+            self.responseUserInfo = itu.dialogRequest.user_information;
+        }
 
         self.openEstablished = YES;
         pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
@@ -347,11 +352,28 @@
                  diagnostic:result_source_diagnostic];
 }
 
+
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
                    result:(UMTCAP_asn1_Associate_result *)result
                diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+{
+    [self MAP_Delimiter_Req:xoptions
+             callingAddress:src
+              calledAddress:dst
+                     result:result
+                 diagnostic:result_source_diagnostic
+                   userInfo:NULL];
+}
+
+- (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
+           callingAddress:(SccpAddress *)src
+            calledAddress:(SccpAddress *)dst
+                   result:(UMTCAP_asn1_Associate_result *)result
+               diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+                 userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+
 {
     @synchronized (self)
     {
@@ -384,7 +406,7 @@
                 itu_dialoguePortion.dialogRequest = [[UMTCAP_asn1_AARQ_apdu alloc]init];
                 itu_dialoguePortion.dialogRequest.protocolVersion = dialogProtocolVersion;
                 itu_dialoguePortion.dialogRequest.objectIdentifier = applicationContext;
-                itu_dialoguePortion.dialogRequest.user_information = userInfo;
+                itu_dialoguePortion.dialogRequest.user_information = xuserInfo;
             }
 
             [tcapLayer tcapBeginRequest:tcapTransactionId
@@ -408,7 +430,7 @@
                 itu_dialoguePortion.dialogResponse = [[UMTCAP_asn1_AARE_apdu alloc]init];
                 itu_dialoguePortion.dialogResponse.protocolVersion = dialogProtocolVersion;
                 itu_dialoguePortion.dialogResponse.objectIdentifier = applicationContext;
-                itu_dialoguePortion.dialogResponse.user_information = userInfo;
+                itu_dialoguePortion.dialogResponse.user_information = xuserInfo;
                 itu_dialoguePortion.dialogResponse.result = result;
                 itu_dialoguePortion.dialogResponse.result_source_diagnostic = result_source_diagnostic;
             }
@@ -464,6 +486,21 @@
         calledAddress:(SccpAddress *)dst
                result:(UMTCAP_asn1_Associate_result *)result
            diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+{
+    [self MAP_Close_Req:xoptions
+         callingAddress:src
+          calledAddress:dst
+                 result:result
+             diagnostic:result_source_diagnostic
+               userInfo:NULL];
+}
+
+-(void) MAP_Close_Req:(NSDictionary *)xoptions
+       callingAddress:(SccpAddress *)src
+        calledAddress:(SccpAddress *)dst
+               result:(UMTCAP_asn1_Associate_result *)result
+           diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+             userInfo:(UMTCAP_asn1_userInformation *)userInfo
 {
     @synchronized(self)
     {
@@ -1092,6 +1129,8 @@
 {
 
 }
+
+
 
 
 

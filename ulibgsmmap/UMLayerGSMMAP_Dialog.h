@@ -30,7 +30,9 @@
     UMLayerGSMMAP *gsmmapLayer;
     UMTCAP_asn1_objectIdentifier *applicationContext;
     UMTCAP_asn1_objectIdentifier *applicationContext2;
-    UMTCAP_asn1_userInformation *userInfo;
+    UMTCAP_asn1_userInformation *_requestUserInfo;
+    UMTCAP_asn1_userInformation *_responseUserInfo;
+    UMTCAP_asn1_objectIdentifier *_responseApplicationContext;
     UMASN1BitString *dialogProtocolVersion;
     SccpAddress *localAddress;
     SccpAddress *remoteAddress;
@@ -63,7 +65,10 @@
 @property(readwrite,strong) UMLayerGSMMAP *gsmmapLayer;
 @property(readwrite,strong) UMTCAP_asn1_objectIdentifier *applicationContext;
 @property(readwrite,strong) UMTCAP_asn1_objectIdentifier *applicationContext2;
-@property(readwrite,strong) UMTCAP_asn1_userInformation *userInfo;
+@property(readwrite,strong) UMTCAP_asn1_userInformation *requestUserInfo;
+@property(readwrite,strong) UMTCAP_asn1_userInformation *responseUserInfo;
+@property(readwrite,strong) UMTCAP_asn1_objectIdentifier *responseApplicationContext;
+
 @property(readwrite,strong) UMASN1BitString *dialogProtocolVersion;
 @property(readwrite,strong) SccpAddress *localAddress;
 @property(readwrite,strong) SccpAddress *remoteAddress;
@@ -116,6 +121,13 @@
                    result:(UMTCAP_asn1_Associate_result *)result
                diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
 
+- (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
+           callingAddress:(SccpAddress *)src
+            calledAddress:(SccpAddress *)dst
+                   result:(UMTCAP_asn1_Associate_result *)result
+               diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+                 userInfo:(UMTCAP_asn1_userInformation *)xuserInfo;
+
 -(void) MAP_Close_Req:(NSDictionary *)options;
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
                result:(UMTCAP_asn1_Associate_result *)result
@@ -125,6 +137,14 @@
         calledAddress:(SccpAddress *)dst
                result:(UMTCAP_asn1_Associate_result *)result
            diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
+
+-(void) MAP_Close_Req:(NSDictionary *)xoptions
+       callingAddress:(SccpAddress *)src
+        calledAddress:(SccpAddress *)dst
+               result:(UMTCAP_asn1_Associate_result *)result
+           diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+             userInfo:(UMTCAP_asn1_userInformation *)userInfo;
+
 
 - (void)MAP_Error_Req:(UMASN1Object *)param
        callingAddress:(SccpAddress *)src
