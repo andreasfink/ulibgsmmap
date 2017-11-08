@@ -34,7 +34,6 @@
 #pragma mark -
 #pragma mark Initialisation
 
-
 - (UMLayerGSMMAP_Dialog *)init
 {
     self = [super init];
@@ -45,6 +44,7 @@
         timeoutValue = 90;
         createdDate = [NSDate dateWithTimeIntervalSinceNow:0];
         timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeoutValue];
+        _logLevel = UMLOG_MAJOR;
     }
     return self;
 }

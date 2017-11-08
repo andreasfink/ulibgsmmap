@@ -44,7 +44,7 @@
     UMTCAP_Variant variant;
     UMSynchronizedArray *pendingOutgoingComponents;
     UMSynchronizedArray *pendingIncomingComponents;
-
+    UMLogLevel _logLevel;
     BOOL    _initiatedOutgoing;
     BOOL    _openEstablished;
     BOOL    _returnResultLastSent;
@@ -81,6 +81,7 @@
 @property(readwrite,assign,atomic) BOOL    dialogResponseRequired;
 @property(readwrite,assign,atomic) BOOL    dialogIsClosed;
 @property(readwrite,assign,atomic) BOOL    dialogShallClose;
+@property(readwrite,assign)     UMLogLevel logLevel;
 
 
 @property(readwrite,strong)    NSString *tcapRemoteTransactionId;
