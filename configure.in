@@ -130,19 +130,34 @@ dnl -------------------------------------
 AC_CONFIG_SECTION([Checking libraries])
 AC_CHECK_LIB(ulib, ulib_cpu_count)
 
-dnl Implement --enable-debug option.
-AC_ARG_ENABLE(debug,
-[  --enable-debug	  enable debugging configuration [disabled]], [
-	echo Using Debuging target
-	CFLAGS="$CFLAGS -g  -O0  -D${CONFIG_DEFINE}=Debug"
+
+dnl Implement --enable-debug --enable-profiling options.
+
+AC_ARG_ENABLE(profiling,
+[  --enable-profiling	  enable profiling  [disabled]], [
+	echo Using Debuging+profiling target
+	CFLAGS="$CFLAGS -pg -g -O0 -D{CONFIG_DEFINE}=Debug"
 	LDFLAGS="$LDFLAGS -g"
+	CONFIGURATION="-configuration Debug"
+	AC_DEFINE(WS_DEBUG)
+]
+,
+[
+AC_ARG_ENABLE(debug,
+[  --enable-debug	  enable debugging  [disabled]], [
+	echo Using Debuging target
+	CFLAGS="$CFLAGS -g -O0 -D{CONFIG_DEFINE}G=Debug"
+	LDFLAGS="$LDFLAGS -g"
+	CONFIGURATION="-configuration Debug"
 	AC_DEFINE(WS_DEBUG)
 ]
 ,
 [
 	echo Using Release target
-	CFLAGS="$CFLAGS -Os -D${CONFIG_DEFINE}=Release"
-])
+	CFLAGS="$CFLAGS -Os -DULIB_CONFIG=Release"
+	CONFIGURATION="-configuration Release"
+])])
+
 
 dnl Checks for latest version.
 dnl -------------------------------------
