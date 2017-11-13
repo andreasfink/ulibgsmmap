@@ -52,6 +52,7 @@
     BOOL    _dialogResponseRequired;
     BOOL    _dialogIsClosed;
     BOOL    _dialogShallClose;
+    UMMutex *_dialogLock;
 }
 
 #pragma mark -

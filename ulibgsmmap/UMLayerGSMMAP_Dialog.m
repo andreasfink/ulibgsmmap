@@ -104,31 +104,39 @@
 
 - (void)touch
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    if(timeoutValue==0)
     {
-        if(timeoutValue==0)
-        {
-            timeoutValue=90;
-        }
-        timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeoutValue];
+        timeoutValue=90;
     }
+    timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeoutValue];
+    [_dialogLock unlock];
+
+}
+
+- (void)touchWhileLocked
+{
+    if(timeoutValue==0)
+    {
+        timeoutValue=90;
+    }
+    timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeoutValue];
 }
 
 - (BOOL)isTimedOut
 {
-    @synchronized(self)
+    BOOL r = NO;
+    [_dialogLock lock];
+    if(timeoutDate != NULL)
     {
-        if(timeoutDate == NULL)
-        {
-            return NO;
-        }
         NSDate *now = [NSDate date];
         if([now compare:timeoutDate] == NSOrderedDescending)
         {
-            return YES;
+            r = YES;
         }
-        return NO;
     }
+    [_dialogLock unlock];
+    return r;
 }
 
 /* --------------------------------------------------------------------------- */
@@ -502,7 +510,8 @@
            diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
              userInfo:(UMTCAP_asn1_userInformation *)userInfo
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         if(self.dialogIsClosed==YES)
         {
@@ -557,12 +566,21 @@
         self.openEstablished = NO;
         [self touch];
     }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
+    }
 }
 
 
 -(void) MAP_Close_Ind:(NSDictionary *)xoptions
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         if(self.openEstablished==NO)
         {
@@ -579,7 +597,15 @@
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
         pendingOutgoingComponents   = [[UMSynchronizedArray alloc] init];
-        [self touch];
+        [self touchWhileLocked];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
@@ -591,7 +617,8 @@
             transactionId:(NSString *)localTransactionId
       remoteTransactionId:(NSString *)remoteTransactionId
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         /* update the GT's based on the response */
         remoteAddress = src;
@@ -604,7 +631,15 @@
                      transactionId:localTransactionId
                remoteTransactionId:remoteTransactionId
                            options:xoptions];
-        [self touch];
+        [self touchWhileLocked];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
@@ -615,7 +650,8 @@
            transactionId:(NSString *)localTransactionId
      remoteTransactionId:(NSString *)remoteTransactionId
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         /* update calling/called from the incoming continue of the transaction */
         remoteAddress = src;
@@ -627,22 +663,40 @@
                     transactionId:localTransactionId
               remoteTransactionId:remoteTransactionId
                           options:xoptions];
-        [self touch];
+        [self touchWhileLocked];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
 -(void) MAP_U_Abort_Req:(NSDictionary *)xoptions
 {
-    @synchronized (self)
+    [_dialogLock lock];
+    @try
     {
         [gsmmapLayer.logFeed minorErrorText:@"MAP_U_Abort_Req: not yet implemented"];
         [mapUser MAP_Close_Ind:self.userIdentifier
                          options:xoptions];
-        [self touch];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [self touchWhileLocked];
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
+        [_dialogLock unlock];
     }
+
 }
 
 -(void) MAP_P_Abort_Ind:(NSDictionary *)xoptions
@@ -652,7 +706,8 @@
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         [mapUser MAP_P_Abort_Ind:self.userIdentifier
                   callingAddress:src
@@ -661,10 +716,18 @@
                    transactionId:localTransactionId
              remoteTransactionId:remoteTransactionId
                          options:xoptions];
-        [self touch];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [self touchWhileLocked];
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
+        [_dialogLock unlock];
     }
 }
 
@@ -675,27 +738,29 @@
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
-        @try
-        {
-            [mapUser MAP_U_Abort_Ind:self.userIdentifier
-                      callingAddress:src
-                       calledAddress:dst
-                     dialoguePortion:xdialoguePortion
-                       transactionId:localTransactionId
-                 remoteTransactionId:remoteTransactionId
-                             options:xoptions];
-        }
-        @catch(NSException *e)
-        {
-            [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
-
-        }
-        [self touch];
+        [mapUser MAP_U_Abort_Ind:self.userIdentifier
+                  callingAddress:src
+                   calledAddress:dst
+                 dialoguePortion:xdialoguePortion
+                   transactionId:localTransactionId
+             remoteTransactionId:remoteTransactionId
+                         options:xoptions];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [self touchWhileLocked];
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
+        [_dialogLock unlock];
+
     }
 }
 
@@ -703,13 +768,22 @@
      tcapTransactionId:(NSString *)localTransactionId
                 reason:(SCCP_ReturnCause)returnCause
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         [mapUser MAP_Notice_Ind:userIdentifier
               tcapTransactionId:localTransactionId
                          reason:returnCause
                         options:rxoptions];
-        [self touch];
+        [self touchWhileLocked];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
@@ -728,7 +802,8 @@
                    last:(BOOL)last
                 options:(NSDictionary *)options
 {
-    @synchronized (self)
+    [_dialogLock lock];
+    @try
     {
         if(tcapTransactionId == NULL)
         {
@@ -754,7 +829,11 @@
                                       opCodeNational:opcode.national
                                                 last:last];
         [pendingOutgoingComponents addObject:invoke];
-        [self touch];
+        [self touchWhileLocked];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
@@ -765,7 +844,8 @@
                          last:(BOOL)last
                       options:(NSDictionary *)options;
 {
-    @synchronized (self)
+    [_dialogLock lock];
+    @try
     {
         if(tcapTransactionId == NULL)
         {
@@ -805,6 +885,10 @@
         [pendingOutgoingComponents addObject:r];
         [self touch];
     }
+    @finally
+    {
+        [_dialogLock unlock];
+    }
 }
 
 - (void)MAP_Error_Req:(UMASN1Object *)param
@@ -814,10 +898,19 @@
             operation:(int64_t)operation
               options:(NSDictionary *)options
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_Error_Req"];
-        [self touch];
+        [self touchWhileLocked];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
@@ -830,10 +923,19 @@
                problem:(UMGSMMAP_asn1 *)problem
                options:(NSDictionary *)options
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_Reject_Req"];
         [self touch];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
@@ -844,7 +946,8 @@
                   errorCode:(int64_t)errorCode
                     options:(NSDictionary *)options
 {
-    @synchronized (self)
+    [_dialogLock lock];
+    @try
     {
         if(tcapTransactionId == NULL)
         {
@@ -865,7 +968,15 @@
                                 errorCode:errorCode
                            isPrivateError:NO];
         [pendingOutgoingComponents addObject:r];
-        [self touch];
+        [self touchWhileLocked];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
@@ -901,7 +1012,8 @@
                   last:(BOOL)xlast
                options:(NSDictionary *)xoptions
 {
-    @synchronized (self)
+    [_dialogLock lock];
+    @try
     {
         NSMutableDictionary *yoptions;
         if(xoptions)
@@ -929,7 +1041,15 @@
                        linkedId:xlinkedId
                            last:xlast
                         options:yoptions];
-        [self touch];
+        [self touchWhileLocked];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
@@ -941,7 +1061,8 @@
                          last:(BOOL)xlast
                       options:(NSDictionary *)xoptions
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         [mapUser MAP_ReturnResult_Resp:params
                                 userId:userIdentifier
@@ -952,7 +1073,15 @@
                               linkedId:xlinkedId
                                   last:xlast
                                options:xoptions];
-        [self touch];
+        [self touchWhileLocked];
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 
@@ -963,7 +1092,8 @@
                    errorCode:(int64_t)xerrorCode
                      options:(NSDictionary *)xoptions
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         [mapUser MAP_ReturnError_Resp:params
                                userId:userIdentifier
@@ -975,6 +1105,14 @@
                             errorCode:xerrorCode
                               options:xoptions];
     }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
+    }
 }
 
 - (void)MAP_Reject_Resp:(UMGSMMAP_asn1 *)params
@@ -984,7 +1122,8 @@
               errorCode:(int64_t)xerrorCode
                 options:(NSDictionary *)xoptions
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         [mapUser MAP_Reject_Resp:params
                           userId:userIdentifier
@@ -996,75 +1135,80 @@
                        errorCode:xerrorCode
                          options:xoptions];
     }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
+    }
 }
 
 
 - (void)MAP_ProcessComponents:(NSArray *)components
                       options:(NSDictionary *)xoptions
 {
-    @synchronized(self)
+    for(UMTCAP_generic_asn1_componentPDU *component in components)
     {
-        for(UMTCAP_generic_asn1_componentPDU *component in components)
-        {
-            UMLayerGSMMAP_OpCode *op = [[UMLayerGSMMAP_OpCode alloc]init];
-            op.operation = component.operationCode;
-            op.family = component.operationCodeFamily;
-            op.national = component.operationNational;
+        UMLayerGSMMAP_OpCode *op = [[UMLayerGSMMAP_OpCode alloc]init];
+        op.operation = component.operationCode;
+        op.family = component.operationCodeFamily;
+        op.national = component.operationNational;
 
-            switch(component.asn1_tag.tagNumber)
+        switch(component.asn1_tag.tagNumber)
+        {
+            case TCAP_ITU_COMPONENT_INVOKE:
+                [self MAP_Invoke_Ind:component.params
+                              opCode:op
+                            invokeId:component.invokeId
+                            linkedId:component.linkedId
+                                last:component.isLast
+                             options:options];
+                break;
+            case TCAP_ITU_COMPONENT_RETURN_RESULT_LAST:
             {
-                case TCAP_ITU_COMPONENT_INVOKE:
-                    [self MAP_Invoke_Ind:component.params
-                                  opCode:op
-                                invokeId:component.invokeId
-                                linkedId:component.linkedId
-                                    last:component.isLast
-                                 options:options];
-                    break;
-                case TCAP_ITU_COMPONENT_RETURN_RESULT_LAST:
-                {
-                    UMGSMMAP_asn1 *gasn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:component.params context:self];
-                    [self MAP_ReturnResult_Resp:gasn1
-                                         opCode:op
-                                       invokeId:component.invokeId
-                                       linkedId:component.linkedId
-                                           last:YES
-                                        options:options];
-                    break;
-                }
-                case TCAP_ITU_COMPONENT_RETURN_RESULT_NOT_LAST:
-                {
-                    UMGSMMAP_asn1 *gasn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:component.params context:self];
-                    [self MAP_ReturnResult_Resp:gasn1
-                                         opCode:op
-                                       invokeId:component.invokeId
-                                       linkedId:component.linkedId
-                                           last:NO
-                                        options:options];
-                    break;
-                }
-                case TCAP_ITU_COMPONENT_RETURN_ERROR:
-                {
-                    UMGSMMAP_asn1 *gasn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:component.params context:self];
-                    [self MAP_ReturnError_Resp:gasn1
-                                        opCode:op
-                                      invokeId:component.invokeId
-                                      linkedId:component.linkedId
-                                     errorCode:component.errorCode
-                                       options:options];
-                    break;
-                }
-                case TCAP_ITU_COMPONENT_REJECT:
-                {
-                    UMGSMMAP_asn1 *gasn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:component.params context:self];
-                    [self MAP_Reject_Resp:gasn1
-                                   opCode:op
-                                 invokeId:component.invokeId
-                                 linkedId:component.linkedId
-                                errorCode:component.errorCode
-                                  options:options];
-                    break;
-                }
+                UMGSMMAP_asn1 *gasn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:component.params context:self];
+                [self MAP_ReturnResult_Resp:gasn1
+                                     opCode:op
+                                   invokeId:component.invokeId
+                                   linkedId:component.linkedId
+                                       last:YES
+                                    options:options];
+                break;
+            }
+            case TCAP_ITU_COMPONENT_RETURN_RESULT_NOT_LAST:
+            {
+                UMGSMMAP_asn1 *gasn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:component.params context:self];
+                [self MAP_ReturnResult_Resp:gasn1
+                                     opCode:op
+                                   invokeId:component.invokeId
+                                   linkedId:component.linkedId
+                                       last:NO
+                                    options:options];
+                break;
+            }
+            case TCAP_ITU_COMPONENT_RETURN_ERROR:
+            {
+                UMGSMMAP_asn1 *gasn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:component.params context:self];
+                [self MAP_ReturnError_Resp:gasn1
+                                    opCode:op
+                                  invokeId:component.invokeId
+                                  linkedId:component.linkedId
+                                 errorCode:component.errorCode
+                                   options:options];
+                break;
+            }
+            case TCAP_ITU_COMPONENT_REJECT:
+            {
+                UMGSMMAP_asn1 *gasn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:component.params context:self];
+                [self MAP_Reject_Resp:gasn1
+                               opCode:op
+                             invokeId:component.invokeId
+                             linkedId:component.linkedId
+                            errorCode:component.errorCode
+                              options:options];
+                break;
             }
         }
     }
@@ -1152,12 +1296,11 @@
                transactionId:self.tcapTransactionId
          remoteTransactionId:self.tcapRemoteTransactionId
                      options:xoptions];
-    @synchronized(self)
-    {
-        self.dialogIsClosed = YES;
-        self.dialogResponseRequired = NO;
-        self.openEstablished = NO;
-    }
+    [_dialogLock lock];
+    self.dialogIsClosed = YES;
+    self.dialogResponseRequired = NO;
+    self.openEstablished = NO;
+    [_dialogLock unlock];
 }
 
 
@@ -1172,17 +1315,17 @@
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
 {
-    @synchronized(self)
-    {
-        self.dialogIsClosed = YES;
-        self.dialogResponseRequired = NO;
-        self.openEstablished = NO;
-    }
+    [_dialogLock lock];
+    self.dialogIsClosed = YES;
+    self.dialogResponseRequired = NO;
+    self.openEstablished = NO;
+    [_dialogLock unlock];
 }
 
 - (void)timeOut
 {
-    @synchronized(self)
+    [_dialogLock lock];
+    @try
     {
         [mapUser MAP_P_Abort_Ind:self.userIdentifier
                   callingAddress:remoteAddress
@@ -1194,6 +1337,14 @@
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
+    }
+    @catch(NSException *e)
+    {
+        [gsmmapLayer.logFeed majorErrorText:[NSString stringWithFormat:@"Exception %@",e]];
+    }
+    @finally
+    {
+        [_dialogLock unlock];
     }
 }
 

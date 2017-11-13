@@ -40,6 +40,7 @@
     if(self)
     {
         dialogs = [[UMSynchronizedDictionary alloc]init];
+        _dialogIdLock = [[UMMutex alloc]init];
     }
     return self;
 }
@@ -51,6 +52,7 @@
     if(self)
     {
         dialogs = [[UMSynchronizedDictionary alloc]init];
+        _dialogIdLock = [[UMMutex alloc]init];
     }
     return self;
 }
@@ -551,11 +553,10 @@
 {
     static int64_t lastDialogId =1;
     int64_t did;
-    @synchronized(self)
-    {
-        lastDialogId = (lastDialogId + 1 ) % 0x7FFFFFFF;
-        did = lastDialogId;
-    }
+    [_dialogIdLock lock];
+    lastDialogId = (lastDialogId + 1 ) % 0x7FFFFFFF;
+    did = lastDialogId;
+    [_dialogIdLock unlock];
     return [NSString stringWithFormat:@"D%08llX",(long long)did];
 }
 

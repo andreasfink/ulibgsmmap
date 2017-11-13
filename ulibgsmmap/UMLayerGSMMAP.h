@@ -30,6 +30,7 @@
     UMTimer *houseKeepingTimer;
     UMSynchronizedDictionary *dialogs;
     BOOL _housekeeping_running;
+    UMMutex *_dialogIdLock;
 }
 
 @property(readwrite,strong) UMLayerTCAP *tcap;
