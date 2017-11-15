@@ -219,7 +219,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapEndIndication: DialogNotFound %@ for transaction [local %@ remote %@]",dialogId,xlocalTransactionId,xremoteTransactionId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapEndIndication: DialogNotFound %@ for transaction [local %@ remote %@]",dialogId,transactionId,remoteTransactionId]];
         return;
     }
     else
@@ -317,7 +317,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:userDialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapUAbortIndication: DialogNotFound %@ for transaction [local %@ remote %@]",dialogId,xlocalTransactionId,xremoteTransactionId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapUAbortIndication: DialogNotFound %@ for transaction [local %@ remote %@]",userDialogId,localTransactionId,remoteTransactionId]];
         return;
     }
 
@@ -364,7 +364,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:userDialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapPAbortIndication: DialogNotFound %@ for transaction [local %@ remote %@]",dialogId,xlocalTransactionId,xremoteTransactionId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"tcapPAbortIndication: DialogNotFound %@ for transaction [local %@ remote %@]",userDialogId,localTransactionId,remoteTransactionId]];
         return;
     }
 
