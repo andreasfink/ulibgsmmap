@@ -725,7 +725,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"MAP_U_Abort_Req: Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_U_Abort_Req:options];
@@ -778,7 +778,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req: Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_Delimiter_Req:options
@@ -794,7 +794,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req1: Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_Delimiter_Req:options];
@@ -835,7 +835,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Close_Req: Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_Close_Req:options
@@ -856,7 +856,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Invoke_Req: Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
 
@@ -879,7 +879,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",dialogId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"MAP_ReturnResult_Req: Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
     [dialog MAP_ReturnResult_Req:xparam
@@ -901,7 +901,7 @@
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:xdialogId];
     if(dialog==NULL)
     {
-        [logFeed minorErrorText:[NSString stringWithFormat:@"Dialog ID %@ not found. Ignoring",xdialogId]];
+        [logFeed minorErrorText:[NSString stringWithFormat:@"MAP_ReturnError_Req: Dialog ID %@ not found. Ignoring",xdialogId]];
         return;
     }
     [dialog MAP_ReturnError_Req:xparam
