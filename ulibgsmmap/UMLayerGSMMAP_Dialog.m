@@ -475,7 +475,6 @@
              diagnostic:NULL];
     [mapUser MAP_Close_Ind:self.userIdentifier
                    options:xoptions];
-
 }
 
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
@@ -515,7 +514,7 @@
     {
         if(self.dialogIsClosed==YES)
         {
-            [gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Req: closing a already closed dialog"];
+            //[gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Req: closing a already closed dialog"];
             return;
         }
         if(self.openEstablished==NO)
@@ -675,14 +674,71 @@
     }
 }
 
+
 -(void) MAP_U_Abort_Req:(NSDictionary *)xoptions
+{
+    [self MAP_U_Abort_Req:xoptions
+           callingAddress:NULL
+            calledAddress:NULL
+                   result:NULL
+               diagnostic:NULL
+                 userInfo:NULL];
+}
+
+-(void) MAP_U_Abort_Req:(NSDictionary *)xoptions
+         callingAddress:(SccpAddress *)src
+          calledAddress:(SccpAddress *)dst
+                 result:(UMTCAP_asn1_Associate_result *)result
+             diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+               userInfo:(UMTCAP_asn1_userInformation *)userInfo
 {
     [_dialogLock lock];
     @try
     {
-        [gsmmapLayer.logFeed minorErrorText:@"MAP_U_Abort_Req: not yet implemented"];
+        if(self.dialogIsClosed==YES)
+        {
+            return;
+        }
+        if(self.openEstablished==NO)
+        {
+            [gsmmapLayer.logFeed minorErrorText:@"MAP_U_Abort_Req: aborting a never opened dialog"];
+            return;
+        }
+        if(tcapTransactionId == NULL)
+        {
+            [gsmmapLayer.logFeed minorErrorText:@"MAP_U_Abort_Req: closing a non existing transation"];
+            return;
+        }
+        if(src==NULL)
+        {
+            src = localAddress;
+        }
+        if(dst==NULL)
+        {
+            dst = remoteAddress;
+        }
+        NSMutableArray *components  = [pendingOutgoingComponents mutableCopy];
+        pendingOutgoingComponents   = [[UMSynchronizedArray alloc] init];
+        
+        UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
+
+        [tcapLayer tcapUAbortRequest:tcapTransactionId
+                          variant:self.variant
+                             user:self
+                   callingAddress:src
+                    calledAddress:dst
+                  dialoguePortion:itu_dialoguePortion
+                        callingLayer:gsmmapLayer
+                       components:components
+                          options:xoptions];
+        self.dialogIsClosed = YES;
+        self.dialogRequestRequired = NO;
+        self.dialogResponseRequired = NO;
+        self.openEstablished = NO;
+        
         [mapUser MAP_Close_Ind:self.userIdentifier
-                         options:xoptions];
+                       options:xoptions];
+        [self touch];
     }
     @catch(NSException *e)
     {
