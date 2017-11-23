@@ -377,7 +377,6 @@ static inline unsigned char	nibble2hex(unsigned char b)
     if(len == 0)
     {
         NSLog(@"Empty UMGSMMAP_AddressString?!");
-        if(
     }
 
     if(len > 1)
