@@ -374,11 +374,18 @@ static inline unsigned char	nibble2hex(unsigned char b)
     NSUInteger pos=0;
     NSUInteger len = asn1_data.length;
     const uint8_t *str = asn1_data.bytes;
-    
-    _ton = str[pos++];
-    _npi = _ton & 0x0F;
-    _ton =  (_ton >> 4) & 0x07;
-    
+    if(len == 0)
+    {
+        NSLog(@"Empty UMGSMMAP_AddressString?!");
+        if(
+    }
+
+    if(len > 1)
+    {
+        _ton = str[pos++];
+        _npi = _ton & 0x0F;
+        _ton =  (_ton >> 4) & 0x07;
+    }
     NSMutableData *tmp = [[NSMutableData alloc]init];
     while(--len)
     {
