@@ -123,7 +123,6 @@
 	}
 }
 
-
 - (UMGSMMAP_SM_RP_OA *) processAfterDecodeWithContext:(id)context
 {
 	int p=0;

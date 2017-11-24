@@ -376,7 +376,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
     const uint8_t *str = asn1_data.bytes;
     if(len == 0)
     {
-        NSLog(@"Empty UMGSMMAP_AddressString?!");
+        @throw([NSException exceptionWithName:@"DECODING_ERROR" reason:@"UMGSMMAP_AddressString has length 0" userInfo:NULL]);
     }
 
     if(len > 1)
@@ -386,7 +386,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
         _ton =  (_ton >> 4) & 0x07;
     }
     NSMutableData *tmp = [[NSMutableData alloc]init];
-    while(--len)
+    while(--len > 0)
     {
         c = str[pos++];
         a =  c & 0x0F;
