@@ -41,19 +41,19 @@
 - (UMGSMMAP_ExtensionContainer *) processAfterDecodeWithContext:(id)context
 {
 	int p=0;
-	UMASN1Object *o = [self getObjectAtPosition:p++];
-	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
-	{
-		privateExtensionList = [[UMGSMMAP_PrivateExtensionList alloc]initWithASN1Object:o context:context];
-		o = [self getObjectAtPosition:p++];
-	}
-	if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
-	{
-		pcs_Extensions = [[UMGSMMAP_PCS_Extensions alloc]initWithASN1Object:o context:context];
-		o = [self getObjectAtPosition:p++];
-	}
-	while(o)
-	{
+    UMASN1Object *o = [self getObjectAtPosition:p++];
+    if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+    {
+        privateExtensionList = [[UMGSMMAP_PrivateExtensionList alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
+    if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+    {
+        pcs_Extensions = [[UMGSMMAP_PCS_Extensions alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
+    while(o)
+    {
         /* ... */
         o = [self getObjectAtPosition:p++];
     }
