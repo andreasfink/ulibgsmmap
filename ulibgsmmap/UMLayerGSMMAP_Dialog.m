@@ -203,77 +203,74 @@
          remoteTransactionId:(NSString *)remoteTransactionId
                      options:(NSDictionary *)xoptions
 {
-    @synchronized (self)
+    if(xgsmmap.logLevel <= UMLOG_DEBUG)
+    {
+        NSString *s = [NSString stringWithFormat:@"MAP_Open_Ind_forUser\n"
+                       @"\tlocalTransactionId: %@\n"
+                       @"\tremoteTransactionId: %@\n"
+                       @"\tuserDialogId: %@\n"
+                       @"\tuserIdentifier: %@\n",
+                       localTransactionId,
+                       remoteTransactionId,
+                       self.userDialogId,
+                       self.userIdentifier];
+        [xgsmmap.logFeed debugText:s];
+    }
+    self.mapUser = user;
+    self.tcapLayer = xtcap;
+    self.gsmmapLayer = xgsmmap;
+    self.variant = xvariant;
+    self.remoteAddress = src;
+    self.localAddress = dst;
+
+    if(xdialoguePortion && xvariant==TCAP_VARIANT_ITU)
+    {
+        UMTCAP_itu_asn1_dialoguePortion *itu = (UMTCAP_itu_asn1_dialoguePortion *)xdialoguePortion;
+        self.applicationContext = itu.dialogRequest.objectIdentifier;
+        self.requestUserInfo = itu.dialogRequest.user_information;
+        self.dialogProtocolVersion = itu.dialogRequest.protocolVersion;
+    }
+    self.tcapRemoteTransactionId = remoteTransactionId;
+    self.tcapTransactionId = localTransactionId;
+    if(self.applicationContext)
+    {
+        self.dialogResponseRequired = YES;
+    }
+
+    self.initiatedOutgoing = NO;
+    self.openEstablished = YES;
+    pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
+    pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
+
+    if(self.userIdentifier==NULL)
+    {
+        NSString *uid = [user getNewUserIdentifier];
+        self.userIdentifier = uid;
+        if(xgsmmap.logLevel <= UMLOG_DEBUG)
+        {
+            NSString *s = [NSString stringWithFormat:@"newUserIdentifier: %@",uid];
+            [xgsmmap.logFeed debugText:s];
+        }
+    }
+    else
     {
         if(xgsmmap.logLevel <= UMLOG_DEBUG)
         {
-            NSString *s = [NSString stringWithFormat:@"MAP_Open_Ind_forUser\n"
-                           @"\tlocalTransactionId: %@\n"
-                           @"\tremoteTransactionId: %@\n"
-                           @"\tuserDialogId: %@\n"
-                           @"\tuserIdentifier: %@\n",
-                           localTransactionId,
-                           remoteTransactionId,
-                           self.userDialogId,
-                           self.userIdentifier];
+            NSString *s = [NSString stringWithFormat:@"existingUserIdentifier: %@",self.userIdentifier];
             [xgsmmap.logFeed debugText:s];
         }
-        self.mapUser = user;
-        self.tcapLayer = xtcap;
-        self.gsmmapLayer = xgsmmap;
-        self.variant = xvariant;
-        self.remoteAddress = src;
-        self.localAddress = dst;
-
-        if(xdialoguePortion && xvariant==TCAP_VARIANT_ITU)
-        {
-            UMTCAP_itu_asn1_dialoguePortion *itu = (UMTCAP_itu_asn1_dialoguePortion *)xdialoguePortion;
-            self.applicationContext = itu.dialogRequest.objectIdentifier;
-            self.requestUserInfo = itu.dialogRequest.user_information;
-            self.dialogProtocolVersion = itu.dialogRequest.protocolVersion;
-        }
-        self.tcapRemoteTransactionId = remoteTransactionId;
-        self.tcapTransactionId = localTransactionId;
-        if(self.applicationContext)
-        {
-            self.dialogResponseRequired = YES;
-        }
-
-        self.initiatedOutgoing = NO;
-        self.openEstablished = YES;
-        pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
-        pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
-
-        if(self.userIdentifier==NULL)
-        {
-            NSString *uid = [user getNewUserIdentifier];
-            self.userIdentifier = uid;
-            if(xgsmmap.logLevel <= UMLOG_DEBUG)
-            {
-                NSString *s = [NSString stringWithFormat:@"newUserIdentifier: %@",uid];
-                [xgsmmap.logFeed debugText:s];
-            }
-        }
-        else
-        {
-            if(xgsmmap.logLevel <= UMLOG_DEBUG)
-            {
-                NSString *s = [NSString stringWithFormat:@"existingUserIdentifier: %@",self.userIdentifier];
-                [xgsmmap.logFeed debugText:s];
-            }
-        }
-        [user MAP_Open_Ind:self.userIdentifier
-                    dialog:self.userDialogId
-               transaction:localTransactionId
-         remoteTransaction:remoteTransactionId
-                       map:xgsmmap
-                   variant:xvariant
-            callingAddress:src
-             calledAddress:dst
-           dialoguePortion:xdialoguePortion
-                   options:xoptions];
-        [self touch];
     }
+    [user MAP_Open_Ind:self.userIdentifier
+                dialog:self.userDialogId
+           transaction:localTransactionId
+     remoteTransaction:remoteTransactionId
+                   map:xgsmmap
+               variant:xvariant
+        callingAddress:src
+         calledAddress:dst
+       dialoguePortion:xdialoguePortion
+               options:xoptions];
+    [self touch];
 }
 
 -(void) MAP_Open_Resp_forUser:(id<UMLayerGSMMAP_UserProtocol>)user
@@ -287,61 +284,57 @@
           remoteTransactionId:(NSString *)remoteTransactionId
                       options:(NSDictionary *)xoptions
 {
-    @synchronized (self)
+    if(xgsmmap.logLevel <= UMLOG_DEBUG)
     {
-        if(xgsmmap.logLevel <= UMLOG_DEBUG)
-        {
-            NSString *s = [NSString stringWithFormat:@"MAP_Open_Resp_forUser\n"
-                           @"\tlocalTransactionId: %@\n"
-                           @"\tremoteTransactionId: %@\n"
-                           @"\tuserDialogId: %@\n"
-                           @"\tuserIdentifier: %@\n",
-                           localTransactionId,
-                           remoteTransactionId,
-                           self.userDialogId,
-                           self.userIdentifier];
-            [xgsmmap.logFeed debugText:s];
-        }
-        self.mapUser = user;
-        self.tcapLayer = xtcap;
-        self.gsmmapLayer = xgsmmap;
-        self.variant = xvariant;
-        self.localAddress = src;
-        self.remoteAddress = dst;
-        self.options = xoptions;
-        self.tcapTransactionId = localTransactionId;
-        self.tcapRemoteTransactionId = remoteTransactionId;
-
-
-        if(xdialoguePortion && xvariant==TCAP_VARIANT_ITU)
-        {
-            UMTCAP_itu_asn1_dialoguePortion *itu = (UMTCAP_itu_asn1_dialoguePortion *)xdialoguePortion;
-            self.responseApplicationContext = itu.dialogRequest.objectIdentifier;
-            self.responseUserInfo = itu.dialogRequest.user_information;
-        }
-
-        self.openEstablished = YES;
-        pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
-        pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
-
-        NSString *uid = [user getNewUserIdentifier];
-
-        self.userIdentifier = uid;
-
-        [user MAP_Open_Resp:uid
-                     dialog:self.userDialogId
-                transaction:self.tcapTransactionId
-          remoteTransaction:self.tcapRemoteTransactionId
-                        map:xgsmmap
-                    variant:xvariant
-             callingAddress:src
-              calledAddress:dst
-            dialoguePortion:xdialoguePortion
-                    options:xoptions];
-        [self touch];
+        NSString *s = [NSString stringWithFormat:@"MAP_Open_Resp_forUser\n"
+                       @"\tlocalTransactionId: %@\n"
+                       @"\tremoteTransactionId: %@\n"
+                       @"\tuserDialogId: %@\n"
+                       @"\tuserIdentifier: %@\n",
+                       localTransactionId,
+                       remoteTransactionId,
+                       self.userDialogId,
+                       self.userIdentifier];
+        [xgsmmap.logFeed debugText:s];
     }
-}
+    self.mapUser = user;
+    self.tcapLayer = xtcap;
+    self.gsmmapLayer = xgsmmap;
+    self.variant = xvariant;
+    self.localAddress = src;
+    self.remoteAddress = dst;
+    self.options = xoptions;
+    self.tcapTransactionId = localTransactionId;
+    self.tcapRemoteTransactionId = remoteTransactionId;
 
+
+    if(xdialoguePortion && xvariant==TCAP_VARIANT_ITU)
+    {
+        UMTCAP_itu_asn1_dialoguePortion *itu = (UMTCAP_itu_asn1_dialoguePortion *)xdialoguePortion;
+        self.responseApplicationContext = itu.dialogRequest.objectIdentifier;
+        self.responseUserInfo = itu.dialogRequest.user_information;
+    }
+
+    self.openEstablished = YES;
+    pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
+    pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
+
+    NSString *uid = [user getNewUserIdentifier];
+
+    self.userIdentifier = uid;
+
+    [user MAP_Open_Resp:uid
+                 dialog:self.userDialogId
+            transaction:self.tcapTransactionId
+      remoteTransaction:self.tcapRemoteTransactionId
+                    map:xgsmmap
+                variant:xvariant
+         callingAddress:src
+          calledAddress:dst
+        dialoguePortion:xdialoguePortion
+                options:xoptions];
+    [self touch];
+}
 
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
 {
@@ -383,87 +376,84 @@
                  userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
 
 {
-    @synchronized (self)
+    if(self.openEstablished==NO)
     {
-        if(self.openEstablished==NO)
+        if(tcapTransactionId == NULL)
         {
-            if(tcapTransactionId == NULL)
-            {
-                UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self.gsmmapLayer];
-                tcapTransactionId = t.localTransactionId;
-            }
+            UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self.gsmmapLayer];
+            tcapTransactionId = t.localTransactionId;
         }
-        else
-        {
-            if(tcapTransactionId == NULL)
-            {
-                [gsmmapLayer.logFeed minorErrorText:@"MAP_Continue_Req: continuing a non existing transation"];
-                return;
-            }
-        }
-
-        NSMutableArray *components = [pendingOutgoingComponents mutableCopy];
-        pendingOutgoingComponents = [[UMSynchronizedArray alloc] init];
-
-        UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
-        if(self.openEstablished==NO)
-        {
-            if(self.dialogRequestRequired)
-            {
-                itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
-                itu_dialoguePortion.dialogRequest = [[UMTCAP_asn1_AARQ_apdu alloc]init];
-                itu_dialoguePortion.dialogRequest.protocolVersion = dialogProtocolVersion;
-                itu_dialoguePortion.dialogRequest.objectIdentifier = applicationContext;
-                itu_dialoguePortion.dialogRequest.user_information = xuserInfo;
-            }
-
-            [tcapLayer tcapBeginRequest:tcapTransactionId
-                           userDialogId:userDialogId
-                                variant:self.variant
-                                   user:self
-                         callingAddress:localAddress
-                          calledAddress:remoteAddress
-                        dialoguePortion:itu_dialoguePortion
-                             components:components
-                                options:xoptions];
-            self.openEstablished = YES;
-            self.dialogRequestRequired = NO;
-            self.dialogResponseRequired = NO;
-        }
-        else
-        {
-            if(self.dialogResponseRequired)
-            {
-                itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
-                itu_dialoguePortion.dialogResponse = [[UMTCAP_asn1_AARE_apdu alloc]init];
-                itu_dialoguePortion.dialogResponse.protocolVersion = dialogProtocolVersion;
-                itu_dialoguePortion.dialogResponse.objectIdentifier = applicationContext;
-                itu_dialoguePortion.dialogResponse.user_information = xuserInfo;
-                itu_dialoguePortion.dialogResponse.result = result;
-                itu_dialoguePortion.dialogResponse.result_source_diagnostic = result_source_diagnostic;
-            }
-            if(src)
-            {
-                localAddress = src;
-            }
-            if(dst)
-            {
-                remoteAddress = dst;
-            }
-            [tcapLayer tcapContinueRequest:tcapTransactionId
-                              userDialogId:userDialogId
-                                   variant:self.variant
-                                      user:self
-                            callingAddress:localAddress
-                             calledAddress:remoteAddress
-                           dialoguePortion:itu_dialoguePortion
-                                components:components
-                                   options:xoptions];
-            self.dialogRequestRequired = NO;
-            self.dialogResponseRequired = NO;
-        }
-        [self touch];
     }
+    else
+    {
+        if(tcapTransactionId == NULL)
+        {
+            [gsmmapLayer.logFeed minorErrorText:@"MAP_Continue_Req: continuing a non existing transation"];
+            return;
+        }
+    }
+
+    NSMutableArray *components = [pendingOutgoingComponents mutableCopy];
+    pendingOutgoingComponents = [[UMSynchronizedArray alloc] init];
+
+    UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
+    if(self.openEstablished==NO)
+    {
+        if(self.dialogRequestRequired)
+        {
+            itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
+            itu_dialoguePortion.dialogRequest = [[UMTCAP_asn1_AARQ_apdu alloc]init];
+            itu_dialoguePortion.dialogRequest.protocolVersion = dialogProtocolVersion;
+            itu_dialoguePortion.dialogRequest.objectIdentifier = applicationContext;
+            itu_dialoguePortion.dialogRequest.user_information = xuserInfo;
+        }
+
+        [tcapLayer tcapBeginRequest:tcapTransactionId
+                       userDialogId:userDialogId
+                            variant:self.variant
+                               user:self
+                     callingAddress:localAddress
+                      calledAddress:remoteAddress
+                    dialoguePortion:itu_dialoguePortion
+                         components:components
+                            options:xoptions];
+        self.openEstablished = YES;
+        self.dialogRequestRequired = NO;
+        self.dialogResponseRequired = NO;
+    }
+    else
+    {
+        if(self.dialogResponseRequired)
+        {
+            itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
+            itu_dialoguePortion.dialogResponse = [[UMTCAP_asn1_AARE_apdu alloc]init];
+            itu_dialoguePortion.dialogResponse.protocolVersion = dialogProtocolVersion;
+            itu_dialoguePortion.dialogResponse.objectIdentifier = applicationContext;
+            itu_dialoguePortion.dialogResponse.user_information = xuserInfo;
+            itu_dialoguePortion.dialogResponse.result = result;
+            itu_dialoguePortion.dialogResponse.result_source_diagnostic = result_source_diagnostic;
+        }
+        if(src)
+        {
+            localAddress = src;
+        }
+        if(dst)
+        {
+            remoteAddress = dst;
+        }
+        [tcapLayer tcapContinueRequest:tcapTransactionId
+                          userDialogId:userDialogId
+                               variant:self.variant
+                                  user:self
+                        callingAddress:localAddress
+                         calledAddress:remoteAddress
+                       dialoguePortion:itu_dialoguePortion
+                            components:components
+                               options:xoptions];
+        self.dialogRequestRequired = NO;
+        self.dialogResponseRequired = NO;
+    }
+    [self touch];
 }
 
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
