@@ -514,7 +514,8 @@
         }
         if(tcapTransactionId == NULL)
         {
-            [gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Req: closing a non existing transation"];
+            // maybe tcap has already closed from below
+            //[gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Req: closing a non existing transation"];
             return;
         }
         if(src==NULL)
