@@ -203,6 +203,9 @@
          remoteTransactionId:(NSString *)remoteTransactionId
                      options:(NSDictionary *)xoptions
 {
+    NSMutableDictionary *options = [xoptions mutableCopy];
+    options[@"gsmmap-timestamp"] = [NSDate date];
+
     if(xgsmmap.logLevel <= UMLOG_DEBUG)
     {
         NSString *s = [NSString stringWithFormat:@"MAP_Open_Ind_forUser\n"
@@ -269,7 +272,7 @@
         callingAddress:src
          calledAddress:dst
        dialoguePortion:xdialoguePortion
-               options:xoptions];
+               options:options];
     [self touch];
 }
 
@@ -322,6 +325,9 @@
     NSString *uid = [user getNewUserIdentifier];
 
     self.userIdentifier = uid;
+    
+    NSMutableDictionary *options = [xoptions mutableCopy];
+    options[@"gsmmap-timestamp"] = [NSDate date];
 
     [user MAP_Open_Resp:uid
                  dialog:self.userDialogId
@@ -332,7 +338,7 @@
          callingAddress:src
           calledAddress:dst
         dialoguePortion:xdialoguePortion
-                options:xoptions];
+                options:options];
     [self touch];
 }
 
@@ -569,6 +575,9 @@
 
 -(void) MAP_Close_Ind:(NSDictionary *)xoptions
 {
+    NSMutableDictionary *options = [xoptions mutableCopy];
+    options[@"gsmmap-timestamp"] = [NSDate date];
+
     [_dialogLock lock];
     @try
     {
@@ -582,7 +591,7 @@
             [gsmmapLayer.logFeed minorErrorText:@"MAP_Close_Ind: closing a non existing transation"];
             return;
         }
-        [mapUser MAP_Close_Ind:userIdentifier options:xoptions];
+        [mapUser MAP_Close_Ind:userIdentifier options:options];
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
@@ -607,6 +616,9 @@
             transactionId:(NSString *)localTransactionId
       remoteTransactionId:(NSString *)remoteTransactionId
 {
+    NSMutableDictionary *options = [xoptions mutableCopy];
+    options[@"gsmmap-timestamp"] = [NSDate date];
+
     [_dialogLock lock];
     @try
     {
@@ -620,7 +632,7 @@
                    dialoguePortion:xdialoguePortion
                      transactionId:localTransactionId
                remoteTransactionId:remoteTransactionId
-                           options:xoptions];
+                           options:options];
         [self touchWhileLocked];
     }
     @catch(NSException *e)
@@ -640,6 +652,8 @@
            transactionId:(NSString *)localTransactionId
      remoteTransactionId:(NSString *)remoteTransactionId
 {
+    NSMutableDictionary *options = [xoptions mutableCopy];
+    options[@"gsmmap-timestamp"] = [NSDate date];
     [_dialogLock lock];
     @try
     {
@@ -652,7 +666,7 @@
                   dialoguePortion:xdialoguePortion
                     transactionId:localTransactionId
               remoteTransactionId:remoteTransactionId
-                          options:xoptions];
+                          options:options];
         [self touchWhileLocked];
     }
     @catch(NSException *e)
@@ -753,6 +767,8 @@
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
 {
+    NSMutableDictionary *options = [xoptions mutableCopy];
+    options[@"gsmmap-timestamp"] = [NSDate date];
     [_dialogLock lock];
     @try
     {
@@ -762,7 +778,7 @@
                  dialoguePortion:xdialoguePortion
                    transactionId:localTransactionId
              remoteTransactionId:remoteTransactionId
-                         options:xoptions];
+                         options:options];
     }
     @catch(NSException *e)
     {
@@ -785,6 +801,8 @@
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
 {
+    NSMutableDictionary *options = [xoptions mutableCopy];
+    options[@"gsmmap-timestamp"] = [NSDate date];
     [_dialogLock lock];
     @try
     {
@@ -794,7 +812,7 @@
                  dialoguePortion:xdialoguePortion
                    transactionId:localTransactionId
              remoteTransactionId:remoteTransactionId
-                         options:xoptions];
+                         options:options];
     }
     @catch(NSException *e)
     {
@@ -815,13 +833,15 @@
      tcapTransactionId:(NSString *)localTransactionId
                 reason:(SCCP_ReturnCause)returnCause
 {
+    NSMutableDictionary *options = [rxoptions mutableCopy];
+    options[@"gsmmap-timestamp"] = [NSDate date];
     [_dialogLock lock];
     @try
     {
         [mapUser MAP_Notice_Ind:userIdentifier
               tcapTransactionId:localTransactionId
                          reason:returnCause
-                        options:rxoptions];
+                        options:options];
         [self touchWhileLocked];
     }
     @catch(NSException *e)
