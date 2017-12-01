@@ -572,6 +572,10 @@
     dialogs[d.userDialogId] = d;
     return d;
 }
+- (NSUInteger)dialogsCount
+{
+    return dialogs.count;
+}
 
 - (UMLayerGSMMAP_Dialog *)getNewDialogForUser:(id<UMLayerGSMMAP_UserProtocol>)u
 {

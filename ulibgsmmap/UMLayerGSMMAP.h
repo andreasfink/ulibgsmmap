@@ -43,6 +43,7 @@
 - (void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMLayerGSMMAPApplicationContextProtocol>)appContext;
 - (void) startUp;
 - (NSString *)status;
+- (NSUInteger)dialogsCount;
 
 - (UMASN1Object *)decodeASN1:(UMASN1Object *)params
                operationCode:(int64_t)opcode
