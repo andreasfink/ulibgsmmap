@@ -36,7 +36,6 @@
     UMASN1BitString *dialogProtocolVersion;
     SccpAddress *localAddress;
     SccpAddress *remoteAddress;
-    NSDictionary *options;
     int64_t  _nextInvokeId;
     NSTimeInterval timeoutValue;
     NSDate *timeoutDate;
