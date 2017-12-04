@@ -72,7 +72,6 @@
 @property(readwrite,strong) UMASN1BitString *dialogProtocolVersion;
 @property(readwrite,strong) SccpAddress *localAddress;
 @property(readwrite,strong) SccpAddress *remoteAddress;
-@property(readwrite,strong) NSDictionary *options;
 @property(readwrite,assign) UMTCAP_Variant variant;
 @property(readwrite,assign,atomic) BOOL    initiatedOutgoing;
 @property(readwrite,assign,atomic) BOOL    openEstablished;

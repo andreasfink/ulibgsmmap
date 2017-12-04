@@ -24,7 +24,6 @@
 @synthesize gsmmapLayer;
 @synthesize applicationContext;
 @synthesize applicationContext2;
-@synthesize options;
 @synthesize localAddress;
 @synthesize remoteAddress;
 @synthesize dialogProtocolVersion;
@@ -177,7 +176,6 @@
             v.asn1_data = [NSData dataWithBytes:ver  length:sizeof(ver)];
             self.dialogProtocolVersion = v;
         }
-        self.options = xoptions;
         self.userIdentifier  = xuserIdentifier;
 
         UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self.gsmmapLayer];
@@ -203,9 +201,8 @@
          remoteTransactionId:(NSString *)remoteTransactionId
                      options:(NSDictionary *)xoptions
 {
-    NSMutableDictionary *options = [xoptions mutableCopy];
-    options[@"gsmmap-timestamp"] = [NSDate date];
-
+    NSMutableDictionary *yoptions = [xoptions mutableCopy];
+    yoptions[@"gsmmap-timestamp"] = [NSDate date];
     if(xgsmmap.logLevel <= UMLOG_DEBUG)
     {
         NSString *s = [NSString stringWithFormat:@"MAP_Open_Ind_forUser\n"
@@ -272,7 +269,7 @@
         callingAddress:src
          calledAddress:dst
        dialoguePortion:xdialoguePortion
-               options:options];
+               options:xoptions];
     [self touch];
 }
 
@@ -306,7 +303,6 @@
     self.variant = xvariant;
     self.localAddress = src;
     self.remoteAddress = dst;
-    self.options = xoptions;
     self.tcapTransactionId = localTransactionId;
     self.tcapRemoteTransactionId = remoteTransactionId;
 
@@ -344,7 +340,7 @@
 
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
 {
-    return [self MAP_Delimiter_Req:options result:NULL diagnostic:NULL];
+    return [self MAP_Delimiter_Req:xoptions result:NULL diagnostic:NULL];
 }
 
 
@@ -1236,7 +1232,7 @@
                             invokeId:component.invokeId
                             linkedId:component.linkedId
                                 last:component.isLast
-                             options:options];
+                             options:xoptions];
                 break;
             case TCAP_ITU_COMPONENT_RETURN_RESULT_LAST:
             {
@@ -1246,7 +1242,7 @@
                                    invokeId:component.invokeId
                                    linkedId:component.linkedId
                                        last:YES
-                                    options:options];
+                                    options:xoptions];
                 break;
             }
             case TCAP_ITU_COMPONENT_RETURN_RESULT_NOT_LAST:
@@ -1257,7 +1253,7 @@
                                    invokeId:component.invokeId
                                    linkedId:component.linkedId
                                        last:NO
-                                    options:options];
+                                    options:xoptions];
                 break;
             }
             case TCAP_ITU_COMPONENT_RETURN_ERROR:
@@ -1268,7 +1264,7 @@
                                   invokeId:component.invokeId
                                   linkedId:component.linkedId
                                  errorCode:component.errorCode
-                                   options:options];
+                                   options:xoptions];
                 break;
             }
             case TCAP_ITU_COMPONENT_REJECT:
@@ -1279,7 +1275,7 @@
                              invokeId:component.invokeId
                              linkedId:component.linkedId
                             errorCode:component.errorCode
-                              options:options];
+                              options:xoptions];
                 break;
             }
         }
@@ -1405,7 +1401,7 @@
                  dialoguePortion:NULL
                    transactionId:self.tcapTransactionId
              remoteTransactionId:self.tcapRemoteTransactionId
-                         options:options];
+                         options:@{}];
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
