@@ -31,6 +31,7 @@
     UMSynchronizedDictionary *dialogs;
     BOOL _housekeeping_running;
     UMMutex *_dialogIdLock;
+    UMAtomicDate *_houseKeepingTimerRun;
 }
 
 @property(readwrite,strong) UMLayerTCAP *tcap;
@@ -38,6 +39,8 @@
 @property(readwrite,strong) SccpSubSystemNumber *ssn;
 @property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> user;
 @property(readwrite,assign,atomic) BOOL housekeeping_running;
+@property(readwrite,strong) UMAtomicDate *houseKeepingTimerRun;
+
 -(UMMTP3Variant) variant;
 
 - (void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMLayerGSMMAPApplicationContextProtocol>)appContext;

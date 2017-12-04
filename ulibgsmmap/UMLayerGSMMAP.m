@@ -41,6 +41,7 @@
     {
         dialogs = [[UMSynchronizedDictionary alloc]init];
         _dialogIdLock = [[UMMutex alloc]init];
+        _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
     }
     return self;
 }
@@ -934,6 +935,7 @@
 {
     if(self.housekeeping_running)
     {
+        [_houseKeepingTimerRun touch];
         return;
     }
     self.housekeeping_running = YES;
