@@ -42,6 +42,13 @@
         dialogs = [[UMSynchronizedDictionary alloc]init];
         _dialogIdLock = [[UMMutex alloc]init];
         _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
+        _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
+                                                   selector:@selector(houseKeepingTask)
+                                                     object:NULL
+                                                   duration:2.8
+                                                       name:@"housekeeping"
+                                                    repeats:YES];
+
     }
     return self;
 }
@@ -54,6 +61,14 @@
     {
         dialogs = [[UMSynchronizedDictionary alloc]init];
         _dialogIdLock = [[UMMutex alloc]init];
+        _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
+        _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
+                                                   selector:@selector(housekeeping)
+                                                     object:NULL
+                                                   duration:1.1 /* every sec */
+                                                       name:@"housekeeping"
+                                                    repeats:YES];
+        [_houseKeepingTimer start];
     }
     return self;
 }
@@ -459,13 +474,14 @@
             [tcap setUser:self forOperation:[op longLongValue]];
         }
     }
-    /* lets call housekeeping once per 2.8second */
-    houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
+    /* lets call housekeeping  */
+    _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
                                               selector:@selector(housekeepingTask)
-                                                object:NULL duration:2800000
+                                                object:NULL
+                                               seconds:2.8
                                                   name:@"gsmmap-housekeeping"
                                                repeats:YES];
-    [houseKeepingTimer start];
+    [_houseKeepingTimer start];
 }
 
 - (UMASN1Object *)decodeASN1:(UMASN1Object *)params

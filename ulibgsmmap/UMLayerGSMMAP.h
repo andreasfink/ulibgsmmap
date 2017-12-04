@@ -32,6 +32,7 @@
     BOOL _housekeeping_running;
     UMMutex *_dialogIdLock;
     UMAtomicDate *_houseKeepingTimerRun;
+    UMTimer *_houseKeepingTimer;
 }
 
 @property(readwrite,strong) UMLayerTCAP *tcap;
