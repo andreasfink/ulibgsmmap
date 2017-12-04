@@ -1099,6 +1099,11 @@
         {
             yoptions[@"sccp-local"] = localAddress;
         }
+        if(tcapRemoteTransactionId)
+        {
+            yoptions[@"tcap-remote-transaction-id"] = tcapRemoteTransactionId;
+        }
+
         [mapUser MAP_Invoke_Ind:params
                          userId:userIdentifier
                          dialog:userDialogId
