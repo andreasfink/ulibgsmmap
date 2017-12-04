@@ -43,11 +43,12 @@
         _dialogIdLock = [[UMMutex alloc]init];
         _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
         _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
-                                                   selector:@selector(houseKeepingTask)
+                                                   selector:@selector(housekeepingTask)
                                                      object:NULL
                                                    duration:2.8
                                                        name:@"housekeeping"
                                                     repeats:YES];
+        [_houseKeepingTimer start];
 
     }
     return self;
@@ -475,13 +476,6 @@
         }
     }
     /* lets call housekeeping  */
-    _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
-                                              selector:@selector(housekeepingTask)
-                                                object:NULL
-                                               seconds:2.8
-                                                  name:@"gsmmap-housekeeping"
-                                               repeats:YES];
-    [_houseKeepingTimer start];
 }
 
 - (UMASN1Object *)decodeASN1:(UMASN1Object *)params
