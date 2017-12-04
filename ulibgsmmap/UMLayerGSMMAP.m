@@ -74,9 +74,6 @@
     return self;
 }
 
-
-
-
 - (void)tcapBeginIndication:(NSString *)dialogId
           tcapTransactionId:(NSString *)localTransactionId
     tcapRemoteTransactionId:(NSString *)remoteTransactionId
@@ -965,6 +962,23 @@
         }
     }
     self.housekeeping_running = NO;
+}
+
+- (void)dump:(NSFileHandle *)filehandler
+{
+    [super dump:filehandler];
+    
+    NSArray *allDialogs = [dialogs allKeys];
+    for(NSString *did in allDialogs)
+    {
+        NSMutableString *s = [[NSMutableString alloc]init];
+        [s appendString:@"    ----------------------------------------------------------------------------\n"];
+        [s appendFormat:@"    MAP Dialog: %@\n",did];
+        [s appendString:@"    ----------------------------------------------------------------------------\n"];
+        [filehandler writeData: [s dataUsingEncoding:NSUTF8StringEncoding]];
+        UMLayerGSMMAP_Dialog *d = dialogs[did];
+        [d dump:filehandler];
+    }
 }
 
 @end

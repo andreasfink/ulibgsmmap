@@ -1415,4 +1415,19 @@
     }
 }
 
+- (void)dump:(NSFileHandle *)filehandler
+{
+    NSMutableString *s = [[NSMutableString alloc]init];
+    [s appendFormat:@"    localTransactionId: %@\n",tcapTransactionId];
+    [s appendFormat:@"    remoteTransactionId: %@\n",tcapRemoteTransactionId];
+    [s appendFormat:@"    userDialogId: %@\n",userDialogId];
+    [s appendFormat:@"    userIdentifier: %@\n",userIdentifier];
+    [s appendFormat:@"    applicationContext: %@\n",applicationContext];
+    [s appendFormat:@"    applicationContext2: %@\n",applicationContext2];
+    [s appendFormat:@"    localAddress: %@\n",[localAddress description]];
+    [s appendFormat:@"    remoteAddress: %@\n",[remoteAddress description]];
+    [s appendFormat:@"    timeout: %8.2lfs\n",timeoutValue];
+    [s appendFormat:@"    created: %@\n",[createdDate description]];
+    [filehandler writeData: [s dataUsingEncoding:NSUTF8StringEncoding]];
+}
 @end
