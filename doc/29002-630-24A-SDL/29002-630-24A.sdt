@@ -1,0 +1,61 @@
+SDT-SYSTEM-4.4
+[DRIVES]
+[SOURCE-TARGET-DIRECTORY]
+[DIAGRAMS]
+0 23 "Analysis Model" %unconnected% 0 0 0 ""
+0 23 "Used Files" %unconnected% 0 0 0 ""
+0 5 Co_ATIH_HLR Co_ATIH_HLR.spr 0 1053549436 Co_ATIH_HLR ""
+0 5 ATSI_gsmSCF ATSI_gsmSCF.spr 0 1049711406 ATSI_gsmSCF ""
+0 5 ATSI_HLR ATSI_HLR.spr 0 1050565234 ATSI_HLR ""
+0 5 ATM_gsmSCF ATM_gsmSCF.spr 0 1049898862 ATM_gsmSCF ""
+0 5 ATM_HLR ATM_HLR.spr 0 1050567656 ATM_HLR ""
+0 5 NSDC_HLR NSDC_HLR.spr 0 1050567984 NSDC_HLR ""
+0 5 NSDC_gsmSCF NSDC_gsmSCF.spr 0 1049983924 NSDC_gsmSCF ""
+0 5 ATI_To_HLR_gsmSCF ATI_To_HLR_gsmSCF.spr 0 1056637847 ATI_To_HLR_gsmSCF ""
+0 5 ATI_To_GMLC_gsmSCF ATI_To_GMLC_gsmSCF.spr 0 1056637909 ATI_To_GMLC_gsmSCF ""
+0 5 ATI_HLR ATI_HLR.spr 0 1056638920 ATI_HLR ""
+0 5 ATI_GMLC ATI_GMLC.spr 8 1056639278 ATI_GMLC ""
+0 23 "SDL System Structure" %unconnected% 0 0 0 ""
+0 23 "TTCN Test Specification" %unconnected% 0 0 0 ""
+0 23 "Other Documents" %unconnected% 0 0 0 ""
+[VIEWOPTIONS]
+ShowDirectories=True
+ShowLongMenus=True
+[ANALYSEROPTIONS]
+ASN1KeywordFile=False
+ASN1Parameter=False
+CoderBufferInSDL=Octet-String
+Filter=False
+InstanceFile=False
+[H2SDLOPTIONS]
+AllWarnings=False
+Preprocessor=""
+PreprocessorOptions=""
+TranslateEnum=True
+UseFullPath=True
+UsePreprocessorOptions=False
+[STATEMATRIXOPTIONS]
+[INDEXOPTIONS]
+ShowSelectedTypes=True
+ShowSelectedUses=True
+ShowSelectedDiagrams=True
+FilterTypes=
+FilterUses=
+FilterDiagrams=
+NameFirst=True
+IndexAppearance=Detailed
+[PACKAGEGENERATOROPTIONS]
+DuplicateFile=
+[MAKEOPTIONS]
+CCompilerDriver=False
+[PRINTOPTIONS]
+DestinationFormat=PSFile
+FirstPageNo=1
+MarginLeft=100
+MarginLower=250
+MarginRight=100
+MarginUpper=420
+PrinterFile=""
+PrintFrom=0
+PrintTo=0
+PrintToFile=False

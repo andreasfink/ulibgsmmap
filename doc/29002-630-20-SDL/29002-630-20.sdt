@@ -1,0 +1,79 @@
+SDT-SYSTEM-4.4
+[DRIVES]
+[SOURCE-TARGET-DIRECTORY]
+[DIAGRAMS]
+0 23 "Analysis Model" %unconnected% 0 0 0 ""
+0 23 "Used Files" %unconnected% 0 0 0 ""
+0 5 Co_Tracing_VLR Co_Tracing_VLR.spr 0 1058509202 Co_Tracing_VLR ""
+0 5 Co_Tracing_SGSN Co_Tracing_SGSN.spr 0 1058509428 Co_Tracing_SGSN ""
+0 5 Co_SDM_VLR Co_SDM_VLR.spr 0 1319527487 Co_SDM_VLR ""
+0 5 Co_SDM_SGSN Co_SDM_SGSN.spr 0 1319530270 Co_SDM_SGSN ""
+0 5 ATM_With_VLR_HLR ATM_With_VLR_HLR.spr 0 1058510368 ATM_With_VLR_HLR ""
+0 5 ATM_With_SGSN_HLR ATM_With_SGSN_HLR.spr 0 1058510946 ATM_With_SGSN_HLR ""
+0 5 ATM_Stand_Alone_VLR ATM_Stand_Alone_VLR.spr 0 1057035172 ATM_Stand_Alone_VLR ""
+0 5 ATM_Stand_Alone_SGSN ATM_Stand_Alone_SGSN.spr 0 1057035196 ATM_Stand_Alone_SGSN ""
+0 5 DTM_With_VLR_HLR DTM_With_VLR_HLR.spr 0 1058511098 DTM_With_VLR_HLR ""
+0 5 DTM_With_SGSN_HLR DTM_With_SGSN_HLR.spr 0 1058512214 DTM_With_SGSN_HLR ""
+0 5 DTM_Stand_Alone_VLR DTM_Stand_Alone_VLR.spr 0 1057036598 DTM_Stand_Alone_VLR ""
+0 5 DTM_Stand_Alone_SGSN DTM_Stand_Alone_SGSN.spr 0 1057036622 DTM_Stand_Alone_SGSN ""
+0 5 Delete_Subscriber_HLR Delete_Subscriber_HLR.spr 0 1057728842 Delete_Subscriber_HLR ""
+0 5 Delete_Subscriber_CSS Delete_Subscriber_CSS.spr 8 1319536686 Delete_Subscriber_CSS ""
+0 5 Modify_Data_HLR Modify_Data_HLR.spr 0 1058513042 Modify_Data_HLR ""
+0 5 Modify_Data_CSS Modify_Data_CSS.spr 0 1319535929 Modify_Data_CSS ""
+0 7 Delete_Subscriber_Data_HLR Delete_Subscriber_Data_HLR.smc 0 1058513156 Delete_Subscriber_Data_HLR ""
+0 7 Delete_GPRS_Subscriber_Data_HLR Delete_GPRS_Subscriber_Data_HLR.smc 0 1058514488 Delete_GPRS_Subscriber_Data_HLR ""
+0 7 Delete_VCSG_Subs_Data_CSS Delete_VCSG_Subs_Data_CSS.smc 0 1319535209 Delete_VCSG_Subs_Data_CSS ""
+0 5 Ins_Subs_Data_Stand_Alone_VLR Ins_Subs_Data_Stand_Alone_VLR.spr 0 1057123222 Ins_Subs_Data_Stand_Alone_VLR ""
+0 5 Ins_VCSG_Subs_Data_Stand_Alone_VLR Ins_VCSG_Subs_Data_Stand_Alone_VLR.spr 0 1319535094 Ins_VCSG_Subs_Data_Stand_Alone_VLR ""
+0 5 Delete_Subs_Data_VLR Delete_Subs_Data_VLR.spr 0 1057122626 Delete_Subs_Data_VLR ""
+0 5 Delete_VCSG_Subs_Data_VLR Delete_VCSG_Subs_Data_VLR.spr 0 1319533807 Delete_VCSG_Subs_Data_VLR ""
+0 5 Ins_Subs_Data_Stand_Alone_SGSN Ins_Subs_Data_Stand_Alone_SGSN.spr 0 1058513854 Ins_Subs_Data_Stand_Alone_SGSN ""
+0 5 Ins_VCSG_Subs_Data_Stand_Alone_SGSN Ins_VCSG_Subs_Data_Stand_Alone_SGSN.spr 0 1319534387 Ins_VCSG_Subs_Data_Stand_Alone_SGSN ""
+0 5 Delete_Subs_Data_SGSN Delete_Subs_Data_SGSN.spr 0 1057036936 Delete_Subs_Data_SGSN ""
+0 5 Delete_VCSG_Subs_Data_SGSN Delete_VCSG_Subs_Data_SGSN.spr 0 1319534528 Delete_VCSG_Subs_Data_SGSN ""
+0 5 Send_IMSI_VLR Send_IMSI_VLR.spr 0 1057036964 Send_IMSI_VLR ""
+0 5 Send_IMSI_HLR Send_IMSI_HLR.spr 0 1057037406 Send_IMSI_HLR ""
+0 23 "SDL System Structure" %unconnected% 0 0 0 ""
+0 23 "TTCN Test Specification" %unconnected% 0 0 0 ""
+0 23 "Other Documents" %unconnected% 0 0 0 ""
+[VIEWOPTIONS]
+ShowDirectories=True
+ShowLongMenus=True
+[ANALYSEROPTIONS]
+ASN1KeywordFile=False
+ASN1Parameter=False
+CoderBufferInSDL=Octet-String
+Filter=False
+InstanceFile=False
+[H2SDLOPTIONS]
+AllWarnings=False
+Preprocessor=""
+PreprocessorOptions=""
+TranslateEnum=True
+UseFullPath=True
+UsePreprocessorOptions=False
+[STATEMATRIXOPTIONS]
+[INDEXOPTIONS]
+ShowSelectedTypes=True
+ShowSelectedUses=True
+ShowSelectedDiagrams=True
+FilterTypes=
+FilterUses=
+FilterDiagrams=
+NameFirst=True
+IndexAppearance=
+[PACKAGEGENERATOROPTIONS]
+DuplicateFile=
+[MAKEOPTIONS]
+CCompilerDriver=False
+[PRINTOPTIONS]
+DestinationFormat=PSFile
+FirstPageNo=1
+MarginLeft=100
+MarginLower=250
+MarginRight=100
+MarginUpper=420
+PrinterFile=""
+PrintFrom=0
+PrintTo=0
+PrintToFile=False

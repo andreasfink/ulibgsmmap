@@ -1,0 +1,80 @@
+SDT-SYSTEM-4.4
+[DRIVES]
+[SOURCE-TARGET-DIRECTORY]
+[DIAGRAMS]
+0 23 "Analysis Model" %unconnected% 0 0 0 ""
+0 23 "Used Files" %unconnected% 0 0 0 ""
+0 5 SS_Coordinator_MSC SS_Coordinator_MSC.spr 0 1051779823 SS_Coordinator_MSC ""
+0 5 SS_Coordinator_HLR SS_Coordinator_HLR.spr 0 1051265684 SS_Coordinator_HLR ""
+0 5 CC_Coordinator_HLR CC_Coordinator_HLR.spr 0 1051266416 CC_Coordinator_HLR ""
+0 5 Register_SS_MSC Register_SS_MSC.spr 0 1051779924 Register_SS_MSC ""
+0 5 Register_SS_VLR Register_SS_VLR.spr 0 1052409666 Register_SS_VLR ""
+0 5 Register_SS_HLR Register_SS_HLR.spr 0 1051783506 Register_SS_HLR ""
+0 5 Activate_SS_MSC Activate_SS_MSC.spr 0 1052296383 Activate_SS_MSC ""
+0 5 Activate_SS_VLR Activate_SS_VLR.spr 0 1052409714 Activate_SS_VLR ""
+0 5 Activate_SS_HLR Activate_SS_HLR.spr 0 1052318603 Activate_SS_HLR ""
+0 5 Interrogate_SS_VLR Interrogate_SS_VLR.spr 0 1052409796 Interrogate_SS_VLR ""
+0 5 Interrogate_SS_HLR Interrogate_SS_HLR.spr 0 1051783671 Interrogate_SS_HLR ""
+0 5 Register_Password_HLR Register_Password_HLR.spr 0 1052325028 Register_Password_HLR ""
+0 5 MS_Init_USSD_MSC MS_Init_USSD_MSC.spr 0 1052422923 MS_Init_USSD_MSC ""
+0 5 MS_Init_USSD_VLR MS_Init_USSD_VLR.spr 0 1052420649 MS_Init_USSD_VLR ""
+0 5 MS_Init_USSD_HLR MS_Init_USSD_HLR.spr 0 1052421604 MS_Init_USSD_HLR ""
+0 5 MS_INIT_USSD_gsmSCF_Secondary_HLR MS_INIT_USSD_gsmSCF_Secondary_HLR.spr 0 1052421800 MS_INIT_USSD_gsmSCF_Secondary_HLR ""
+0 5 NW_Init_USSD_MSC NW_Init_USSD_MSC.spr 0 1052425406 NW_Init_USSD_MSC ""
+0 5 NW_Init_USSD_VLR NW_Init_USSD_VLR.spr 0 1052475206 NW_Init_USSD_VLR ""
+0 7 Start_USSD_VLR Start_USSD_VLR.smc 0 1052470966 Start_USSD_VLR ""
+0 5 NW_Init_USSD_HLR NW_Init_USSD_HLR.spr 0 1052475148 NW_Init_USSD_HLR ""
+0 7 Start_USSD_HLR Start_USSD_HLR.smc 0 1052476582 Start_USSD_HLR ""
+0 5 NI_USSD_gsmSCF_Secondary_HLR NI_USSD_gsmSCF_Secondary_HLR.spr 8 1052477228 NI_USSD_gsmSCF_Secondary_HLR ""
+0 7 Get_Password_MSC Get_Password_MSC.smc 0 1051784694 Get_Password_MSC ""
+0 7 Get_Password_VLR Get_Password_VLR.smc 0 1052297547 Get_Password_VLR ""
+0 5 Notify_SS_Invocation_MSC Notify_SS_Invocation_MSC.spr 0 1052297588 Notify_SS_Invocation_MSC ""
+0 5 Note_SS_Invocation_gsmSCF Note_SS_Invocation_gsmSCF.spr 0 1052388491 Note_SS_Invocation_gsmSCF ""
+0 5 Register_CC_Entry_VLR Register_CC_Entry_VLR.spr 0 1052298540 Register_CC_Entry_VLR ""
+0 5 Register_CC_Entry_HLR Register_CC_Entry_HLR.spr 0 1052299342 Register_CC_Entry_HLR ""
+0 5 Erase_CC_Entry_VLR Erase_CC_Entry_VLR.spr 0 1052298811 Erase_CC_Entry_VLR ""
+0 5 Erase_CC_Entry_HLR Erase_CC_Entry_HLR.spr 0 1052299470 Erase_CC_Entry_HLR ""
+0 23 "SDL System Structure" %unconnected% 0 0 0 ""
+0 23 "TTCN Test Specification" %unconnected% 0 0 0 ""
+0 23 "Other Documents" %unconnected% 0 0 0 ""
+[VIEWOPTIONS]
+ShowDirectories=True
+ShowLongMenus=True
+[ANALYSEROPTIONS]
+ASN1KeywordFile=False
+ASN1Parameter=False
+CoderBufferInSDL=Octet-String
+Filter=False
+InstanceFile=False
+[H2SDLOPTIONS]
+AllWarnings=False
+Preprocessor=""
+PreprocessorOptions=""
+TranslateEnum=True
+UseFullPath=True
+UsePreprocessorOptions=False
+[STATEMATRIXOPTIONS]
+[INDEXOPTIONS]
+ShowSelectedTypes=True
+ShowSelectedUses=True
+ShowSelectedDiagrams=True
+FilterTypes=
+FilterUses=
+FilterDiagrams=
+NameFirst=True
+IndexAppearance=
+[PACKAGEGENERATOROPTIONS]
+DuplicateFile=
+[MAKEOPTIONS]
+CCompilerDriver=False
+[PRINTOPTIONS]
+DestinationFormat=PSFile
+FirstPageNo=1
+MarginLeft=100
+MarginLower=250
+MarginRight=100
+MarginUpper=420
+PrinterFile=""
+PrintFrom=0
+PrintTo=0
+PrintToFile=False

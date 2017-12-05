@@ -1,0 +1,76 @@
+SDT-SYSTEM-4.4
+[DRIVES]
+[SOURCE-TARGET-DIRECTORY]
+[DIAGRAMS]
+0 5 Group_Call_Info_Retrieval_MSC Group_Call_Info_Retrieval_MSC.spr 8 1144219652 Group_Call_Info_Retrieval_MSC ""
+0 5 Release_Resources_VMSC Release_Resources_VMSC.spr 0 1082466200 Release_Resources_VMSC ""
+0 5 Release_Resources_GMSC Release_Resources_GMSC.spr 0 1082465118 Release_Resources_GMSC ""
+0 23 "Analysis Model" %unconnected% 0 0 0 ""
+0 23 "Used Files" %unconnected% 0 0 0 ""
+0 5 SRI_GMSC SRI_GMSC.spr 0 1056640134 SRI_GMSC ""
+0 5 SRI_HLR SRI_HLR.spr 0 1060074376 SRI_HLR ""
+0 5 PSI_VLR PSI_VLR.spr 0 1056368108 PSI_VLR ""
+0 5 PRN_VLR PRN_VLR.spr 0 1056367726 PRN_VLR ""
+0 5 Restore_Data_VLR Restore_Data_VLR.spr 0 1056640912 Restore_Data_VLR ""
+0 5 RCH_VMSC RCH_VMSC.spr 0 1060077464 RCH_VMSC ""
+0 5 RCH_GMSC RCH_GMSC.spr 0 1056382596 RCH_GMSC ""
+0 5 ASCI_Anchor_MSC ASCI_Anchor_MSC.spr 0 1060075244 ASCI_Anchor_MSC ""
+0 5 ASCI_Relay_MSC ASCI_Relay_MSC.spr 0 1060075622 ASCI_Relay_MSC ""
+0 5 Reporting_Coord_VLR Reporting_Coord_VLR.spr 0 1056610382 Reporting_Coord_VLR ""
+0 5 Set_Reporting_State_Stand_Alone_HLR Set_Reporting_State_Stand_Alone_HLR.spr 0 1056702642 Set_Reporting_State_Stand_Alone_HLR ""
+0 5 Set_Reporting_State_VLR Set_Reporting_State_VLR.spr 0 1056611938 Set_Reporting_State_VLR ""
+0 7 Receive_Set_Reporting_State_VLR Receive_Set_Reporting_State_VLR.smc 0 1056706404 Receive_Set_Reporting_State_VLR ""
+0 5 Send_Status_Report_VLR Send_Status_Report_VLR.spr 0 1060077972 Send_Status_Report_VLR ""
+0 5 Status_Report_HLR Status_Report_HLR.spr 0 1056702864 Status_Report_HLR ""
+0 7 Receive_Status_Report_HLR Receive_Status_Report_HLR.smc 0 1056702950 Receive_Status_Report_HLR ""
+0 7 Set_Reporting_State_HLR Set_Reporting_State_HLR.smc 0 1056615750 Set_Reporting_State_HLR ""
+0 5 Remote_User_Free_HLR Remote_User_Free_HLR.spr 0 1056719660 Remote_User_Free_HLR ""
+0 5 Remote_User_Free_VLR Remote_User_Free_VLR.spr 0 1056713502 Remote_User_Free_VLR ""
+0 5 IST_Alert_MSC IST_Alert_MSC.spr 0 1056620132 IST_Alert_MSC ""
+0 5 IST_Alert_HLR IST_Alert_HLR.spr 0 1056619696 IST_Alert_HLR ""
+0 5 IST_Command_HLR IST_Command_HLR.spr 0 1056620404 IST_Command_HLR ""
+0 5 IST_Command_MSC IST_Command_MSC.spr 0 1056720152 IST_Command_MSC ""
+0 23 "SDL System Structure" %unconnected% 0 0 0 ""
+0 23 "TTCN Test Specification" %unconnected% 0 0 0 ""
+0 23 "Other Documents" %unconnected% 0 0 0 ""
+[VIEWOPTIONS]
+ShowDirectories=True
+ShowLongMenus=True
+[ANALYSEROPTIONS]
+ASN1KeywordFile=False
+ASN1Parameter=False
+CoderBufferInSDL=Octet-String
+Filter=False
+InstanceFile=False
+[H2SDLOPTIONS]
+AllWarnings=False
+Preprocessor=""
+PreprocessorOptions=""
+TranslateEnum=True
+UseFullPath=True
+UsePreprocessorOptions=False
+[STATEMATRIXOPTIONS]
+[INDEXOPTIONS]
+ShowSelectedTypes=True
+ShowSelectedUses=True
+ShowSelectedDiagrams=True
+FilterTypes=
+FilterUses=
+FilterDiagrams=
+NameFirst=True
+IndexAppearance=
+[PACKAGEGENERATOROPTIONS]
+DuplicateFile=
+[MAKEOPTIONS]
+CCompilerDriver=False
+[PRINTOPTIONS]
+DestinationFormat=PSFile
+FirstPageNo=1
+MarginLeft=100
+MarginLower=250
+MarginRight=100
+MarginUpper=420
+PrinterFile=""
+PrintFrom=0
+PrintTo=0
+PrintToFile=False

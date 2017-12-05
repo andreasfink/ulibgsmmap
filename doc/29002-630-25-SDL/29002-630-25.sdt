@@ -1,0 +1,101 @@
+SDT-SYSTEM-4.4
+[DRIVES]
+[SOURCE-TARGET-DIRECTORY]
+[DIAGRAMS]
+0 7 Receive_Open_Ind Receive_Open_Ind.smc 0 1050307040 Receive_Open_Ind ""
+0 7 Receive_Open_Cnf Receive_Open_Cnf.smc 0 1050307192 Receive_Open_Cnf ""
+0 7 Check_Reference Check_Reference.smc 0 1046853780 Check_Reference ""
+0 7 Check_Indication Check_Indication.smc 0 1050307684 Check_Indication ""
+0 7 Check_Confirmation Check_Confirmation.smc 0 1050307798 Check_Confirmation ""
+0 7 Page_MSC Page_MSC.smc 0 1050308066 Page_MSC ""
+0 7 Search_For_MS_MSC Search_For_MS_MSC.smc 0 1050308208 Search_For_MS_MSC ""
+0 7 Process_Access_Request_MSC Process_Access_Request_MSC.smc 0 1050308530 Process_Access_Request_MSC ""
+0 7 Process_Access_Request_VLR Process_Access_Request_VLR.smc 0 1060072032 Process_Access_Request_VLR ""
+0 5 Update_Location_Child_VLR Update_Location_Child_VLR.spr 0 1061255626 Update_Location_Child_VLR ""
+0 7 Obtain_Identity_VLR Obtain_Identity_VLR.smc 0 1048500232 Obtain_Identity_VLR ""
+0 7 Authenticate_MSC Authenticate_MSC.smc 0 1046933832 Authenticate_MSC ""
+0 7 Authenticate_VLR Authenticate_VLR.smc 0 1050369122 Authenticate_VLR ""
+0 7 Obtain_Authent_Params_VLR Obtain_Authent_Params_VLR.smc 0 1050309696 Obtain_Authent_Params_VLR ""
+0 5 Obtain_Authent_Sets_VLR Obtain_Authent_Sets_VLR.spr 0 1050369532 Obtain_Authent_Sets_VLR ""
+0 5 Obtain_Authent_Sets_SGSN Obtain_Authent_Sets_SGSN.spr 0 1050310288 Obtain_Authent_Sets_SGSN ""
+0 5 Obtain_Authent_Sets_HLR Obtain_Authent_Sets_HLR.spr 0 1050313248 Obtain_Authent_Sets_HLR ""
+0 6 Check_Available_Vectors Check_Available_Vectors.spd 0 1050311340 Check_Available_Vectors ""
+0 5 Report_Authentication_Failure_VLR Report_Authentication_Failure_VLR.spr 0 1047269290 Report_Authentication_Failure_VLR ""
+0 5 Report_Authentication_Failure_SGSN Report_Authentication_Failure_SGSN.spr 0 1047269328 Report_Authentication_Failure_SGSN ""
+0 5 Note_Authentication_Failure_HLR Note_Authentication_Failure_HLR.spr 0 1047271504 Note_Authentication_Failure_HLR ""
+0 7 Check_IMEI_MSC Check_IMEI_MSC.smc 0 1055740944 Check_IMEI_MSC ""
+0 7 Check_IMEI_VLR Check_IMEI_VLR.smc 0 1047277410 Check_IMEI_VLR ""
+0 5 Check_IMEI_SGSN Check_IMEI_SGSN.spr 0 1055909232 Check_IMEI_SGSN ""
+0 5 Check_IMEI_EIR Check_IMEI_EIR.spr 0 1055742540 Check_IMEI_EIR ""
+0 7 Obtain_IMEI_MSC Obtain_IMEI_MSC.smc 0 1047289950 Obtain_IMEI_MSC ""
+0 7 Obtain_IMEI_VLR Obtain_IMEI_VLR.smc 0 1050311902 Obtain_IMEI_VLR ""
+0 7 Insert_Subs_Data_VLR Insert_Subs_Data_VLR.smc 0 1319440154 Insert_Subs_Data_VLR ""
+0 7 Insert_Subs_Data_SGSN Insert_Subs_Data_SGSN.smc 0 1319440286 Insert_Subs_Data_SGSN ""
+0 5 Insert_Subs_Data_Stand_Alone_HLR Insert_Subs_Data_Stand_Alone_HLR.spr 0 1057124428 Insert_Subs_Data_Stand_Alone_HLR ""
+0 5 Insert_GPRS_Subs_Data_Stand_Alone_HLR Insert_GPRS_Subs_Data_Stand_Alone_HLR.spr 0 1057124488 Insert_GPRS_Subs_Data_Stand_Alone_HLR ""
+0 5 Insert_VCSG_Subs_Data_Stand_Alone_CSS Insert_VCSG_Subs_Data_Stand_Alone_CSS.spr 0 1319443058 Insert_VCSG_Subs_Data_Stand_Alone_CSS ""
+0 5 Send_Insert_Subs_Data_HLR Send_Insert_Subs_Data_HLR.spr 8 1050312936 Send_Insert_Subs_Data_HLR ""
+0 5 Send_Insert_VCSG_Subs_Data_CSS Send_Insert_VCSG_Subs_Data_CSS.spr 0 1319443584 Send_Insert_VCSG_Subs_Data_CSS ""
+0 7 Wait_For_Insert_Subs_Data_Cnf Wait_For_Insert_Subs_Data_Cnf.smc 0 1050312770 Wait_For_Insert_Subs_Data_Cnf ""
+0 7 Wait_For_Insert_GPRS_Subs_Data_Cnf Wait_For_Insert_GPRS_Subs_Data_Cnf.smc 0 1050370664 Wait_For_Insert_GPRS_Subs_Data_Cnf ""
+0 7 Wait_For_Insert_VCSG_Subs_Data_Cnf Wait_For_Insert_VCSG_Subs_Data_Cnf.smc 0 1319443344 Wait_For_Insert_VCSG_Subs_Data_Cnf ""
+0 7 Obtain_IMSI_MSC Obtain_IMSI_MSC.smc 0 1047356006 Obtain_IMSI_MSC ""
+0 7 Obtain_IMSI_VLR Obtain_IMSI_VLR.smc 0 1050370738 Obtain_IMSI_VLR ""
+0 7 Trace_Subscriber_Activity_MSC Trace_Subscriber_Activity_MSC.smc 0 1047360020 Trace_Subscriber_Activity_MSC ""
+0 7 Trace_Subscriber_Activity_VLR Trace_Subscriber_Activity_VLR.smc 0 1048498316 Trace_Subscriber_Activity_VLR ""
+0 7 Trace_Subscriber_Activity_SGSN Trace_Subscriber_Activity_SGSN.smc 0 1048498842 Trace_Subscriber_Activity_SGSN ""
+0 7 Activate_Tracing_VLR Activate_Tracing_VLR.smc 0 1048153474 Activate_Tracing_VLR ""
+0 7 Activate_Tracing_SGSN Activate_Tracing_SGSN.smc 0 1048153356 Activate_Tracing_SGSN ""
+0 7 Control_Tracing_With_VLR_HLR Control_Tracing_With_VLR_HLR.smc 0 1057728634 Control_Tracing_With_VLR_HLR ""
+0 7 Control_Tracing_With_SGSN_HLR Control_Tracing_With_SGSN_HLR.smc 0 1057727626 Control_Tracing_With_SGSN_HLR ""
+0 5 Subscriber_Present_VLR Subscriber_Present_VLR.spr 0 1048498786 Subscriber_Present_VLR ""
+0 5 Subscriber_Present_SGSN Subscriber_Present_SGSN.spr 0 1048499068 Subscriber_Present_SGSN ""
+0 7 Alert_Service_Centre_HLR Alert_Service_Centre_HLR.smc 0 1048675052 Alert_Service_Centre_HLR ""
+0 5 Alert_SC_HLR Alert_SC_HLR.spr 0 1049274986 Alert_SC_HLR ""
+0 23 "Analysis Model" %unconnected% 0 0 0 ""
+0 23 SM_Alert_SGSN %unconnected% 0 0 0 ""
+0 23 "Used Files" %unconnected% 0 0 0 ""
+0 23 "SDL System Structure" %unconnected% 0 0 0 ""
+0 23 "TTCN Test Specification" %unconnected% 0 0 0 ""
+0 23 "Other Documents" %unconnected% 0 0 0 ""
+[VIEWOPTIONS]
+ShowDirectories=True
+ShowLongMenus=True
+[ANALYSEROPTIONS]
+ASN1KeywordFile=False
+ASN1Parameter=False
+CoderBufferInSDL=Octet-String
+Filter=False
+InstanceFile=False
+[H2SDLOPTIONS]
+AllWarnings=False
+Preprocessor=""
+PreprocessorOptions=""
+TranslateEnum=True
+UseFullPath=True
+UsePreprocessorOptions=False
+[STATEMATRIXOPTIONS]
+[INDEXOPTIONS]
+ShowSelectedTypes=True
+ShowSelectedUses=True
+ShowSelectedDiagrams=True
+FilterTypes=
+FilterUses=
+FilterDiagrams=
+NameFirst=True
+IndexAppearance=
+[PACKAGEGENERATOROPTIONS]
+DuplicateFile=
+[MAKEOPTIONS]
+CCompilerDriver=False
+[PRINTOPTIONS]
+DestinationFormat=PSFile
+FirstPageNo=1
+MarginLeft=100
+MarginLower=250
+MarginRight=100
+MarginUpper=420
+PrinterFile=""
+PrintFrom=0
+PrintTo=0
+PrintToFile=False

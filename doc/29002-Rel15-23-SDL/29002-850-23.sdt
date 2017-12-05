@@ -1,0 +1,82 @@
+SDT-SYSTEM-4.6
+[DRIVES]
+[SOURCE-TARGET-DIRECTORY]
+[DIAGRAMS]
+0 5 SM_Delivery_Status_Report_IPSMGW SM_Delivery_Status_Report_IPSMGW.spr 8 1194532220 SM_Delivery_Status_Report_IPSMGW ""
+0 5 Co_SMS_MSC Co_SMS_MSC.spr 0 1042794358 Co_SMS_MSC ""
+0 5 MT_SM_IPSMGW MT_SM_IPSMGW.spr 0 1194264452 MT_SM_IPSMGW ""
+0 5 Co_SM_GW_HLR Co_SM_GW_HLR.spr 0 1042735520 Co_SM_GW_HLR ""
+0 5 MO_SM_MSC MO_SM_MSC.spr 0 1135766430 MO_SM_MSC ""
+0 5 MO_SM_VLR MO_SM_VLR.spr 0 1045007470 MO_SM_VLR ""
+0 5 MO_SM_SGSN MO_SM_SGSN.spr 0 1135766966 MO_SM_SGSN ""
+0 5 MO_SM_IWMSC MO_SM_IWMSC.spr 0 1135767124 MO_SM_IWMSC ""
+0 5 MT_SM_VMSC MT_SM_VMSC.spr 0 1135767284 MT_SM_VMSC ""
+0 7 MT_SM_Transfer_MSC MT_SM_Transfer_MSC.smc 0 1043342462 MT_SM_Transfer_MSC ""
+0 5 MT_SM_VLR MT_SM_VLR.spr 0 1043338130 MT_SM_VLR ""
+0 5 MT_SM_HLR MT_SM_HLR.spr 0 1176303100 MT_SM_HLR ""
+0 6 Perform_Relaying Perform_Relaying.spd 0 1176303674 Perform_Relaying ""
+0 5 MT_SM_GMSC MT_SM_GMSC.spr 0 1042706826 MT_SM_GMSC ""
+0 5 MT_SM_VGCS_GMSC MT_SM_VGCS_GMSC.spr 0 1135766824 MT_SM_VGCS_GMSC ""
+0 5 MT_SM_VGCS_Anchor_MSC MT_SM_VGCS_Anchor_MSC.spr 0 1123755640 MT_SM_VGCS_Anchor_MSC ""
+0 6 MT_SM_Delivery_Attempt_GMSC MT_SM_Delivery_Attempt_GMSC.spd 0 1135766618 MT_SM_Delivery_Attempt_GMSC ""
+0 7 Check_Subscr_Identity_for_MT_SMS Check_Subscr_Identity_for_MT_SMS.smc 0 1043336750 Check_Subscr_Identity_for_MT_SMS ""
+0 5 MT_SM_SGSN MT_SM_SGSN.spr 0 1135767402 MT_SM_SGSN ""
+0 7 MT_SM_Transfer_SGSN MT_SM_Xfer_SGSN.smc 0 1043340486 MT_SM_Transfer_SGSN ""
+0 6 Page_SMS_SGSN Page_SMS_SGSN.spd 0 1043331404 Page_SMS_SGSN ""
+0 6 Search_SMS_SGSN Search_SMS_SGSN.spd 0 1043331664 Search_SMS_SGSN ""
+0 5 SM_Alert_MSC SM_Alert_MSC.spr 0 1042798042 SM_Alert_MSC ""
+0 5 SM_Alert_VLR SM_Alert_VLR.spr 0 1043414092 SM_Alert_VLR ""
+0 5 SM_Alert_HLR SM_Alert_HLR.spr 0 1168501804 SM_Alert_HLR ""
+0 5 Alert_SC_IWMSC Alert_SC_IWMSC.spr 0 1042707020 Alert_SC_IWMSC ""
+0 5 SM_Alert_SGSN SM_Alert_SGSN.spr 0 1043756022 SM_Alert_SGSN ""
+0 5 SM_Delivery_Status_Report_HLR SM_Delivery_Status_Report_HLR.spr 0 1178616416 SM_Delivery_Status_Report_HLR ""
+0 7 Report_SM_Delivery_Stat_GMSC Report_SM_Delivery_Stat_GMSC.smc 0 1043769276 Report_SM_Delivery_Stat_GMSC ""
+0 7 Report_SM_Delivery_Stat_HLR Report_SM_Delivery_Stat_HLR.smc 0 1176304244 Report_SM_Delivery_Stat_HLR ""
+0 23 "Analysis Model" %unconnected% 0 0 0 ""
+0 23 SM_Alert_SGSN %unconnected% 0 0 0 ""
+0 23 "Used Files" %unconnected% 0 0 0 ""
+0 23 "SDL System Structure" %unconnected% 0 0 0 ""
+0 23 "TTCN Test Specification" %unconnected% 0 0 0 ""
+0 23 "Other Documents" %unconnected% 0 0 0 ""
+[VIEWOPTIONS]
+ShowDirectories=True
+ShowLongMenus=True
+[ANALYSEROPTIONS]
+ASN1KeywordFile=False
+ASN1Parameter=False
+CoderBufferInSDL=Octet-String
+Filter=False
+InstanceFile=False
+SynonymFileName=""
+[H2SDLOPTIONS]
+AllWarnings=False
+Preprocessor=""
+PreprocessorOptions=""
+TranslateEnum=True
+UseFullPath=True
+UsePreprocessorOptions=False
+[STATEMATRIXOPTIONS]
+[INDEXOPTIONS]
+ShowSelectedTypes=True
+ShowSelectedUses=True
+ShowSelectedDiagrams=True
+FilterTypes=
+FilterUses=
+FilterDiagrams=
+NameFirst=True
+IndexAppearance=
+[PACKAGEGENERATOROPTIONS]
+DuplicateFile=
+[MAKEOPTIONS]
+CCompilerDriver=False
+[PRINTOPTIONS]
+DestinationFormat=PSFile
+FirstPageNo=1
+MarginLeft=100
+MarginLower=250
+MarginRight=100
+MarginUpper=420
+PrinterFile=""
+PrintFrom=0
+PrintTo=0
+PrintToFile=False

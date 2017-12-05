@@ -1,0 +1,61 @@
+SDT-SYSTEM-4.4
+[DRIVES]
+[SOURCE-TARGET-DIRECTORY]
+[DIAGRAMS]
+0 1 MAP_Stack MAP_Stack.ssy 0 1135777120 MAP_Stack ""
+1 2 MAP_USER %unconnected% 0 0 MAP_USER ""
+1 2 TCAP %unconnected% 0 0 TCAP ""
+1 2 MAPProvider MAP_Provider.sbk 0 1135779350 MAPPROVIDER ""
+2 5 MAP_DSM MAP_DSM.spr 0 1135781861 Secure_MAP_DSM ""
+2 5 Load_Ctrl Load_Ctrl.spr 8 1135783302 Load_Ctrl ""
+2 5 Requesting_MAP_SSM Requesting_MAP_SSM.spr 0 1002005878 CopyOfSecure_Performing_MAP_SSM1 ""
+2 5 Performing_MAP_SSM Performing_MAP_SSM.spr 0 1002006180 CopyOfSecure_Performing_MAP_SSM2 ""
+2 5 CopyOfPerforming_MAP_SSM Performing_MAP_SSM.spr 0 0 CopyOfPerforming_MAP_SSM ""
+2 5 CopyOfRequesting_MAP_SSM Requesting_MAP_SSM.spr 0 0 CopyOfRequesting_MAP_SSM ""
+0 6 Process_Components Process_Components.spd 0 1135783046 Process_Components ""
+0 23 "Analysis Model" %unconnected% 0 -1 0 ""
+0 23 "Used Files" %unconnected% 0 -1 0 ""
+0 23 "SDL System Structure" %unconnected% 0 -1 0 ""
+0 23 "TTCN Test Specification" %unconnected% 0 -1 0 ""
+0 23 "Other Documents" %unconnected% 0 -1 0 ""
+[VIEWOPTIONS]
+ShowDirectories=True
+ShowLongMenus=True
+[ANALYSEROPTIONS]
+ASN1KeywordFile=False
+ASN1Parameter=False
+CoderBufferInSDL=Octet-String
+Filter=False
+InstanceFile=False
+[H2SDLOPTIONS]
+AllWarnings=False
+Preprocessor=""
+PreprocessorOptions=""
+TranslateEnum=True
+UseFullPath=True
+UsePreprocessorOptions=False
+[STATEMATRIXOPTIONS]
+[INDEXOPTIONS]
+ShowSelectedTypes=True
+ShowSelectedUses=True
+ShowSelectedDiagrams=True
+FilterTypes=
+FilterUses=
+FilterDiagrams=
+NameFirst=True
+IndexAppearance=Detailed
+[PACKAGEGENERATOROPTIONS]
+DuplicateFile=
+[MAKEOPTIONS]
+CCompilerDriver=False
+[PRINTOPTIONS]
+DestinationFormat=PSFile
+FirstPageNo=1
+MarginLeft=100
+MarginLower=250
+MarginRight=100
+MarginUpper=420
+PrinterFile=""
+PrintFrom=0
+PrintTo=0
+PrintToFile=False

@@ -1,0 +1,58 @@
+SDT-SYSTEM-4.4
+[DRIVES]
+[SOURCE-TARGET-DIRECTORY]
+[DIAGRAMS]
+0 23 "Analysis Model" %unconnected% 0 0 0 ""
+0 23 "Used Files" %unconnected% 0 0 0 ""
+0 5 SRI_LCS_GMLC SRI_LCS_GMLC.spr 0 1050406075 SRI_LCS_GMLC ""
+0 5 SRI_LCS_HLR SRI_LCS_HLR.spr 0 1050412612 SRI_LCS_HLR ""
+0 5 PSL_GMLC PSL_GMLC.spr 0 1050412215 PSL_GMLC ""
+0 5 PSL_MSC PSL_MSC.spr 0 1050412983 PSL_MSC ""
+0 5 PSL_SGSN PSL_SGSN.spr 0 1050413026 PSL_SGSN ""
+0 5 SLR_GMLC SLR_GMLC.spr 0 1050413646 SLR_GMLC ""
+0 5 SLR_MSC SLR_MSC.spr 0 1050414007 SLR_MSC ""
+0 5 SLR_SGSN SLR_SGSN.spr 8 1050414217 SLR_SGSN ""
+0 23 "SDL System Structure" %unconnected% 0 0 0 ""
+0 23 "TTCN Test Specification" %unconnected% 0 0 0 ""
+0 23 "Other Documents" %unconnected% 0 0 0 ""
+[VIEWOPTIONS]
+ShowDirectories=True
+ShowLongMenus=True
+[ANALYSEROPTIONS]
+ASN1KeywordFile=False
+ASN1Parameter=False
+CoderBufferInSDL=Octet-String
+Filter=False
+InstanceFile=False
+[H2SDLOPTIONS]
+AllWarnings=False
+Preprocessor=""
+PreprocessorOptions=""
+TranslateEnum=True
+UseFullPath=True
+UsePreprocessorOptions=False
+[STATEMATRIXOPTIONS]
+[INDEXOPTIONS]
+ShowSelectedTypes=True
+ShowSelectedUses=True
+ShowSelectedDiagrams=True
+FilterTypes=
+FilterUses=
+FilterDiagrams=
+NameFirst=True
+IndexAppearance=
+[PACKAGEGENERATOROPTIONS]
+DuplicateFile=
+[MAKEOPTIONS]
+CCompilerDriver=False
+[PRINTOPTIONS]
+DestinationFormat=PSFile
+FirstPageNo=1
+MarginLeft=100
+MarginLower=250
+MarginRight=100
+MarginUpper=420
+PrinterFile=""
+PrintFrom=0
+PrintTo=0
+PrintToFile=False

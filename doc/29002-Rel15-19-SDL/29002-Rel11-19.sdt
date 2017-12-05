@@ -1,0 +1,99 @@
+SDT-SYSTEM-4.4
+[DRIVES]
+[SOURCE-TARGET-DIRECTORY]
+[LINKS]
+Endpoints=""
+File=CSS_temporary.sli
+[DIAGRAMS]
+0 23 "Analysis Model" %unconnected% 0 0 0 ""
+0 23 "Used Files" %unconnected% 0 0 0 ""
+0 23 Location_Management_Coordinator_HLR %unconnected% 0 0 0 ""
+0 23 "SDL System Structure" %unconnected% 0 0 0 ""
+0 5 Location_Management_Coordinator_HLR Location_Management_Coordinator_HLR.spr 0 1347109113 Location_Management_Coordinator_HLR ""
+0 5 Update_VCSG_Location_VLR Update_VCSG_Location_VLR.spr 0 1347109114 Update_VCSG_Location_VLR ""
+0 5 Update_Location_VLR Update_Location_VLR.spr 0 1347109113 Update_Location_VLR ""
+0 5 Send_Identification_VLR Send_Identification_VLR.spr 0 1347109113 Send_Identification_VLR ""
+0 5 Send_Identification_PVLR Send_Identification_PVLR.spr 0 1347109113 Send_Identification_PVLR ""
+0 5 GPRS_Update_Location_Area_VLR GPRS_Update_Location_Area_VLR.spr 0 1347109113 GPRS_Update_Location_Area_VLR ""
+0 7 GPRS_Location_Update_Completion_VLR GPRS_Location_Update_Completion_VLR.smc 0 1347109113 GPRS_Location_Update_Completion_VLR ""
+0 7 GPRS_Update_HLR_VLR GPRS_Update_HLR_VLR.smc 0 1347109113 GPRS_Update_HLR_VLR ""
+0 5 Update_GPRS_Location_SGSN Update_GPRS_Location_SGSN.spr 0 1347109113 Update_GPRS_Location_SGSN ""
+0 5 Update_VCSG_Location_SGSN Update_VCSG_Location_SGSN.spr 0 1347109114 Update_VCSG_Location_SGSN ""
+0 5 Update_Location_HLR Update_Location_HLR.spr 0 1347109113 Update_Location_HLR ""
+0 5 Update_GPRS_Location_HLR Update_GPRS_Location_HLR.spr 0 1347109113 Update_GPRS_Location_HLR ""
+0 5 Subscriber_Present_HLR Subscriber_Present_HLR.spr 0 1347109113 Subscriber_Present_HLR ""
+0 5 Cancel_Location_HLR Cancel_Location_HLR.spr 0 1347109113 Cancel_Location_HLR ""
+0 5 Cancel_GPRS_Location_HLR Cancel_GPRS_Location_HLR.spr 0 1347109113 Cancel_GPRS_Location_HLR ""
+0 5 Cancel_Location_Child_HLR Cancel_Location_Child_HLR.spr 0 1347109113 Cancel_Location_Child_HLR ""
+0 5 Cancel_GPRS_Location_Child_HLR Cancel_GPRS_Location_Child_HLR.spr 0 1347109113 Cancel_GPRS_Location_Child_HLR ""
+0 5 Cancel_Location_VLR Cancel_Location_VLR.spr 0 1347109113 Cancel_Location_VLR ""
+0 5 Cancel_Location_SGSN Cancel_Location_SGSN.spr 0 1347109113 Cancel_Location_SGSN ""
+0 5 Cancel_VCSG_Location_CSS Cancel_VCSG_Location_CSS.spr 0 1347201452 Cancel_VCSG_Location_CSS ""
+0 5 Cancel_VCSG_Location_VLR Cancel_VCSG_Location_VLR.spr 0 1347201474 Cancel_VCSG_Location_VLR ""
+0 5 Cancel_VCSG_Location_SGSN Cancel_VCSG_Location_SGSN.spr 8 1347202935 Cancel_VCSG_Location_SGSN ""
+0 5 Purge_MS_VLR Purge_MS_VLR.spr 0 1347109113 Purge_MS_VLR ""
+0 5 Purge_MS_SGSN Purge_MS_SGSN.spr 0 1347109113 Purge_MS_SGSN ""
+0 5 Purge_MS_HLR Purge_MS_HLR.spr 0 1347109113 Purge_MS_HLR ""
+0 5 Handover_MSC_A Handover_MSC_A.spr 0 1347109113 Handover_MSC_A ""
+0 5 Handover_MSC_B Handover_MSC_B.spr 0 1347109113 Handover_MSC_B ""
+0 7 Receive_Error_From_HO_CA Receive_Error_From_HO_CA.smc 0 1347109113 Receive_Error_From_HO_CA ""
+0 5 Handover_VLR_B Handover_VLR_B.spr 0 1347109113 Handover_VLR_B ""
+0 5 Restore_Data_HLR Restore_Data_HLR.spr 0 1347109113 Restore_Data_HLR ""
+0 5 Restart_HLR Restart_HLR.spr 0 1347109113 Restart_HLR ""
+0 5 Send_Reset_To_VLR_HLR Send_Reset_To_VLR_HLR.spr 0 1347109113 Send_Reset_To_VLR_HLR ""
+0 5 Send_Reset_To_SGSN_HLR Send_Reset_To_SGSN_HLR.spr 0 1347109113 Send_Reset_To_SGSN_HLR ""
+0 5 Receive_Reset_VLR Receive_Reset_VLR.spr 0 1347109113 Receive_Reset_VLR ""
+0 5 Receive_Reset_SGSN Receive_Reset_SGSN.spr 0 1347109113 Receive_Reset_SGSN ""
+0 5 Restart_CSS Restart_CSS.spr 0 1319268090 Restart_CSS ""
+0 5 Send_Reset_To_VLR_CSS Send_Reset_To_VLR_CSS.spr 0 1319268066 Send_Reset_To_VLR_CSS ""
+0 5 Send_Reset_To_SGSN_CSS Send_Reset_To_SGSN_CSS.spr 0 1319268253 Send_Reset_To_SGSN_CSS ""
+0 5 Receive_Reset_From_CSS_VLR Receive_Reset_From_CSS_VLR.spr 0 1319269563 Receive_Reset_From_CSS_VLR ""
+0 5 Receive_Reset_From_CSS_SGSN Receive_Reset_From_CSS_SGSN.spr 0 1319269304 Receive_Reset_From_CSS_SGSN ""
+0 5 Notify_MM_Event_VLR_Or_SGSN Notify_MM_Event_VLR_Or_SGSN.spr 0 1347109113 Notify_MM_Event_VLR_Or_SGSN ""
+0 5 Notify_MM_Event_gsmSCF Notify_MM_Event_gsmSCF.spr 0 1347109113 Notify_MM_Event_gsmSCF ""
+0 7 Insert_Subs_Data_Framed_HLR Insert_Subs_Data_Framed_HLR.smc 0 1347109113 Insert_Subs_Data_Framed_HLR ""
+0 7 Insert_GPRS_Subs_Data_Framed_HLR Insert_GPRS_Subs_Data_Framed_HLR.smc 0 1347109113 Insert_GPRS_Subs_Data_Framed_HLR ""
+0 7 Insert_VCSG_Subs_Data_Framed_CSS Insert_VCSG_Subs_Data_Framed_CSS.smc 0 1347109114 Insert_VCSG_Subs_Data_Framed_CSS ""
+0 23 "TTCN Test Specification" %unconnected% 0 0 0 ""
+0 23 "Other Documents" %unconnected% 0 0 0 ""
+[VIEWOPTIONS]
+ShowDirectories=True
+ShowLongMenus=True
+[ANALYSEROPTIONS]
+ASN1KeywordFile=False
+ASN1Parameter=False
+CoderBufferInSDL=Octet-String
+Filter=False
+InstanceFile=False
+[H2SDLOPTIONS]
+AllWarnings=False
+Preprocessor=""
+PreprocessorOptions=""
+TranslateEnum=True
+UseFullPath=True
+UsePreprocessorOptions=False
+[STATEMATRIXOPTIONS]
+[INDEXOPTIONS]
+ShowSelectedTypes=True
+ShowSelectedUses=True
+ShowSelectedDiagrams=True
+FilterTypes=
+FilterUses=
+FilterDiagrams=
+NameFirst=True
+IndexAppearance=
+[PACKAGEGENERATOROPTIONS]
+DuplicateFile=
+[MAKEOPTIONS]
+CCompilerDriver=False
+[PRINTOPTIONS]
+DestinationFormat=PSFile
+FirstPageNo=1
+MarginLeft=100
+MarginLower=250
+MarginRight=100
+MarginUpper=420
+PrinterFile=""
+PrintFrom=0
+PrintTo=0
+PrintToFile=False
