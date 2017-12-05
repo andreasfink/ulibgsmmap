@@ -1423,8 +1423,10 @@
     [s appendFormat:@"    remoteTransactionId: %@\n",tcapRemoteTransactionId];
     [s appendFormat:@"    userDialogId: %@\n",userDialogId];
     [s appendFormat:@"    userIdentifier: %@\n",userIdentifier];
-    [s appendFormat:@"    applicationContext: %@\n",applicationContext];
-    [s appendFormat:@"    applicationContext2: %@\n",applicationContext2];
+    NSDictionary *d = [applicationContext objectValue];
+    [s appendFormat:@"    applicationContext: %@\n",d[@"objectIdentifier"]];
+    d = [applicationContext2 objectValue];
+    [s appendFormat:@"    applicationContext2: %@\n",d[@"objectIdentifier"]];
     [s appendFormat:@"    localAddress: %@\n",[localAddress description]];
     [s appendFormat:@"    remoteAddress: %@\n",[remoteAddress description]];
     [s appendFormat:@"    timeout: %8.2lfs\n",timeoutValue];
