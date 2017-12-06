@@ -392,15 +392,7 @@
                 dialoguePortion:xdialoguePortion
                   transactionId:localTransactionId
             remoteTransactionId:remoteTransactionId];
-    }
-    @catch(NSException *ex)
-    {
-        [logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
-    }
-
-    @try
-    {
-        [dialog MAP_Close_Ind:options];
+        /* this is an implicit close */
     }
     @catch(NSException *ex)
     {
@@ -744,6 +736,28 @@
 }
 
 
+-(void) MAP_U_Abort_Req:(NSString *)dialogId
+                options:(NSDictionary *)options
+                 result:(UMTCAP_asn1_Associate_result *)result
+             diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+               userInfo:(UMTCAP_asn1_userInformation *)userInfo
+{
+    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+    if(dialog==NULL)
+    {
+        [logFeed minorErrorText:[NSString stringWithFormat:@"MAP_U_Abort_Req: Dialog ID %@ not found. Ignoring",dialogId]];
+        return;
+    }
+    [dialog MAP_U_Abort_Req:options
+               callingAddress:NULL
+                calledAddress:NULL
+                       result:result
+                   diagnostic:result_source_diagnostic
+                     userInfo:userInfo];
+}
+
+
+
 -(NSString *) MAP_Open_Req_forUser:(id<UMLayerGSMMAP_UserProtocol>)xuser
                            variant:(UMTCAP_Variant)variant
                     callingAddress:(SccpAddress *)src
@@ -955,7 +969,7 @@
         {
             [dialogs removeObjectForKey:key];
         }
-        if([dialog isTimedOut]==YES)
+        else if([dialog isTimedOut]==YES)
         {
             UMGSMMAP_TimeoutTask *task = [[UMGSMMAP_TimeoutTask alloc]initForGSMMAP:self dialog:dialog];
             [self queueFromLower:task];

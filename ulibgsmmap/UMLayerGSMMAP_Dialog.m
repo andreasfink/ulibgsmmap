@@ -736,9 +736,9 @@
         self.dialogRequestRequired = NO;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
-        
+        /*
         [mapUser MAP_Close_Ind:self.userIdentifier
-                       options:xoptions];
+                       options:xoptions];*/
         [self touch];
     }
     @catch(NSException *e)

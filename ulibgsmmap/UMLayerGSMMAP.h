@@ -144,6 +144,12 @@
                     options:(NSDictionary *)options;
 
 
+-(void) MAP_U_Abort_Req:(NSString *)dialogId
+                options:(NSDictionary *)options
+                 result:(UMTCAP_asn1_Associate_result *)result
+             diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+               userInfo:(UMTCAP_asn1_userInformation *)userInfo;
+
 /*
 -(void)MAP_Delimiter_Ind:(NSString *)userIdentifier
                   dialog:(NSString *)dialogId
