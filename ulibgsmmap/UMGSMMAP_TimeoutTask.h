@@ -13,8 +13,7 @@
 
 @interface UMGSMMAP_TimeoutTask : UMLayerTask
 {
-    UMLayerGSMMAP *gsmmapLayer;
-    UMLayerGSMMAP_Dialog *dialog;
+    UMLayerGSMMAP_Dialog *_dialog;
 }
 
 - (UMGSMMAP_TimeoutTask *)initForGSMMAP:(UMLayerGSMMAP *)g dialog:(UMLayerGSMMAP_Dialog *)d;

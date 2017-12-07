@@ -16,32 +16,58 @@
 
 @protocol UMLayerGSMMAP_ProviderProtocol <NSObject,UMLayerUserProtocol>
 
+-(NSString *) executeMAP_Open_Req_forUser:(id<UMLayerGSMMAP_UserProtocol>)user
+                                  variant:(UMTCAP_Variant)variant
+                           callingAddress:(SccpAddress *)src
+                            calledAddress:(SccpAddress *)dst
+                       applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
+                                 userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+                           userIdentifier:(NSString *)xuserIdentifier
+                                  options:(NSDictionary *)options;
+
+-(void) queueMAP_Delimiter_Req:(NSString *)dialogId
+                callingAddress:(SccpAddress *)src
+                 calledAddress:(SccpAddress *)dst
+                       options:(NSDictionary *)options
+                        result:(UMTCAP_asn1_Associate_result *)result
+                    diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
+
+- (void)queueMAP_Close_Req:(NSString *)dialogId
+            callingAddress:(SccpAddress *)src
+             calledAddress:(SccpAddress *)dst
+                   options:(NSDictionary *)options
+                    result:(UMTCAP_asn1_Associate_result *)result
+                diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
+
+- (void) queueMAP_Invoke_Req:(UMASN1Object *)param
+                      dialog:(NSString *)dialogId
+                    invokeId:(int64_t)xinvokeId
+                    linkedId:(int64_t)linkedId
+                      opCode:(UMLayerGSMMAP_OpCode *)opcode
+                        last:(int64_t)last
+                     options:(NSDictionary *)options;
+
+- (void) queueMAP_ReturnResult_Req:(UMASN1Object *)xparam
+                            dialog:(NSString *)dialogId
+                          invokeId:(int64_t)xinvokeId
+                          linkedId:(int64_t)xlinkedId
+                            opCode:(UMLayerGSMMAP_OpCode *)xopcode
+                              last:(int64_t)xlast
+                           options:(NSDictionary *)xoptions;
+
+- (void)queueMAP_ReturnError_Req:(UMASN1Object *)param
+                          dialog:(NSString *)dialogId
+                        invokeId:(int64_t)xinvokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
+                        linkedId:(int64_t)xlinkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
+                          opCode:(UMLayerGSMMAP_OpCode *)opcode
+                       errorCode:(int64_t)errorCode
+                         options:(NSDictionary *)options;
+-(void) queueMAP_U_Abort_Req:(NSString *)dialogId
+                     options:(NSDictionary *)options
+                      result:(UMTCAP_asn1_Associate_result *)result
+                  diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+                    userInfo:(UMTCAP_asn1_userInformation *)userInfo;
 
 
--(NSString *) MAP_Open_Req_forUser:(id<UMLayerGSMMAP_UserProtocol>)user
-                           variant:(UMTCAP_Variant)variant
-                    callingAddress:(SccpAddress *)src
-                     calledAddress:(SccpAddress *)dst
-                applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
-                          userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
-                    userIdentifier:(NSString *)xuserIdentifier
-                           options:(NSDictionary *)options;
-
--(void) MAP_Delimiter_Req:(NSString *)dialogId
-                  options:(NSDictionary *)options;
-
-- (void)MAP_Close_Req:(NSString *)dialogId
-              options:(NSDictionary *)options;
-
--(void) MAP_U_Abort_Req:(NSString *)dialogId
-                options:(NSDictionary *)options;
-
-- (void) MAP_Invoke_Req:(UMASN1Object *)param
-                 dialog:(NSString *)dialogId
-               invokeId:(int64_t)xinvokeId
-               linkedId:(int64_t)xlinkedId
-                 opCode:(UMLayerGSMMAP_OpCode *)xopcode
-                   last:(int64_t)last
-                options:(NSDictionary *)options;
 
 @end

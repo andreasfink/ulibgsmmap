@@ -220,6 +220,23 @@
 		A6CE5DA91D40159E00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.asn in Resources */ = {isa = PBXBuildFile; fileRef = A6CE5DA81D40159E00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.asn */; };
 		A6CE5DAC1D4015AC00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = A6CE5DAA1D4015AC00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6CE5DAD1D4015AC00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE5DAB1D4015AC00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.m */; };
+		A6DD19201FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DD191E1FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6DD19211FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD191F1FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.m */; };
+		A6DD192B1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DD19291FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6DD192C1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD192A1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.m */; };
+		A6DD192D1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD192A1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.m */; };
+		A6DD19301FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DD192E1FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6DD19311FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD192F1FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.m */; };
+		A6DD19321FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD192F1FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.m */; };
+		A6DD19351FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DD19331FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6DD19361FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD19341FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.m */; };
+		A6DD19371FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD19341FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.m */; };
+		A6DD193A1FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DD19381FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.h */; };
+		A6DD193B1FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD19391FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.m */; };
+		A6DD193C1FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD19391FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.m */; };
+		A6DD193F1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DD193D1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.h */; };
+		A6DD19401FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD193E1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m */; };
+		A6DD19411FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD193E1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m */; };
 		A6ED5C991B4364B200854472 /* ulibtcap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C981B4364B200854472 /* ulibtcap.framework */; };
 		A6EE6CE91D3B6BFE00211137 /* UMLayerGSMMAP.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE67181D3B6BE200211137 /* UMLayerGSMMAP.m */; };
 		A6EE6CEA1D3B6BFE00211137 /* UMLayerGSMMAP.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE67191D3B6BE200211137 /* UMLayerGSMMAP.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1799,6 +1816,18 @@
 		A6CE5DA81D40159E00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_AccuracyFulfilmentIndicator.asn; sourceTree = "<group>"; };
 		A6CE5DAA1D4015AC00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_AccuracyFulfilmentIndicator.h; sourceTree = "<group>"; };
 		A6CE5DAB1D4015AC00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_AccuracyFulfilmentIndicator.m; sourceTree = "<group>"; };
+		A6DD191E1FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_U_Abort_Req_Task.h; sourceTree = "<group>"; };
+		A6DD191F1FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_U_Abort_Req_Task.m; sourceTree = "<group>"; };
+		A6DD19291FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Delimiter_Req_Task.h; sourceTree = "<group>"; };
+		A6DD192A1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Delimiter_Req_Task.m; sourceTree = "<group>"; };
+		A6DD192E1FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Close_Req_Task.h; sourceTree = "<group>"; };
+		A6DD192F1FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Close_Req_Task.m; sourceTree = "<group>"; };
+		A6DD19331FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Invoke_Req_Task.h; sourceTree = "<group>"; };
+		A6DD19341FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Invoke_Req_Task.m; sourceTree = "<group>"; };
+		A6DD19381FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_ReturnResult_Req_Task.h; sourceTree = "<group>"; };
+		A6DD19391FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_ReturnResult_Req_Task.m; sourceTree = "<group>"; };
+		A6DD193D1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_ReturnError_Req_Task.h; sourceTree = "<group>"; };
+		A6DD193E1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_ReturnError_Req_Task.m; sourceTree = "<group>"; };
 		A6ED5C701B435B0C00854472 /* ulib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulib.framework; path = /Library/Frameworks/ulib.framework; sourceTree = "<absolute>"; };
 		A6ED5C721B435B1E00854472 /* ulibsctp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibsctp.framework; path = /Library/Frameworks/ulibsctp.framework; sourceTree = "<absolute>"; };
 		A6ED5C741B435B2600854472 /* ulibm2pa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibm2pa.framework; path = /Library/Frameworks/ulibm2pa.framework; sourceTree = "<absolute>"; };
@@ -3252,6 +3281,18 @@
 				A69EDF6B1DF71EAA00E486B7 /* UMLayerGSMMAP_ErrorCode.h */,
 				A6EE67191D3B6BE200211137 /* UMLayerGSMMAP.h */,
 				A6EE67181D3B6BE200211137 /* UMLayerGSMMAP.m */,
+				A6DD19291FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.h */,
+				A6DD192A1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.m */,
+				A6DD192E1FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.h */,
+				A6DD192F1FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.m */,
+				A6DD191E1FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.h */,
+				A6DD191F1FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.m */,
+				A6DD19331FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.h */,
+				A6DD19341FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.m */,
+				A6DD19381FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.h */,
+				A6DD19391FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.m */,
+				A6DD193D1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.h */,
+				A6DD193E1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m */,
 				A69DB8121E390EFE00E0C84E /* UMGSMMAP_HousekeepingTask.h */,
 				A69DB8131E390EFE00E0C84E /* UMGSMMAP_HousekeepingTask.m */,
 				A69DB8161E3935DF00E0C84E /* UMGSMMAP_TimeoutTask.h */,
@@ -4971,12 +5012,14 @@
 				A6EE6E411D3B6BFE00211137 /* UMGSMMAP_RoutingInfoForLCS_Arg.h in Headers */,
 				A6EE6F2F1D3B6BFE00211137 /* UMGSMMAP_NumberPortabilityStatus.h in Headers */,
 				A6EE6CEC1D3B6BFE00211137 /* UMGSMMAP_ZoneCodeList.h in Headers */,
+				A6DD19351FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.h in Headers */,
 				A6EE700E1D3B6BFF00211137 /* UMGSMMAP_LCSRequestorID.h in Headers */,
 				A6EE70591D3B6BFF00211137 /* UMGSMMAP_InterrogationType.h in Headers */,
 				A69DB8141E390EFF00E0C84E /* UMGSMMAP_HousekeepingTask.h in Headers */,
 				A6CE5DAC1D4015AC00211137 /* UMGSMMAP_AccuracyFulfilmentIndicator.h in Headers */,
 				A6EE70D51D3B6BFF00211137 /* UMGSMMAP_ForwardingFeatureList.h in Headers */,
 				A6EE714C1D3B6BFF00211137 /* UMGSMMAP_Ext_BearerServiceCode.h in Headers */,
+				A6DD19201FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.h in Headers */,
 				A6EE71B51D3B6BFF00211137 /* UMGSMMAP_CUG_Info.h in Headers */,
 				A6EE71121D3B6BFF00211137 /* UMGSMMAP_Ext_SS_Status.h in Headers */,
 				A6EE71F31D3B6BFF00211137 /* UMGSMMAP_CCBS_Indicators.h in Headers */,
@@ -5018,6 +5061,7 @@
 				A6EE72041D3B6BFF00211137 /* UMGSMMAP_Category.h in Headers */,
 				A69629AF1D56CE5700211137 /* GsmCharSet.h in Headers */,
 				A6EE71631D3B6BFF00211137 /* UMGSMMAP_Eps_AuthenticationSetList.h in Headers */,
+				A6DD192B1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.h in Headers */,
 				A6EE70BD1D3B6BFF00211137 /* UMGSMMAP_GlobalCellId.h in Headers */,
 				A6EE6E6E1D3B6BFE00211137 /* UMGSMMAP_ReportSM_DeliveryStatusArg.h in Headers */,
 				A6EE723C1D3B6BFF00211137 /* UMGSMMAP_BearerServNotProvParam.h in Headers */,
@@ -5345,6 +5389,7 @@
 				A6EE6FFD1D3B6BFF00211137 /* UMGSMMAP_LocationInformationGPRS.h in Headers */,
 				A6EE6E9A1D3B6BFE00211137 /* UMGSMMAP_Pw_RegistrationFailureCause.h in Headers */,
 				A6EE6E171D3B6BFE00211137 /* UMGSMMAP_SendRoutingInfoForGprsRes.h in Headers */,
+				A6DD193A1FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.h in Headers */,
 				A6EE71971D3B6BFF00211137 /* UMGSMMAP_DaylightSavingTime.h in Headers */,
 				A6EE705C1D3B6BFF00211137 /* UMGSMMAP_InterrogateSS_Res.h in Headers */,
 				A69629B01D56CE5D00211137 /* NSData+map.h in Headers */,
@@ -5375,6 +5420,7 @@
 				A60A541F1D56C15600211137 /* UMGSMMAP_MAP_AcceptInfo.h in Headers */,
 				A60A54251D56C15600211137 /* UMGSMMAP_MAP_DialoguePDU.h in Headers */,
 				A60A540A1D56B8F200211137 /* UMGSMMAP_ProcedureCancellationReason.h in Headers */,
+				A6DD193F1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.h in Headers */,
 				A60A54281D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h in Headers */,
 				A6EE6F4A1D3B6BFE00211137 /* UMGSMMAP_NoSubscriberReplyParam.h in Headers */,
 				A6EE6ED01D3B6BFE00211137 /* UMGSMMAP_Priority.h in Headers */,
@@ -5386,6 +5432,7 @@
 				A6EE72AE1D3B6BFF00211137 /* UMGSMMAP_AbsentSubscriberParam.h in Headers */,
 				A6EE6E561D3B6BFE00211137 /* UMGSMMAP_RestoreDataRes.h in Headers */,
 				A6EE6E441D3B6BFE00211137 /* UMGSMMAP_RoutingInfo.h in Headers */,
+				A6DD19301FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.h in Headers */,
 				A6EE6F731D3B6BFF00211137 /* UMGSMMAP_MT_ForwardSM_Arg.h in Headers */,
 				A6EE6CEA1D3B6BFE00211137 /* UMLayerGSMMAP.h in Headers */,
 				A6EE71BB1D3B6BFF00211137 /* UMGSMMAP_CUG_FeatureList.h in Headers */,
@@ -6022,6 +6069,7 @@
 				A6EE6E2E1D3B6BFE00211137 /* UMGSMMAP_SendAuthenticationInfoArg.m in Sources */,
 				A6EE6ED21D3B6BFE00211137 /* UMGSMMAP_PrepareSubsequentHO_Arg.m in Sources */,
 				A6EE6DC81D3B6BFE00211137 /* UMGSMMAP_SS_EventSpecification.m in Sources */,
+				A6DD193B1FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.m in Sources */,
 				A6EE6E8A1D3B6BFE00211137 /* UMGSMMAP_ReadyForSM_Arg.m in Sources */,
 				A6EE70851D3B6BFF00211137 /* UMGSMMAP_Horizontal_Accuracy.m in Sources */,
 				A6EE6DDE1D3B6BFE00211137 /* UMGSMMAP_SRES.m in Sources */,
@@ -6077,6 +6125,7 @@
 				A6EE6E751D3B6BFE00211137 /* UMGSMMAP_RemoteUserFreeRes.m in Sources */,
 				A6EE72031D3B6BFF00211137 /* UMGSMMAP_Category.m in Sources */,
 				A6EE71A71D3B6BFF00211137 /* UMGSMMAP_CUG_Subscription.m in Sources */,
+				A6DD19311FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.m in Sources */,
 				A6EE6E8D1D3B6BFE00211137 /* UMGSMMAP_Re_SynchronisationInfo.m in Sources */,
 				A6EE71D71D3B6BFF00211137 /* UMGSMMAP_CliRestrictionOption.m in Sources */,
 				A6EE718D1D3B6BFF00211137 /* UMGSMMAP_DefaultCallHandling.m in Sources */,
@@ -6089,6 +6138,7 @@
 				A6EE70671D3B6BFF00211137 /* UMGSMMAP_InformServiceCentreArg.m in Sources */,
 				A6EE72321D3B6BFF00211137 /* UMGSMMAP_CallBarringCause.m in Sources */,
 				A6EE70A91D3B6BFF00211137 /* UMGSMMAP_GPRSDataList.m in Sources */,
+				A6DD192C1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.m in Sources */,
 				A6EE6F3D1D3B6BFE00211137 /* UMGSMMAP_NotReachableReason.m in Sources */,
 				A6CE5D951D4012AD00211137 /* UMGSMMAP_Add_GeographicalInformation.m in Sources */,
 				A6EE70CB1D3B6BFF00211137 /* UMGSMMAP_ForwardingReason.m in Sources */,
@@ -6205,6 +6255,7 @@
 				A6EE6E961D3B6BFE00211137 /* UMGSMMAP_QoS_Subscribed.m in Sources */,
 				A6EE72121D3B6BFF00211137 /* UMGSMMAP_CamelInfo.m in Sources */,
 				A6EE6F021D3B6BFE00211137 /* UMGSMMAP_OverrideCategory.m in Sources */,
+				A6DD19401FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m in Sources */,
 				A6EE70A61D3B6BFF00211137 /* UMGSMMAP_GPRSMSClass.m in Sources */,
 				A69595E21D7FA7E100211137 /* UMGSMMAP_M_CSI.m in Sources */,
 				A60A53E71D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.m in Sources */,
@@ -6306,6 +6357,7 @@
 				A6EE6EDE1D3B6BFE00211137 /* UMGSMMAP_PrepareGroupCallArg.m in Sources */,
 				A6EE72661D3B6BFF00211137 /* UMGSMMAP_AuthenticationQuintupletList.m in Sources */,
 				A6EE729E1D3B6BFF00211137 /* UMGSMMAP_Additional_Number.m in Sources */,
+				A6DD19211FD9456500DA43FA /* UMGSMMAP_U_Abort_Req_Task.m in Sources */,
 				A6EE6F6F1D3B6BFE00211137 /* UMGSMMAP_MT_ForwardSM_Res.m in Sources */,
 				A60A54051D56B8BF00211137 /* UMGSMMAP_ResourceUnavailableReason.m in Sources */,
 				A6EE6F781D3B6BFF00211137 /* UMGSMMAP_MSNetworkCapability.m in Sources */,
@@ -6444,6 +6496,7 @@
 				A6EE6EC41D3B6BFE00211137 /* UMGSMMAP_ProcessGroupCallSignallingArg.m in Sources */,
 				A6EE6D991D3B6BFE00211137 /* UMGSMMAP_SubscriberLocationReport_Arg.m in Sources */,
 				A6EE6D5D1D3B6BFE00211137 /* UMGSMMAP_TraceReference.m in Sources */,
+				A6DD19361FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.m in Sources */,
 				A69596051D7FAA1C00211137 /* UMGSMMAP_MT_smsCAMELTDP_Criteria.m in Sources */,
 				A6EE6EEE1D3B6BFE00211137 /* UMGSMMAP_PDP_Type.m in Sources */,
 				A6EE6E281D3B6BFE00211137 /* UMGSMMAP_SendGroupCallEndSignalArg.m in Sources */,
@@ -6535,7 +6588,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A641CEF61B42019900854472 /* ulibgsmmapTests.m in Sources */,
+				A6DD19371FD950BD00DA43FA /* UMGSMMAP_Invoke_Req_Task.m in Sources */,
+				A6DD193C1FD9663000DA43FA /* UMGSMMAP_ReturnResult_Req_Task.m in Sources */,
+				A6DD19321FD950A500DA43FA /* UMGSMMAP_Close_Req_Task.m in Sources */,
+				A6DD19411FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m in Sources */,
 				A69EDF721DF7EBCE00E486B7 /* UMGSMMAP_PagingArea.m in Sources */,
+				A6DD192D1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

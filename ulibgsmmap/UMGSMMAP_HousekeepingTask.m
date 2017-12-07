@@ -14,10 +14,9 @@
 
 - (UMGSMMAP_HousekeepingTask *)initForGSMMAP:(UMLayerGSMMAP *)g
 {
-    self = [super initWithName:@"UMGSMMAP_HousekeepingTask"
+    self = [super initWithName:[[self class]description]
                       receiver:g
-                        sender:NULL
-       requiresSynchronisation:NO];
+                        sender:NULL];
     if(self)
     {
         gsmmapLayer = g;

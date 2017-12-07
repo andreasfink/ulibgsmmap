@@ -12,22 +12,21 @@
 @implementation UMGSMMAP_TimeoutTask
 
 
-- (UMGSMMAP_TimeoutTask *)initForGSMMAP:(UMLayerGSMMAP *)g dialog:(UMLayerGSMMAP_Dialog *)d
+- (UMGSMMAP_TimeoutTask *)initForGSMMAP:(UMLayerGSMMAP *)g
+                                 dialog:(UMLayerGSMMAP_Dialog *)d
 {
-    self = [super initWithName:@"UMGSMMAP_TimeoutTask"
+    self = [super initWithName:[[self class]description]
                       receiver:g
-                        sender:NULL
-       requiresSynchronisation:NO];
+                        sender:NULL];
     if(self)
     {
-        gsmmapLayer = g;
-        dialog = d;
+        _dialog = d;
     }
     return self;
 }
 
 - (void) main
 {
-    [dialog timeOut];
+    [_dialog timeOut];
 }
 @end
