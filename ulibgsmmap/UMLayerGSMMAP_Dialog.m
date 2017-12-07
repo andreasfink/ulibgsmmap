@@ -239,16 +239,16 @@
             [xgsmmap.logFeed debugText:s];
         }
     }
-    [user MAP_Open_Ind:self.userIdentifier
-                dialog:self.userDialogId
-           transaction:localTransactionId
-     remoteTransaction:remoteTransactionId
-                   map:xgsmmap
-               variant:xvariant
-        callingAddress:src
-         calledAddress:dst
-       dialoguePortion:xdialoguePortion
-               options:xoptions];
+    [user QueueMAP_Open_Ind:self.userIdentifier
+                     dialog:self.userDialogId
+                transaction:localTransactionId
+          remoteTransaction:remoteTransactionId
+                        map:xgsmmap
+                    variant:xvariant
+             callingAddress:src
+              calledAddress:dst
+            dialoguePortion:xdialoguePortion
+                    options:xoptions];
 }
 
 -(void) MAP_Open_Resp_forUser:(id<UMLayerGSMMAP_UserProtocol>)user
@@ -305,16 +305,16 @@
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate date];
 
-    [user MAP_Open_Resp:uid
-                 dialog:self.userDialogId
-            transaction:self.tcapTransactionId
-      remoteTransaction:self.tcapRemoteTransactionId
-                    map:xgsmmap
-                variant:xvariant
-         callingAddress:src
-          calledAddress:dst
-        dialoguePortion:xdialoguePortion
-                options:options];
+    [user QueueMAP_Open_Resp:uid
+                           dialog:self.userDialogId
+                      transaction:self.tcapTransactionId
+                remoteTransaction:self.tcapRemoteTransactionId
+                              map:xgsmmap
+                          variant:xvariant
+                   callingAddress:src
+                    calledAddress:dst
+                  dialoguePortion:xdialoguePortion
+                          options:options];
 }
 
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
@@ -444,8 +444,8 @@
           calledAddress:NULL
                  result:NULL
              diagnostic:NULL];
-    [mapUser MAP_Close_Ind:self.userIdentifier
-                   options:xoptions];
+    [mapUser QueueMAP_Close_Ind:self.userIdentifier
+                        options:xoptions];
 }
 
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
@@ -533,7 +533,7 @@
 
     if((self.openEstablished==YES) && (tcapTransactionId != NULL))
     {
-        [mapUser MAP_Close_Ind:userIdentifier options:options];
+        [mapUser QueueMAP_Close_Ind:userIdentifier options:options];
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
@@ -557,7 +557,7 @@
     /* update the GT's based on the response */
     self.remoteAddress = src;
     self.localAddress = dst;
-    [mapUser MAP_Delimiter_Ind:userIdentifier
+    [mapUser QueueMAP_Delimiter_Ind:userIdentifier
                         dialog:dialogId
                 callingAddress:src
                  calledAddress:dst
@@ -582,7 +582,7 @@
     /* update calling/called from the incoming continue of the transaction */
     self.remoteAddress = src;
     self.localAddress = dst;
-    [mapUser MAP_Continue_Ind:userIdentifier
+    [mapUser QueueMAP_Continue_Ind:userIdentifier
                callingAddress:src
                 calledAddress:dst
               dialoguePortion:xdialoguePortion
@@ -661,7 +661,7 @@
 
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate date];
-    [mapUser MAP_P_Abort_Ind:self.userIdentifier
+    [mapUser QueueMAP_P_Abort_Ind:self.userIdentifier
               callingAddress:src
                calledAddress:dst
              dialoguePortion:xdialoguePortion
@@ -684,7 +684,7 @@
 
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate date];
-    [mapUser MAP_U_Abort_Ind:self.userIdentifier
+    [mapUser QueueMAP_U_Abort_Ind:self.userIdentifier
               callingAddress:src
                calledAddress:dst
              dialoguePortion:xdialoguePortion
@@ -703,7 +703,7 @@
     [self touch];
     NSMutableDictionary *options = [rxoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate date];
-    [mapUser MAP_Notice_Ind:userIdentifier
+    [mapUser QueueMAP_Notice_Ind:userIdentifier
           tcapTransactionId:localTransactionId
                      reason:returnCause
                     options:options];
@@ -905,7 +905,7 @@
         yoptions[@"tcap-remote-transaction-id"] = tcapRemoteTransactionId;
     }
 
-    [mapUser MAP_Invoke_Ind:params
+    [mapUser QueueMAP_Invoke_Ind:params
                      userId:userIdentifier
                      dialog:userDialogId
                 transaction:tcapTransactionId
@@ -925,7 +925,7 @@
                       options:(NSDictionary *)xoptions
 {
     [self touch];
-    [mapUser MAP_ReturnResult_Resp:params
+    [mapUser QueueMAP_ReturnResult_Resp:params
                             userId:userIdentifier
                             dialog:userDialogId
                        transaction:tcapTransactionId
@@ -944,7 +944,7 @@
                      options:(NSDictionary *)xoptions
 {
     [self touch];
-    [mapUser MAP_ReturnError_Resp:params
+    [mapUser QueueMAP_ReturnError_Resp:params
                            userId:userIdentifier
                            dialog:userDialogId
                       transaction:tcapTransactionId
@@ -963,7 +963,7 @@
                 options:(NSDictionary *)xoptions
 {
     [self touch];
-    [mapUser MAP_Reject_Resp:params
+    [mapUser QueueMAP_Reject_Resp:params
                       userId:userIdentifier
                       dialog:userDialogId
                  transaction:tcapTransactionId
@@ -1120,7 +1120,7 @@
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)xoptions
 {
-    [mapUser MAP_P_Abort_Ind:self.userIdentifier
+    [mapUser QueueMAP_P_Abort_Ind:self.userIdentifier
               callingAddress:src
                calledAddress:dst
              dialoguePortion:NULL
@@ -1155,7 +1155,7 @@
 {
     @try
     {
-        [mapUser MAP_P_Abort_Ind:self.userIdentifier
+        [mapUser QueueMAP_P_Abort_Ind:self.userIdentifier
                   callingAddress:remoteAddress
                    calledAddress:localAddress
                  dialoguePortion:NULL

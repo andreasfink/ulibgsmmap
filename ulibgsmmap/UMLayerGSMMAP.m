@@ -300,12 +300,12 @@
 
     @try
     {
-        [user MAP_Unidirectional_Ind:options
-                      callingAddress:src
-                       calledAddress:dst
-                     dialoguePortion:xdialoguePortion
-                       transactionId:localTransactionId
-                 remoteTransactionId:remoteTransactionId];
+        [user QueueMAP_Unidirectional_Ind:options
+                           callingAddress:src
+                            calledAddress:dst
+                          dialoguePortion:xdialoguePortion
+                            transactionId:localTransactionId
+                      remoteTransactionId:remoteTransactionId];
     }
     @catch(NSException *ex)
     {
