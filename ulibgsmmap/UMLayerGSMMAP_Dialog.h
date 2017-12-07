@@ -38,8 +38,9 @@
     SccpAddress *remoteAddress;
     int64_t  _nextInvokeId;
     NSTimeInterval timeoutValue;
-    NSDate *timeoutDate;
-    NSDate *createdDate;
+    NSDate *_startDate;
+    UMAtomicDate *_lastActivity;
+
     UMTCAP_Variant variant;
     UMSynchronizedArray *pendingOutgoingComponents;
     UMSynchronizedArray *pendingIncomingComponents;
@@ -51,7 +52,6 @@
     BOOL    _dialogResponseRequired;
     BOOL    _dialogIsClosed;
     BOOL    _dialogShallClose;
-    UMMutex *_dialogLock;
 }
 
 #pragma mark -
@@ -70,8 +70,8 @@
 @property(readwrite,strong) UMTCAP_asn1_objectIdentifier *responseApplicationContext;
 
 @property(readwrite,strong) UMASN1BitString *dialogProtocolVersion;
-@property(readwrite,strong) SccpAddress *localAddress;
-@property(readwrite,strong) SccpAddress *remoteAddress;
+@property(readwrite,strong,atomic) SccpAddress *localAddress;
+@property(readwrite,strong,atomic) SccpAddress *remoteAddress;
 @property(readwrite,assign) UMTCAP_Variant variant;
 @property(readwrite,assign,atomic) BOOL    initiatedOutgoing;
 @property(readwrite,assign,atomic) BOOL    openEstablished;
