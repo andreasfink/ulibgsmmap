@@ -2010,7 +2010,7 @@ case "$host" in
 	CFLAGS="${CFLAGS} -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion"
 	CFLAGS="${CFLAGS} -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector"
 	CFLAGS="${CFLAGS} -Wno-deprecated-implementations -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion "
-	CFLAGS="${CFLAGS} -fasm-blocks -fblocks -fstrict-aliasing -fobjc-arc -fobjc-runtime=gnustep"
+	CFLAGS="${CFLAGS} -fasm-blocks -fblocks -fstrict-aliasing -fobjc-arc -fobjc-runtime=gnustep-1.8"
 	CFLAGS="${CFLAGS} -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0"
 	CFLAGS+=" -fpascal-strings"
 	if [ -x /usr/local/bin/gnustep-config ]
