@@ -41,7 +41,7 @@
         _nextInvokeId = 0;
         pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
         timeoutValue = 90;
-        _startDate = [NSDate date];
+        _startDate = [NSDate new];
         _lastActivity = [[UMAtomicDate alloc]init];
         _logLevel = UMLOG_MAJOR;
     }
@@ -181,7 +181,7 @@
     [self touch];
 
     NSMutableDictionary *yoptions = [xoptions mutableCopy];
-    yoptions[@"gsmmap-timestamp"] = [NSDate date];
+    yoptions[@"gsmmap-timestamp"] = [NSDate new];
     if(xgsmmap.logLevel <= UMLOG_DEBUG)
     {
         NSString *s = [NSString stringWithFormat:@"MAP_Open_Ind_forUser\n"
@@ -303,7 +303,7 @@
     self.userIdentifier = uid;
     
     NSMutableDictionary *options = [xoptions mutableCopy];
-    options[@"gsmmap-timestamp"] = [NSDate date];
+    options[@"gsmmap-timestamp"] = [NSDate new];
 
     [user queueMAP_Open_Resp:uid
                            dialog:self.userDialogId
@@ -529,7 +529,7 @@
 {
     [self touch];
     NSMutableDictionary *options = [xoptions mutableCopy];
-    options[@"gsmmap-timestamp"] = [NSDate date];
+    options[@"gsmmap-timestamp"] = [NSDate new];
 
     if((self.openEstablished==YES) && (tcapTransactionId != NULL))
     {
@@ -552,7 +552,7 @@
 {
     [self touch];
     NSMutableDictionary *options = [xoptions mutableCopy];
-    options[@"gsmmap-timestamp"] = [NSDate date];
+    options[@"gsmmap-timestamp"] = [NSDate new];
 
     /* update the GT's based on the response */
     self.remoteAddress = src;
@@ -577,7 +577,7 @@
     [self touch];
 
     NSMutableDictionary *options = [xoptions mutableCopy];
-    options[@"gsmmap-timestamp"] = [NSDate date];
+    options[@"gsmmap-timestamp"] = [NSDate new];
 
     /* update calling/called from the incoming continue of the transaction */
     self.remoteAddress = src;
@@ -660,7 +660,7 @@
     [self touch];
 
     NSMutableDictionary *options = [xoptions mutableCopy];
-    options[@"gsmmap-timestamp"] = [NSDate date];
+    options[@"gsmmap-timestamp"] = [NSDate new];
     [mapUser queueMAP_P_Abort_Ind:self.userIdentifier
               callingAddress:src
                calledAddress:dst
@@ -683,7 +683,7 @@
     [self touch];
 
     NSMutableDictionary *options = [xoptions mutableCopy];
-    options[@"gsmmap-timestamp"] = [NSDate date];
+    options[@"gsmmap-timestamp"] = [NSDate new];
     [mapUser queueMAP_U_Abort_Ind:self.userIdentifier
               callingAddress:src
                calledAddress:dst
@@ -702,7 +702,7 @@
 {
     [self touch];
     NSMutableDictionary *options = [rxoptions mutableCopy];
-    options[@"gsmmap-timestamp"] = [NSDate date];
+    options[@"gsmmap-timestamp"] = [NSDate new];
     [mapUser queueMAP_Notice_Ind:userIdentifier
           tcapTransactionId:localTransactionId
                      reason:returnCause
