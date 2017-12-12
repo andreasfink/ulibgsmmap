@@ -8,11 +8,12 @@
 
 #import "UMGSMMAP_U_Abort_Req_Task.h"
 #import "UMLayerGSMMAP.h"
+#import "UMGSMMAP_DialogIdentifier.h"
 
 @implementation UMGSMMAP_U_Abort_Req_Task
 
 -(UMGSMMAP_U_Abort_Req_Task *)initWithInstance:(UMLayerGSMMAP *)instance
-                                        dialog:(NSString *)dialogId
+                                        dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                                        options:(NSDictionary *)options
                                         result:(UMTCAP_asn1_Associate_result *)result
                                     diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic

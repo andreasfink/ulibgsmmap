@@ -44,6 +44,10 @@
 		A60A54281D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A60A541C1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A60A54291D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A60A541D1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m */; };
 		A641CEF61B42019900854472 /* ulibgsmmapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A641CEF51B42019900854472 /* ulibgsmmapTests.m */; };
+		A6590EF51FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6590EF31FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6590EF61FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6590EF41FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m */; };
+		A6590EF91FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6590EF71FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6590EFA1FE07588004C8A74 /* UMGSMMAP_UserIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6590EF81FE07588004C8A74 /* UMGSMMAP_UserIdentifier.m */; };
 		A6790F451D92629A00304445 /* UMLayerGSMMAP_OpCode.h in Headers */ = {isa = PBXBuildFile; fileRef = A6790F431D92629A00304445 /* UMLayerGSMMAP_OpCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6790F461D92629A00304445 /* UMLayerGSMMAP_OpCode.m in Sources */ = {isa = PBXBuildFile; fileRef = A6790F441D92629A00304445 /* UMLayerGSMMAP_OpCode.m */; };
 		A67BA19D1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A67BA19B1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1651,6 +1655,10 @@
 		A641CEEE1B42019900854472 /* ulibgsmmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ulibgsmmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A641CEF41B42019900854472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A641CEF51B42019900854472 /* ulibgsmmapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ulibgsmmapTests.m; sourceTree = "<group>"; };
+		A6590EF31FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_DialogIdentifier.h; sourceTree = "<group>"; };
+		A6590EF41FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_DialogIdentifier.m; sourceTree = "<group>"; };
+		A6590EF71FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_UserIdentifier.h; sourceTree = "<group>"; };
+		A6590EF81FE07588004C8A74 /* UMGSMMAP_UserIdentifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_UserIdentifier.m; sourceTree = "<group>"; };
 		A6790F431D92629A00304445 /* UMLayerGSMMAP_OpCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAP_OpCode.h; sourceTree = "<group>"; };
 		A6790F441D92629A00304445 /* UMLayerGSMMAP_OpCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMLayerGSMMAP_OpCode.m; sourceTree = "<group>"; };
 		A67BA19B1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAP_UserProtocol.h; sourceTree = "<group>"; };
@@ -3279,6 +3287,10 @@
 				A6EE72C61D3B94F300211137 /* ulibgsmmap.h */,
 				A6A2B8DA1E389E0800E8F0AB /* UMLayerGSMMAPApplicationContextProtocol.h */,
 				A69EDF6B1DF71EAA00E486B7 /* UMLayerGSMMAP_ErrorCode.h */,
+				A6590EF31FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h */,
+				A6590EF41FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m */,
+				A6590EF71FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h */,
+				A6590EF81FE07588004C8A74 /* UMGSMMAP_UserIdentifier.m */,
 				A6EE67191D3B6BE200211137 /* UMLayerGSMMAP.h */,
 				A6EE67181D3B6BE200211137 /* UMLayerGSMMAP.m */,
 				A6DD19291FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.h */,
@@ -5003,6 +5015,7 @@
 				A6EE71471D3B6BFF00211137 /* UMGSMMAP_Ext_CallBarFeatureList.h in Headers */,
 				A6EE6D581D3B6BFE00211137 /* UMGSMMAP_TracingBufferFullParam.h in Headers */,
 				A6EE6D9A1D3B6BFE00211137 /* UMGSMMAP_SubscriberLocationReport_Arg.h in Headers */,
+				A6590EF51FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h in Headers */,
 				A6EE6D831D3B6BFE00211137 /* UMGSMMAP_T_BcsmCamelTDPData.h in Headers */,
 				A6EE6E0E1D3B6BFE00211137 /* UMGSMMAP_ServiceKey.h in Headers */,
 				A6EE72251D3B6BFF00211137 /* UMGSMMAP_CallDirection.h in Headers */,
@@ -5053,6 +5066,7 @@
 				A6EE70651D3B6BFF00211137 /* UMGSMMAP_InsertSubscriberDataArg.h in Headers */,
 				A6EE6D4D1D3B6BFE00211137 /* UMGSMMAP_UnauthorizedLCSClient_Diagnostic.h in Headers */,
 				A6EE718C1D3B6BFF00211137 /* UMGSMMAP_DeferredLocationEventType.h in Headers */,
+				A6590EF91FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h in Headers */,
 				A6EE6F561D3B6BFE00211137 /* UMGSMMAP_NewPassword.h in Headers */,
 				A69596161D7FAB4500211137 /* UMGSMMAP_MSISDN_BS_List.h in Headers */,
 				A6EE6F351D3B6BFE00211137 /* UMGSMMAP_NumberOfForwarding.h in Headers */,
@@ -6170,6 +6184,7 @@
 				A69595951D7FA02200211137 /* UMGSMMAP_AdditionalRequestedCAMEL_SubscriptionInfo.m in Sources */,
 				A6EE711C1D3B6BFF00211137 /* UMGSMMAP_Ext_SS_Data.m in Sources */,
 				A6EE6E671D3B6BFE00211137 /* UMGSMMAP_RequestedInfo.m in Sources */,
+				A6590EF61FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m in Sources */,
 				A695959D1D7FA17F00211137 /* UMGSMMAP_T_BCSM_CAMEL_TDP_Criteria.m in Sources */,
 				A69629B21D57987000211137 /* GsmCharSet.m in Sources */,
 				A6EE72981D3B6BFF00211137 /* UMGSMMAP_AgeOfLocationInformation.m in Sources */,
@@ -6305,6 +6320,7 @@
 				A6EE70121D3B6BFF00211137 /* UMGSMMAP_LCSInformation.m in Sources */,
 				A60A54261D56C15600211137 /* UMGSMMAP_MAP_DialoguePDU.m in Sources */,
 				A6EE6FD41D3B6BFF00211137 /* UMGSMMAP_LSAOnlyAccessIndicator.m in Sources */,
+				A6590EFA1FE07588004C8A74 /* UMGSMMAP_UserIdentifier.m in Sources */,
 				A6EE6D3A1D3B6BFE00211137 /* UMGSMMAP_UnknownSubscriberDiagnostic.m in Sources */,
 				A6EE6D601D3B6BFE00211137 /* UMGSMMAP_Tmsi.m in Sources */,
 				A6EE6E5E1D3B6BFE00211137 /* UMGSMMAP_ResponseTime.m in Sources */,

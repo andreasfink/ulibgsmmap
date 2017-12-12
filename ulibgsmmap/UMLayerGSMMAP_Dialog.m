@@ -63,7 +63,7 @@
     _nextInvokeId = (iid + 1) % 0xFF;
 }
 
-- (NSString *)getNewUserDialogId
+- (UMGSMMAP_DialogIdentifier *)getNewUserDialogId
 {
     return NULL;
 }
@@ -133,7 +133,7 @@
                calledAddress:(SccpAddress *)dst
           applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
                     userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
-              userIdentifier:(NSString *)xuserIdentifier
+              userIdentifier:(UMGSMMAP_UserIdentifier *)xuserIdentifier
                      options:(NSDictionary *)xoptions
 {
     [self touch];
@@ -223,7 +223,7 @@
 
     if(self.userIdentifier==NULL)
     {
-        NSString *uid = [user getNewUserIdentifier];
+        UMGSMMAP_UserIdentifier *uid = [user getNewUserIdentifier];
         self.userIdentifier = uid;
         if(xgsmmap.logLevel <= UMLOG_DEBUG)
         {
@@ -298,8 +298,7 @@
     pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
     pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
 
-    NSString *uid = [user getNewUserIdentifier];
-
+    UMGSMMAP_UserIdentifier *uid = [user getNewUserIdentifier];
     self.userIdentifier = uid;
     
     NSMutableDictionary *options = [xoptions mutableCopy];
@@ -543,7 +542,7 @@
 }
 
 -(void) MAP_Delimiter_Ind:(NSDictionary *)xoptions
-                   dialog:(NSString *)dialogId
+                   dialog:(UMGSMMAP_DialogIdentifier *)dialogId
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
           dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion

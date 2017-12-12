@@ -8,12 +8,13 @@
 
 #import <ulibtcap/ulibtcap.h>
 
+@class UMGSMMAP_DialogIdentifier;
 @class UMLayerGSMMAP;
 
 @interface UMGSMMAP_Close_Req_Task : UMLayerTask
 {
     UMLayerGSMMAP *_instance;
-    NSString *_dialogId;
+    UMGSMMAP_DialogIdentifier *_dialogId;
     SccpAddress *_callingAddress;
     SccpAddress *_calledAddress;
     NSDictionary *_options;
@@ -23,7 +24,7 @@
 
 
 -(UMGSMMAP_Close_Req_Task *)initWithInstance:(UMLayerGSMMAP *)instance
-                                      dialog:(NSString *)dialogId
+                                      dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                               callingAddress:(SccpAddress *)callingAddress
                                calledAddress:(SccpAddress *)calledAddress
                                      options:(NSDictionary *)options

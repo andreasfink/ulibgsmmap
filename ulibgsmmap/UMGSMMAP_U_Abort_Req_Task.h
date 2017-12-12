@@ -8,12 +8,13 @@
 
 #import <ulibtcap/ulibtcap.h>
 
+@class UMGSMMAP_DialogIdentifier;
 @class UMLayerGSMMAP;
 
 @interface UMGSMMAP_U_Abort_Req_Task : UMLayerTask
 {
     UMLayerGSMMAP *_instance;
-    NSString *_dialogId;
+    UMGSMMAP_DialogIdentifier *_dialogId;
     NSDictionary *_options;
     UMTCAP_asn1_Associate_result *_result;
     UMTCAP_asn1_Associate_source_diagnostic *_result_source_diagnostic;
@@ -21,7 +22,7 @@
 }
 
 -(UMGSMMAP_U_Abort_Req_Task *)initWithInstance:(UMLayerGSMMAP *)instance
-                                        dialog:(NSString *)dialogId
+                                        dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                                        options:(NSDictionary *)options
                                         result:(UMTCAP_asn1_Associate_result *)result
                                     diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic

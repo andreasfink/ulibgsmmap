@@ -18,13 +18,15 @@
 
 @class UMLayerGSMMAP;
 @class UMLayerTCAP;
+@class UMGSMMAP_DialogIdentifier;
+@class UMGSMMAP_UserIdentifier;
 
 @interface UMLayerGSMMAP_Dialog : UMObject<UMTCAP_UserProtocol>
 {
-    NSString *userDialogId;
+    UMGSMMAP_DialogIdentifier *userDialogId;
     NSString *tcapTransactionId;
     NSString *tcapRemoteTransactionId;
-    NSString *userIdentifier;
+    UMGSMMAP_UserIdentifier *userIdentifier;
     id<UMLayerGSMMAP_UserProtocol> mapUser;
     UMLayerTCAP *tcapLayer;
     UMLayerGSMMAP *gsmmapLayer;
@@ -57,9 +59,9 @@
 #pragma mark -
 #pragma mark Properties
 
-@property(readwrite,strong) NSString *userDialogId;
+@property(readwrite,strong) UMGSMMAP_DialogIdentifier *userDialogId;
 @property(readwrite,strong) NSString *tcapTransactionId;
-@property(readwrite,strong) NSString *userIdentifier;
+@property(readwrite,strong) UMGSMMAP_UserIdentifier *userIdentifier;
 @property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> mapUser;
 @property(readwrite,strong) UMLayerTCAP *tcapLayer;
 @property(readwrite,strong) UMLayerGSMMAP *gsmmapLayer;
@@ -96,7 +98,7 @@
                calledAddress:(SccpAddress *)dst
           applicationContext:(UMTCAP_asn1_objectIdentifier *)appContext
                     userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
-              userIdentifier:(NSString *)userIdentifier
+              userIdentifier:(UMGSMMAP_UserIdentifier *)userIdentifier
                      options:(NSDictionary *)xoptions;
 
 - (void) MAP_Open_Ind_forUser:(id<UMLayerGSMMAP_UserProtocol>)user
@@ -240,7 +242,7 @@
                options:(NSDictionary *)options;
 
 -(void) MAP_Delimiter_Ind:(NSDictionary *)options
-                   dialog:(NSString *)dialogId
+                   dialog:(UMGSMMAP_DialogIdentifier *)dialogId
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
           dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion

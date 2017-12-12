@@ -9,12 +9,14 @@
 #import <ulibtcap/ulibtcap.h>
 
 @class UMLayerGSMMAP;
+@class UMGSMMAP_DialogIdentifier;
+
 
 @interface UMGSMMAP_Delimiter_Req_Task : UMLayerTask
 
 {
     UMLayerGSMMAP *_instance;
-    NSString *_dialogId;
+    UMGSMMAP_DialogIdentifier *_dialogId;
     SccpAddress *_callingAddress;
     SccpAddress *_calledAddress;
     NSDictionary *_options;
@@ -23,7 +25,7 @@
 }
 
 -(UMGSMMAP_Delimiter_Req_Task *)initWithInstance:(UMLayerGSMMAP *)instance
-                                          dialog:(NSString *)dialogId
+                                          dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                                   callingAddress:(SccpAddress *)src
                                    calledAddress:(SccpAddress *)dst
                                          options:(NSDictionary *)options

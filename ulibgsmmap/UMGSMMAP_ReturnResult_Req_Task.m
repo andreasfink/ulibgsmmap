@@ -8,6 +8,7 @@
 
 #import "UMGSMMAP_ReturnResult_Req_Task.h"
 #import "UMLayerGSMMAP.h"
+#import "UMGSMMAP_DialogIdentifier.h"
 
 @implementation UMGSMMAP_ReturnResult_Req_Task
 
@@ -15,7 +16,7 @@
 
 - (UMGSMMAP_ReturnResult_Req_Task *) initWithInstance:(UMLayerGSMMAP *)instance
                                                 param:(UMASN1Object *)param
-                                               dialog:(NSString *)dialogId
+                                               dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                                              invokeId:(int64_t)invokeId
                                              linkedId:(int64_t)linkedId
                                                opCode:(UMLayerGSMMAP_OpCode *)opcode

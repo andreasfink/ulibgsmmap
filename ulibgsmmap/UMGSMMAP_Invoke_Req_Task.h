@@ -10,12 +10,13 @@
 #import "UMLayerGSMMAP_OpCode.h"
 
 @class UMLayerGSMMAP;
+@class UMGSMMAP_DialogIdentifier;
 
 @interface UMGSMMAP_Invoke_Req_Task : UMLayerTask
 {
     UMLayerGSMMAP *_instance;
     UMASN1Object *_param;
-    NSString *_dialogId;
+    UMGSMMAP_DialogIdentifier *_dialogId;
     int64_t  _invokeId;
     int64_t  _linkedId;
     UMLayerGSMMAP_OpCode *_opCode;
@@ -25,7 +26,7 @@
 
 -(UMGSMMAP_Invoke_Req_Task *)initWithInstance:(UMLayerGSMMAP *)instance
                                    param:(UMASN1Object *)param
-                                  dialog:(NSString *)dialogId
+                                  dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                                 invokeId:(int64_t)xinvokeId
                                 linkedId:(int64_t)xlinkedId
                                   opCode:(UMLayerGSMMAP_OpCode *)xopcode

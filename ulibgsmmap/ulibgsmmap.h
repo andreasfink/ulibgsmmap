@@ -22,6 +22,8 @@
 #import "UMLayerGSMMAP_ProviderProtocol.h"
 #import "UMLayerGSMMAP_OpCode.h"
 #import "UMLayerGSMMAP_ErrorCode.h"
+#import "UMGSMMAP_DialogIdentifier.h"
+#import "UMGSMMAP_UserIdentifier.h"
 
 #import "UMGSMMAP_APN.h"
 #import "UMGSMMAP_ASCI_CallReference.h"

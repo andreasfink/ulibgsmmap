@@ -8,11 +8,12 @@
 
 #import "UMGSMMAP_Close_Req_Task.h"
 #import "UMLayerGSMMAP.h"
+#import "UMGSMMAP_DialogIdentifier.h"
 
 @implementation UMGSMMAP_Close_Req_Task
 
 -(UMGSMMAP_Close_Req_Task *)initWithInstance:(UMLayerGSMMAP *)instance
-                                      dialog:(NSString *)dialogId
+                                      dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                               callingAddress:(SccpAddress *)callingAddress
                                calledAddress:(SccpAddress *)calledAddress
                                      options:(NSDictionary *)options
