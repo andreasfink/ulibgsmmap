@@ -8,6 +8,4 @@
 
 #import "UMGSMMAP_UserIdentifier.h"
 
-@implementation UMGSMMAP_UserIdentifier
 
-@end

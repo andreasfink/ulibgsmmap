@@ -8,6 +8,3 @@
 
 #import "UMGSMMAP_DialogIdentifier.h"
 
-@implementation UMGSMMAP_DialogIdentifier
-
-@end

@@ -6,8 +6,5 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+typedef NSString UMGSMMAP_UserIdentifier
 
-@interface UMGSMMAP_UserIdentifier : NSString
-
-@end
