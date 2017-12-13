@@ -13,13 +13,13 @@
 #import "UMLayerGSMMAP_OpCode.h"
 #import "UMLayerGSMMAP_UserProtocol.h"
 #import "UMGSMMAP_asn1.h"
+#import "UMGSMMAP_DialogIdentifier.h"
+#import "UMGSMMAP_UserIdentifier.h"
 
 #define AUTO_ASSIGN_INVOKE_ID   INT16_MAX
 
 @class UMLayerGSMMAP;
 @class UMLayerTCAP;
-@class UMGSMMAP_DialogIdentifier;
-@class UMGSMMAP_UserIdentifier;
 
 @interface UMLayerGSMMAP_Dialog : UMObject<UMTCAP_UserProtocol>
 {

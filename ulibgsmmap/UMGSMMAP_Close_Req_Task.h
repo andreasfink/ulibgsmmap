@@ -7,8 +7,9 @@
 //
 
 #import <ulibtcap/ulibtcap.h>
+#import "UMGSMMAP_DialogIdentifier.h"
+#import "UMGSMMAP_UserIdentifier.h"
 
-@class UMGSMMAP_DialogIdentifier;
 @class UMLayerGSMMAP;
 
 @interface UMGSMMAP_Close_Req_Task : UMLayerTask

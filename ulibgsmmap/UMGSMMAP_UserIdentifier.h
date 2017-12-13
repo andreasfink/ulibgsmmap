@@ -6,5 +6,11 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-typedef NSString UMGSMMAP_UserIdentifier
+
+#ifndef UMGSMMAP_UserIdentifier_defined
+#define UMGSMMAP_UserIdentifier_defined 1
+
+typedef NSString UMGSMMAP_UserIdentifier;
+
+#endif
 

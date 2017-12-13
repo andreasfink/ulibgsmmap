@@ -11,8 +11,8 @@
 #import <ulib/ulib.h>
 #import "UMLayerGSMMAP_OpCode.h"
 
-@class UMGSMMAP_DialogIdentifier;
-@class UMGSMMAP_UserIdentifier;
+#import "UMGSMMAP_DialogIdentifier.h"
+#import "UMGSMMAP_UserIdentifier.h"
 
 #define GSMMAP_INVOKE_INDICATION_PARAMETERS \
     (UMASN1Object *)xparam\

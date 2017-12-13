@@ -7,5 +7,9 @@
 //
 #import <Foundation/Foundation.h>
 
-typedef NSString UMGSMMAP_DialogIdentifier
+#ifndef UMGSMMAP_DialogIdentifier_defined
+#define UMGSMMAP_DialogIdentifier_defined 1
+
+typedef NSString UMGSMMAP_DialogIdentifier;
+#endif
 

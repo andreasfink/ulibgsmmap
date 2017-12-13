@@ -8,9 +8,10 @@
 
 #import <ulibtcap/ulibtcap.h>
 #import "UMLayerGSMMAP_OpCode.h"
+#import "UMGSMMAP_DialogIdentifier.h"
+#import "UMGSMMAP_UserIdentifier.h"
 
 @class UMLayerGSMMAP;
-@class UMGSMMAP_DialogIdentifier;
 
 @interface UMGSMMAP_ReturnError_Req_Task : UMLayerTask
 {
