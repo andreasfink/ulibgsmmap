@@ -16,7 +16,6 @@
 @property(readwrite,strong) NSString *userIdentifier;
 
 - (UMGSMMAP_UserIdentifier *)initWithString:(NSString *)str;
-- (NSString *)jsonString;
 
 @end
 

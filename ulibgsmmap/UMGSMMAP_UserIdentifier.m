@@ -33,12 +33,5 @@
     return cpy;
 }
 
-- (NSString *)jsonString
-{
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
-    dict["user-identifier"] = _userIdentifier;
-    return [dict jsonString];
-}
-
 @end
 
