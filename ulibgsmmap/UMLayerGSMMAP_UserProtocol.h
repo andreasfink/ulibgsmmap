@@ -11,8 +11,8 @@
 #import <ulib/ulib.h>
 #import "UMLayerGSMMAP_OpCode.h"
 
-#import "UMGSMMAP_DialogIdentifier.h"
-#import "UMGSMMAP_UserIdentifier.h"
+@class UMGSMMAP_DialogIdentifier;
+@class UMGSMMAP_UserIdentifier;
 
 #define GSMMAP_INVOKE_INDICATION_PARAMETERS \
     (UMASN1Object *)xparam\
@@ -171,7 +171,7 @@
 -(void) MAP_Invoke_Ind:GSMMAP_INVOKE_INDICATION_PARAMETERS;
 
 -(void) MAP_ReturnResult_Resp:(UMASN1Object *)param
-                       userId:(NSString *)userIdentifier
+                       userId:(UMGSMMAP_UserIdentifier *)userIdentifier
                        dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                   transaction:(NSString *)tcapTransactionId
                        opCode:(UMLayerGSMMAP_OpCode *)xopcode
@@ -182,7 +182,7 @@
 
 
 - (void) MAP_ReturnError_Resp:(UMASN1Object *)param
-                       userId:(NSString *)userIdentifier
+                       userId:(UMGSMMAP_UserIdentifier *)userIdentifier
                        dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                   transaction:(NSString *)tcapTransactionId
                        opCode:(UMLayerGSMMAP_OpCode *)xopcode
@@ -192,7 +192,7 @@
                       options:(NSDictionary *)xoptions;
 
 - (void) MAP_Reject_Resp:(UMASN1Object *)param
-                  userId:(NSString *)userIdentifier
+                  userId:(UMGSMMAP_UserIdentifier *)userIdentifier
                   dialog:(UMGSMMAP_DialogIdentifier *)dialogId
              transaction:(NSString *)tcapTransactionId
                   opCode:(UMLayerGSMMAP_OpCode *)xopcode
@@ -204,7 +204,7 @@
 #pragma mark -
 #pragma mark Session Handling
 
-- (void) MAP_Open_Ind:(NSString *)userIdentifier
+- (void) MAP_Open_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
                dialog:(UMGSMMAP_DialogIdentifier *)dialogId
           transaction:(NSString *)tcapTransactionId
     remoteTransaction:(NSString *)tcapRemoteTransactionId
@@ -215,7 +215,7 @@
       dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
               options:(NSDictionary *)options;
 
-- (void) MAP_Open_Resp:(NSString *)uidstr
+- (void) MAP_Open_Resp:(UMGSMMAP_UserIdentifier *)uidstr
                 dialog:(UMGSMMAP_DialogIdentifier *)dialogId
            transaction:(NSString *)tcapTransactionId
      remoteTransaction:(NSString *)tcapRemoteTransactionId
@@ -226,7 +226,7 @@
        dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                options:(NSDictionary *)xoptions;
 
--(void)MAP_Delimiter_Ind:(NSString *)userIdentifier
+-(void)MAP_Delimiter_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
                   dialog:(UMGSMMAP_DialogIdentifier *)dialogId
           callingAddress:(SccpAddress *)src
            calledAddress:(SccpAddress *)dst
@@ -235,7 +235,7 @@
      remoteTransactionId:(NSString *)remoteTransactionId
                  options:(NSDictionary *)options;
 
--(void)MAP_Continue_Ind:(NSString *)userIdentifier
+-(void)MAP_Continue_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
         dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -251,13 +251,13 @@
           remoteTransactionId:(NSString *)remoteTransactionId;
 
 
--(void) MAP_Close_Ind:(NSString *)userIdentifier
+-(void) MAP_Close_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
               options:(NSDictionary *)options;
 
--(void) MAP_U_Abort_Req:(NSString *)userIdentifier
+-(void) MAP_U_Abort_Req:(UMGSMMAP_UserIdentifier *)userIdentifier
                 options:(NSDictionary *)options;
 
--(void)MAP_U_Abort_Ind:(NSString *)userIdentifier
+-(void)MAP_U_Abort_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
         callingAddress:(SccpAddress *)src
          calledAddress:(SccpAddress *)dst
        dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -265,7 +265,7 @@
    remoteTransactionId:(NSString *)remoteTransactionId
                options:(NSDictionary *)options;
 
--(void) MAP_P_Abort_Ind:(NSString *)userIdentifier
+-(void) MAP_P_Abort_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
         dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -273,7 +273,7 @@
     remoteTransactionId:(NSString *)remoteTransactionId
                 options:(NSDictionary *)options;
 
--(void) MAP_Notice_Ind:(NSString *)userIdentifier
+-(void) MAP_Notice_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
      tcapTransactionId:(NSString *)localTransactionId
                 reason:(SCCP_ReturnCause)reason
                options:(NSDictionary *)options;

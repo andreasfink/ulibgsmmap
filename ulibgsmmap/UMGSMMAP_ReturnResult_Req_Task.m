@@ -8,11 +8,8 @@
 
 #import "UMGSMMAP_ReturnResult_Req_Task.h"
 #import "UMLayerGSMMAP.h"
-#import "UMGSMMAP_DialogIdentifier.h"
 
 @implementation UMGSMMAP_ReturnResult_Req_Task
-
-
 
 - (UMGSMMAP_ReturnResult_Req_Task *) initWithInstance:(UMLayerGSMMAP *)instance
                                                 param:(UMASN1Object *)param

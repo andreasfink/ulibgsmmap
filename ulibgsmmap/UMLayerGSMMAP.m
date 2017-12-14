@@ -293,7 +293,7 @@
     }
 }
 
-- (void)tcapUnidirectionalIndication:(NSString *)tcapUserId
+- (void)tcapUnidirectionalIndication:(UMTCAP_UserDialogIdentifier *)tcapUserId
                    tcapTransactionId:(NSString *)localTransactionId
              tcapRemoteTransactionId:(NSString *)remoteTransactionId
                              variant:(UMTCAP_Variant)var
@@ -304,7 +304,7 @@
                           components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                              options:(NSDictionary *)options
 {
-    UMGSMMAP_DialogIdentifier *dialogId = (UMGSMMAP_DialogIdentifier *)tcapUserId;
+    //UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
 
     if(logLevel <= UMLOG_DEBUG)
     {
@@ -326,7 +326,7 @@
     }
 }
 
-- (void)tcapUAbortIndication:(NSString  *)tcapUserId
+- (void)tcapUAbortIndication:(UMTCAP_UserDialogIdentifier  *)tcapUserId
            tcapTransactionId:(NSString *)localTransactionId
      tcapRemoteTransactionId:(NSString *)remoteTransactionId
                      variant:(UMTCAP_Variant)variant
@@ -337,7 +337,7 @@
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
 {
-    UMGSMMAP_DialogIdentifier *dialogId = (UMGSMMAP_DialogIdentifier *)tcapUserId;
+    UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
 
     if(logLevel <= UMLOG_DEBUG)
     {
@@ -375,7 +375,7 @@
 }
 
 
-- (void)tcapPAbortIndication:(NSString *)tcapUserId
+- (void)tcapPAbortIndication:(UMTCAP_UserDialogIdentifier *)tcapUserId
            tcapTransactionId:(NSString *)localTransactionId
      tcapRemoteTransactionId:(NSString *)remoteTransactionId
                      variant:(UMTCAP_Variant)variant
@@ -386,7 +386,7 @@
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
 {
-    UMGSMMAP_DialogIdentifier *dialogId = (UMGSMMAP_DialogIdentifier *)tcapUserId;
+    UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
 
     if(logLevel <=UMLOG_DEBUG)
     {
@@ -418,7 +418,7 @@
 }
 
 
-- (void)tcapNoticeIndication:(NSString *)tcapUserId
+- (void)tcapNoticeIndication:(UMTCAP_UserDialogIdentifier *)tcapUserId
            tcapTransactionId:(NSString *)localTransactionId
      tcapRemoteTransactionId:(NSString *)remoteTransactionId
                      variant:(UMTCAP_Variant)variant
@@ -430,7 +430,7 @@
                       reason:(SCCP_ReturnCause)reason
                      options:(NSDictionary *)options;
 {
-    UMGSMMAP_DialogIdentifier *dialogId = (UMGSMMAP_DialogIdentifier *)tcapUserId;
+    UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
 
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
 
@@ -513,7 +513,7 @@
     lastDialogId = (lastDialogId + 1 ) % 0x7FFFFFFF;
     did = lastDialogId;
     [_dialogIdLock unlock];
-    return [UMGSMMAP_DialogIdentifier stringWithFormat:@"D%08llX",(long long)did];
+    return [[UMGSMMAP_DialogIdentifier alloc]initWithString: [NSString stringWithFormat:@"D%08llX",(long long)did]];
 }
 
 - (UMLayerGSMMAP_Dialog *)getNewDialogForUser:(id<UMLayerGSMMAP_UserProtocol>)u withId:(UMGSMMAP_DialogIdentifier *)dialogId
@@ -523,7 +523,7 @@
     d.tcapLayer = tcap;
     d.gsmmapLayer = self;
     d.mapUser = u;
-    dialogs[d.userDialogId] = d;
+    dialogs[d.userDialogId.description] = d;
     return d;
 }
 - (NSUInteger)dialogsCount
@@ -540,7 +540,7 @@
 
 - (UMLayerGSMMAP_Dialog *)dialogById:(UMGSMMAP_DialogIdentifier *)did
 {
-    return dialogs[did];
+    return dialogs[did.description];
 }
 
 - (NSString *)decodeError:(int)err

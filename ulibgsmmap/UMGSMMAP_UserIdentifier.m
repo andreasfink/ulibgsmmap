@@ -9,3 +9,29 @@
 #import "UMGSMMAP_UserIdentifier.h"
 
 
+@implementation UMGSMMAP_UserIdentifier
+
+- (UMGSMMAP_UserIdentifier *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        _userIdentifier = str;
+    }
+    return self;
+}
+
+- (NSString *)description
+{
+    return _userIdentifier;
+}
+
+-(UMGSMMAP_UserIdentifier *)copyWithZone:(nullable NSZone *)zone
+{
+    UMGSMMAP_UserIdentifier *cpy = [[UMGSMMAP_UserIdentifier allocWithZone:zone]init];
+    cpy.userIdentifier = _userIdentifier;
+    return cpy;
+}
+
+@end
+
