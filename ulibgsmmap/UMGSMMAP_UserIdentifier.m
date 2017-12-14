@@ -35,7 +35,7 @@
 
 - (NSString *)jsonString
 {
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init]
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
     dict["user-identifier"] = _userIdentifier;
     return [dict jsonString];
 }
