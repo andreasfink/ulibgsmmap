@@ -356,6 +356,16 @@
                  userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
 
 {
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [NSMutableString stringWithFormat:@"MAP_Delimiter_Req:\n"];
+        [s appendFormat:@"    callingAddress: %@\n",src.stringValueE164];
+        [s appendFormat:@"    calledAddress: %@\n",dst.stringValueE164];
+        [s appendFormat:@"    result: %@\n",[result.objectValue jsonString]];
+        [s appendFormat:@"    diagnostic: %@\n",[result_source_diagnostic.objectValue jsonString]];
+        [s appendFormat:@"    userInfo: %@\n",[xuserInfo.objectValue jsonString]];
+        [logFeed debugText:s];
+    }
     [self touch];
     if(self.openEstablished==NO)
     {
