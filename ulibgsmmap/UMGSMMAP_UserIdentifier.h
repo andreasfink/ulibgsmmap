@@ -6,12 +6,15 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <ulib/ulib.h>
 
-#ifndef UMGSMMAP_UserIdentifier_defined
-#define UMGSMMAP_UserIdentifier_defined 1
+@interface UMGSMMAP_UserIdentifier : UMObject
+{
+    NSString *_userIdentifier;
+}
 
-typedef NSString UMGSMMAP_UserIdentifier;
+@property(readwrite,strong) NSString *userIdentifier;
 
-#endif
+- (UMGSMMAP_UserIdentifier *)initWithString:(NSString *)str;
+@end
 
