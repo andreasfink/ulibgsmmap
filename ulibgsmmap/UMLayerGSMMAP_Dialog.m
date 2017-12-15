@@ -136,6 +136,20 @@
               userIdentifier:(UMGSMMAP_UserIdentifier *)xuserIdentifier
                      options:(NSDictionary *)xoptions
 {
+
+    self.logLevel = xgsmmap.logLevel;
+    self.logFeed = xgsmmap.logFeed;
+    if(_logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Open_Req_forUser\n",userDialogId.description];
+
+        [s appendFormat:@"\tcallingAddress: %@\n",src.stringValueE164];
+        [s appendFormat:@"\tcalledAddress: %@\n",dst.stringValueE164];
+        [s appendFormat:@"\tapplicationContext: %@\n",appContext.stringValue];
+        [s appendFormat:@"\tuserIdentifier: %@\n",xuserIdentifier];
+        [xgsmmap.logFeed debugText:s];
+    }
+
     [self touch];
 
     self.mapUser = user;
@@ -146,6 +160,7 @@
     self.remoteAddress = dst;
     self.applicationContext = appContext;
     self.requestUserInfo = xuserInfo;
+    self.userIdentifier = xuserIdentifier;
 
     if((appContext) || (xuserInfo))
     {
@@ -155,7 +170,6 @@
         v.asn1_data = [NSData dataWithBytes:ver  length:sizeof(ver)];
         self.dialogProtocolVersion = v;
     }
-    self.userIdentifier  = xuserIdentifier;
 
     UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self.gsmmapLayer];
     self.tcapTransactionId = t.localTransactionId;
@@ -178,25 +192,22 @@
          remoteTransactionId:(NSString *)remoteTransactionId
                      options:(NSDictionary *)xoptions
 {
-    [self touch];
-
     self.logLevel = xgsmmap.logLevel;
+    self.logFeed = xgsmmap.logFeed;
+    if(_logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Open_Ind_forUser\n",self.userDialogId];
+        [s appendFormat:@"\tcallingAddress: %@\n",src.stringValueE164];
+        [s appendFormat:@"\tcalledAddress: %@\n",dst.stringValueE164];
+        [s appendFormat:@"\ttransactionId: %@\n",localTransactionId];
+        [s appendFormat:@"\tremoteTransactionId: %@\n",remoteTransactionId];
+        [s appendFormat:@"\tuserIdentifier: %@\n",self.userIdentifier];
+        [xgsmmap.logFeed debugText:s];
+    }
+    [self touch];
 
     NSMutableDictionary *yoptions = [xoptions mutableCopy];
     yoptions[@"gsmmap-timestamp"] = [NSDate new];
-    if(self.logLevel <= UMLOG_DEBUG)
-    {
-        NSString *s = [NSString stringWithFormat:@"MAP_Open_Ind_forUser\n"
-                       @"\tlocalTransactionId: %@\n"
-                       @"\tremoteTransactionId: %@\n"
-                       @"\tuserDialogId: %@\n"
-                       @"\tuserIdentifier: %@\n",
-                       localTransactionId,
-                       remoteTransactionId,
-                       self.userDialogId,
-                       self.userIdentifier];
-        [xgsmmap.logFeed debugText:s];
-    }
     self.mapUser = user;
     self.tcapLayer = xtcap;
     self.gsmmapLayer = xgsmmap;
@@ -230,7 +241,7 @@
         if(self.logLevel <= UMLOG_DEBUG)
         {
             NSString *s = [NSString stringWithFormat:@"newUserIdentifier: %@",uid];
-            [xgsmmap.logFeed debugText:s];
+            [self.logFeed debugText:s];
         }
     }
     else
@@ -238,8 +249,13 @@
         if(self.logLevel <= UMLOG_DEBUG)
         {
             NSString *s = [NSString stringWithFormat:@"existingUserIdentifier: %@",self.userIdentifier];
-            [xgsmmap.logFeed debugText:s];
+            [self.logFeed debugText:s];
         }
+    }
+    if(_logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"queueMAP_Open_Ind"];
+        [self.logFeed debugText:s];
     }
     [user queueMAP_Open_Ind:self.userIdentifier
                      dialog:self.userDialogId
@@ -269,17 +285,13 @@
 
     if(self.logLevel <= UMLOG_DEBUG)
     {
-        NSString *s = [NSString stringWithFormat:@"MAP_Open_Resp_forUser\n"
-                       @"\tlocalTransactionId: %@\n"
-                       @"\tremoteTransactionId: %@\n"
-                       @"\tuserDialogId: %@\n"
-                       @"\tuserIdentifier: %@\n",
-                       localTransactionId,
-                       remoteTransactionId,
-                       self.userDialogId,
-                       self.userIdentifier];
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Open_Resp_forUser\n",self.userDialogId];
+        [s appendFormat:@"\tlocalTransactionId: %@\n",localTransactionId];
+        [s appendFormat:@"\tremoteTransactionId: %@\n",remoteTransactionId];
+        [s appendFormat:@"\tuserIdentifier: %@\n",userIdentifier];
         [xgsmmap.logFeed debugText:s];
     }
+
     self.mapUser = user;
     self.tcapLayer = xtcap;
     self.gsmmapLayer = xgsmmap;
@@ -306,6 +318,12 @@
     
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
+
+    if(_logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"queueMAP_Open_Resp"];
+        [self.logFeed debugText:s];
+    }
 
     [user queueMAP_Open_Resp:uid
                            dialog:self.userDialogId
@@ -361,7 +379,7 @@
 {
     if(self.logLevel <= UMLOG_DEBUG)
     {
-        NSMutableString *s = [NSMutableString stringWithFormat:@"MAP_Delimiter_Req:\n"];
+        NSMutableString *s = [NSMutableString stringWithFormat:@"Dialog[%@]: MAP_Delimiter_Req:\n",self.userDialogId];
         [s appendFormat:@"    callingAddress: %@\n",src.stringValueE164];
         [s appendFormat:@"    calledAddress: %@\n",dst.stringValueE164];
         [s appendFormat:@"    result: %@\n",[result.objectValue jsonString]];
@@ -401,6 +419,11 @@
             itu_dialoguePortion.dialogRequest.objectIdentifier = applicationContext;
             itu_dialoguePortion.dialogRequest.user_information = xuserInfo;
         }
+        if(_logLevel <= UMLOG_DEBUG)
+        {
+            NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"calling tcapBeginRequest"];
+            [self.logFeed debugText:s];
+        }
 
         [tcapLayer tcapBeginRequest:tcapTransactionId
                        userDialogId:userDialogId
@@ -435,6 +458,11 @@
         {
             remoteAddress = dst;
         }
+        if(_logLevel <= UMLOG_DEBUG)
+        {
+            NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"calling tcapContinueRequest"];
+            [self.logFeed debugText:s];
+        }
         [tcapLayer tcapContinueRequest:tcapTransactionId
                           userDialogId:userDialogId
                                variant:self.variant
@@ -449,16 +477,6 @@
     }
 }
 
--(void) MAP_Close_Req:(NSDictionary *)xoptions
-{
-    [self MAP_Close_Req:xoptions
-         callingAddress:NULL
-          calledAddress:NULL
-                 result:NULL
-             diagnostic:NULL];
-    [mapUser queueMAP_Close_Ind:self.userIdentifier
-                        options:xoptions];
-}
 
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
                result:(UMTCAP_asn1_Associate_result *)result
@@ -485,6 +503,18 @@
                userInfo:NULL];
 }
 
+
+-(void) MAP_Close_Req:(NSDictionary *)xoptions
+{
+    [self MAP_Close_Req:xoptions
+         callingAddress:NULL
+          calledAddress:NULL
+                 result:NULL
+             diagnostic:NULL];
+}
+
+
+
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
        callingAddress:(SccpAddress *)src
         calledAddress:(SccpAddress *)dst
@@ -492,6 +522,18 @@
            diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
              userInfo:(UMTCAP_asn1_userInformation *)userInfo
 {
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Close_Req\n",self.userDialogId];
+        [s appendFormat: @"\tcallingAddress: %@",src.stringValueE164];
+        [s appendFormat: @"\tcalledAddress: %@",dst.stringValueE164];
+        [self.logFeed debugText:s];
+    }
+
+    /* FIXME: do we have to self confirm? */
+    [mapUser queueMAP_Close_Ind:self.userIdentifier
+                        options:xoptions];
+
     [self touch];
     if((self.dialogIsClosed==NO) && (self.openEstablished==YES) && (tcapTransactionId!=NULL))
     {
@@ -518,6 +560,12 @@
             itu_dialoguePortion.dialogResponse.result_source_diagnostic = result_source_diagnostic;
 
         }
+        if(self.logLevel <= UMLOG_DEBUG)
+        {
+            NSMutableString *s = [[NSMutableString alloc]initWithFormat:@" calling tcapEndRequest"];
+            [self.logFeed debugText:s];
+        }
+
         [tcapLayer tcapEndRequest:tcapTransactionId
                      userDialogId:userDialogId
                           variant:self.variant
@@ -539,6 +587,12 @@
 
 -(void) MAP_Close_Ind:(NSDictionary *)xoptions
 {
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Close_Ind\n",self.userDialogId];
+        [self.logFeed debugText:s];
+    }
+
     [self touch];
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
@@ -562,6 +616,16 @@
             transactionId:(NSString *)localTransactionId
       remoteTransactionId:(NSString *)remoteTransactionId
 {
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Delimiter_Ind\n",self.userDialogId];
+        [s appendFormat:@"    callingAddress: %@\n",src.stringValueE164];
+        [s appendFormat:@"    calledAddress: %@\n",dst.stringValueE164];
+        [s appendFormat:@"    transactionId: %@\n",localTransactionId];
+        [s appendFormat:@"    remoteTransactionId: %@\n",remoteTransactionId];
+        [self.logFeed debugText:s];
+    }
+
     [self touch];
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
