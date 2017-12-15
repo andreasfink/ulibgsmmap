@@ -121,7 +121,7 @@
     [dialog MAP_ProcessComponents:components
                           options:options];
     [dialog MAP_Delimiter_Ind:options
-                       dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+                       dialog:dialogId
                callingAddress:src
                 calledAddress:dst
               dialoguePortion:xdialoguePortion
