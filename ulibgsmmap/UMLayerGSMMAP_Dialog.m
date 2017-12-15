@@ -650,6 +650,17 @@
            transactionId:(NSString *)localTransactionId
      remoteTransactionId:(NSString *)remoteTransactionId
 {
+
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Continue_Ind\n",self.userDialogId];
+        [s appendFormat:@"    callingAddress: %@\n",src.stringValueE164];
+        [s appendFormat:@"    calledAddress: %@\n",dst.stringValueE164];
+        [s appendFormat:@"    transactionId: %@\n",localTransactionId];
+        [s appendFormat:@"    remoteTransactionId: %@\n",remoteTransactionId];
+        [self.logFeed debugText:s];
+    }
+
     [self touch];
 
     NSMutableDictionary *options = [xoptions mutableCopy];
@@ -676,6 +687,7 @@
                    result:NULL
                diagnostic:NULL
                  userInfo:NULL];
+
 }
 
 -(void) MAP_U_Abort_Req:(NSDictionary *)xoptions
@@ -685,6 +697,14 @@
              diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
                userInfo:(UMTCAP_asn1_userInformation *)userInfo
 {
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_U_Abort_Req\n",self.userDialogId];
+        [s appendFormat:@"    callingAddress: %@\n",src.stringValueE164];
+        [s appendFormat:@"    calledAddress: %@\n",dst.stringValueE164];
+        [self.logFeed debugText:s];
+    }
+
     [self touch];
     if(self.dialogIsClosed==YES)
     {
@@ -711,6 +731,11 @@
     NSMutableArray *components  = [pendingOutgoingComponents mutableCopy];
     pendingOutgoingComponents   = [[UMSynchronizedArray alloc] init];
     UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        [self.logFeed debugText:@" calling tcapUAbortReq"];
+    }
+
     [tcapLayer tcapUAbortRequest:tcapTransactionId
                       variant:self.variant
                          user:self
@@ -733,10 +758,26 @@
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
 {
+
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_P_Abort_Ind\n",self.userDialogId];
+        [s appendFormat:@"    callingAddress: %@\n",src.stringValueE164];
+        [s appendFormat:@"    calledAddress: %@\n",dst.stringValueE164];
+        [s appendFormat:@"    transactionId: %@\n",localTransactionId];
+        [s appendFormat:@"    remoteTransactionId: %@\n",remoteTransactionId];
+        [self.logFeed debugText:s];
+    }
+
     [self touch];
 
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        [self.logFeed debugText:@" calling queueMAP_P_Abort_Ind"];
+    }
+
     [mapUser queueMAP_P_Abort_Ind:self.userIdentifier
               callingAddress:src
                calledAddress:dst
@@ -756,10 +797,23 @@
           transactionId:(NSString *)localTransactionId
     remoteTransactionId:(NSString *)remoteTransactionId
 {
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_U_Abort_Ind\n",self.userDialogId];
+        [s appendFormat:@"    callingAddress: %@\n",src.stringValueE164];
+        [s appendFormat:@"    calledAddress: %@\n",dst.stringValueE164];
+        [s appendFormat:@"    transactionId: %@\n",localTransactionId];
+        [s appendFormat:@"    remoteTransactionId: %@\n",remoteTransactionId];
+        [self.logFeed debugText:s];
+    }
     [self touch];
 
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        [self.logFeed debugText:@" calling queueMAP_U_Abort_Ind"];
+    }
     [mapUser queueMAP_U_Abort_Ind:self.userIdentifier
               callingAddress:src
                calledAddress:dst
@@ -776,6 +830,12 @@
      tcapTransactionId:(NSString *)localTransactionId
                 reason:(SCCP_ReturnCause)returnCause
 {
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Notice_Ind\n",self.userDialogId];
+        [s appendFormat:@"    transactionId: %@\n",localTransactionId];
+        [self.logFeed debugText:s];
+    }
     [self touch];
     NSMutableDictionary *options = [rxoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
