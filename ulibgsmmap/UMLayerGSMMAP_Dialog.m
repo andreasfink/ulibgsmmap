@@ -894,6 +894,20 @@
                          last:(BOOL)last
                       options:(NSDictionary *)options;
 {
+
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        [self.logFeed debugText:[NSString stringWithFormat:@"MAP_ReturnResult_Req:\n"
+                                 @"param:%@\n"
+                                 @"invokeId:%lld\n"
+                                 @"linkedId:%lld\n"
+                                 @"opcode:%@\n",
+                                 [param.objectValue jsonString],
+                                 (long long)xinvokeId,
+                                 (long long)linkedId,
+                                 opcode]];
+    }
+
     [self touch];
     if(tcapTransactionId == NULL)
     {
@@ -930,6 +944,7 @@
                                     opCodeFamily:opcode.family
                                   opCodeNational:opcode.national];
     }
+    NSLog(@"r =%@",r);
     [pendingOutgoingComponents addObject:r];
 }
 
