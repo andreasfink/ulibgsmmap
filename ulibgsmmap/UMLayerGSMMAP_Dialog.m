@@ -944,7 +944,6 @@
                                     opCodeFamily:opcode.family
                                   opCodeNational:opcode.national];
     }
-    NSLog(@"r =%@",r);
     [pendingOutgoingComponents addObject:r];
 }
 
