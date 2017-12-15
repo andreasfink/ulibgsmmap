@@ -180,9 +180,11 @@
 {
     [self touch];
 
+    self.logLevel = xgsmmap.logLevel;
+
     NSMutableDictionary *yoptions = [xoptions mutableCopy];
     yoptions[@"gsmmap-timestamp"] = [NSDate new];
-    if(xgsmmap.logLevel <= UMLOG_DEBUG)
+    if(self.logLevel <= UMLOG_DEBUG)
     {
         NSString *s = [NSString stringWithFormat:@"MAP_Open_Ind_forUser\n"
                        @"\tlocalTransactionId: %@\n"
@@ -225,7 +227,7 @@
     {
         UMGSMMAP_UserIdentifier *uid = [user getNewUserIdentifier];
         self.userIdentifier = uid;
-        if(xgsmmap.logLevel <= UMLOG_DEBUG)
+        if(self.logLevel <= UMLOG_DEBUG)
         {
             NSString *s = [NSString stringWithFormat:@"newUserIdentifier: %@",uid];
             [xgsmmap.logFeed debugText:s];
@@ -233,7 +235,7 @@
     }
     else
     {
-        if(xgsmmap.logLevel <= UMLOG_DEBUG)
+        if(self.logLevel <= UMLOG_DEBUG)
         {
             NSString *s = [NSString stringWithFormat:@"existingUserIdentifier: %@",self.userIdentifier];
             [xgsmmap.logFeed debugText:s];
@@ -263,8 +265,9 @@
                       options:(NSDictionary *)xoptions
 {
     [self touch];
+    self.logLevel = xgsmmap.logLevel;
 
-    if(xgsmmap.logLevel <= UMLOG_DEBUG)
+    if(self.logLevel <= UMLOG_DEBUG)
     {
         NSString *s = [NSString stringWithFormat:@"MAP_Open_Resp_forUser\n"
                        @"\tlocalTransactionId: %@\n"
