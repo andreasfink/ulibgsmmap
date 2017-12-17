@@ -68,7 +68,7 @@
     return NULL;
 }
 
-- (void)tcapBeginIndication:(NSString *)userDialogId
+- (void)tcapBeginIndication:(UMTCAP_UserDialogIdentifier *)userDialogId
           tcapTransactionId:(NSString *)localTransactionId
     tcapRemoteTransactionId:(NSString *)remoteTransactionId
                     variant:(UMTCAP_Variant)var
