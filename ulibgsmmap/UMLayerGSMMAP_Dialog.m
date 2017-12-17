@@ -33,6 +33,18 @@
 #pragma mark -
 #pragma mark Initialisation
 
+
+- (NSTimeInterval)timeoutInSeconds
+{
+    return _timeoutInSeconds;
+}
+
+- (void)setTimeoutInSeconds:(NSTimeInterval)to
+{
+    NSAssert(to>0.0,@"timeout is out of bounds");
+    _timeoutInSeconds = to;
+}
+
 - (UMLayerGSMMAP_Dialog *)init
 {
     self = [super init];

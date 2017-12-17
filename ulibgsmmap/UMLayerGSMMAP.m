@@ -467,10 +467,11 @@
     if (cfg[@"timeout"])
     {
         _dialogTimeout = [cfg[@"timeout"] doubleValue];
-        if((_dialogTimeout < 5.0) || (_dialogTimeout > 90))
+        if((_dialogTimeout < 5.0) || (_dialogTimeout > 90.0))
         {
             _dialogTimeout = 70;
         }
+        NSLog(@"timeout set in config to %8.2lfs",_dialogTimeout);
     }
 }
 
@@ -531,6 +532,7 @@
     d.gsmmapLayer = self;
     d.mapUser = u;
     d.timeoutInSeconds = self.dialogTimeout;
+
     dialogs[d.userDialogId.description] = d;
     [d touch];
     return d;
