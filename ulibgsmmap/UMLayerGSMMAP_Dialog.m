@@ -41,7 +41,16 @@
 
 - (void)setTimeoutInSeconds:(NSTimeInterval)to
 {
-    NSAssert(to>0.0,@"timeout is out of bounds");
+    if(to <= 5.0)
+    {
+        NSLog(@"GSMMAP Dialog Timeout is below 5s. Setting it to 5s");
+        to = 5.0;
+    }
+    else if(to >=120.0)
+    {
+        NSLog(@"GSMMAP Dialog Timeout is above 120s. Setting it to 70s");
+        to = 70.0;
+    }
     _timeoutInSeconds = to;
 }
 
