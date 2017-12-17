@@ -553,8 +553,7 @@
     }
 
     /* FIXME: do we have to self confirm? */
-    [mapUser queueMAP_Close_Ind:self.userIdentifier
-                        options:xoptions];
+    //[mapUser queueMAP_Close_Ind:self.userIdentifier options:xoptions];
 
     [self touch];
     if((self.dialogIsClosed==NO) && (self.openEstablished==YES) && (tcapTransactionId!=NULL))
@@ -597,13 +596,12 @@
                   dialoguePortion:itu_dialoguePortion
                        components:components
                           options:xoptions];
-        self.dialogIsClosed = YES;
-        self.dialogRequestRequired = NO;
-        self.dialogResponseRequired = NO;
-        self.openEstablished = NO;
-        [self touch];
     }
-
+    self.dialogIsClosed = YES;
+    self.dialogRequestRequired = NO;
+    self.dialogResponseRequired = NO;
+    self.openEstablished = NO;
+    [self touch];
 }
 
 
