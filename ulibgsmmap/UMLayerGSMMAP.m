@@ -469,15 +469,22 @@
     if (cfg[@"timeout"])
     {
         _dialogTimeout = [cfg[@"timeout"] doubleValue];
-        if((_dialogTimeout < 5.0) || (_dialogTimeout > 90.0))
-        {
-            _dialogTimeout = 70;
-        }
-        NSLog(@"timeout set in config to %8.2lfs",_dialogTimeout);
     }
     else
     {
         _dialogTimeout = 70;
+    }
+
+
+    if(_dialogTimeout <= 5.0)
+    {
+        NSLog(@"GSMMAMP Dialog Timeout is below 5s. Setting it to 5s");
+        _dialogTimeout = 5.0;
+    }
+    else if(_dialogTimeout >=120.0)
+    {
+        NSLog(@"GSMMAMP Dialog Timeout is above 120s. Setting it to 70s");
+        _dialogTimeout = 70.0;
     }
 }
 
