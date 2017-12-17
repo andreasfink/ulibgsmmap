@@ -993,8 +993,9 @@
         }
         else if([dialog isTimedOut]==YES)
         {
+
             UMGSMMAP_TimeoutTask *task = [[UMGSMMAP_TimeoutTask alloc]initForGSMMAP:self dialog:dialog];
-            [self queueFromLower:task];
+            [self queueFromAdmin:task];
         }
     }
     self.housekeeping_running = NO;
