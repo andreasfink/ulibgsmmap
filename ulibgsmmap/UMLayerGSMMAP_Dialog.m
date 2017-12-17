@@ -110,7 +110,7 @@
 - (BOOL)isTimedOut
 {
     BOOL r = NO;
-    NSTimeInterval duration = [[NSDate date]timeIntervalSinceDate:_lastActivity.date];
+    NSTimeInterval duration =  [_lastActivity timeIntervalSinceNow];
     if(duration > self.timeoutInSeconds)
     {
         r = YES;
@@ -377,6 +377,7 @@
                  userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
 
 {
+
     if(self.logLevel <= UMLOG_DEBUG)
     {
         NSMutableString *s = [NSMutableString stringWithFormat:@"Dialog[%@]: MAP_Delimiter_Req:\n",self.userDialogId];
@@ -1306,12 +1307,12 @@
     @try
     {
         [mapUser queueMAP_P_Abort_Ind:self.userIdentifier
-                  callingAddress:remoteAddress
-                   calledAddress:localAddress
-                 dialoguePortion:NULL
-                   transactionId:self.tcapTransactionId
-             remoteTransactionId:self.tcapRemoteTransactionId
-                         options:@{}];
+                       callingAddress:remoteAddress
+                        calledAddress:localAddress
+                      dialoguePortion:NULL
+                        transactionId:self.tcapTransactionId
+                  remoteTransactionId:self.tcapRemoteTransactionId
+                              options:@{}];
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;

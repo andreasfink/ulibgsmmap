@@ -532,6 +532,7 @@
     d.mapUser = u;
     d.timeoutInSeconds = self.dialogTimeout;
     dialogs[d.userDialogId.description] = d;
+    [d touch];
     return d;
 }
 - (NSUInteger)dialogsCount
