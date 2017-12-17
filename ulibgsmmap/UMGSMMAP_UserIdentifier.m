@@ -33,5 +33,10 @@
     return cpy;
 }
 
+- (id)proxyForJson
+{
+    return _userIdentifier;
+}
+
 @end
 
