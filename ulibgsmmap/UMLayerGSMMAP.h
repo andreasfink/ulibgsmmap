@@ -33,6 +33,7 @@
     UMMutex *_dialogIdLock;
     UMAtomicDate *_houseKeepingTimerRun;
     UMTimer *_houseKeepingTimer;
+    NSTimeInterval _dialogTimeout;
 }
 
 @property(readwrite,strong) UMLayerTCAP *tcap;
@@ -41,6 +42,8 @@
 @property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> user;
 @property(readwrite,assign,atomic) BOOL housekeeping_running;
 @property(readwrite,strong) UMAtomicDate *houseKeepingTimerRun;
+@property(readwrite,assign,atomic) NSTimeInterval dialogTimeout;
+
 
 -(UMMTP3Variant) variant;
 

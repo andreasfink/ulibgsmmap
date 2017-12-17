@@ -1,5 +1,5 @@
 //
-//  UMGSMMAP_Dialog.h
+//  UMLayerGSMMAP_Dialog.h
 //  ulibgsmmap
 //
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
@@ -39,7 +39,7 @@
     SccpAddress *localAddress;
     SccpAddress *remoteAddress;
     int64_t  _nextInvokeId;
-    NSTimeInterval timeoutValue;
+    NSTimeInterval _timeoutInSeconds;
     NSDate *_startDate;
     UMAtomicDate *_lastActivity;
 
@@ -83,6 +83,7 @@
 @property(readwrite,assign,atomic) BOOL    dialogIsClosed;
 @property(readwrite,assign,atomic) BOOL    dialogShallClose;
 @property(readwrite,assign)     UMLogLevel logLevel;
+@property(readwrite,assign,atomic) NSTimeInterval timeoutInSeconds;
 
 
 @property(readwrite,strong)    NSString *tcapRemoteTransactionId;

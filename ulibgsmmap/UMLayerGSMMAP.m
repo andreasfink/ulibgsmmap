@@ -464,7 +464,14 @@
             }
         }
     }
-
+    if (cfg[@"timeout"])
+    {
+        _dialogTimeout = [cfg[@"timeout"] doubleValue];
+        if((_dialogTimeout < 5.0) || (_dialogTimeout > 90))
+        {
+            _dialogTimeout = 70;
+        }
+    }
 }
 
 
@@ -523,6 +530,7 @@
     d.tcapLayer = tcap;
     d.gsmmapLayer = self;
     d.mapUser = u;
+    d.timeoutInSeconds = self.dialogTimeout;
     dialogs[d.userDialogId.description] = d;
     return d;
 }

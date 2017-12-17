@@ -1,5 +1,5 @@
 //
-//  UMGSMMAP_Dialog.m
+//  UMLayerGSMMAP_Dialog.m
 //  ulibgsmmap
 //
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
@@ -40,7 +40,7 @@
     {
         _nextInvokeId = 0;
         pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
-        timeoutValue = 90;
+        _timeoutInSeconds = 120; /* if everything goes wrong and we dont get any PAbort or End or timeout, we kill it after 2 minutes, just in case */
         _startDate = [NSDate new];
         _lastActivity = [[UMAtomicDate alloc]init];
         _logLevel = UMLOG_MAJOR;
@@ -111,7 +111,7 @@
 {
     BOOL r = NO;
     NSTimeInterval duration = [[NSDate date]timeIntervalSinceDate:_lastActivity.date];
-    if(duration > timeoutValue)
+    if(duration > self.timeoutInSeconds)
     {
         r = YES;
     }
@@ -1335,7 +1335,7 @@
     [s appendFormat:@"    applicationContext2: %@\n",d[@"objectIdentifier"]];
     [s appendFormat:@"    localAddress: %@\n",[localAddress description]];
     [s appendFormat:@"    remoteAddress: %@\n",[remoteAddress description]];
-    [s appendFormat:@"    timeout: %8.2lfs\n",timeoutValue];
+    [s appendFormat:@"    timeoutInSeconds: %8.2lfs\n",self.timeoutInSeconds];
     [s appendFormat:@"    startDate: %@\n",[_startDate description]];
     [s appendFormat:@"    lastActivity: %@\n",[_lastActivity description]];
     [filehandler writeData: [s dataUsingEncoding:NSUTF8StringEncoding]];
