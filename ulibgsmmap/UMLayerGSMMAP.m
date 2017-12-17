@@ -48,6 +48,7 @@
     {
         dialogs = [[UMSynchronizedDictionary alloc]init];
         _dialogIdLock = [[UMMutex alloc]init];
+        _dialogTimeout = 70.0;
         _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
         _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
                                                    selector:@selector(housekeepingTask)
@@ -69,6 +70,7 @@
     {
         dialogs = [[UMSynchronizedDictionary alloc]init];
         _dialogIdLock = [[UMMutex alloc]init];
+        _dialogTimeout = 70.0;
         _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
         _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
                                                    selector:@selector(housekeeping)
@@ -535,8 +537,10 @@
     d.tcapLayer = tcap;
     d.gsmmapLayer = self;
     d.mapUser = u;
-    d.timeoutInSeconds = self.dialogTimeout;
-
+    if(self.dialogTimeout > 0.0)
+    {
+        d.timeoutInSeconds = self.dialogTimeout;
+    }
     dialogs[d.userDialogId.description] = d;
     [d touch];
     return d;
