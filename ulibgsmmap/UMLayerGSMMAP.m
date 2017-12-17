@@ -473,6 +473,10 @@
         }
         NSLog(@"timeout set in config to %8.2lfs",_dialogTimeout);
     }
+    else
+    {
+        _dialogTimeout = 70;
+    }
 }
 
 
