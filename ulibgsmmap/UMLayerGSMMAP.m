@@ -544,6 +544,8 @@
     d.tcapLayer = tcap;
     d.gsmmapLayer = self;
     d.mapUser = u;
+    d.logFeed = self.logFeed;
+    d.logLevel = self.logLevel;
     if(self.dialogTimeout > 0.0)
     {
         d.timeoutInSeconds = self.dialogTimeout;

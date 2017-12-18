@@ -160,7 +160,7 @@
 
     self.logLevel = xgsmmap.logLevel;
     self.logFeed = xgsmmap.logFeed;
-    if(_logLevel <= UMLOG_DEBUG)
+    if(self.logLevel <= UMLOG_DEBUG)
     {
         NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Open_Req_forUser\n",userDialogId.description];
 
@@ -215,7 +215,7 @@
 {
     self.logLevel = xgsmmap.logLevel;
     self.logFeed = xgsmmap.logFeed;
-    if(_logLevel <= UMLOG_DEBUG)
+    if(self.logLevel <= UMLOG_DEBUG)
     {
         NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Open_Ind_forUser\n",self.userDialogId];
         [s appendFormat:@"\tcallingAddress: %@\n",src.stringValueE164];
@@ -273,7 +273,7 @@
             [self.logFeed debugText:s];
         }
     }
-    if(_logLevel <= UMLOG_DEBUG)
+    if(self.logLevel <= UMLOG_DEBUG)
     {
         NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"queueMAP_Open_Ind"];
         [self.logFeed debugText:s];
@@ -340,7 +340,7 @@
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
 
-    if(_logLevel <= UMLOG_DEBUG)
+    if(self.logLevel <= UMLOG_DEBUG)
     {
         NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"queueMAP_Open_Resp"];
         [self.logFeed debugText:s];
@@ -441,7 +441,7 @@
             itu_dialoguePortion.dialogRequest.objectIdentifier = applicationContext;
             itu_dialoguePortion.dialogRequest.user_information = xuserInfo;
         }
-        if(_logLevel <= UMLOG_DEBUG)
+        if(self.logLevel <= UMLOG_DEBUG)
         {
             NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"calling tcapBeginRequest"];
             [self.logFeed debugText:s];
@@ -480,7 +480,7 @@
         {
             remoteAddress = dst;
         }
-        if(_logLevel <= UMLOG_DEBUG)
+        if(self.logLevel <= UMLOG_DEBUG)
         {
             NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"calling tcapContinueRequest"];
             [self.logFeed debugText:s];
