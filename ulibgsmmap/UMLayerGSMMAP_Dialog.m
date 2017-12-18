@@ -757,12 +757,12 @@
     }
 
     [tcapLayer tcapUAbortRequest:tcapTransactionId
+                    userDialogId:userDialogId
                       variant:self.variant
                          user:self
                callingAddress:src
                 calledAddress:dst
               dialoguePortion:itu_dialoguePortion
-                    callingLayer:gsmmapLayer
                    components:components
                       options:xoptions];
     self.dialogIsClosed = YES;
@@ -789,8 +789,6 @@
         [self.logFeed debugText:s];
     }
 
-    [self touch];
-
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
     if(self.logLevel <= UMLOG_DEBUG)
@@ -808,6 +806,7 @@
     self.dialogIsClosed = YES;
     self.dialogResponseRequired = NO;
     self.openEstablished = NO;
+    [self touch];
 }
 
 -(void) MAP_U_Abort_Ind:(NSDictionary *)xoptions
@@ -842,6 +841,7 @@
          remoteTransactionId:remoteTransactionId
                      options:options];
     self.dialogIsClosed = YES;
+    self.dialogRequestRequired = NO;
     self.dialogResponseRequired = NO;
     self.openEstablished = NO;
 }
