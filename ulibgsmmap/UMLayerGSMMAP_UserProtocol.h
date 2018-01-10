@@ -98,6 +98,17 @@
            dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                    options:(NSDictionary *)options;
 
+- (void) executeMAP_Open_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
+                      dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+                 transaction:(NSString *)tcapTransactionId
+           remoteTransaction:(NSString *)tcapRemoteTransactionId
+                         map:(id<UMLayerGSMMAP_ProviderProtocol>)map
+                     variant:(UMTCAP_Variant)xvariant
+              callingAddress:(SccpAddress *)src
+               calledAddress:(SccpAddress *)dst
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+                     options:(NSDictionary *)options;
+
 - (void)queueMAP_Open_Resp:(UMGSMMAP_UserIdentifier *)uidstr
                     dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                transaction:(NSString *)tcapTransactionId
