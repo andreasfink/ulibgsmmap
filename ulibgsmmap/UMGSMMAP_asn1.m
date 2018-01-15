@@ -141,7 +141,7 @@
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)processAfterDecodeWithContext:(id)context
 {    
     int64_t opcode = -1;
-    UMTCAP_Operation operation = 0;
+    UMTCAP_InternalOperation operation = 0;
     
     if([context respondsToSelector:@selector(operationCode)])
     {
@@ -153,7 +153,7 @@
     }
     if([context respondsToSelector:@selector(operationType)])
     {
-        operation = (UMTCAP_Operation)[context performSelector:@selector(operationType)];
+        operation = (UMTCAP_InternalOperation)[context performSelector:@selector(operationType)];
     }
     else
     {
@@ -172,7 +172,7 @@
 }
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
-                                             operationType:(UMTCAP_Operation)operation
+                                             operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop
                                                withContext:(id)context
 {
@@ -183,14 +183,14 @@
         {
             switch(operation)
             {
-                case UMTCAP_Operation_Error:
+                case UMTCAP_InternalOperation_Error:
                     /* generic object, probably empty */
                     asn1 = NULL;
                     break;
-                case UMTCAP_Operation_Response:
-                case UMTCAP_Operation_Request:
-                case UMTCAP_Operation_Reject:
-                case UMTCAP_Operation_Unidirectional:
+                case UMTCAP_InternalOperation_Response:
+                case UMTCAP_InternalOperation_Request:
+                case UMTCAP_InternalOperation_Reject:
+                case UMTCAP_InternalOperation_Unidirectional:
                     break;
             }
             break;
@@ -198,17 +198,17 @@
         case UMGSMMAP_Opcode_updateLocation:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_UpdateLocationArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_UpdateLocationRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"updateLocation";
@@ -216,17 +216,17 @@
         case UMGSMMAP_Opcode_cancelLocation:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_CancelLocationArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_CancelLocationRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"cancelLocation";
@@ -234,17 +234,17 @@
         case UMGSMMAP_Opcode_purge_MS:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_PurgeMS_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_PurgeMS_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"purge_MS";
@@ -252,17 +252,17 @@
         case UMGSMMAP_Opcode_sendIdentification:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_SendIdentificationArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_SendIdentificationRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sendIdentification";
@@ -270,17 +270,17 @@
         case UMGSMMAP_Opcode_prepareHandOver:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_PrepareHO_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_PrepareHO_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"prepareHandOver";
@@ -288,16 +288,16 @@
         case UMGSMMAP_Opcode_sendEndSignal:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ExternalSignalInfo alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sendEndSignal";
@@ -305,16 +305,16 @@
         case UMGSMMAP_Opcode_processAccessSignalling:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ExternalSignalInfo alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"processAccessSignalling";
@@ -322,16 +322,16 @@
         case UMGSMMAP_Opcode_forwardAccessSignalling:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ExternalSignalInfo alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"forwardAccessSignalling";
@@ -339,17 +339,17 @@
         case UMGSMMAP_Opcode_prepareSubsequentHandover:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_PrepareSubsequentHO_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_ExternalSignalInfo alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"prepareSubsequentHandover";
@@ -357,17 +357,17 @@
         case UMGSMMAP_Opcode_sendAuthenticationInfo:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_SendAuthenticationInfoArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_SendAuthenticationInfoRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sendAuthenticationInfo";
@@ -375,17 +375,17 @@
         case UMGSMMAP_Opcode_checkIMEI:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_IMEI alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_EquipmentStatus alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"checkIMEI";
@@ -393,17 +393,17 @@
         case UMGSMMAP_Opcode_insertSubscriberData:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_InsertSubscriberDataArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_InsertSubscriberDataRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"insertSubscriberData";
@@ -411,17 +411,17 @@
         case UMGSMMAP_Opcode_deleteSubscriberData:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_DeleteSubscriberDataArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_DeleteSubscriberDataRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"deleteSubscriberData";
@@ -429,16 +429,16 @@
         case UMGSMMAP_Opcode_reset:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ResetArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"reset";
@@ -446,15 +446,15 @@
         case UMGSMMAP_Opcode_forwardCheckSS_Indication:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"forwardCheckSS_Indication";
@@ -462,17 +462,17 @@
         case UMGSMMAP_Opcode_restoreData:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_RestoreDataArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_RestoreDataRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"restoreData";
@@ -480,17 +480,17 @@
         case UMGSMMAP_Opcode_activateTraceMode:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ActivateTraceModeArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_ActivateTraceModeRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"activateTraceMode";
@@ -498,17 +498,17 @@
         case UMGSMMAP_Opcode_deactivateTraceMode:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_DeactivateTraceModeArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_DeactivateTraceModeRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"deactivateTraceMode";
@@ -516,17 +516,17 @@
         case UMGSMMAP_Opcode_sendIMSI:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_Msisdn alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_IMSI alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sendIMSI";
@@ -534,17 +534,17 @@
         case UMGSMMAP_Opcode_sendRoutingInfo:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_SendRoutingInfoArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_SendRoutingInfoRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sendRoutingInfo";
@@ -552,17 +552,17 @@
         case UMGSMMAP_Opcode_provideRoamingNumber:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ProvideRoamingNumberArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_ProvideRoamingNumberRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"provideRoamingNumber";
@@ -570,17 +570,17 @@
         case UMGSMMAP_Opcode_resumeCallHandling:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ResumeCallHandlingArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_ResumeCallHandlingRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"resumeCallHandling";
@@ -588,17 +588,17 @@
         case UMGSMMAP_Opcode_provideSIWFSNumber:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ProvideSIWFSNumberArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_ProvideSIWFSNumberRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"provideSIWFSNumber";
@@ -606,17 +606,17 @@
         case UMGSMMAP_Opcode_sIWFSSignallingModify:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_SIWFSSignallingModifyArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_SIWFSSignallingModifyRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sIWFSSignallingModify";
@@ -624,17 +624,17 @@
         case UMGSMMAP_Opcode_setReportingState:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_SetReportingStateArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_SetReportingStateRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"setReportingState";
@@ -642,17 +642,17 @@
         case UMGSMMAP_Opcode_statusReport:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_StatusReportArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_StatusReportRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"statusReport";
@@ -660,17 +660,17 @@
         case UMGSMMAP_Opcode_remoteUserFree:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_RemoteUserFreeArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_RemoteUserFreeRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"remoteUserFree";
@@ -678,17 +678,17 @@
         case UMGSMMAP_Opcode_registerSS:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_RegisterSS_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_Ss_Info alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"registerSS";
@@ -696,17 +696,17 @@
         case UMGSMMAP_Opcode_erase_SS:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_Ss_ForBS alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_Ss_Info alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"erase_SS";
@@ -714,17 +714,17 @@
         case UMGSMMAP_Opcode_activateSS:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_Ss_ForBS alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_Ss_Info alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"activateSS";
@@ -732,17 +732,17 @@
         case UMGSMMAP_Opcode_deactivateSS:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_Ss_ForBS alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_Ss_Info alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"deactivateSS";
@@ -750,17 +750,17 @@
         case UMGSMMAP_Opcode_interrogateSS:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_Ss_ForBS alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_InterrogateSS_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"interrogateSS";
@@ -768,17 +768,17 @@
         case UMGSMMAP_Opcode_processUnstructuredSS_Request:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_Ussd_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_Ussd_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"processUnstructuredSS_Request";
@@ -786,17 +786,17 @@
         case UMGSMMAP_Opcode_unstructuredSS_Request:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_Ussd_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_Ussd_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"unstructuredSS_Request";
@@ -804,16 +804,16 @@
         case UMGSMMAP_Opcode_unstructuredSS_Notify:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_Ussd_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"unstructuredSS_Notify";
@@ -821,17 +821,17 @@
         case UMGSMMAP_Opcode_anyTimeSubscriptionInterrogation:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_AnyTimeSubscriptionInterrogationArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_AnyTimeSubscriptionInterrogationRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"unstructuredSS_Notify";
@@ -839,17 +839,17 @@
         case UMGSMMAP_Opcode_registerPassword:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_SS_Code alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_NewPassword alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"registerPassword";
@@ -857,17 +857,17 @@
         case UMGSMMAP_Opcode_getPassword:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_GuidanceInfo alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_CurrentPassword alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"getPassword";
@@ -875,17 +875,17 @@
         case UMGSMMAP_Opcode_registerCC_Entry:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_RegisterCC_EntryArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_RegisterCC_EntryRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"registerCC_Entry";
@@ -893,17 +893,17 @@
         case UMGSMMAP_Opcode_eraseCC_Entry:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_EraseCC_EntryArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_EraseCC_EntryRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"eraseCC_Entry";
@@ -911,17 +911,17 @@
         case UMGSMMAP_Opcode_sendRoutingInfoForSM:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_RoutingInfoForSM_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_RoutingInfoForSM_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sendRoutingInfoForSM";
@@ -929,17 +929,17 @@
         case UMGSMMAP_Opcode_mo_forwardSM:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_MO_ForwardSM_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_MO_ForwardSM_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"mo_forwardSM";
@@ -947,17 +947,17 @@
         case UMGSMMAP_Opcode_mt_forwardSM:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_MT_ForwardSM_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_MT_ForwardSM_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"mt_forwardSM";
@@ -965,17 +965,17 @@
         case UMGSMMAP_Opcode_reportSM_DeliveryStatus:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ReportSM_DeliveryStatusArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_ReportSM_DeliveryStatusRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"reportSM_DeliveryStatus";
@@ -983,16 +983,16 @@
         case UMGSMMAP_Opcode_informServiceCentre:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_InformServiceCentreArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"informServiceCentre";
@@ -1000,16 +1000,16 @@
         case UMGSMMAP_Opcode_alertServiceCentre:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_AlertServiceCentreArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"alertServiceCentre";
@@ -1017,17 +1017,17 @@
         case UMGSMMAP_Opcode_readyForSM:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ReadyForSM_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_ReadyForSM_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"readyForSM";
@@ -1035,17 +1035,17 @@
         case UMGSMMAP_Opcode_provideSubscriberInfo:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ProvideSubscriberInfoArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_ProvideSubscriberInfoRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"provideSubscriberInfo";
@@ -1053,17 +1053,17 @@
         case UMGSMMAP_Opcode_anyTimeInterrogation:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_AnyTimeInterrogationArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_AnyTimeInterrogationRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"anyTimeInterrogation";
@@ -1071,17 +1071,17 @@
         case UMGSMMAP_Opcode_ss_InvocationNotification:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_Ss_InvocationNotificationArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_Ss_InvocationNotificationRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"ss_InvocationNotification";
@@ -1089,17 +1089,17 @@
         case UMGSMMAP_Opcode_prepareGroupCall:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_PrepareGroupCallArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_PrepareGroupCallRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"prepareGroupCall";
@@ -1107,17 +1107,17 @@
         case UMGSMMAP_Opcode_sendGroupCallEndSignal:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_SendGroupCallEndSignalArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_SendGroupCallEndSignalRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sendGroupCallEndSignal";
@@ -1125,16 +1125,16 @@
         case UMGSMMAP_Opcode_processGroupCallSignalling:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ProcessGroupCallSignallingArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"processGroupCallSignalling";
@@ -1142,16 +1142,16 @@
         case UMGSMMAP_Opcode_forwardGroupCallSignalling:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ForwardGroupCallSignallingArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"forwardGroupCallSignalling";
@@ -1159,17 +1159,17 @@
         case UMGSMMAP_Opcode_updateGprsLocation:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_UpdateGprsLocationArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_UpdateGprsLocationRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"updateGprsLocation";
@@ -1177,17 +1177,17 @@
         case UMGSMMAP_Opcode_sendRoutingInfoForGprs:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_SendRoutingInfoForGprsArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_SendRoutingInfoForGprsRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sendRoutingInfoForGprs";
@@ -1195,17 +1195,17 @@
         case UMGSMMAP_Opcode_failureReport:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_FailureReportArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_FailureReportRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"failureReport";
@@ -1213,17 +1213,17 @@
         case UMGSMMAP_Opcode_noteMsPresentForGprs:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_NoteMsPresentForGprsArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_NoteMsPresentForGprsRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"noteMsPresentForGprs";
@@ -1231,17 +1231,17 @@
         case UMGSMMAP_Opcode_provideSubscriberLocation:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_ProvideSubscriberLocation_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_ProvideSubscriberLocation_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"provideSubscriberLocation";
@@ -1249,17 +1249,17 @@
         case UMGSMMAP_Opcode_sendRoutingInfoForLCS:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_RoutingInfoForLCS_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_RoutingInfoForLCS_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"sendRoutingInfoForLCS";
@@ -1267,17 +1267,17 @@
         case UMGSMMAP_Opcode_subscriberLocationReport:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_SubscriberLocationReport_Arg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_SubscriberLocationReport_Res alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"subscriberLocationReport";
@@ -1285,17 +1285,17 @@
         case UMGSMMAP_Opcode_ist_Alert:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_IST_AlertArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_IST_AlertRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"ist_Alert";
@@ -1303,17 +1303,17 @@
         case UMGSMMAP_Opcode_ist_Command:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_IST_CommandArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_IST_CommandRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"ist_Command";
@@ -1321,17 +1321,17 @@
         case UMGSMMAP_Opcode_authenticationFailureReport:
             switch(operation)
         {
-            case UMTCAP_Operation_Request:
+            case UMTCAP_InternalOperation_Request:
                 asn1 = [[UMGSMMAP_AuthenticationFailureReportArg alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Response:
+            case UMTCAP_InternalOperation_Response:
                 asn1 = [[UMGSMMAP_AuthenticationFailureReportRes alloc]initWithASN1Object:self context:context];
                 break;
-            case UMTCAP_Operation_Error:
+            case UMTCAP_InternalOperation_Error:
                 break;
-            case UMTCAP_Operation_Reject:
+            case UMTCAP_InternalOperation_Reject:
                 break;
-            case UMTCAP_Operation_Unidirectional:
+            case UMTCAP_InternalOperation_Unidirectional:
                 break;
         }
             asn1.operationName = @"authenticationFailureReport";

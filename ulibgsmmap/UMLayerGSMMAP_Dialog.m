@@ -109,7 +109,7 @@
 
 - (UMASN1Object *)decodeASN1:(UMASN1Object *)params
                operationCode:(int64_t)opcode
-               operationType:(UMTCAP_Operation)operation
+               operationType:(UMTCAP_InternalOperation)operation
                operationName:(NSString **)xoperationName
                      context:(id)context
 {

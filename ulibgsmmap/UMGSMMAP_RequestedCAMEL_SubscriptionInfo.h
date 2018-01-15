@@ -36,7 +36,7 @@ typedef enum UMGSMMAP_RequestedCAMEL_SubscriptionInfo_enum
 - (NSString *)objectName;
 - (id)objectValue;
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
-                                             operationType:(UMTCAP_Operation)operation
+                                             operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
 
