@@ -842,7 +842,7 @@
                   diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    if(dialog==NULL)
+    if((dialog==NULL) || (dialog.dialogIsClosed))
     {
         /* the dialog is already closed from the remote. so we can safely ignore it */
         //[logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Close_Req: Dialog ID %@ not found. Ignoring",dialogId]];
