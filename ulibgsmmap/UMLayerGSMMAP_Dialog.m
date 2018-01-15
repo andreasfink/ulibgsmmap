@@ -278,7 +278,7 @@
         NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"queueMAP_Open_Ind"];
         [self.logFeed debugText:s];
     }
-    [user queueMAP_Open_Ind:self.userIdentifier
+    [user executeMAP_Open_Ind:self.userIdentifier
                      dialog:self.userDialogId
                 transaction:localTransactionId
           remoteTransaction:remoteTransactionId

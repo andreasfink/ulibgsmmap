@@ -53,7 +53,18 @@
 #ifdef  QUEUE_EXEC_SYMANTICS
 
 -(void) queueMAP_Invoke_Ind:GSMMAP_INVOKE_INDICATION_PARAMETERS;
+-(void) executeMAP_Invoke_Ind:GSMMAP_INVOKE_INDICATION_PARAMETERS;
+
 -(void) queueMAP_ReturnResult_Resp:(UMASN1Object *)param
+                            userId:(UMGSMMAP_UserIdentifier *)userIdentifier
+                            dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+                       transaction:(NSString *)tcapTransactionId
+                            opCode:(UMLayerGSMMAP_OpCode *)xopcode
+                          invokeId:(int64_t)xinvokeId
+                          linkedId:(int64_t)xlinkedId
+                              last:(BOOL)xlast
+                           options:(NSDictionary *)xoptions;
+-(void) executeMAP_ReturnResult_Resp:(UMASN1Object *)param
                             userId:(UMGSMMAP_UserIdentifier *)userIdentifier
                             dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                        transaction:(NSString *)tcapTransactionId
@@ -73,8 +84,26 @@
                           linkedId:(int64_t)xlinkedId
                          errorCode:(int64_t)err
                            options:(NSDictionary *)xoptions;
+- (void) executeMAP_ReturnError_Resp:(UMASN1Object *)param
+                            userId:(UMGSMMAP_UserIdentifier *)userIdentifier
+                            dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+                       transaction:(NSString *)tcapTransactionId
+                            opCode:(UMLayerGSMMAP_OpCode *)xopcode
+                          invokeId:(int64_t)xinvokeId
+                          linkedId:(int64_t)xlinkedId
+                         errorCode:(int64_t)err
+                           options:(NSDictionary *)xoptions;
 
 - (void) queueMAP_Reject_Resp:(UMASN1Object *)param
+                       userId:(UMGSMMAP_UserIdentifier *)userIdentifier
+                       dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+                  transaction:(NSString *)tcapTransactionId
+                       opCode:(UMLayerGSMMAP_OpCode *)xopcode
+                     invokeId:(int64_t)xinvokeId
+                     linkedId:(int64_t)xlinkedId
+                    errorCode:(int64_t)err
+                      options:(NSDictionary *)xoptions;
+- (void) executeMAP_Reject_Resp:(UMASN1Object *)param
                        userId:(UMGSMMAP_UserIdentifier *)userIdentifier
                        dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                   transaction:(NSString *)tcapTransactionId
@@ -97,8 +126,28 @@
              calledAddress:(SccpAddress *)dst
            dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
                    options:(NSDictionary *)options;
+- (void) executeMAP_Open_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
+                    dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+               transaction:(NSString *)tcapTransactionId
+         remoteTransaction:(NSString *)tcapRemoteTransactionId
+                       map:(id<UMLayerGSMMAP_ProviderProtocol>)map
+                   variant:(UMTCAP_Variant)xvariant
+            callingAddress:(SccpAddress *)src
+             calledAddress:(SccpAddress *)dst
+           dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+                   options:(NSDictionary *)options;
 
 - (void)queueMAP_Open_Resp:(UMGSMMAP_UserIdentifier *)uidstr
+                    dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+               transaction:(NSString *)tcapTransactionId
+         remoteTransaction:(NSString *)tcapRemoteTransactionId
+                       map:(id<UMLayerGSMMAP_ProviderProtocol>)map
+                   variant:(UMTCAP_Variant)xvariant
+            callingAddress:(SccpAddress *)src
+             calledAddress:(SccpAddress *)dst
+           dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+                   options:(NSDictionary *)xoptions;
+- (void)executeMAP_Open_Resp:(UMGSMMAP_UserIdentifier *)uidstr
                     dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                transaction:(NSString *)tcapTransactionId
          remoteTransaction:(NSString *)tcapRemoteTransactionId
@@ -117,8 +166,23 @@
                 transactionId:(NSString *)localTransactionId
           remoteTransactionId:(NSString *)remoteTransactionId
                       options:(NSDictionary *)options;
+-(void)executeMAP_Delimiter_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
+                       dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+               callingAddress:(SccpAddress *)src
+                calledAddress:(SccpAddress *)dst
+              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+                transactionId:(NSString *)localTransactionId
+          remoteTransactionId:(NSString *)remoteTransactionId
+                      options:(NSDictionary *)options;
 
 -(void)queueMAP_Continue_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
+              callingAddress:(SccpAddress *)src
+               calledAddress:(SccpAddress *)dst
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+               transactionId:(NSString *)localTransactionId
+         remoteTransactionId:(NSString *)remoteTransactionId
+                     options:(NSDictionary *)options;
+-(void)executeMAP_Continue_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -133,11 +197,24 @@
                      transactionId:(NSString *)localTransactionId
                remoteTransactionId:(NSString *)remoteTransactionId;
 
+-(void)executeMAP_Unidirectional_Ind:(NSDictionary *)options
+                    callingAddress:(SccpAddress *)src
+                     calledAddress:(SccpAddress *)dst
+                   dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+                     transactionId:(NSString *)localTransactionId
+               remoteTransactionId:(NSString *)remoteTransactionId;
 
 -(void) queueMAP_Close_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
                    options:(NSDictionary *)options;
 
 -(void)queueMAP_U_Abort_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
+             callingAddress:(SccpAddress *)src
+              calledAddress:(SccpAddress *)dst
+            dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+              transactionId:(NSString *)localTransactionId
+        remoteTransactionId:(NSString *)remoteTransactionId
+                    options:(NSDictionary *)options;
+-(void)executeMAP_U_Abort_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
              callingAddress:(SccpAddress *)src
               calledAddress:(SccpAddress *)dst
             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -152,8 +229,19 @@
                transactionId:(NSString *)localTransactionId
          remoteTransactionId:(NSString *)remoteTransactionId
                      options:(NSDictionary *)options;
+-(void) executeMAP_P_Abort_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
+              callingAddress:(SccpAddress *)src
+               calledAddress:(SccpAddress *)dst
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+               transactionId:(NSString *)localTransactionId
+         remoteTransactionId:(NSString *)remoteTransactionId
+                     options:(NSDictionary *)options;
 
 -(void) queueMAP_Notice_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
+          tcapTransactionId:(NSString *)localTransactionId
+                     reason:(SCCP_ReturnCause)reason
+                    options:(NSDictionary *)options;
+-(void) executeeMAP_Notice_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
           tcapTransactionId:(NSString *)localTransactionId
                      reason:(SCCP_ReturnCause)reason
                     options:(NSDictionary *)options;
