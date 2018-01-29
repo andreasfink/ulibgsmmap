@@ -241,7 +241,7 @@
           tcapTransactionId:(NSString *)localTransactionId
                      reason:(SCCP_ReturnCause)reason
                     options:(NSDictionary *)options;
--(void) executeeMAP_Notice_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
+-(void) executeMAP_Notice_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
           tcapTransactionId:(NSString *)localTransactionId
                      reason:(SCCP_ReturnCause)reason
                     options:(NSDictionary *)options;
