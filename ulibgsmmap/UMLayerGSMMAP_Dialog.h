@@ -82,7 +82,7 @@
 @property(readwrite,assign,atomic) BOOL    dialogResponseRequired;
 @property(readwrite,assign,atomic) BOOL    dialogIsClosed;
 @property(readwrite,assign,atomic) BOOL    dialogShallClose;
-@property(readwrite,assign)     UMLogLevel logLevel;
+@property(readwrite,assign,atomic) UMLogLevel logLevel;
 
 - (NSTimeInterval)timeoutInSeconds;
 - (void)setTimeoutInSeconds:(NSTimeInterval)to;

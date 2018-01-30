@@ -1321,18 +1321,88 @@
     self.openEstablished = NO;
 }
 
+- (void)tcBeginIndication {
+    <#code#>
+}
+
+
+- (void)tcCancelIndication {
+    <#code#>
+}
+
+
+- (void)tcContinueIndication {
+    <#code#>
+}
+
+
+- (void)tcEndIndication {
+    <#code#>
+}
+
+
+- (void)tcInvokeIndication {
+    <#code#>
+}
+
+
+- (void)tcNoticeIndication {
+    <#code#>
+}
+
+
+- (void)tcPAbortIndication {
+    <#code#>
+}
+
+
+- (void)tcRRejectIndication {
+    <#code#>
+}
+
+
+- (void)tcResultLastIndication {
+    <#code#>
+}
+
+
+- (void)tcResultNotLastIndication {
+    <#code#>
+}
+
+
+- (void)tcUAbortIndication {
+    <#code#>
+}
+
+
+- (void)tcUErrorIndication {
+    <#code#>
+}
+
+
+- (void)tcURejectIndication {
+    <#code#>
+}
+
+
+- (void)tcUniIndication {
+    <#code#>
+}
+
+
 - (void)timeOut
 {
     @try
     {
         NSLog(@"gsmmap-timeout:%@ (last activity=%@, timeoutInSeconds: %8.2lfs)\n",self.userIdentifier,_lastActivity.description,_timeoutInSeconds);
         [mapUser executeMAP_P_Abort_Ind:self.userIdentifier
-                       callingAddress:remoteAddress
-                        calledAddress:localAddress
-                      dialoguePortion:NULL
-                        transactionId:self.tcapTransactionId
-                  remoteTransactionId:self.tcapRemoteTransactionId
-                              options:@{}];
+                         callingAddress:remoteAddress
+                          calledAddress:localAddress
+                        dialoguePortion:NULL
+                          transactionId:self.tcapTransactionId
+                    remoteTransactionId:self.tcapRemoteTransactionId
+                                options:@{}];
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
@@ -1361,4 +1431,5 @@
     [s appendFormat:@"    lastActivity: %@\n",[_lastActivity description]];
     [filehandler writeData: [s dataUsingEncoding:NSUTF8StringEncoding]];
 }
+
 @end

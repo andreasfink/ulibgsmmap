@@ -576,6 +576,77 @@
     return [UMLayerGSMMAP decodeError:err];
 }
 
+- (void)tcBeginIndication
+{
+    
+}
+
+
+- (void)tcCancelIndication {
+    <#code#>
+}
+
+
+- (void)tcContinueIndication {
+    <#code#>
+}
+
+
+- (void)tcEndIndication {
+    <#code#>
+}
+
+
+- (void)tcInvokeIndication {
+    <#code#>
+}
+
+
+- (void)tcNoticeIndication {
+    <#code#>
+}
+
+
+- (void)tcPAbortIndication {
+    <#code#>
+}
+
+
+- (void)tcRRejectIndication {
+    <#code#>
+}
+
+
+- (void)tcResultLastIndication {
+    <#code#>
+}
+
+
+- (void)tcResultNotLastIndication {
+    <#code#>
+}
+
+
+- (void)tcUAbortIndication {
+    <#code#>
+}
+
+
+- (void)tcUErrorIndication {
+    <#code#>
+}
+
+
+- (void)tcURejectIndication {
+    <#code#>
+}
+
+
+- (void)tcUniIndication {
+    <#code#>
+}
+
+
 + (NSString *)decodeError:(int)err
 {
     switch(err)
