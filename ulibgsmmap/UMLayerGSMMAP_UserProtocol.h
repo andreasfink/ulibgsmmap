@@ -166,23 +166,8 @@
                 transactionId:(NSString *)localTransactionId
           remoteTransactionId:(NSString *)remoteTransactionId
                       options:(NSDictionary *)options;
--(void)executeMAP_Delimiter_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
-                       dialog:(UMGSMMAP_DialogIdentifier *)dialogId
-               callingAddress:(SccpAddress *)src
-                calledAddress:(SccpAddress *)dst
-              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
-                transactionId:(NSString *)localTransactionId
-          remoteTransactionId:(NSString *)remoteTransactionId
-                      options:(NSDictionary *)options;
 
 -(void)queueMAP_Continue_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
-              callingAddress:(SccpAddress *)src
-               calledAddress:(SccpAddress *)dst
-             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
-               transactionId:(NSString *)localTransactionId
-         remoteTransactionId:(NSString *)remoteTransactionId
-                     options:(NSDictionary *)options;
--(void)executeMAP_Continue_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
               callingAddress:(SccpAddress *)src
                calledAddress:(SccpAddress *)dst
              dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
@@ -197,12 +182,6 @@
                      transactionId:(NSString *)localTransactionId
                remoteTransactionId:(NSString *)remoteTransactionId;
 
--(void)executeMAP_Unidirectional_Ind:(NSDictionary *)options
-                    callingAddress:(SccpAddress *)src
-                     calledAddress:(SccpAddress *)dst
-                   dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
-                     transactionId:(NSString *)localTransactionId
-               remoteTransactionId:(NSString *)remoteTransactionId;
 
 -(void) queueMAP_Close_Ind:(UMGSMMAP_UserIdentifier *)userIdentifier
                    options:(NSDictionary *)options;
