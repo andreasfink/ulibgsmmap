@@ -582,68 +582,80 @@
 }
 
 
-- (void)tcCancelIndication {
-    <#code#>
+- (void)tcCancelIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcContinueIndication {
-    <#code#>
+- (void)tcContinueIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcEndIndication {
-    <#code#>
+- (void)tcEndIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcInvokeIndication {
-    <#code#>
+- (void)tcInvokeIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcNoticeIndication {
-    <#code#>
+- (void)tcNoticeIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcPAbortIndication {
-    <#code#>
+- (void)tcPAbortIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcRRejectIndication {
-    <#code#>
+- (void)tcRRejectIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcResultLastIndication {
-    <#code#>
+- (void)tcResultLastIndication
+{
+    /* future implementation */
+}
+
+- (void)tcResultNotLastIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcResultNotLastIndication {
-    <#code#>
+- (void)tcUAbortIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcUAbortIndication {
-    <#code#>
+- (void)tcUErrorIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcUErrorIndication {
-    <#code#>
+- (void)tcURejectIndication
+{
+    /* future implementation */
 }
 
 
-- (void)tcURejectIndication {
-    <#code#>
-}
-
-
-- (void)tcUniIndication {
-    <#code#>
+- (void)tcUniIndication
+{
+    /* future implementation */
 }
 
 

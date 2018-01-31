@@ -387,7 +387,7 @@
               calledAddress:dst
                      result:result
                  diagnostic:result_source_diagnostic
-                   userInfo:NULL];
+                   userInfo:_requestUserInfo];
 }
 
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
@@ -1115,14 +1115,14 @@
 {
     [self touch];
     [mapUser executeMAP_ReturnError_Resp:params
-                           userId:userIdentifier
-                           dialog:userDialogId
-                      transaction:tcapTransactionId
-                           opCode:xopcode
-                         invokeId:xinvokeId
-                         linkedId:xlinkedId
-                        errorCode:xerrorCode
-                          options:xoptions];
+                                  userId:userIdentifier
+                                  dialog:userDialogId
+                             transaction:tcapTransactionId
+                                  opCode:xopcode
+                                invokeId:xinvokeId
+                                linkedId:xlinkedId
+                               errorCode:xerrorCode
+                                 options:xoptions];
 }
 
 - (void)MAP_Reject_Resp:(UMGSMMAP_asn1 *)params
@@ -1321,74 +1321,93 @@
     self.openEstablished = NO;
 }
 
-- (void)tcBeginIndication {
-    <#code#>
+- (void)tcBeginIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcCancelIndication {
-    <#code#>
+- (void)tcCancelIndication
+{
+    /* <#code#> */
+}
+
+- (void)tcContinueIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcContinueIndication {
-    <#code#>
+- (void)tcEndIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcEndIndication {
-    <#code#>
+- (void)tcInvokeIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcInvokeIndication {
-    <#code#>
+- (void)tcNoticeIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcNoticeIndication {
-    <#code#>
+- (void)tcPAbortIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcPAbortIndication {
-    <#code#>
+- (void)tcRRejectIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcRRejectIndication {
-    <#code#>
+
+- (void)tcResultLastIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcResultLastIndication {
-    <#code#>
+
+- (void)tcResultNotLastIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcResultNotLastIndication {
-    <#code#>
+- (void)tcUAbortIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcUAbortIndication {
-    <#code#>
+
+- (void)tcUErrorIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcUErrorIndication {
-    <#code#>
+
+- (void)tcURejectIndication
+{
+    /* <#code#> */
 }
 
 
-- (void)tcURejectIndication {
-    <#code#>
+
+- (void)tcUniIndication
+{
+    /* <#code#> */
 }
 
-
-- (void)tcUniIndication {
-    <#code#>
-}
 
 
 - (void)timeOut

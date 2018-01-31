@@ -40,6 +40,8 @@
 	{
 		[asn1_list addObject:extensionContainer];
 	}
+    asn1_tag.tagNumber = 0;
+    asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 }
 
 
