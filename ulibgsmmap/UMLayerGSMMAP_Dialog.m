@@ -387,7 +387,7 @@
               calledAddress:dst
                      result:result
                  diagnostic:result_source_diagnostic
-                   userInfo:NULL];
+                   userInfo:_requestUserInfo];
 }
 
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
