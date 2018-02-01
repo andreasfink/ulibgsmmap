@@ -90,13 +90,6 @@
                         result:(UMTCAP_asn1_Associate_result *)result
                     diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
 
--(void) executeMAP_Delimiter_Req:(UMGSMMAP_DialogIdentifier *)dialogId
-                  callingAddress:(SccpAddress *)src
-                   calledAddress:(SccpAddress *)dst
-                         options:(NSDictionary *)options
-                          result:(UMTCAP_asn1_Associate_result *)result
-                      diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
-                        userInfo:(UMTCAP_asn1_userInformation *)userInfo;
 
 - (void)queueMAP_Close_Req:(UMGSMMAP_DialogIdentifier *)dialogId
        callingAddress:(SccpAddress *)src
