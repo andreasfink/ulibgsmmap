@@ -1150,16 +1150,21 @@
 
 - (void)MAP_ProcessComponents:(NSArray *)components
                       options:(NSDictionary *)xoptions
+                      willEnd:(BOOL)willEnd
 {
     [self touch];
-
+    if(willEnd)
+    {
+        /* we have to set this before processing components as the callbacks by the components might call close req and if this is not set, we would send a tcap end out to a transaction already closed */
+        self.dialogIsClosed = YES;
+    }
     for(UMTCAP_generic_asn1_componentPDU *component in components)
     {
         UMLayerGSMMAP_OpCode *op = [[UMLayerGSMMAP_OpCode alloc]init];
         op.operation = component.operationCode;
         op.family = component.operationCodeFamily;
         op.national = component.operationNational;
-
+        
         switch(component.asn1_tag.tagNumber)
         {
             case TCAP_ITU_COMPONENT_INVOKE:

@@ -121,7 +121,8 @@
         dialog.tcapRemoteTransactionId = remoteTransactionId;
     }
     [dialog MAP_ProcessComponents:components
-                          options:options];
+                          options:options
+                          willEnd:NO];
     [dialog MAP_Delimiter_Ind:options
                        dialog:dialogId
                callingAddress:src
@@ -213,7 +214,8 @@
         dialog.remoteAddress = src;
         dialog.localAddress = dst;
         [dialog MAP_ProcessComponents:components
-                              options:options];
+                              options:options
+                              willEnd:NO];
         [dialog MAP_Delimiter_Ind:options
                            dialog:dialogId
                    callingAddress:src
@@ -278,7 +280,9 @@
 
         @try
         {
-            [dialog MAP_ProcessComponents:components options:options];
+            [dialog MAP_ProcessComponents:components
+                                  options:options
+                                  willEnd:YES];
         }
         @catch(NSException *ex)
         {

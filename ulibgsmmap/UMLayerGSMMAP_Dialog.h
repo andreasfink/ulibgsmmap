@@ -267,7 +267,8 @@
 #pragma mark -
 #pragma mark Helper Methods
 - (void)MAP_ProcessComponents:(NSArray *)components
-                      options:(NSDictionary *)xoptions;
+                      options:(NSDictionary *)xoptions
+                      willEnd:(BOOL)willEnd;
 
 #pragma mark -
 #pragma mark Various Background Tasks
