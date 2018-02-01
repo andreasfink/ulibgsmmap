@@ -586,16 +586,19 @@
             NSMutableString *s = [[NSMutableString alloc]initWithFormat:@" calling tcapEndRequest"];
             [self.logFeed debugText:s];
         }
-
-        [tcapLayer tcapEndRequest:tcapTransactionId
-                     userDialogId:userDialogId
-                          variant:self.variant
-                             user:self
-                   callingAddress:src
-                    calledAddress:dst
-                  dialoguePortion:itu_dialoguePortion
-                       components:components
-                          options:xoptions];
+        if(tcapTransactionId)
+        {
+            /* if we no longer have a transaction ID, we're done already */
+            [tcapLayer tcapEndRequest:tcapTransactionId
+                         userDialogId:userDialogId
+                              variant:self.variant
+                                 user:self
+                       callingAddress:src
+                        calledAddress:dst
+                      dialoguePortion:itu_dialoguePortion
+                           components:components
+                              options:xoptions];
+        }
     }
     self.dialogIsClosed = YES;
     self.dialogRequestRequired = NO;
