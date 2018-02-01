@@ -44,6 +44,8 @@
 		A60A54281D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A60A541C1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A60A54291D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A60A541D1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m */; };
 		A641CEF61B42019900854472 /* ulibgsmmapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A641CEF51B42019900854472 /* ulibgsmmapTests.m */; };
+		A652D7D8202348B9005A7AB9 /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A652D7D9202348B9005A7AB9 /* ulibasn1.framework */; };
+		A652D7DA202348C1005A7AB9 /* ulibtcap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A652D7DB202348C1005A7AB9 /* ulibtcap.framework */; };
 		A6590EF51FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6590EF31FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6590EF61FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6590EF41FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m */; };
 		A6590EF91FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6590EF71FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,7 +54,6 @@
 		A6790F461D92629A00304445 /* UMLayerGSMMAP_OpCode.m in Sources */ = {isa = PBXBuildFile; fileRef = A6790F441D92629A00304445 /* UMLayerGSMMAP_OpCode.m */; };
 		A67BA19D1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A67BA19B1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A67BA1A11D86CFB9007FF9E5 /* UMLayerGSMMAP_ProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A67BA19F1D86CFB9007FF9E5 /* UMLayerGSMMAP_ProviderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6955FC91CC7577A00211137 /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6955FC81CC7577A00211137 /* ulibasn1.framework */; };
 		A69595331D7E379500211137 /* UMGSMMAP_SuppressMTSS.h in Headers */ = {isa = PBXBuildFile; fileRef = A695952A1D7E379500211137 /* UMGSMMAP_SuppressMTSS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A69595341D7E379500211137 /* UMGSMMAP_SuppressMTSS.m in Sources */ = {isa = PBXBuildFile; fileRef = A695952B1D7E379500211137 /* UMGSMMAP_SuppressMTSS.m */; };
 		A69595351D7E379500211137 /* UMGSMMAP_SuppressMTSS.asn in Resources */ = {isa = PBXBuildFile; fileRef = A695952C1D7E379500211137 /* UMGSMMAP_SuppressMTSS.asn */; };
@@ -200,7 +201,7 @@
 		A69EDF781DF7EFAB00E486B7 /* UMGSMMAP_PagingArea.asn in Resources */ = {isa = PBXBuildFile; fileRef = A69EDF771DF7EFAB00E486B7 /* UMGSMMAP_PagingArea.asn */; };
 		A69EDF7A1DF7EFD700E486B7 /* UMGSMMAP_LocationArea.asn in Resources */ = {isa = PBXBuildFile; fileRef = A69EDF791DF7EFD700E486B7 /* UMGSMMAP_LocationArea.asn */; };
 		A6A2B8DC1E389E0800E8F0AB /* UMLayerGSMMAPApplicationContextProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A6A2B8DA1E389E0800E8F0AB /* UMLayerGSMMAPApplicationContextProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6B7FBBE1B44B28600854472 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C701B435B0C00854472 /* ulib.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A6B7FBBE1B44B28600854472 /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C701B435B0C00854472 /* ulib.framework */; };
 		A6B7FBBF1B44B29600854472 /* ulibsccp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C7A1B435B4800854472 /* ulibsccp.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A6B7FBC11B44B2B300854472 /* ulibsctp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C721B435B1E00854472 /* ulibsctp.framework */; };
 		A6B7FBC21B44B2B600854472 /* ulibm2pa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C741B435B2600854472 /* ulibm2pa.framework */; };
@@ -241,7 +242,6 @@
 		A6DD193F1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.h in Headers */ = {isa = PBXBuildFile; fileRef = A6DD193D1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.h */; };
 		A6DD19401FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD193E1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m */; };
 		A6DD19411FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DD193E1FD9763200DA43FA /* UMGSMMAP_ReturnError_Req_Task.m */; };
-		A6ED5C991B4364B200854472 /* ulibtcap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6ED5C981B4364B200854472 /* ulibtcap.framework */; };
 		A6EE6CE91D3B6BFE00211137 /* UMLayerGSMMAP.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE67181D3B6BE200211137 /* UMLayerGSMMAP.m */; };
 		A6EE6CEA1D3B6BFE00211137 /* UMLayerGSMMAP.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE67191D3B6BE200211137 /* UMLayerGSMMAP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EE6CEB1D3B6BFE00211137 /* UMGSMMAP_ZoneCodeList.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE671A1D3B6BE200211137 /* UMGSMMAP_ZoneCodeList.m */; };
@@ -1655,6 +1655,8 @@
 		A641CEEE1B42019900854472 /* ulibgsmmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ulibgsmmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A641CEF41B42019900854472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A641CEF51B42019900854472 /* ulibgsmmapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ulibgsmmapTests.m; sourceTree = "<group>"; };
+		A652D7D9202348B9005A7AB9 /* ulibasn1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ulibasn1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A652D7DB202348C1005A7AB9 /* ulibtcap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ulibtcap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6590EF31FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_DialogIdentifier.h; sourceTree = "<group>"; };
 		A6590EF41FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_DialogIdentifier.m; sourceTree = "<group>"; };
 		A6590EF71FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_UserIdentifier.h; sourceTree = "<group>"; };
@@ -3223,15 +3225,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B7FBC51B44B34700854472 /* sctp.framework in Frameworks */,
+				A652D7DA202348C1005A7AB9 /* ulibtcap.framework in Frameworks */,
+				A652D7D8202348B9005A7AB9 /* ulibasn1.framework in Frameworks */,
 				A6B7FBBE1B44B28600854472 /* ulib.framework in Frameworks */,
+				A6B7FBC51B44B34700854472 /* sctp.framework in Frameworks */,
 				A6B7FBC11B44B2B300854472 /* ulibsctp.framework in Frameworks */,
-				A6C6E8851CC79F9800ADA9E0 /* ulibgt.framework in Frameworks */,
 				A6B7FBC21B44B2B600854472 /* ulibm2pa.framework in Frameworks */,
 				A6B7FBC31B44B2BA00854472 /* ulibmtp3.framework in Frameworks */,
+				A6C6E8851CC79F9800ADA9E0 /* ulibgt.framework in Frameworks */,
 				A6B7FBBF1B44B29600854472 /* ulibsccp.framework in Frameworks */,
-				A6ED5C991B4364B200854472 /* ulibtcap.framework in Frameworks */,
-				A6955FC91CC7577A00211137 /* ulibasn1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4888,6 +4890,8 @@
 		A6ED5C6F1B435AF000854472 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A652D7DB202348C1005A7AB9 /* ulibtcap.framework */,
+				A652D7D9202348B9005A7AB9 /* ulibasn1.framework */,
 				A6C6E8841CC79F9800ADA9E0 /* ulibgt.framework */,
 				A6955FC81CC7577A00211137 /* ulibasn1.framework */,
 				A6ED5C701B435B0C00854472 /* ulib.framework */,
