@@ -798,21 +798,24 @@
                       result:(UMTCAP_asn1_Associate_result *)result
                   diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
                     userInfo:(UMTCAP_asn1_userInformation *)userInfo
+                       cause:(int64_t)cause
 {
     UMGSMMAP_U_Abort_Req_Task *task = [[UMGSMMAP_U_Abort_Req_Task alloc]initWithInstance:self
                                                                                  dialog:dialogId
                                                                                 options:options
                                                                                  result:result
                                                                              diagnostic:result_source_diagnostic
-                                                                               userInfo:userInfo];
+                                                                               userInfo:userInfo
+                                                                                   cause:cause];
     [self queueFromUpper:task];
 }
 
 -(void) executeMAP_U_Abort_Req:(UMGSMMAP_DialogIdentifier *)dialogId
-                options:(NSDictionary *)options
-                 result:(UMTCAP_asn1_Associate_result *)result
-             diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
-               userInfo:(UMTCAP_asn1_userInformation *)userInfo
+                       options:(NSDictionary *)options
+                        result:(UMTCAP_asn1_Associate_result *)result
+                    diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+                      userInfo:(UMTCAP_asn1_userInformation *)userInfo
+                         cause:(int64_t)cause
 {
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
     if(dialog==NULL)
@@ -820,12 +823,15 @@
         [logFeed minorErrorText:[NSString stringWithFormat:@"MAP_U_Abort_Req: Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
+    
+
     [dialog MAP_U_Abort_Req:options
-               callingAddress:NULL
-                calledAddress:NULL
-                       result:result
-                   diagnostic:result_source_diagnostic
-                     userInfo:userInfo];
+             callingAddress:NULL
+              calledAddress:NULL
+                      cause:cause
+                     result:result
+                 diagnostic:result_source_diagnostic
+                   userInfo:userInfo];
 }
 
 

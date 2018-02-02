@@ -157,13 +157,15 @@
                      options:(NSDictionary *)options
                       result:(UMTCAP_asn1_Associate_result *)result
                   diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
-                    userInfo:(UMTCAP_asn1_userInformation *)userInfo;
+                    userInfo:(UMTCAP_asn1_userInformation *)userInfo
+                       cause:(int64_t)cause;
 
 -(void) executeMAP_U_Abort_Req:(UMGSMMAP_DialogIdentifier *)dialogId
                      options:(NSDictionary *)options
                       result:(UMTCAP_asn1_Associate_result *)result
                   diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
-                    userInfo:(UMTCAP_asn1_userInformation *)userInfo;
+                    userInfo:(UMTCAP_asn1_userInformation *)userInfo
+                         cause:(int64_t)cause;
 
 
 - (UMLayerGSMMAP_Dialog *)dialogById:(UMGSMMAP_DialogIdentifier *)did;

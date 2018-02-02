@@ -702,20 +702,11 @@
 }
 
 
--(void) MAP_U_Abort_Req:(NSDictionary *)xoptions
-{
-    [self MAP_U_Abort_Req:xoptions
-           callingAddress:NULL
-            calledAddress:NULL
-                   result:NULL
-               diagnostic:NULL
-                 userInfo:NULL];
-
-}
 
 -(void) MAP_U_Abort_Req:(NSDictionary *)xoptions
          callingAddress:(SccpAddress *)src
           calledAddress:(SccpAddress *)dst
+                  cause:(int64_t)cause
                  result:(UMTCAP_asn1_Associate_result *)result
              diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
                userInfo:(UMTCAP_asn1_userInformation *)userInfo
@@ -761,13 +752,14 @@
 
     [tcapLayer tcapUAbortRequest:tcapTransactionId
                     userDialogId:userDialogId
-                      variant:self.variant
-                         user:self
-               callingAddress:src
-                calledAddress:dst
-              dialoguePortion:itu_dialoguePortion
-                   components:components
-                      options:xoptions];
+                         variant:self.variant
+                            user:self
+                  callingAddress:src
+                   calledAddress:dst
+                           cause:cause
+                 dialoguePortion:itu_dialoguePortion
+                      components:components
+                         options:xoptions];
     self.dialogIsClosed = YES;
     self.dialogRequestRequired = NO;
     self.dialogResponseRequired = NO;

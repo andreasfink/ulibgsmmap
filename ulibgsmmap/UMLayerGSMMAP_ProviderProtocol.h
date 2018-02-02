@@ -70,7 +70,8 @@
                      options:(NSDictionary *)options
                       result:(UMTCAP_asn1_Associate_result *)result
                   diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
-                    userInfo:(UMTCAP_asn1_userInformation *)userInfo;
+                    userInfo:(UMTCAP_asn1_userInformation *)userInfo
+                       cause:(int64_t)cause;
 
 
 
