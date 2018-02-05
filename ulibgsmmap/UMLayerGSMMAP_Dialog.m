@@ -131,7 +131,7 @@
 - (BOOL)isTimedOut
 {
     BOOL r = NO;
-    NSTimeInterval duration =  fabs([_lastActivity timeIntervalSinceNow]);
+    NSTimeInterval duration =  [_lastActivity age];
     if(duration > self.timeoutInSeconds)
     {
         r = YES;
