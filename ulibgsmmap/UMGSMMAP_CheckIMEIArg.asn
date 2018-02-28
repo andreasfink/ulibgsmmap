@@ -1,0 +1,7 @@
+ CheckIMEI-Arg ::= SEQUENCE {
+     imei	IMEI,
+     requestedEquipmentInfo	RequestedEquipmentInfo,
+   	 extensionContainer ExtensionContainer OPTIONAL, 
+     ...
+}
+

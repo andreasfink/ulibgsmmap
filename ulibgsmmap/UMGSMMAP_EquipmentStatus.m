@@ -16,7 +16,43 @@
 
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_EquipmentStatus";
+	return @"EquipmentStatus";
+}
+
+- (UMGSMMAP_EquipmentStatus *)initWithString:(NSString *)s
+{
+    s = [s stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if([s isEqualToString:@"whiteListed"])
+    {
+        return [super initWithValue:0];
+    }
+    if([s isEqualToString:@"blackListed"])
+    {
+        return [super initWithValue:1];
+    }
+    if([s isEqualToString:@"greyListed"])
+    {
+        return [super initWithValue:1];
+    }
+    return [super initWithValue:(int64_t)[s integerValue]];
+}
+
+- (id) objectValue
+{
+    switch(self.value)
+    {
+        case 0:
+            return @"whiteListed (0)";
+            break;
+        case 1:
+            return @"blackListed (1)";
+            break;
+        case 2:
+            return @"greylisted (2)";
+            break;
+        default:
+            return [NSString stringWithFormat:@"undefined (%d)",(int)self.value];
+    }
 }
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
@@ -27,5 +63,6 @@
     return self;
 }
 
-
 @end
+
+

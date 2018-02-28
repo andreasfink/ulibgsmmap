@@ -489,4 +489,12 @@
 #import "UMGSMMAP_AnyTimeSubscriptionInterrogationArg.h"
 #import "UMGSMMAP_AnyTimeSubscriptionInterrogationRes.h"
 
+#import "UMGSMMAP_CheckIMEIArg.h"
+#import "UMGSMMAP_CheckIMEIRes.h"
+
+#import "UMGSMMAP_UESBI_Iu.h"
+#import "UMGSMMAP_UESBI_IuA.h"
+#import "UMGSMMAP_UESBI_IuB.h"
+#import "UMGSMMAP_RequestedEquipmentInfo.h"
+
 

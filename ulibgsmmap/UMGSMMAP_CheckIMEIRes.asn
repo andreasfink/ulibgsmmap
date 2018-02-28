@@ -1,0 +1,7 @@
+ CheckIMEI-Res ::= SEQUENCE {
+     equipmentStatus	EquipmentStatus    OPTIONAL,
+     bmuef              UESBI-Iu           OPTIONAL,
+   	 extensionContainer [0] ExtensionContainer OPTIONAL, 
+     ...
+}
+

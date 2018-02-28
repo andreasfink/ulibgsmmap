@@ -1,0 +1,5 @@
+ RequestedEquipmentInfo::= BIT STRING {
+	equipmentStatus (0),
+	bmuef (1)
+} (SIZE (2..8))
+

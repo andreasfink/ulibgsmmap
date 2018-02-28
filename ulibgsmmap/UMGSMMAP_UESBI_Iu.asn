@@ -1,0 +1,5 @@
+UESBI-Iu ::= SEQUENCE {
+	uesbi-IuA[0] UESBI-IuA OPTIONAL,
+	uesbi-IuB[1] UESBI-IuB OPTIONAL,
+	...
+}
