@@ -9,6 +9,11 @@
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
 
-@interface UMGSMMAP_RequestedEquipmentInfo : UMASN1Sequence<UMGSMMAP_asn1_protocol>
+@interface UMGSMMAP_RequestedEquipmentInfo : UMASN1BitString<UMGSMMAP_asn1_protocol>
+{
+    
+}
 
+@property(readwrite,assign,atomic)  BOOL equipmentStatus;
+@property(readwrite,assign,atomic)  BOOL bmuef;
 @end
