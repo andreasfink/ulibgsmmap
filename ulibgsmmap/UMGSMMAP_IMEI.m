@@ -19,12 +19,30 @@
 	return @"UMGSMMAP_IMEI";
 }
 
+- (UMASN1Object *)processAfterDecodeWithContext:(id)context
+{
+    if(self.asn1_data.length != 16)
+    {
+        @throw([NSException exceptionWithName:@"DECODING_ERRROR" reason:@"IMEI does not have 8 bytes length" userInfo:NULL]);
+    }
+    return self;
+}
+
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop
                                                withContext:(id)context
 {
     return self;
+}
+
+- (UMASN1OctetString *)initWithString:(NSString *)s
+{
+    if(s.length != 16)
+    {
+        @throw([NSException exceptionWithName:@"ENCODING_ERROR" reason:@"IMEI does not have 8 bytes length" userInfo:NULL]);
+    }
+    return [self initWithValue:[s unhexedData]];
 }
 
 @end

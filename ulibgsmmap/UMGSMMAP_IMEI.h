@@ -15,6 +15,9 @@
 {
 	NSString *operationName;
 }
+
 @property(readwrite,strong)    NSString *operationName;
+
+
 
 @end
