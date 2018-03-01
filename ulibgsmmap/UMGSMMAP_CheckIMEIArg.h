@@ -12,15 +12,22 @@
 @class UMGSMMAP_IMEI;
 @class UMGSMMAP_RequestedEquipmentInfo;
 @class UMGSMMAP_ExtensionContainer;
+@class UMGSMMAP_IMSI;
 
 @interface UMGSMMAP_CheckIMEIArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
     UMGSMMAP_IMEI *_imei;
     UMGSMMAP_RequestedEquipmentInfo *_requestedEquipmentInfo;
     UMGSMMAP_ExtensionContainer *_extensionContainer;
+    UMGSMMAP_IMSI *_imsi;
+    UMASN1OctetString *_locationInformation;
+
 }
 
 @property(readwrite,strong,atomic) UMGSMMAP_IMEI *imei;
+@property(readwrite,strong,atomic) UMGSMMAP_IMSI *imsi;
+@property(readwrite,strong,atomic) UMASN1OctetString *locationInformation;
+
 @property(readwrite,strong,atomic) UMGSMMAP_RequestedEquipmentInfo *requestedEquipmentInfo;
 @property(readwrite,strong,atomic) UMGSMMAP_ExtensionContainer *extensionContainer;
 @property(readwrite,strong) NSString *operationName;

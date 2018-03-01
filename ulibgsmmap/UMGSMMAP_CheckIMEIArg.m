@@ -10,6 +10,7 @@
 #import "UMGSMMAP_RequestedEquipmentInfo.h"
 #import "UMGSMMAP_IMEI.h"
 #import "UMGSMMAP_ExtensionContainer.h"
+#import "UMGSMMAP_IMSI.h"
 
 @implementation UMGSMMAP_CheckIMEIArg
     
@@ -33,6 +34,18 @@
     }
     [asn1_list addObject:_requestedEquipmentInfo];
 
+    if(_imsi)
+    {
+        _imsi.asn1_tag.tagClass = UMASN1Class_Private;
+        _imsi.asn1_tag.tagNumber = 1;
+        [asn1_list addObject:_imsi];
+    }
+    if(_locationInformation)
+    {
+        _locationInformation.asn1_tag.tagClass = UMASN1Class_Private;
+        _locationInformation.asn1_tag.tagNumber = 3;
+        [asn1_list addObject:_locationInformation];
+    }
     if(_extensionContainer)
     {
         [asn1_list addObject:_extensionContainer];
@@ -49,12 +62,22 @@
         _imei = [[UMGSMMAP_IMEI alloc]initWithASN1Object:o context:context];
         o = [self getObjectAtPosition:p++];
     }
-    if(o)
+    if((o) && (o.asn1_tag.tagClass == UMASN1Class_Universal) && (o.asn1_tag.tagNumber == UMASN1Primitive_bitstring))
     {
         _requestedEquipmentInfo = [[UMGSMMAP_RequestedEquipmentInfo alloc]initWithASN1Object:o context:context];
         o = [self getObjectAtPosition:p++];
     }
-    if(o)
+    if((o) && (o.asn1_tag.tagClass == UMASN1Class_Private) && (o.asn1_tag.tagNumber == 1))
+    {
+        _imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
+    if((o) && (o.asn1_tag.tagClass == UMASN1Class_Private) && (o.asn1_tag.tagNumber == 3))
+    {
+        _locationInformation = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
+    if((o) && (o.asn1_tag.tagClass == UMASN1Class_Universal) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence))
     {
         _extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
         o = [self getObjectAtPosition:p++];
@@ -82,6 +105,14 @@
     if(_requestedEquipmentInfo)
     {
         dict[@"requestedEquipmentInfo"] = _requestedEquipmentInfo.objectValue;
+    }
+    if(_imsi)
+    {
+        dict[@"imsi"] = _imsi.objectValue;
+    }
+    if(_locationInformation)
+    {
+        dict[@"locationInformation"] = _locationInformation.objectValue;
     }
     if(_extensionContainer)
     {

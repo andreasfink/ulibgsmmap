@@ -46,14 +46,7 @@
 }
 - (void)setEquipmentStatus:(BOOL)bit
 {
-    if(bit)
-    {
-        [self setBit:0];
-    }
-    else
-    {
-        [self clearBit:0];
-    }
+    [self setBit:0 value:bit];
 }
 
 - (BOOL)bmuef
@@ -62,16 +55,8 @@
 }
 
 - (void)setBmuef:(BOOL)bit
-
 {
-    if(bit)
-    {
-        [self setBit:1];
-    }
-    else
-    {
-        [self clearBit:1];
-    }
+    [self setBit:1 value:bit];
 }
 
 @end
