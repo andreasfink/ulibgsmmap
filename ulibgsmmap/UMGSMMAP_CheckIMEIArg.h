@@ -21,7 +21,11 @@
     UMGSMMAP_ExtensionContainer *_extensionContainer;
     UMGSMMAP_IMSI *_imsi;
     UMASN1OctetString *_locationInformation;
-
+    BOOL _locationInformationPresent;
+    int _rat;
+    int _lac;
+    int _ci;
+    int _sac;
 }
 
 @property(readwrite,strong,atomic) UMGSMMAP_IMEI *imei;
@@ -31,6 +35,13 @@
 @property(readwrite,strong,atomic) UMGSMMAP_RequestedEquipmentInfo *requestedEquipmentInfo;
 @property(readwrite,strong,atomic) UMGSMMAP_ExtensionContainer *extensionContainer;
 @property(readwrite,strong) NSString *operationName;
+
+@property(readwrite,assign,atomic) BOOL locationInformationPresent;
+@property(readwrite,assign,atomic) int rat;
+@property(readwrite,assign,atomic) int lac;
+@property(readwrite,assign,atomic) int ci;
+@property(readwrite,assign,atomic) int sac;
+
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop

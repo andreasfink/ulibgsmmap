@@ -74,7 +74,7 @@
     }
     if((o) && (o.asn1_tag.tagClass == UMASN1Class_Private) && (o.asn1_tag.tagNumber == 3))
     {
-        _locationInformation = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+        self.locationInformation = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
         o = [self getObjectAtPosition:p++];
     }
     if((o) && (o.asn1_tag.tagClass == UMASN1Class_Universal) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence))
@@ -89,7 +89,73 @@
     }
     return self;
 }
-    
+
+
+- (void)setLocationInformation:(UMASN1OctetString *)o
+{
+    _locationInformation = 0;
+    [self locationInfoToFields];
+}
+
+- (UMASN1OctetString *)locationInformation
+{
+    [self fieldsToLocationInfo];
+    return _locationInformation;
+}
+
+- (void)locationInfoToFields
+{
+    NSData *d = _locationInformation.asn1_data;
+    if(d.length>0)
+    {
+        const uint8_t *b = d.bytes;
+        
+        /* see also https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=7648 */
+        _rat = b[0];
+        if((_rat==0) && (d.length >= 5))
+        {
+            _lac = (b[1] <<8) | b[2];
+            _ci = (b[3] <<8) | b[4];
+        }
+        else if(((_rat==1) || (_rat==2))&& (d.length >= 5))
+        {
+            _lac = (b[1] <<8) | b[2];
+            _sac = (b[3] <<8) | b[4];
+        }
+        _locationInformationPresent = YES;
+    }
+    else
+    {
+        _locationInformationPresent = NO;
+    }
+}
+
+- (void)fieldsToLocationInfo
+{
+    if(_locationInformationPresent)
+    {
+        if(_rat==0) /* GSM */
+        {
+            NSString *s = [[NSString alloc]initWithFormat:@"%01x%02x%02x",_rat,_lac,_ci];
+            _locationInformation = [[UMASN1OctetString alloc]initWithString:s];
+        }
+        else if((_rat==1) || (_rat==2))
+        {
+            NSString *s = [[NSString alloc]initWithFormat:@"%01x%02x%02x",_rat,_lac,_sac];
+            _locationInformation = [[UMASN1OctetString alloc]initWithString:s];
+            
+        }
+        else if(_rat == 0x0F)
+        {
+            _locationInformation = [[UMASN1OctetString alloc]initWithString:@"0F"];
+        }
+    }
+    else
+    {
+        _locationInformation = NULL;
+    }
+}
+
 - (NSString *) objectName
 {
     return @"CheckIMEIArg";
@@ -110,9 +176,37 @@
     {
         dict[@"imsi"] = _imsi.objectValue;
     }
-    if(_locationInformation)
+    if(_locationInformationPresent)
     {
         dict[@"locationInformation"] = _locationInformation.objectValue;
+        switch(_rat)
+        {
+            case 0:
+                dict[@"locationInformationRat"] = @(_rat);
+                dict[@"locationInformationLac"] = @(_lac);
+                dict[@"locationInformationCi"] = @(_ci);
+                break;
+           case 1:
+                dict[@"locationInformationRat"] = @(_rat);
+                dict[@"locationInformationRatDescription"] = @"UMTS";
+                dict[@"locationInformationLac"] = @(_lac);
+                dict[@"locationInformationSac"] = @(_sac);
+                break;
+           case 2:
+                dict[@"locationInformationRat"] = @(_rat);
+                dict[@"locationInformationRatDescription"] = @"LTE";
+                dict[@"locationInformationLac"] = @(_lac);
+                dict[@"locationInformationSac"] = @(_sac);
+                break;
+            case 0xF:
+                dict[@"locationInformationRat"] = @(_rat);
+                dict[@"locationInformationRatDescription"] = @"No Information";
+                break;
+            default:
+                dict[@"locationInformationRat"] = @(_rat);
+                dict[@"locationInformationRatDescription"] = @"Unknown RAT";
+                break;
+        }
     }
     if(_extensionContainer)
     {

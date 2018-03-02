@@ -32,7 +32,7 @@
     }
     if([s isEqualToString:@"greyListed"])
     {
-        return [super initWithValue:1];
+        return [super initWithValue:2];
     }
     return [super initWithValue:(int64_t)[s integerValue]];
 }
