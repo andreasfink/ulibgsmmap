@@ -23,7 +23,7 @@
 {
     if(self.asn1_data.length < 8)
     {
-        @throw([NSException exceptionWithName:@"DECODING_ERRROR" reason:@"IMEI does not have at least 8 bytes length" userInfo:NULL]);
+        //@throw([NSException exceptionWithName:@"DECODING_ERRROR" reason:@"IMEI does not have at least 8 bytes length" userInfo:NULL]);
     }
     return self;
 }
