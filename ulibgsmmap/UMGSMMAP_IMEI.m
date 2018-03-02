@@ -21,7 +21,7 @@
 
 - (UMASN1Object *)processAfterDecodeWithContext:(id)context
 {
-    if(self.asn1_data.length >= 8)
+    if(self.asn1_data.length < 8)
     {
         @throw([NSException exceptionWithName:@"DECODING_ERRROR" reason:@"IMEI does not have at least 8 bytes length" userInfo:NULL]);
     }
