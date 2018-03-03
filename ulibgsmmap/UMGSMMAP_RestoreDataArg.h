@@ -23,13 +23,15 @@
 	UMGSMMAP_LMSI *lmsi;
 	UMGSMMAP_ExtensionContainer *extensionContainer;
 	UMGSMMAP_VLR_Capability *vlr_Capability;
+    BOOL _restorationIndicator;
 }
 @property(readwrite,strong)    NSString *operationName;
 
 @property(readwrite,strong)	UMGSMMAP_IMSI *imsi;
 @property(readwrite,strong)	UMGSMMAP_LMSI *lmsi;
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
-@property(readwrite,strong)	UMGSMMAP_VLR_Capability *vlr_Capability;
+@property(readwrite,strong)    UMGSMMAP_VLR_Capability *vlr_Capability;
+@property(readwrite,assign) BOOL restorationIndicator;
 
 
 - (void)processBeforeEncode;

@@ -19,7 +19,6 @@
 @synthesize	extensionContainer;
 @synthesize	vlr_Capability;
 
-
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
@@ -43,6 +42,13 @@
 		vlr_Capability.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[asn1_list addObject:vlr_Capability];
 	}
+    if(_restorationIndicator)
+    {
+        UMASN1Null *ri = [[UMASN1Null alloc]init];
+        ri.asn1_tag.tagNumber = 6;
+        ri.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:ri];
+    }
 }
 
 
@@ -72,6 +78,11 @@
 			vlr_Capability = [[UMGSMMAP_VLR_Capability alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
 		}
+        else if((o) && (o.asn1_tag.tagNumber == 7) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _restorationIndicator = YES;
+            o = [self getObjectAtPosition:p++];
+        }
         else
         {
             o = [self getObjectAtPosition:p++];
