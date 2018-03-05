@@ -47,7 +47,7 @@
     if(self)
     {
         dialogs = [[UMSynchronizedDictionary alloc]init];
-        _dialogIdLock = [[UMMutex alloc]init];
+        _dialogIdLock = [[UMMutex alloc]initWithName:@"gsmmap-dialog-id-lock"];
         _dialogTimeout = 70.0;
         _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
         _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
@@ -69,7 +69,7 @@
     if(self)
     {
         dialogs = [[UMSynchronizedDictionary alloc]init];
-        _dialogIdLock = [[UMMutex alloc]init];
+        _dialogIdLock = [[UMMutex alloc]initWithName:@"gsmmap-dialog-id-lock"];
         _dialogTimeout = 70.0;
         _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
         _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self

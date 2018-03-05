@@ -16,5 +16,6 @@
 	NSString *operationName;
 }
 @property(readwrite,strong)    NSString *operationName;
+- (UMGSMMAP_SupportedCamelPhases *)initWithString:(NSString *)s;
 
 @end

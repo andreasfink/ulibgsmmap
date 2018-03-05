@@ -27,4 +27,37 @@
     return self;
 }
 
+- (UMGSMMAP_SupportedCamelPhases *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        NSCharacterSet *whitespace  = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        
+        NSArray *array = [str componentsSeparatedByString:@","];
+        for(NSString *component in array)
+        {
+            NSString *s = [component stringByTrimmingCharactersInSet:whitespace];
+            if([s isEqualToString:@"1"])
+            {
+                [self setBit:0];
+            }
+            if([s isEqualToString:@"2"])
+            {
+                [self setBit:1];
+            }
+            if([s isEqualToString:@"3"])
+            {
+                [self setBit:2];
+            }
+            if([s isEqualToString:@"4"])
+            {
+                [self setBit:3];
+            }
+        }
+    }
+    return self;
+}
+
+
 @end
