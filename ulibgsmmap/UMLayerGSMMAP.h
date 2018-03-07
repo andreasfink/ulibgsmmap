@@ -171,6 +171,6 @@
 - (UMLayerGSMMAP_Dialog *)dialogById:(UMGSMMAP_DialogIdentifier *)did;
 - (void)housekeeping;
 - (UMGSMMAP_DialogIdentifier *)getNewUserDialogId;
-
+- (NSDictionary *)apiStatus;
 @end
 

@@ -1134,4 +1134,9 @@
     }
 }
 
+- (NSDictionary *)apiStatus
+{
+    NSDictionary *d = [[NSDictionary alloc]init];
+    return d;
+}
 @end
