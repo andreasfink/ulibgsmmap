@@ -310,7 +310,7 @@
 		suppressionOfAnnouncement = YES;
 		o = [self getObjectAtPosition:p++];
 	}
-	if((o) && ([UMGSMMAP_ExtensionContainer tagMatches:o.asn1_tag.tagNumber]) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
+    if((o) && (o.asn1_tag.tagNumber == 13) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
 		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];

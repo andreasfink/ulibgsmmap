@@ -12,7 +12,7 @@ SendRoutingInfoArg ::= SEQUENCE {
    networkSignalInfo [10] ExternalSignalInfo OPTIONAL,
    camelInfo [11] CamelInfo OPTIONAL,
    suppressionOfAnnouncement [12] NULL OPTIONAL,
-   extensionContainer ExtensionContainer OPTIONAL,
+   extensionContainer ExtensionContainer [13] OPTIONAL,
    ... ,
    alertingPattern [14] AlertingPattern OPTIONAL,
    ccbs-Call [15] NULL OPTIONAL,

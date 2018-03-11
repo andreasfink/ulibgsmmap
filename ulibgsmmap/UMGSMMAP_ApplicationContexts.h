@@ -57,3 +57,5 @@ typedef enum UMGSMMAP_ApplicationContext
 } UMGSMMAP_ApplicationContext;
 
 #define UMGSMMAP_ApplicationContextString(context,ver)  [NSString stringWithFormat:@"0400000100%02X%02X",context,ver]
+
+/* this is a shortcut to OID 0.4.0.0.1.0.X.Y. If value X or Y go above 127, this wont work anymore */
