@@ -26,14 +26,7 @@
                                              operationName:(NSString **)xop
                                                withContext:(id)context
 {
-    id<UMLayerGSMMAP_UserProtocol> map_user = NULL;
-    if([context isKindOfClass:[UMLayerTCAP class]])
-    {
-        UMLayerTCAP *tcap = (UMLayerTCAP *) context;
-        UMLayerGSMMAP *map = (UMLayerGSMMAP *)tcap.tcapDefaultUser;
-        map_user = map.user;
-    }
-    else if([context isKindOfClass:[UMLayerGSMMAP class]])
+    if([context isKindOfClass:[UMLayerGSMMAP class]])
     {
         UMLayerGSMMAP *map = (UMLayerGSMMAP *)context;
         decoded_sms = [map.user decodeSmsObject:asn1_data context:context];

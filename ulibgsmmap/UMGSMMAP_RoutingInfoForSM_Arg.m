@@ -113,7 +113,7 @@
 	if((o) && (o.asn1_tag.tagNumber == 9) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
 		sm_RP_SMEA = [[UMGSMMAP_SM_RP_SMEA alloc]initWithASN1Object:o context:context];
-		o = [self getObjectAtPosition:p++];
+		//o = [self getObjectAtPosition:p++];
 	}
 	return self;
 }

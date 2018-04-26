@@ -204,6 +204,7 @@
                     break;
                 case 0x0B:
                     c = @"Ø";
+                    break;
                 case 0x0C:
                     c = @"ø";
                     break;

@@ -98,7 +98,7 @@
 	if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
 		laiFixedLength = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
-		o = [self getObjectAtPosition:p++];
+		//o = [self getObjectAtPosition:p++];
 	}
 	return self;
 }

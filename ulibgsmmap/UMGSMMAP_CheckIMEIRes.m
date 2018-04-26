@@ -28,11 +28,11 @@
     [super processBeforeEncode];
     [asn1_tag setTagIsConstructed];
     asn1_list = [[NSMutableArray alloc]init];
-    if(_equipmentStatus==NULL)
+    if(_equipmentStatus)
     {
         [asn1_list addObject:_equipmentStatus];
     }
-    if(_bmuef == NULL)
+    if(_bmuef)
     {
         [asn1_list addObject:_bmuef];
     }

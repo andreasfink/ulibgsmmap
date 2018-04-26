@@ -171,7 +171,7 @@
 	if((o) && (o.asn1_tag.tagNumber == 13) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
 		vlrCamelSubscriptionInfo = [[UMGSMMAP_VlrCamelSubscriptionInfo alloc]initWithASN1Object:o context:context];
-		o = [self getObjectAtPosition:p++];
+		//o = [self getObjectAtPosition:p++];
 	}
 	return self;
 }
