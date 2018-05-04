@@ -53,7 +53,7 @@
         _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
                                                    selector:@selector(housekeepingTask)
                                                      object:NULL
-                                                   duration:2.8
+                                                   seconds:2.8
                                                        name:@"housekeeping"
                                                     repeats:YES];
         [_houseKeepingTimer start];
@@ -79,7 +79,7 @@
         _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
                                                    selector:@selector(housekeeping)
                                                      object:NULL
-                                                   duration:1.1 /* every sec */
+                                                    seconds:1.1 /* every sec */
                                                        name:@"housekeeping"
                                                     repeats:YES];
         [_houseKeepingTimer start];
