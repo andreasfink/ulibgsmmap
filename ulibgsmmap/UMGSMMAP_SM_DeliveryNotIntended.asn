@@ -1,0 +1,7 @@
+
+SM-DeliveryNotIntended ::= ENUMERATED
+{
+    onlyIMSI-requested     (0),
+    onlyMCC-MNC-requested  (1),
+    ...
+}

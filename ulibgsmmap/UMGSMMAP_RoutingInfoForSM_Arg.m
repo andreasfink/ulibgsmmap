@@ -12,67 +12,105 @@
 
 @implementation UMGSMMAP_RoutingInfoForSM_Arg
 
-
-@synthesize	operationName;
-@synthesize	msisdn;
-@synthesize	sm_RP_PRI;
-@synthesize	serviceCentreAddress;
-@synthesize	extensionContainer;
-@synthesize	gprsSupportIndicator;
-@synthesize	sm_RP_MTI;
-@synthesize	sm_RP_SMEA;
-
-
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	[asn1_tag setTagIsConstructed];
 	asn1_list = [[NSMutableArray alloc]init];
-	if(msisdn)
+	if(_msisdn)
 	{
-		msisdn.asn1_tag.tagNumber = 0;
-		msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:msisdn];
+		_msisdn.asn1_tag.tagNumber = 0;
+		_msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[asn1_list addObject:_msisdn];
 	}
-	if(sm_RP_PRI == NULL) /* mandatory */
+	if(_sm_RP_PRI == NULL)
 	{
-        sm_RP_PRI =  [[UMASN1Boolean alloc]initAsNo];
+        _sm_RP_PRI =  [[UMASN1Boolean alloc]initAsNo];
     }
-    sm_RP_PRI.asn1_tag.tagNumber = 1;
-    sm_RP_PRI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-    [asn1_list addObject:sm_RP_PRI];
+    _sm_RP_PRI.asn1_tag.tagNumber = 1;
+    _sm_RP_PRI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+    [asn1_list addObject:_sm_RP_PRI];
 
-	if(serviceCentreAddress)
+	if(_serviceCentreAddress)
 	{
-		serviceCentreAddress.asn1_tag.tagNumber = 2;
-		serviceCentreAddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:serviceCentreAddress];
+		_serviceCentreAddress.asn1_tag.tagNumber = 2;
+		_serviceCentreAddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[asn1_list addObject:_serviceCentreAddress];
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		extensionContainer.asn1_tag.tagNumber = 6;
-		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		_extensionContainer.asn1_tag.tagNumber = 6;
+		_extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[asn1_list addObject:_extensionContainer];
 	}
-	if(gprsSupportIndicator)
+	if(_gprsSupportIndicator)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 7;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[asn1_list addObject:n];
 	}
-	if(sm_RP_MTI)
+	if(_sm_RP_MTI)
 	{
-		sm_RP_MTI.asn1_tag.tagNumber = 8;
-		sm_RP_MTI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:sm_RP_MTI];
+		_sm_RP_MTI.asn1_tag.tagNumber = 8;
+		_sm_RP_MTI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[asn1_list addObject:_sm_RP_MTI];
 	}
-	if(sm_RP_SMEA)
+	if(_sm_RP_SMEA)
 	{
-		sm_RP_SMEA.asn1_tag.tagNumber = 9;
-		sm_RP_SMEA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:sm_RP_SMEA];
+		_sm_RP_SMEA.asn1_tag.tagNumber = 9;
+		_sm_RP_SMEA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[asn1_list addObject:_sm_RP_SMEA];
 	}
+
+
+    if(_sm_deliveryNotIndtended)
+    {
+        _sm_deliveryNotIndtended.asn1_tag.tagNumber = 10;
+        _sm_deliveryNotIndtended.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:_sm_deliveryNotIndtended];
+    }
+
+    if(_ip_sm_gwGuidanceIndicator)
+    {
+        UMASN1Null *n = [[UMASN1Null alloc]init];
+        n.asn1_tag.tagNumber = 11;
+        n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:n];
+    }
+
+
+
+    if(_imsi)
+    {
+        _imsi.asn1_tag.tagNumber = 12;
+        _imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:_imsi];
+    }
+
+    if(_t4_Trigger_Indicator)
+    {
+        UMASN1Null *n = [[UMASN1Null alloc]init];
+        n.asn1_tag.tagNumber = 14;
+        n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:n];
+    }
+
+
+    if(_singleAttemptDelivery)
+    {
+        UMASN1Null *n = [[UMASN1Null alloc]init];
+        n.asn1_tag.tagNumber = 13;
+        n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:n];
+    }
+
+    if(_correlationID)
+    {
+        _correlationID.asn1_tag.tagNumber = 15;
+        _correlationID.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:_correlationID];
+    }
 }
 
 
@@ -82,38 +120,38 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
+		_msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		sm_RP_PRI = [[UMASN1Boolean alloc]initWithASN1Object:o context:context];
+		_sm_RP_PRI = [[UMASN1Boolean alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		serviceCentreAddress = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+		_serviceCentreAddress = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 6) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
+		_extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 7) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		gprsSupportIndicator = YES;
+		_gprsSupportIndicator = YES;
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 8) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		sm_RP_MTI = [[UMGSMMAP_SM_RP_MTI alloc]initWithASN1Object:o context:context];
+		_sm_RP_MTI = [[UMGSMMAP_SM_RP_MTI alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 9) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		sm_RP_SMEA = [[UMGSMMAP_SM_RP_SMEA alloc]initWithASN1Object:o context:context];
-		//o = [self getObjectAtPosition:p++];
+		_sm_RP_SMEA = [[UMGSMMAP_SM_RP_SMEA alloc]initWithASN1Object:o context:context];
+		o = [self getObjectAtPosition:p++];
 	}
 	return self;
 }
@@ -125,34 +163,60 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(msisdn)
+	if(_msisdn)
 	{
-		dict[@"msisdn"] = msisdn.objectValue;
+		dict[@"msisdn"] = _msisdn.objectValue;
 	}
-	if(sm_RP_PRI)
+	if(_sm_RP_PRI)
 	{
-		dict[@"sm-RP-PRI"] = sm_RP_PRI.objectValue;
+		dict[@"sm-RP-PRI"] = _sm_RP_PRI.objectValue;
 	}
-	if(serviceCentreAddress)
+	if(_serviceCentreAddress)
 	{
-		dict[@"serviceCentreAddress"] = serviceCentreAddress.objectValue;
+		dict[@"serviceCentreAddress"] = _serviceCentreAddress.objectValue;
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		dict[@"extensionContainer"] = extensionContainer.objectValue;
+		dict[@"extensionContainer"] = _extensionContainer.objectValue;
 	}
-	if(gprsSupportIndicator)
+	if(_gprsSupportIndicator)
 	{
 		dict[@"gprsSupportIndicator"] = @(YES);
 	}
-	if(sm_RP_MTI)
+	if(_sm_RP_MTI)
 	{
-		dict[@"sm-RP-MTI"] = sm_RP_MTI.objectValue;
+		dict[@"sm-RP-MTI"] = _sm_RP_MTI.objectValue;
 	}
-	if(sm_RP_SMEA)
+	if(_sm_RP_SMEA)
 	{
-		dict[@"sm-RP-SMEA"] = sm_RP_SMEA.objectValue;
+		dict[@"sm-RP-SMEA"] = _sm_RP_SMEA.objectValue;
 	}
+
+    if(_sm_deliveryNotIndtended)
+    {
+        dict[@"sm-deliveryNotIndtended"] = _sm_deliveryNotIndtended.objectValue;
+    }
+
+    if(_ip_sm_gwGuidanceIndicator )
+    {
+        dict[@"ip-sm-gwGuidanceIndicator"] = @(YES);
+    }
+    if(_imsi)
+    {
+        dict[@"imsi"] = _imsi.objectValue;
+    }
+    if(_t4_Trigger_Indicator)
+    {
+        dict[@"t4-Trigger-Indicator"] = @(YES);
+    }
+    if(_singleAttemptDelivery)
+    {
+        dict[@"singleAttemptDelivery"] = @(YES);
+    }
+    if(_correlationID)
+    {
+        dict[@"correlationID"] = _correlationID.objectValue;
+    }
 	return dict;
 }
 

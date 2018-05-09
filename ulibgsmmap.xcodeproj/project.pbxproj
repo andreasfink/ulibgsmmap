@@ -31,6 +31,12 @@
 		A60A54261D56C15600211137 /* UMGSMMAP_MAP_DialoguePDU.m in Sources */ = {isa = PBXBuildFile; fileRef = A60A541A1D56C15500211137 /* UMGSMMAP_MAP_DialoguePDU.m */; };
 		A60A54281D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A60A541C1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A60A54291D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A60A541D1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m */; };
+		A621711020A2D48A008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.m in Sources */ = {isa = PBXBuildFile; fileRef = A621710E20A2D48A008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.m */; };
+		A621711320A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.h in Headers */ = {isa = PBXBuildFile; fileRef = A621711120A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A621711420A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.m in Sources */ = {isa = PBXBuildFile; fileRef = A621711220A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.m */; };
+		A621711920A2D643008A7E70 /* UMGSMMAP_SIP_URI.h in Headers */ = {isa = PBXBuildFile; fileRef = A621711720A2D643008A7E70 /* UMGSMMAP_SIP_URI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A621711A20A2D643008A7E70 /* UMGSMMAP_SIP_URI.m in Sources */ = {isa = PBXBuildFile; fileRef = A621711820A2D643008A7E70 /* UMGSMMAP_SIP_URI.m */; };
+		A621711D20A2DD53008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.h in Headers */ = {isa = PBXBuildFile; fileRef = A621710D20A2D48A008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A641CEF61B42019900854472 /* ulibgsmmapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A641CEF51B42019900854472 /* ulibgsmmapTests.m */; };
 		A652D7D8202348B9005A7AB9 /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A652D7D9202348B9005A7AB9 /* ulibasn1.framework */; };
 		A652D7DA202348C1005A7AB9 /* ulibtcap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A652D7DB202348C1005A7AB9 /* ulibtcap.framework */; };
@@ -1156,6 +1162,14 @@
 		A60A541B1D56C15500211137 /* UMGSMMAP_MAP_OpenInfo.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_MAP_OpenInfo.asn; sourceTree = "<group>"; };
 		A60A541C1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_MAP_OpenInfo.h; sourceTree = "<group>"; };
 		A60A541D1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_MAP_OpenInfo.m; sourceTree = "<group>"; };
+		A621710D20A2D48A008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_SM_DeliveryNotIntended.h; sourceTree = "<group>"; };
+		A621710E20A2D48A008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_SM_DeliveryNotIntended.m; sourceTree = "<group>"; };
+		A621711120A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_CorrelationID.h; sourceTree = "<group>"; };
+		A621711220A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_CorrelationID.m; sourceTree = "<group>"; };
+		A621711520A2D5DF008A7E70 /* UMGSMMAP_CorrelationID.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = UMGSMMAP_CorrelationID.asn; sourceTree = "<group>"; };
+		A621711720A2D643008A7E70 /* UMGSMMAP_SIP_URI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_SIP_URI.h; sourceTree = "<group>"; };
+		A621711820A2D643008A7E70 /* UMGSMMAP_SIP_URI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_SIP_URI.m; sourceTree = "<group>"; };
+		A621711B20A2DC17008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = UMGSMMAP_SM_DeliveryNotIntended.asn; sourceTree = "<group>"; };
 		A641CEE31B42019900854472 /* ulibgsmmap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ulibgsmmap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A641CEE71B42019900854472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A641CEEE1B42019900854472 /* ulibgsmmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ulibgsmmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1376,6 +1390,315 @@
 		A6ED5C761B435B2F00854472 /* ulibmtp3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibmtp3.framework; path = /Library/Frameworks/ulibmtp3.framework; sourceTree = "<absolute>"; };
 		A6ED5C7A1B435B4800854472 /* ulibsccp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibsccp.framework; path = /Library/Frameworks/ulibsccp.framework; sourceTree = "<absolute>"; };
 		A6ED5C981B4364B200854472 /* ulibtcap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibtcap.framework; path = /Library/Frameworks/ulibtcap.framework; sourceTree = "<absolute>"; };
+		A6EE343C20A2CBF100C77EC8 /* 29002-f10.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "29002-f10.pdf"; sourceTree = "<group>"; };
+		A6EE343D20A2CBF100C77EC8 /* 29002-Rel15-22-SDL.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "29002-Rel15-22-SDL.zip"; sourceTree = "<group>"; };
+		A6EE343E20A2CBF100C77EC8 /* 3GPP-TS-27.001-810.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "3GPP-TS-27.001-810.pdf"; sourceTree = "<group>"; };
+		A6EE343F20A2CBF100C77EC8 /* 3GPP-TS-49.031-d00.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "3GPP-TS-49.031-d00.pdf"; sourceTree = "<group>"; };
+		A6EE344020A2CBF100C77EC8 /* 29002-Rel15-23-SDL.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "29002-Rel15-23-SDL.zip"; sourceTree = "<group>"; };
+		A6EE344120A2CBF100C77EC8 /* 29002-Rel15-15-SDL.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "29002-Rel15-15-SDL.zip"; sourceTree = "<group>"; };
+		A6EE344220A2CBF100C77EC8 /* 29002-f10.pages.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "29002-f10.pages.pdf"; sourceTree = "<group>"; };
+		A6EE344320A2CBF100C77EC8 /* 3GPP-TS-23.032-d00.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "3GPP-TS-23.032-d00.pdf"; sourceTree = "<group>"; };
+		A6EE344520A2CBF100C77EC8 /* MT_SM_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_HLR.spr; sourceTree = "<group>"; };
+		A6EE344620A2CBF100C77EC8 /* Report_SM_Delivery_Stat_IPSMGW.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Report_SM_Delivery_Stat_IPSMGW.smc; sourceTree = "<group>"; };
+		A6EE344720A2CBF100C77EC8 /* Report_SM_Delivery_Stat_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Report_SM_Delivery_Stat_HLR.smc; sourceTree = "<group>"; };
+		A6EE344820A2CBF100C77EC8 /* MT_SM_VMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_VMSC.spr; sourceTree = "<group>"; };
+		A6EE344920A2CBF100C77EC8 /* SM_Alert_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SM_Alert_VLR.spr; sourceTree = "<group>"; };
+		A6EE344A20A2CBF100C77EC8 /* Co_SM_GW_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_SM_GW_HLR.spr; sourceTree = "<group>"; };
+		A6EE344B20A2CBF100C77EC8 /* Page_SMS_SGSN.spd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Page_SMS_SGSN.spd; sourceTree = "<group>"; };
+		A6EE344C20A2CBF100C77EC8 /* MT_SM_Delivery_Attempt_GMSC.spd */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_Delivery_Attempt_GMSC.spd; sourceTree = "<group>"; };
+		A6EE344D20A2CBF100C77EC8 /* MO_SM_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MO_SM_MSC.spr; sourceTree = "<group>"; };
+		A6EE344E20A2CBF100C77EC8 /* SM_Alert_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SM_Alert_MSC.spr; sourceTree = "<group>"; };
+		A6EE344F20A2CBF100C77EC8 /* SM_Alert_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SM_Alert_HLR.spr; sourceTree = "<group>"; };
+		A6EE345020A2CBF100C77EC8 /* MT_SM_Transfer_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_Transfer_MSC.smc; sourceTree = "<group>"; };
+		A6EE345120A2CBF100C77EC8 /* Report_SM_Delivery_Stat_GMSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Report_SM_Delivery_Stat_GMSC.smc; sourceTree = "<group>"; };
+		A6EE345220A2CBF100C77EC8 /* sdt.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = sdt.ini; sourceTree = "<group>"; };
+		A6EE345320A2CBF100C77EC8 /* MO_SM_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MO_SM_VLR.spr; sourceTree = "<group>"; };
+		A6EE345420A2CBF100C77EC8 /* SM_Delivery_Status_Report_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SM_Delivery_Status_Report_HLR.spr; sourceTree = "<group>"; };
+		A6EE345520A2CBF100C77EC8 /* MT_SM_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_VLR.spr; sourceTree = "<group>"; };
+		A6EE345620A2CBF100C77EC8 /* MO_SM_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MO_SM_SGSN.spr; sourceTree = "<group>"; };
+		A6EE345720A2CBF100C77EC8 /* 29002-850-23.sdt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-850-23.sdt"; sourceTree = "<group>"; };
+		A6EE345820A2CBF100C77EC8 /* SM_Delivery_Status_Report_IPSMGW.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SM_Delivery_Status_Report_IPSMGW.spr; sourceTree = "<group>"; };
+		A6EE345920A2CBF100C77EC8 /* MT_SM_IPSMGW.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_IPSMGW.spr; sourceTree = "<group>"; };
+		A6EE345A20A2CBF100C77EC8 /* 29002-850-23.sdt.state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-850-23.sdt.state"; sourceTree = "<group>"; };
+		A6EE345B20A2CBF100C77EC8 /* Co_SMS_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_SMS_MSC.spr; sourceTree = "<group>"; };
+		A6EE345C20A2CBF100C77EC8 /* MO_SM_IWMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MO_SM_IWMSC.spr; sourceTree = "<group>"; };
+		A6EE345D20A2CBF100C77EC8 /* SM_Alert_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SM_Alert_SGSN.spr; sourceTree = "<group>"; };
+		A6EE345E20A2CBF100C77EC8 /* MT_SM_SMS_ROUTER.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_SMS_ROUTER.spr; sourceTree = "<group>"; };
+		A6EE345F20A2CBF100C77EC8 /* Perform_Relaying.spd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Perform_Relaying.spd; sourceTree = "<group>"; };
+		A6EE346020A2CBF100C77EC8 /* Search_SMS_SGSN.spd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Search_SMS_SGSN.spd; sourceTree = "<group>"; };
+		A6EE346120A2CBF100C77EC8 /* MT_SM_Xfer_SGSN.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_Xfer_SGSN.smc; sourceTree = "<group>"; };
+		A6EE346220A2CBF100C77EC8 /* .sdtfiles */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sdtfiles; sourceTree = "<group>"; };
+		A6EE346320A2CBF100C77EC8 /* Alert_SC_IWMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alert_SC_IWMSC.spr; sourceTree = "<group>"; };
+		A6EE346420A2CBF100C77EC8 /* MT_SM_VGCS_GMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_VGCS_GMSC.spr; sourceTree = "<group>"; };
+		A6EE346520A2CBF100C77EC8 /* MT_SM_GMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_GMSC.spr; sourceTree = "<group>"; };
+		A6EE346620A2CBF100C77EC8 /* MT_SM_Xfer_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_Xfer_MSC.smc; sourceTree = "<group>"; };
+		A6EE346720A2CBF100C77EC8 /* Co_SMS_GW_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_SMS_GW_HLR.spr; sourceTree = "<group>"; };
+		A6EE346820A2CBF100C77EC8 /* MT_SM_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_SGSN.spr; sourceTree = "<group>"; };
+		A6EE346920A2CBF100C77EC8 /* Check_Subscr_Identity_for_MT_SMS.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Check_Subscr_Identity_for_MT_SMS.smc; sourceTree = "<group>"; };
+		A6EE346A20A2CBF100C77EC8 /* MT_SM_VGCS_Anchor_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MT_SM_VGCS_Anchor_MSC.spr; sourceTree = "<group>"; };
+		A6EE346B20A2CBF100C77EC8 /* 29002-Rel15-21-SDL.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "29002-Rel15-21-SDL.zip"; sourceTree = "<group>"; };
+		A6EE346D20A2CBF100C77EC8 /* Wait_For_Insert_VCSG_Subs_Data_Cnf.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wait_For_Insert_VCSG_Subs_Data_Cnf.smc; sourceTree = "<group>"; };
+		A6EE346E20A2CBF100C77EC8 /* Obtain_IMSI_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_IMSI_VLR.smc; sourceTree = "<group>"; };
+		A6EE346F20A2CBF100C77EC8 /* Obtain_Authent_Sets_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_Authent_Sets_SGSN.spr; sourceTree = "<group>"; };
+		A6EE347020A2CBF100C77EC8 /* Send_Insert_VCSG_Subs_Data_CSS.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_Insert_VCSG_Subs_Data_CSS.spr; sourceTree = "<group>"; };
+		A6EE347120A2CBF100C77EC8 /* Authenticate_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Authenticate_VLR.smc; sourceTree = "<group>"; };
+		A6EE347220A2CBF100C77EC8 /* Subscriber_Present_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Subscriber_Present_SGSN.spr; sourceTree = "<group>"; };
+		A6EE347320A2CBF100C77EC8 /* Obtain_Identity_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_Identity_VLR.smc; sourceTree = "<group>"; };
+		A6EE347420A2CBF100C77EC8 /* Check_IMEI_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Check_IMEI_SGSN.spr; sourceTree = "<group>"; };
+		A6EE347520A2CBF100C77EC8 /* Check_IMEI_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Check_IMEI_VLR.smc; sourceTree = "<group>"; };
+		A6EE347620A2CBF100C77EC8 /* Update_Location_Child_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Update_Location_Child_VLR.spr; sourceTree = "<group>"; };
+		A6EE347720A2CBF100C77EC8 /* Page_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Page_MSC.smc; sourceTree = "<group>"; };
+		A6EE347820A2CBF100C77EC8 /* Obtain_Authent_Sets_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_Authent_Sets_VLR.spr; sourceTree = "<group>"; };
+		A6EE347920A2CBF100C77EC8 /* Control_Tracing_With_SGSN_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Control_Tracing_With_SGSN_HLR.smc; sourceTree = "<group>"; };
+		A6EE347A20A2CBF100C77EC8 /* 29002-630-25.sdt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-25.sdt"; sourceTree = "<group>"; };
+		A6EE347B20A2CBF100C77EC8 /* Obtain_Authent_Sets_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_Authent_Sets_HLR.spr; sourceTree = "<group>"; };
+		A6EE347C20A2CBF100C77EC8 /* Check_IMEI_EIR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Check_IMEI_EIR.spr; sourceTree = "<group>"; };
+		A6EE347D20A2CBF100C77EC8 /* Activate_Tracing_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Activate_Tracing_VLR.smc; sourceTree = "<group>"; };
+		A6EE347E20A2CBF100C77EC8 /* Trace_Subscriber_Activity_SGSN.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Trace_Subscriber_Activity_SGSN.smc; sourceTree = "<group>"; };
+		A6EE347F20A2CBF100C77EC8 /* Wait_For_Insert_GPRS_Subs_Data_Cnf.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wait_For_Insert_GPRS_Subs_Data_Cnf.smc; sourceTree = "<group>"; };
+		A6EE348020A2CBF100C77EC8 /* sdt.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = sdt.ini; sourceTree = "<group>"; };
+		A6EE348120A2CBF100C77EC8 /* Send_Insert_Subs_Data_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_Insert_Subs_Data_HLR.spr; sourceTree = "<group>"; };
+		A6EE348220A2CBF100C77EC8 /* Receive_Open_Ind.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Receive_Open_Ind.smc; sourceTree = "<group>"; };
+		A6EE348320A2CBF100C77EC8 /* Obtain_IMSI_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_IMSI_MSC.smc; sourceTree = "<group>"; };
+		A6EE348420A2CBF100C77EC8 /* Alert_Service_Centre_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alert_Service_Centre_HLR.smc; sourceTree = "<group>"; };
+		A6EE348520A2CBF100C77EC8 /* Check_Available_Vectors.spd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Check_Available_Vectors.spd; sourceTree = "<group>"; };
+		A6EE348620A2CBF100C77EC8 /* Check_IMEI_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Check_IMEI_MSC.smc; sourceTree = "<group>"; };
+		A6EE348720A2CBF100C77EC8 /* Control_Tracing_With_VLR_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Control_Tracing_With_VLR_HLR.smc; sourceTree = "<group>"; };
+		A6EE348820A2CBF100C77EC8 /* Authenticate_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Authenticate_MSC.smc; sourceTree = "<group>"; };
+		A6EE348920A2CBF100C77EC8 /* Obtain_Authent_Params_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_Authent_Params_VLR.smc; sourceTree = "<group>"; };
+		A6EE348A20A2CBF100C77EC8 /* Wait_For_Insert_Subs_Data_Cnf.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wait_For_Insert_Subs_Data_Cnf.smc; sourceTree = "<group>"; };
+		A6EE348B20A2CBF100C77EC8 /* Report_Authentication_Failure_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Report_Authentication_Failure_SGSN.spr; sourceTree = "<group>"; };
+		A6EE348C20A2CBF100C77EC8 /* Insert_VCSG_Subs_Data_Stand_Alone_CSS.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insert_VCSG_Subs_Data_Stand_Alone_CSS.spr; sourceTree = "<group>"; };
+		A6EE348D20A2CBF100C77EC8 /* Obtain_IMEI_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_IMEI_VLR.smc; sourceTree = "<group>"; };
+		A6EE348E20A2CBF100C77EC8 /* Note_Authentication_Failure_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Note_Authentication_Failure_HLR.spr; sourceTree = "<group>"; };
+		A6EE348F20A2CBF100C77EC8 /* Search_For_MS_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Search_For_MS_MSC.smc; sourceTree = "<group>"; };
+		A6EE349020A2CBF100C77EC8 /* Insert_Subs_Data_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insert_Subs_Data_VLR.smc; sourceTree = "<group>"; };
+		A6EE349120A2CBF100C77EC8 /* Obtain_Auth_Params_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_Auth_Params_VLR.smc; sourceTree = "<group>"; };
+		A6EE349220A2CBF100C77EC8 /* Trace_Subscriber_Activity_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Trace_Subscriber_Activity_VLR.smc; sourceTree = "<group>"; };
+		A6EE349320A2CBF100C77EC8 /* Receive_Open_Cnf.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Receive_Open_Cnf.smc; sourceTree = "<group>"; };
+		A6EE349420A2CBF100C77EC8 /* 29002-630-25.sdt.state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-25.sdt.state"; sourceTree = "<group>"; };
+		A6EE349520A2CBF100C77EC8 /* Obtain_Auth_Sets_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_Auth_Sets_VLR.spr; sourceTree = "<group>"; };
+		A6EE349620A2CBF100C77EC8 /* .sdtfiles */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sdtfiles; sourceTree = "<group>"; };
+		A6EE349720A2CBF100C77EC8 /* Obtain_Auth_Sets_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_Auth_Sets_SGSN.spr; sourceTree = "<group>"; };
+		A6EE349820A2CBF100C77EC8 /* Process_Access_Request_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Process_Access_Request_VLR.smc; sourceTree = "<group>"; };
+		A6EE349920A2CBF100C77EC8 /* Obtain_Auth_Sets_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_Auth_Sets_HLR.spr; sourceTree = "<group>"; };
+		A6EE349A20A2CBF100C77EC8 /* Check_Reference.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Check_Reference.smc; sourceTree = "<group>"; };
+		A6EE349B20A2CBF100C77EC8 /* Trace_Subscriber_Activity_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Trace_Subscriber_Activity_MSC.smc; sourceTree = "<group>"; };
+		A6EE349C20A2CBF100C77EC8 /* Activate_Tracing_SGSN.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Activate_Tracing_SGSN.smc; sourceTree = "<group>"; };
+		A6EE349D20A2CBF100C77EC8 /* Insert_Subs_Data_SGSN.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insert_Subs_Data_SGSN.smc; sourceTree = "<group>"; };
+		A6EE349E20A2CBF100C77EC8 /* Subscriber_Present_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Subscriber_Present_VLR.spr; sourceTree = "<group>"; };
+		A6EE349F20A2CBF100C77EC8 /* Process_Access_Request_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Process_Access_Request_MSC.smc; sourceTree = "<group>"; };
+		A6EE34A020A2CBF100C77EC8 /* Check_Confirmation.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Check_Confirmation.smc; sourceTree = "<group>"; };
+		A6EE34A120A2CBF100C77EC8 /* Check_Indication.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Check_Indication.smc; sourceTree = "<group>"; };
+		A6EE34A220A2CBF100C77EC8 /* Insert_GPRS_Subs_Data_Stand_Alone_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insert_GPRS_Subs_Data_Stand_Alone_HLR.spr; sourceTree = "<group>"; };
+		A6EE34A320A2CBF100C77EC8 /* Alert_SC_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Alert_SC_HLR.spr; sourceTree = "<group>"; };
+		A6EE34A420A2CBF100C77EC8 /* Report_Authentication_Failure_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Report_Authentication_Failure_VLR.spr; sourceTree = "<group>"; };
+		A6EE34A520A2CBF100C77EC8 /* Obtain_IMEI_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Obtain_IMEI_MSC.smc; sourceTree = "<group>"; };
+		A6EE34A620A2CBF100C77EC8 /* Insert_Subs_Data_Stand_Alone_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insert_Subs_Data_Stand_Alone_HLR.spr; sourceTree = "<group>"; };
+		A6EE34A820A2CBF100C77EC8 /* Restore_Data_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Restore_Data_VLR.spr; sourceTree = "<group>"; };
+		A6EE34A920A2CBF100C77EC8 /* 29002-840-21.sdt.state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-840-21.sdt.state"; sourceTree = "<group>"; };
+		A6EE34AA20A2CBF100C77EC8 /* RCH_GMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = RCH_GMSC.spr; sourceTree = "<group>"; };
+		A6EE34AB20A2CBF100C77EC8 /* Release_Resources_GMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Release_Resources_GMSC.spr; sourceTree = "<group>"; };
+		A6EE34AC20A2CBF100C77EC8 /* PSI_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = PSI_VLR.spr; sourceTree = "<group>"; };
+		A6EE34AD20A2CBF100C77EC8 /* SRI_GMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SRI_GMSC.spr; sourceTree = "<group>"; };
+		A6EE34AE20A2CBF100C77EC8 /* Set_Reporting_State_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Set_Reporting_State_HLR.smc; sourceTree = "<group>"; };
+		A6EE34AF20A2CBF100C77EC8 /* Remote_User_Free_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Remote_User_Free_HLR.spr; sourceTree = "<group>"; };
+		A6EE34B020A2CBF100C77EC8 /* Set_Reporting_State_Stand_Alone_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Set_Reporting_State_Stand_Alone_HLR.spr; sourceTree = "<group>"; };
+		A6EE34B120A2CBF100C77EC8 /* sdt.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = sdt.ini; sourceTree = "<group>"; };
+		A6EE34B220A2CBF100C77EC8 /* Remote_User_Free_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Remote_User_Free_VLR.spr; sourceTree = "<group>"; };
+		A6EE34B320A2CBF100C77EC8 /* 29002-840-21.sdt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-840-21.sdt"; sourceTree = "<group>"; };
+		A6EE34B420A2CBF100C77EC8 /* Set_Reporting_State_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Set_Reporting_State_VLR.spr; sourceTree = "<group>"; };
+		A6EE34B520A2CBF100C77EC8 /* IST_Command_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = IST_Command_HLR.spr; sourceTree = "<group>"; };
+		A6EE34B620A2CBF100C77EC8 /* IST_Command_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = IST_Command_MSC.spr; sourceTree = "<group>"; };
+		A6EE34B720A2CBF100C77EC8 /* SRI_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SRI_HLR.spr; sourceTree = "<group>"; };
+		A6EE34B820A2CBF100C77EC8 /* Receive_Status_Report_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Receive_Status_Report_HLR.smc; sourceTree = "<group>"; };
+		A6EE34B920A2CBF100C77EC8 /* Group_Call_Info_Retrieval_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Group_Call_Info_Retrieval_MSC.spr; sourceTree = "<group>"; };
+		A6EE34BA20A2CBF100C77EC8 /* .sdtfiles */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sdtfiles; sourceTree = "<group>"; };
+		A6EE34BB20A2CBF100C77EC8 /* PRN_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = PRN_VLR.spr; sourceTree = "<group>"; };
+		A6EE34BC20A2CBF100C77EC8 /* Receive_Set_Reporting_State_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Receive_Set_Reporting_State_VLR.smc; sourceTree = "<group>"; };
+		A6EE34BD20A2CBF100C77EC8 /* ASCI_Anchor_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ASCI_Anchor_MSC.spr; sourceTree = "<group>"; };
+		A6EE34BE20A2CBF100C77EC8 /* Status_Report_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Status_Report_HLR.spr; sourceTree = "<group>"; };
+		A6EE34BF20A2CBF100C77EC8 /* IST_Alert_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = IST_Alert_HLR.spr; sourceTree = "<group>"; };
+		A6EE34C020A2CBF100C77EC8 /* IST_Alert_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = IST_Alert_MSC.spr; sourceTree = "<group>"; };
+		A6EE34C120A2CBF100C77EC8 /* Release_Resources_VMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Release_Resources_VMSC.spr; sourceTree = "<group>"; };
+		A6EE34C220A2CBF100C77EC8 /* Send_Status_Report_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_Status_Report_VLR.spr; sourceTree = "<group>"; };
+		A6EE34C320A2CBF100C77EC8 /* RCH_VMSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = RCH_VMSC.spr; sourceTree = "<group>"; };
+		A6EE34C420A2CBF100C77EC8 /* Reporting_Coord_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reporting_Coord_VLR.spr; sourceTree = "<group>"; };
+		A6EE34C520A2CBF100C77EC8 /* ASCI_Relay_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ASCI_Relay_MSC.spr; sourceTree = "<group>"; };
+		A6EE34C620A2CBF100C77EC8 /* updateLocation.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = updateLocation.asn; sourceTree = "<group>"; };
+		A6EE34C820A2CBF100C77EC8 /* Send_Identification_PVLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_Identification_PVLR.spr; sourceTree = "<group>"; };
+		A6EE34C920A2CBF100C77EC8 /* Send_Reset_To_VLR_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_Reset_To_VLR_HLR.spr; sourceTree = "<group>"; };
+		A6EE34CA20A2CBF100C77EC8 /* Cancel_GPRS_Location_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cancel_GPRS_Location_HLR.spr; sourceTree = "<group>"; };
+		A6EE34CB20A2CBF100C77EC8 /* Update_VCSG_Location_CSS.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Update_VCSG_Location_CSS.spr; sourceTree = "<group>"; };
+		A6EE34CC20A2CBF100C77EC8 /* Receive_Error_From_HO_CA.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Receive_Error_From_HO_CA.smc; sourceTree = "<group>"; };
+		A6EE34CD20A2CBF100C77EC8 /* Cancel_Location_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cancel_Location_HLR.spr; sourceTree = "<group>"; };
+		A6EE34CE20A2CBF100C77EC8 /* Location_Management_Coordinator_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Location_Management_Coordinator_HLR.spr; sourceTree = "<group>"; };
+		A6EE34CF20A2CBF100C77EC8 /* Insert_Subs_Data_Framed_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insert_Subs_Data_Framed_HLR.smc; sourceTree = "<group>"; };
+		A6EE34D020A2CBF100C77EC8 /* Update_Location_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Update_Location_VLR.spr; sourceTree = "<group>"; };
+		A6EE34D120A2CBF100C77EC8 /* Receive_Reset_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Receive_Reset_VLR.spr; sourceTree = "<group>"; };
+		A6EE34D220A2CBF100C77EC8 /* Receive_Reset_From_CSS_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Receive_Reset_From_CSS_SGSN.spr; sourceTree = "<group>"; };
+		A6EE34D320A2CBF100C77EC8 /* Restart_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Restart_HLR.spr; sourceTree = "<group>"; };
+		A6EE34D420A2CBF100C77EC8 /* Update_Location_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Update_Location_HLR.spr; sourceTree = "<group>"; };
+		A6EE34D520A2CBF100C77EC8 /* Cancel_VCSG_Location_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cancel_VCSG_Location_SGSN.spr; sourceTree = "<group>"; };
+		A6EE34D620A2CBF100C77EC8 /* Notify_MM_Event_VLR_Or_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Notify_MM_Event_VLR_Or_SGSN.spr; sourceTree = "<group>"; };
+		A6EE34D720A2CBF100C77EC8 /* Handover_VLR_B.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handover_VLR_B.spr; sourceTree = "<group>"; };
+		A6EE34D820A2CBF100C77EC8 /* sdt.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = sdt.ini; sourceTree = "<group>"; };
+		A6EE34D920A2CBF100C77EC8 /* 29002-Rel11-19.sdt.state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-Rel11-19.sdt.state"; sourceTree = "<group>"; };
+		A6EE34DA20A2CBF100C77EC8 /* Update_GPRS_Location_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Update_GPRS_Location_HLR.spr; sourceTree = "<group>"; };
+		A6EE34DB20A2CBF100C77EC8 /* Send_Reset_To_SGSN_CSS.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_Reset_To_SGSN_CSS.spr; sourceTree = "<group>"; };
+		A6EE34DC20A2CBF100C77EC8 /* Cancel_VCSG_Location_CSS.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cancel_VCSG_Location_CSS.spr; sourceTree = "<group>"; };
+		A6EE34DD20A2CBF100C77EC8 /* Update_GPRS_Location_HLR.spr.lck */ = {isa = PBXFileReference; lastKnownFileType = text; path = Update_GPRS_Location_HLR.spr.lck; sourceTree = "<group>"; };
+		A6EE34DE20A2CBF100C77EC8 /* Restore_Data_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Restore_Data_HLR.spr; sourceTree = "<group>"; };
+		A6EE34DF20A2CBF100C77EC8 /* Cancel_GPRS_Location_Child_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cancel_GPRS_Location_Child_HLR.spr; sourceTree = "<group>"; };
+		A6EE34E020A2CBF100C77EC8 /* 29002-Rel11-19.sdt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-Rel11-19.sdt"; sourceTree = "<group>"; };
+		A6EE34E120A2CBF100C77EC8 /* Cancel_Location_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cancel_Location_VLR.spr; sourceTree = "<group>"; };
+		A6EE34E220A2CBF100C77EC8 /* Send_Identification_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_Identification_VLR.spr; sourceTree = "<group>"; };
+		A6EE34E320A2CBF100C77EC8 /* Cancel_Location_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cancel_Location_SGSN.spr; sourceTree = "<group>"; };
+		A6EE34E420A2CBF100C77EC8 /* Cancel_Location_SGSN.spr.lck */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cancel_Location_SGSN.spr.lck; sourceTree = "<group>"; };
+		A6EE34E520A2CBF100C77EC8 /* Cancel_Location_VLR.spr.lck */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cancel_Location_VLR.spr.lck; sourceTree = "<group>"; };
+		A6EE34E620A2CBF100C77EC8 /* Receive_Reset_From_CSS_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Receive_Reset_From_CSS_VLR.spr; sourceTree = "<group>"; };
+		A6EE34E720A2CBF100C77EC8 /* Send_Reset_To_SGSN_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_Reset_To_SGSN_HLR.spr; sourceTree = "<group>"; };
+		A6EE34E820A2CBF100C77EC8 /* Insert_GPRS_Subs_Data_Framed_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insert_GPRS_Subs_Data_Framed_HLR.smc; sourceTree = "<group>"; };
+		A6EE34E920A2CBF100C77EC8 /* Notify_MM_Event_gsmSCF.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Notify_MM_Event_gsmSCF.spr; sourceTree = "<group>"; };
+		A6EE34EA20A2CBF100C77EC8 /* .sdtfiles */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sdtfiles; sourceTree = "<group>"; };
+		A6EE34EB20A2CBF100C77EC8 /* Purge_MS_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Purge_MS_HLR.spr; sourceTree = "<group>"; };
+		A6EE34EC20A2CBF100C77EC8 /* Purge_MS_HLR.spr.lck */ = {isa = PBXFileReference; lastKnownFileType = text; path = Purge_MS_HLR.spr.lck; sourceTree = "<group>"; };
+		A6EE34ED20A2CBF100C77EC8 /* Update_VCSG_Location_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Update_VCSG_Location_VLR.spr; sourceTree = "<group>"; };
+		A6EE34EE20A2CBF100C77EC8 /* Cancel_Location_HLR.spr.lck */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cancel_Location_HLR.spr.lck; sourceTree = "<group>"; };
+		A6EE34EF20A2CBF100C77EC8 /* Update_GPRS_Location_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Update_GPRS_Location_SGSN.spr; sourceTree = "<group>"; };
+		A6EE34F020A2CBF100C77EC8 /* Subscriber_Present_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Subscriber_Present_HLR.spr; sourceTree = "<group>"; };
+		A6EE34F120A2CBF100C77EC8 /* CSS_temporary.sli */ = {isa = PBXFileReference; lastKnownFileType = text; path = CSS_temporary.sli; sourceTree = "<group>"; };
+		A6EE34F220A2CBF100C77EC8 /* Handover_MSC_A.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handover_MSC_A.spr; sourceTree = "<group>"; };
+		A6EE34F320A2CBF100C77EC8 /* Purge_MS_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Purge_MS_VLR.spr; sourceTree = "<group>"; };
+		A6EE34F420A2CBF100C77EC8 /* Send_Reset_To_VLR_CSS.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_Reset_To_VLR_CSS.spr; sourceTree = "<group>"; };
+		A6EE34F520A2CBF100C77EC8 /* Purge_MS_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Purge_MS_SGSN.spr; sourceTree = "<group>"; };
+		A6EE34F620A2CBF100C77EC8 /* Handover_MSC_B.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Handover_MSC_B.spr; sourceTree = "<group>"; };
+		A6EE34F720A2CBF100C77EC8 /* GPRS_Location_Update_Completion_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GPRS_Location_Update_Completion_VLR.smc; sourceTree = "<group>"; };
+		A6EE34F820A2CBF100C77EC8 /* Restart_CSS.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Restart_CSS.spr; sourceTree = "<group>"; };
+		A6EE34F920A2CBF100C77EC8 /* GPRS_Update_Location_Area_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = GPRS_Update_Location_Area_VLR.spr; sourceTree = "<group>"; };
+		A6EE34FA20A2CBF100C77EC8 /* GPRS_Update_HLR_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GPRS_Update_HLR_VLR.smc; sourceTree = "<group>"; };
+		A6EE34FB20A2CBF100C77EC8 /* Receive_Reset_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Receive_Reset_SGSN.spr; sourceTree = "<group>"; };
+		A6EE34FC20A2CBF100C77EC8 /* Insert_VCSG_Subs_Data_Framed_CSS.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insert_VCSG_Subs_Data_Framed_CSS.smc; sourceTree = "<group>"; };
+		A6EE34FD20A2CBF100C77EC8 /* Update_VCSG_Location_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Update_VCSG_Location_SGSN.spr; sourceTree = "<group>"; };
+		A6EE34FE20A2CBF100C77EC8 /* Cancel_VCSG_Location_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cancel_VCSG_Location_VLR.spr; sourceTree = "<group>"; };
+		A6EE34FF20A2CBF100C77EC8 /* Cancel_Location_Child_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cancel_Location_Child_HLR.spr; sourceTree = "<group>"; };
+		A6EE350120A2CBF100C77EC8 /* 29002-630-20.sdt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-20.sdt"; sourceTree = "<group>"; };
+		A6EE350220A2CBF100C77EC8 /* Delete_VCSG_Subs_Data_CSS.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delete_VCSG_Subs_Data_CSS.smc; sourceTree = "<group>"; };
+		A6EE350320A2CBF100C77EC8 /* Co_Tracing_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_Tracing_VLR.spr; sourceTree = "<group>"; };
+		A6EE350420A2CBF100C77EC8 /* Send_IMSI_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_IMSI_VLR.spr; sourceTree = "<group>"; };
+		A6EE350520A2CBF100C77EC8 /* Co_Tracing_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_Tracing_SGSN.spr; sourceTree = "<group>"; };
+		A6EE350620A2CBF100C77EC8 /* Co_SDM_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_SDM_VLR.spr; sourceTree = "<group>"; };
+		A6EE350720A2CBF100C77EC8 /* ATM_Stand_Alone_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATM_Stand_Alone_VLR.spr; sourceTree = "<group>"; };
+		A6EE350820A2CBF100C77EC8 /* 29002-630-20.sdt.state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-20.sdt.state"; sourceTree = "<group>"; };
+		A6EE350920A2CBF100C77EC8 /* Modify_Data_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Modify_Data_HLR.spr; sourceTree = "<group>"; };
+		A6EE350A20A2CBF100C77EC8 /* Send_IMSI_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Send_IMSI_HLR.spr; sourceTree = "<group>"; };
+		A6EE350B20A2CBF100C77EC8 /* sdt.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = sdt.ini; sourceTree = "<group>"; };
+		A6EE350C20A2CBF100C77EC8 /* ATM_With_SGSN_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATM_With_SGSN_HLR.spr; sourceTree = "<group>"; };
+		A6EE350D20A2CBF100C77EC8 /* Ins_VCSG_Subs_Data_Stand_Alone_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ins_VCSG_Subs_Data_Stand_Alone_SGSN.spr; sourceTree = "<group>"; };
+		A6EE350E20A2CBF100C77EC8 /* Delete_Subscriber_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delete_Subscriber_HLR.spr; sourceTree = "<group>"; };
+		A6EE350F20A2CBF100C77EC8 /* Co_CSG_SDM_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_CSG_SDM_VLR.spr; sourceTree = "<group>"; };
+		A6EE351020A2CBF100C77EC8 /* Co_CSG_SDM_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_CSG_SDM_SGSN.spr; sourceTree = "<group>"; };
+		A6EE351120A2CBF100C77EC8 /* Delete_Subs_Data_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delete_Subs_Data_SGSN.spr; sourceTree = "<group>"; };
+		A6EE351220A2CBF100C77EC8 /* DTM_With_SGSN_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = DTM_With_SGSN_HLR.spr; sourceTree = "<group>"; };
+		A6EE351320A2CBF100C77EC8 /* Delete_Subscriber_Data_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delete_Subscriber_Data_HLR.smc; sourceTree = "<group>"; };
+		A6EE351420A2CBF100C77EC8 /* Delete_Subs_Data_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delete_Subs_Data_VLR.spr; sourceTree = "<group>"; };
+		A6EE351520A2CBF100C77EC8 /* Delete_VCSG_Subs_Data_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delete_VCSG_Subs_Data_VLR.spr; sourceTree = "<group>"; };
+		A6EE351620A2CBF100C77EC8 /* Delete_VCSG_Subs_Data_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delete_VCSG_Subs_Data_SGSN.spr; sourceTree = "<group>"; };
+		A6EE351720A2CBF100C77EC8 /* Modify_Data_CSS.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Modify_Data_CSS.spr; sourceTree = "<group>"; };
+		A6EE351820A2CBF100C77EC8 /* Delete_Subscriber_CSS.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delete_Subscriber_CSS.spr; sourceTree = "<group>"; };
+		A6EE351920A2CBF100C77EC8 /* Ins_VCSG_Subs_Data_Stand_Alone_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ins_VCSG_Subs_Data_Stand_Alone_VLR.spr; sourceTree = "<group>"; };
+		A6EE351A20A2CBF100C77EC8 /* ATM_With_VLR_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATM_With_VLR_HLR.spr; sourceTree = "<group>"; };
+		A6EE351B20A2CBF100C77EC8 /* DTM_Stand_Alone_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = DTM_Stand_Alone_SGSN.spr; sourceTree = "<group>"; };
+		A6EE351C20A2CBF100C77EC8 /* .sdtfiles */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sdtfiles; sourceTree = "<group>"; };
+		A6EE351D20A2CBF100C77EC8 /* Delete_GPRS_Subscriber_Data_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Delete_GPRS_Subscriber_Data_HLR.smc; sourceTree = "<group>"; };
+		A6EE351E20A2CBF100C77EC8 /* Co_SDM_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_SDM_SGSN.spr; sourceTree = "<group>"; };
+		A6EE351F20A2CBF100C77EC8 /* Ins_Subs_Data_Stand_Alone_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ins_Subs_Data_Stand_Alone_SGSN.spr; sourceTree = "<group>"; };
+		A6EE352020A2CBF100C77EC8 /* DTM_With_VLR_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = DTM_With_VLR_HLR.spr; sourceTree = "<group>"; };
+		A6EE352120A2CBF100C77EC8 /* Ins_Subs_Data_Stand_Alone_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ins_Subs_Data_Stand_Alone_VLR.spr; sourceTree = "<group>"; };
+		A6EE352220A2CBF100C77EC8 /* DTM_Stand_Alone_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = DTM_Stand_Alone_VLR.spr; sourceTree = "<group>"; };
+		A6EE352320A2CBF100C77EC8 /* ATM_Stand_Alone_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATM_Stand_Alone_SGSN.spr; sourceTree = "<group>"; };
+		A6EE352420A2CBF100C77EC8 /* cancelLocation.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = cancelLocation.asn; sourceTree = "<group>"; };
+		A6EE352620A2CBF100C77EC8 /* Interrogate_SS_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Interrogate_SS_HLR.spr; sourceTree = "<group>"; };
+		A6EE352720A2CBF100C77EC8 /* Register_CC_Entry_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Register_CC_Entry_VLR.spr; sourceTree = "<group>"; };
+		A6EE352820A2CBF100C77EC8 /* Start_USSD_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Start_USSD_VLR.smc; sourceTree = "<group>"; };
+		A6EE352920A2CBF100C77EC8 /* 29002-630-22.sdt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-22.sdt"; sourceTree = "<group>"; };
+		A6EE352A20A2CBF100C77EC8 /* Register_SS_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Register_SS_VLR.spr; sourceTree = "<group>"; };
+		A6EE352B20A2CBF100C77EC8 /* Register_Password_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Register_Password_HLR.spr; sourceTree = "<group>"; };
+		A6EE352C20A2CBF100C77EC8 /* sdt.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = sdt.ini; sourceTree = "<group>"; };
+		A6EE352D20A2CBF100C77EC8 /* Register_SS_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Register_SS_HLR.spr; sourceTree = "<group>"; };
+		A6EE352E20A2CBF100C77EC8 /* Register_SS_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Register_SS_MSC.spr; sourceTree = "<group>"; };
+		A6EE352F20A2CBF100C77EC8 /* Start_USSD_HLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Start_USSD_HLR.smc; sourceTree = "<group>"; };
+		A6EE353020A2CBF100C77EC8 /* Register_CC_Entry_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Register_CC_Entry_HLR.spr; sourceTree = "<group>"; };
+		A6EE353120A2CBF100C77EC8 /* Interrogate_SS_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Interrogate_SS_VLR.spr; sourceTree = "<group>"; };
+		A6EE353220A2CBF100C77EC8 /* Note_SS_Invocation_gsmSCF.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Note_SS_Invocation_gsmSCF.spr; sourceTree = "<group>"; };
+		A6EE353320A2CBF100C77EC8 /* MS_INIT_USSD_gsmSCF_Secondary_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MS_INIT_USSD_gsmSCF_Secondary_HLR.spr; sourceTree = "<group>"; };
+		A6EE353420A2CBF100C77EC8 /* Activate_SS_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Activate_SS_MSC.spr; sourceTree = "<group>"; };
+		A6EE353520A2CBF100C77EC8 /* Activate_SS_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Activate_SS_HLR.spr; sourceTree = "<group>"; };
+		A6EE353620A2CBF100C77EC8 /* NI_USSD_gsmSCF_Secondary_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = NI_USSD_gsmSCF_Secondary_HLR.spr; sourceTree = "<group>"; };
+		A6EE353720A2CBF100C77EC8 /* Erase_CC_Entry_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Erase_CC_Entry_HLR.spr; sourceTree = "<group>"; };
+		A6EE353820A2CBF100C77EC8 /* SS_Coordinator_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SS_Coordinator_MSC.spr; sourceTree = "<group>"; };
+		A6EE353920A2CBF100C77EC8 /* Get_Password_MSC.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Get_Password_MSC.smc; sourceTree = "<group>"; };
+		A6EE353A20A2CBF100C77EC8 /* SS_Coordinator_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SS_Coordinator_HLR.spr; sourceTree = "<group>"; };
+		A6EE353B20A2CBF100C77EC8 /* .sdtfiles */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sdtfiles; sourceTree = "<group>"; };
+		A6EE353C20A2CBF100C77EC8 /* MS_Init_USSD_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MS_Init_USSD_HLR.spr; sourceTree = "<group>"; };
+		A6EE353D20A2CBF100C77EC8 /* MS_Init_USSD_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MS_Init_USSD_MSC.spr; sourceTree = "<group>"; };
+		A6EE353E20A2CBF100C77EC8 /* NW_Init_USSD_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = NW_Init_USSD_MSC.spr; sourceTree = "<group>"; };
+		A6EE353F20A2CBF100C77EC8 /* NW_Init_USSD_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = NW_Init_USSD_HLR.spr; sourceTree = "<group>"; };
+		A6EE354020A2CBF100C77EC8 /* 29002-630-22.sdt.state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-22.sdt.state"; sourceTree = "<group>"; };
+		A6EE354120A2CBF100C77EC8 /* Get_Password_VLR.smc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Get_Password_VLR.smc; sourceTree = "<group>"; };
+		A6EE354220A2CBF100C77EC8 /* NW_Init_USSD_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = NW_Init_USSD_VLR.spr; sourceTree = "<group>"; };
+		A6EE354320A2CBF100C77EC8 /* CC_Coordinator_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = CC_Coordinator_HLR.spr; sourceTree = "<group>"; };
+		A6EE354420A2CBF100C77EC8 /* MS_Init_USSD_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MS_Init_USSD_VLR.spr; sourceTree = "<group>"; };
+		A6EE354520A2CBF100C77EC8 /* Invoke_SS_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Invoke_SS_MSC.spr; sourceTree = "<group>"; };
+		A6EE354620A2CBF100C77EC8 /* Activate_SS_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Activate_SS_VLR.spr; sourceTree = "<group>"; };
+		A6EE354720A2CBF100C77EC8 /* Erase_CC_Entry_VLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Erase_CC_Entry_VLR.spr; sourceTree = "<group>"; };
+		A6EE354820A2CBF100C77EC8 /* Notify_SS_Invocation_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Notify_SS_Invocation_MSC.spr; sourceTree = "<group>"; };
+		A6EE354920A2CBF100C77EC8 /* 29002-Rel15-20-SDL.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "29002-Rel15-20-SDL.zip"; sourceTree = "<group>"; };
+		A6EE354B20A2CBF100C77EC8 /* ATSI_gsmSCF.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATSI_gsmSCF.spr; sourceTree = "<group>"; };
+		A6EE354C20A2CBF100C77EC8 /* ATM_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATM_HLR.spr; sourceTree = "<group>"; };
+		A6EE354D20A2CBF100C77EC8 /* ATM_gsmSCF.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATM_gsmSCF.spr; sourceTree = "<group>"; };
+		A6EE354E20A2CBF100C77EC8 /* ATI_To_GMLC_gsmSCF.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATI_To_GMLC_gsmSCF.spr; sourceTree = "<group>"; };
+		A6EE354F20A2CBF100C77EC8 /* sdt.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = sdt.ini; sourceTree = "<group>"; };
+		A6EE355020A2CBF100C77EC8 /* NSDC_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = NSDC_HLR.spr; sourceTree = "<group>"; };
+		A6EE355120A2CBF100C77EC8 /* NSDC_gsmSCF.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = NSDC_gsmSCF.spr; sourceTree = "<group>"; };
+		A6EE355220A2CBF100C77EC8 /* ATSI_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATSI_HLR.spr; sourceTree = "<group>"; };
+		A6EE355320A2CBF100C77EC8 /* 29002-630-24A.sdt.state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-24A.sdt.state"; sourceTree = "<group>"; };
+		A6EE355420A2CBF100C77EC8 /* ATI_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATI_HLR.spr; sourceTree = "<group>"; };
+		A6EE355520A2CBF100C77EC8 /* .sdtfiles */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sdtfiles; sourceTree = "<group>"; };
+		A6EE355620A2CBF100C77EC8 /* ATI_To_HLR_gsmSCF.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATI_To_HLR_gsmSCF.spr; sourceTree = "<group>"; };
+		A6EE355720A2CBF100C77EC8 /* 29002-630-24A.sdt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-24A.sdt"; sourceTree = "<group>"; };
+		A6EE355820A2CBF100C77EC8 /* Co_ATIH_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Co_ATIH_HLR.spr; sourceTree = "<group>"; };
+		A6EE355920A2CBF100C77EC8 /* ATI_GMLC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ATI_GMLC.spr; sourceTree = "<group>"; };
+		A6EE355A20A2CBF100C77EC8 /* 3GPP-TS-25.431-d00.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "3GPP-TS-25.431-d00.pdf"; sourceTree = "<group>"; };
+		A6EE355B20A2CBF100C77EC8 /* 29002-Rel15-25-SDL.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "29002-Rel15-25-SDL.zip"; sourceTree = "<group>"; };
+		A6EE355D20A2CBF100C77EC8 /* PSL_GMLC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = PSL_GMLC.spr; sourceTree = "<group>"; };
+		A6EE355E20A2CBF100C77EC8 /* SLR_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SLR_MSC.spr; sourceTree = "<group>"; };
+		A6EE355F20A2CBF100C77EC8 /* 29002-630-24B.sdt.state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-24B.sdt.state"; sourceTree = "<group>"; };
+		A6EE356020A2CBF100C77EC8 /* PSL_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = PSL_SGSN.spr; sourceTree = "<group>"; };
+		A6EE356120A2CBF100C77EC8 /* SRI_LCS_HLR.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SRI_LCS_HLR.spr; sourceTree = "<group>"; };
+		A6EE356220A2CBF100C77EC8 /* .sdtfiles */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sdtfiles; sourceTree = "<group>"; };
+		A6EE356320A2CBF100C77EC8 /* SRI_LCS_GMLC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SRI_LCS_GMLC.spr; sourceTree = "<group>"; };
+		A6EE356420A2CBF100C77EC8 /* SLR_GMLC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SLR_GMLC.spr; sourceTree = "<group>"; };
+		A6EE356520A2CBF100C77EC8 /* PSL_MSC.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = PSL_MSC.spr; sourceTree = "<group>"; };
+		A6EE356620A2CBF100C77EC8 /* SLR_SGSN.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = SLR_SGSN.spr; sourceTree = "<group>"; };
+		A6EE356720A2CBF100C77EC8 /* 29002-630-24B.sdt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-630-24B.sdt"; sourceTree = "<group>"; };
+		A6EE356920A2CBF100C77EC8 /* Performing_MAP_SSM.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Performing_MAP_SSM.spr; sourceTree = "<group>"; };
+		A6EE356A20A2CBF100C77EC8 /* Load_Ctrl.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Load_Ctrl.spr; sourceTree = "<group>"; };
+		A6EE356B20A2CBF100C77EC8 /* sdt.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = sdt.ini; sourceTree = "<group>"; };
+		A6EE356C20A2CBF100C77EC8 /* MAP_Stack.ssy */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAP_Stack.ssy; sourceTree = "<group>"; };
+		A6EE356D20A2CBF100C77EC8 /* MAP_DSM.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAP_DSM.spr; sourceTree = "<group>"; };
+		A6EE356E20A2CBF100C77EC8 /* 29002-730-15.sdt.state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-730-15.sdt.state"; sourceTree = "<group>"; };
+		A6EE356F20A2CBF100C77EC8 /* .sdtfiles */ = {isa = PBXFileReference; lastKnownFileType = text; path = .sdtfiles; sourceTree = "<group>"; };
+		A6EE357020A2CBF100C77EC8 /* MAP_Provider.sbk */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAP_Provider.sbk; sourceTree = "<group>"; };
+		A6EE357120A2CBF100C77EC8 /* 29002-730-15.sdt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "29002-730-15.sdt"; sourceTree = "<group>"; };
+		A6EE357220A2CBF100C77EC8 /* Requesting_MAP_SSM.spr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Requesting_MAP_SSM.spr; sourceTree = "<group>"; };
+		A6EE357320A2CBF100C77EC8 /* Process_Components.spd */ = {isa = PBXFileReference; lastKnownFileType = file; path = Process_Components.spd; sourceTree = "<group>"; };
+		A6EE357420A2CBF100C77EC8 /* 29002-Rel15-24B-SDL.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "29002-Rel15-24B-SDL.zip"; sourceTree = "<group>"; };
+		A6EE357520A2CBF100C77EC8 /* 3GPP-TS-29.016-a00 - General Packet Radio Service (GPRS); Serving GPRS Support Node (SGSN) - Visitors Location Register (VLR); Gs interface network service specification.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "3GPP-TS-29.016-a00 - General Packet Radio Service (GPRS); Serving GPRS Support Node (SGSN) - Visitors Location Register (VLR); Gs interface network service specification.pdf"; sourceTree = "<group>"; };
+		A6EE357620A2CBF100C77EC8 /* 29002-f10.pages */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29002-f10.pages"; sourceTree = "<group>"; };
+		A6EE357720A2CBF100C77EC8 /* 29002-f10.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "29002-f10.doc"; sourceTree = "<group>"; };
+		A6EE357820A2CBF100C77EC8 /* 29002-Rel15-19-SDL.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "29002-Rel15-19-SDL.zip"; sourceTree = "<group>"; };
+		A6EE357920A2CBF100C77EC8 /* 29002-Rel15-24A-SDL.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "29002-Rel15-24A-SDL.zip"; sourceTree = "<group>"; };
 		A6EE67181D3B6BE200211137 /* UMLayerGSMMAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UMLayerGSMMAP.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		A6EE67191D3B6BE200211137 /* UMLayerGSMMAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UMLayerGSMMAP.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		A6EE671A1D3B6BE200211137 /* UMGSMMAP_ZoneCodeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_ZoneCodeList.m; sourceTree = "<group>"; };
@@ -2782,6 +3105,7 @@
 		A641CED91B42019900854472 = {
 			isa = PBXGroup;
 			children = (
+				A6EE343B20A2CBF100C77EC8 /* doc */,
 				A6F694091B4E843B0090FC94 /* configure.in */,
 				A6ED5C6F1B435AF000854472 /* Frameworks */,
 				A6F6940A1B4E843B0090FC94 /* Makefile.linux.in */,
@@ -4103,6 +4427,14 @@
 				A6EE68671D3B6BE600211137 /* UMGSMMAP_RoutingInfoForSM_Arg.asn */,
 				A6EE68661D3B6BE600211137 /* UMGSMMAP_RoutingInfoForSM_Arg.h */,
 				A6EE68651D3B6BE500211137 /* UMGSMMAP_RoutingInfoForSM_Arg.m */,
+				A621711B20A2DC17008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.asn */,
+				A621710D20A2D48A008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.h */,
+				A621710E20A2D48A008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.m */,
+				A621711520A2D5DF008A7E70 /* UMGSMMAP_CorrelationID.asn */,
+				A621711120A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.h */,
+				A621711220A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.m */,
+				A621711720A2D643008A7E70 /* UMGSMMAP_SIP_URI.h */,
+				A621711820A2D643008A7E70 /* UMGSMMAP_SIP_URI.m */,
 				A6EE68641D3B6BE500211137 /* UMGSMMAP_RoutingInfoForSM_Res.h */,
 				A6EE68631D3B6BE500211137 /* UMGSMMAP_RoutingInfoForSM_Res.m */,
 				A6EE68621D3B6BE500211137 /* UMGSMMAP_RUF_Outcome.asn */,
@@ -4464,6 +4796,394 @@
 			path = /Library/Frameworks;
 			sourceTree = "<absolute>";
 		};
+		A6EE343B20A2CBF100C77EC8 /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE343C20A2CBF100C77EC8 /* 29002-f10.pdf */,
+				A6EE343D20A2CBF100C77EC8 /* 29002-Rel15-22-SDL.zip */,
+				A6EE343E20A2CBF100C77EC8 /* 3GPP-TS-27.001-810.pdf */,
+				A6EE343F20A2CBF100C77EC8 /* 3GPP-TS-49.031-d00.pdf */,
+				A6EE344020A2CBF100C77EC8 /* 29002-Rel15-23-SDL.zip */,
+				A6EE344120A2CBF100C77EC8 /* 29002-Rel15-15-SDL.zip */,
+				A6EE344220A2CBF100C77EC8 /* 29002-f10.pages.pdf */,
+				A6EE344320A2CBF100C77EC8 /* 3GPP-TS-23.032-d00.pdf */,
+				A6EE344420A2CBF100C77EC8 /* 29002-Rel15-23-SDL */,
+				A6EE346B20A2CBF100C77EC8 /* 29002-Rel15-21-SDL.zip */,
+				A6EE346C20A2CBF100C77EC8 /* 29002-630-25-SDL */,
+				A6EE34A720A2CBF100C77EC8 /* 29002-Rel15-21-SDL */,
+				A6EE34C620A2CBF100C77EC8 /* updateLocation.asn */,
+				A6EE34C720A2CBF100C77EC8 /* 29002-Rel15-19-SDL */,
+				A6EE350020A2CBF100C77EC8 /* 29002-630-20-SDL */,
+				A6EE352420A2CBF100C77EC8 /* cancelLocation.asn */,
+				A6EE352520A2CBF100C77EC8 /* 29002-630-22-SDL */,
+				A6EE354920A2CBF100C77EC8 /* 29002-Rel15-20-SDL.zip */,
+				A6EE354A20A2CBF100C77EC8 /* 29002-630-24A-SDL */,
+				A6EE355A20A2CBF100C77EC8 /* 3GPP-TS-25.431-d00.pdf */,
+				A6EE355B20A2CBF100C77EC8 /* 29002-Rel15-25-SDL.zip */,
+				A6EE355C20A2CBF100C77EC8 /* 29002-630-24B-SDL */,
+				A6EE356820A2CBF100C77EC8 /* 29002-Rel15-15-SDL */,
+				A6EE357420A2CBF100C77EC8 /* 29002-Rel15-24B-SDL.zip */,
+				A6EE357520A2CBF100C77EC8 /* 3GPP-TS-29.016-a00 - General Packet Radio Service (GPRS); Serving GPRS Support Node (SGSN) - Visitors Location Register (VLR); Gs interface network service specification.pdf */,
+				A6EE357620A2CBF100C77EC8 /* 29002-f10.pages */,
+				A6EE357720A2CBF100C77EC8 /* 29002-f10.doc */,
+				A6EE357820A2CBF100C77EC8 /* 29002-Rel15-19-SDL.zip */,
+				A6EE357920A2CBF100C77EC8 /* 29002-Rel15-24A-SDL.zip */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		A6EE344420A2CBF100C77EC8 /* 29002-Rel15-23-SDL */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE344520A2CBF100C77EC8 /* MT_SM_HLR.spr */,
+				A6EE344620A2CBF100C77EC8 /* Report_SM_Delivery_Stat_IPSMGW.smc */,
+				A6EE344720A2CBF100C77EC8 /* Report_SM_Delivery_Stat_HLR.smc */,
+				A6EE344820A2CBF100C77EC8 /* MT_SM_VMSC.spr */,
+				A6EE344920A2CBF100C77EC8 /* SM_Alert_VLR.spr */,
+				A6EE344A20A2CBF100C77EC8 /* Co_SM_GW_HLR.spr */,
+				A6EE344B20A2CBF100C77EC8 /* Page_SMS_SGSN.spd */,
+				A6EE344C20A2CBF100C77EC8 /* MT_SM_Delivery_Attempt_GMSC.spd */,
+				A6EE344D20A2CBF100C77EC8 /* MO_SM_MSC.spr */,
+				A6EE344E20A2CBF100C77EC8 /* SM_Alert_MSC.spr */,
+				A6EE344F20A2CBF100C77EC8 /* SM_Alert_HLR.spr */,
+				A6EE345020A2CBF100C77EC8 /* MT_SM_Transfer_MSC.smc */,
+				A6EE345120A2CBF100C77EC8 /* Report_SM_Delivery_Stat_GMSC.smc */,
+				A6EE345220A2CBF100C77EC8 /* sdt.ini */,
+				A6EE345320A2CBF100C77EC8 /* MO_SM_VLR.spr */,
+				A6EE345420A2CBF100C77EC8 /* SM_Delivery_Status_Report_HLR.spr */,
+				A6EE345520A2CBF100C77EC8 /* MT_SM_VLR.spr */,
+				A6EE345620A2CBF100C77EC8 /* MO_SM_SGSN.spr */,
+				A6EE345720A2CBF100C77EC8 /* 29002-850-23.sdt */,
+				A6EE345820A2CBF100C77EC8 /* SM_Delivery_Status_Report_IPSMGW.spr */,
+				A6EE345920A2CBF100C77EC8 /* MT_SM_IPSMGW.spr */,
+				A6EE345A20A2CBF100C77EC8 /* 29002-850-23.sdt.state */,
+				A6EE345B20A2CBF100C77EC8 /* Co_SMS_MSC.spr */,
+				A6EE345C20A2CBF100C77EC8 /* MO_SM_IWMSC.spr */,
+				A6EE345D20A2CBF100C77EC8 /* SM_Alert_SGSN.spr */,
+				A6EE345E20A2CBF100C77EC8 /* MT_SM_SMS_ROUTER.spr */,
+				A6EE345F20A2CBF100C77EC8 /* Perform_Relaying.spd */,
+				A6EE346020A2CBF100C77EC8 /* Search_SMS_SGSN.spd */,
+				A6EE346120A2CBF100C77EC8 /* MT_SM_Xfer_SGSN.smc */,
+				A6EE346220A2CBF100C77EC8 /* .sdtfiles */,
+				A6EE346320A2CBF100C77EC8 /* Alert_SC_IWMSC.spr */,
+				A6EE346420A2CBF100C77EC8 /* MT_SM_VGCS_GMSC.spr */,
+				A6EE346520A2CBF100C77EC8 /* MT_SM_GMSC.spr */,
+				A6EE346620A2CBF100C77EC8 /* MT_SM_Xfer_MSC.smc */,
+				A6EE346720A2CBF100C77EC8 /* Co_SMS_GW_HLR.spr */,
+				A6EE346820A2CBF100C77EC8 /* MT_SM_SGSN.spr */,
+				A6EE346920A2CBF100C77EC8 /* Check_Subscr_Identity_for_MT_SMS.smc */,
+				A6EE346A20A2CBF100C77EC8 /* MT_SM_VGCS_Anchor_MSC.spr */,
+			);
+			path = "29002-Rel15-23-SDL";
+			sourceTree = "<group>";
+		};
+		A6EE346C20A2CBF100C77EC8 /* 29002-630-25-SDL */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE346D20A2CBF100C77EC8 /* Wait_For_Insert_VCSG_Subs_Data_Cnf.smc */,
+				A6EE346E20A2CBF100C77EC8 /* Obtain_IMSI_VLR.smc */,
+				A6EE346F20A2CBF100C77EC8 /* Obtain_Authent_Sets_SGSN.spr */,
+				A6EE347020A2CBF100C77EC8 /* Send_Insert_VCSG_Subs_Data_CSS.spr */,
+				A6EE347120A2CBF100C77EC8 /* Authenticate_VLR.smc */,
+				A6EE347220A2CBF100C77EC8 /* Subscriber_Present_SGSN.spr */,
+				A6EE347320A2CBF100C77EC8 /* Obtain_Identity_VLR.smc */,
+				A6EE347420A2CBF100C77EC8 /* Check_IMEI_SGSN.spr */,
+				A6EE347520A2CBF100C77EC8 /* Check_IMEI_VLR.smc */,
+				A6EE347620A2CBF100C77EC8 /* Update_Location_Child_VLR.spr */,
+				A6EE347720A2CBF100C77EC8 /* Page_MSC.smc */,
+				A6EE347820A2CBF100C77EC8 /* Obtain_Authent_Sets_VLR.spr */,
+				A6EE347920A2CBF100C77EC8 /* Control_Tracing_With_SGSN_HLR.smc */,
+				A6EE347A20A2CBF100C77EC8 /* 29002-630-25.sdt */,
+				A6EE347B20A2CBF100C77EC8 /* Obtain_Authent_Sets_HLR.spr */,
+				A6EE347C20A2CBF100C77EC8 /* Check_IMEI_EIR.spr */,
+				A6EE347D20A2CBF100C77EC8 /* Activate_Tracing_VLR.smc */,
+				A6EE347E20A2CBF100C77EC8 /* Trace_Subscriber_Activity_SGSN.smc */,
+				A6EE347F20A2CBF100C77EC8 /* Wait_For_Insert_GPRS_Subs_Data_Cnf.smc */,
+				A6EE348020A2CBF100C77EC8 /* sdt.ini */,
+				A6EE348120A2CBF100C77EC8 /* Send_Insert_Subs_Data_HLR.spr */,
+				A6EE348220A2CBF100C77EC8 /* Receive_Open_Ind.smc */,
+				A6EE348320A2CBF100C77EC8 /* Obtain_IMSI_MSC.smc */,
+				A6EE348420A2CBF100C77EC8 /* Alert_Service_Centre_HLR.smc */,
+				A6EE348520A2CBF100C77EC8 /* Check_Available_Vectors.spd */,
+				A6EE348620A2CBF100C77EC8 /* Check_IMEI_MSC.smc */,
+				A6EE348720A2CBF100C77EC8 /* Control_Tracing_With_VLR_HLR.smc */,
+				A6EE348820A2CBF100C77EC8 /* Authenticate_MSC.smc */,
+				A6EE348920A2CBF100C77EC8 /* Obtain_Authent_Params_VLR.smc */,
+				A6EE348A20A2CBF100C77EC8 /* Wait_For_Insert_Subs_Data_Cnf.smc */,
+				A6EE348B20A2CBF100C77EC8 /* Report_Authentication_Failure_SGSN.spr */,
+				A6EE348C20A2CBF100C77EC8 /* Insert_VCSG_Subs_Data_Stand_Alone_CSS.spr */,
+				A6EE348D20A2CBF100C77EC8 /* Obtain_IMEI_VLR.smc */,
+				A6EE348E20A2CBF100C77EC8 /* Note_Authentication_Failure_HLR.spr */,
+				A6EE348F20A2CBF100C77EC8 /* Search_For_MS_MSC.smc */,
+				A6EE349020A2CBF100C77EC8 /* Insert_Subs_Data_VLR.smc */,
+				A6EE349120A2CBF100C77EC8 /* Obtain_Auth_Params_VLR.smc */,
+				A6EE349220A2CBF100C77EC8 /* Trace_Subscriber_Activity_VLR.smc */,
+				A6EE349320A2CBF100C77EC8 /* Receive_Open_Cnf.smc */,
+				A6EE349420A2CBF100C77EC8 /* 29002-630-25.sdt.state */,
+				A6EE349520A2CBF100C77EC8 /* Obtain_Auth_Sets_VLR.spr */,
+				A6EE349620A2CBF100C77EC8 /* .sdtfiles */,
+				A6EE349720A2CBF100C77EC8 /* Obtain_Auth_Sets_SGSN.spr */,
+				A6EE349820A2CBF100C77EC8 /* Process_Access_Request_VLR.smc */,
+				A6EE349920A2CBF100C77EC8 /* Obtain_Auth_Sets_HLR.spr */,
+				A6EE349A20A2CBF100C77EC8 /* Check_Reference.smc */,
+				A6EE349B20A2CBF100C77EC8 /* Trace_Subscriber_Activity_MSC.smc */,
+				A6EE349C20A2CBF100C77EC8 /* Activate_Tracing_SGSN.smc */,
+				A6EE349D20A2CBF100C77EC8 /* Insert_Subs_Data_SGSN.smc */,
+				A6EE349E20A2CBF100C77EC8 /* Subscriber_Present_VLR.spr */,
+				A6EE349F20A2CBF100C77EC8 /* Process_Access_Request_MSC.smc */,
+				A6EE34A020A2CBF100C77EC8 /* Check_Confirmation.smc */,
+				A6EE34A120A2CBF100C77EC8 /* Check_Indication.smc */,
+				A6EE34A220A2CBF100C77EC8 /* Insert_GPRS_Subs_Data_Stand_Alone_HLR.spr */,
+				A6EE34A320A2CBF100C77EC8 /* Alert_SC_HLR.spr */,
+				A6EE34A420A2CBF100C77EC8 /* Report_Authentication_Failure_VLR.spr */,
+				A6EE34A520A2CBF100C77EC8 /* Obtain_IMEI_MSC.smc */,
+				A6EE34A620A2CBF100C77EC8 /* Insert_Subs_Data_Stand_Alone_HLR.spr */,
+			);
+			path = "29002-630-25-SDL";
+			sourceTree = "<group>";
+		};
+		A6EE34A720A2CBF100C77EC8 /* 29002-Rel15-21-SDL */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE34A820A2CBF100C77EC8 /* Restore_Data_VLR.spr */,
+				A6EE34A920A2CBF100C77EC8 /* 29002-840-21.sdt.state */,
+				A6EE34AA20A2CBF100C77EC8 /* RCH_GMSC.spr */,
+				A6EE34AB20A2CBF100C77EC8 /* Release_Resources_GMSC.spr */,
+				A6EE34AC20A2CBF100C77EC8 /* PSI_VLR.spr */,
+				A6EE34AD20A2CBF100C77EC8 /* SRI_GMSC.spr */,
+				A6EE34AE20A2CBF100C77EC8 /* Set_Reporting_State_HLR.smc */,
+				A6EE34AF20A2CBF100C77EC8 /* Remote_User_Free_HLR.spr */,
+				A6EE34B020A2CBF100C77EC8 /* Set_Reporting_State_Stand_Alone_HLR.spr */,
+				A6EE34B120A2CBF100C77EC8 /* sdt.ini */,
+				A6EE34B220A2CBF100C77EC8 /* Remote_User_Free_VLR.spr */,
+				A6EE34B320A2CBF100C77EC8 /* 29002-840-21.sdt */,
+				A6EE34B420A2CBF100C77EC8 /* Set_Reporting_State_VLR.spr */,
+				A6EE34B520A2CBF100C77EC8 /* IST_Command_HLR.spr */,
+				A6EE34B620A2CBF100C77EC8 /* IST_Command_MSC.spr */,
+				A6EE34B720A2CBF100C77EC8 /* SRI_HLR.spr */,
+				A6EE34B820A2CBF100C77EC8 /* Receive_Status_Report_HLR.smc */,
+				A6EE34B920A2CBF100C77EC8 /* Group_Call_Info_Retrieval_MSC.spr */,
+				A6EE34BA20A2CBF100C77EC8 /* .sdtfiles */,
+				A6EE34BB20A2CBF100C77EC8 /* PRN_VLR.spr */,
+				A6EE34BC20A2CBF100C77EC8 /* Receive_Set_Reporting_State_VLR.smc */,
+				A6EE34BD20A2CBF100C77EC8 /* ASCI_Anchor_MSC.spr */,
+				A6EE34BE20A2CBF100C77EC8 /* Status_Report_HLR.spr */,
+				A6EE34BF20A2CBF100C77EC8 /* IST_Alert_HLR.spr */,
+				A6EE34C020A2CBF100C77EC8 /* IST_Alert_MSC.spr */,
+				A6EE34C120A2CBF100C77EC8 /* Release_Resources_VMSC.spr */,
+				A6EE34C220A2CBF100C77EC8 /* Send_Status_Report_VLR.spr */,
+				A6EE34C320A2CBF100C77EC8 /* RCH_VMSC.spr */,
+				A6EE34C420A2CBF100C77EC8 /* Reporting_Coord_VLR.spr */,
+				A6EE34C520A2CBF100C77EC8 /* ASCI_Relay_MSC.spr */,
+			);
+			path = "29002-Rel15-21-SDL";
+			sourceTree = "<group>";
+		};
+		A6EE34C720A2CBF100C77EC8 /* 29002-Rel15-19-SDL */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE34C820A2CBF100C77EC8 /* Send_Identification_PVLR.spr */,
+				A6EE34C920A2CBF100C77EC8 /* Send_Reset_To_VLR_HLR.spr */,
+				A6EE34CA20A2CBF100C77EC8 /* Cancel_GPRS_Location_HLR.spr */,
+				A6EE34CB20A2CBF100C77EC8 /* Update_VCSG_Location_CSS.spr */,
+				A6EE34CC20A2CBF100C77EC8 /* Receive_Error_From_HO_CA.smc */,
+				A6EE34CD20A2CBF100C77EC8 /* Cancel_Location_HLR.spr */,
+				A6EE34CE20A2CBF100C77EC8 /* Location_Management_Coordinator_HLR.spr */,
+				A6EE34CF20A2CBF100C77EC8 /* Insert_Subs_Data_Framed_HLR.smc */,
+				A6EE34D020A2CBF100C77EC8 /* Update_Location_VLR.spr */,
+				A6EE34D120A2CBF100C77EC8 /* Receive_Reset_VLR.spr */,
+				A6EE34D220A2CBF100C77EC8 /* Receive_Reset_From_CSS_SGSN.spr */,
+				A6EE34D320A2CBF100C77EC8 /* Restart_HLR.spr */,
+				A6EE34D420A2CBF100C77EC8 /* Update_Location_HLR.spr */,
+				A6EE34D520A2CBF100C77EC8 /* Cancel_VCSG_Location_SGSN.spr */,
+				A6EE34D620A2CBF100C77EC8 /* Notify_MM_Event_VLR_Or_SGSN.spr */,
+				A6EE34D720A2CBF100C77EC8 /* Handover_VLR_B.spr */,
+				A6EE34D820A2CBF100C77EC8 /* sdt.ini */,
+				A6EE34D920A2CBF100C77EC8 /* 29002-Rel11-19.sdt.state */,
+				A6EE34DA20A2CBF100C77EC8 /* Update_GPRS_Location_HLR.spr */,
+				A6EE34DB20A2CBF100C77EC8 /* Send_Reset_To_SGSN_CSS.spr */,
+				A6EE34DC20A2CBF100C77EC8 /* Cancel_VCSG_Location_CSS.spr */,
+				A6EE34DD20A2CBF100C77EC8 /* Update_GPRS_Location_HLR.spr.lck */,
+				A6EE34DE20A2CBF100C77EC8 /* Restore_Data_HLR.spr */,
+				A6EE34DF20A2CBF100C77EC8 /* Cancel_GPRS_Location_Child_HLR.spr */,
+				A6EE34E020A2CBF100C77EC8 /* 29002-Rel11-19.sdt */,
+				A6EE34E120A2CBF100C77EC8 /* Cancel_Location_VLR.spr */,
+				A6EE34E220A2CBF100C77EC8 /* Send_Identification_VLR.spr */,
+				A6EE34E320A2CBF100C77EC8 /* Cancel_Location_SGSN.spr */,
+				A6EE34E420A2CBF100C77EC8 /* Cancel_Location_SGSN.spr.lck */,
+				A6EE34E520A2CBF100C77EC8 /* Cancel_Location_VLR.spr.lck */,
+				A6EE34E620A2CBF100C77EC8 /* Receive_Reset_From_CSS_VLR.spr */,
+				A6EE34E720A2CBF100C77EC8 /* Send_Reset_To_SGSN_HLR.spr */,
+				A6EE34E820A2CBF100C77EC8 /* Insert_GPRS_Subs_Data_Framed_HLR.smc */,
+				A6EE34E920A2CBF100C77EC8 /* Notify_MM_Event_gsmSCF.spr */,
+				A6EE34EA20A2CBF100C77EC8 /* .sdtfiles */,
+				A6EE34EB20A2CBF100C77EC8 /* Purge_MS_HLR.spr */,
+				A6EE34EC20A2CBF100C77EC8 /* Purge_MS_HLR.spr.lck */,
+				A6EE34ED20A2CBF100C77EC8 /* Update_VCSG_Location_VLR.spr */,
+				A6EE34EE20A2CBF100C77EC8 /* Cancel_Location_HLR.spr.lck */,
+				A6EE34EF20A2CBF100C77EC8 /* Update_GPRS_Location_SGSN.spr */,
+				A6EE34F020A2CBF100C77EC8 /* Subscriber_Present_HLR.spr */,
+				A6EE34F120A2CBF100C77EC8 /* CSS_temporary.sli */,
+				A6EE34F220A2CBF100C77EC8 /* Handover_MSC_A.spr */,
+				A6EE34F320A2CBF100C77EC8 /* Purge_MS_VLR.spr */,
+				A6EE34F420A2CBF100C77EC8 /* Send_Reset_To_VLR_CSS.spr */,
+				A6EE34F520A2CBF100C77EC8 /* Purge_MS_SGSN.spr */,
+				A6EE34F620A2CBF100C77EC8 /* Handover_MSC_B.spr */,
+				A6EE34F720A2CBF100C77EC8 /* GPRS_Location_Update_Completion_VLR.smc */,
+				A6EE34F820A2CBF100C77EC8 /* Restart_CSS.spr */,
+				A6EE34F920A2CBF100C77EC8 /* GPRS_Update_Location_Area_VLR.spr */,
+				A6EE34FA20A2CBF100C77EC8 /* GPRS_Update_HLR_VLR.smc */,
+				A6EE34FB20A2CBF100C77EC8 /* Receive_Reset_SGSN.spr */,
+				A6EE34FC20A2CBF100C77EC8 /* Insert_VCSG_Subs_Data_Framed_CSS.smc */,
+				A6EE34FD20A2CBF100C77EC8 /* Update_VCSG_Location_SGSN.spr */,
+				A6EE34FE20A2CBF100C77EC8 /* Cancel_VCSG_Location_VLR.spr */,
+				A6EE34FF20A2CBF100C77EC8 /* Cancel_Location_Child_HLR.spr */,
+			);
+			path = "29002-Rel15-19-SDL";
+			sourceTree = "<group>";
+		};
+		A6EE350020A2CBF100C77EC8 /* 29002-630-20-SDL */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE350120A2CBF100C77EC8 /* 29002-630-20.sdt */,
+				A6EE350220A2CBF100C77EC8 /* Delete_VCSG_Subs_Data_CSS.smc */,
+				A6EE350320A2CBF100C77EC8 /* Co_Tracing_VLR.spr */,
+				A6EE350420A2CBF100C77EC8 /* Send_IMSI_VLR.spr */,
+				A6EE350520A2CBF100C77EC8 /* Co_Tracing_SGSN.spr */,
+				A6EE350620A2CBF100C77EC8 /* Co_SDM_VLR.spr */,
+				A6EE350720A2CBF100C77EC8 /* ATM_Stand_Alone_VLR.spr */,
+				A6EE350820A2CBF100C77EC8 /* 29002-630-20.sdt.state */,
+				A6EE350920A2CBF100C77EC8 /* Modify_Data_HLR.spr */,
+				A6EE350A20A2CBF100C77EC8 /* Send_IMSI_HLR.spr */,
+				A6EE350B20A2CBF100C77EC8 /* sdt.ini */,
+				A6EE350C20A2CBF100C77EC8 /* ATM_With_SGSN_HLR.spr */,
+				A6EE350D20A2CBF100C77EC8 /* Ins_VCSG_Subs_Data_Stand_Alone_SGSN.spr */,
+				A6EE350E20A2CBF100C77EC8 /* Delete_Subscriber_HLR.spr */,
+				A6EE350F20A2CBF100C77EC8 /* Co_CSG_SDM_VLR.spr */,
+				A6EE351020A2CBF100C77EC8 /* Co_CSG_SDM_SGSN.spr */,
+				A6EE351120A2CBF100C77EC8 /* Delete_Subs_Data_SGSN.spr */,
+				A6EE351220A2CBF100C77EC8 /* DTM_With_SGSN_HLR.spr */,
+				A6EE351320A2CBF100C77EC8 /* Delete_Subscriber_Data_HLR.smc */,
+				A6EE351420A2CBF100C77EC8 /* Delete_Subs_Data_VLR.spr */,
+				A6EE351520A2CBF100C77EC8 /* Delete_VCSG_Subs_Data_VLR.spr */,
+				A6EE351620A2CBF100C77EC8 /* Delete_VCSG_Subs_Data_SGSN.spr */,
+				A6EE351720A2CBF100C77EC8 /* Modify_Data_CSS.spr */,
+				A6EE351820A2CBF100C77EC8 /* Delete_Subscriber_CSS.spr */,
+				A6EE351920A2CBF100C77EC8 /* Ins_VCSG_Subs_Data_Stand_Alone_VLR.spr */,
+				A6EE351A20A2CBF100C77EC8 /* ATM_With_VLR_HLR.spr */,
+				A6EE351B20A2CBF100C77EC8 /* DTM_Stand_Alone_SGSN.spr */,
+				A6EE351C20A2CBF100C77EC8 /* .sdtfiles */,
+				A6EE351D20A2CBF100C77EC8 /* Delete_GPRS_Subscriber_Data_HLR.smc */,
+				A6EE351E20A2CBF100C77EC8 /* Co_SDM_SGSN.spr */,
+				A6EE351F20A2CBF100C77EC8 /* Ins_Subs_Data_Stand_Alone_SGSN.spr */,
+				A6EE352020A2CBF100C77EC8 /* DTM_With_VLR_HLR.spr */,
+				A6EE352120A2CBF100C77EC8 /* Ins_Subs_Data_Stand_Alone_VLR.spr */,
+				A6EE352220A2CBF100C77EC8 /* DTM_Stand_Alone_VLR.spr */,
+				A6EE352320A2CBF100C77EC8 /* ATM_Stand_Alone_SGSN.spr */,
+			);
+			path = "29002-630-20-SDL";
+			sourceTree = "<group>";
+		};
+		A6EE352520A2CBF100C77EC8 /* 29002-630-22-SDL */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE352620A2CBF100C77EC8 /* Interrogate_SS_HLR.spr */,
+				A6EE352720A2CBF100C77EC8 /* Register_CC_Entry_VLR.spr */,
+				A6EE352820A2CBF100C77EC8 /* Start_USSD_VLR.smc */,
+				A6EE352920A2CBF100C77EC8 /* 29002-630-22.sdt */,
+				A6EE352A20A2CBF100C77EC8 /* Register_SS_VLR.spr */,
+				A6EE352B20A2CBF100C77EC8 /* Register_Password_HLR.spr */,
+				A6EE352C20A2CBF100C77EC8 /* sdt.ini */,
+				A6EE352D20A2CBF100C77EC8 /* Register_SS_HLR.spr */,
+				A6EE352E20A2CBF100C77EC8 /* Register_SS_MSC.spr */,
+				A6EE352F20A2CBF100C77EC8 /* Start_USSD_HLR.smc */,
+				A6EE353020A2CBF100C77EC8 /* Register_CC_Entry_HLR.spr */,
+				A6EE353120A2CBF100C77EC8 /* Interrogate_SS_VLR.spr */,
+				A6EE353220A2CBF100C77EC8 /* Note_SS_Invocation_gsmSCF.spr */,
+				A6EE353320A2CBF100C77EC8 /* MS_INIT_USSD_gsmSCF_Secondary_HLR.spr */,
+				A6EE353420A2CBF100C77EC8 /* Activate_SS_MSC.spr */,
+				A6EE353520A2CBF100C77EC8 /* Activate_SS_HLR.spr */,
+				A6EE353620A2CBF100C77EC8 /* NI_USSD_gsmSCF_Secondary_HLR.spr */,
+				A6EE353720A2CBF100C77EC8 /* Erase_CC_Entry_HLR.spr */,
+				A6EE353820A2CBF100C77EC8 /* SS_Coordinator_MSC.spr */,
+				A6EE353920A2CBF100C77EC8 /* Get_Password_MSC.smc */,
+				A6EE353A20A2CBF100C77EC8 /* SS_Coordinator_HLR.spr */,
+				A6EE353B20A2CBF100C77EC8 /* .sdtfiles */,
+				A6EE353C20A2CBF100C77EC8 /* MS_Init_USSD_HLR.spr */,
+				A6EE353D20A2CBF100C77EC8 /* MS_Init_USSD_MSC.spr */,
+				A6EE353E20A2CBF100C77EC8 /* NW_Init_USSD_MSC.spr */,
+				A6EE353F20A2CBF100C77EC8 /* NW_Init_USSD_HLR.spr */,
+				A6EE354020A2CBF100C77EC8 /* 29002-630-22.sdt.state */,
+				A6EE354120A2CBF100C77EC8 /* Get_Password_VLR.smc */,
+				A6EE354220A2CBF100C77EC8 /* NW_Init_USSD_VLR.spr */,
+				A6EE354320A2CBF100C77EC8 /* CC_Coordinator_HLR.spr */,
+				A6EE354420A2CBF100C77EC8 /* MS_Init_USSD_VLR.spr */,
+				A6EE354520A2CBF100C77EC8 /* Invoke_SS_MSC.spr */,
+				A6EE354620A2CBF100C77EC8 /* Activate_SS_VLR.spr */,
+				A6EE354720A2CBF100C77EC8 /* Erase_CC_Entry_VLR.spr */,
+				A6EE354820A2CBF100C77EC8 /* Notify_SS_Invocation_MSC.spr */,
+			);
+			path = "29002-630-22-SDL";
+			sourceTree = "<group>";
+		};
+		A6EE354A20A2CBF100C77EC8 /* 29002-630-24A-SDL */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE354B20A2CBF100C77EC8 /* ATSI_gsmSCF.spr */,
+				A6EE354C20A2CBF100C77EC8 /* ATM_HLR.spr */,
+				A6EE354D20A2CBF100C77EC8 /* ATM_gsmSCF.spr */,
+				A6EE354E20A2CBF100C77EC8 /* ATI_To_GMLC_gsmSCF.spr */,
+				A6EE354F20A2CBF100C77EC8 /* sdt.ini */,
+				A6EE355020A2CBF100C77EC8 /* NSDC_HLR.spr */,
+				A6EE355120A2CBF100C77EC8 /* NSDC_gsmSCF.spr */,
+				A6EE355220A2CBF100C77EC8 /* ATSI_HLR.spr */,
+				A6EE355320A2CBF100C77EC8 /* 29002-630-24A.sdt.state */,
+				A6EE355420A2CBF100C77EC8 /* ATI_HLR.spr */,
+				A6EE355520A2CBF100C77EC8 /* .sdtfiles */,
+				A6EE355620A2CBF100C77EC8 /* ATI_To_HLR_gsmSCF.spr */,
+				A6EE355720A2CBF100C77EC8 /* 29002-630-24A.sdt */,
+				A6EE355820A2CBF100C77EC8 /* Co_ATIH_HLR.spr */,
+				A6EE355920A2CBF100C77EC8 /* ATI_GMLC.spr */,
+			);
+			path = "29002-630-24A-SDL";
+			sourceTree = "<group>";
+		};
+		A6EE355C20A2CBF100C77EC8 /* 29002-630-24B-SDL */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE355D20A2CBF100C77EC8 /* PSL_GMLC.spr */,
+				A6EE355E20A2CBF100C77EC8 /* SLR_MSC.spr */,
+				A6EE355F20A2CBF100C77EC8 /* 29002-630-24B.sdt.state */,
+				A6EE356020A2CBF100C77EC8 /* PSL_SGSN.spr */,
+				A6EE356120A2CBF100C77EC8 /* SRI_LCS_HLR.spr */,
+				A6EE356220A2CBF100C77EC8 /* .sdtfiles */,
+				A6EE356320A2CBF100C77EC8 /* SRI_LCS_GMLC.spr */,
+				A6EE356420A2CBF100C77EC8 /* SLR_GMLC.spr */,
+				A6EE356520A2CBF100C77EC8 /* PSL_MSC.spr */,
+				A6EE356620A2CBF100C77EC8 /* SLR_SGSN.spr */,
+				A6EE356720A2CBF100C77EC8 /* 29002-630-24B.sdt */,
+			);
+			path = "29002-630-24B-SDL";
+			sourceTree = "<group>";
+		};
+		A6EE356820A2CBF100C77EC8 /* 29002-Rel15-15-SDL */ = {
+			isa = PBXGroup;
+			children = (
+				A6EE356920A2CBF100C77EC8 /* Performing_MAP_SSM.spr */,
+				A6EE356A20A2CBF100C77EC8 /* Load_Ctrl.spr */,
+				A6EE356B20A2CBF100C77EC8 /* sdt.ini */,
+				A6EE356C20A2CBF100C77EC8 /* MAP_Stack.ssy */,
+				A6EE356D20A2CBF100C77EC8 /* MAP_DSM.spr */,
+				A6EE356E20A2CBF100C77EC8 /* 29002-730-15.sdt.state */,
+				A6EE356F20A2CBF100C77EC8 /* .sdtfiles */,
+				A6EE357020A2CBF100C77EC8 /* MAP_Provider.sbk */,
+				A6EE357120A2CBF100C77EC8 /* 29002-730-15.sdt */,
+				A6EE357220A2CBF100C77EC8 /* Requesting_MAP_SSM.spr */,
+				A6EE357320A2CBF100C77EC8 /* Process_Components.spd */,
+			);
+			path = "29002-Rel15-15-SDL";
+			sourceTree = "<group>";
+		};
 		A6EE67171D3B6B0E00211137 /* supporting-files */ = {
 			isa = PBXGroup;
 			children = (
@@ -4795,6 +5515,7 @@
 				A6EE6D8E1D3B6BFE00211137 /* UMGSMMAP_SupportedCamelPhases.h in Headers */,
 				A6EE6D411D3B6BFE00211137 /* UMGSMMAP_UnidentifiedSubParam.h in Headers */,
 				A6EE6EFA1D3B6BFE00211137 /* UMGSMMAP_PDP_Context.h in Headers */,
+				A621711D20A2DD53008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.h in Headers */,
 				A6EE6DF31D3B6BFE00211137 /* UMGSMMAP_SM_DeliveryOutcome.h in Headers */,
 				A6EE6EA01D3B6BFE00211137 /* UMGSMMAP_PurgeMS_Arg.h in Headers */,
 				A6EE72A51D3B6BFF00211137 /* UMGSMMAP_ActivateTraceModeArg.h in Headers */,
@@ -4856,6 +5577,7 @@
 				A6EE72331D3B6BFF00211137 /* UMGSMMAP_CallBarringCause.h in Headers */,
 				A6EE6FF71D3B6BFF00211137 /* UMGSMMAP_LocationNumber.h in Headers */,
 				A6EE6DD61D3B6BFE00211137 /* UMGSMMAP_SS_CSI.h in Headers */,
+				A621711920A2D643008A7E70 /* UMGSMMAP_SIP_URI.h in Headers */,
 				A6EE71E11D3B6BFF00211137 /* UMGSMMAP_CipheringAlgorithm.h in Headers */,
 				A69629B11D56CE6000211137 /* NSString+map.h in Headers */,
 				A6EE70DD1D3B6BFF00211137 /* UMGSMMAP_ForwardingFailedParam.h in Headers */,
@@ -4990,6 +5712,7 @@
 				A6EE70681D3B6BFF00211137 /* UMGSMMAP_InformServiceCentreArg.h in Headers */,
 				A6EE6E5F1D3B6BFE00211137 /* UMGSMMAP_ResponseTime.h in Headers */,
 				A6EE6D131D3B6BFE00211137 /* UMGSMMAP_UUI.h in Headers */,
+				A621711320A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.h in Headers */,
 				A69595AE1D7FA38E00211137 /* UMGSMMAP_CauseValue.h in Headers */,
 				A6EE6D161D3B6BFE00211137 /* UMGSMMAP_UU_Data.h in Headers */,
 				A6EE70771D3B6BFF00211137 /* UMGSMMAP_IMEI.h in Headers */,
@@ -5209,6 +5932,7 @@
 				A695956E1D7E9B3500211137 /* UMGSMMAP_ODB_Info.m in Sources */,
 				A60A54111D56B93D00211137 /* UMGSMMAP_Reason.m in Sources */,
 				A6EE70671D3B6BFF00211137 /* UMGSMMAP_InformServiceCentreArg.m in Sources */,
+				A621711A20A2D643008A7E70 /* UMGSMMAP_SIP_URI.m in Sources */,
 				A6EE72321D3B6BFF00211137 /* UMGSMMAP_CallBarringCause.m in Sources */,
 				A6EE70A91D3B6BFF00211137 /* UMGSMMAP_GPRSDataList.m in Sources */,
 				A6DD192C1FD94F4800DA43FA /* UMGSMMAP_Delimiter_Req_Task.m in Sources */,
@@ -5274,6 +5998,7 @@
 				A6EE6F081D3B6BFE00211137 /* UMGSMMAP_Or_NotAllowedParam.m in Sources */,
 				A6EE71E61D3B6BFF00211137 /* UMGSMMAP_CellIdOrLAI.m in Sources */,
 				A6EE6E251D3B6BFE00211137 /* UMGSMMAP_SendGroupCallEndSignalRes.m in Sources */,
+				A621711420A2D5AB008A7E70 /* UMGSMMAP_CorrelationID.m in Sources */,
 				A6EE6D371D3B6BFE00211137 /* UMGSMMAP_UnknownSubscriberParam.m in Sources */,
 				A695958E1D7F9F1C00211137 /* UMGSMMAP_RequestedCAMEL_SubscriptionInfo.m in Sources */,
 				A6EE6F7D1D3B6BFF00211137 /* UMGSMMAP_MS_Classmark2.m in Sources */,
@@ -5472,6 +6197,7 @@
 				A6EE701A1D3B6BFF00211137 /* UMGSMMAP_LCSClientName.m in Sources */,
 				A6EE726B1D3B6BFF00211137 /* UMGSMMAP_AuthenticationQuintuplet.m in Sources */,
 				A6EE6DEC1D3B6BFE00211137 /* UMGSMMAP_SM_RP_DA.m in Sources */,
+				A621711020A2D48A008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.m in Sources */,
 				A69595631D7E9B3500211137 /* UMGSMMAP_D_CSI.m in Sources */,
 				A6EE6E7B1D3B6BFE00211137 /* UMGSMMAP_RegisterSS_Arg.m in Sources */,
 				A6EE70FF1D3B6BFF00211137 /* UMGSMMAP_ExtensibleCallBarredParam.m in Sources */,
