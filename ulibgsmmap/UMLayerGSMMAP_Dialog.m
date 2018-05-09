@@ -1315,6 +1315,13 @@
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
 {
+    [mapUser executeMAP_U_Abort_Ind:self.userIdentifier
+                     callingAddress:src
+                      calledAddress:dst
+                    dialoguePortion:NULL
+                      transactionId:self.tcapTransactionId
+                remoteTransactionId:self.tcapRemoteTransactionId
+                            options:options];
     [self touch];
     self.dialogIsClosed = YES;
     self.dialogResponseRequired = NO;
