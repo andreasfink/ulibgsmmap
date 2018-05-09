@@ -1318,10 +1318,17 @@
     [mapUser executeMAP_U_Abort_Ind:self.userIdentifier
                      callingAddress:src
                       calledAddress:dst
-                    dialoguePortion:NULL
+                    dialoguePortion:xdialoguePortion
                       transactionId:self.tcapTransactionId
                 remoteTransactionId:self.tcapRemoteTransactionId
                             options:options];
+
+
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        NSString *s = [NSString stringWithFormat:@"GSMMAP-Dialog: tcapUAbortIndicationdialogPortion: %@ (%@)",xdialoguePortion,[xdialoguePortion className]];
+        [logFeed debugText:s];
+    }
     [self touch];
     self.dialogIsClosed = YES;
     self.dialogResponseRequired = NO;
