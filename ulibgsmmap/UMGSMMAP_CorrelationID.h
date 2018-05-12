@@ -11,7 +11,7 @@
 #import "UMGSMMAP_HLR_Id.h"
 #import "UMGSMMAP_SIP_URI.h"
 
-@interface UMGSMMAP_CorrelationID : UMASN1Sequence<UMGSMMAP_asn1_protocol>
+@interface UMGSMMAP_CorrelationID : UMASN1Sequence
 {
     UMGSMMAP_HLR_Id     *_hlr_id;
     UMGSMMAP_SIP_URI    *_sip_uri_A;
