@@ -9,7 +9,7 @@
 // the author.
 //
 #import "UMGSMMAP_Ext_SS_InfoList.h"
-
+#import "UMGSMMAP_Ext_SS_Info.h"
 @implementation UMGSMMAP_Ext_SS_InfoList
 
 @synthesize operationName;
@@ -44,9 +44,15 @@
 {
 	return @"Ext-SS-InfoList";
 }
+
 - (id) objectValue
 {
-	 return sequenceEntries;
+    NSMutableArray *a = [[NSMutableArray alloc]init];
+    for(UMGSMMAP_Ext_SS_Info *entry in sequenceEntries)
+    {
+        [a addObject:entry.objectValue];
+    }
+    return a;
 }
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
@@ -57,11 +63,17 @@
     return self;
 }
 
-- (void)addServices:(UMGSMMAP_Ext_SS_Info *)list
+- (void)addServices:(UMGSMMAP_Ext_SS_InfoList *)list
 {
-    for(id o in list.sequenceEntries)
+    for(UMGSMMAP_Ext_SS_Info *o in list.sequenceEntries)
     {
         [sequenceEntries addObject:o];
     }
 }
+
+- (void)addService:(UMGSMMAP_Ext_SS_Info *)o
+{
+    [sequenceEntries addObject:o];
+}
+
 @end

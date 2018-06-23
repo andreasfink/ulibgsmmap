@@ -10,6 +10,7 @@
 //
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
+@class UMGSMMAP_Ext_SS_Info;
 
 @interface UMGSMMAP_Ext_SS_InfoList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
@@ -23,7 +24,8 @@
 - (UMGSMMAP_Ext_SS_InfoList *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;
 - (id)objectValue;
-- (void)addServices:(UMGSMMAP_Ext_SS_Info *)list;
+- (void)addServices:(UMGSMMAP_Ext_SS_InfoList *)list;
+- (void)addService:(UMGSMMAP_Ext_SS_Info *)o;
 
 
 @end
