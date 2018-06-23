@@ -23,7 +23,7 @@
 - (UMGSMMAP_Ext_SS_InfoList *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;
 - (id)objectValue;
-- (void)addServices:(UMGSMMAP_Ext_SS_InfoList *)list;
+- (void)addServices:(UMGSMMAP_Ext_SS_Info *)list;
 
 
 @end

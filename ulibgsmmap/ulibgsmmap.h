@@ -271,7 +271,6 @@
 #import "UMGSMMAP_MessageWaitListFullParam.h"
 #import "UMGSMMAP_MonitoringMode.h"
 #import "UMGSMMAP_Msisdn.h"
-#import "UMGSMMAP_MySubscriberInfo.h"
 #import "UMGSMMAP_NAEA_CIC.h"
 #import "UMGSMMAP_NAEA_PreferredCI.h"
 #import "UMGSMMAP_NSAPI.h"

@@ -57,7 +57,7 @@
     return self;
 }
 
-- (void)addServices:(UMGSMMAP_Ext_SS_InfoList *)list
+- (void)addServices:(UMGSMMAP_Ext_SS_Info *)list
 {
     for(id o in list.sequenceEntries)
     {
