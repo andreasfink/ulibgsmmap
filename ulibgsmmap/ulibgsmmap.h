@@ -332,8 +332,6 @@
 #import "UMGSMMAP_ProvideSIWFSNumberRes.h"
 #import "UMGSMMAP_ProvideSubscriberInfoArg.h"
 #import "UMGSMMAP_ProvideSubscriberInfoRes.h"
-//#import "UMGSMMAP_ProvideSubscriberLocationArg.h"
-//#import "UMGSMMAP_ProvideSubscriberLocationRes.h"
 #import "UMGSMMAP_ProvideSubscriberLocation_Arg.h"
 #import "UMGSMMAP_ProvideSubscriberLocation_Res.h"
 #import "UMGSMMAP_PurgeMS_Arg.h"
