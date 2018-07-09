@@ -11,6 +11,7 @@
 
 #import <ulib/ulib.h>
 #import <XCTest/XCTest.h>
+#import "UMGSMMAP_SupportedCamelPhases.h"
 
 @interface ulibgsmmapTests : XCTestCase
 
@@ -40,4 +41,16 @@
     }];
 }
 
+
+- (void)testCamelPhases
+{
+    UMGSMMAP_SupportedCamelPhases *scp = [[UMGSMMAP_SupportedCamelPhases alloc]initWithString:@"1,2"];
+    NSData *d = [scp berEncoded];
+
+    NSString *hex = [d hexString];
+
+    BOOL b = [hex isEqualToString:@"030206C0"];
+    XCTAssert(b, @"CamelPhase encoding error");
+
+}
 @end

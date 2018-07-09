@@ -57,6 +57,69 @@
 		vlr_Capability.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[asn1_list addObject:vlr_Capability];
 	}
+
+    if(_informPreviousNetworkEntity)
+    {
+        UMASN1Null *n = [[UMASN1Null alloc]init];
+        n.asn1_tag.tagNumber = 11;
+        n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:n];
+    }
+
+
+    if(_cs_LCS_NotSupportedByUE)
+    {
+        UMASN1Null *n = [[UMASN1Null alloc]init];
+        n.asn1_tag.tagNumber = 12;
+        n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:n];
+    }
+
+    if(_v_gmlc_address)
+    {
+        _v_gmlc_address.asn1_tag.tagNumber = 2;
+        _v_gmlc_address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:_v_gmlc_address];
+    }
+
+    if(_add_info)
+    {
+        _add_info.asn1_tag.tagNumber = 13;
+        _add_info.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:_add_info];
+    }
+    if(_pagingArea)
+    {
+        _pagingArea.asn1_tag.tagNumber = 14;
+        _pagingArea.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:_pagingArea];
+    }
+    if(_skipSubscriberDataUpdate)
+    {
+        UMASN1Null *n = [[UMASN1Null alloc]init];
+        n.asn1_tag.tagNumber = 15;
+        n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:n];
+    }
+    if(_restorationIndicator)
+    {
+        UMASN1Null *n = [[UMASN1Null alloc]init];
+        n.asn1_tag.tagNumber = 16;
+        n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:n];
+    }
+    if(_eplmn_List)
+    {
+        _eplmn_List.asn1_tag.tagNumber = 3;
+        _eplmn_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:_add_info];
+    }
+    if(_mme_DiameterAddress)
+    {
+        _mme_DiameterAddress.asn1_tag.tagNumber = 3;
+        _mme_DiameterAddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [asn1_list addObject:_add_info];
+    }
 }
 
 
@@ -96,6 +159,52 @@
 			vlr_Capability = [[UMGSMMAP_VLR_Capability alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
 		}
+
+        else if((o) && (o.asn1_tag.tagNumber == 11) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _informPreviousNetworkEntity = YES;
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 12) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _cs_LCS_NotSupportedByUE = YES;
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _v_gmlc_address = [[UMGSMMAP_GSN_Address  alloc]initWithASN1Object:o context:context];
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 13) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _add_info = [[UMGSMMAP_ADD_Info alloc]initWithASN1Object:o context:context];
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 14) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _pagingArea = [[UMGSMMAP_PagingArea alloc]initWithASN1Object:o context:context];
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 15) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _skipSubscriberDataUpdate =YES;
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 16) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _restorationIndicator = YES;
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 3) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _eplmn_List  = [[UMGSMMAP_EPLMN_List alloc]initWithASN1Object:o context:context];
+            o = [self getObjectAtPosition:p++];
+        }
+        else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _mme_DiameterAddress = [[UMGSMMAP_NetworkNodeDiameterAddress alloc]initWithASN1Object:o context:context];
+            o = [self getObjectAtPosition:p++];
+        }
         else
         {
             o = [self getObjectAtPosition:p++];
@@ -135,6 +244,42 @@
 	{
 		dict[@"vlr-Capability"] = vlr_Capability.objectValue;
 	}
+    if(_informPreviousNetworkEntity)
+    {
+        dict[@"informPreviousNetworkEntity"] = @(YES);
+    }
+    if(_cs_LCS_NotSupportedByUE)
+    {
+        dict[@"cs-LCS-NotSupportedByUE"] = @(YES);
+    }
+    if(_v_gmlc_address)
+    {
+        dict[@"v-gmlc-Address"] = _v_gmlc_address.objectValue;
+    }
+    if(_add_info)
+    {
+        dict[@"add-info"] = _add_info.objectValue;
+    }
+    if(_pagingArea)
+    {
+        dict[@"pagingArea"] = _pagingArea.objectValue;
+    }
+    if(_skipSubscriberDataUpdate)
+    {
+        dict[@"skipSubscriberDataUpdate"] = @(YES);
+    }
+    if(_restorationIndicator)
+    {
+        dict[@"restorationIndicator"] = @(YES);
+    }
+    if(_eplmn_List)
+    {
+        dict[@"eplm-List"] = _eplmn_List.objectValue;
+    }
+    if(_mme_DiameterAddress)
+    {
+        dict[@"mme-DiameterAddress "] = _mme_DiameterAddress.objectValue;
+    }
 	return dict;
 }
 

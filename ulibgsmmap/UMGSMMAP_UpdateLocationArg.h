@@ -16,6 +16,11 @@
 #import "UMGSMMAP_LMSI.h"
 #import "UMGSMMAP_ExtensionContainer.h"
 #import "UMGSMMAP_VLR_Capability.h"
+#import "UMGSMMAP_GSN_Address.h"
+#import "UMGSMMAP_ADD_Info.h"
+#import "UMGSMMAP_EPLMN_List.h"
+#import "UMGSMMAP_NetworkNodeDiameterAddress.h"
+#import "UMGSMMAP_PagingArea.h"
 
 @interface UMGSMMAP_UpdateLocationArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
@@ -26,6 +31,17 @@
 	UMGSMMAP_LMSI *lmsi;
 	UMGSMMAP_ExtensionContainer *extensionContainer;
 	UMGSMMAP_VLR_Capability *vlr_Capability;
+
+
+    BOOL _informPreviousNetworkEntity;
+    BOOL _cs_LCS_NotSupportedByUE;
+    UMGSMMAP_GSN_Address *_v_gmlc_address;
+    UMGSMMAP_ADD_Info *_add_info;
+    UMGSMMAP_PagingArea *_pagingArea;
+    BOOL _skipSubscriberDataUpdate;
+    BOOL _restorationIndicator;
+    UMGSMMAP_EPLMN_List *_eplmn_List;
+    UMGSMMAP_NetworkNodeDiameterAddress *_mme_DiameterAddress;
 }
 @property(readwrite,strong)    NSString *operationName;
 
@@ -36,6 +52,16 @@
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
 @property(readwrite,strong)	UMGSMMAP_VLR_Capability *vlr_Capability;
 
+
+@property(readwrite,assign)    BOOL informPreviousNetworkEntity;
+@property(readwrite,assign)    BOOL cs_LCS_NotSupportedByUE;
+@property(readwrite,strong)    UMGSMMAP_GSN_Address *v_gmlc_address;
+@property(readwrite,strong)    UMGSMMAP_ADD_Info *add_info;
+@property(readwrite,strong)    UMGSMMAP_PagingArea *pagingArea;
+@property(readwrite,assign)    BOOL skipSubscriberDataUpdate;
+@property(readwrite,assign)    BOOL restorationIndicator;
+@property(readwrite,strong)    UMGSMMAP_EPLMN_List *eplmn_List;
+@property(readwrite,strong)    UMGSMMAP_NetworkNodeDiameterAddress *mme_DiameterAddress;
 
 - (void)processBeforeEncode;
 - (UMGSMMAP_UpdateLocationArg *)processAfterDecodeWithContext:(id)context;
