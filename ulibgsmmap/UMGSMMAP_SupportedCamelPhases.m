@@ -29,7 +29,9 @@
 
 - (UMGSMMAP_SupportedCamelPhases *)initWithString:(NSString *)str
 {
-    self = [super init];
+    const char bytes[1] = { 0 };
+    NSData *d = [NSData dataWithBytes:bytes length:1];
+    self = [super initWithValue:d bitcount:6];
     if(self)
     {
         NSCharacterSet *whitespace  = [NSCharacterSet whitespaceAndNewlineCharacterSet];
@@ -58,6 +60,5 @@
     }
     return self;
 }
-
 
 @end
