@@ -34,7 +34,8 @@
 	sequenceEntries = [[NSMutableArray alloc]init];
 	while(o)
 	{
-		[sequenceEntries addObject:o];
+        UMGSMMAP_Ext_SS_Info *ei = [[UMGSMMAP_Ext_SS_Info alloc]initWithASN1Object:o context:context];
+		[sequenceEntries addObject:ei];
 		o = [self getObjectAtPosition:p++];
 	}
 	return self;
