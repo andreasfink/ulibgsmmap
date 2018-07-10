@@ -13,14 +13,13 @@
 @implementation UMGSMMAP_DestinationNumberLengthList
 
 @synthesize operationName;
-@synthesize sequenceEntries;
 
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	[asn1_tag setTagIsConstructed];
 	asn1_list = [[NSMutableArray alloc]init];
-	for(id entry in sequenceEntries)
+	for(id entry in _sequenceEntries)
 	{
 		[asn1_list addObject:entry];
 	}
@@ -31,10 +30,11 @@
 {
 	int p=0;
 	UMASN1Object *o = [self getObjectAtPosition:p++];
-	sequenceEntries = [[NSMutableArray alloc]init];
+	_sequenceEntries = [[NSMutableArray alloc]init];
 	while(o)
 	{
-		[sequenceEntries addObject:o];
+        UMASN1Integer  *e = [[UMASN1Integer alloc]initWithASN1Object:o context:context];
+		[_sequenceEntries addObject:e];
 		o = [self getObjectAtPosition:p++];
 	}
 	return self;
@@ -45,9 +45,25 @@
 	return @"DestinationNumberLengthList";
 }
 
+
 - (id) objectValue
 {
-	 return sequenceEntries;
+    UMSynchronizedArray *arr = [[UMSynchronizedArray alloc]init];
+    for(UMASN1Integer *e in _sequenceEntries)
+    {
+        [arr addObject:e.objectValue];
+    }
+    return arr;
+}
+
+
+- (void)addEntry:(UMASN1Integer  *)e
+{
+    if(_sequenceEntries==NULL)
+    {
+        _sequenceEntries = [[NSMutableArray alloc]init];
+    }
+    [_sequenceEntries addObject:e];
 }
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode

@@ -10,11 +10,12 @@
 //
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
+#import "UMGSMMAP_AddressString.h"
 
 @interface UMGSMMAP_SS_EventSpecification : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	NSMutableArray *sequenceEntries;
+	NSMutableArray *_sequenceEntries;
 }
 @property(readwrite,strong)    NSString *operationName;
 @property(readwrite,strong)    NSMutableArray *sequenceEntries;
@@ -23,5 +24,6 @@
 - (UMGSMMAP_SS_EventSpecification *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;
 - (id)objectValue;
+- (void)addEntry:(UMGSMMAP_AddressString *)e;
 
 @end

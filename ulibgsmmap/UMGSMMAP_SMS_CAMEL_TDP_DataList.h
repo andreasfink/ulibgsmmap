@@ -10,11 +10,12 @@
 //
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
+#import "UMGSMMAP_SMS_CAMEL_TDP_Data.h"
 
 @interface UMGSMMAP_SMS_CAMEL_TDP_DataList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	NSMutableArray *sequenceEntries;
+	NSMutableArray *_sequenceEntries;
 }
 @property(readwrite,strong)    NSString *operationName;
 @property(readwrite,strong)    NSMutableArray *sequenceEntries;
@@ -27,5 +28,7 @@
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
+
+- (void)addEntry:(UMGSMMAP_SMS_CAMEL_TDP_Data *)e;
 
 @end

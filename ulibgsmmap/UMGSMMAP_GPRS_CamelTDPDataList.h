@@ -10,11 +10,12 @@
 //
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
+#import "UMGSMMAP_GPRS_CamelTDPData.h"
 
 @interface UMGSMMAP_GPRS_CamelTDPDataList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	NSMutableArray *sequenceEntries;
+	NSMutableArray *_sequenceEntries;
 }
 @property(readwrite,strong)    NSString *operationName;
 @property(readwrite,strong)    NSMutableArray *sequenceEntries;
@@ -23,6 +24,7 @@
 - (UMGSMMAP_GPRS_CamelTDPDataList *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;
 - (id)objectValue;
+- (void)addEntry:(UMGSMMAP_GPRS_CamelTDPData  *)e;
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop

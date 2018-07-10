@@ -10,11 +10,11 @@
 //
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
-
+#import "UMGSMMAP_PDP_ContextInfo.h"
 @interface UMGSMMAP_PDP_ContextInfoList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	NSMutableArray *sequenceEntries;
+	NSMutableArray *_sequenceEntries;
 }
 @property(readwrite,strong)    NSString *operationName;
 @property(readwrite,strong)    NSMutableArray *sequenceEntries;
@@ -23,5 +23,6 @@
 - (UMGSMMAP_PDP_ContextInfoList *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;
 - (id)objectValue;
+- (void)addEntry:(UMGSMMAP_PDP_ContextInfo  *)e;
 
 @end

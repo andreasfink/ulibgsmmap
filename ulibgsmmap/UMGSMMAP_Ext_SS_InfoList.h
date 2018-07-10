@@ -15,7 +15,7 @@
 @interface UMGSMMAP_Ext_SS_InfoList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	NSMutableArray *sequenceEntries;
+	NSMutableArray *_sequenceEntries;
 }
 @property(readwrite,strong)    NSString *operationName;
 @property(readwrite,strong)    NSMutableArray *sequenceEntries;
@@ -24,8 +24,6 @@
 - (UMGSMMAP_Ext_SS_InfoList *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;
 - (id)objectValue;
-- (void)addServices:(UMGSMMAP_Ext_SS_InfoList *)list;
-- (void)addService:(UMGSMMAP_Ext_SS_Info *)o;
-
+- (void)addEntry:(UMGSMMAP_Ext_SS_Info *)e;
 
 @end

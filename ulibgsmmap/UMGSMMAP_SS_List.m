@@ -14,10 +14,6 @@
 @implementation UMGSMMAP_SS_List
 
 @synthesize operationName;
-@synthesize sequenceEntries;
-
-
-
 
 - (void) processBeforeEncode
 {

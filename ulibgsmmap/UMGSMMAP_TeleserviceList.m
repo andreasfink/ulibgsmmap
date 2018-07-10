@@ -14,14 +14,13 @@
 @implementation UMGSMMAP_TeleserviceList
 
 @synthesize operationName;
-@synthesize sequenceEntries;
 
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	[asn1_tag setTagIsConstructed];
 	asn1_list = [[NSMutableArray alloc]init];
-	for(id entry in sequenceEntries)
+	for(id entry in _sequenceEntries)
 	{
 		[asn1_list addObject:entry];
 	}
@@ -32,11 +31,11 @@
 {
 	int p=0;
 	UMASN1Object *o = [self getObjectAtPosition:p++];
-	sequenceEntries = [[NSMutableArray alloc]init];
+	_sequenceEntries = [[NSMutableArray alloc]init];
 	while(o)
 	{
-        UMGSMMAP_Ext_TeleserviceCode *tsc = [[UMGSMMAP_Ext_TeleserviceCode alloc]initWithASN1Object:o context:context];
-		[sequenceEntries addObject:tsc];
+        UMGSMMAP_Ext_TeleserviceCode  *e = [[UMGSMMAP_Ext_TeleserviceCode alloc]initWithASN1Object:o context:context];
+		[_sequenceEntries addObject:e];
 		o = [self getObjectAtPosition:p++];
 	}
 	return self;
@@ -50,11 +49,21 @@
 - (id) objectValue
 {
     UMSynchronizedArray *arr = [[UMSynchronizedArray alloc]init];
-    for(UMGSMMAP_Ext_TeleserviceCode *tsc in sequenceEntries)
+    for(UMGSMMAP_Ext_TeleserviceCode *e in _sequenceEntries)
     {
-        [arr addObject:tsc.objectValue];
+        [arr addObject:e.objectValue];
     }
     return arr;
+}
+
+
+- (void)addEntry:(UMGSMMAP_Ext_TeleserviceCode  *)e
+{
+    if(_sequenceEntries==NULL)
+    {
+        _sequenceEntries = [[NSMutableArray alloc]init];
+    }
+    [_sequenceEntries addObject:e];
 }
 
 
@@ -71,7 +80,7 @@
 {
     for(id o in list.sequenceEntries)
     {
-        [sequenceEntries addObject:o];
+        [_sequenceEntries addObject:o];
     }
 }
 @end

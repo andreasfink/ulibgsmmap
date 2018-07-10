@@ -10,11 +10,12 @@
 //
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
+#import "UMGSMMAP_Ext_TeleserviceCode.h"
 
 @interface UMGSMMAP_TeleserviceList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	NSMutableArray *sequenceEntries;
+	NSMutableArray *_sequenceEntries;
 }
 @property(readwrite,strong)    NSString *operationName;
 @property(readwrite,strong)    NSMutableArray *sequenceEntries;
@@ -24,5 +25,6 @@
 - (NSString *)objectName;
 - (id)objectValue;
 - (void)addServices:(UMGSMMAP_TeleserviceList *)list;
+- (void)addEntry:(UMGSMMAP_Ext_TeleserviceCode  *)e;
 
 @end
