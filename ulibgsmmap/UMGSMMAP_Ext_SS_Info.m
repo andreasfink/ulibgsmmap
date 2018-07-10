@@ -163,19 +163,10 @@
 - (UMGSMMAP_Ext_SS_Info *) processAfterDecodeWithContext:(id)context
 {
 	int p=0;
-	UMASN1Object *o;
+	UMASN1Object *o = self;
 	BOOL isImplicit = YES;
-	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
-	{
-		isImplicit = NO;
-		o = [self getObjectAtPosition:p++];
-	}
-	else
-	{
-		o = self;
-	}
-	
-	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+
+    if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
 		forwardingInfo = [[UMGSMMAP_Ext_ForwInfo alloc]initWithASN1Object:o context:context];
 	}
