@@ -67,4 +67,14 @@
 {
     return self;
 }
+
+- (void)addEntry:(UMGSMMAP_SS_Code *)code
+{
+    if(_sequenceEntries==NULL)
+    {
+        _sequenceEntries = [[NSMutableArray alloc]init];
+    }
+    [_sequenceEntries addObject:code];
+}
+
 @end

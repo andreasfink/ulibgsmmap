@@ -10,6 +10,7 @@
 //
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
+#import "UMGSMMAP_SS_Code.h"
 
 @interface UMGSMMAP_SS_List : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
@@ -23,5 +24,6 @@
 - (UMGSMMAP_SS_List *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;
 - (id)objectValue;
+- (void)addEntry:(UMGSMMAP_SS_Code *)code;
 
 @end

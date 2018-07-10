@@ -9,6 +9,7 @@
 // the author.
 //
 #import "UMGSMMAP_TeleserviceList.h"
+#import "UMGSMMAP_Ext_TeleserviceCode.h"
 
 @implementation UMGSMMAP_TeleserviceList
 
@@ -34,7 +35,8 @@
 	sequenceEntries = [[NSMutableArray alloc]init];
 	while(o)
 	{
-		[sequenceEntries addObject:o];
+        UMGSMMAP_Ext_TeleserviceCode *tsc = [[UMGSMMAP_Ext_TeleserviceCode alloc]initWithASN1Object:o context:context];
+		[sequenceEntries addObject:tsc];
 		o = [self getObjectAtPosition:p++];
 	}
 	return self;
@@ -44,9 +46,15 @@
 {
 	return @"TeleserviceList";
 }
+
 - (id) objectValue
 {
-	 return sequenceEntries;
+    UMSynchronizedArray *arr = [[UMSynchronizedArray alloc]init];
+    for(UMGSMMAP_Ext_TeleserviceCode *tsc in sequenceEntries)
+    {
+        [arr addObject:tsc.objectValue];
+    }
+    return arr;
 }
 
 
