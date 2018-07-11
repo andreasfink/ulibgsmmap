@@ -1139,4 +1139,32 @@
     NSDictionary *d = [[NSDictionary alloc]init];
     return d;
 }
+
+- (SccpAddress *)dialogLocalSccpAddress:(UMGSMMAP_DialogIdentifier *)dialogId
+{
+    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+    return dialog.localAddress;
+}
+
+- (SccpAddress *)dialogRemoteSccpAddress:(UMGSMMAP_DialogIdentifier *)dialogId
+{
+    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+    return dialog.remoteAddress;
+}
+
+- (void)setDialogLocalSccpAddress:(UMGSMMAP_DialogIdentifier *)dialogId sccpAddress:(SccpAddress *)addr
+{
+    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+    dialog.localAddress = addr;
+
+}
+- (void)setDialogRemoteSccpAddress:(UMGSMMAP_DialogIdentifier *)dialogId sccpAddress:(SccpAddress *)addr
+{
+    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+    dialog.remoteAddress = addr;
+
+}
+
+SccpAddress *remoteAddress;
+
 @end

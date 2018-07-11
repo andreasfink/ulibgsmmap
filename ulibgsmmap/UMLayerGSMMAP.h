@@ -172,5 +172,11 @@
 - (void)housekeeping;
 - (UMGSMMAP_DialogIdentifier *)getNewUserDialogId;
 - (NSDictionary *)apiStatus;
+
+
+- (SccpAddress *)dialogLocalSccpAddress:(UMGSMMAP_DialogIdentifier *)dialogId;
+- (SccpAddress *)dialogRemoteSccpAddress:(UMGSMMAP_DialogIdentifier *)dialogId;
+- (void)setDialogLocalSccpAddress:(UMGSMMAP_DialogIdentifier *)dialogId sccpAddress:(SccpAddress *)addr;
+- (void)setDialogRemoteSccpAddress:(UMGSMMAP_DialogIdentifier *)dialogId sccpAddress:(SccpAddress *)addr;
 @end
 
