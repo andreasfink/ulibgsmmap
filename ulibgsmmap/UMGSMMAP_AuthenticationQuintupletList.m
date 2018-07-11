@@ -14,14 +14,13 @@
 @implementation UMGSMMAP_AuthenticationQuintupletList
 
 @synthesize operationName;
-@synthesize sequenceEntries;
 
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	[asn1_tag setTagIsConstructed];
 	asn1_list = [[NSMutableArray alloc]init];
-	for(id entry in sequenceEntries)
+	for(id entry in _sequenceEntries)
 	{
 		[asn1_list addObject:entry];
 	}
@@ -32,11 +31,11 @@
 {
 	int p=0;
 	UMASN1Object *o = [self getObjectAtPosition:p++];
-	sequenceEntries = [[NSMutableArray alloc]init];
+	_sequenceEntries = [[NSMutableArray alloc]init];
 	while(o)
 	{
         UMGSMMAP_AuthenticationQuintuplet *quintuplet = [[UMGSMMAP_AuthenticationQuintuplet alloc]initWithASN1Object:o context:context];
-        [sequenceEntries addObject:quintuplet];
+        [_sequenceEntries addObject:quintuplet];
 		o = [self getObjectAtPosition:p++];
 	}
 	return self;
@@ -50,13 +49,22 @@
 
 - (id) objectValue
 {
-    NSMutableArray *arr = [[NSMutableArray alloc]init];
-    NSUInteger n = [sequenceEntries count];
-    for(NSUInteger i=0;i<n;i++)
+    UMSynchronizedArray *arr = [[UMSynchronizedArray alloc]init];
+    for(UMGSMMAP_AuthenticationQuintuplet *e in _sequenceEntries)
     {
-        [arr addObject:[sequenceEntries[i] objectValue]];
+        [arr addObject:e.objectValue];
     }
     return arr;
+}
+
+
+- (void)addEntry:(UMGSMMAP_AuthenticationQuintuplet  *)e
+{
+    if(_sequenceEntries==NULL)
+    {
+        _sequenceEntries = [[NSMutableArray alloc]init];
+    }
+    [_sequenceEntries addObject:e];
 }
 
 

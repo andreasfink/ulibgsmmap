@@ -13,14 +13,13 @@
 @implementation UMGSMMAP_Ext_SS_InfoList
 
 @synthesize operationName;
-@synthesize sequenceEntries;
 
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	[asn1_tag setTagIsConstructed];
 	asn1_list = [[NSMutableArray alloc]init];
-	for(id entry in sequenceEntries)
+	for(id entry in _sequenceEntries)
 	{
 		[asn1_list addObject:entry];
 	}
@@ -31,11 +30,11 @@
 {
 	int p=0;
 	UMASN1Object *o = [self getObjectAtPosition:p++];
-	sequenceEntries = [[NSMutableArray alloc]init];
+	_sequenceEntries = [[NSMutableArray alloc]init];
 	while(o)
 	{
         UMGSMMAP_Ext_SS_Info *ei = [[UMGSMMAP_Ext_SS_Info alloc]initWithASN1Object:o context:context];
-		[sequenceEntries addObject:ei];
+		[_sequenceEntries addObject:ei];
 		o = [self getObjectAtPosition:p++];
 	}
 	return self;
@@ -49,11 +48,21 @@
 - (id) objectValue
 {
     NSMutableArray *a = [[NSMutableArray alloc]init];
-    for(UMGSMMAP_Ext_SS_Info *entry in sequenceEntries)
+    for(UMGSMMAP_Ext_SS_Info *entry in _sequenceEntries)
     {
         [a addObject:entry.objectValue];
     }
     return a;
+}
+
+
+- (void)addEntry:(UMGSMMAP_Ext_SS_Info *)e
+{
+    if(_sequenceEntries==NULL)
+    {
+        _sequenceEntries = [[NSMutableArray alloc]init];
+    }
+    [_sequenceEntries addObject:e];
 }
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
@@ -62,19 +71,6 @@
                                                withContext:(id)context
 {
     return self;
-}
-
-- (void)addServices:(UMGSMMAP_Ext_SS_InfoList *)list
-{
-    for(UMGSMMAP_Ext_SS_Info *o in list.sequenceEntries)
-    {
-        [sequenceEntries addObject:o];
-    }
-}
-
-- (void)addService:(UMGSMMAP_Ext_SS_Info *)o
-{
-    [sequenceEntries addObject:o];
 }
 
 @end

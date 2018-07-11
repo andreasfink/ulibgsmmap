@@ -13,14 +13,13 @@
 @implementation UMGSMMAP_T_CauseValueCriteria
 
 @synthesize operationName;
-@synthesize sequenceEntries;
 
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	asn1_tag.isConstructed=YES;
 	asn1_list = [[NSMutableArray alloc]init];
-	for(id entry in sequenceEntries)
+	for(id entry in _sequenceEntries)
 	{
 		[asn1_list addObject:entry];
 	}
@@ -31,10 +30,11 @@
 {
 	int p=0;
 	UMASN1Object *o = [self getObjectAtPosition:p++];
-	sequenceEntries = [[NSMutableArray alloc]init];
+	_sequenceEntries = [[NSMutableArray alloc]init];
 	while(o)
 	{
-		[sequenceEntries addObject:o];
+        UMGSMMAP_CauseValue  *e = [[UMGSMMAP_CauseValue alloc]initWithASN1Object:o context:context];
+		[_sequenceEntries addObject:e];
 		o = [self getObjectAtPosition:p++];
 	}
 	return self;
@@ -44,10 +44,29 @@
 {
 	return @"T-CauseValueCriteria";
 }
+
+
 - (id) objectValue
 {
-	 return sequenceEntries;
+    UMSynchronizedArray *arr = [[UMSynchronizedArray alloc]init];
+    for(UMGSMMAP_CauseValue *e in _sequenceEntries)
+    {
+        [arr addObject:e.objectValue];
+    }
+    return arr;
 }
+
+
+- (void)addEntry:(UMGSMMAP_CauseValue  *)e
+{
+    if(_sequenceEntries==NULL)
+    {
+        _sequenceEntries = [[NSMutableArray alloc]init];
+    }
+    [_sequenceEntries addObject:e];
+}
+
+
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop

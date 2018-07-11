@@ -75,6 +75,9 @@
 		A668F16D20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.h in Headers */ = {isa = PBXBuildFile; fileRef = A668F16B20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A668F16E20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.m in Sources */ = {isa = PBXBuildFile; fileRef = A668F16C20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.m */; };
 		A668F17020F3FF5F0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.asn in Resources */ = {isa = PBXBuildFile; fileRef = A668F16F20F3FF5E0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.asn */; };
+		A668F17720F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h in Headers */ = {isa = PBXBuildFile; fileRef = A668F17520F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A668F17820F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m in Sources */ = {isa = PBXBuildFile; fileRef = A668F17620F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m */; };
+		A668F17A20F49BD40002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.asn in Resources */ = {isa = PBXBuildFile; fileRef = A668F17920F49BD40002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.asn */; };
 		A679006F2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.h in Headers */ = {isa = PBXBuildFile; fileRef = A679006D2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A67900702046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.m in Sources */ = {isa = PBXBuildFile; fileRef = A679006E2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.m */; };
 		A67900732046F28C00A34B1E /* UMGSMMAP_UESBI_Iu.h in Headers */ = {isa = PBXBuildFile; fileRef = A67900712046F28C00A34B1E /* UMGSMMAP_UESBI_Iu.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1222,6 +1225,9 @@
 		A668F16B20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_PLMN_Id.h; sourceTree = "<group>"; };
 		A668F16C20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_PLMN_Id.m; sourceTree = "<group>"; };
 		A668F16F20F3FF5E0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_NetworkNodeDiameterAddress.asn; sourceTree = "<group>"; };
+		A668F17520F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_MT_SMS_TPDU_Type.h; sourceTree = "<group>"; };
+		A668F17620F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_MT_SMS_TPDU_Type.m; sourceTree = "<group>"; };
+		A668F17920F49BD40002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_MT_SMS_TPDU_Type.asn; sourceTree = "<group>"; };
 		A67900632046F1B500A34B1E /* UMGSMMAP_RequestedEquipmentInfo.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_RequestedEquipmentInfo.asn; sourceTree = "<group>"; };
 		A67900652046F1BD00A34B1E /* UMGSMMAP_UESBI_IuA.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_UESBI_IuA.asn; sourceTree = "<group>"; };
 		A67900662046F1BE00A34B1E /* UMGSMMAP_UESBI_IuB.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_UESBI_IuB.asn; sourceTree = "<group>"; };
@@ -3245,6 +3251,9 @@
 		A67BA1A71D86D5E9007FF9E5 /* asn1 */ = {
 			isa = PBXGroup;
 			children = (
+				A668F17920F49BD40002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.asn */,
+				A668F17520F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h */,
+				A668F17620F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m */,
 				A668F16B20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.h */,
 				A668F16C20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.m */,
 				A668F16F20F3FF5E0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.asn */,
@@ -5680,6 +5689,7 @@
 				A6EE72011D3B6BFF00211137 /* UMGSMMAP_CCBS_Data.h in Headers */,
 				A6EE6E7C1D3B6BFE00211137 /* UMGSMMAP_RegisterSS_Arg.h in Headers */,
 				A6EE70EC1D3B6BFF00211137 /* UMGSMMAP_FacilityNotSupParam.h in Headers */,
+				A668F17720F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h in Headers */,
 				A6EE6DE71D3B6BFE00211137 /* UMGSMMAP_SM_RP_OA.h in Headers */,
 				A6EE6CF11D3B6BFE00211137 /* UMGSMMAP_ZoneCode.h in Headers */,
 				A69EDF6D1DF71EB900E486B7 /* UMLayerGSMMAP_ErrorCode.h in Headers */,
@@ -5885,6 +5895,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A668F17020F3FF5F0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.asn in Resources */,
+				A668F17A20F49BD40002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.asn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6001,6 +6012,7 @@
 				A6EE6D121D3B6BFE00211137 /* UMGSMMAP_UUI.m in Sources */,
 				A6EE6DC21D3B6BFE00211137 /* UMGSMMAP_Ss_IncompatibilityCause.m in Sources */,
 				A65E028A2046F131005D14FF /* UMGSMMAP_RequestedEquipmentInfo.m in Sources */,
+				A668F17820F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m in Sources */,
 				A6EE6E191D3B6BFE00211137 /* UMGSMMAP_SendRoutingInfoForGprsArg.m in Sources */,
 				A6EE72A11D3B6BFF00211137 /* UMGSMMAP_ActivateTraceModeRes.m in Sources */,
 				A6EE70DF1D3B6BFF00211137 /* UMGSMMAP_ForwardingData.m in Sources */,
