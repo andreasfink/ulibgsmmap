@@ -1,0 +1,5 @@
+MT-SMS-TPDU-Type ::= ENUMERATED {
+sms-DELIVER     (0),
+sms-SUBMIT-REPORT     (1),
+sms-STATUS-REPORT     (2),
+... }

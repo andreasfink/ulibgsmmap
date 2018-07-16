@@ -1,0 +1,6 @@
+NetworkNodeDiameterAddress::= SEQUENCE {
+    diameter-Name     [0] DiameterIdentity,
+    diameter-Realm    [1] DiameterIdentity
+
+}
+

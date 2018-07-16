@@ -1,0 +1,7 @@
+ADD-Info ::= SEQUENCE {
+    imeisv                      [0] IMEI,
+    skipSubscriberDataUpdate    [1] NULL        OPTIONAL,
+    -- The skipSubscriberDataUpdate parameter in the UpdateLocationArg and the ADD-Info
+    -- structures carry the same semantic.
+    ...
+}
