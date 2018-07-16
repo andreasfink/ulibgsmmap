@@ -74,10 +74,8 @@
 		A668F16A20F3F9CE0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = A668F16820F3F9CE0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.m */; };
 		A668F16D20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.h in Headers */ = {isa = PBXBuildFile; fileRef = A668F16B20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A668F16E20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.m in Sources */ = {isa = PBXBuildFile; fileRef = A668F16C20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.m */; };
-		A668F17020F3FF5F0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.asn in Resources */ = {isa = PBXBuildFile; fileRef = A668F16F20F3FF5E0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.asn */; };
 		A668F17720F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h in Headers */ = {isa = PBXBuildFile; fileRef = A668F17520F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A668F17820F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m in Sources */ = {isa = PBXBuildFile; fileRef = A668F17620F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m */; };
-		A668F17A20F49BD40002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.asn in Resources */ = {isa = PBXBuildFile; fileRef = A668F17920F49BD40002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.asn */; };
 		A679006F2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.h in Headers */ = {isa = PBXBuildFile; fileRef = A679006D2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A67900702046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.m in Sources */ = {isa = PBXBuildFile; fileRef = A679006E2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.m */; };
 		A67900732046F28C00A34B1E /* UMGSMMAP_UESBI_Iu.h in Headers */ = {isa = PBXBuildFile; fileRef = A67900712046F28C00A34B1E /* UMGSMMAP_UESBI_Iu.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -5894,8 +5892,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A668F17020F3FF5F0002A48C /* UMGSMMAP_NetworkNodeDiameterAddress.asn in Resources */,
-				A668F17A20F49BD40002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.asn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
