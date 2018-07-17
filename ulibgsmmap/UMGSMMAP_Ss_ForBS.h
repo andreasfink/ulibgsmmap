@@ -17,8 +17,8 @@
 @interface UMGSMMAP_Ss_ForBS : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	UMGSMMAP_SS_Code *ss_Code;
-	UMGSMMAP_BasicServiceCode *basicService;
+	UMGSMMAP_SS_Code *_ss_Code;
+	UMGSMMAP_BasicServiceCode *_basicService;
 }
 @property(readwrite,strong)    NSString *operationName;
 

@@ -14,8 +14,6 @@
 
 
 @synthesize	operationName;
-@synthesize	ss_Code;
-@synthesize	basicService;
 
 
 - (void) processBeforeEncode
@@ -23,13 +21,13 @@
 	[super processBeforeEncode];
 	[asn1_tag setTagIsConstructed];
 	asn1_list = [[NSMutableArray alloc]init];
-	if(ss_Code)
+	if(_ss_Code)
 	{
-		[asn1_list addObject:ss_Code];
+		[asn1_list addObject:_ss_Code];
 	}
-	if(basicService)
+	if(_basicService)
 	{
-		[asn1_list addObject:basicService];
+		[asn1_list addObject:_basicService];
 	}
 }
 
@@ -40,12 +38,12 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if(o)
 	{
-		ss_Code = [[UMGSMMAP_SS_Code alloc]initWithASN1Object:o context:context];
+		_ss_Code = [[UMGSMMAP_SS_Code alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if(o)
 	{
-		basicService = [[UMGSMMAP_BasicServiceCode alloc]initWithASN1Object:o context:context];
+		_basicService = [[UMGSMMAP_BasicServiceCode alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	while(o)
@@ -63,13 +61,13 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(ss_Code)
+	if(_ss_Code)
 	{
-		dict[@"ss-Code"] = ss_Code.objectValue;
+		dict[@"ss-Code"] = _ss_Code.objectValue;
 	}
-	if(basicService)
+	if(_basicService)
 	{
-		dict[@"basicService"] = basicService.objectValue;
+		dict[@"basicService"] = _basicService.objectValue;
 	}
 	return dict;
 }

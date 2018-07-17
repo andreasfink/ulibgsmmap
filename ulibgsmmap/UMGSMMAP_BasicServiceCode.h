@@ -17,8 +17,8 @@
 @interface UMGSMMAP_BasicServiceCode : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	UMGSMMAP_BearerServiceCode *bearerService;
-	UMGSMMAP_TeleserviceCode *teleservice;
+	UMGSMMAP_BearerServiceCode  *_bearerService;
+	UMGSMMAP_TeleserviceCode    *_teleservice;
 }
 @property(readwrite,strong)    NSString *operationName;
 

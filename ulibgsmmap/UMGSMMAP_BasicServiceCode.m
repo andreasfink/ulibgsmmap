@@ -14,8 +14,6 @@
 
 
 @synthesize	operationName;
-@synthesize	bearerService;
-@synthesize	teleservice;
 
 
 - (void) processBeforeEncode
@@ -28,52 +26,52 @@
 		asn1_tag.isConstructed=YES;
 		asn1_list = [[NSMutableArray alloc]init];
 	}
-	if(bearerService)
+	if(_bearerService)
 	{
-		[bearerService processBeforeEncode];
+		[_bearerService processBeforeEncode];
 		if(isImplicit)
 		{
 			self.asn1_tag.tagNumber = 2;
 			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = bearerService.asn1_tag.isConstructed;
+			self.asn1_tag.isConstructed = _bearerService.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
-				self.asn1_list = [bearerService.asn1_list copy];
+				self.asn1_list = [_bearerService.asn1_list copy];
 			}
 			else
 			{
-				self.asn1_data = [bearerService.asn1_data copy];
+				self.asn1_data = [_bearerService.asn1_data copy];
 			}
 		}
 		else
 		{
-			bearerService.asn1_tag.tagNumber = 2;
-			bearerService.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:bearerService];
+			_bearerService.asn1_tag.tagNumber = 2;
+			_bearerService.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+			[asn1_list addObject:_bearerService];
 		}
 	}
-	else if(teleservice)
+	else if(_teleservice)
 	{
-		[teleservice processBeforeEncode];
+		[_teleservice processBeforeEncode];
 		if(isImplicit)
 		{
 			self.asn1_tag.tagNumber = 3;
 			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = teleservice.asn1_tag.isConstructed;
+			self.asn1_tag.isConstructed = _teleservice.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
-				self.asn1_list = [teleservice.asn1_list copy];
+				self.asn1_list = [_teleservice.asn1_list copy];
 			}
 			else
 			{
-				self.asn1_data = [teleservice.asn1_data copy];
+				self.asn1_data = [_teleservice.asn1_data copy];
 			}
 		}
 		else
 		{
-			teleservice.asn1_tag.tagNumber = 3;
-			teleservice.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:teleservice];
+			_teleservice.asn1_tag.tagNumber = 3;
+			_teleservice.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+			[asn1_list addObject:_teleservice];
 		}
 	}
 	else
@@ -102,11 +100,11 @@
 	
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		bearerService = [[UMGSMMAP_BearerServiceCode alloc]initWithASN1Object:o context:context];
+		_bearerService = [[UMGSMMAP_BearerServiceCode alloc]initWithASN1Object:o context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 3) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		teleservice = [[UMGSMMAP_TeleserviceCode alloc]initWithASN1Object:o context:context];
+		_teleservice = [[UMGSMMAP_TeleserviceCode alloc]initWithASN1Object:o context:context];
 	}
 	return self;
 }
@@ -118,13 +116,13 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(bearerService)
+	if(_bearerService)
 	{
-		dict[@"bearerService"] = bearerService.objectValue;
+		dict[@"bearerService"] = _bearerService.objectValue;
 	}
-	if(teleservice)
+	if(_teleservice)
 	{
-		dict[@"teleservice"] = teleservice.objectValue;
+		dict[@"teleservice"] = _teleservice.objectValue;
 	}
 	return dict;
 }
