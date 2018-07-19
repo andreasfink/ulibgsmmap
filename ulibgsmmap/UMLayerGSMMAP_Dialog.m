@@ -398,12 +398,20 @@
                  userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
 
 {
+    if(src)
+    {
+        localAddress = src;
+    }
+    if(dst)
+    {
+        remoteAddress = dst;
+    }
 
     if(self.logLevel <= UMLOG_DEBUG)
     {
         NSMutableString *s = [NSMutableString stringWithFormat:@"Dialog[%@]: MAP_Delimiter_Req:\n",self.userDialogId];
-        [s appendFormat:@"    callingAddress: %@\n",src.stringValueE164];
-        [s appendFormat:@"    calledAddress: %@\n",dst.stringValueE164];
+        [s appendFormat:@"    callingAddress: %@\n",localAddress.stringValueE164];
+        [s appendFormat:@"    calledAddress: %@\n",remoteAddress.stringValueE164];
         [s appendFormat:@"    result: %@\n",[result.objectValue jsonString]];
         [s appendFormat:@"    diagnostic: %@\n",[result_source_diagnostic.objectValue jsonString]];
         [s appendFormat:@"    userInfo: %@\n",[xuserInfo.objectValue jsonString]];
@@ -472,14 +480,6 @@
             itu_dialoguePortion.dialogResponse.result = result;
             itu_dialoguePortion.dialogResponse.result_source_diagnostic = result_source_diagnostic;
         }
-        if(src)
-        {
-            localAddress = src;
-        }
-        if(dst)
-        {
-            remoteAddress = dst;
-        }
         if(self.logLevel <= UMLOG_DEBUG)
         {
             NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"calling tcapContinueRequest"];
@@ -544,11 +544,19 @@
            diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
              userInfo:(UMTCAP_asn1_userInformation *)userInfo
 {
+    if(src)
+    {
+        localAddress = src;
+    }
+    if(dst)
+    {
+        remoteAddress = dst;
+    }
     if(self.logLevel <= UMLOG_DEBUG)
     {
         NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"Dialog[%@]: MAP_Close_Req\n",self.userDialogId];
-        [s appendFormat: @"\tcallingAddress: %@",src.stringValueE164];
-        [s appendFormat: @"\tcalledAddress: %@",dst.stringValueE164];
+        [s appendFormat: @"\tcallingAddress: %@",localAddress.stringValueE164];
+        [s appendFormat: @"\tcalledAddress: %@",remoteAddress.stringValueE164];
         [self.logFeed debugText:s];
     }
 
