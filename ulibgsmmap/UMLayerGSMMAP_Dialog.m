@@ -661,9 +661,15 @@
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
 
-    /* update the GT's based on the response */
+    /* update the GT's based on the response but keep the translation types */
+    int tt = self.remoteAddress.tt.tt;
     self.remoteAddress = src;
+    self.remoteAddress.tt.tt = tt;
+    
+    tt = self.localAddress.tt.tt;
     self.localAddress = dst;
+    self.localAddress.tt.tt = tt;
+
     [mapUser executeMAP_Delimiter_Ind:userIdentifier
                                dialog:dialogId
                        callingAddress:src
