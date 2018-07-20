@@ -54,6 +54,7 @@
     BOOL    _dialogResponseRequired;
     BOOL    _dialogIsClosed;
     BOOL    _dialogShallClose;
+    BOOL    _tcapContinueSeen;
 }
 
 #pragma mark -
@@ -83,6 +84,7 @@
 @property(readwrite,assign,atomic) BOOL    dialogIsClosed;
 @property(readwrite,assign,atomic) BOOL    dialogShallClose;
 @property(readwrite,assign,atomic) UMLogLevel logLevel;
+@property(readwrite,assign,atomic) BOOL tcapContinueSeen;
 
 - (NSTimeInterval)timeoutInSeconds;
 - (void)setTimeoutInSeconds:(NSTimeInterval)to;
