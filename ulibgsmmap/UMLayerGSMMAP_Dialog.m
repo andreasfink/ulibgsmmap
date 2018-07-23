@@ -48,8 +48,8 @@
     }
     else if(to >=120.0)
     {
-        NSLog(@"GSMMAP Dialog Timeout is above 120s. Setting it to 70s");
-        to = 70.0;
+        NSLog(@"GSMMAP Dialog Timeout is above 120s. Setting it to 120s");
+        to = 120.0;
     }
     _timeoutInSeconds = to;
 }
