@@ -661,9 +661,7 @@
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
 
-    /* update the GT's based on the response */
-    self.remoteAddress = src;
-    self.localAddress = dst;
+
     [mapUser executeMAP_Delimiter_Ind:userIdentifier
                                dialog:dialogId
                        callingAddress:src
@@ -1470,6 +1468,7 @@
     [s appendFormat:@"    timeoutInSeconds: %8.2lfs\n",self.timeoutInSeconds];
     [s appendFormat:@"    startDate: %@\n",[_startDate description]];
     [s appendFormat:@"    lastActivity: %@\n",[_lastActivity description]];
+    [s appendFormat:@"    tcapContinueSeen: %@\n",@(_tcapContinueSeen)];
     [filehandler writeData: [s dataUsingEncoding:NSUTF8StringEncoding]];
 }
 

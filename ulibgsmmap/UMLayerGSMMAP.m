@@ -215,8 +215,21 @@
         {
             dialog.tcapRemoteTransactionId = xremoteTransactionId;
         }
-        dialog.remoteAddress = src;
-        dialog.localAddress = dst;
+        /* we must set local addresses/remote addresses here because when processing components this info might already be needed */
+        if(dialog.tcapContinueSeen == NO)
+        {
+            /* this is the first tcap continue so we take over the remote address for it */
+            /* update the GT's based on the response but keep the translation types */
+            int tt = dialog.remoteAddress.tt.tt;
+            dialog.remoteAddress = src;
+            dialog.remoteAddress.tt.tt = tt;
+            
+            tt = dialog.localAddress.tt.tt;
+            dialog.localAddress = dst;
+            dialog.localAddress.tt.tt = tt;
+            
+            dialog.tcapContinueSeen=YES;
+        }
         [dialog MAP_ProcessComponents:components
                               options:options
                               willEnd:NO];
