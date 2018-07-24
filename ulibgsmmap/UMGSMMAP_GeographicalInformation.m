@@ -64,7 +64,7 @@
             longitude  = bytes[4] << 16;
             longitude |= bytes[5] << 8;
             longitude |= bytes[6];
-            uncertainity_code = bytes[8] & 0x7F;
+            uncertainity_code = bytes[7] & 0x7F;
             double lat = 93206.75555555555556 * latitiude; /* 2 ^ 23 / 90 */
             if(sign)
             {
@@ -84,6 +84,32 @@
     return dict;
 }
 
-/*ellipsoid point with uncertainty circle */
+- (void) setEllipsoidPointwithLatitude:(double)latitude
+                             longitude:(double)longitude
+                      uncertanity_code:(int)uncertainity_code
+{
+    long long lat = 93206.75555555555556 / latitude;
+    if(longitude<0.0)
+    {
+        longitude = longitude + 360.0;
+    }
+    long long lon = 46603.37777777777778 / longitude;
+    int sign = 0;
+    if(lat < 0)
+    {
+        sign = 1;
+        lat = -lat;
+    }
+    uint8_t bytes[8];
+    bytes[0] = 0x01; /* Ellipsoid point with uncertainty Circle */
+    bytes[1] = ((lat >> 16 ) & 0x7F) | (sign ? 0x80 : 0x00);
+    bytes[2] = (lat >> 8) & 0xFF;
+    bytes[3] = (lat >> 0) & 0xFF;
+    bytes[4] = (lon >> 16 ) & 0xFF;
+    bytes[5] = (lon >> 8) & 0xFF;
+    bytes[6] = (lon >> 0) & 0xFF;
+    bytes[7] = uncertainity_code & 0x7F;
+    asn1_data = [NSData dataWithBytes:&bytes length:sizeof(bytes)];
+}
 
 @end

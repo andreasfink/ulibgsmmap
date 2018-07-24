@@ -17,4 +17,8 @@
 }
 @property(readwrite,strong)    NSString *operationName;
 
+
+- (void) setEllipsoidPointwithLatitude:(double)latitude
+                             longitude:(double)longitude
+                      uncertanity_code:(int)uncertainity_code;
 @end
