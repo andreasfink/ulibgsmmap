@@ -182,7 +182,8 @@
     self.applicationContext = appContext;
     self.requestUserInfo = xuserInfo;
     self.userIdentifier = xuserIdentifier;
-
+    self.outboundOptions = xoptions;
+    
     if((appContext) || (xuserInfo))
     {
         self.dialogRequestRequired=YES;
@@ -454,7 +455,6 @@
             NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"calling tcapBeginRequest"];
             [self.logFeed debugText:s];
         }
-
         [tcapLayer tcapBeginRequest:tcapTransactionId
                        userDialogId:userDialogId
                             variant:self.variant

@@ -42,7 +42,7 @@
     NSTimeInterval _timeoutInSeconds;
     NSDate *_startDate;
     UMAtomicDate *_lastActivity;
-
+    NSDictionary *_outboundOptions;
     UMTCAP_Variant variant;
     UMSynchronizedArray *pendingOutgoingComponents;
     UMSynchronizedArray *pendingIncomingComponents;
@@ -71,6 +71,7 @@
 @property(readwrite,strong) UMTCAP_asn1_userInformation *requestUserInfo;
 @property(readwrite,strong) UMTCAP_asn1_userInformation *responseUserInfo;
 @property(readwrite,strong) UMTCAP_asn1_objectIdentifier *responseApplicationContext;
+@property(readwrite,strong) NSDictionary *outboundOptions;
 
 @property(readwrite,strong) UMASN1BitString *dialogProtocolVersion;
 @property(readwrite,strong,atomic) SccpAddress *localAddress;
