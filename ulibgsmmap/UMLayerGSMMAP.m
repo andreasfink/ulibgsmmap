@@ -1092,7 +1092,7 @@
 
 - (NSString *)status
 {
-    return [NSString stringWithFormat:@"IS:%lu",[dialogs count]];
+    return [NSString stringWithFormat:@"IS:%lu",(unsigned long)[dialogs count]];
 }
 
 - (void)housekeepingTask
