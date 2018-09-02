@@ -24,30 +24,30 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(callBarringFeatureList)
 	{
-		[asn1_list addObject:callBarringFeatureList];
+		[_asn1_list addObject:callBarringFeatureList];
 	}
 	if(password)
 	{
-		[asn1_list addObject:password];
+		[_asn1_list addObject:password];
 	}
 	if(wrongPasswordAttemptsCounter)
 	{
-		[asn1_list addObject:wrongPasswordAttemptsCounter];
+		[_asn1_list addObject:wrongPasswordAttemptsCounter];
 	}
 	if(notificationToCSE)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = -1;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

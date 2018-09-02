@@ -35,19 +35,19 @@ if(var == NULL) \
 }
 
 
-#define ADD_MANDATORY_PARAMETER(asn1_list,var) \
+#define ADD_MANDATORY_PARAMETER(_asn1_list,var) \
 if(var == NULL) \
 { \
     @throw([NSException exceptionWithName:@"PARAMETER_MISSING"\
                                    reason:@"#var is mandatory"\
                                  userInfo:@{    @"backtrace":   UMBacktrace(NULL,0) }]);\
-    [asn1_list addObject:var]; \
+    [_asn1_list addObject:var]; \
 }
 
-#define ADD_OPTIONAL_PARAMETER(asn1_list,var) \
+#define ADD_OPTIONAL_PARAMETER(_asn1_list,var) \
 if(var != NULL) \
 { \
-    [asn1_list addObject:var]; \
+    [_asn1_list addObject:var]; \
 }
 
 

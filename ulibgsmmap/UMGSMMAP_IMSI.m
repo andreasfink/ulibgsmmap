@@ -72,7 +72,7 @@ static inline int nibbleToInt(const char a)
         c = nibbleToInt(a)<<4 | nibbleToInt(b);
         [out appendBytes:&c length:1];
     }
-    asn1_data = out;
+    _asn1_data = out;
 }
 
 - (NSString *)stringValue
@@ -82,8 +82,8 @@ static inline int nibbleToInt(const char a)
     uint8_t c1;
     uint8_t c2;
     
-    const uint8_t *bytes = asn1_data.bytes;
-    NSUInteger n = asn1_data.length;
+    const uint8_t *bytes = _asn1_data.bytes;
+    NSUInteger n = _asn1_data.length;
     
     for(NSUInteger i=0;i<n;i++)
     {

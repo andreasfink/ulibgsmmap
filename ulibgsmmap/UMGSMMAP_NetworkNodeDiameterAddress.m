@@ -15,13 +15,13 @@
 - (void) processBeforeEncode
 {
     [super processBeforeEncode];
-    asn1_tag.isConstructed=YES;
-    asn1_list = [[NSMutableArray alloc]init];
+    _asn1_tag.isConstructed=YES;
+    _asn1_list = [[NSMutableArray alloc]init];
     if(_diameter_Name)
     {
         _diameter_Name.asn1_tag.tagNumber = 0;
         _diameter_Name.asn1_tag.tagClass =UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_diameter_Name];
+        [_asn1_list addObject:_diameter_Name];
     }
     else
     {
@@ -33,7 +33,7 @@
     {
         _diameter_Realm.asn1_tag.tagNumber = 1;
         _diameter_Realm.asn1_tag.tagClass =UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_diameter_Realm];
+        [_asn1_list addObject:_diameter_Realm];
     }
     else
     {

@@ -21,15 +21,15 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(unknownSubscriberDiagnostic)
 	{
-		[asn1_list addObject:unknownSubscriberDiagnostic];
+		[_asn1_list addObject:unknownSubscriberDiagnostic];
 	}
 }
 

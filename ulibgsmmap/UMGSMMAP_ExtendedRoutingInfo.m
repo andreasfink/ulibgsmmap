@@ -25,8 +25,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(routingInfo)
 	{
@@ -47,7 +47,7 @@
 		}
 		else
 		{
-			[asn1_list addObject:routingInfo];
+			[_asn1_list addObject:routingInfo];
 		}
 	}
 	else if(camelRoutingInfo)
@@ -71,7 +71,7 @@
 		{
 			camelRoutingInfo.asn1_tag.tagNumber = 8;
 			camelRoutingInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:camelRoutingInfo];
+			[_asn1_list addObject:camelRoutingInfo];
 		}
 	}
 	else

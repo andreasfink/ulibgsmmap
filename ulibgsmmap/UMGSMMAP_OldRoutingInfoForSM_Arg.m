@@ -26,48 +26,48 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(msisdn)
 	{
 		msisdn.asn1_tag.tagNumber = 0;
 		msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:msisdn];
+		[_asn1_list addObject:msisdn];
 	}
 	if(sm_RP_PRI)
 	{
 		sm_RP_PRI.asn1_tag.tagNumber = 1;
 		sm_RP_PRI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:sm_RP_PRI];
+		[_asn1_list addObject:sm_RP_PRI];
 	}
 	if(serviceCentreAddress)
 	{
 		serviceCentreAddress.asn1_tag.tagNumber = 2;
 		serviceCentreAddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:serviceCentreAddress];
+		[_asn1_list addObject:serviceCentreAddress];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(gprsSupportIndicator)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 7;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(sm_RP_MTI)
 	{
 		sm_RP_MTI.asn1_tag.tagNumber = 8;
 		sm_RP_MTI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:sm_RP_MTI];
+		[_asn1_list addObject:sm_RP_MTI];
 	}
 	if(sm_RP_SMEA)
 	{
 		sm_RP_SMEA.asn1_tag.tagNumber = 9;
 		sm_RP_SMEA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:sm_RP_SMEA];
+		[_asn1_list addObject:sm_RP_SMEA];
 	}
 }
 

@@ -27,55 +27,55 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(gsm_BearerCapability)
 	{
 		gsm_BearerCapability.asn1_tag.tagNumber = 0;
 		gsm_BearerCapability.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:gsm_BearerCapability];
+		[_asn1_list addObject:gsm_BearerCapability];
 	}
 	if(isdn_BearerCapability)
 	{
 		isdn_BearerCapability.asn1_tag.tagNumber = 1;
 		isdn_BearerCapability.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:isdn_BearerCapability];
+		[_asn1_list addObject:isdn_BearerCapability];
 	}
 	if(call_Direction)
 	{
 		call_Direction.asn1_tag.tagNumber = 2;
 		call_Direction.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:call_Direction];
+		[_asn1_list addObject:call_Direction];
 	}
 	if(b_Subscriber_Address)
 	{
 		b_Subscriber_Address.asn1_tag.tagNumber = 3;
 		b_Subscriber_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:b_Subscriber_Address];
+		[_asn1_list addObject:b_Subscriber_Address];
 	}
 	if(chosenChannel)
 	{
 		chosenChannel.asn1_tag.tagNumber = 4;
 		chosenChannel.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:chosenChannel];
+		[_asn1_list addObject:chosenChannel];
 	}
 	if(lowerLayerCompatibility)
 	{
 		lowerLayerCompatibility.asn1_tag.tagNumber = 5;
 		lowerLayerCompatibility.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lowerLayerCompatibility];
+		[_asn1_list addObject:lowerLayerCompatibility];
 	}
 	if(highLayerCompatibility)
 	{
 		highLayerCompatibility.asn1_tag.tagNumber = 6;
 		highLayerCompatibility.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:highLayerCompatibility];
+		[_asn1_list addObject:highLayerCompatibility];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 7;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

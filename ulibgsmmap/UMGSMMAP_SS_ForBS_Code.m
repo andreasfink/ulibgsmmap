@@ -22,22 +22,22 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(ss_Code)
 	{
-		[asn1_list addObject:ss_Code];
+		[_asn1_list addObject:ss_Code];
 	}
 	if(basicService)
 	{
-		[asn1_list addObject:basicService];
+		[_asn1_list addObject:basicService];
 	}
 	if(longFTN_Supported)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 4;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 }
 

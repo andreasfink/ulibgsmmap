@@ -22,19 +22,19 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(storedMSISDN)
 	{
-		[asn1_list addObject:storedMSISDN];
+		[_asn1_list addObject:storedMSISDN];
 	}
 	if(mw_Status)
 	{
-		[asn1_list addObject:mw_Status];
+		[_asn1_list addObject:mw_Status];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

@@ -23,23 +23,23 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(basicService)
 	{
-		[asn1_list addObject:basicService];
+		[_asn1_list addObject:basicService];
 	}
 	if(preferentialCUG_Indicator)
 	{
-		[asn1_list addObject:preferentialCUG_Indicator];
+		[_asn1_list addObject:preferentialCUG_Indicator];
 	}
 	if(interCUG_Restrictions)
 	{
-		[asn1_list addObject:interCUG_Restrictions];
+		[_asn1_list addObject:interCUG_Restrictions];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

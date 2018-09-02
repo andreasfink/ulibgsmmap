@@ -22,21 +22,21 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(ss_EventList)
 	{
-		[asn1_list addObject:ss_EventList];
+		[_asn1_list addObject:ss_EventList];
 	}
 	if(gsmSCF_Address)
 	{
-		[asn1_list addObject:gsmSCF_Address];
+		[_asn1_list addObject:gsmSCF_Address];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 0;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

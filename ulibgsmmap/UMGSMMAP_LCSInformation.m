@@ -22,25 +22,25 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(gmlc_List)
 	{
 		gmlc_List.asn1_tag.tagNumber = 0;
 		gmlc_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:gmlc_List];
+		[_asn1_list addObject:gmlc_List];
 	}
 	if(lcs_PrivacyExceptionList)
 	{
 		lcs_PrivacyExceptionList.asn1_tag.tagNumber = 1;
 		lcs_PrivacyExceptionList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lcs_PrivacyExceptionList];
+		[_asn1_list addObject:lcs_PrivacyExceptionList];
 	}
 	if(molr_List)
 	{
 		molr_List.asn1_tag.tagNumber = 2;
 		molr_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:molr_List];
+		[_asn1_list addObject:molr_List];
 	}
 }
 

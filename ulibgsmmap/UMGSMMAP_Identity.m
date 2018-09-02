@@ -25,8 +25,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(imsi)
 	{
@@ -47,7 +47,7 @@
 		}
 		else
 		{
-			[asn1_list addObject:imsi];
+			[_asn1_list addObject:imsi];
 		}
 	}
 	else if(imsi_WithLMSI)
@@ -69,7 +69,7 @@
 		}
 		else
 		{
-			[asn1_list addObject:imsi_WithLMSI];
+			[_asn1_list addObject:imsi_WithLMSI];
 		}
 	}
 	else

@@ -25,8 +25,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(callBarringCause)
 	{
@@ -47,7 +47,7 @@
 		}
 		else
 		{
-			[asn1_list addObject:callBarringCause];
+			[_asn1_list addObject:callBarringCause];
 		}
 	}
 	else if(extensibleCallBarredParam)
@@ -69,7 +69,7 @@
 		}
 		else
 		{
-			[asn1_list addObject:extensibleCallBarredParam];
+			[_asn1_list addObject:extensibleCallBarredParam];
 		}
 	}
 	else

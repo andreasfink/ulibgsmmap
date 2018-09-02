@@ -22,19 +22,19 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(odb_GeneralData)
 	{
-		[asn1_list addObject:odb_GeneralData];
+		[_asn1_list addObject:odb_GeneralData];
 	}
 	if(odb_HPLMN_Data)
 	{
-		[asn1_list addObject:odb_HPLMN_Data];
+		[_asn1_list addObject:odb_HPLMN_Data];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

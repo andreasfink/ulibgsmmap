@@ -25,8 +25,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(tripletList)
 	{
@@ -49,7 +49,7 @@
 		{
 			tripletList.asn1_tag.tagNumber = 0;
 			tripletList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:tripletList];
+			[_asn1_list addObject:tripletList];
 		}
 	}
 	else if(quintupletList)
@@ -73,7 +73,7 @@
 		{
 			quintupletList.asn1_tag.tagNumber = 1;
 			quintupletList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:quintupletList];
+			[_asn1_list addObject:quintupletList];
 		}
 	}
 	else

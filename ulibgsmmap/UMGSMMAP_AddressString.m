@@ -312,7 +312,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
     {
         [data appendByte:0x81]; /* ton=0/npi = 1,no extension */
         [data appendByte:0xFF];
-        asn1_data = data;
+        _asn1_data = data;
         return;
     }
     
@@ -361,7 +361,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
             [data appendByte:c];
         }
     }
-    asn1_data = data;
+    _asn1_data = data;
 }
 
 - (UMGSMMAP_AddressString *)processAfterDecodeWithContext:(id)context
@@ -372,8 +372,8 @@ static inline unsigned char	nibble2hex(unsigned char b)
     unsigned char b;
     
     NSUInteger pos=0;
-    NSUInteger len = asn1_data.length;
-    const uint8_t *str = asn1_data.bytes;
+    NSUInteger len = _asn1_data.length;
+    const uint8_t *str = _asn1_data.bytes;
     if(len == 0)
     {
         @throw([NSException exceptionWithName:@"DECODING_ERROR" reason:@"UMGSMMAP_AddressString has length 0" userInfo:NULL]);

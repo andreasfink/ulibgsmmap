@@ -24,39 +24,39 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(gprs_CamelTDPDataList)
 	{
 		gprs_CamelTDPDataList.asn1_tag.tagNumber = 0;
 		gprs_CamelTDPDataList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:gprs_CamelTDPDataList];
+		[_asn1_list addObject:gprs_CamelTDPDataList];
 	}
 	if(camelCapabilityHandling)
 	{
 		camelCapabilityHandling.asn1_tag.tagNumber = 1;
 		camelCapabilityHandling.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:camelCapabilityHandling];
+		[_asn1_list addObject:camelCapabilityHandling];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 2;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(notificationToCSE)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 3;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(csi_Active)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 3;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 }
 

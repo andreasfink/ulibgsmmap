@@ -25,37 +25,37 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(imsi)
 	{
-		[asn1_list addObject:imsi];
+		[_asn1_list addObject:imsi];
 	}
 	if(msc_Number)
 	{
 		msc_Number.asn1_tag.tagNumber = 1;
 		msc_Number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:msc_Number];
+		[_asn1_list addObject:msc_Number];
 	}
 	if(vlr_Number)
 	{
-		[asn1_list addObject:vlr_Number];
+		[_asn1_list addObject:vlr_Number];
 	}
 	if(lmsi)
 	{
 		lmsi.asn1_tag.tagNumber = 10;
 		lmsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lmsi];
+		[_asn1_list addObject:lmsi];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(vlr_Capability)
 	{
 		vlr_Capability.asn1_tag.tagNumber = 6;
 		vlr_Capability.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vlr_Capability];
+		[_asn1_list addObject:vlr_Capability];
 	}
 
     if(_informPreviousNetworkEntity)
@@ -63,7 +63,7 @@
         UMASN1Null *n = [[UMASN1Null alloc]init];
         n.asn1_tag.tagNumber = 11;
         n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:n];
+        [_asn1_list addObject:n];
     }
 
 
@@ -72,53 +72,53 @@
         UMASN1Null *n = [[UMASN1Null alloc]init];
         n.asn1_tag.tagNumber = 12;
         n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:n];
+        [_asn1_list addObject:n];
     }
 
     if(_v_gmlc_address)
     {
         _v_gmlc_address.asn1_tag.tagNumber = 2;
         _v_gmlc_address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_v_gmlc_address];
+        [_asn1_list addObject:_v_gmlc_address];
     }
 
     if(_add_info)
     {
         _add_info.asn1_tag.tagNumber = 13;
         _add_info.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_add_info];
+        [_asn1_list addObject:_add_info];
     }
     if(_pagingArea)
     {
         _pagingArea.asn1_tag.tagNumber = 14;
         _pagingArea.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_pagingArea];
+        [_asn1_list addObject:_pagingArea];
     }
     if(_skipSubscriberDataUpdate)
     {
         UMASN1Null *n = [[UMASN1Null alloc]init];
         n.asn1_tag.tagNumber = 15;
         n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:n];
+        [_asn1_list addObject:n];
     }
     if(_restorationIndicator)
     {
         UMASN1Null *n = [[UMASN1Null alloc]init];
         n.asn1_tag.tagNumber = 16;
         n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:n];
+        [_asn1_list addObject:n];
     }
     if(_eplmn_List)
     {
         _eplmn_List.asn1_tag.tagNumber = 3;
         _eplmn_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_add_info];
+        [_asn1_list addObject:_add_info];
     }
     if(_mme_DiameterAddress)
     {
         _mme_DiameterAddress.asn1_tag.tagNumber = 3;
         _mme_DiameterAddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_add_info];
+        [_asn1_list addObject:_add_info];
     }
 }
 

@@ -37,8 +37,8 @@
 
 - (UMSynchronizedSortedDictionary *)decodeGeographicalInformation
 {
-    const uint8_t *bytes = asn1_data.bytes;
-    NSUInteger len = asn1_data.length;
+    const uint8_t *bytes = _asn1_data.bytes;
+    NSUInteger len = _asn1_data.length;
     
     long long latitiude;
     long long longitude;
@@ -109,7 +109,7 @@
     bytes[5] = (lon >> 8) & 0xFF;
     bytes[6] = (lon >> 0) & 0xFF;
     bytes[7] = uncertainity_code & 0x7F;
-    asn1_data = [NSData dataWithBytes:&bytes length:sizeof(bytes)];
+    _asn1_data = [NSData dataWithBytes:&bytes length:sizeof(bytes)];
 }
 
 @end

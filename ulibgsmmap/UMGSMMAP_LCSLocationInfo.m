@@ -22,23 +22,23 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(msc_Number)
 	{
-		[asn1_list addObject:msc_Number];
+		[_asn1_list addObject:msc_Number];
 	}
 	if(lmsi)
 	{
 		lmsi.asn1_tag.tagNumber = 0;
 		lmsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lmsi];
+		[_asn1_list addObject:lmsi];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 1;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

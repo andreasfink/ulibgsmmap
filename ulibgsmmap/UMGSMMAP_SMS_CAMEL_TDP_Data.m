@@ -24,37 +24,37 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(sms_TriggerDetectionPoint)
 	{
 		sms_TriggerDetectionPoint.asn1_tag.tagNumber = 0;
 		sms_TriggerDetectionPoint.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:sms_TriggerDetectionPoint];
+		[_asn1_list addObject:sms_TriggerDetectionPoint];
 	}
 	if(serviceKey)
 	{
 		serviceKey.asn1_tag.tagNumber = 1;
 		serviceKey.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:serviceKey];
+		[_asn1_list addObject:serviceKey];
 	}
 	if(gsmSCF_Address)
 	{
 		gsmSCF_Address.asn1_tag.tagNumber = 2;
 		gsmSCF_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:gsmSCF_Address];
+		[_asn1_list addObject:gsmSCF_Address];
 	}
 	if(defaultSMS_Handling)
 	{
 		defaultSMS_Handling.asn1_tag.tagNumber = 3;
 		defaultSMS_Handling.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:defaultSMS_Handling];
+		[_asn1_list addObject:defaultSMS_Handling];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 4;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

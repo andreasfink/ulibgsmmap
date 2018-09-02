@@ -25,8 +25,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(networkResource)
 	{
@@ -47,7 +47,7 @@
 		}
 		else
 		{
-			[asn1_list addObject:networkResource];
+			[_asn1_list addObject:networkResource];
 		}
 	}
 	else if(extensibleSystemFailureParam)
@@ -69,7 +69,7 @@
 		}
 		else
 		{
-			[asn1_list addObject:extensibleSystemFailureParam];
+			[_asn1_list addObject:extensibleSystemFailureParam];
 		}
 	}
 	else

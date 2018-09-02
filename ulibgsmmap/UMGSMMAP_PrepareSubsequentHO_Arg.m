@@ -22,19 +22,19 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(targetCellId)
 	{
-		[asn1_list addObject:targetCellId];
+		[_asn1_list addObject:targetCellId];
 	}
 	if(targetMSC_Number)
 	{
-		[asn1_list addObject:targetMSC_Number];
+		[_asn1_list addObject:targetMSC_Number];
 	}
 	if(bss_APDU)
 	{
-		[asn1_list addObject:bss_APDU];
+		[_asn1_list addObject:bss_APDU];
 	}
 }
 

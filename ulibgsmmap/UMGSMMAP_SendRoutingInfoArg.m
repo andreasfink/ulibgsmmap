@@ -49,194 +49,194 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(msisdn)
 	{
 		msisdn.asn1_tag.tagNumber = 0;
 		msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:msisdn];
+		[_asn1_list addObject:msisdn];
 	}
 	if(cug_CheckInfo)
 	{
 		cug_CheckInfo.asn1_tag.tagNumber = 1;
 		cug_CheckInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:cug_CheckInfo];
+		[_asn1_list addObject:cug_CheckInfo];
 	}
 	if(numberOfForwarding)
 	{
 		numberOfForwarding.asn1_tag.tagNumber = 2;
 		numberOfForwarding.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:numberOfForwarding];
+		[_asn1_list addObject:numberOfForwarding];
 	}
 	if(interrogationType)
 	{
 		interrogationType.asn1_tag.tagNumber = 3;
 		interrogationType.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:interrogationType];
+		[_asn1_list addObject:interrogationType];
 	}
 	if(or_Interrogation)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 4;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(or_Capability)
 	{
 		or_Capability.asn1_tag.tagNumber = 5;
 		or_Capability.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:or_Capability];
+		[_asn1_list addObject:or_Capability];
 	}
 	if(gmsc_Address)
 	{
 		gmsc_Address.asn1_tag.tagNumber = 6;
 		gmsc_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:gmsc_Address];
+		[_asn1_list addObject:gmsc_Address];
 	}
 	if(callReferenceNumber)
 	{
 		callReferenceNumber.asn1_tag.tagNumber = 7;
 		callReferenceNumber.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:callReferenceNumber];
+		[_asn1_list addObject:callReferenceNumber];
 	}
 	if(forwardingReason)
 	{
 		forwardingReason.asn1_tag.tagNumber = 8;
 		forwardingReason.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:forwardingReason];
+		[_asn1_list addObject:forwardingReason];
 	}
 	if(basicServiceGroup)
 	{
 		basicServiceGroup.asn1_tag.tagNumber = 9;
 		basicServiceGroup.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:basicServiceGroup];
+		[_asn1_list addObject:basicServiceGroup];
 	}
 	if(networkSignalInfo)
 	{
 		networkSignalInfo.asn1_tag.tagNumber = 10;
 		networkSignalInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:networkSignalInfo];
+		[_asn1_list addObject:networkSignalInfo];
 	}
 	if(camelInfo)
 	{
 		camelInfo.asn1_tag.tagNumber = 11;
 		camelInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:camelInfo];
+		[_asn1_list addObject:camelInfo];
 	}
 	if(suppressionOfAnnouncement)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 12;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(alertingPattern)
 	{
 		alertingPattern.asn1_tag.tagNumber = 14;
 		alertingPattern.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:alertingPattern];
+		[_asn1_list addObject:alertingPattern];
 	}
 	if(ccbs_Call)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 15;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(supportedCCBS_Phase)
 	{
 		supportedCCBS_Phase.asn1_tag.tagNumber = 16;
 		supportedCCBS_Phase.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:supportedCCBS_Phase];
+		[_asn1_list addObject:supportedCCBS_Phase];
 	}
 	if(additionalSignalInfo)
 	{
 		additionalSignalInfo.asn1_tag.tagNumber = 17;
 		additionalSignalInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:additionalSignalInfo];
+		[_asn1_list addObject:additionalSignalInfo];
 	}
 	if(istSupportIndicator)
 	{
 		istSupportIndicator.asn1_tag.tagNumber = 18;
 		istSupportIndicator.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:istSupportIndicator];
+		[_asn1_list addObject:istSupportIndicator];
 	}
 	if(pre_pagingSupported)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 19;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(callDiversionTreatmentIndicator)
 	{
 		callDiversionTreatmentIndicator.asn1_tag.tagNumber = 20;
 		callDiversionTreatmentIndicator.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:callDiversionTreatmentIndicator];
+		[_asn1_list addObject:callDiversionTreatmentIndicator];
 	}
 	if(longFTN_Supported)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 21;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(suppress_VT_CSI)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 22;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(suppressIncomingCallBarring)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 23;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(gsmSCF_InitiatedCall)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 24;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(basicServiceGroup2)
 	{
 		basicServiceGroup2.asn1_tag.tagNumber = 25;
 		basicServiceGroup2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:basicServiceGroup2];
+		[_asn1_list addObject:basicServiceGroup2];
 	}
 	if(networkSignalInfo2)
 	{
 		networkSignalInfo2.asn1_tag.tagNumber = 26;
 		networkSignalInfo2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:networkSignalInfo2];
+		[_asn1_list addObject:networkSignalInfo2];
 	}
 	if(suppressMTSS)
 	{
 		suppressMTSS.asn1_tag.tagNumber = 27;
 		suppressMTSS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:suppressMTSS];
+		[_asn1_list addObject:suppressMTSS];
 	}
 	if(mtRoamingRetrySupported)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 28;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(callPriority)
 	{
 		callPriority.asn1_tag.tagNumber = 29;
 		callPriority.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:callPriority];
+		[_asn1_list addObject:callPriority];
 	}
 }
 

@@ -65,8 +65,8 @@
 - (UMSynchronizedSortedDictionary *)decodeVelocity
 {
     UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-    const uint8_t *bytes = asn1_data.bytes;
-    NSUInteger len = asn1_data.length;
+    const uint8_t *bytes = _asn1_data.bytes;
+    NSUInteger len = _asn1_data.length;
     int horizontalSpeed;
     int verticalSpeed;
     int horizontalUncertainty;

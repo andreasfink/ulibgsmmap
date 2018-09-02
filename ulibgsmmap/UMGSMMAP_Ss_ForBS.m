@@ -19,15 +19,15 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(_ss_Code)
 	{
-		[asn1_list addObject:_ss_Code];
+		[_asn1_list addObject:_ss_Code];
 	}
 	if(_basicService)
 	{
-		[asn1_list addObject:_basicService];
+		[_asn1_list addObject:_basicService];
 	}
 }
 

@@ -132,8 +132,8 @@
     self = [super init];
     if(self)
     {
-        [asn1_tag setTagIsConstructed];
-        asn1_list = [[NSMutableArray alloc]init];
+        [_asn1_tag setTagIsConstructed];
+        _asn1_list = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -1349,7 +1349,7 @@
 
 - (NSString *)objectName
 {
-    if(asn1_tag.tagClass ==UMASN1Class_Private)
+    if(_asn1_tag.tagClass ==UMASN1Class_Private)
     {
         return @"ansi_tcap";
     }

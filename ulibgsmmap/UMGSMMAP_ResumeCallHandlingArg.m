@@ -30,75 +30,75 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(callReferenceNumber)
 	{
 		callReferenceNumber.asn1_tag.tagNumber = 0;
 		callReferenceNumber.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:callReferenceNumber];
+		[_asn1_list addObject:callReferenceNumber];
 	}
 	if(basicServiceGroup)
 	{
 		basicServiceGroup.asn1_tag.tagNumber = 1;
 		basicServiceGroup.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:basicServiceGroup];
+		[_asn1_list addObject:basicServiceGroup];
 	}
 	if(forwardingData)
 	{
 		forwardingData.asn1_tag.tagNumber = 2;
 		forwardingData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:forwardingData];
+		[_asn1_list addObject:forwardingData];
 	}
 	if(imsi)
 	{
 		imsi.asn1_tag.tagNumber = 3;
 		imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:imsi];
+		[_asn1_list addObject:imsi];
 	}
 	if(cug_CheckInfo)
 	{
 		cug_CheckInfo.asn1_tag.tagNumber = 4;
 		cug_CheckInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:cug_CheckInfo];
+		[_asn1_list addObject:cug_CheckInfo];
 	}
 	if(o_CSI)
 	{
 		o_CSI.asn1_tag.tagNumber = 5;
 		o_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:o_CSI];
+		[_asn1_list addObject:o_CSI];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 7;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(ccbs_Possible)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 8;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(msisdn)
 	{
 		msisdn.asn1_tag.tagNumber = 9;
 		msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:msisdn];
+		[_asn1_list addObject:msisdn];
 	}
 	if(uu_Data)
 	{
 		uu_Data.asn1_tag.tagNumber = 10;
 		uu_Data.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:uu_Data];
+		[_asn1_list addObject:uu_Data];
 	}
 	if(allInformationSent)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 11;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 }
 

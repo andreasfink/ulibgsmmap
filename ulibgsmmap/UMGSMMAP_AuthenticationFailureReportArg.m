@@ -27,43 +27,43 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(imsi)
 	{
-		[asn1_list addObject:imsi];
+		[_asn1_list addObject:imsi];
 	}
 	if(failureCause)
 	{
-		[asn1_list addObject:failureCause];
+		[_asn1_list addObject:failureCause];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(re_attempt)
 	{
-		[asn1_list addObject:re_attempt];
+		[_asn1_list addObject:re_attempt];
 	}
 	if(accessType)
 	{
-		[asn1_list addObject:accessType];
+		[_asn1_list addObject:accessType];
 	}
 	if(rand)
 	{
-		[asn1_list addObject:rand];
+		[_asn1_list addObject:rand];
 	}
 	if(vlr_Number)
 	{
 		vlr_Number.asn1_tag.tagNumber = 0;
 		vlr_Number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vlr_Number];
+		[_asn1_list addObject:vlr_Number];
 	}
 	if(sgsn_Number)
 	{
 		sgsn_Number.asn1_tag.tagNumber = 1;
 		sgsn_Number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:sgsn_Number];
+		[_asn1_list addObject:sgsn_Number];
 	}
 }
 

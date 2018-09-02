@@ -27,59 +27,59 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(requestedSS_Info)
 	{
 		requestedSS_Info.asn1_tag.tagNumber = 1;
 		requestedSS_Info.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:requestedSS_Info];
+		[_asn1_list addObject:requestedSS_Info];
 	}
 	if(odb)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 2;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(requestedCAMEL_SubscriptionInfo)
 	{
 		requestedCAMEL_SubscriptionInfo.asn1_tag.tagNumber = 3;
 		requestedCAMEL_SubscriptionInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:requestedCAMEL_SubscriptionInfo];
+		[_asn1_list addObject:requestedCAMEL_SubscriptionInfo];
 	}
 	if(supportedVLR_CAMEL_Phases)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 4;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(supportedSGSN_CAMEL_Phases)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 5;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 6;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(additionalRequestedCAMEL_SubscriptionInfo)
 	{
 		additionalRequestedCAMEL_SubscriptionInfo.asn1_tag.tagNumber = 7;
 		additionalRequestedCAMEL_SubscriptionInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:additionalRequestedCAMEL_SubscriptionInfo];
+		[_asn1_list addObject:additionalRequestedCAMEL_SubscriptionInfo];
 	}
 	if(msisdn_BS_List)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 8;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 }
 

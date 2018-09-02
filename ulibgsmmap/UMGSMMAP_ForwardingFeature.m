@@ -25,41 +25,41 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(basicService)
 	{
-		[asn1_list addObject:basicService];
+		[_asn1_list addObject:basicService];
 	}
 	if(ss_Status)
 	{
 		ss_Status.asn1_tag.tagNumber = 4;
 		ss_Status.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ss_Status];
+		[_asn1_list addObject:ss_Status];
 	}
 	if(forwardedToNumber)
 	{
 		forwardedToNumber.asn1_tag.tagNumber = 5;
 		forwardedToNumber.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:forwardedToNumber];
+		[_asn1_list addObject:forwardedToNumber];
 	}
 	if(forwardedToSubaddress)
 	{
 		forwardedToSubaddress.asn1_tag.tagNumber = 8;
 		forwardedToSubaddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:forwardedToSubaddress];
+		[_asn1_list addObject:forwardedToSubaddress];
 	}
 	if(forwardingOptions)
 	{
 		forwardingOptions.asn1_tag.tagNumber = 6;
 		forwardingOptions.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:forwardingOptions];
+		[_asn1_list addObject:forwardingOptions];
 	}
 	if(noReplyConditionTime)
 	{
 		noReplyConditionTime.asn1_tag.tagNumber = 7;
 		noReplyConditionTime.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:noReplyConditionTime];
+		[_asn1_list addObject:noReplyConditionTime];
 	}
 }
 

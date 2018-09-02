@@ -21,19 +21,19 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(ss_Code)
 	{
 		ss_Code.asn1_tag.tagNumber = 0;
 		ss_Code.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ss_Code];
+		[_asn1_list addObject:ss_Code];
 	}
 	if(ccbs_Index)
 	{
 		ccbs_Index.asn1_tag.tagNumber = 1;
 		ccbs_Index.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ccbs_Index];
+		[_asn1_list addObject:ccbs_Index];
 	}
 }
 

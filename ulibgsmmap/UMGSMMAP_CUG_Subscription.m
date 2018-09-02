@@ -24,29 +24,29 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(cug_Index)
 	{
-		[asn1_list addObject:cug_Index];
+		[_asn1_list addObject:cug_Index];
 	}
 	if(cug_Interlock)
 	{
-		[asn1_list addObject:cug_Interlock];
+		[_asn1_list addObject:cug_Interlock];
 	}
 	if(intraCUG_Options)
 	{
-		[asn1_list addObject:intraCUG_Options];
+		[_asn1_list addObject:intraCUG_Options];
 	}
 	if(basicServiceGroupList)
 	{
-		[asn1_list addObject:basicServiceGroupList];
+		[_asn1_list addObject:basicServiceGroupList];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 0;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

@@ -29,8 +29,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(map_open)
 	{
@@ -53,7 +53,7 @@
 		{
 			map_open.asn1_tag.tagNumber = 0;
 			map_open.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:map_open];
+			[_asn1_list addObject:map_open];
 		}
 	}
 	else if(map_accept)
@@ -77,7 +77,7 @@
 		{
 			map_accept.asn1_tag.tagNumber = 1;
 			map_accept.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:map_accept];
+			[_asn1_list addObject:map_accept];
 		}
 	}
 	else if(map_close)
@@ -101,7 +101,7 @@
 		{
 			map_close.asn1_tag.tagNumber = 2;
 			map_close.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:map_close];
+			[_asn1_list addObject:map_close];
 		}
 	}
 	else if(map_refuse)
@@ -125,7 +125,7 @@
 		{
 			map_refuse.asn1_tag.tagNumber = 3;
 			map_refuse.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:map_refuse];
+			[_asn1_list addObject:map_refuse];
 		}
 	}
 	else if(map_userAbort)
@@ -149,7 +149,7 @@
 		{
 			map_userAbort.asn1_tag.tagNumber = 4;
 			map_userAbort.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:map_userAbort];
+			[_asn1_list addObject:map_userAbort];
 		}
 	}
 	else if(map_providerAbort)
@@ -173,7 +173,7 @@
 		{
 			map_providerAbort.asn1_tag.tagNumber = 5;
 			map_providerAbort.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:map_providerAbort];
+			[_asn1_list addObject:map_providerAbort];
 		}
 	}
 	else

@@ -22,19 +22,19 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(sm_EnumeratedDeliveryFailureCause)
 	{
-		[asn1_list addObject:sm_EnumeratedDeliveryFailureCause];
+		[_asn1_list addObject:sm_EnumeratedDeliveryFailureCause];
 	}
 	if(diagnosticInfo)
 	{
-		[asn1_list addObject:diagnosticInfo];
+		[_asn1_list addObject:diagnosticInfo];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

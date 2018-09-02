@@ -32,91 +32,91 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(imsi)
 	{
 		imsi.asn1_tag.tagNumber = 0;
 		imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:imsi];
+		[_asn1_list addObject:imsi];
 	}
 	if(basicServiceList)
 	{
 		basicServiceList.asn1_tag.tagNumber = 1;
 		basicServiceList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:basicServiceList];
+		[_asn1_list addObject:basicServiceList];
 	}
 	if(ss_List)
 	{
 		ss_List.asn1_tag.tagNumber = 2;
 		ss_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ss_List];
+		[_asn1_list addObject:ss_List];
 	}
 	if(roamingRestrictionDueToUnsupportedFeature)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 4;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(regionalSubscriptionIdentifier)
 	{
 		regionalSubscriptionIdentifier.asn1_tag.tagNumber = 5;
 		regionalSubscriptionIdentifier.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:regionalSubscriptionIdentifier];
+		[_asn1_list addObject:regionalSubscriptionIdentifier];
 	}
 	if(vbsGroupIndication)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 7;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(vgcsGroupIndication)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 8;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(camelSubscriptionInfoWithdraw)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 9;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 6;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(gprsSubscriptionDataWithdraw)
 	{
 		gprsSubscriptionDataWithdraw.asn1_tag.tagNumber = 10;
 		gprsSubscriptionDataWithdraw.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:gprsSubscriptionDataWithdraw];
+		[_asn1_list addObject:gprsSubscriptionDataWithdraw];
 	}
 	if(roamingRestrictedInSgsnDueToUnsuppportedFeature)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 11;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(lsaInformationWithdraw)
 	{
 		lsaInformationWithdraw.asn1_tag.tagNumber = 12;
 		lsaInformationWithdraw.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lsaInformationWithdraw];
+		[_asn1_list addObject:lsaInformationWithdraw];
 	}
 	if(gmlc_ListWithdraw)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 13;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 }
 

@@ -25,8 +25,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(imsi)
 	{
@@ -49,7 +49,7 @@
 		{
 			imsi.asn1_tag.tagNumber = 0;
 			imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:imsi];
+			[_asn1_list addObject:imsi];
 		}
 	}
 	else if(msisdn)
@@ -73,7 +73,7 @@
 		{
 			msisdn.asn1_tag.tagNumber = 1;
 			msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:msisdn];
+			[_asn1_list addObject:msisdn];
 		}
 	}
 	else

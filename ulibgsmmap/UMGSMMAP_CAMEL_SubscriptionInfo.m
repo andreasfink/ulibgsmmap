@@ -42,147 +42,147 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(o_CSI)
 	{
 		o_CSI.asn1_tag.tagNumber = 0;
 		o_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:o_CSI];
+		[_asn1_list addObject:o_CSI];
 	}
 	if(o_BcsmCamelTDP_CriteriaList)
 	{
 		o_BcsmCamelTDP_CriteriaList.asn1_tag.tagNumber = 1;
 		o_BcsmCamelTDP_CriteriaList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:o_BcsmCamelTDP_CriteriaList];
+		[_asn1_list addObject:o_BcsmCamelTDP_CriteriaList];
 	}
 	if(d_CSI)
 	{
 		d_CSI.asn1_tag.tagNumber = 2;
 		d_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:d_CSI];
+		[_asn1_list addObject:d_CSI];
 	}
 	if(t_CSI)
 	{
 		t_CSI.asn1_tag.tagNumber = 3;
 		t_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:t_CSI];
+		[_asn1_list addObject:t_CSI];
 	}
 	if(t_BCSM_CAMEL_TDP_CriteriaList)
 	{
 		t_BCSM_CAMEL_TDP_CriteriaList.asn1_tag.tagNumber = 4;
 		t_BCSM_CAMEL_TDP_CriteriaList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:t_BCSM_CAMEL_TDP_CriteriaList];
+		[_asn1_list addObject:t_BCSM_CAMEL_TDP_CriteriaList];
 	}
 	if(vt_CSI)
 	{
 		vt_CSI.asn1_tag.tagNumber = 5;
 		vt_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vt_CSI];
+		[_asn1_list addObject:vt_CSI];
 	}
 	if(vt_BCSM_CAMEL_TDP_CriteriaList)
 	{
 		vt_BCSM_CAMEL_TDP_CriteriaList.asn1_tag.tagNumber = 6;
 		vt_BCSM_CAMEL_TDP_CriteriaList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vt_BCSM_CAMEL_TDP_CriteriaList];
+		[_asn1_list addObject:vt_BCSM_CAMEL_TDP_CriteriaList];
 	}
 	if(tif_CSI)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 7;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(tif_CSI_NotificationToCSE)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 8;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(gprs_CSI)
 	{
 		gprs_CSI.asn1_tag.tagNumber = 9;
 		gprs_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:gprs_CSI];
+		[_asn1_list addObject:gprs_CSI];
 	}
 	if(mo_sms_CSI)
 	{
 		mo_sms_CSI.asn1_tag.tagNumber = 10;
 		mo_sms_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:mo_sms_CSI];
+		[_asn1_list addObject:mo_sms_CSI];
 	}
 	if(ss_CSI)
 	{
 		ss_CSI.asn1_tag.tagNumber = 11;
 		ss_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ss_CSI];
+		[_asn1_list addObject:ss_CSI];
 	}
 	if(m_CSI)
 	{
 		m_CSI.asn1_tag.tagNumber = 12;
 		m_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:m_CSI];
+		[_asn1_list addObject:m_CSI];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 13;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(specificCSIDeletedList)
 	{
 		specificCSIDeletedList.asn1_tag.tagNumber = 14;
 		specificCSIDeletedList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:specificCSIDeletedList];
+		[_asn1_list addObject:specificCSIDeletedList];
 	}
 	if(mt_sms_CSI)
 	{
 		mt_sms_CSI.asn1_tag.tagNumber = 15;
 		mt_sms_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:mt_sms_CSI];
+		[_asn1_list addObject:mt_sms_CSI];
 	}
 	if(mt_smsCAMELTDP_CriteriaList)
 	{
 		mt_smsCAMELTDP_CriteriaList.asn1_tag.tagNumber = 16;
 		mt_smsCAMELTDP_CriteriaList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:mt_smsCAMELTDP_CriteriaList];
+		[_asn1_list addObject:mt_smsCAMELTDP_CriteriaList];
 	}
 	if(mg_csi)
 	{
 		mg_csi.asn1_tag.tagNumber = 17;
 		mg_csi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:mg_csi];
+		[_asn1_list addObject:mg_csi];
 	}
 	if(o_IM_CSI)
 	{
 		o_IM_CSI.asn1_tag.tagNumber = 18;
 		o_IM_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:o_IM_CSI];
+		[_asn1_list addObject:o_IM_CSI];
 	}
 	if(o_IM_BcsmCamelTDP_CriteriaList)
 	{
 		o_IM_BcsmCamelTDP_CriteriaList.asn1_tag.tagNumber = 19;
 		o_IM_BcsmCamelTDP_CriteriaList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:o_IM_BcsmCamelTDP_CriteriaList];
+		[_asn1_list addObject:o_IM_BcsmCamelTDP_CriteriaList];
 	}
 	if(d_IM_CSI)
 	{
 		d_IM_CSI.asn1_tag.tagNumber = 20;
 		d_IM_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:d_IM_CSI];
+		[_asn1_list addObject:d_IM_CSI];
 	}
 	if(vt_IM_CSI)
 	{
 		vt_IM_CSI.asn1_tag.tagNumber = 21;
 		vt_IM_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vt_IM_CSI];
+		[_asn1_list addObject:vt_IM_CSI];
 	}
 	if(vt_IM_BCSM_CAMEL_TDP_CriteriaList)
 	{
 		vt_IM_BCSM_CAMEL_TDP_CriteriaList.asn1_tag.tagNumber = 22;
 		vt_IM_BCSM_CAMEL_TDP_CriteriaList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vt_IM_BCSM_CAMEL_TDP_CriteriaList];
+		[_asn1_list addObject:vt_IM_BCSM_CAMEL_TDP_CriteriaList];
 	}
 }
 

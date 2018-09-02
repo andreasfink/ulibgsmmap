@@ -23,31 +23,31 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(sgsn_Address)
 	{
 		sgsn_Address.asn1_tag.tagNumber = 0;
 		sgsn_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:sgsn_Address];
+		[_asn1_list addObject:sgsn_Address];
 	}
 	if(ggsn_Address)
 	{
 		ggsn_Address.asn1_tag.tagNumber = 1;
 		ggsn_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ggsn_Address];
+		[_asn1_list addObject:ggsn_Address];
 	}
 	if(mobileNotReachableReason)
 	{
 		mobileNotReachableReason.asn1_tag.tagNumber = 2;
 		mobileNotReachableReason.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:mobileNotReachableReason];
+		[_asn1_list addObject:mobileNotReachableReason];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 3;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

@@ -25,8 +25,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(ext_BearerService)
 	{
@@ -49,7 +49,7 @@
 		{
 			ext_BearerService.asn1_tag.tagNumber = 2;
 			ext_BearerService.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:ext_BearerService];
+			[_asn1_list addObject:ext_BearerService];
 		}
 	}
 	else if(ext_Teleservice)
@@ -73,7 +73,7 @@
 		{
 			ext_Teleservice.asn1_tag.tagNumber = 3;
 			ext_Teleservice.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:ext_Teleservice];
+			[_asn1_list addObject:ext_Teleservice];
 		}
 	}
 	else

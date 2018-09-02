@@ -29,67 +29,67 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(callForwardingData)
 	{
 		callForwardingData.asn1_tag.tagNumber = 1;
 		callForwardingData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:callForwardingData];
+		[_asn1_list addObject:callForwardingData];
 	}
 	if(callBarringData)
 	{
 		callBarringData.asn1_tag.tagNumber = 2;
 		callBarringData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:callBarringData];
+		[_asn1_list addObject:callBarringData];
 	}
 	if(odb_Info)
 	{
 		odb_Info.asn1_tag.tagNumber = 3;
 		odb_Info.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:odb_Info];
+		[_asn1_list addObject:odb_Info];
 	}
 	if(camel_SubscriptionInfo)
 	{
 		camel_SubscriptionInfo.asn1_tag.tagNumber = 4;
 		camel_SubscriptionInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:camel_SubscriptionInfo];
+		[_asn1_list addObject:camel_SubscriptionInfo];
 	}
 	if(supportedVLR_CAMEL_Phases)
 	{
 		supportedVLR_CAMEL_Phases.asn1_tag.tagNumber = 5;
 		supportedVLR_CAMEL_Phases.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:supportedVLR_CAMEL_Phases];
+		[_asn1_list addObject:supportedVLR_CAMEL_Phases];
 	}
 	if(supportedSGSN_CAMEL_Phases)
 	{
 		supportedSGSN_CAMEL_Phases.asn1_tag.tagNumber = 6;
 		supportedSGSN_CAMEL_Phases.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:supportedSGSN_CAMEL_Phases];
+		[_asn1_list addObject:supportedSGSN_CAMEL_Phases];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 7;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(offeredCamel4CSIsInVLR)
 	{
 		offeredCamel4CSIsInVLR.asn1_tag.tagNumber = 8;
 		offeredCamel4CSIsInVLR.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:offeredCamel4CSIsInVLR];
+		[_asn1_list addObject:offeredCamel4CSIsInVLR];
 	}
 	if(offeredCamel4CSIsInSGSN)
 	{
 		offeredCamel4CSIsInSGSN.asn1_tag.tagNumber = 9;
 		offeredCamel4CSIsInSGSN.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:offeredCamel4CSIsInSGSN];
+		[_asn1_list addObject:offeredCamel4CSIsInSGSN];
 	}
 	if(msisdn_BS_List)
 	{
 		msisdn_BS_List.asn1_tag.tagNumber = 10;
 		msisdn_BS_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:msisdn_BS_List];
+		[_asn1_list addObject:msisdn_BS_List];
 	}
 }
 

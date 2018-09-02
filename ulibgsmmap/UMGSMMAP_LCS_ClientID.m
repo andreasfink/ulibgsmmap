@@ -24,37 +24,37 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(lcsClientType)
 	{
 		lcsClientType.asn1_tag.tagNumber = 0;
 		lcsClientType.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lcsClientType];
+		[_asn1_list addObject:lcsClientType];
 	}
 	if(lcsClientExternalID)
 	{
 		lcsClientExternalID.asn1_tag.tagNumber = 1;
 		lcsClientExternalID.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lcsClientExternalID];
+		[_asn1_list addObject:lcsClientExternalID];
 	}
 	if(lcsClientDialedByMS)
 	{
 		lcsClientDialedByMS.asn1_tag.tagNumber = 2;
 		lcsClientDialedByMS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lcsClientDialedByMS];
+		[_asn1_list addObject:lcsClientDialedByMS];
 	}
 	if(lcsClientInternalID)
 	{
 		lcsClientInternalID.asn1_tag.tagNumber = 3;
 		lcsClientInternalID.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lcsClientInternalID];
+		[_asn1_list addObject:lcsClientInternalID];
 	}
 	if(lcsClientName)
 	{
 		lcsClientName.asn1_tag.tagNumber = 4;
 		lcsClientName.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lcsClientName];
+		[_asn1_list addObject:lcsClientName];
 	}
 }
 

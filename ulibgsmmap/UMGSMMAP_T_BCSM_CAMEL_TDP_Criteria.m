@@ -22,23 +22,23 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(t_BCSM_TriggerDetectionPoint)
 	{
-		[asn1_list addObject:t_BCSM_TriggerDetectionPoint];
+		[_asn1_list addObject:t_BCSM_TriggerDetectionPoint];
 	}
 	if(basicServiceCriteria)
 	{
 		basicServiceCriteria.asn1_tag.tagNumber = 0;
 		basicServiceCriteria.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:basicServiceCriteria];
+		[_asn1_list addObject:basicServiceCriteria];
 	}
 	if(t_CauseValueCriteria)
 	{
 		t_CauseValueCriteria.asn1_tag.tagNumber = 1;
 		t_CauseValueCriteria.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:t_CauseValueCriteria];
+		[_asn1_list addObject:t_CauseValueCriteria];
 	}
 }
 

@@ -24,37 +24,37 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(ccbs_Feature)
 	{
 		ccbs_Feature.asn1_tag.tagNumber = 0;
 		ccbs_Feature.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ccbs_Feature];
+		[_asn1_list addObject:ccbs_Feature];
 	}
 	if(translatedB_Number)
 	{
 		translatedB_Number.asn1_tag.tagNumber = 1;
 		translatedB_Number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:translatedB_Number];
+		[_asn1_list addObject:translatedB_Number];
 	}
 	if(serviceIndicator)
 	{
 		serviceIndicator.asn1_tag.tagNumber = 2;
 		serviceIndicator.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:serviceIndicator];
+		[_asn1_list addObject:serviceIndicator];
 	}
 	if(callInfo)
 	{
 		callInfo.asn1_tag.tagNumber = 3;
 		callInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:callInfo];
+		[_asn1_list addObject:callInfo];
 	}
 	if(networkSignalInfo)
 	{
 		networkSignalInfo.asn1_tag.tagNumber = 4;
 		networkSignalInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:networkSignalInfo];
+		[_asn1_list addObject:networkSignalInfo];
 	}
 }
 

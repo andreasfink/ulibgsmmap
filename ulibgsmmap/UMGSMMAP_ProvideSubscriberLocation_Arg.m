@@ -30,70 +30,70 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(locationType)
 	{
-		[asn1_list addObject:locationType];
+		[_asn1_list addObject:locationType];
 	}
 	if(mlc_Number)
 	{
-		[asn1_list addObject:mlc_Number];
+		[_asn1_list addObject:mlc_Number];
 	}
 	if(lcs_ClientID)
 	{
 		lcs_ClientID.asn1_tag.tagNumber = 0;
 		lcs_ClientID.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lcs_ClientID];
+		[_asn1_list addObject:lcs_ClientID];
 	}
 	if(privacyOverride)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 1;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(imsi)
 	{
 		imsi.asn1_tag.tagNumber = 2;
 		imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:imsi];
+		[_asn1_list addObject:imsi];
 	}
 	if(msisdn)
 	{
 		msisdn.asn1_tag.tagNumber = 3;
 		msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:msisdn];
+		[_asn1_list addObject:msisdn];
 	}
 	if(lmsi)
 	{
 		lmsi.asn1_tag.tagNumber = 4;
 		lmsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lmsi];
+		[_asn1_list addObject:lmsi];
 	}
 	if(imei)
 	{
 		imei.asn1_tag.tagNumber = 5;
 		imei.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:imei];
+		[_asn1_list addObject:imei];
 	}
 	if(lcs_Priority)
 	{
 		lcs_Priority.asn1_tag.tagNumber = 6;
 		lcs_Priority.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lcs_Priority];
+		[_asn1_list addObject:lcs_Priority];
 	}
 	if(lcs_QoS)
 	{
 		lcs_QoS.asn1_tag.tagNumber = 7;
 		lcs_QoS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lcs_QoS];
+		[_asn1_list addObject:lcs_QoS];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 8;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

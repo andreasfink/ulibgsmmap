@@ -17,38 +17,38 @@
 - (void) processBeforeEncode
 {
     [super processBeforeEncode];
-    [asn1_tag setTagIsConstructed];
-    asn1_list = [[NSMutableArray alloc]init];
+    [_asn1_tag setTagIsConstructed];
+    _asn1_list = [[NSMutableArray alloc]init];
     if(_imei==NULL)
     {
         @throw([NSException exceptionWithName:@"PARAMETER_MISSING"
                                        reason:@"UMGSMMAP_CheckIMEIArg imei missing"
                                      userInfo:NULL]);
     }
-    [asn1_list addObject:_imei];
+    [_asn1_list addObject:_imei];
     if(_requestedEquipmentInfo == NULL)
     {
         @throw([NSException exceptionWithName:@"PARAMETER_MISSING"
                                        reason:@"UMGSMMAP_CheckIMEIArg requestedEquipmentInfo missing"
                                      userInfo:NULL]);
     }
-    [asn1_list addObject:_requestedEquipmentInfo];
+    [_asn1_list addObject:_requestedEquipmentInfo];
 
     if(_imsi)
     {
         _imsi.asn1_tag.tagClass = UMASN1Class_Private;
         _imsi.asn1_tag.tagNumber = 1;
-        [asn1_list addObject:_imsi];
+        [_asn1_list addObject:_imsi];
     }
     if(_locationInformation)
     {
         _locationInformation.asn1_tag.tagClass = UMASN1Class_Private;
         _locationInformation.asn1_tag.tagNumber = 3;
-        [asn1_list addObject:_locationInformation];
+        [_asn1_list addObject:_locationInformation];
     }
     if(_extensionContainer)
     {
-        [asn1_list addObject:_extensionContainer];
+        [_asn1_list addObject:_extensionContainer];
     }
 }
     

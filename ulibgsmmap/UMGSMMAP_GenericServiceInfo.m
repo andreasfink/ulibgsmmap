@@ -24,33 +24,33 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(ss_Status)
 	{
-		[asn1_list addObject:ss_Status];
+		[_asn1_list addObject:ss_Status];
 	}
 	if(cliRestrictionOption)
 	{
-		[asn1_list addObject:cliRestrictionOption];
+		[_asn1_list addObject:cliRestrictionOption];
 	}
 	if(maximumEntitledPriority)
 	{
 		maximumEntitledPriority.asn1_tag.tagNumber = 0;
 		maximumEntitledPriority.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:maximumEntitledPriority];
+		[_asn1_list addObject:maximumEntitledPriority];
 	}
 	if(defaultPriority)
 	{
 		defaultPriority.asn1_tag.tagNumber = 1;
 		defaultPriority.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:defaultPriority];
+		[_asn1_list addObject:defaultPriority];
 	}
 	if(ccbs_FeatureList)
 	{
 		ccbs_FeatureList.asn1_tag.tagNumber = 2;
 		ccbs_FeatureList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ccbs_FeatureList];
+		[_asn1_list addObject:ccbs_FeatureList];
 	}
 }
 

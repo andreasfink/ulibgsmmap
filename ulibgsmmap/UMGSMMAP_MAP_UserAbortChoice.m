@@ -27,8 +27,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(userSpecificReason)
 	{
@@ -45,7 +45,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 0;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else if(userResourceLimitation)
@@ -63,7 +63,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 1;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else if(resourceUnavailable)
@@ -87,7 +87,7 @@
 		{
 			resourceUnavailable.asn1_tag.tagNumber = 2;
 			resourceUnavailable.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:resourceUnavailable];
+			[_asn1_list addObject:resourceUnavailable];
 		}
 	}
 	else if(applicationProcedureCancellation)
@@ -111,7 +111,7 @@
 		{
 			applicationProcedureCancellation.asn1_tag.tagNumber = 3;
 			applicationProcedureCancellation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:applicationProcedureCancellation];
+			[_asn1_list addObject:applicationProcedureCancellation];
 		}
 	}
 	else

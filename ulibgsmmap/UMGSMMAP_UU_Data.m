@@ -23,32 +23,32 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(uuIndicator)
 	{
 		uuIndicator.asn1_tag.tagNumber = 0;
 		uuIndicator.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:uuIndicator];
+		[_asn1_list addObject:uuIndicator];
 	}
 	if(uui)
 	{
 		uui.asn1_tag.tagNumber = 1;
 		uui.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:uui];
+		[_asn1_list addObject:uui];
 	}
 	if(uusCFInteraction)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 2;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 3;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

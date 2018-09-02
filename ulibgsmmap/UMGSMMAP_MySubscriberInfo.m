@@ -25,43 +25,43 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(locationInformation)
 	{
 		locationInformation.asn1_tag.tagNumber = 0;
 		locationInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:locationInformation];
+		[_asn1_list addObject:locationInformation];
 	}
 	if(geographicalInformation)
 	{
 		geographicalInformation.asn1_tag.tagNumber = 0;
 		geographicalInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:geographicalInformation];
+		[_asn1_list addObject:geographicalInformation];
 	}
 	if(vlr_number)
 	{
 		vlr_number.asn1_tag.tagNumber = 1;
 		vlr_number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vlr_number];
+		[_asn1_list addObject:vlr_number];
 	}
 	if(locationNumber)
 	{
 		locationNumber.asn1_tag.tagNumber = 2;
 		locationNumber.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:locationNumber];
+		[_asn1_list addObject:locationNumber];
 	}
 	if(cellGlobalIdOrServiceAreaIdOrLAI)
 	{
 		cellGlobalIdOrServiceAreaIdOrLAI.asn1_tag.tagNumber = 3;
 		cellGlobalIdOrServiceAreaIdOrLAI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:cellGlobalIdOrServiceAreaIdOrLAI];
+		[_asn1_list addObject:cellGlobalIdOrServiceAreaIdOrLAI];
 	}
 	if(laiFixedLength)
 	{
 		laiFixedLength.asn1_tag.tagNumber = 1;
 		laiFixedLength.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:laiFixedLength];
+		[_asn1_list addObject:laiFixedLength];
 	}
 }
 

@@ -23,31 +23,31 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(ccbs_Index)
 	{
 		ccbs_Index.asn1_tag.tagNumber = 0;
 		ccbs_Index.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ccbs_Index];
+		[_asn1_list addObject:ccbs_Index];
 	}
 	if(b_subscriberNumber)
 	{
 		b_subscriberNumber.asn1_tag.tagNumber = 1;
 		b_subscriberNumber.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:b_subscriberNumber];
+		[_asn1_list addObject:b_subscriberNumber];
 	}
 	if(b_subscriberSubaddress)
 	{
 		b_subscriberSubaddress.asn1_tag.tagNumber = 2;
 		b_subscriberSubaddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:b_subscriberSubaddress];
+		[_asn1_list addObject:b_subscriberSubaddress];
 	}
 	if(basicServiceGroup)
 	{
 		basicServiceGroup.asn1_tag.tagNumber = 3;
 		basicServiceGroup.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:basicServiceGroup];
+		[_asn1_list addObject:basicServiceGroup];
 	}
 }
 

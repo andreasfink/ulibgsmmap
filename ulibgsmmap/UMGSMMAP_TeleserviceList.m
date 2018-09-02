@@ -18,11 +18,11 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	for(id entry in _sequenceEntries)
 	{
-		[asn1_list addObject:entry];
+		[_asn1_list addObject:entry];
 	}
 }
 

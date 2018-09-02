@@ -23,25 +23,25 @@ CorrelationID ::= SEQUENCE
 - (void) processBeforeEncode
 {
     [super processBeforeEncode];
-    [asn1_tag setTagIsConstructed];
-    asn1_list = [[NSMutableArray alloc]init];
+    [_asn1_tag setTagIsConstructed];
+    _asn1_list = [[NSMutableArray alloc]init];
     if(_hlr_id)
     {
         _hlr_id.asn1_tag.tagNumber = 0;
         _hlr_id.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_hlr_id];
+        [_asn1_list addObject:_hlr_id];
     }
     if(_sip_uri_A)
     {
         _sip_uri_A.asn1_tag.tagNumber = 1;
         _sip_uri_A.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_sip_uri_A];
+        [_asn1_list addObject:_sip_uri_A];
     }
     if(_sip_uri_B)
     {
         _sip_uri_B.asn1_tag.tagNumber = 1;
         _sip_uri_B.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_sip_uri_B];
+        [_asn1_list addObject:_sip_uri_B];
     }
 }
 

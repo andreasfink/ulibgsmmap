@@ -25,39 +25,39 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(ss_Code)
 	{
-		[asn1_list addObject:ss_Code];
+		[_asn1_list addObject:ss_Code];
 	}
 	if(basicService)
 	{
-		[asn1_list addObject:basicService];
+		[_asn1_list addObject:basicService];
 	}
 	if(forwardedToNumber)
 	{
 		forwardedToNumber.asn1_tag.tagNumber = 4;
 		forwardedToNumber.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:forwardedToNumber];
+		[_asn1_list addObject:forwardedToNumber];
 	}
 	if(forwardedToSubaddress)
 	{
 		forwardedToSubaddress.asn1_tag.tagNumber = 6;
 		forwardedToSubaddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:forwardedToSubaddress];
+		[_asn1_list addObject:forwardedToSubaddress];
 	}
 	if(noReplyConditionTime)
 	{
 		noReplyConditionTime.asn1_tag.tagNumber = 5;
 		noReplyConditionTime.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:noReplyConditionTime];
+		[_asn1_list addObject:noReplyConditionTime];
 	}
 	if(defaultPriority)
 	{
 		defaultPriority.asn1_tag.tagNumber = 7;
 		defaultPriority.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:defaultPriority];
+		[_asn1_list addObject:defaultPriority];
 	}
 }
 

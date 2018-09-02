@@ -35,103 +35,103 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(locationInformation)
 	{
 		locationInformation.asn1_tag.tagNumber = 0;
 		locationInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:locationInformation];
+		[_asn1_list addObject:locationInformation];
 	}
 	if(subscriberState)
 	{
 		subscriberState.asn1_tag.tagNumber = 1;
 		subscriberState.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:subscriberState];
+		[_asn1_list addObject:subscriberState];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 2;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(locationInformationGPRS)
 	{
 		locationInformationGPRS.asn1_tag.tagNumber = 3;
 		locationInformationGPRS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:locationInformationGPRS];
+		[_asn1_list addObject:locationInformationGPRS];
 	}
 	if(ps_SubscriberState)
 	{
 		ps_SubscriberState.asn1_tag.tagNumber = 4;
 		ps_SubscriberState.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ps_SubscriberState];
+		[_asn1_list addObject:ps_SubscriberState];
 	}
 	if(imei)
 	{
 		imei.asn1_tag.tagNumber = 5;
 		imei.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:imei];
+		[_asn1_list addObject:imei];
 	}
 	if(ms_Classmark2)
 	{
 		ms_Classmark2.asn1_tag.tagNumber = 6;
 		ms_Classmark2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ms_Classmark2];
+		[_asn1_list addObject:ms_Classmark2];
 	}
 	if(gprs_MS_Class)
 	{
 		gprs_MS_Class.asn1_tag.tagNumber = 7;
 		gprs_MS_Class.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:gprs_MS_Class];
+		[_asn1_list addObject:gprs_MS_Class];
 	}
 	if(mnpInfoRes)
 	{
 		mnpInfoRes.asn1_tag.tagNumber = 8;
 		mnpInfoRes.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:mnpInfoRes];
+		[_asn1_list addObject:mnpInfoRes];
 	}
 	if(imsVoiceOverPS_SessionsIndication)
 	{
 		imsVoiceOverPS_SessionsIndication.asn1_tag.tagNumber = 9;
 		imsVoiceOverPS_SessionsIndication.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:imsVoiceOverPS_SessionsIndication];
+		[_asn1_list addObject:imsVoiceOverPS_SessionsIndication];
 	}
 	if(lastUE_ActivityTime)
 	{
 		lastUE_ActivityTime.asn1_tag.tagNumber = 10;
 		lastUE_ActivityTime.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lastUE_ActivityTime];
+		[_asn1_list addObject:lastUE_ActivityTime];
 	}
 	if(lastRAT_Type)
 	{
 		lastRAT_Type.asn1_tag.tagNumber = 11;
 		lastRAT_Type.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:lastRAT_Type];
+		[_asn1_list addObject:lastRAT_Type];
 	}
 	if(eps_SubscriberState)
 	{
 		eps_SubscriberState.asn1_tag.tagNumber = 12;
 		eps_SubscriberState.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:eps_SubscriberState];
+		[_asn1_list addObject:eps_SubscriberState];
 	}
 	if(locationInformationEPS)
 	{
 		locationInformationEPS.asn1_tag.tagNumber = 13;
 		locationInformationEPS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:locationInformationEPS];
+		[_asn1_list addObject:locationInformationEPS];
 	}
 	if(timeZone)
 	{
 		timeZone.asn1_tag.tagNumber = 14;
 		timeZone.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:timeZone];
+		[_asn1_list addObject:timeZone];
 	}
 	if(daylightSavingTime)
 	{
 		daylightSavingTime.asn1_tag.tagNumber = 15;
 		daylightSavingTime.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:daylightSavingTime];
+		[_asn1_list addObject:daylightSavingTime];
 	}
 }
 

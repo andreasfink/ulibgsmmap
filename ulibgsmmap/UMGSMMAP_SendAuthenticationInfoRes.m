@@ -22,21 +22,21 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(authenticationSetList)
 	{
-		[asn1_list addObject:authenticationSetList];
+		[_asn1_list addObject:authenticationSetList];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(eps_AuthenticationSetList)
 	{
 		eps_AuthenticationSetList.asn1_tag.tagNumber = 2;
 		eps_AuthenticationSetList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:eps_AuthenticationSetList];
+		[_asn1_list addObject:eps_AuthenticationSetList];
 	}
 }
 

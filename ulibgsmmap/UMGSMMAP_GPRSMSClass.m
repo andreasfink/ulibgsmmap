@@ -21,19 +21,19 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(mSNetworkCapability)
 	{
 		mSNetworkCapability.asn1_tag.tagNumber = 0;
 		mSNetworkCapability.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:mSNetworkCapability];
+		[_asn1_list addObject:mSNetworkCapability];
 	}
 	if(mSRadioAccessCapability)
 	{
 		mSRadioAccessCapability.asn1_tag.tagNumber = 1;
 		mSRadioAccessCapability.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:mSRadioAccessCapability];
+		[_asn1_list addObject:mSRadioAccessCapability];
 	}
 }
 

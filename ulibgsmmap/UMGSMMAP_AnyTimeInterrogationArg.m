@@ -23,31 +23,31 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(subscriberIdentity)
 	{
 		subscriberIdentity.asn1_tag.tagNumber = 0;
 		subscriberIdentity.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:subscriberIdentity];
+		[_asn1_list addObject:subscriberIdentity];
 	}
 	if(requestedInfo)
 	{
 		requestedInfo.asn1_tag.tagNumber = 1;
 		requestedInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:requestedInfo];
+		[_asn1_list addObject:requestedInfo];
 	}
 	if(gsmSCF_Address)
 	{
 		gsmSCF_Address.asn1_tag.tagNumber = 3;
 		gsmSCF_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:gsmSCF_Address];
+		[_asn1_list addObject:gsmSCF_Address];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 2;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

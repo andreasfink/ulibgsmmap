@@ -21,19 +21,19 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(dataCodingScheme)
 	{
 		dataCodingScheme.asn1_tag.tagNumber = 0;
 		dataCodingScheme.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:dataCodingScheme];
+		[_asn1_list addObject:dataCodingScheme];
 	}
 	if(nameString)
 	{
 		nameString.asn1_tag.tagNumber = 2;
 		nameString.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:nameString];
+		[_asn1_list addObject:nameString];
 	}
 }
 

@@ -24,27 +24,27 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(dialledNumber)
 	{
-		[asn1_list addObject:dialledNumber];
+		[_asn1_list addObject:dialledNumber];
 	}
 	if(serviceKey)
 	{
-		[asn1_list addObject:serviceKey];
+		[_asn1_list addObject:serviceKey];
 	}
 	if(gsmSCF_Address)
 	{
-		[asn1_list addObject:gsmSCF_Address];
+		[_asn1_list addObject:gsmSCF_Address];
 	}
 	if(defaultCallHandling)
 	{
-		[asn1_list addObject:defaultCallHandling];
+		[_asn1_list addObject:defaultCallHandling];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

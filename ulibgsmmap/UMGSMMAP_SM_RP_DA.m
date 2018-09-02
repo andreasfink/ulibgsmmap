@@ -24,11 +24,11 @@
 {
 	[super processBeforeEncode];
 	BOOL isImplicit = YES;
-	if(encodingType == UMASN1EncodingType_implicitlyEncoded)
+	if(_encodingType == UMASN1EncodingType_implicitlyEncoded)
 	{
 	    isImplicit = YES;
 	}
-	else if(encodingType == UMASN1EncodingType_explicitlyEncoded)
+	else if(_encodingType == UMASN1EncodingType_explicitlyEncoded)
 	{
 	    isImplicit = NO;
 	}
@@ -37,18 +37,18 @@
 		if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 		{
 			isImplicit = NO;
-			encodingType = UMASN1EncodingType_explicitlyEncoded;
+			_encodingType = UMASN1EncodingType_explicitlyEncoded;
 		}
 		else
 		{
 			isImplicit = YES;
-			encodingType = UMASN1EncodingType_implicitlyEncoded;
+			_encodingType = UMASN1EncodingType_implicitlyEncoded;
 		}
 	}
 	if(isImplicit)
 	{
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(imsi)
 	{
@@ -71,7 +71,7 @@
 		{
 			imsi.asn1_tag.tagNumber = 0;
 			imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:imsi];
+			[_asn1_list addObject:imsi];
 		}
 	}
 	else if(lmsi)
@@ -95,7 +95,7 @@
 		{
 			lmsi.asn1_tag.tagNumber = 1;
 			lmsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:lmsi];
+			[_asn1_list addObject:lmsi];
 		}
 	}
 	else if(serviceCentreAddressDA)
@@ -119,7 +119,7 @@
 		{
 			serviceCentreAddressDA.asn1_tag.tagNumber = 4;
 			serviceCentreAddressDA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:serviceCentreAddressDA];
+			[_asn1_list addObject:serviceCentreAddressDA];
 		}
 	}
 	else if(noSM_RP_DA)
@@ -137,7 +137,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 5;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else
@@ -154,11 +154,11 @@
 	int p=0;
     UMASN1Object *o;
 	BOOL isImplicit = YES;
-	if(encodingType == UMASN1EncodingType_implicitlyEncoded)
+	if(_encodingType == UMASN1EncodingType_implicitlyEncoded)
 	{
 	    isImplicit = YES;
 	}
-	else if(encodingType == UMASN1EncodingType_explicitlyEncoded)
+	else if(_encodingType == UMASN1EncodingType_explicitlyEncoded)
 	{
 	    isImplicit = NO;
 	}
@@ -167,12 +167,12 @@
 	    if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	    {
 	        isImplicit = NO;
-	        encodingType = UMASN1EncodingType_explicitlyEncoded;
+	        _encodingType = UMASN1EncodingType_explicitlyEncoded;
 	    }
 	    else
 	    {
 	        isImplicit = YES;
-	        encodingType = UMASN1EncodingType_implicitlyEncoded;
+	        _encodingType = UMASN1EncodingType_implicitlyEncoded;
 	    }
 	}
 	if(isImplicit)

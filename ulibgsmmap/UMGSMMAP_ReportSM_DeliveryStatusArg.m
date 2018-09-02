@@ -28,55 +28,55 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(msisdn)
 	{
-		[asn1_list addObject:msisdn];
+		[_asn1_list addObject:msisdn];
 	}
 	if(serviceCentreAddress)
 	{
-		[asn1_list addObject:serviceCentreAddress];
+		[_asn1_list addObject:serviceCentreAddress];
 	}
 	if(sm_DeliveryOutcome)
 	{
-		[asn1_list addObject:sm_DeliveryOutcome];
+		[_asn1_list addObject:sm_DeliveryOutcome];
 	}
 	if(absentSubscriberDiagnosticSM)
 	{
 		absentSubscriberDiagnosticSM.asn1_tag.tagNumber = 0;
 		absentSubscriberDiagnosticSM.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:absentSubscriberDiagnosticSM];
+		[_asn1_list addObject:absentSubscriberDiagnosticSM];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(gprsSupportIndicator)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 2;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(deliveryOutcomeIndicator)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 3;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(additionalSM_DeliveryOutcome)
 	{
 		additionalSM_DeliveryOutcome.asn1_tag.tagNumber = 4;
 		additionalSM_DeliveryOutcome.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:additionalSM_DeliveryOutcome];
+		[_asn1_list addObject:additionalSM_DeliveryOutcome];
 	}
 	if(additionalAbsentSubscriberDiagnosticSM)
 	{
 		additionalAbsentSubscriberDiagnosticSM.asn1_tag.tagNumber = 5;
 		additionalAbsentSubscriberDiagnosticSM.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:additionalAbsentSubscriberDiagnosticSM];
+		[_asn1_list addObject:additionalAbsentSubscriberDiagnosticSM];
 	}
 }
 

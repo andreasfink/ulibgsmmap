@@ -27,8 +27,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(ss_Status)
 	{
@@ -51,7 +51,7 @@
 		{
 			ss_Status.asn1_tag.tagNumber = 0;
 			ss_Status.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:ss_Status];
+			[_asn1_list addObject:ss_Status];
 		}
 	}
 	else if(basicServiceGroupList)
@@ -75,7 +75,7 @@
 		{
 			basicServiceGroupList.asn1_tag.tagNumber = 2;
 			basicServiceGroupList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:basicServiceGroupList];
+			[_asn1_list addObject:basicServiceGroupList];
 		}
 	}
 	else if(forwardingFeatureList)
@@ -99,7 +99,7 @@
 		{
 			forwardingFeatureList.asn1_tag.tagNumber = 3;
 			forwardingFeatureList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:forwardingFeatureList];
+			[_asn1_list addObject:forwardingFeatureList];
 		}
 	}
 	else if(genericServiceInfo)
@@ -123,7 +123,7 @@
 		{
 			genericServiceInfo.asn1_tag.tagNumber = 4;
 			genericServiceInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:genericServiceInfo];
+			[_asn1_list addObject:genericServiceInfo];
 		}
 	}
 	else

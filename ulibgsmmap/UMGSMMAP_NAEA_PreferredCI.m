@@ -21,19 +21,19 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(naea_PreferredCIC)
 	{
 		naea_PreferredCIC.asn1_tag.tagNumber = 0;
 		naea_PreferredCIC.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:naea_PreferredCIC];
+		[_asn1_list addObject:naea_PreferredCIC];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 1;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

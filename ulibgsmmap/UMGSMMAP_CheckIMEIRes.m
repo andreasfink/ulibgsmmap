@@ -26,21 +26,21 @@
 - (void) processBeforeEncode
 {
     [super processBeforeEncode];
-    [asn1_tag setTagIsConstructed];
-    asn1_list = [[NSMutableArray alloc]init];
+    [_asn1_tag setTagIsConstructed];
+    _asn1_list = [[NSMutableArray alloc]init];
     if(_equipmentStatus)
     {
-        [asn1_list addObject:_equipmentStatus];
+        [_asn1_list addObject:_equipmentStatus];
     }
     if(_bmuef)
     {
-        [asn1_list addObject:_bmuef];
+        [_asn1_list addObject:_bmuef];
     }
     if(_extensionContainer)
     {
         _extensionContainer.asn1_tag.tagNumber = 0;
         _extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:_extensionContainer];
+        [_asn1_list addObject:_extensionContainer];
     }
 }
 

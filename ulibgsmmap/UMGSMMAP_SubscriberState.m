@@ -27,8 +27,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(assumedIdle)
 	{
@@ -45,7 +45,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 0;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else if(camelBusy)
@@ -63,7 +63,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 1;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else if(netDetNotReachable)
@@ -85,7 +85,7 @@
 		}
 		else
 		{
-			[asn1_list addObject:netDetNotReachable];
+			[_asn1_list addObject:netDetNotReachable];
 		}
 	}
 	else if(notProvidedFromVLR)
@@ -103,7 +103,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 2;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else

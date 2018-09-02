@@ -32,85 +32,85 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(ageOfLocationInformation)
 	{
-		[asn1_list addObject:ageOfLocationInformation];
+		[_asn1_list addObject:ageOfLocationInformation];
 	}
 	if(geographicalInformation)
 	{
 		geographicalInformation.asn1_tag.tagNumber = 0;
 		geographicalInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:geographicalInformation];
+		[_asn1_list addObject:geographicalInformation];
 	}
 	if(vlr_number)
 	{
 		vlr_number.asn1_tag.tagNumber = 1;
 		vlr_number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vlr_number];
+		[_asn1_list addObject:vlr_number];
 	}
 	if(locationNumber)
 	{
 		locationNumber.asn1_tag.tagNumber = 2;
 		locationNumber.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:locationNumber];
+		[_asn1_list addObject:locationNumber];
 	}
 	if(cellGlobalIdOrServiceAreaIdOrLAI)
 	{
 		cellGlobalIdOrServiceAreaIdOrLAI.asn1_tag.tagNumber = 3;
 		cellGlobalIdOrServiceAreaIdOrLAI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:cellGlobalIdOrServiceAreaIdOrLAI];
+		[_asn1_list addObject:cellGlobalIdOrServiceAreaIdOrLAI];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 4;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(selectedLSA_Id)
 	{
 		selectedLSA_Id.asn1_tag.tagNumber = 5;
 		selectedLSA_Id.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:selectedLSA_Id];
+		[_asn1_list addObject:selectedLSA_Id];
 	}
 	if(msc_Number)
 	{
 		msc_Number.asn1_tag.tagNumber = 6;
 		msc_Number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:msc_Number];
+		[_asn1_list addObject:msc_Number];
 	}
 	if(geodeticInformation)
 	{
 		geodeticInformation.asn1_tag.tagNumber = 7;
 		geodeticInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:geodeticInformation];
+		[_asn1_list addObject:geodeticInformation];
 	}
 	if(currentLocationRetrieved)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 8;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(sai_Present)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 9;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(locationInformationEPS)
 	{
 		locationInformationEPS.asn1_tag.tagNumber = 10;
 		locationInformationEPS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:locationInformationEPS];
+		[_asn1_list addObject:locationInformationEPS];
 	}
 	if(userCSGInformation)
 	{
 		userCSGInformation.asn1_tag.tagNumber = 11;
 		userCSGInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:userCSGInformation];
+		[_asn1_list addObject:userCSGInformation];
 	}
 }
 

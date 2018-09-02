@@ -24,27 +24,27 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(rand)
 	{
-		[asn1_list addObject:rand];
+		[_asn1_list addObject:rand];
 	}
 	if(xres)
 	{
-		[asn1_list addObject:xres];
+		[_asn1_list addObject:xres];
 	}
 	if(autn)
 	{
-		[asn1_list addObject:autn];
+		[_asn1_list addObject:autn];
 	}
 	if(kasme)
 	{
-		[asn1_list addObject:kasme];
+		[_asn1_list addObject:kasme];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

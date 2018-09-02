@@ -24,7 +24,7 @@
     self = [super init];
     if(self)
     {
-        asn1_data = [s unhexedData];
+        _asn1_data = [s unhexedData];
     }
     return self;
 }

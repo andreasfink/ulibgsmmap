@@ -21,17 +21,17 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(sms_TriggerDetectionPoint)
 	{
-		[asn1_list addObject:sms_TriggerDetectionPoint];
+		[_asn1_list addObject:sms_TriggerDetectionPoint];
 	}
 	if(tpdu_TypeCriterion)
 	{
 		tpdu_TypeCriterion.asn1_tag.tagNumber = 0;
 		tpdu_TypeCriterion.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:tpdu_TypeCriterion];
+		[_asn1_list addObject:tpdu_TypeCriterion];
 	}
 }
 

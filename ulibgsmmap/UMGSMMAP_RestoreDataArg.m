@@ -22,32 +22,32 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(imsi)
 	{
-		[asn1_list addObject:imsi];
+		[_asn1_list addObject:imsi];
 	}
 	if(lmsi)
 	{
-		[asn1_list addObject:lmsi];
+		[_asn1_list addObject:lmsi];
 	}
 	if(extensionContainer)
 	{
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(vlr_Capability)
 	{
 		vlr_Capability.asn1_tag.tagNumber = 6;
 		vlr_Capability.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vlr_Capability];
+		[_asn1_list addObject:vlr_Capability];
 	}
     if(_restorationIndicator)
     {
         UMASN1Null *ri = [[UMASN1Null alloc]init];
         ri.asn1_tag.tagNumber = 6;
         ri.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [asn1_list addObject:ri];
+        [_asn1_list addObject:ri];
     }
 }
 

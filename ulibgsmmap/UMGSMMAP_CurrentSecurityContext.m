@@ -25,8 +25,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(gsm_SecurityContextData)
 	{
@@ -49,7 +49,7 @@
 		{
 			gsm_SecurityContextData.asn1_tag.tagNumber = 0;
 			gsm_SecurityContextData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:gsm_SecurityContextData];
+			[_asn1_list addObject:gsm_SecurityContextData];
 		}
 	}
 	else if(umts_SecurityContextData)
@@ -73,7 +73,7 @@
 		{
 			umts_SecurityContextData.asn1_tag.tagNumber = 1;
 			umts_SecurityContextData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:umts_SecurityContextData];
+			[_asn1_list addObject:umts_SecurityContextData];
 		}
 	}
 	else

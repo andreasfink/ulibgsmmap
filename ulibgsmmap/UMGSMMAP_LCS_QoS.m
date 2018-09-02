@@ -24,38 +24,38 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(horizontal_accuracy)
 	{
 		horizontal_accuracy.asn1_tag.tagNumber = 0;
 		horizontal_accuracy.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:horizontal_accuracy];
+		[_asn1_list addObject:horizontal_accuracy];
 	}
 	if(verticalCoordinateRequest)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 1;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(vertical_accuracy)
 	{
 		vertical_accuracy.asn1_tag.tagNumber = 2;
 		vertical_accuracy.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vertical_accuracy];
+		[_asn1_list addObject:vertical_accuracy];
 	}
 	if(responseTime)
 	{
 		responseTime.asn1_tag.tagNumber = 3;
 		responseTime.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:responseTime];
+		[_asn1_list addObject:responseTime];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 4;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

@@ -31,80 +31,80 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(locationEstimate)
 	{
-		[asn1_list addObject:locationEstimate];
+		[_asn1_list addObject:locationEstimate];
 	}
 	if(ageOfLocationEstimate)
 	{
 		ageOfLocationEstimate.asn1_tag.tagNumber = 0;
 		ageOfLocationEstimate.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ageOfLocationEstimate];
+		[_asn1_list addObject:ageOfLocationEstimate];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 1;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(add_LocationEstimate)
 	{
 		add_LocationEstimate.asn1_tag.tagNumber = 2;
 		add_LocationEstimate.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:add_LocationEstimate];
+		[_asn1_list addObject:add_LocationEstimate];
 	}
 	if(deferredmt_lrResponseIndicator)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 3;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(geranPositioningData)
 	{
 		geranPositioningData.asn1_tag.tagNumber = 4;
 		geranPositioningData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:geranPositioningData];
+		[_asn1_list addObject:geranPositioningData];
 	}
 	if(utranPositioningData)
 	{
 		utranPositioningData.asn1_tag.tagNumber = 5;
 		utranPositioningData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:utranPositioningData];
+		[_asn1_list addObject:utranPositioningData];
 	}
 	if(cellIdOrSai)
 	{
 		cellIdOrSai.asn1_tag.tagNumber = 6;
 		cellIdOrSai.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:cellIdOrSai];
+		[_asn1_list addObject:cellIdOrSai];
 	}
 	if(sai_Present)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 7;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(accuracyFulfilmentIndicator)
 	{
 		accuracyFulfilmentIndicator.asn1_tag.tagNumber = 8;
 		accuracyFulfilmentIndicator.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:accuracyFulfilmentIndicator];
+		[_asn1_list addObject:accuracyFulfilmentIndicator];
 	}
 	if(velocityEstimate)
 	{
 		velocityEstimate.asn1_tag.tagNumber = 9;
 		velocityEstimate.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:velocityEstimate];
+		[_asn1_list addObject:velocityEstimate];
 	}
 	if(mo_lrShortCircuitIndicator)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 10;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 }
 

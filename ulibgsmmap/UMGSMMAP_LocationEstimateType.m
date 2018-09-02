@@ -48,8 +48,8 @@
     }
 
     [super processBeforeEncode];
-    [asn1_tag setTagIsPrimitive];
-    asn1_data = enumValue.asn1_data;
+    [_asn1_tag setTagIsPrimitive];
+    _asn1_data = enumValue.asn1_data;
 }
 
 

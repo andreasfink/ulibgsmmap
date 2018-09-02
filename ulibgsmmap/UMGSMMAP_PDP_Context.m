@@ -26,48 +26,48 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(pdp_ContextId)
 	{
-		[asn1_list addObject:pdp_ContextId];
+		[_asn1_list addObject:pdp_ContextId];
 	}
 	if(pdp_Type)
 	{
 		pdp_Type.asn1_tag.tagNumber = 16;
 		pdp_Type.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:pdp_Type];
+		[_asn1_list addObject:pdp_Type];
 	}
 	if(pdp_Address)
 	{
 		pdp_Address.asn1_tag.tagNumber = 17;
 		pdp_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:pdp_Address];
+		[_asn1_list addObject:pdp_Address];
 	}
 	if(qos_Subscribed)
 	{
 		qos_Subscribed.asn1_tag.tagNumber = 18;
 		qos_Subscribed.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos_Subscribed];
+		[_asn1_list addObject:qos_Subscribed];
 	}
 	if(vplmnAddressAllowed)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 19;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(apn)
 	{
 		apn.asn1_tag.tagNumber = 20;
 		apn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:apn];
+		[_asn1_list addObject:apn];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 21;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

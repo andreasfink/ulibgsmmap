@@ -25,8 +25,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(cliRestrictionOption)
 	{
@@ -49,7 +49,7 @@
 		{
 			cliRestrictionOption.asn1_tag.tagNumber = 2;
 			cliRestrictionOption.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:cliRestrictionOption];
+			[_asn1_list addObject:cliRestrictionOption];
 		}
 	}
 	else if(overrideCategory)
@@ -73,7 +73,7 @@
 		{
 			overrideCategory.asn1_tag.tagNumber = 1;
 			overrideCategory.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:overrideCategory];
+			[_asn1_list addObject:overrideCategory];
 		}
 	}
 	else

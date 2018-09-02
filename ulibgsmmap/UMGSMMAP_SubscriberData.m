@@ -31,80 +31,80 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(msisdn)
 	{
 		msisdn.asn1_tag.tagNumber = 1;
 		msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:msisdn];
+		[_asn1_list addObject:msisdn];
 	}
 	if(category)
 	{
 		category.asn1_tag.tagNumber = 2;
 		category.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:category];
+		[_asn1_list addObject:category];
 	}
 	if(subscriberStatus)
 	{
 		subscriberStatus.asn1_tag.tagNumber = 3;
 		subscriberStatus.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:subscriberStatus];
+		[_asn1_list addObject:subscriberStatus];
 	}
 	if(bearerServiceList)
 	{
 		bearerServiceList.asn1_tag.tagNumber = 4;
 		bearerServiceList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:bearerServiceList];
+		[_asn1_list addObject:bearerServiceList];
 	}
 	if(teleserviceList)
 	{
 		teleserviceList.asn1_tag.tagNumber = 6;
 		teleserviceList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:teleserviceList];
+		[_asn1_list addObject:teleserviceList];
 	}
 	if(provisionedSS)
 	{
 		provisionedSS.asn1_tag.tagNumber = 7;
 		provisionedSS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:provisionedSS];
+		[_asn1_list addObject:provisionedSS];
 	}
 	if(odb_Data)
 	{
 		odb_Data.asn1_tag.tagNumber = 8;
 		odb_Data.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:odb_Data];
+		[_asn1_list addObject:odb_Data];
 	}
 	if(roamingRestrictionDueToUnsupportedFeature)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 9;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(regionalSubscriptionData)
 	{
 		regionalSubscriptionData.asn1_tag.tagNumber = 10;
 		regionalSubscriptionData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:regionalSubscriptionData];
+		[_asn1_list addObject:regionalSubscriptionData];
 	}
 	if(vbsSubscriptionData)
 	{
 		vbsSubscriptionData.asn1_tag.tagNumber = 11;
 		vbsSubscriptionData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vbsSubscriptionData];
+		[_asn1_list addObject:vbsSubscriptionData];
 	}
 	if(vgcsSubscriptionData)
 	{
 		vgcsSubscriptionData.asn1_tag.tagNumber = 12;
 		vgcsSubscriptionData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vgcsSubscriptionData];
+		[_asn1_list addObject:vgcsSubscriptionData];
 	}
 	if(vlrCamelSubscriptionInfo)
 	{
 		vlrCamelSubscriptionInfo.asn1_tag.tagNumber = 13;
 		vlrCamelSubscriptionInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:vlrCamelSubscriptionInfo];
+		[_asn1_list addObject:vlrCamelSubscriptionInfo];
 	}
 }
 

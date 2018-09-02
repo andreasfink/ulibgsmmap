@@ -24,32 +24,32 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	asn1_tag.isConstructed=YES;
-	asn1_list = [[NSMutableArray alloc]init];
+	_asn1_tag.isConstructed=YES;
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(sm_RP_DA)
 	{
 		sm_RP_DA.encodingType = UMASN1EncodingType_implicitlyEncoded;
-		[asn1_list addObject:sm_RP_DA];
+		[_asn1_list addObject:sm_RP_DA];
 	}
 	if(sm_RP_OA)
 	{
 		sm_RP_OA.encodingType = UMASN1EncodingType_implicitlyEncoded;
-		[asn1_list addObject:sm_RP_OA];
+		[_asn1_list addObject:sm_RP_OA];
 	}
 	if(sm_RP_UI)
 	{
 		sm_RP_UI.encodingType = UMASN1EncodingType_implicitlyEncoded;
-		[asn1_list addObject:sm_RP_UI];
+		[_asn1_list addObject:sm_RP_UI];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.encodingType = UMASN1EncodingType_implicitlyEncoded;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(imsi)
 	{
 		imsi.encodingType = UMASN1EncodingType_implicitlyEncoded;
-		[asn1_list addObject:imsi];
+		[_asn1_list addObject:imsi];
 	}
 }
 

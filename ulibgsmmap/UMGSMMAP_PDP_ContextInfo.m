@@ -48,182 +48,182 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(pdp_ContextIdentifier)
 	{
 		pdp_ContextIdentifier.asn1_tag.tagNumber = 0;
 		pdp_ContextIdentifier.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:pdp_ContextIdentifier];
+		[_asn1_list addObject:pdp_ContextIdentifier];
 	}
 	if(pdp_ContextActive)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 1;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(pdp_Type)
 	{
 		pdp_Type.asn1_tag.tagNumber = 2;
 		pdp_Type.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:pdp_Type];
+		[_asn1_list addObject:pdp_Type];
 	}
 	if(pdp_Address)
 	{
 		pdp_Address.asn1_tag.tagNumber = 3;
 		pdp_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:pdp_Address];
+		[_asn1_list addObject:pdp_Address];
 	}
 	if(apn_Subscribed)
 	{
 		apn_Subscribed.asn1_tag.tagNumber = 4;
 		apn_Subscribed.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:apn_Subscribed];
+		[_asn1_list addObject:apn_Subscribed];
 	}
 	if(apn_InUse)
 	{
 		apn_InUse.asn1_tag.tagNumber = 5;
 		apn_InUse.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:apn_InUse];
+		[_asn1_list addObject:apn_InUse];
 	}
 	if(nsapi)
 	{
 		nsapi.asn1_tag.tagNumber = 6;
 		nsapi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:nsapi];
+		[_asn1_list addObject:nsapi];
 	}
 	if(transactionId)
 	{
 		transactionId.asn1_tag.tagNumber = 7;
 		transactionId.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:transactionId];
+		[_asn1_list addObject:transactionId];
 	}
 	if(teid_ForGnAndGp)
 	{
 		teid_ForGnAndGp.asn1_tag.tagNumber = 8;
 		teid_ForGnAndGp.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:teid_ForGnAndGp];
+		[_asn1_list addObject:teid_ForGnAndGp];
 	}
 	if(teid_ForIu)
 	{
 		teid_ForIu.asn1_tag.tagNumber = 9;
 		teid_ForIu.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:teid_ForIu];
+		[_asn1_list addObject:teid_ForIu];
 	}
 	if(ggsn_Address)
 	{
 		ggsn_Address.asn1_tag.tagNumber = 10;
 		ggsn_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ggsn_Address];
+		[_asn1_list addObject:ggsn_Address];
 	}
 	if(qos_Subscribed)
 	{
 		qos_Subscribed.asn1_tag.tagNumber = 11;
 		qos_Subscribed.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos_Subscribed];
+		[_asn1_list addObject:qos_Subscribed];
 	}
 	if(qos_Requested)
 	{
 		qos_Requested.asn1_tag.tagNumber = 12;
 		qos_Requested.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos_Requested];
+		[_asn1_list addObject:qos_Requested];
 	}
 	if(qos_Negotiated)
 	{
 		qos_Negotiated.asn1_tag.tagNumber = 13;
 		qos_Negotiated.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos_Negotiated];
+		[_asn1_list addObject:qos_Negotiated];
 	}
 	if(chargingId)
 	{
 		chargingId.asn1_tag.tagNumber = 14;
 		chargingId.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:chargingId];
+		[_asn1_list addObject:chargingId];
 	}
 	if(chargingCharacteristics)
 	{
 		chargingCharacteristics.asn1_tag.tagNumber = 15;
 		chargingCharacteristics.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:chargingCharacteristics];
+		[_asn1_list addObject:chargingCharacteristics];
 	}
 	if(rnc_Address)
 	{
 		rnc_Address.asn1_tag.tagNumber = 16;
 		rnc_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:rnc_Address];
+		[_asn1_list addObject:rnc_Address];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 17;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(qos2_Subscribed)
 	{
 		qos2_Subscribed.asn1_tag.tagNumber = 18;
 		qos2_Subscribed.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos2_Subscribed];
+		[_asn1_list addObject:qos2_Subscribed];
 	}
 	if(qos2_Requested)
 	{
 		qos2_Requested.asn1_tag.tagNumber = 19;
 		qos2_Requested.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos2_Requested];
+		[_asn1_list addObject:qos2_Requested];
 	}
 	if(qos2_Negotiated)
 	{
 		qos2_Negotiated.asn1_tag.tagNumber = 20;
 		qos2_Negotiated.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos2_Negotiated];
+		[_asn1_list addObject:qos2_Negotiated];
 	}
 	if(qos3_Subscribed)
 	{
 		qos3_Subscribed.asn1_tag.tagNumber = 21;
 		qos3_Subscribed.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos3_Subscribed];
+		[_asn1_list addObject:qos3_Subscribed];
 	}
 	if(qos3_Requested)
 	{
 		qos3_Requested.asn1_tag.tagNumber = 22;
 		qos3_Requested.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos3_Requested];
+		[_asn1_list addObject:qos3_Requested];
 	}
 	if(qos3_Negotiated)
 	{
 		qos3_Negotiated.asn1_tag.tagNumber = 23;
 		qos3_Negotiated.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos3_Negotiated];
+		[_asn1_list addObject:qos3_Negotiated];
 	}
 	if(qos4_Subscribed)
 	{
 		qos4_Subscribed.asn1_tag.tagNumber = 25;
 		qos4_Subscribed.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos4_Subscribed];
+		[_asn1_list addObject:qos4_Subscribed];
 	}
 	if(qos4_Requested)
 	{
 		qos4_Requested.asn1_tag.tagNumber = 26;
 		qos4_Requested.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos4_Requested];
+		[_asn1_list addObject:qos4_Requested];
 	}
 	if(qos4_Negotiated)
 	{
 		qos4_Negotiated.asn1_tag.tagNumber = 27;
 		qos4_Negotiated.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:qos4_Negotiated];
+		[_asn1_list addObject:qos4_Negotiated];
 	}
 	if(ext_pdp_Type)
 	{
 		ext_pdp_Type.asn1_tag.tagNumber = 28;
 		ext_pdp_Type.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ext_pdp_Type];
+		[_asn1_list addObject:ext_pdp_Type];
 	}
 	if(ext_pdp_Address)
 	{
 		ext_pdp_Address.asn1_tag.tagNumber = 29;
 		ext_pdp_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ext_pdp_Address];
+		[_asn1_list addObject:ext_pdp_Address];
 	}
 }
 

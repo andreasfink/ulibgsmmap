@@ -26,49 +26,49 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(teleserviceList)
 	{
 		teleserviceList.asn1_tag.tagNumber = 1;
 		teleserviceList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:teleserviceList];
+		[_asn1_list addObject:teleserviceList];
 	}
 	if(bearerServiceList)
 	{
 		bearerServiceList.asn1_tag.tagNumber = 2;
 		bearerServiceList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:bearerServiceList];
+		[_asn1_list addObject:bearerServiceList];
 	}
 	if(ss_List)
 	{
 		ss_List.asn1_tag.tagNumber = 3;
 		ss_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ss_List];
+		[_asn1_list addObject:ss_List];
 	}
 	if(odb_GeneralData)
 	{
 		odb_GeneralData.asn1_tag.tagNumber = 4;
 		odb_GeneralData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:odb_GeneralData];
+		[_asn1_list addObject:odb_GeneralData];
 	}
 	if(regionalSubscriptionResponse)
 	{
 		regionalSubscriptionResponse.asn1_tag.tagNumber = 5;
 		regionalSubscriptionResponse.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:regionalSubscriptionResponse];
+		[_asn1_list addObject:regionalSubscriptionResponse];
 	}
 	if(supportedCamelPhases)
 	{
 		supportedCamelPhases.asn1_tag.tagNumber = 6;
 		supportedCamelPhases.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:supportedCamelPhases];
+		[_asn1_list addObject:supportedCamelPhases];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 7;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

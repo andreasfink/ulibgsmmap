@@ -30,8 +30,8 @@
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
 		isImplicit = NO;
-		asn1_tag.isConstructed=YES;
-		asn1_list = [[NSMutableArray alloc]init];
+		_asn1_tag.isConstructed=YES;
+		_asn1_list = [[NSMutableArray alloc]init];
 	}
 	if(notProvidedFromSGSNorMME)
 	{
@@ -48,7 +48,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 0;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else if(ps_Detached)
@@ -66,7 +66,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 1;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else if(ps_AttachedNotReachableForPaging)
@@ -84,7 +84,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 2;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else if(ps_AttachedReachableForPaging)
@@ -102,7 +102,7 @@
 			UMASN1Null *n = [[UMASN1Null alloc]init];
 			n.asn1_tag.tagNumber = 3;
 			n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:n];
+			[_asn1_list addObject:n];
 		}
 	}
 	else if(ps_PDP_ActiveNotReachableForPaging)
@@ -126,7 +126,7 @@
 		{
 			ps_PDP_ActiveNotReachableForPaging.asn1_tag.tagNumber = 4;
 			ps_PDP_ActiveNotReachableForPaging.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:ps_PDP_ActiveNotReachableForPaging];
+			[_asn1_list addObject:ps_PDP_ActiveNotReachableForPaging];
 		}
 	}
 	else if(ps_PDP_ActiveReachableForPaging)
@@ -150,7 +150,7 @@
 		{
 			ps_PDP_ActiveReachableForPaging.asn1_tag.tagNumber = 5;
 			ps_PDP_ActiveReachableForPaging.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[asn1_list addObject:ps_PDP_ActiveReachableForPaging];
+			[_asn1_list addObject:ps_PDP_ActiveReachableForPaging];
 		}
 	}
 	else if(netDetNotReachable)
@@ -172,7 +172,7 @@
 		}
 		else
 		{
-			[asn1_list addObject:netDetNotReachable];
+			[_asn1_list addObject:netDetNotReachable];
 		}
 	}
 	else

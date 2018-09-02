@@ -27,56 +27,56 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(e_utranCellGlobalIdentity)
 	{
 		e_utranCellGlobalIdentity.asn1_tag.tagNumber = 0;
 		e_utranCellGlobalIdentity.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:e_utranCellGlobalIdentity];
+		[_asn1_list addObject:e_utranCellGlobalIdentity];
 	}
 	if(trackingAreaIdentity)
 	{
 		trackingAreaIdentity.asn1_tag.tagNumber = 1;
 		trackingAreaIdentity.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:trackingAreaIdentity];
+		[_asn1_list addObject:trackingAreaIdentity];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 2;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(geographicalInformation)
 	{
 		geographicalInformation.asn1_tag.tagNumber = 3;
 		geographicalInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:geographicalInformation];
+		[_asn1_list addObject:geographicalInformation];
 	}
 	if(geodeticInformation)
 	{
 		geodeticInformation.asn1_tag.tagNumber = 4;
 		geodeticInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:geodeticInformation];
+		[_asn1_list addObject:geodeticInformation];
 	}
 	if(currentLocationRetrieved)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 5;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 	if(ageOfLocationInformation)
 	{
 		ageOfLocationInformation.asn1_tag.tagNumber = 6;
 		ageOfLocationInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ageOfLocationInformation];
+		[_asn1_list addObject:ageOfLocationInformation];
 	}
 	if(mme_Name)
 	{
 		mme_Name.asn1_tag.tagNumber = 7;
 		mme_Name.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:mme_Name];
+		[_asn1_list addObject:mme_Name];
 	}
 }
 

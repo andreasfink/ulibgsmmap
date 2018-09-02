@@ -29,11 +29,11 @@
     if([context isKindOfClass:[UMLayerGSMMAP class]])
     {
         UMLayerGSMMAP *map = (UMLayerGSMMAP *)context;
-        decoded_sms = [map.user decodeSmsObject:asn1_data context:context];
+        decoded_sms = [map.user decodeSmsObject:_asn1_data context:context];
     }
     else if([context respondsToSelector:@selector(decodeSmsObject:context:)])
     {
-        decoded_sms = [context decodeSmsObject:asn1_data context:context];
+        decoded_sms = [context decodeSmsObject:_asn1_data context:context];
     }
     return self;
 }
@@ -42,7 +42,7 @@
 {
     UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
 
-    dict[@"rawData"] = asn1_data;
+    dict[@"rawData"] = _asn1_data;
     if(decoded_sms)
     {
         dict[@"decoded-sms"] = decoded_sms;

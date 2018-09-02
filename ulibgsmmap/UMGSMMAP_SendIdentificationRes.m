@@ -23,27 +23,27 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(imsi)
 	{
-		[asn1_list addObject:imsi];
+		[_asn1_list addObject:imsi];
 	}
 	if(authenticationSetList)
 	{
-		[asn1_list addObject:authenticationSetList];
+		[_asn1_list addObject:authenticationSetList];
 	}
 	if(currentSecurityContext)
 	{
 		currentSecurityContext.asn1_tag.tagNumber = 2;
 		currentSecurityContext.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:currentSecurityContext];
+		[_asn1_list addObject:currentSecurityContext];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 3;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 }
 

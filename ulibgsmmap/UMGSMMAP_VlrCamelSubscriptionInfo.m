@@ -24,38 +24,38 @@
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
-	[asn1_tag setTagIsConstructed];
-	asn1_list = [[NSMutableArray alloc]init];
+	[_asn1_tag setTagIsConstructed];
+	_asn1_list = [[NSMutableArray alloc]init];
 	if(o_CSI)
 	{
 		o_CSI.asn1_tag.tagNumber = 0;
 		o_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:o_CSI];
+		[_asn1_list addObject:o_CSI];
 	}
 	if(extensionContainer)
 	{
 		extensionContainer.asn1_tag.tagNumber = 1;
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:extensionContainer];
 	}
 	if(ss_CSI)
 	{
 		ss_CSI.asn1_tag.tagNumber = 2;
 		ss_CSI.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:ss_CSI];
+		[_asn1_list addObject:ss_CSI];
 	}
 	if(o_BcsmCamelTDP_CriteriaList)
 	{
 		o_BcsmCamelTDP_CriteriaList.asn1_tag.tagNumber = 4;
 		o_BcsmCamelTDP_CriteriaList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:o_BcsmCamelTDP_CriteriaList];
+		[_asn1_list addObject:o_BcsmCamelTDP_CriteriaList];
 	}
 	if(tif_CSI)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 3;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[asn1_list addObject:n];
+		[_asn1_list addObject:n];
 	}
 }
 
