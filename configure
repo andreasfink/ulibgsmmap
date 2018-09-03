@@ -2010,9 +2010,7 @@ case "$host" in
 	CFLAGS="${CFLAGS} -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion"
 	CFLAGS="${CFLAGS} -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector"
 	CFLAGS="${CFLAGS} -Wno-deprecated-implementations -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion "
-	CFLAGS="${CFLAGS} -fasm-blocks -fblocks -fstrict-aliasing -fobjc-arc -fobjc-runtime=gnustep-1.8"
-	CFLAGS="${CFLAGS} -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0"
-	CFLAGS+=" -fpascal-strings"
+	CFLAGS="${CFLAGS} -fobjc-arc"
 	if [ -x /usr/local/bin/gnustep-config ]
 	then
 		CFLAGS="$CFLAGS `/usr/local/bin/gnustep-config --objc-flags | sed 's/-fobjc-exceptions/ /g'`"
@@ -2023,7 +2021,6 @@ case "$host" in
     fi
 	CFLAGS="$CFLAGS `pkg-config  --cflags $DEPENDENT_PKGCONFIGS`"
 	LDFLAGS="$LDFLAGS `pkg-config --libs $DEPENDENT_PKGCONFIGS`"
-	LDFLAGS="$LDFLAGS `xml2-config --libs`"
     SHARED_LIBRARY_EXTENSION=so
     SHARED_FLAGS="-shared"
     ;;
