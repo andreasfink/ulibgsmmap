@@ -131,6 +131,11 @@
 		imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
+    else if((o) && (o.asn1_tag.tagNumber == UMASN1Primitive_octetstring) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
+    {
+        imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
 	if((o) && ([UMGSMMAP_ExtendedRoutingInfo tagMatches:o.asn1_tag.tagNumber]) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
 	{
 		extendedRoutingInfo = [[UMGSMMAP_ExtendedRoutingInfo alloc]initWithASN1Object:o context:context];

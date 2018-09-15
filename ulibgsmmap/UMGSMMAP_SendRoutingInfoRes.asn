@@ -1,5 +1,5 @@
 SendRoutingInfoRes ::= [3] IMPLICIT SEQUENCE {
-   imsi [9] IMSI OPTIONAL,
+   imsi [9] IMSI OPTIONAL, -- might be simply an octet string directly
    extendedRoutingInfo ExtendedRoutingInfo OPTIONAL,
    cug-CheckInfo [3] CUG-CheckInfo OPTIONAL,
    cugSubscriptionFlag [6] NULL OPTIONAL,
