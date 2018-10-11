@@ -12,7 +12,7 @@
 
 - (UMASN1Enumerated *)initWithString:(NSString *)s
 {
-    s = [s stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    s = [s stringByTrimmingCharactersInSet:[UMObject whitespaceAndNewlineCharacterSet]];
     if([s isEqualToString:@"onlyIMSI-requested"])
     {
         return [super initWithValue:0];

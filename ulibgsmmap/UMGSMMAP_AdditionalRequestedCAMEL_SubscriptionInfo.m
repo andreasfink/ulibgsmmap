@@ -16,7 +16,7 @@
 
 - (UMASN1Enumerated *)initWithString:(NSString *)s
 {
-    s = [s stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    s = [s stringByTrimmingCharactersInSet:[UMObject whitespaceAndNewlineCharacterSet]];
     if([s isEqualToString:@"mt_sms_CSI"])
     {
         return [super initWithValue:0];

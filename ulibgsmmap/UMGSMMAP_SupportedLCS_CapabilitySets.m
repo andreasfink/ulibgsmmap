@@ -27,7 +27,7 @@
     self = [super initWithValue:d bitcount:6];
     if(self)
     {
-        NSCharacterSet *whitespace  = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        NSCharacterSet *whitespace  = [UMObject whitespaceAndNewlineCharacterSet];
         
         NSArray *array = [str componentsSeparatedByString:@","];
         for(NSString *component in array)

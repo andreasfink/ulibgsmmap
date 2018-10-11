@@ -14,7 +14,7 @@
 
 - (UMGSMMAP_RequestingNodeType *)initWithString:(NSString *)s
 {
-    s = [s stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    s = [s stringByTrimmingCharactersInSet:[UMObject whitespaceAndNewlineCharacterSet]];
     if([s isEqualToString:@"vlr"])
     {
         return [super initWithValue:0];

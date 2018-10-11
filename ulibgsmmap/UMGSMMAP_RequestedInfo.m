@@ -310,7 +310,7 @@
             NSArray *items = [requestedInfoString componentsSeparatedByString:@","];            
             for(NSString *item in items)
             {
-                NSString *s = [item stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                NSString *s = [item stringByTrimmingCharactersInSet:[UMObject whitespaceAndNewlineCharacterSet]];
                 if([s isEqualToString:@"location-information"])
                 {
                     self.locationInformation = YES;

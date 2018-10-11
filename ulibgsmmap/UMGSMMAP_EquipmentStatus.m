@@ -21,7 +21,7 @@
 
 - (UMGSMMAP_EquipmentStatus *)initWithString:(NSString *)s
 {
-    s = [s stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    s = [s stringByTrimmingCharactersInSet:[UMObject whitespaceAndNewlineCharacterSet]];
     if([s isEqualToString:@"whiteListed"])
     {
         return [super initWithValue:0];
