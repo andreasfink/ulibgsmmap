@@ -303,6 +303,7 @@
             self.t_adsData = YES;
             self.servingNodeIndication = YES;
             self.localTimeZoneRequest = YES;
+            self.imei = YES;
         }
         else
         {
@@ -311,15 +312,15 @@
             for(NSString *item in items)
             {
                 NSString *s = [item stringByTrimmingCharactersInSet:[UMObject whitespaceAndNewlineCharacterSet]];
-                if([s isEqualToString:@"location-information"])
+                if([s isEqualToStringCaseInsensitive:@"location-information"])
                 {
                     self.locationInformation = YES;
                 }
-                else if([s isEqualToString:@"subscriber-state"])
+                else if([s isEqualToStringCaseInsensitive:@"subscriber-state"])
                 {
                     self.subscriberState = YES;
                 }
-                else if([s isEqualToString:@"current-location"])
+                else if([s isEqualToStringCaseInsensitive:@"current-location"])
                 {
                     self.currentLocation= YES;
                 }
@@ -328,31 +329,31 @@
                  ri.requestedDomain = [[UMASN1Null alloc]init];
                  }
                  */
-                else if([s isEqualToString:@"imei"])
+                else if([s isEqualToStringCaseInsensitive:@"imei"])
                 {
                     self.imei = YES;
                 }
-                else if([s isEqualToString:@"ms-classmark"])
+                else if([s isEqualToStringCaseInsensitive:@"ms-classmark"])
                 {
                     self.ms_classmark= YES;
                 }
-                else if([s isEqualToString:@"mnp-requested-info"])
+                else if([s isEqualToStringCaseInsensitive:@"mnp-requested-info"])
                 {
                     self.mnpRequestedInfo= YES;
                 }
-                else if([s isEqualToString:@"locationI-information-eps-supported"])
+                else if([s isEqualToStringCaseInsensitive:@"locationI-information-eps-supported"])
                 {
                     self.locationInformationEPS_Supported = YES;
                 }
-                else if([s isEqualToString:@"t-ads-data"])
+                else if([s isEqualToStringCaseInsensitive:@"t-ads-data"])
                 {
                     self.t_adsData = YES;
                 }
-                else if([s isEqualToString:@"serving-node-indication"])
+                else if([s isEqualToStringCaseInsensitive:@"serving-node-indication"])
                 {
                     self.servingNodeIndication = YES;
                 }
-                else if([s isEqualToString:@"local-time-zone-request"])
+                else if([s isEqualToStringCaseInsensitive:@"local-time-zone-request"])
                 {
                     self.localTimeZoneRequest = YES;
                 }
