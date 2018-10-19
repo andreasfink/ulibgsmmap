@@ -44,7 +44,7 @@
             return @"sms-DELIVER (0)";
             break;
         case UMGSMMAP_MT_SMS_TPDU_Type_sms_SUBMIT_REPORT:
-            return @"ssms-SUBMIT-REPORT (1)";
+            return @"sms-SUBMIT-REPORT (1)";
             break;
         case UMGSMMAP_MT_SMS_TPDU_Type_sms_STATUS_REPORT:
             return @"sms-STATUS-REPORT (2)";
