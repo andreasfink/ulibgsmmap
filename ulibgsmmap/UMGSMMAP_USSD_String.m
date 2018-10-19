@@ -33,22 +33,31 @@
 {
     self = [super init];
     if(self)
-    {
-        NSMutableData *d8 = [s gsm8];
-       /* if((d8.length % 8) == 7)
-        {
-            [d8 appendByte:0x0D];
-        }*/
+	{
+		NSMutableData *d8 = [s gsm8];
+		if((d8.length % 8) == 7)
+		{
+			[d8 appendByte:0x0D]; /* filler character according to 3GPP_TS_23.038_V15 page 17 */
+			/* If the total number of characters to be sent equals (8n-1) where n=1,2,3 etc. then there are 7 spare bits at the end of the message. To avoid the situation where the receiving entity confuses 7 binary zero pad bits as the @ character, the carriage return or <CR> character (defined in clause 6.1.1) shall be used for padding in this situation, just as for Cell Broadcast.
+			 */
+		}
 		int nibblelen=0;
-        NSData *d = [d8 gsm8to7:&nibblelen];
-        self.asn1_data = d;
-    }
+		NSData *d = [d8 gsm8to7:&nibblelen];
+		self.asn1_data = d;
+	}
     return self;
 }
 
 - (NSString *)stringValue
 {
     NSString *s = [self.asn1_data stringFromGsm7:(int)(self.asn1_data.length * 2)];
+	if((s.length % 8)==0)
+	{
+		if([s hasSuffix:@"\0x0D"]) /* remove padding carriage return according to above */
+		{
+			s = [s substringToIndex:s.length-1];
+		}
+	}
     return s;
 }
 
