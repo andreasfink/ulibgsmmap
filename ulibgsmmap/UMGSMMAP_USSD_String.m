@@ -35,10 +35,10 @@
     if(self)
     {
         NSMutableData *d8 = [s gsm8];
-        if((d8.length % 8) == 7)
+       /* if((d8.length % 8) == 7)
         {
             [d8 appendByte:0x0D];
-        }
+        }*/
         NSData *d = [d8 gsm8to7:NULL];
         self.asn1_data = d;
     }
