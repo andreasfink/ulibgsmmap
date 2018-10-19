@@ -39,7 +39,8 @@
         {
             [d8 appendByte:0x0D];
         }*/
-        NSData *d = [d8 gsm8to7:NULL];
+		int nibblelen=0;
+        NSData *d = [d8 gsm8to7:&nibblelen];
         self.asn1_data = d;
     }
     return self;
