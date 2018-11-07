@@ -470,7 +470,7 @@
     len    = [self length];
     result = [[NSMutableData alloc]initWithCapacity: len];
     bytes  = [self bytes];
-    
+	
     len2 = (len * 7 + 3) / 4;
     if(len2 > 0x7F)
     {

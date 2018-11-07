@@ -121,6 +121,12 @@ static inline unsigned char	nibble2hex(unsigned char b)
 }
 
 
+- (UMGSMMAP_AddressString *)initWithAlpha:(NSString *)digits
+{
+	NSString *addr = [[[digits gsm8]gsm8to7withNibbleLengthPrefix]hexString];
+	return [self initWithAddress:addr ton:GSMMAP_TON_ALPHANUMERIC npi:GSMMAP_NPI_UNKNOWN];
+}
+
 - (UMGSMMAP_AddressString *)initWithString:(NSString *)digits
 {
     self = [super init];
