@@ -222,6 +222,10 @@
     b = nibblelen & 0xFF;
     
     [ d replaceBytesInRange:NSMakeRange(0,0) withBytes:&b length:1 ];
+    if((b==11) && (d.length > 7))
+    {
+        return [[NSData dataWithBytes:d.bytes length:7] mutableCopy];
+    }
     return d;
 }
 
