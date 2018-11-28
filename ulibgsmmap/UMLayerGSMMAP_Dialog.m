@@ -416,7 +416,7 @@
         [s appendFormat:@"    result: %@\n",[result.objectValue jsonString]];
         [s appendFormat:@"    diagnostic: %@\n",[result_source_diagnostic.objectValue jsonString]];
         [s appendFormat:@"    userInfo: %@\n",[xuserInfo.objectValue jsonString]];
-        [logFeed debugText:s];
+        [self.logFeed debugText:s];
     }
     [self touch];
     if(self.openEstablished==NO)
@@ -1333,7 +1333,7 @@
     if(self.logLevel <= UMLOG_DEBUG)
     {
         NSString *s = [NSString stringWithFormat:@"GSMMAP-Dialog: tcapUAbortIndicationdialogPortion: %@ (%@)",xdialoguePortion,[xdialoguePortion className]];
-        [logFeed debugText:s];
+        [self.logFeed debugText:s];
     }
     [self touch];
     self.dialogIsClosed = YES;
