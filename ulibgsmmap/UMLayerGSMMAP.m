@@ -102,7 +102,7 @@
 
     UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:user withId:dialogId];
 
-    if(logLevel <= UMLOG_DEBUG)
+    if(self.logLevel <= UMLOG_DEBUG)
     {
         [self.logFeed debugText:[NSString stringWithFormat:@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId]];
     }
@@ -194,7 +194,7 @@
     }
     else
     {
-        if(logLevel <= UMLOG_DEBUG)
+        if(self.logLevel <= UMLOG_DEBUG)
         {
             NSString *s = [NSString stringWithFormat:@"tcapContinueIndication\n"
                            @"    dialogId: %@\n"
@@ -271,7 +271,7 @@
     }
     else
     {
-        if(logLevel <= UMLOG_DEBUG)
+        if(self.logLevel <= UMLOG_DEBUG)
         {
             NSString *s = [NSString stringWithFormat:@"tcapEndIndication\n"
                            @"    dialogId: %@\n"
@@ -329,7 +329,7 @@
 {
     //UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
 
-    if(logLevel <= UMLOG_DEBUG)
+    if(self.logLevel <= UMLOG_DEBUG)
     {
         [self.logFeed debugText:@"tcapUnidirectionalIndication received"];
     }
@@ -362,7 +362,7 @@
 {
     UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
 
-    if(logLevel <= UMLOG_DEBUG)
+    if(self.logLevel <= UMLOG_DEBUG)
     {
         [self.logFeed debugText:@"tcapUAbortIndication received"];
     }
@@ -411,7 +411,7 @@
 {
     UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
 
-    if(logLevel <=UMLOG_DEBUG)
+    if(self.logLevel <=UMLOG_DEBUG)
     {
         [self.logFeed debugText:[NSString stringWithFormat:@"tcapPAbortIndication for dialog %@",dialogId]];
     }
