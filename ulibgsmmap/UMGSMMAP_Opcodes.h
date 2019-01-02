@@ -57,6 +57,7 @@ typedef enum UMGSMMAP_Opcode
     UMGSMMAP_Opcode_mo_forwardSM = 46,
     UMGSMMAP_Opcode_reportSM_DeliveryStatus = 47,
     UMGSMMAP_Opcode_noteSubscriberPresent = 48,     // old
+    UMGSMMAP_Opcode_alertServiceCentreOld = 49,     // old
     UMGSMMAP_Opcode_activateTraceMode = 50,
     UMGSMMAP_Opcode_deactivateTraceMode = 51,
     UMGSMMAP_Opcode_traceSubscriberActivity = 52,   // old
@@ -89,13 +90,13 @@ typedef enum UMGSMMAP_Opcode
     UMGSMMAP_Opcode_secureTransportClass2 = 79,     // old
     UMGSMMAP_Opcode_secureTransportClass3 = 80,     // old
     UMGSMMAP_Opcode_secureTransportClass4 = 81,     // old
+    /* undefined 82 */
     UMGSMMAP_Opcode_provideSubscriberLocation = 83,
     UMGSMMAP_Opcode_sendGroupCallInfo = 84,         // old
     UMGSMMAP_Opcode_sendRoutingInfoForLCS = 85,
     UMGSMMAP_Opcode_subscriberLocationReport = 86,
     UMGSMMAP_Opcode_ist_Alert = 87,
     UMGSMMAP_Opcode_ist_Command = 88,
-
     UMGSMMAP_Opcode_noteMM_Event = 89,
     UMGSMMAP_Opcode_lcs_PeriodicLocationCancellation = 109,
     UMGSMMAP_Opcode_lcs_LocationUpdate = 110,
