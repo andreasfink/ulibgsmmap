@@ -145,7 +145,6 @@
 #pragma mark -
 #pragma mark Dialog Handling Methods
 
-
 -(void) MAP_Open_Req_forUser:(id<UMLayerGSMMAP_UserProtocol>)user
                         tcap:(UMLayerTCAP *)xtcap
                          map:(UMLayerGSMMAP *)xgsmmap
