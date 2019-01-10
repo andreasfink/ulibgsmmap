@@ -10,7 +10,7 @@
 typedef enum UMLayerGSMMAP_ErrorCode
 {
     UMLayerGSMMAP_ErrorCode_unknownSubscriber = 1,
-    UMLayerGSMMAP_ErrorCode_unknownBaseStation = 2,
+    UMLayerGSMMAP_ErrorCode_unknownBaseStation = 2, // old
     UMLayerGSMMAP_ErrorCode_unknownMSC = 3,
     UMLayerGSMMAP_ErrorCode_secureTransportError =4,
     UMLayerGSMMAP_ErrorCode_unidentifiedSubscriber = 5,
@@ -31,8 +31,8 @@ typedef enum UMLayerGSMMAP_ErrorCode
     UMLayerGSMMAP_ErrorCode_ss_Incompatibility = 20,
     UMLayerGSMMAP_ErrorCode_facilityNotSupported = 21,
     UMLayerGSMMAP_ErrorCode_ongoingGroupCall = 22,
-    UMLayerGSMMAP_ErrorCode_invalidTargetBaseStation = 23,
-    UMLayerGSMMAP_ErrorCode_noRadioResourceAvailable = 24,
+    UMLayerGSMMAP_ErrorCode_invalidTargetBaseStation = 23,  // old
+    UMLayerGSMMAP_ErrorCode_noRadioResourceAvailable = 24,  // old
     UMLayerGSMMAP_ErrorCode_noHandoverNumberAvailable = 25,
     UMLayerGSMMAP_ErrorCode_subsequentHandoverFailure = 26,
     UMLayerGSMMAP_ErrorCode_absentSubscriber = 27,

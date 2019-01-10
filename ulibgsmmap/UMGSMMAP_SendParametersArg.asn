@@ -1,0 +1,4 @@
+
+SendParametersArg    ::= SEQUENCE {
+    subscriberId SubscriberIdentity,
+    requestParameterList RequestParameterList}

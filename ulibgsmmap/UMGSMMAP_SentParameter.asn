@@ -1,0 +1,6 @@
+
+SentParameter    ::= CHOICE {
+    imsi                [0] IMSI,
+    authenticationSet   [1] AuthenticationSetList,
+    subscriberData      [2] SubscriberData,
+    ki                  [4] Ki}

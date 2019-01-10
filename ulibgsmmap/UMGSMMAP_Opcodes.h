@@ -36,7 +36,7 @@ typedef enum UMGSMMAP_Opcode
     UMGSMMAP_Opcode_failureReport = 25,
     UMGSMMAP_Opcode_noteMsPresentForGprs = 26,
     // 27 is unallocated
-    UMGSMMAP_Opcode_performHandover = 28,
+    UMGSMMAP_Opcode_performHandover = 28,//old
     UMGSMMAP_Opcode_sendEndSignal = 29,
     UMGSMMAP_Opcode_performSubsequentHandover = 30, // old
     UMGSMMAP_Opcode_provideSIWFSNumber = 31,

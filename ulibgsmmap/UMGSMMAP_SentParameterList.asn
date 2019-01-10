@@ -1,0 +1,2 @@
+SentParameterList	::= SEQUENCE SIZE (1..maxNumOfSentParameter) OF
+					SentParameter

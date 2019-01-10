@@ -1,0 +1,7 @@
+RequestParameter    ::= ENUMERATED
+{
+    requestIMSI (0),
+    requestAuthenticationSet (1),
+    requestSubscriberData (2),
+    requestKi (4)
+}
