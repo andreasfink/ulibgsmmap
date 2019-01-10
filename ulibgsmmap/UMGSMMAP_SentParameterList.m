@@ -49,7 +49,7 @@
 
 - (NSString *) objectName
 {
-    return @"TeleserviceList";
+    return @"SentParameterList";
 }
 
 - (id) objectValue
