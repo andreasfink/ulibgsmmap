@@ -493,5 +493,12 @@
 #import "UMGSMMAP_UESBI_IuA.h"
 #import "UMGSMMAP_UESBI_IuB.h"
 #import "UMGSMMAP_RequestedEquipmentInfo.h"
+#import "UMGSMMAP_SendParametersArg.h"
+#import "UMGSMMAP_RequestParameterList.h"
+#import "UMGSMMAP_RequestParameter.h"
+#import "UMGSMMAP_SentParameterList.h"
+#import "UMGSMMAP_SentParameter.h"
+#import "UMGSMMAP_Ki.h"
+
 
 
