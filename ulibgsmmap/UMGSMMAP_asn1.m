@@ -116,7 +116,8 @@
 #import "UMGSMMAP_Ussd_Res.h"
 #import "UMGSMMAP_AnyTimeSubscriptionInterrogationArg.h"
 #import "UMGSMMAP_AnyTimeSubscriptionInterrogationRes.h"
-
+#import "UMGSMMAP_SendParametersArg.h"
+#import "UMGSMMAP_SentParameterList.h"
 
 @implementation UMGSMMAP_asn1
 
@@ -426,6 +427,25 @@
         }
             asn1.operationName = @"deleteSubscriberData";
             break;
+		case UMGSMMAP_Opcode_sendParameters:
+			switch(operation)
+		{
+			case UMTCAP_InternalOperation_Request:
+				asn1 = [[UMGSMMAP_SendParametersArg alloc]initWithASN1Object:self context:context];
+				break;
+			case UMTCAP_InternalOperation_Response:
+				asn1 = [[UMGSMMAP_SentParameterList alloc]initWithASN1Object:self context:context];
+				break;
+			case UMTCAP_InternalOperation_Error:
+				break;
+			case UMTCAP_InternalOperation_Reject:
+				break;
+			case UMTCAP_InternalOperation_Unidirectional:
+				break;
+		}
+			asn1.operationName = @"deleteSubscriberData";
+			break;
+
         case UMGSMMAP_Opcode_reset:
             switch(operation)
         {

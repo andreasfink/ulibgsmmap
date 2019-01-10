@@ -50,7 +50,7 @@
 
 - (NSString *) objectName
 {
-    return @"TeleserviceList";
+    return @"RequestParameterList";
 }
 
 - (id) objectValue
