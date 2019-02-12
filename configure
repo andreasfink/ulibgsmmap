@@ -637,7 +637,6 @@ infodir
 docdir
 oldincludedir
 includedir
-runstatedir
 localstatedir
 sharedstatedir
 sysconfdir
@@ -711,7 +710,6 @@ datadir='${datarootdir}'
 sysconfdir='${prefix}/etc'
 sharedstatedir='${prefix}/com'
 localstatedir='${prefix}/var'
-runstatedir='${localstatedir}/run'
 includedir='${prefix}/include'
 oldincludedir='/usr/include'
 docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
@@ -964,15 +962,6 @@ do
   | -silent | --silent | --silen | --sile | --sil)
     silent=yes ;;
 
-  -runstatedir | --runstatedir | --runstatedi | --runstated \
-  | --runstate | --runstat | --runsta | --runst | --runs \
-  | --run | --ru | --r)
-    ac_prev=runstatedir ;;
-  -runstatedir=* | --runstatedir=* | --runstatedi=* | --runstated=* \
-  | --runstate=* | --runstat=* | --runsta=* | --runst=* | --runs=* \
-  | --run=* | --ru=* | --r=*)
-    runstatedir=$ac_optarg ;;
-
   -sbindir | --sbindir | --sbindi | --sbind | --sbin | --sbi | --sb)
     ac_prev=sbindir ;;
   -sbindir=* | --sbindir=* | --sbindi=* | --sbind=* | --sbin=* \
@@ -1110,7 +1099,7 @@ fi
 for ac_var in	exec_prefix prefix bindir sbindir libexecdir datarootdir \
 		datadir sysconfdir sharedstatedir localstatedir includedir \
 		oldincludedir docdir infodir htmldir dvidir pdfdir psdir \
-		libdir localedir mandir runstatedir
+		libdir localedir mandir
 do
   eval ac_val=\$$ac_var
   # Remove trailing slashes.
@@ -1263,7 +1252,6 @@ Fine tuning of the installation directories:
   --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
   --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
   --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
-  --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
   --libdir=DIR            object code libraries [EPREFIX/lib]
   --includedir=DIR        C header files [PREFIX/include]
   --oldincludedir=DIR     C header files for non-gcc [/usr/include]
@@ -1993,6 +1981,18 @@ FRAMEWORKS="-framework ulib -framework ulibsctp -framework ulibm2pa -framework u
 EXE_EXT=""
 LIBTOOL="ar rc"
 RANLIB="ranlib"
+#
+# we prefer clang over gcc
+#
+if [ "$CC" == "" ]
+then
+	CC=clang
+fi
+if [ "$CXX" == "" ]
+then
+	CXX=clang++
+fi
+
 case "$host" in
   *apple-darwin*)
 	ARCH="-arch x86_64"
@@ -2006,8 +2006,6 @@ case "$host" in
 
   *-linux-*)
     PLATFORM=linux
-	CC=clang
-	CXX=clang++
 	CFLAGS="$CFLAGS -std=c99 -fPIC -DLINUX -D_XOPEN_SOURCE=700 -D_POSIX_SOURCE"
 	DEBIAN_VERSION=`cat /etc/debian_version | cut -f1 -d.`
 	if [ "$DEBIAN_VERSION" == "8" ]
@@ -2036,6 +2034,38 @@ case "$host" in
     SHARED_LIBRARY_EXTENSION=so
     SHARED_FLAGS="-shared"
     ;;
+  *-freebsd*)
+	CFLAGS="$CFLAGS -std=c99 -fPIC -DFREEBSD"
+	FREEBSD_VERSION=`uname -r`
+	CFLAGS="$CFLAGS  -Wno-trigraphs  -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties"
+	CFLAGS="$CFLAGS -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label"
+	CFLAGS="$CFLAGS -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow"
+	CFLAGS="$CFLAGS -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion"
+	CFLAGS="$CFLAGS -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector"
+	CFLAGS="$CFLAGS -Wno-deprecated-implementations -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion "
+	CFLAGS="$CFLAGS -fobjc-arc"
+	SHARED_LIBRARY_EXTENSION="so"
+	if [ -x /usr/local/GNUstep/System/Tools/gnustep-config ]
+	then
+		GNUSTEP_CONFIG=/usr/local/GNUstep/System/Tools/gnustep-config
+
+	else
+		if [ -x /usr/local/bin/gnustep-config ]
+		then
+			GNUSTEP_CONFIG=/usr/local/bin/gnustep-config
+		else
+			GNUSTEP_CONFIG=/usr/bin/gnustep-config
+		fi
+	fi
+
+	CFLAGS="$CFLAGS `$GNUSTEP_CONFIG --objc-flags`"
+	LDFLAGS="$LDFLAGS `/usr/local/bin/gnustep-config --base-libs --objc-libs`"
+	CFLAGS="$CFLAGS -DHAVE_OPENSSL=1"
+	CFLAGS="$CFLAGS `pkg-config --cflags libssl libcrypto`"
+	LDFLAGS="$LDFLAGS `pkg-config --libs libssl libcrypto`"
+	$as_echo "#define HAVE_OPENSSL 1" >>confdefs.h
+
+	;;
 esac
 
 
@@ -3151,6 +3181,8 @@ ac_config_files="$ac_config_files Makefile.osx"
 
 ac_config_files="$ac_config_files Makefile.linux"
 
+ac_config_files="$ac_config_files Makefile.freebsd"
+
 ac_config_files="$ac_config_files ulibgsmmap.pc"
 
 cat >confcache <<\_ACEOF
@@ -3846,6 +3878,7 @@ do
     "${CONFIG_HEADER}") CONFIG_HEADERS="$CONFIG_HEADERS ${CONFIG_HEADER}" ;;
     "Makefile.osx") CONFIG_FILES="$CONFIG_FILES Makefile.osx" ;;
     "Makefile.linux") CONFIG_FILES="$CONFIG_FILES Makefile.linux" ;;
+    "Makefile.freebsd") CONFIG_FILES="$CONFIG_FILES Makefile.freebsd" ;;
     "ulibgsmmap.pc") CONFIG_FILES="$CONFIG_FILES ulibgsmmap.pc" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
@@ -4472,6 +4505,9 @@ case "$host" in
     ;;
   *-linux-*)
     cp Makefile.linux Makefile
+    ;;
+  *-freebsd*)
+    cp Makefile.freebsd Makefile
     ;;
 esac
 
