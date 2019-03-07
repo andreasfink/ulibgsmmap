@@ -112,13 +112,13 @@
     {
         _eplmn_List.asn1_tag.tagNumber = 3;
         _eplmn_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [_asn1_list addObject:_add_info];
+        [_asn1_list addObject:_eplmn_List];
     }
     if(_mme_DiameterAddress)
     {
         _mme_DiameterAddress.asn1_tag.tagNumber = 3;
         _mme_DiameterAddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [_asn1_list addObject:_add_info];
+        [_asn1_list addObject:_mme_DiameterAddress];
     }
 }
 
