@@ -33,6 +33,10 @@
 #pragma mark -
 #pragma mark Initialisation
 
+-(NSString *)layerName
+{
+		return @"UMLayerGSMMAP_Dialog";
+}
 
 - (NSTimeInterval)timeoutInSeconds
 {
