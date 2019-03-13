@@ -631,7 +631,7 @@
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
 
-    if((self.openEstablished==YES) && (tcapTransactionId != NULL))
+    if(((self.openEstablished==YES) || (self.initiatedOutgoing))&& (tcapTransactionId != NULL))
     {
         [mapUser queueMAP_Close_Ind:userIdentifier options:options];
         self.dialogIsClosed = YES;
