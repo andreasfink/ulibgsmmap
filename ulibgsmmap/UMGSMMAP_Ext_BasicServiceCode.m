@@ -92,14 +92,15 @@
 	BOOL isImplicit = YES;
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
-		isImplicit = NO;
+		isImplicit = YES;
+        o = self;
+    }
+    else
+    {
+        isImplicit = NO;
 		o = [self getObjectAtPosition:p++];
 	}
-	else
-	{
-		o = self;
-	}
-	
+
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
 		ext_BearerService = [[UMGSMMAP_Ext_BearerServiceCode alloc]initWithASN1Object:o context:context];
