@@ -1,0 +1,3 @@
+NoteMM-EventRes :== SEQUENCE {
+    extensioContainer   ExtensionContainer  OPTIONAL,
+}
