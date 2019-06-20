@@ -75,7 +75,7 @@ case "$host" in
 	PLATFORM=macos
 	OSX_DEVTOOL_DIR=`xcode-select -p`
 	CFLAGS="$CFLAGS -D_REENTRANT=1 -DDARWIN=1 ${ARCH}"
-	LDFLAGS="-framework CoreFoundation -framework IOKit -framework Security  -F /Library/Frameworks ${FRAMEWORK}"
+	LDFLAGS=-framework CoreFoundation -framework IOKit -framework Security -F/Library/Application\ Support/FinkTelecomServices/frameworks ${FRAMEWORKS}
 	LIBTOOL="libtool -static -o" 
 	SHARED_LIBRARY_EXTENSION=dylib
     ;;
