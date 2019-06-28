@@ -341,7 +341,7 @@
                 {
                     self.mnpRequestedInfo= YES;
                 }
-                else if([s isEqualToStringCaseInsensitive:@"locationI-information-eps-supported"])
+                else if([s isEqualToStringCaseInsensitive:@"location-information-eps-supported"])
                 {
                     self.locationInformationEPS_Supported = YES;
                 }
