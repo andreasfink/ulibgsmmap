@@ -276,11 +276,13 @@
                            @"    dialogId: %@\n"
                            @"    localTransactionId: %@\n"
                            @"    remoteTransactionId: %@\n"
-                           @"    userIdentifier: %@\n",
+                           @"    userIdentifier: %@\n"
+                           @"    dialoguePortion: %@\n",
                            dialog.userDialogId,
                            dialog.tcapTransactionId,
                            dialog.tcapRemoteTransactionId,
-                           dialog.userIdentifier];
+                           dialog.userIdentifier,
+                           xdialoguePortion];
             [self.logFeed debugText:s];
         }
         if(dialog.tcapTransactionId == NULL)
@@ -293,7 +295,6 @@
         }
         dialog.remoteAddress = src;
         dialog.localAddress = dst;
-
         @try
         {
             [dialog MAP_ProcessComponents:components

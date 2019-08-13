@@ -1229,6 +1229,11 @@
                               options:xoptions];
                 break;
             }
+            default:
+            {
+                NSLog(@"what is component number %ld?",(long)component.asn1_tag.tagNumber);
+                break;
+            }
         }
     }
 }
