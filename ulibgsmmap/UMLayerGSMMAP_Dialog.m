@@ -631,6 +631,11 @@
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
 
+    if(mapUser == NULL)
+    {
+        NSLog(@"mapUser is NULL");
+    }
+
     if(((self.openEstablished==YES) || (self.initiatedOutgoing))&& (tcapTransactionId != NULL))
     {
         [mapUser queueMAP_Close_Ind:userIdentifier options:options];
