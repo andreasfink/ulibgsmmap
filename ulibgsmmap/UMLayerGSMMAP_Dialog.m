@@ -1162,11 +1162,22 @@
                       options:(NSDictionary *)xoptions
                       willEnd:(BOOL)willEnd
 {
+    if(self.logLevel <= UMLOG_DEBUG)
+    {
+        [self.logFeed debugText:@"MAP_ProcessComponents backtrace"];
+        [self.logFeed debugText:UMBacktrace(NULL,0)];
+    }
+
     [self touch];
     if(willEnd)
     {
         /* we have to set this before processing components as the callbacks by the components might call close req and if this is not set, we would send a tcap end out to a transaction already closed */
         self.dialogIsClosed = YES;
+        if(self.logLevel <= UMLOG_DEBUG)
+        {
+            [self.logFeed debugText:@"MAP_ProcessComponents"];
+        }
+
     }
     for(UMTCAP_generic_asn1_componentPDU *component in components)
     {
