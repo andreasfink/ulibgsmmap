@@ -638,7 +638,11 @@
 
     if(((self.openEstablished==YES) || (self.initiatedOutgoing))&& (tcapTransactionId != NULL))
     {
+#if 0
         [mapUser queueMAP_Close_Ind:userIdentifier options:options];
+#else
+        [mapUser executeMAP_Close_Ind:userIdentifier options:options];
+#endif
         self.dialogIsClosed = YES;
         self.dialogResponseRequired = NO;
         self.openEstablished = NO;
