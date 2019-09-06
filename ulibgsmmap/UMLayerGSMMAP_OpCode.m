@@ -9,6 +9,7 @@
 // the author.
 //
 #import "UMLayerGSMMAP_OpCode.h"
+#import <ulibtcap/ulibtcap.h>
 
 @implementation UMLayerGSMMAP_OpCode
 
