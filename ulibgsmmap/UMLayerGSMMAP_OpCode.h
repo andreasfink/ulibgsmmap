@@ -21,6 +21,7 @@
 @property (readwrite,assign) int64_t family;
 @property (readwrite,assign) BOOL national;
 - (UMLayerGSMMAP_OpCode *)initWithOperationCode:(int64_t)op;
+- (UMLayerGSMMAP_OpCode *)initWithGlobalOperationCode:(int64_t)op;
 - (NSString *)description;
 
 @end

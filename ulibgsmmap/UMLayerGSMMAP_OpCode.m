@@ -26,6 +26,17 @@
     return self;
 }
 
+- (UMLayerGSMMAP_OpCode *)initWithGlobalOperationCode:(int64_t)op
+{
+    self = [super init];
+    if(self)
+    {
+        operation = op;
+        family = UMTCAP_itu_operationCodeFamily_Global;
+    }
+    return self;
+}
+
 - (NSString *)description
 {
     if((family == 0) && (national == NO))

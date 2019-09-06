@@ -198,7 +198,11 @@
 
     UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self.gsmmapLayer];
     self.tcapTransactionId = t.localTransactionId;
-
+    self.tcapOperationGlobal = NO;
+    if(xoptions[@"tcap-operation-global"])
+    {
+        self.tcapOperationGlobal = [xoptions[@"tcap-operation-global"] boolValue];
+    }
     self.initiatedOutgoing = YES;
     self.openEstablished = NO;
     pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
