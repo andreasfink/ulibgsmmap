@@ -8,6 +8,13 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
+
+
+/*
+ ms-present ( 0 ),
+ memoryAvailable    ( 1 ) },
+*/
+
 #import "UMGSMMAP_AlertReason.h"
 
 @implementation UMGSMMAP_AlertReason
@@ -26,5 +33,6 @@
 {
     return self;
 }
+
 
 @end

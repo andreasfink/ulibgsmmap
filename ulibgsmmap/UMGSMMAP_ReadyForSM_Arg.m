@@ -33,6 +33,8 @@
 	}
 	if(alertReason)
 	{
+        alertReason.asn1_tag.tagNumber = UMASN1Primitive_enumerated;
+        alertReason.asn1_tag.tagClass = UMASN1Class_Universal;
 		[_asn1_list addObject:alertReason];
 	}
 	if(alertReasonIndicator)
