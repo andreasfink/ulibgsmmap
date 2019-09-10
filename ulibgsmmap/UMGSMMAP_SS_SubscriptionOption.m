@@ -76,12 +76,6 @@
 			[_asn1_list addObject:overrideCategory];
 		}
 	}
-	else
-	{
-	    @throw([NSException exceptionWithName:@"PARAMETER_MISSING"
-	                                   reason:@"UMGSMMAP_SS_SubscriptionOption choice missing"
-	                                userInfo:@{    @"backtrace": UMBacktrace(NULL,0)}]);
-	}
 }
 
 
