@@ -10,6 +10,11 @@
 //
 #import "UMGSMMAP_RequestedInfo.h"
 
+/*
+ requestedInfo  IE
+ currentLocation and locationInformationEPS-Supported shall be absent if locationInformation is absent t-adsData shall be absent in messages sent to the VLR requestedNodes shall be absent if requestedDomain is "cs-Domain" servingNodeIndication shall be absent if locationInformation is absent; servingNodeIndication shall be absent if current location is present; servingNodeIndication indicates by its presence that only the serving node's address (MME-Name or SGSN-Number or VLR-Number) is requested.
+ */
+
 @implementation UMGSMMAP_RequestedInfo
 
 
@@ -153,7 +158,7 @@
 		}
 		else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 		{
-			requestedDomain = [[UMASN1Integer alloc]initWithASN1Object:o context:context];
+			requestedDomain = [[UMASN1Enumerated alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
 		}
 		else if((o) && (o.asn1_tag.tagNumber == 6) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
@@ -301,6 +306,7 @@
             self.mnpRequestedInfo = YES;
             self.locationInformationEPS_Supported = YES;
             self.t_adsData = YES;
+            self.requestedDomain = [[UMASN1Enumerated alloc]initWithValue:0];
             self.servingNodeIndication = YES;
             self.localTimeZoneRequest = YES;
             self.imei = YES;
@@ -324,11 +330,14 @@
                 {
                     self.currentLocation= YES;
                 }
-                /*  else if([s isEqualToString:@"requested-domain"])
-                 {
-                 ri.requestedDomain = [[UMASN1Null alloc]init];
-                 }
-                 */
+                else if([s isEqualToString:@"requested-domain-cs"])
+                {
+                    self.requestedDomain = [[UMASN1Enumerated alloc]initWithValue:0];
+                }
+                else if([s isEqualToString:@"requested-domain-ps"])
+                {
+                    self.requestedDomain = [[UMASN1Enumerated alloc]initWithValue:1];
+                }
                 else if([s isEqualToStringCaseInsensitive:@"imei"])
                 {
                     self.imei = YES;

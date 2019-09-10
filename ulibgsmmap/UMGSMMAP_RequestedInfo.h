@@ -20,7 +20,7 @@
 	BOOL subscriberState;
 	UMGSMMAP_ExtensionContainer *extensionContainer;
 	BOOL currentLocation;
-	UMASN1Integer *requestedDomain;
+	UMASN1Enumerated *requestedDomain;
 	BOOL imei;
 	BOOL ms_classmark;
 	BOOL mnpRequestedInfo;
