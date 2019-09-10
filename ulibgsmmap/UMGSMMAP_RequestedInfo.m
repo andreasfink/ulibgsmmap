@@ -309,6 +309,9 @@
             self.requestedDomain = [[UMASN1Enumerated alloc]initWithValue:0];
             self.servingNodeIndication = YES;
             self.localTimeZoneRequest = YES;
+            self.requestedNodes = [[UMASN1BitString alloc]init];
+            [self.requestedNodes setBit:0];
+            [self.requestedNodes setBit:1];
             self.imei = YES;
         }
         else
@@ -365,6 +368,22 @@
                 else if([s isEqualToStringCaseInsensitive:@"local-time-zone-request"])
                 {
                     self.localTimeZoneRequest = YES;
+                }
+                else if([s isEqualToStringCaseInsensitive:@"requested-nodes-mme"])
+                {
+                    if(requestedNodes == NULL)
+                    {
+                        self.requestedNodes  = [[UMASN1BitString alloc]init];
+                    }
+                    [self.requestedNodes setBit:0];
+                }
+                else if([s isEqualToStringCaseInsensitive:@"requested-nodes-sgsn"])
+                {
+                    if(requestedNodes == NULL)
+                    {
+                        self.requestedNodes  = [[UMASN1BitString alloc]init];
+                    }
+                    [self.requestedNodes setBit:1];
                 }
             }
         }
