@@ -714,13 +714,18 @@
     /* update calling/called from the incoming continue of the transaction */
     self.remoteAddress = src;
     self.localAddress = dst;
+    NSMutableDictionary *yoptions = [options mutableCopy];
+    yoptions[@"sccp-calling-address"] = src;
+    yoptions[@"sccp-called-address"] = dst;;
+    xoptions = yoptions;
+
     [mapUser executeMAP_Continue_Ind:userIdentifier
                       callingAddress:src
                        calledAddress:dst
                      dialoguePortion:xdialoguePortion
                        transactionId:localTransactionId
                  remoteTransactionId:remoteTransactionId
-                             options:options];
+                             options:xoptions];
 }
 
 
@@ -850,6 +855,13 @@
     {
         [self.logFeed debugText:@" calling queueMAP_U_Abort_Ind"];
     }
+
+    self.remoteAddress = src;
+    self.localAddress = dst;
+    NSMutableDictionary *yoptions = [options mutableCopy];
+    yoptions[@"sccp-calling-address"] = src;
+    yoptions[@"sccp-called-address"] = dst;
+    xoptions = yoptions;
     [mapUser queueMAP_U_Abort_Ind:self.userIdentifier
               callingAddress:src
                calledAddress:dst

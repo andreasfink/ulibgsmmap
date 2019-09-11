@@ -295,6 +295,11 @@
         }
         dialog.remoteAddress = src;
         dialog.localAddress = dst;
+        NSMutableDictionary *xoptions = [options mutableCopy];
+        xoptions[@"sccp-calling-address"] = src;
+        xoptions[@"sccp-called-address"] = dst;;
+        options = xoptions;
+
         @try
         {
             [dialog MAP_ProcessComponents:components
