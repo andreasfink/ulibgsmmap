@@ -24,5 +24,6 @@
 - (NSString *)objectName;
 - (id)objectValue;
 - (void)addEntry:(UMGSMMAP_VoiceBroadcastData  *)e;
+- (UMGSMMAP_VBSDataList *)initWithString:(NSString *)str;
 
 @end

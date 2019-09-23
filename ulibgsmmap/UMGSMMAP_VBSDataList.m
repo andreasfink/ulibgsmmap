@@ -74,4 +74,19 @@
     return self;
 }
 
+- (UMGSMMAP_VBSDataList *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        NSArray *codes = [str componentsSeparatedByString:@","];
+        for(NSString *code in codes)
+        {
+            UMGSMMAP_VoiceBroadcastData *cd = [[UMGSMMAP_VoiceBroadcastData alloc]initWithString:code];
+            [self addEntry:cd];
+        }
+    }
+    return self;
+}
+
 @end

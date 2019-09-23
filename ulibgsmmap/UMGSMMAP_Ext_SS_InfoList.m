@@ -65,6 +65,20 @@
     [_sequenceEntries addObject:e];
 }
 
+- (UMGSMMAP_Ext_SS_InfoList *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        NSArray *codes = [str componentsSeparatedByString:@","];
+        for(NSString *code in codes)
+        {
+            UMGSMMAP_Ext_SS_Info *cd = [[UMGSMMAP_Ext_SS_Info alloc]initWithString:code];
+            [self addEntry:cd];
+        }
+    }
+    return self;
+}
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop

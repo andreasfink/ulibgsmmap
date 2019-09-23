@@ -34,5 +34,6 @@
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
+- (UMGSMMAP_VoiceGroupCallData *)initWithString:(NSString *)str;
 
 @end

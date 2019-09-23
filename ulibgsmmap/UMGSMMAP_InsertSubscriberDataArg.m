@@ -171,6 +171,14 @@
 		lcsInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[_asn1_list addObject:lcsInformation];
 	}
+
+    if(_accessRestrictionData)
+    {
+        _accessRestrictionData.asn1_tag.tagNumber = 19;
+        _accessRestrictionData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_accessRestrictionData];
+    }
+
 }
 
 
@@ -285,6 +293,11 @@
 			lcsInformation = [[UMGSMMAP_LCSInformation alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
 		}
+        else if((o) && (o.asn1_tag.tagNumber == 19) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _accessRestrictionData = [[UMGSMMAP_AccessRestrictionData alloc]initWithASN1Object:o context:context];
+            o = [self getObjectAtPosition:p++];
+        }
         else
         {
             o = [self getObjectAtPosition:p++];
@@ -384,6 +397,10 @@
 	{
 		dict[@"lcsInformation"] = lcsInformation.objectValue;
 	}
+    if(_accessRestrictionData)
+    {
+        dict[@"accessRestrictionData"] = _accessRestrictionData.objectValue;
+    }
 	return dict;
 }
 

@@ -25,4 +25,8 @@
 - (NSString *)objectName;
 - (id)objectValue;
 - (void)addEntry:(UMGSMMAP_VoiceGroupCallData  *)e;
+
+- (UMGSMMAP_VGCSDataList *)initWithString:(NSString *)str;
+
+
 @end

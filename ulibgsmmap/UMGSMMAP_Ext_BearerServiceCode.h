@@ -17,4 +17,5 @@
 }
 @property(readwrite,strong)    NSString *operationName;
 
+- (UMGSMMAP_Ext_BearerServiceCode *)initWithString:(NSString *)s;
 @end

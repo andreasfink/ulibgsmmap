@@ -225,6 +225,15 @@
     return self;
 }
 
+- (UMGSMMAP_Ext_SS_Info *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        /* FXIME: do something useful */
+    }
+    return self;
+}
 
 @end
 

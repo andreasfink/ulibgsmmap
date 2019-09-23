@@ -26,5 +26,6 @@
 - (id)objectValue;
 - (void)addServices:(UMGSMMAP_TeleserviceList *)list;
 - (void)addEntry:(UMGSMMAP_Ext_TeleserviceCode  *)e;
+- (UMGSMMAP_TeleserviceList *)initWithString:(NSString *)str;
 
 @end

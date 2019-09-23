@@ -37,5 +37,7 @@
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
+- (UMGSMMAP_ODB_Data *)initWithString:(NSString *)str;
+
 
 @end

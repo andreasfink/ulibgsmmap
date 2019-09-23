@@ -25,5 +25,6 @@
 - (NSString *)objectName;
 - (id)objectValue;
 - (void)addEntry:(UMGSMMAP_ZoneCode *)e;
+- (UMGSMMAP_ZoneCodeList *)initWithString:(NSString *)str;
 
 @end

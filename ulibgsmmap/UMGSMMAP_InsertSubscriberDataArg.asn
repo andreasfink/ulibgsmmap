@@ -27,7 +27,36 @@ InsertSubscriberDataArg ::= SEQUENCE {
    networkAccessMode [24] NetworkAccessMode OPTIONAL, 
    lsaInformation [25] LSAInformation OPTIONAL, 
    lmu-Indicator [21] NULL OPTIONAL, 
-   lcsInformation [22] LCSInformation OPTIONAL 
+   lcsInformation [22] LCSInformation OPTIONAL,
+
+-- new fields in Release 14
+    istAlertTimer [26] IST-AlertTimerValue OPTIONAL,
+    superChargerSupportedInHLR [27] AgeIndicator OPTIONAL,
+    mc-SS-Info [28] MC-SS-Info OPTIONAL,
+    cs-AllocationRetentionPriority [29] CS-AllocationRetentionPriority OPTIONAL,
+    sgsn-CAMEL-SubscriptionInfo [17] SGSN-CAMEL-SubscriptionInfo OPTIONAL,
+    chargingCharacteristics [18] ChargingCharacteristics OPTIONAL,
+    accessRestrictionData [19] AccessRestrictionData OPTIONAL,
+    ics-Indicator [20] BOOLEAN OPTIONAL,
+    eps-SubscriptionData [31] IEPS-SubscriptionData OPTIONAL,
+    csg-SubscriptionDataList [32] CSG-SubscriptionDataList OPTIONAL,
+    ue-ReachabilityRequestIndicator [33] NULL OPTIONAL,
+    sgsn-Number [34] ISDN-AddressString OPTIONAL,
+    mme-Name [35] DiameterIdentity OPTIONAL,
+    subscribedPeriodicRAUTAUtimer [36] SubscribedPeriodicRAUTAUtimer OPTIONAL,
+    vplmnLIPAAllowed [37] NULL OPTIONAL,
+    mdtUserConsent [38] BOOLEAN OPTIONAL,
+    subscribedPeriodicLAUtimer [39] SubscribedPeriodicLAUtimer OPTIONAL,
+    vplmn-Csg-SubscriptionDataList [40] VPLMN-CSG-SubscriptionDataList OPTIONAL,
+    additionalMSISDN [41] ISDN-AddressString OPTIONAL,
+    psAndSMS-OnlyServiceProvision [42] NULL OPTIONAL,
+    smsInSGSNAllowed [43] NULL OPTIONAL,
+    cs-to-ps-SRVCC-Allowed-Indicator [44] NULL OPTIONAL,
+    pcscf-Restoration-Request [45] NULL OPTIONAL,
+    adjacentAccessRestrictionDataList [46] AdjacentAccessRestrictionDataList OPTIONAL,
+    imsi-Group-Id-List [47] IMSI-GroupIdList OPTIONAL,
+    ueUsageType [48] UE-UsageType OPTIONAL,
+    userPlaneIntegrityProtectionIndicator [49] NULL OPTIONAL,
 } 
 -- If the Network Access Mode parameter is sent, it shall be present only in 310
 -- the first sequence if the seqmentation is used

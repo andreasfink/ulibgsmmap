@@ -37,4 +37,6 @@
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
 
+- (UMGSMMAP_VoiceBroadcastData *)initWithString:(NSString *)str;
+
 @end

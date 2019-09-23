@@ -137,6 +137,13 @@
     return self;
 }
 
-
+- (UMGSMMAP_VlrCamelSubscriptionInfo *)initWithString:(NSString *)str
+{
+    self = [super init];
+    {
+        /* FIXME: do something useful here*/
+    }
+    return self;
+}
 @end
 

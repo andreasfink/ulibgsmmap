@@ -43,4 +43,6 @@
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
 
+- (UMGSMMAP_VlrCamelSubscriptionInfo *)initWithString:(NSString *)str;
+
 @end

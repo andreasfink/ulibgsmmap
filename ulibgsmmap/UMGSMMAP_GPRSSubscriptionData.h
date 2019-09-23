@@ -37,4 +37,6 @@
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
 
+- (UMGSMMAP_GPRSSubscriptionData *)initWithString:(NSString *)str;
+
 @end

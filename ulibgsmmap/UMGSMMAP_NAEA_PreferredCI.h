@@ -34,5 +34,5 @@
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
-
+- (UMGSMMAP_NAEA_PreferredCI *)initWithString:(NSString *)str;
 @end

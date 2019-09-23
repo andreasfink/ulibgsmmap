@@ -25,4 +25,6 @@
 - (NSString *)objectName;
 - (id)objectValue;
 - (void)addEntry:(UMGSMMAP_Ext_BearerServiceCode *)e;
+- (UMGSMMAP_BearerServiceList *)initWithString:(NSString *)str;
+
 @end

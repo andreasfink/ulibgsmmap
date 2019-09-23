@@ -73,4 +73,20 @@
     return self;
 }
 
+- (UMGSMMAP_BearerServiceList *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        NSArray *codes = [str componentsSeparatedByString:@","];
+        _sequenceEntries = [[NSMutableArray alloc]init];
+        for(NSString *code in codes)
+        {
+            UMGSMMAP_Ext_BearerServiceCode *bc = [[UMGSMMAP_Ext_BearerServiceCode alloc]initWithString:code];
+            [_sequenceEntries addObject:bc];
+        }
+    }
+    return self;
+}
+
 @end

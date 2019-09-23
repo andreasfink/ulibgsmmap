@@ -83,4 +83,23 @@
         [_sequenceEntries addObject:o];
     }
 }
+
+
+- (UMGSMMAP_TeleserviceList *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        NSArray *codes = [str componentsSeparatedByString:@","];
+        _sequenceEntries = [[NSMutableArray alloc]init];
+        for(NSString *code in codes)
+        {
+            UMGSMMAP_Ext_TeleserviceCode *bc = [[UMGSMMAP_Ext_TeleserviceCode alloc]initWithString:code];
+            [_sequenceEntries addObject:bc];
+        }
+    }
+    return self;
+}
+
+
 @end

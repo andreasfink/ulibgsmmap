@@ -26,4 +26,6 @@
 - (id)objectValue;
 - (void)addEntry:(UMGSMMAP_Ext_SS_Info *)e;
 
+- (UMGSMMAP_Ext_SS_InfoList *)initWithString:(NSString *)str;
+
 @end

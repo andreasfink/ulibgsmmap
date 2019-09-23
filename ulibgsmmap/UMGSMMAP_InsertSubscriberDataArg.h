@@ -29,6 +29,7 @@
 #import "UMGSMMAP_NetworkAccessMode.h"
 #import "UMGSMMAP_LSAInformation.h"
 #import "UMGSMMAP_LCSInformation.h"
+#import "UMGSMMAP_AccessRestrictionData.h"
 
 @interface UMGSMMAP_InsertSubscriberDataArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
@@ -54,6 +55,9 @@
 	UMGSMMAP_LSAInformation *lsaInformation;
 	BOOL lmu_Indicator;
 	UMGSMMAP_LCSInformation *lcsInformation;
+
+    /* from release 14 */
+    UMGSMMAP_AccessRestrictionData *_accessRestrictionData;
 }
 @property(readwrite,strong)    NSString *operationName;
 
@@ -78,6 +82,7 @@
 @property(readwrite,strong)	UMGSMMAP_LSAInformation *lsaInformation;
 @property(readwrite,assign)	BOOL lmu_Indicator;
 @property(readwrite,strong)	UMGSMMAP_LCSInformation *lcsInformation;
+@property(readwrite,strong) UMGSMMAP_AccessRestrictionData *accessRestrictionData;
 
 
 - (void)processBeforeEncode;

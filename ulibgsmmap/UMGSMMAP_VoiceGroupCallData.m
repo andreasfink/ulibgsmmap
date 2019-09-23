@@ -83,6 +83,14 @@
 }
 
 
-
+- (UMGSMMAP_VoiceGroupCallData *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        /* FIXME: do something useful */
+    }
+    return self;
+}
 @end
 

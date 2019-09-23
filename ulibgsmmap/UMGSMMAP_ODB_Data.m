@@ -97,5 +97,16 @@
 }
 
 
+- (UMGSMMAP_ODB_Data *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        /* FIXME: do something useful here */
+    }
+    return self;
+}
+
+
 @end
 

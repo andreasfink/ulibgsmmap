@@ -38,4 +38,6 @@
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
 
+- (UMGSMMAP_LCSInformation *)initWithString:(NSString *)str;
+
 @end
