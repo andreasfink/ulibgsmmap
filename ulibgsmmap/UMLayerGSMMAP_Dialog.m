@@ -499,7 +499,8 @@
                         callingAddress:localAddress
                          calledAddress:remoteAddress
                        dialoguePortion:itu_dialoguePortion
-                            components:components
+                       components_ansi:NULL
+                        components_itu:components
                                options:xoptions];
         self.dialogRequestRequired = NO;
         self.dialogResponseRequired = NO;

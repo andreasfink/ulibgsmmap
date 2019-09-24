@@ -539,13 +539,26 @@
                operationName:(NSString **)operationName
                      context:(id)context
 {
-    UMGSMMAP_asn1 *asn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:params context:context];
-    NSString *name = NULL;
-    UMASN1Object<UMGSMMAP_asn1_protocol> *o = [asn1 decodeASN1opcode:opcode
-                                                       operationType:operationType
-                                                       operationName:&name
-                                                         withContext:context];
-
+    UMASN1Object<UMGSMMAP_asn1_protocol>  *o;
+    if(params)
+    {
+        UMGSMMAP_asn1 *asn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:params context:context];
+        NSString *name = NULL;
+        o = [asn1 decodeASN1opcode:opcode
+                     operationType:operationType
+                     operationName:&name
+                       withContext:context];
+    }
+    else
+    {
+        UMGSMMAP_asn1 *asn1 = [[UMGSMMAP_asn1 alloc]init];
+        NSString *name = NULL;
+        o = [asn1 decodeASN1opcode:opcode
+                     operationType:operationType
+                     operationName:&name
+                       withContext:context];
+        o = NULL;
+    }
     return o;
 }
 

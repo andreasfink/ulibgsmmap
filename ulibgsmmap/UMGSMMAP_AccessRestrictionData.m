@@ -57,6 +57,10 @@
             {
                 [self setBit:6];
             }
+            if([s isEqualToString:@"enhancedCoverageNotAllowed"])
+            {
+                [self setBit:7];
+            }
         }
     }
     return self;
