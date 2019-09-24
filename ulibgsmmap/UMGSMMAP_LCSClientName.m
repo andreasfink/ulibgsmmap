@@ -18,6 +18,19 @@
 @synthesize	nameString;
 
 
+- (UMGSMMAP_LCSClientName *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        uint8_t b = 0x0F;
+        NSData *d = [NSData dataWithBytes:&b length:1];
+        nameString = [[UMGSMMAP_NameString alloc]initWithString:str];
+        dataCodingScheme = [[UMGSMMAP_USSD_DataCodingScheme alloc]initWithValue:d];
+    }
+    return self;
+}
+
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];

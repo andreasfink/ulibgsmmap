@@ -26,6 +26,9 @@
 @property(readwrite,strong)	UMGSMMAP_NameString *nameString;
 
 
+- (UMGSMMAP_LCSClientName *)initWithString:(NSString *)str;
+
+
 - (void)processBeforeEncode;
 - (UMGSMMAP_LCSClientName *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;

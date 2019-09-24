@@ -17,6 +17,15 @@
 @synthesize	externalAddress;
 @synthesize	extensionContainer;
 
+- (UMGSMMAP_LCSClientExternalID *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        externalAddress = [[UMGSMMAP_AddressString alloc]initWithString:str];
+    }
+    return self;
+}
 
 - (void) processBeforeEncode
 {

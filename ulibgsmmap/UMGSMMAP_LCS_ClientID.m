@@ -14,11 +14,6 @@
 
 
 @synthesize	operationName;
-@synthesize	lcsClientType;
-@synthesize	lcsClientExternalID;
-@synthesize	lcsClientDialedByMS;
-@synthesize	lcsClientInternalID;
-@synthesize	lcsClientName;
 
 
 - (void) processBeforeEncode
@@ -26,36 +21,49 @@
 	[super processBeforeEncode];
 	[_asn1_tag setTagIsConstructed];
 	_asn1_list = [[NSMutableArray alloc]init];
-	if(lcsClientType)
+	if(_lcsClientType)
 	{
-		lcsClientType.asn1_tag.tagNumber = 0;
-		lcsClientType.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:lcsClientType];
+		_lcsClientType.asn1_tag.tagNumber = 0;
+		_lcsClientType.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_lcsClientType];
 	}
-	if(lcsClientExternalID)
+	if(_lcsClientExternalID)
 	{
-		lcsClientExternalID.asn1_tag.tagNumber = 1;
-		lcsClientExternalID.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:lcsClientExternalID];
+		_lcsClientExternalID.asn1_tag.tagNumber = 1;
+		_lcsClientExternalID.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_lcsClientExternalID];
 	}
-	if(lcsClientDialedByMS)
+	if(_lcsClientDialedByMS)
 	{
-		lcsClientDialedByMS.asn1_tag.tagNumber = 2;
-		lcsClientDialedByMS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:lcsClientDialedByMS];
+		_lcsClientDialedByMS.asn1_tag.tagNumber = 2;
+		_lcsClientDialedByMS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_lcsClientDialedByMS];
 	}
-	if(lcsClientInternalID)
+	if(_lcsClientInternalID)
 	{
-		lcsClientInternalID.asn1_tag.tagNumber = 3;
-		lcsClientInternalID.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:lcsClientInternalID];
+		_lcsClientInternalID.asn1_tag.tagNumber = 3;
+		_lcsClientInternalID.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_lcsClientInternalID];
 	}
-	if(lcsClientName)
+	if(_lcsClientName)
 	{
-		lcsClientName.asn1_tag.tagNumber = 4;
-		lcsClientName.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:lcsClientName];
+		_lcsClientName.asn1_tag.tagNumber = 4;
+		_lcsClientName.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_lcsClientName];
 	}
+    if(_lcsAPN)
+    {
+        _lcsAPN.asn1_tag.tagNumber = 5;
+        _lcsAPN.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_lcsAPN];
+    }
+    if(_lcsRequestorID)
+    {
+        _lcsRequestorID.asn1_tag.tagNumber = 6;
+        _lcsRequestorID.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_lcsRequestorID];
+    }
+
 }
 
 
@@ -65,31 +73,41 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		lcsClientType = [[UMGSMMAP_LCSClientType alloc]initWithASN1Object:o context:context];
+		_lcsClientType = [[UMGSMMAP_LCSClientType alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		lcsClientExternalID = [[UMGSMMAP_LCSClientExternalID alloc]initWithASN1Object:o context:context];
+		_lcsClientExternalID = [[UMGSMMAP_LCSClientExternalID alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		lcsClientDialedByMS = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+		_lcsClientDialedByMS = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 3) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		lcsClientInternalID = [[UMGSMMAP_LCSClientInternalID alloc]initWithASN1Object:o context:context];
+		_lcsClientInternalID = [[UMGSMMAP_LCSClientInternalID alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		lcsClientName = [[UMGSMMAP_LCSClientName alloc]initWithASN1Object:o context:context];
+		_lcsClientName = [[UMGSMMAP_LCSClientName alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	while(o)
 	{
+        if((o) && (o.asn1_tag.tagNumber == 5) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _lcsAPN = [[UMGSMMAP_APN alloc]initWithASN1Object:o context:context];
+            o = [self getObjectAtPosition:p++];
+        }
+        if((o) && (o.asn1_tag.tagNumber == 6) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _lcsRequestorID = [[UMGSMMAP_LCSRequestorID alloc]initWithASN1Object:o context:context];
+            o = [self getObjectAtPosition:p++];
+        }
         /* ... */
         o = [self getObjectAtPosition:p++];
     }
@@ -103,26 +121,34 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(lcsClientType)
+	if(_lcsClientType)
 	{
-		dict[@"lcsClientType"] = lcsClientType.objectValue;
+		dict[@"lcsClientType"] = _lcsClientType.objectValue;
 	}
-	if(lcsClientExternalID)
+	if(_lcsClientExternalID)
 	{
-		dict[@"lcsClientExternalID"] = lcsClientExternalID.objectValue;
+		dict[@"lcsClientExternalID"] = _lcsClientExternalID.objectValue;
 	}
-	if(lcsClientDialedByMS)
+	if(_lcsClientDialedByMS)
 	{
-		dict[@"lcsClientDialedByMS"] = lcsClientDialedByMS.objectValue;
+		dict[@"lcsClientDialedByMS"] = _lcsClientDialedByMS.objectValue;
 	}
-	if(lcsClientInternalID)
+	if(_lcsClientInternalID)
 	{
-		dict[@"lcsClientInternalID"] = lcsClientInternalID.objectValue;
+		dict[@"lcsClientInternalID"] = _lcsClientInternalID.objectValue;
 	}
-	if(lcsClientName)
+	if(_lcsClientName)
 	{
-		dict[@"lcsClientName"] = lcsClientName.objectValue;
+		dict[@"lcsClientName"] = _lcsClientName.objectValue;
 	}
+    if(_lcsAPN)
+    {
+        dict[@"lcsAPN"] = _lcsAPN.objectValue;
+    }
+    if(_lcsRequestorID)
+    {
+        dict[@"lcsRequestorID"] = _lcsRequestorID.objectValue;
+    }
 	return dict;
 }
 
@@ -132,7 +158,7 @@
     self = [super init];
     if(self)
     {
-        lcsClientType = [[UMGSMMAP_LCSClientType alloc]initWithString:s];
+        _lcsClientType = [[UMGSMMAP_LCSClientType alloc]initWithString:s];
     }
     return self;
 }
