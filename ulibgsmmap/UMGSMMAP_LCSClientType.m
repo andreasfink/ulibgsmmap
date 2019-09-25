@@ -14,9 +14,19 @@
 
 @synthesize operationName;
 
+- (void)setEnumDefinition
+{
+    _enumDefinition = @ {
+        @"emergencyServices" : @(UMGSMMAP_LCSClientType_emergencyServices),
+        @"valueAddedServices" : @(UMGSMMAP_LCSClientType_valueAddedServices),
+        @"plmnOperatorServices" : @(UMGSMMAP_LCSClientType_plmnOperatorServices),
+        @"lawfulInterceptServices" : @(UMGSMMAP_LCSClientType_lawfulInterceptServices),
+    };
+}
+
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_LCSClientType";
+	return @"LCSClientType";
 }
 
 - (UMGSMMAP_LCSClientType *)initWithString:(NSString *)lcsClientType

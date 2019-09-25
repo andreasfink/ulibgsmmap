@@ -12,11 +12,9 @@
 
 @implementation UMGSMMAP_NameString
 
-@synthesize operationName;
-
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_NameString";
+	return @"NameString";
 }
 
 
