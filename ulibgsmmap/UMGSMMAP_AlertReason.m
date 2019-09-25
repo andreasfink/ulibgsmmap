@@ -10,20 +10,24 @@
 //
 
 
-/*
- ms-present ( 0 ),
- memoryAvailable    ( 1 ) },
-*/
-
 #import "UMGSMMAP_AlertReason.h"
 
 @implementation UMGSMMAP_AlertReason
 
 @synthesize operationName;
 
+
+- (void)setEnumDefinition
+{
+    _enumDefinition = @ {
+        @"ms-Present" : @(UMGSMMAP_AlertReason_enum_ms_Present),
+        @"memoryAvailable" : @(UMGSMMAP_AlertReason_enum_memoryAvailable),
+    };
+}
+
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_AlertReason";
+	return @"AlertReason";
 }
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode

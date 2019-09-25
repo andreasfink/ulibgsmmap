@@ -16,8 +16,21 @@
 
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_AbsentSubscriberReason";
+	return @"AbsentSubscriberReason";
 }
+
+- (void)setEnumDefinition
+{
+    _enumDefinition = @ {
+        @"imsiDetach" : @(UMGSMMAP_AbsentSubscriberReason_imsiDetach),
+        @"restrictedArea" : @(UMGSMMAP_AbsentSubscriberReason_restrictedArea),
+        @"noPageResponse" : @(UMGSMMAP_AbsentSubscriberReason_noPageResponse),
+        @"purgedMS" : @(UMGSMMAP_AbsentSubscriberReason_purgedMS),
+        @"mtRoamingRetry" : @(UMGSMMAP_AbsentSubscriberReason_mtRoamingRetry),
+        @"busySubscriber" : @(UMGSMMAP_AbsentSubscriberReason_busySubscriber),
+    };
+}
+
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation

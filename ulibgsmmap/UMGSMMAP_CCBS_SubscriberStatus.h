@@ -11,6 +11,13 @@
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
 
+typedef enum UMGSMMAP_CCBS_SubscriberStatus_enum
+{
+    UMGSMMAP_CCBS_SubscriberStatus_ccbsNotIdle = 0,
+    UMGSMMAP_CCBS_SubscriberStatus_ccbsIdle = 1,
+    UMGSMMAP_CCBS_SubscriberStatus_ccbsNotReachable = 2,
+} UMGSMMAP_CCBS_SubscriberStatus_enum;
+
 @interface UMGSMMAP_CCBS_SubscriberStatus : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;

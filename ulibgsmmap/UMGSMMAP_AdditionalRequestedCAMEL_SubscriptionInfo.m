@@ -14,59 +14,19 @@
 
 @synthesize operationName;
 
-- (UMASN1Enumerated *)initWithString:(NSString *)s
+- (void)setEnumDefinition
 {
-    s = [s stringByTrimmingCharactersInSet:[UMObject whitespaceAndNewlineCharacterSet]];
-    if([s isEqualToString:@"mt_sms_CSI"])
-    {
-        return [super initWithValue:0];
-    }
-    if([s isEqualToString:@"mg_csi"])
-    {
-        return [super initWithValue:1];
-    }
-    if([s isEqualToString:@"o_IM_CSI"])
-    {
-        return [super initWithValue:2];
-    }
-    if([s isEqualToString:@"d_IM_CSI"])
-    {
-        return [super initWithValue:3];
-    }
-    if([s isEqualToString:@"vt_IM_CSI"])
-    {
-        return [super initWithValue:4];
-    }
-    return [super initWithValue:(int64_t)[s integerValue]];
+    _enumDefinition = @ {
+        @"mt-sms-CSI" : @(UMGSMMAP_AdditionalRequestedCAMEL_SubscriptionInfo_mt_sms_CSI),
+        @"mg-csi" : @(UMGSMMAP_AdditionalRequestedCAMEL_SubscriptionInfo_mg_csi),
+        @"o-IM-CSI" : @(UMGSMMAP_AdditionalRequestedCAMEL_SubscriptionInfo_o_IM_CSI),
+        @"d-IM-CSI" : @(UMGSMMAP_AdditionalRequestedCAMEL_SubscriptionInfo_d_IM_CSI),
+        @"vt-IM-CSI" : @(UMGSMMAP_AdditionalRequestedCAMEL_SubscriptionInfo_vt_IM_CSI),
+    };
 }
-
 - (NSString *) objectName
 {
 	return @"AdditionalRequestedCAMEL-SubscriptionInfo";
-}
-
-- (id) objectValue
-{
-    switch(self.value)
-    {
-        case(0):
-            return @"mt_sms_CSI (0)";
-            break;
-        case(1):
-            return @"mg_csi (1)";
-            break;
-        case(2):
-            return @"o_IM_CSI (2)";
-            break;
-        case(3):
-            return @"d_IM_CSI (3)";
-            break;
-        case(4):
-            return @"vt_IM_CSI (4)";
-            break;
-        default:
-            return [NSString stringWithFormat:@"undefined (%d)",(int)self.value];
-    }
 }
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode

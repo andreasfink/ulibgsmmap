@@ -2,5 +2,8 @@ AbsentSubscriberReason ::= ENUMERATED {
    imsiDetach (0), 
    restrictedArea (1), 
    noPageResponse (2), 
-   ...}
-
+   ...,
+   purgedMS (3),
+   mtRoamingRetry (4),
+    busySubscriber (5)
+}

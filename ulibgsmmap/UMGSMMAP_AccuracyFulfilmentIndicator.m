@@ -16,7 +16,15 @@
 
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_AccuracyFulfilmentIndicator";
+	return @"AccuracyFulfilmentIndicator";
+}
+
+- (void)setEnumDefinition
+{
+    _enumDefinition = @ {
+        @"requestedAccuracyFulfilled" : @(UMGSMMAP_AccuracyFulfilmentIndicator_requestedAccuracyFulfilled),
+        @"requestedAccuracyNotFulfilled" : @(UMGSMMAP_AccuracyFulfilmentIndicator_requestedAccuracyNotFulfilled),
+    };
 }
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode

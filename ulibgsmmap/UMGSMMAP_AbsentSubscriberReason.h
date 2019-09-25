@@ -11,6 +11,16 @@
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
 
+typedef enum UMGSMMAP_AbsentSubscriberReason_enum
+{
+    UMGSMMAP_AbsentSubscriberReason_imsiDetach = 0,
+    UMGSMMAP_AbsentSubscriberReason_restrictedArea = 1,
+    UMGSMMAP_AbsentSubscriberReason_noPageResponse = 2,
+    UMGSMMAP_AbsentSubscriberReason_purgedMS = 3,
+    UMGSMMAP_AbsentSubscriberReason_mtRoamingRetry = 4,
+    UMGSMMAP_AbsentSubscriberReason_busySubscriber = 5,
+} UMGSMMAP_AbsentSubscriberReason_enum;
+
 @interface UMGSMMAP_AbsentSubscriberReason : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;

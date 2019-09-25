@@ -11,6 +11,14 @@
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
 
+
+ typedef enum UMGSMMAP_AccuracyFulfilmentIndicator_enum
+ {
+    UMGSMMAP_AccuracyFulfilmentIndicator_requestedAccuracyFulfilled = 0,
+    UMGSMMAP_AccuracyFulfilmentIndicator_requestedAccuracyNotFulfilled = 1,
+ }UMGSMMAP_AccuracyFulfilmentIndicator_enum;
+       
+
 @interface UMGSMMAP_AccuracyFulfilmentIndicator : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;

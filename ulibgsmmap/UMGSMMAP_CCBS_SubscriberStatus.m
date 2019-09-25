@@ -16,7 +16,18 @@
 
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_CCBS_SubscriberStatus";
+	return @"CCBS-SubscriberStatus";
+}
+
+
+
+- (void)setEnumDefinition
+{
+    _enumDefinition = @ {
+        @"ms-ccbsNotIdle" : @(UMGSMMAP_CCBS_SubscriberStatus_ccbsNotIdle),
+        @"ccbsIdle" : @(UMGSMMAP_CCBS_SubscriberStatus_ccbsIdle),
+        @"ccbsNotReachable" : @(UMGSMMAP_CCBS_SubscriberStatus_ccbsNotReachable),
+    };
 }
 
 

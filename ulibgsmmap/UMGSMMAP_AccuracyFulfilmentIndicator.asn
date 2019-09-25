@@ -1,3 +1,7 @@
- AccuracyFulfilmentIndicator ::= ENUMERATED { requestedAccuracyFulfilled (0), requestedAccuracyNotFulfilled (1),
-... }
+ AccuracyFulfilmentIndicator ::= ENUMERATED
+ {
+    requestedAccuracyFulfilled (0),
+    requestedAccuracyNotFulfilled (1),
+    ...
+}
        

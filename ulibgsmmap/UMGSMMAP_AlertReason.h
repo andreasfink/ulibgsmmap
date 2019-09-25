@@ -11,6 +11,12 @@
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
 
+typedef enum UMGSMMAP_AlertReason_enum
+{
+    UMGSMMAP_AlertReason_enum_ms_Present = 0,
+    UMGSMMAP_AlertReason_enum_memoryAvailable = 1,
+} UMGSMMAP_AlertReason_enum;
+
 @interface UMGSMMAP_AlertReason : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
