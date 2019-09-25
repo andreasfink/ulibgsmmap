@@ -185,7 +185,7 @@
 		A69629B01D56CE5D00211137 /* NSData+map.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE72BC1D3B94EC00211137 /* NSData+map.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A69629B11D56CE6000211137 /* NSString+map.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE72BE1D3B94EC00211137 /* NSString+map.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A69629B21D57987000211137 /* GsmCharSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE72BB1D3B94EC00211137 /* GsmCharSet.m */; };
-		A6981A9F233B112B00D666D4 /* UMGSMMAP_RequestorIDString.h in Headers */ = {isa = PBXBuildFile; fileRef = A6981A9D233B112B00D666D4 /* UMGSMMAP_RequestorIDString.h */; };
+		A6981A9F233B112B00D666D4 /* UMGSMMAP_RequestorIDString.h in Headers */ = {isa = PBXBuildFile; fileRef = A6981A9D233B112B00D666D4 /* UMGSMMAP_RequestorIDString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6981AA0233B112B00D666D4 /* UMGSMMAP_RequestorIDString.m in Sources */ = {isa = PBXBuildFile; fileRef = A6981A9E233B112B00D666D4 /* UMGSMMAP_RequestorIDString.m */; };
 		A6981AA3233B114D00D666D4 /* UMGSMMAP_LCS_FormatIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = A6981AA1233B114D00D666D4 /* UMGSMMAP_LCS_FormatIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6981AA4233B114D00D666D4 /* UMGSMMAP_LCS_FormatIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A6981AA2233B114D00D666D4 /* UMGSMMAP_LCS_FormatIndicator.m */; };
