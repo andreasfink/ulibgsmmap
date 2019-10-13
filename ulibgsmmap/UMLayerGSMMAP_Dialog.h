@@ -55,8 +55,7 @@
     BOOL    _dialogIsClosed;
     BOOL    _dialogShallClose;
     BOOL    _tcapContinueSeen;
-    UMTCAP_asn1_objectIdentifier    *
-    _tcapOperationGlobal;
+    NSString *_tcapOperationGlobal;
 }
 
 #pragma mark -
@@ -64,7 +63,7 @@
 
 @property(readwrite,strong) UMGSMMAP_DialogIdentifier *userDialogId;
 @property(readwrite,strong) NSString *tcapTransactionId;
-@property(readwrite,strong) UMTCAP_asn1_objectIdentifier *tcapOperationGlobal;
+@property(readwrite,strong) NSString *tcapOperationGlobal;
 @property(readwrite,strong) UMGSMMAP_UserIdentifier *userIdentifier;
 @property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> mapUser;
 @property(readwrite,strong) UMLayerTCAP *tcapLayer;

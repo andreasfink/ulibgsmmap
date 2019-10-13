@@ -198,10 +198,10 @@
 
     UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self.gsmmapLayer];
     self.tcapTransactionId = t.localTransactionId;
-    self.tcapOperationGlobal = NO;
+    self.tcapOperationGlobal = NULL;
     if(xoptions[@"tcap-operation-global"])
     {
-        self.tcapOperationGlobal = [xoptions[@"tcap-operation-global"] boolValue];
+        self.tcapOperationGlobal = xoptions[@"tcap-operation-global"];
     }
     self.initiatedOutgoing = YES;
     self.openEstablished = NO;
@@ -932,6 +932,7 @@
                                      useLinkedId: ((linkedId == TCAP_UNDEFINED_LINKED_ID) ? NO : YES)
                                      opCodeValue:opcode.operation
                                     opCodeFamily:opcode.family
+                                    opCodeGlobal:opcode.globalOperation
                                   opCodeNational:opcode.national
                                             last:last];
     [pendingOutgoingComponents addObject:invoke];
@@ -981,6 +982,7 @@
                                   useLinkedId: ((linkedId == TCAP_UNDEFINED_LINKED_ID) ? NO : YES)
                                   opCodeValue:opcode.operation
                                  opCodeFamily:opcode.family
+                                 opCodeGlobal:opcode.globalOperation
                                opCodeNational:opcode.national];
     }
     else
@@ -992,6 +994,7 @@
                                      useLinkedId: ((linkedId == TCAP_UNDEFINED_LINKED_ID) ? NO : YES)
                                      opCodeValue:opcode.operation
                                     opCodeFamily:opcode.family
+                                    opCodeGlobal:opcode.globalOperation
                                   opCodeNational:opcode.national];
     }
     [pendingOutgoingComponents addObject:r];

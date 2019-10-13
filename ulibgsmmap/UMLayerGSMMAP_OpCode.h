@@ -9,17 +9,21 @@
 // the author.
 //
 #import <ulib/ulib.h>
+#import <ulibasn1/ulibasn1.h>
 
 @interface UMLayerGSMMAP_OpCode : UMObject
 {
     int64_t operation;
     int64_t family;
+    UMASN1ObjectIdentifier *_globalOperation;
     BOOL national;
 }
 
 @property (readwrite,assign) int64_t operation;
 @property (readwrite,assign) int64_t family;
 @property (readwrite,assign) BOOL national;
+@property (readwrite,strong) UMASN1ObjectIdentifier *globalOperation;
+
 - (UMLayerGSMMAP_OpCode *)initWithOperationCode:(int64_t)op;
 - (UMLayerGSMMAP_OpCode *)initWithGlobalOperationCode:(int64_t)op;
 - (NSString *)description;
