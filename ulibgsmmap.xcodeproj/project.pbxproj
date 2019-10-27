@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A607C9F42363138E0026FCB1 /* UMGSMMAP_Opcodes.m in Sources */ = {isa = PBXBuildFile; fileRef = A607C9F32363138E0026FCB1 /* UMGSMMAP_Opcodes.m */; };
 		A60A53E61D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A60A53E31D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A60A53E71D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A60A53E41D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.m */; };
 		A60A53EC1D56B34D00211137 /* UMGSMMAP_MAP_ProviderAbortReason.h in Headers */ = {isa = PBXBuildFile; fileRef = A60A53E91D56B34D00211137 /* UMGSMMAP_MAP_ProviderAbortReason.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1170,6 +1171,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A607C9F32363138E0026FCB1 /* UMGSMMAP_Opcodes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Opcodes.m; sourceTree = "<group>"; };
 		A60A53E21D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_MAP_ProviderAbortInfo.asn; sourceTree = "<group>"; };
 		A60A53E31D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_MAP_ProviderAbortInfo.h; sourceTree = "<group>"; };
 		A60A53E41D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_MAP_ProviderAbortInfo.m; sourceTree = "<group>"; };
@@ -3282,6 +3284,7 @@
 				A6EE6BA61D3B6BF500211137 /* UMLayerGSMMAP_Dialog.h */,
 				A6EE6BA51D3B6BF500211137 /* UMLayerGSMMAP_Dialog.m */,
 				A6EE693A1D3B6BE800211137 /* UMGSMMAP_Opcodes.h */,
+				A607C9F32363138E0026FCB1 /* UMGSMMAP_Opcodes.m */,
 				A6790F431D92629A00304445 /* UMLayerGSMMAP_OpCode.h */,
 				A6790F441D92629A00304445 /* UMLayerGSMMAP_OpCode.m */,
 				A67BA1A71D86D5E9007FF9E5 /* asn1 */,
@@ -6238,6 +6241,7 @@
 				A6EE70A61D3B6BFF00211137 /* UMGSMMAP_GPRSMSClass.m in Sources */,
 				A69595E21D7FA7E100211137 /* UMGSMMAP_M_CSI.m in Sources */,
 				A60A53E71D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.m in Sources */,
+				A607C9F42363138E0026FCB1 /* UMGSMMAP_Opcodes.m in Sources */,
 				A6EE71AA1D3B6BFF00211137 /* UMGSMMAP_Cug_RejectParam.m in Sources */,
 				A6EE6ED81D3B6BFE00211137 /* UMGSMMAP_PrepareHO_Arg.m in Sources */,
 				A6EE6F181D3B6BFE00211137 /* UMGSMMAP_O_CSI.m in Sources */,

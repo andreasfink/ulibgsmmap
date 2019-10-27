@@ -118,3 +118,7 @@ typedef enum UMGSMMAP_Opcode
     UMGSMMAP_Opcode_explicitCT = 126,
 
 } UMGSMMAP_Opcode;
+
+
+const char *umgsmmap_opcode_string(int opcode);
+
