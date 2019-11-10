@@ -1185,7 +1185,6 @@
     if(self.logLevel <= UMLOG_DEBUG)
     {
         [self.logFeed debugText:@"MAP_ProcessComponents backtrace"];
-        [self.logFeed debugText:UMBacktrace(NULL,0)];
     }
 
     [self touch];
