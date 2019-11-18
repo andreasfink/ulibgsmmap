@@ -1,0 +1,15 @@
+AccessRestrictionData ::= BIT STRING {
+    utranNotAllowed (0),
+    geranNotAllowed (1),
+    ganNotAllowed (2),
+    i-hspa-evolutionNotAllowed (3),
+    wb-e-utranNotAllowed (4),
+    ho-toNon3GPP-AccessNotAllowed (5),
+    nb-iotNotAllowed (6),
+    enhancedCoverageNotAllowed (7)
+    } (SIZE (2..8))
+    -- exception handling:
+-- The VLR shall ignore the access restriction data related to an access type not
+-- supported by the node.
+-- The handling of the access restriction data by the SGSN is described in subclause
+-- 5.3.19 of TS 23.060, in subclause 7.5.3 of TS 29.060 and subclause 7.3.6 of TS 29.274. -- bit 7 shall be ignored if received and not understood
