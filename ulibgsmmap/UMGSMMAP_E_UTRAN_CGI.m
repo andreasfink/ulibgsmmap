@@ -52,9 +52,9 @@
     int mcc = mcc_digit1 *100 + mcc_digit2*10 + mcc_digit3;
     dict[@"mcc"] = [NSString stringWithFormat:@"%03d",mcc];
 
-    int mnc_digit1 = ((bytes[2] >> 0) & 0x0F) - '0';
-    int mnc_digit2 = ((bytes[2] >> 4) & 0x0F) - '0';
-    int mnc_digit3 = ((bytes[1] >> 4) & 0x0F) - '0';
+    int mnc_digit1 = ((bytes[2] >> 0) & 0x0F);
+    int mnc_digit2 = ((bytes[2] >> 4) & 0x0F);
+    int mnc_digit3 = ((bytes[1] >> 4) & 0x0F);
     if(mnc_digit3 == 0x0F)
     {
         int mnc = mnc_digit1 * 100 + mnc_digit2;
