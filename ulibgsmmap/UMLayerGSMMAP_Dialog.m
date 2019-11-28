@@ -1481,7 +1481,7 @@
 {
     @try
     {
-        NSLog(@"gsmmap-timeout:%@ (last activity=%@, timeoutInSeconds: %8.2lfs)\n",self.userIdentifier,_lastActivity.description,_timeoutInSeconds);
+        //NSLog(@"gsmmap-timeout:%@ (last activity=%@, timeoutInSeconds: %8.2lfs)\n",self.userIdentifier,_lastActivity.description,_timeoutInSeconds);
         [mapUser executeMAP_P_Abort_Ind:self.userIdentifier
                          callingAddress:remoteAddress
                           calledAddress:localAddress
