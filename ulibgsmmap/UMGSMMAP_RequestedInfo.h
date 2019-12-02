@@ -12,6 +12,7 @@
 #import "UMGSMMAP_asn1_protocol.h"
 
 #import "UMGSMMAP_ExtensionContainer.h"
+#import "UMGSMMAP_DomainType.h"
 
 @interface UMGSMMAP_RequestedInfo : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
@@ -20,7 +21,7 @@
 	BOOL subscriberState;
 	UMGSMMAP_ExtensionContainer *extensionContainer;
 	BOOL currentLocation;
-	UMASN1Enumerated *requestedDomain;
+	UMGSMMAP_DomainType *requestedDomain;
 	BOOL imei;
 	BOOL ms_classmark;
 	BOOL mnpRequestedInfo;
@@ -36,7 +37,7 @@
 @property(readwrite,assign)	BOOL subscriberState;
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
 @property(readwrite,assign)	BOOL currentLocation;
-@property(readwrite,strong)	UMASN1Integer *requestedDomain;
+@property(readwrite,strong)	UMASN1Enumerated *requestedDomain;
 @property(readwrite,assign)	BOOL imei;
 @property(readwrite,assign)	BOOL ms_classmark;
 @property(readwrite,assign)	BOOL mnpRequestedInfo;

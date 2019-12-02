@@ -32,6 +32,9 @@
 		A60A54261D56C15600211137 /* UMGSMMAP_MAP_DialoguePDU.m in Sources */ = {isa = PBXBuildFile; fileRef = A60A541A1D56C15500211137 /* UMGSMMAP_MAP_DialoguePDU.m */; };
 		A60A54281D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A60A541C1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A60A54291D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A60A541D1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m */; };
+		A6196419239420B600304D7F /* UMGSMMAP_DomainType.h in Headers */ = {isa = PBXBuildFile; fileRef = A6196417239420B600304D7F /* UMGSMMAP_DomainType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A619641A239420B600304D7F /* UMGSMMAP_DomainType.m in Sources */ = {isa = PBXBuildFile; fileRef = A6196418239420B600304D7F /* UMGSMMAP_DomainType.m */; };
+		A619641C239420DB00304D7F /* UMGSMMAP_DomainType.asn in Resources */ = {isa = PBXBuildFile; fileRef = A619641B239420DB00304D7F /* UMGSMMAP_DomainType.asn */; };
 		A61A5ADC227ECA2E00E45384 /* UMGSMMAP_NoteMM_EventArg.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A5ADA227ECA2E00E45384 /* UMGSMMAP_NoteMM_EventArg.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A61A5ADD227ECA2E00E45384 /* UMGSMMAP_NoteMM_EventArg.m in Sources */ = {isa = PBXBuildFile; fileRef = A61A5ADB227ECA2E00E45384 /* UMGSMMAP_NoteMM_EventArg.m */; };
 		A61A5AE0227ECA5600E45384 /* UMGSMMAP_NoteMM_EventRes.h in Headers */ = {isa = PBXBuildFile; fileRef = A61A5ADE227ECA5500E45384 /* UMGSMMAP_NoteMM_EventRes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1208,6 +1211,9 @@
 		A60A541B1D56C15500211137 /* UMGSMMAP_MAP_OpenInfo.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_MAP_OpenInfo.asn; sourceTree = "<group>"; };
 		A60A541C1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_MAP_OpenInfo.h; sourceTree = "<group>"; };
 		A60A541D1D56C15600211137 /* UMGSMMAP_MAP_OpenInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_MAP_OpenInfo.m; sourceTree = "<group>"; };
+		A6196417239420B600304D7F /* UMGSMMAP_DomainType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_DomainType.h; sourceTree = "<group>"; };
+		A6196418239420B600304D7F /* UMGSMMAP_DomainType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_DomainType.m; sourceTree = "<group>"; };
+		A619641B239420DB00304D7F /* UMGSMMAP_DomainType.asn */ = {isa = PBXFileReference; lastKnownFileType = text; name = UMGSMMAP_DomainType.asn; path = asn1/UMGSMMAP_DomainType.asn; sourceTree = "<group>"; };
 		A61A5ADA227ECA2E00E45384 /* UMGSMMAP_NoteMM_EventArg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_NoteMM_EventArg.h; sourceTree = "<group>"; };
 		A61A5ADB227ECA2E00E45384 /* UMGSMMAP_NoteMM_EventArg.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_NoteMM_EventArg.m; sourceTree = "<group>"; };
 		A61A5ADE227ECA5500E45384 /* UMGSMMAP_NoteMM_EventRes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_NoteMM_EventRes.h; sourceTree = "<group>"; };
@@ -3662,6 +3668,9 @@
 				A695954A1D7E9B3500211137 /* UMGSMMAP_DP_AnalysedInfoCriterium.h */,
 				A695954B1D7E9B3500211137 /* UMGSMMAP_DP_AnalysedInfoCriterium.m */,
 				A695954D1D7E9B3500211137 /* UMGSMMAP_DP_AnalyzedInfoCriteriaList.asn */,
+				A619641B239420DB00304D7F /* UMGSMMAP_DomainType.asn */,
+				A6196417239420B600304D7F /* UMGSMMAP_DomainType.h */,
+				A6196418239420B600304D7F /* UMGSMMAP_DomainType.m */,
 				A6EE6BA11D3B6BF500211137 /* UMGSMMAP_E_UTRAN_CGI.asn */,
 				A6EE6BA01D3B6BF500211137 /* UMGSMMAP_E_UTRAN_CGI.h */,
 				A6EE6B9F1D3B6BF500211137 /* UMGSMMAP_E_UTRAN_CGI.m */,
@@ -5419,6 +5428,7 @@
 				A6EE70E61D3B6BFF00211137 /* UMGSMMAP_FailureReportRes.h in Headers */,
 				A6EE71F61D3B6BFF00211137 /* UMGSMMAP_CCBS_Index.h in Headers */,
 				A6EE70861D3B6BFF00211137 /* UMGSMMAP_Horizontal_Accuracy.h in Headers */,
+				A6196419239420B600304D7F /* UMGSMMAP_DomainType.h in Headers */,
 				A69595BC1D7FA46100211137 /* UMGSMMAP_GPRS_CamelTDPDataList.h in Headers */,
 				A6EE6D031D3B6BFE00211137 /* UMGSMMAP_VGCSDataList.h in Headers */,
 				A6EE6DF91D3B6BFE00211137 /* UMGSMMAP_SIWFSSignallingModifyRes.h in Headers */,
@@ -6006,6 +6016,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A619641C239420DB00304D7F /* UMGSMMAP_DomainType.asn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6553,6 +6564,7 @@
 				A6EE6DB91D3B6BFE00211137 /* UMGSMMAP_Ss_InvocationNotificationRes.m in Sources */,
 				A6EE71081D3B6BFF00211137 /* UMGSMMAP_Ext3_QoS_Subscribed.m in Sources */,
 				A6EE6DEF1D3B6BFE00211137 /* UMGSMMAP_SM_EnumeratedDeliveryFailureCause.m in Sources */,
+				A619641A239420B600304D7F /* UMGSMMAP_DomainType.m in Sources */,
 				A6EE71531D3B6BFF00211137 /* UMGSMMAP_Ext_BasicServiceCode.m in Sources */,
 				A6EE71B11D3B6BFF00211137 /* UMGSMMAP_CUG_Interlock.m in Sources */,
 				A6EE6E391D3B6BFE00211137 /* UMGSMMAP_RoutingInfoForLCSRes.m in Sources */,

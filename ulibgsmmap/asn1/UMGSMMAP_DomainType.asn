@@ -1,0 +1,8 @@
+DomainType ::= ENUMERATED
+{
+    cs-Domain (0),
+    ps-Domain (1),
+    ...
+}
+-- exception handling:
+-- reception of values > 1 shall be mapped to 'cs-Domain'
