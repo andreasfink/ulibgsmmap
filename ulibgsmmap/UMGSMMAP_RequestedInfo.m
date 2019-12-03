@@ -158,7 +158,7 @@
 		}
 		else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 		{
-			requestedDomain = [[UMASN1Enumerated alloc]initWithASN1Object:o context:context];
+			requestedDomain = [[UMGSMMAP_DomainType alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
 		}
 		else if((o) && (o.asn1_tag.tagNumber == 6) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
