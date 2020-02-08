@@ -11,6 +11,12 @@
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
 
+typedef enum UMGSMMAP_CallTypeCriteria_enum
+{
+    UMGSMMAP_CallTypeCriteria_forwarded = 0,
+    UMGSMMAP_CallTypeCriteria_notForwarded = 1,
+} UMGSMMAP_CallTypeCriteria_enum;
+
 @interface UMGSMMAP_CallTypeCriteria : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;

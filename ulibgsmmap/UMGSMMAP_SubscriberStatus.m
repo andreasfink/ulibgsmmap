@@ -27,4 +27,13 @@
     return self;
 }
 
+
+- (void)setEnumDefinition
+{
+    _enumDefinition = @ {
+        @"serviceGranted" : @(UMGSMMAP_SubscriberStatus_serviceGranted),
+        @"operatorDeterminedBarring" : @(UMGSMMAP_SubscriberStatus_operatorDeterminedBarring),
+    };
+}
+
 @end

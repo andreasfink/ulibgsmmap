@@ -27,4 +27,12 @@
     return self;
 }
 
+- (void)setEnumDefinition
+{
+    _enumDefinition  = @ {
+        @"barringServiceActive" : @(UMGSMMAP_CallBarringCause_barringServiceActive),
+        @"operatorBarring" : @(UMGSMMAP_CallBarringCause_operatorBarring),
+    };
+}
+
 @end

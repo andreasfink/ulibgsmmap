@@ -28,4 +28,13 @@
     return self;
 }
 
+- (void)setEnumDefinition
+{
+    _enumDefinition  = @ {
+        @"success" : @(UMGSMMAP_CallOutcome_success),
+        @"failure" : @(UMGSMMAP_CallOutcome_failure),
+        @"busy" : @(UMGSMMAP_CallOutcome_busy),
+    };
+}
+
 @end

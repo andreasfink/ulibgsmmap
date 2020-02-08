@@ -11,6 +11,14 @@
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
 
+
+typedef enum UMGSMMAP_SubscriberStatus_enum
+{
+   UMGSMMAP_SubscriberStatus_serviceGranted = 0,
+   UMGSMMAP_SubscriberStatus_operatorDeterminedBarring = 1,
+}  UMGSMMAP_SubscriberStatus_enum;
+
+
 @interface UMGSMMAP_SubscriberStatus : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
@@ -18,3 +26,5 @@
 @property(readwrite,strong)    NSString *operationName;
 
 @end
+
+

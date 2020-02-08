@@ -11,10 +11,18 @@
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
 
+typedef enum    UMGSMMAP_CallOutcome_enum
+{
+    UMGSMMAP_CallOutcome_success = 0,
+    UMGSMMAP_CallOutcome_failure = 1,
+    UMGSMMAP_CallOutcome_busy = 2,
+} UMGSMMAP_CallOutcome_enum;
+
 @interface UMGSMMAP_CallOutcome : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
 }
+
 @property(readwrite,strong)    NSString *operationName;
 
 @end
