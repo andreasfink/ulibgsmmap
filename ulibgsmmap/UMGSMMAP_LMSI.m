@@ -37,4 +37,10 @@
     return self;
 }
 
+
+- (NSString *)stringValue
+{
+    return [_asn1_data hexString];
+}
+
 @end
