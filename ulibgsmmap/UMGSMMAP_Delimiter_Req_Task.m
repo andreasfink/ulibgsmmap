@@ -29,7 +29,7 @@
         _instance = instance;
         _dialogId = dialogId;
         _callingAddress = callingAddress;
-        _calledAddress = calledAddress;
+        _calledAddress  = calledAddress;
         _options = options;
         _result = result;
         _result_source_diagnostic = result_source_diagnostic;
