@@ -1,0 +1,7 @@
+
+FTSExtension ::= CHOICE
+{
+    vas_esme [0] IMPLICIT UTF8String,
+    vas_ip   [1] IMPLICIT UTF8String,
+    ...,
+}
