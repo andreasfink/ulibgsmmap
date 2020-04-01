@@ -500,5 +500,6 @@
 #import "UMGSMMAP_SentParameter.h"
 #import "UMGSMMAP_Ki.h"
 
-
+#import "UMGSMMAP_FTSExtension.h"
+#import "UMGSMMAP_FTSExtensionList.h"
 

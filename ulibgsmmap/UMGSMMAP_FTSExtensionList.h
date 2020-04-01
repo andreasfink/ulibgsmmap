@@ -11,6 +11,8 @@
 #import "UMGSMMAP_asn1_protocol.h"
 #import "UMGSMMAP_FTSExtension.h"
 
+#define FTS_OID @"2.16.756.5.40"
+
 @interface UMGSMMAP_FTSExtensionList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
     NSString *_operationName;

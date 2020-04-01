@@ -9,6 +9,8 @@
 // the author.
 //
 #import "UMGSMMAP_PrivateExtension.h"
+#import "UMGSMMAP_FTSExtensionList.h"
+#import "UMGSMMAP_FTSExtension.h"
 
 @implementation UMGSMMAP_PrivateExtension
 
@@ -21,17 +23,38 @@
 	[super processBeforeEncode];
 	[_asn1_tag setTagIsConstructed];
 	_asn1_list = [[NSMutableArray alloc]init];
+    if(_extId)
+    {
+        [_asn1_list addObject:_extId];
+    }
+    if(_extensionData)
+    {
+        _extensionData.asn1_tag.tagNumber = 1;
+        _extensionData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_extensionData];
+    }
 }
-
 
 - (UMGSMMAP_PrivateExtension *) processAfterDecodeWithContext:(id)context
 {
 	int p=0;
 	UMASN1Object *o = [self getObjectAtPosition:p++];
-	while(o)
-	{
-        /* ... */
+    if((o) && (o.asn1_tag.tagClass == UMASN1Class_Universal) && (o.asn1_tag.tagNumber == UMASN1Primitive_object_identifier))
+    {
+        _extId = [[UMASN1ObjectIdentifier alloc]initWithASN1Object:o context:context];
         o = [self getObjectAtPosition:p++];
+    }
+    if((o) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific) && (o.asn1_tag.tagNumber == 1))
+    {
+        NSString *oid = [_extId oidString];
+        if([oid isEqualToString:FTS_OID])
+        {
+            _extensionData = [[UMGSMMAP_FTSExtensionList alloc]initWithASN1Object:o context:context];
+        }
+        else
+        {
+            _extensionData = o;
+        }
     }
 	return self;
 }
@@ -40,9 +63,18 @@
 {
 	return @"PrivateExtension";
 }
+
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
+    if(_extId)
+    {
+        dict[@"extId"] = _extId.objectValue;
+    }
+    if(_extensionData)
+    {
+        dict[@"extensionData"] = _extensionData.objectValue;
+    }
 	return dict;
 }
 

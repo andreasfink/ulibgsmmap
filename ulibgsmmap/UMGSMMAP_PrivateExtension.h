@@ -15,10 +15,12 @@
 @interface UMGSMMAP_PrivateExtension : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
+    UMASN1ObjectIdentifier *_extId;
+    UMASN1Object *_extensionData;
 }
-@property(readwrite,strong)    NSString *operationName;
-
-
+@property(readwrite,strong) NSString *operationName;
+@property(readwrite,strong) UMASN1ObjectIdentifier *extId;
+@property(readwrite,strong) UMASN1Object *extensionData;
 
 - (void)processBeforeEncode;
 - (UMGSMMAP_PrivateExtension *)processAfterDecodeWithContext:(id)context;

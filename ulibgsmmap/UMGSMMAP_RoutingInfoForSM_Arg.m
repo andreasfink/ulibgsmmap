@@ -78,9 +78,6 @@
         n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
         [_asn1_list addObject:n];
     }
-
-
-
     if(_imsi)
     {
         _imsi.asn1_tag.tagNumber = 12;
@@ -112,7 +109,6 @@
         [_asn1_list addObject:_correlationID];
     }
 }
-
 
 - (UMGSMMAP_RoutingInfoForSM_Arg *) processAfterDecodeWithContext:(id)context
 {
