@@ -465,7 +465,9 @@
                 [self.logFeed debugText:s];
             }
             NSMutableDictionary *xoptions2 = [xoptions mutableCopy];
-            xoptions2["new-transation"] = @(YES);
+            xoptions2[@"new-transation"] = @(YES);
+
+            
             [tcapLayer tcapContinueRequest:tcapTransactionId
                               userDialogId:userDialogId
                                    variant:self.variant
@@ -1545,7 +1547,7 @@
 
 - (void)setOptions:(NSDictionary *)options
 {
-    NSArray <NSString *> *tcap_options = options["tcap-options"];
+    NSArray <NSString *> *tcap_options = options[@"tcap-options"];
     if(tcap_options.count > 0)
     {
         for(NSString *option in tcap_options)
