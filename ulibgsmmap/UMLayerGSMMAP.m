@@ -920,11 +920,15 @@
 {
     
     UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+    
+    
+
     if(dialog==NULL)
     {
         [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req: Dialog ID %@ not found. Ignoring",dialogId]];
         return;
     }
+    [dialog setOptions:options];
     [dialog MAP_Delimiter_Req:options
                callingAddress:src
                 calledAddress:dst

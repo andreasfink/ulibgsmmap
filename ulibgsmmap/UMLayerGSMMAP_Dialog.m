@@ -457,20 +457,43 @@
             itu_dialoguePortion.dialogRequest.objectIdentifier = applicationContext;
             itu_dialoguePortion.dialogRequest.user_information = xuserInfo;
         }
-        if(self.logLevel <= UMLOG_DEBUG)
+        if(_startWithContinue)
         {
-            NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"calling tcapBeginRequest"];
-            [self.logFeed debugText:s];
+            if(self.logLevel <= UMLOG_DEBUG)
+            {
+                NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"calling tcapContinueRequest (start-with-continue option set)"];
+                [self.logFeed debugText:s];
+            }
+            NSMutableDictionary *xoptions2 = [xoptions mutableCopy];
+            xoptions2["new-transation"] = @(YES);
+            [tcapLayer tcapContinueRequest:tcapTransactionId
+                              userDialogId:userDialogId
+                                   variant:self.variant
+                                      user:self
+                            callingAddress:localAddress
+                             calledAddress:remoteAddress
+                           dialoguePortion:itu_dialoguePortion
+                            components_ansi:NULL
+                             components_itu:components
+                                   options:xoptions2];
         }
-        [tcapLayer tcapBeginRequest:tcapTransactionId
-                       userDialogId:userDialogId
-                            variant:self.variant
-                               user:self
-                     callingAddress:localAddress
-                      calledAddress:remoteAddress
-                    dialoguePortion:itu_dialoguePortion
-                         components:components
-                            options:xoptions];
+        else
+        {
+            if(self.logLevel <= UMLOG_DEBUG)
+            {
+                NSMutableString *s = [[NSMutableString alloc]initWithFormat:@"calling tcapBeginRequest"];
+                [self.logFeed debugText:s];
+            }
+            [tcapLayer tcapBeginRequest:tcapTransactionId
+                           userDialogId:userDialogId
+                                variant:self.variant
+                                   user:self
+                         callingAddress:localAddress
+                          calledAddress:remoteAddress
+                        dialoguePortion:itu_dialoguePortion
+                             components:components
+                                options:xoptions];
+        }
         self.openEstablished = YES;
         self.dialogRequestRequired = NO;
         self.dialogResponseRequired = NO;
@@ -1518,5 +1541,27 @@
     [s appendFormat:@"    tcapContinueSeen: %@\n",@(_tcapContinueSeen)];
     [filehandler writeData: [s dataUsingEncoding:NSUTF8StringEncoding]];
 }
+
+
+- (void)setOptions:(NSDictionary *)options
+{
+    NSArray <NSString *> *tcap_options = options["tcap-options"];
+    if(tcap_options.count > 0)
+    {
+        for(NSString *option in tcap_options)
+        {
+            if([option isEqualToString:@"start-with-continue"])
+            {
+                _startWithContinue = YES;
+            }
+            else if([option isEqualToString:@"no-dtid-in-continue"])
+            {
+                _noDestinationTransationIdInContinue = YES;
+            }
+        }
+    }
+}
+
+
 
 @end

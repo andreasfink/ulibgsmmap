@@ -56,6 +56,10 @@
     BOOL    _dialogShallClose;
     BOOL    _tcapContinueSeen;
     NSString *_tcapOperationGlobal;
+    
+    BOOL    _startWithContinue;
+    BOOL    _noDestinationTransationIdInContinue;
+
 }
 
 #pragma mark -
@@ -88,6 +92,8 @@
 @property(readwrite,assign,atomic) BOOL    dialogShallClose;
 @property(readwrite,assign,atomic) UMLogLevel logLevel;
 @property(readwrite,assign,atomic) BOOL tcapContinueSeen;
+@property(readwrite,assign,atomic) BOOL startWithContinue;
+@property(readwrite,assign,atomic) BOOL noDestinationTransationIdInContinue;
 
 - (NSTimeInterval)timeoutInSeconds;
 - (void)setTimeoutInSeconds:(NSTimeInterval)to;
@@ -282,5 +288,7 @@
 - (void)timeOut;
 
 - (void)dump:(NSFileHandle *)filehandler;
+
+- (void)setOptions:(NSDictionary *)dict;
 
 @end
