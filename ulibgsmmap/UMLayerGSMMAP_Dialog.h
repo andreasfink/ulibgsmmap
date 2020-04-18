@@ -59,7 +59,7 @@
     
     BOOL    _startWithContinue;
     BOOL    _noDestinationTransationIdInContinue;
-
+    BOOL    _doubleOriginationTransationIdInContinue;
 }
 
 #pragma mark -
@@ -94,6 +94,7 @@
 @property(readwrite,assign,atomic) BOOL tcapContinueSeen;
 @property(readwrite,assign,atomic) BOOL startWithContinue;
 @property(readwrite,assign,atomic) BOOL noDestinationTransationIdInContinue;
+@property(readwrite,assign,atomic) BOOL doubleOriginationTransationIdInContinue;
 
 - (NSTimeInterval)timeoutInSeconds;
 - (void)setTimeoutInSeconds:(NSTimeInterval)to;

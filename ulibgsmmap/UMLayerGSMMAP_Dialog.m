@@ -1560,6 +1560,10 @@
             {
                 _noDestinationTransationIdInContinue = YES;
             }
+            else if([option isEqualToString:@"double-otid-in-continue"])
+            {
+                _doubleOriginationTransationIdInContinue = YES;
+            }
         }
     }
 }
