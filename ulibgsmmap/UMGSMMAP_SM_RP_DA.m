@@ -142,9 +142,7 @@
 	}
 	else
 	{
-	    @throw([NSException exceptionWithName:@"PARAMETER_MISSING"
-	                                   reason:@"UMGSMMAP_SM_RP_DA choice missing"
-	                                userInfo:@{    @"backtrace": UMBacktrace(NULL,0)}]);
+        NSLog(@"UMGSMMAP_SM_RP_DA choice missing");
 	}
 }
 
