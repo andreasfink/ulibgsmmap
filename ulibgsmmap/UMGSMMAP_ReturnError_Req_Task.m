@@ -41,12 +41,15 @@
 
 - (void)main
 {
-    [_instance executeMAP_ReturnError_Req:_param
-                                   dialog:_dialogId
-                                 invokeId:_invokeId
-                                 linkedId:_linkedId
-                                   opCode:_opcode
-                                errorCode:_error
-                                  options:_options];
+    @autoreleasepool
+    {
+        [_instance executeMAP_ReturnError_Req:_param
+                                       dialog:_dialogId
+                                     invokeId:_invokeId
+                                     linkedId:_linkedId
+                                       opCode:_opcode
+                                    errorCode:_error
+                                      options:_options];
+    }
 }
 @end

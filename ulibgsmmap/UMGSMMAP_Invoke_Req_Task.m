@@ -40,13 +40,16 @@
 
 - (void)main
 {
-    [_instance executeMAP_Invoke_Req:_param
-                              dialog:_dialogId
-                            invokeId:_invokeId
-                            linkedId:_linkedId
-                              opCode:_opCode
-                                last:_last
-                             options:_options];
+    @autoreleasepool
+    {
+        [_instance executeMAP_Invoke_Req:_param
+                                  dialog:_dialogId
+                                invokeId:_invokeId
+                                linkedId:_linkedId
+                                  opCode:_opCode
+                                    last:_last
+                                 options:_options];
+    }
 }
 
 @end

@@ -38,12 +38,15 @@
 
 - (void)main
 {
-    [_instance executeMAP_U_Abort_Req:_dialogId
-                              options:_options
-                               result:_result
-                           diagnostic:_result_source_diagnostic
-                             userInfo:_userInfo
-                                cause:_cause];
+    @autoreleasepool
+    {
+        [_instance executeMAP_U_Abort_Req:_dialogId
+                                  options:_options
+                                   result:_result
+                               diagnostic:_result_source_diagnostic
+                                 userInfo:_userInfo
+                                    cause:_cause];
+    }
 }
 
 @end

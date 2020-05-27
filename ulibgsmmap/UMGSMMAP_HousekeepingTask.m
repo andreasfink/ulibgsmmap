@@ -26,6 +26,9 @@
 
 - (void) main
 {
-   [gsmmapLayer housekeeping];
+    @autoreleasepool
+    {
+        [gsmmapLayer housekeeping];
+    }
 }
 @end

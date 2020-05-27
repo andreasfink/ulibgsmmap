@@ -38,6 +38,8 @@
 
 - (void)main
 {
-    
+    @autoreleasepool
+    {
+    }
 }
 @end

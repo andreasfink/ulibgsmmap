@@ -39,12 +39,15 @@
 
 - (void)main
 {
-    [_instance executeMAP_Delimiter_Req:_dialogId
-                         callingAddress:_callingAddress
-                          calledAddress:_calledAddress
-                                options:_options
-                                 result:_result
-                             diagnostic:_result_source_diagnostic];
+    @autoreleasepool
+    {
+        [_instance executeMAP_Delimiter_Req:_dialogId
+                             callingAddress:_callingAddress
+                              calledAddress:_calledAddress
+                                    options:_options
+                                     result:_result
+                                 diagnostic:_result_source_diagnostic];
+    }
 }
 
 @end

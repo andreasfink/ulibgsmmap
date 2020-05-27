@@ -27,6 +27,9 @@
 
 - (void) main
 {
-    [_dialog timeOut];
+    @autoreleasepool
+    {
+        [_dialog timeOut];
+    }
 }
 @end
