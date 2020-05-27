@@ -1122,7 +1122,10 @@
 {
     UMGSMMAP_HousekeepingTask *task = [[UMGSMMAP_HousekeepingTask alloc]initForGSMMAP:self];
     //[self queueFromLower:task];
-    [task main];
+    @autoreleasepool
+    {
+        [task main];
+    }
 }
 
 
