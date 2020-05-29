@@ -43,23 +43,26 @@
 
 - (UMLayerGSMMAP *)init
 {
-    self = [super init];
-    if(self)
+    @autoreleasepool
     {
-        dialogs = [[UMSynchronizedDictionary alloc]init];
-        _dialogIdLock = [[UMMutex alloc]initWithName:@"gsmmap-dialog-id-lock"];
-        _dialogTimeout = 70.0;
-        _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
-        _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
-                                                   selector:@selector(housekeepingTask)
-                                                     object:NULL
-                                                   seconds:2.8
-                                                       name:@"housekeeping"
-                                                    repeats:YES];
-        [_houseKeepingTimer start];
+        self = [super init];
+        if(self)
+        {
+            dialogs = [[UMSynchronizedDictionary alloc]init];
+            _dialogIdLock = [[UMMutex alloc]initWithName:@"gsmmap-dialog-id-lock"];
+            _dialogTimeout = 70.0;
+            _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
+            _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
+                                                       selector:@selector(housekeepingTask)
+                                                         object:NULL
+                                                       seconds:2.8
+                                                           name:@"housekeeping"
+                                                        repeats:YES];
+            [_houseKeepingTimer start];
 
+        }
+        return self;
     }
-    return self;
 }
 
 - (UMLayerGSMMAP *)initWithTaskQueueMulti:(UMTaskQueueMulti *)tq
@@ -69,22 +72,25 @@
 
 - (UMLayerGSMMAP *)initWithTaskQueueMulti:(UMTaskQueueMulti *)tq name:(NSString *)name
 {
-    self = [super initWithTaskQueueMulti:tq name:name];
-    if(self)
+    @autoreleasepool
     {
-        dialogs = [[UMSynchronizedDictionary alloc]init];
-        _dialogIdLock = [[UMMutex alloc]initWithName:@"gsmmap-dialog-id-lock"];
-        _dialogTimeout = 70.0;
-        _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
-        _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
-                                                   selector:@selector(housekeeping)
-                                                     object:NULL
-                                                    seconds:1.1 /* every sec */
-                                                       name:@"housekeeping"
-                                                    repeats:YES];
-        [_houseKeepingTimer start];
+        self = [super initWithTaskQueueMulti:tq name:name];
+        if(self)
+        {
+            dialogs = [[UMSynchronizedDictionary alloc]init];
+            _dialogIdLock = [[UMMutex alloc]initWithName:@"gsmmap-dialog-id-lock"];
+            _dialogTimeout = 70.0;
+            _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
+            _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
+                                                       selector:@selector(housekeeping)
+                                                         object:NULL
+                                                        seconds:1.1 /* every sec */
+                                                           name:@"housekeeping"
+                                                        repeats:YES];
+            [_houseKeepingTimer start];
+        }
+        return self;
     }
-    return self;
 }
 
 - (void)tcapBeginIndication:(UMTCAP_UserDialogIdentifier *)tcapUserId
@@ -98,50 +104,53 @@
                  components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                     options:(NSDictionary *)options
 {
-    UMGSMMAP_DialogIdentifier *dialogId = [[UMGSMMAP_DialogIdentifier alloc]initWithTcapUserDialogIdentifier:tcapUserId];
+    @autoreleasepool
+    {
+        UMGSMMAP_DialogIdentifier *dialogId = [[UMGSMMAP_DialogIdentifier alloc]initWithTcapUserDialogIdentifier:tcapUserId];
 
-    UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:user withId:dialogId];
+        UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:user withId:dialogId];
 
-    if(self.logLevel <= UMLOG_DEBUG)
-    {
-        [self.logFeed debugText:[NSString stringWithFormat:@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId]];
-    }
-    [dialog MAP_Open_Ind_forUser:user
-                            tcap:tcapLayer
-                             map:self
-                         variant:var
-                  callingAddress:src
-                   calledAddress:dst
-                 dialoguePortion:xdialoguePortion
-                   transactionId:localTransactionId
-             remoteTransactionId:remoteTransactionId
-                         options:options];
-    if(dialog.tcapTransactionId == NULL)
-    {
-        dialog.tcapTransactionId = localTransactionId;
-    }
-    if(dialog.tcapRemoteTransactionId==NULL)
-    {
-        dialog.tcapRemoteTransactionId = remoteTransactionId;
-    }
-    [dialog MAP_ProcessComponents:components
-                          options:options
-                          willEnd:NO];
-    [dialog MAP_Delimiter_Ind:options
-                       dialog:dialogId
-               callingAddress:src
-                calledAddress:dst
-              dialoguePortion:xdialoguePortion
-                transactionId:localTransactionId
-          remoteTransactionId:remoteTransactionId];
-    if(components.count==0)
-    {
-        UMTCAP_asn1_Associate_result *r = [[UMTCAP_asn1_Associate_result alloc]initWithValue:0];
-        UMTCAP_asn1_Associate_source_diagnostic *d = [[UMTCAP_asn1_Associate_source_diagnostic alloc]init];
-        d.dialogue_service_user =[[UMASN1Integer alloc]initWithValue:0];
-        [dialog MAP_Delimiter_Req:options
-                           result:r
-                       diagnostic:d];
+        if(self.logLevel <= UMLOG_DEBUG)
+        {
+            [self.logFeed debugText:[NSString stringWithFormat:@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId]];
+        }
+        [dialog MAP_Open_Ind_forUser:user
+                                tcap:tcapLayer
+                                 map:self
+                             variant:var
+                      callingAddress:src
+                       calledAddress:dst
+                     dialoguePortion:xdialoguePortion
+                       transactionId:localTransactionId
+                 remoteTransactionId:remoteTransactionId
+                             options:options];
+        if(dialog.tcapTransactionId == NULL)
+        {
+            dialog.tcapTransactionId = localTransactionId;
+        }
+        if(dialog.tcapRemoteTransactionId==NULL)
+        {
+            dialog.tcapRemoteTransactionId = remoteTransactionId;
+        }
+        [dialog MAP_ProcessComponents:components
+                              options:options
+                              willEnd:NO];
+        [dialog MAP_Delimiter_Ind:options
+                           dialog:dialogId
+                   callingAddress:src
+                    calledAddress:dst
+                  dialoguePortion:xdialoguePortion
+                    transactionId:localTransactionId
+              remoteTransactionId:remoteTransactionId];
+        if(components.count==0)
+        {
+            UMTCAP_asn1_Associate_result *r = [[UMTCAP_asn1_Associate_result alloc]initWithValue:0];
+            UMTCAP_asn1_Associate_source_diagnostic *d = [[UMTCAP_asn1_Associate_source_diagnostic alloc]init];
+            d.dialogue_service_user =[[UMASN1Integer alloc]initWithValue:0];
+            [dialog MAP_Delimiter_Req:options
+                               result:r
+                           diagnostic:d];
+        }
     }
 }
 
@@ -156,97 +165,100 @@
                     components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                        options:(NSDictionary *)options
 {
-    UMGSMMAP_DialogIdentifier *dialogId = [[UMGSMMAP_DialogIdentifier alloc]initWithTcapUserDialogIdentifier:tcapUserId];
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-
-    if((dialog==NULL) && (options[@"injected"]))
+    @autoreleasepool
     {
-        /*  if we are using sccp injecting into the stack to debug
-            decoding incoming packets, then we might not have a previous transaction.
-            For example if we submit a sccp pdu with tcapContinue without previous tcapBegin.
-            In this case we enfore to decode it anyway by creating the missing transaction on the fly
-            so the decoding runs through.
-        */
-        if(dialogId)
+        UMGSMMAP_DialogIdentifier *dialogId = [[UMGSMMAP_DialogIdentifier alloc]initWithTcapUserDialogIdentifier:tcapUserId];
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+
+        if((dialog==NULL) && (options[@"injected"]))
         {
-            dialog = [self getNewDialogForUser:user withId:dialogId];
+            /*  if we are using sccp injecting into the stack to debug
+                decoding incoming packets, then we might not have a previous transaction.
+                For example if we submit a sccp pdu with tcapContinue without previous tcapBegin.
+                In this case we enfore to decode it anyway by creating the missing transaction on the fly
+                so the decoding runs through.
+            */
+            if(dialogId)
+            {
+                dialog = [self getNewDialogForUser:user withId:dialogId];
+            }
+            else
+            {
+                dialog = [self getNewDialogForUser:user];
+            }
+            [dialog MAP_Open_Ind_forUser:user
+                                    tcap:tcapLayer
+                                     map:self
+                                 variant:var
+                          callingAddress:src
+                           calledAddress:dst
+                         dialoguePortion:xdialoguePortion
+                           transactionId:xlocalTransactionId
+                     remoteTransactionId:xremoteTransactionId
+                                 options:options];
+            dialogId = dialog.userDialogId;
+        }
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"tcapContinueIndication: DialogNotFound %@ for transaction [local %@ remote %@]",dialogId,xlocalTransactionId,xremoteTransactionId]];
+            return;
         }
         else
         {
-            dialog = [self getNewDialogForUser:user];
-        }
-        [dialog MAP_Open_Ind_forUser:user
-                                tcap:tcapLayer
-                                 map:self
-                             variant:var
+            if(self.logLevel <= UMLOG_DEBUG)
+            {
+                NSString *s = [NSString stringWithFormat:@"tcapContinueIndication\n"
+                               @"    dialogId: %@\n"
+                               @"    localTransactionId: %@\n"
+                               @"    remoteTransactionId: %@\n"
+                               @"    userIdentifier: %@\n",
+                               dialog.userDialogId,
+                               dialog.tcapTransactionId,
+                               dialog.tcapRemoteTransactionId,
+                               dialog.userIdentifier];
+                [self.logFeed debugText:s];
+            }
+            if(dialog.tcapTransactionId == NULL)
+            {
+                dialog.tcapTransactionId = xlocalTransactionId;
+            }
+            if(dialog.tcapRemoteTransactionId == NULL)
+            {
+                dialog.tcapRemoteTransactionId = xremoteTransactionId;
+            }
+            /* we must set local addresses/remote addresses here because when processing components this info might already be needed */
+            if(dialog.tcapContinueSeen == NO)
+            {
+                /* this is the first tcap continue so we take over the remote address for it */
+                /* update the GT's based on the response but keep the translation types */
+                int tt = dialog.remoteAddress.tt.tt;
+                dialog.remoteAddress = src;
+                dialog.remoteAddress.tt.tt = tt;
+                
+                tt = dialog.localAddress.tt.tt;
+                dialog.localAddress = dst;
+                dialog.localAddress.tt.tt = tt;
+                
+                dialog.tcapContinueSeen=YES;
+            }
+            [dialog MAP_ProcessComponents:components
+                                  options:options
+                                  willEnd:NO];
+            [dialog MAP_Delimiter_Ind:options
+                               dialog:dialogId
+                       callingAddress:src
+                        calledAddress:dst
+                      dialoguePortion:xdialoguePortion
+                        transactionId:xlocalTransactionId
+                  remoteTransactionId:xremoteTransactionId];
+
+            [dialog MAP_Continue_Ind:options
                       callingAddress:src
                        calledAddress:dst
                      dialoguePortion:xdialoguePortion
                        transactionId:xlocalTransactionId
-                 remoteTransactionId:xremoteTransactionId
-                             options:options];
-        dialogId = dialog.userDialogId;
-    }
-    if(dialog==NULL)
-    {
-        [self.logFeed minorErrorText:[NSString stringWithFormat:@"tcapContinueIndication: DialogNotFound %@ for transaction [local %@ remote %@]",dialogId,xlocalTransactionId,xremoteTransactionId]];
-        return;
-    }
-    else
-    {
-        if(self.logLevel <= UMLOG_DEBUG)
-        {
-            NSString *s = [NSString stringWithFormat:@"tcapContinueIndication\n"
-                           @"    dialogId: %@\n"
-                           @"    localTransactionId: %@\n"
-                           @"    remoteTransactionId: %@\n"
-                           @"    userIdentifier: %@\n",
-                           dialog.userDialogId,
-                           dialog.tcapTransactionId,
-                           dialog.tcapRemoteTransactionId,
-                           dialog.userIdentifier];
-            [self.logFeed debugText:s];
+                 remoteTransactionId:xremoteTransactionId];
         }
-        if(dialog.tcapTransactionId == NULL)
-        {
-            dialog.tcapTransactionId = xlocalTransactionId;
-        }
-        if(dialog.tcapRemoteTransactionId == NULL)
-        {
-            dialog.tcapRemoteTransactionId = xremoteTransactionId;
-        }
-        /* we must set local addresses/remote addresses here because when processing components this info might already be needed */
-        if(dialog.tcapContinueSeen == NO)
-        {
-            /* this is the first tcap continue so we take over the remote address for it */
-            /* update the GT's based on the response but keep the translation types */
-            int tt = dialog.remoteAddress.tt.tt;
-            dialog.remoteAddress = src;
-            dialog.remoteAddress.tt.tt = tt;
-            
-            tt = dialog.localAddress.tt.tt;
-            dialog.localAddress = dst;
-            dialog.localAddress.tt.tt = tt;
-            
-            dialog.tcapContinueSeen=YES;
-        }
-        [dialog MAP_ProcessComponents:components
-                              options:options
-                              willEnd:NO];
-        [dialog MAP_Delimiter_Ind:options
-                           dialog:dialogId
-                   callingAddress:src
-                    calledAddress:dst
-                  dialoguePortion:xdialoguePortion
-                    transactionId:xlocalTransactionId
-              remoteTransactionId:xremoteTransactionId];
-
-        [dialog MAP_Continue_Ind:options
-                  callingAddress:src
-                   calledAddress:dst
-                 dialoguePortion:xdialoguePortion
-                   transactionId:xlocalTransactionId
-             remoteTransactionId:xremoteTransactionId];
     }
 }
 
@@ -261,50 +273,139 @@
                components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                   options:(NSDictionary *)options
 {
-    UMGSMMAP_DialogIdentifier *dialogId = [[UMGSMMAP_DialogIdentifier alloc]initWithTcapUserDialogIdentifier:tcapUserId];
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    if(dialog==NULL)
+    @autoreleasepool
     {
-        [self.logFeed minorErrorText:[NSString stringWithFormat:@"tcapEndIndication: DialogNotFound %@ for transaction [local %@ remote %@]",dialogId,transactionId,remoteTransactionId]];
-        return;
+        UMGSMMAP_DialogIdentifier *dialogId = [[UMGSMMAP_DialogIdentifier alloc]initWithTcapUserDialogIdentifier:tcapUserId];
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"tcapEndIndication: DialogNotFound %@ for transaction [local %@ remote %@]",dialogId,transactionId,remoteTransactionId]];
+            return;
+        }
+        else
+        {
+            if(self.logLevel <= UMLOG_DEBUG)
+            {
+                NSString *s = [NSString stringWithFormat:@"tcapEndIndication\n"
+                               @"    dialogId: %@\n"
+                               @"    localTransactionId: %@\n"
+                               @"    remoteTransactionId: %@\n"
+                               @"    userIdentifier: %@\n"
+                               @"    dialoguePortion: %@\n",
+                               dialog.userDialogId,
+                               dialog.tcapTransactionId,
+                               dialog.tcapRemoteTransactionId,
+                               dialog.userIdentifier,
+                               xdialoguePortion];
+                [self.logFeed debugText:s];
+            }
+            if(dialog.tcapTransactionId == NULL)
+            {
+                dialog.tcapTransactionId = transactionId;
+            }
+            if(dialog.tcapRemoteTransactionId == NULL)
+            {
+                dialog.tcapRemoteTransactionId = remoteTransactionId;
+            }
+            dialog.remoteAddress = src;
+            dialog.localAddress = dst;
+            NSMutableDictionary *xoptions = [options mutableCopy];
+            xoptions[@"sccp-calling-address"] = src;
+            xoptions[@"sccp-called-address"] = dst;;
+            options = xoptions;
+
+            @try
+            {
+                [dialog MAP_ProcessComponents:components
+                                      options:options
+                                      willEnd:YES];
+            }
+            @catch(NSException *ex)
+            {
+                [self.logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
+            }
+            @try
+            {
+                [dialog MAP_Close_Ind:options];
+            }
+            @catch(NSException *ex)
+            {
+                [self.logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
+            }
+        }
     }
-    else
+}
+
+- (void)tcapUnidirectionalIndication:(UMTCAP_UserDialogIdentifier *)tcapUserId
+                   tcapTransactionId:(NSString *)localTransactionId
+             tcapRemoteTransactionId:(NSString *)remoteTransactionId
+                             variant:(UMTCAP_Variant)var
+                      callingAddress:(SccpAddress *)src
+                       calledAddress:(SccpAddress *)dst
+                     dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+                        callingLayer:(UMLayerTCAP *)tcapLayer
+                          components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
+                             options:(NSDictionary *)options
+{
+    @autoreleasepool
     {
+        //UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
         if(self.logLevel <= UMLOG_DEBUG)
         {
-            NSString *s = [NSString stringWithFormat:@"tcapEndIndication\n"
-                           @"    dialogId: %@\n"
-                           @"    localTransactionId: %@\n"
-                           @"    remoteTransactionId: %@\n"
-                           @"    userIdentifier: %@\n"
-                           @"    dialoguePortion: %@\n",
-                           dialog.userDialogId,
-                           dialog.tcapTransactionId,
-                           dialog.tcapRemoteTransactionId,
-                           dialog.userIdentifier,
-                           xdialoguePortion];
-            [self.logFeed debugText:s];
+            [self.logFeed debugText:@"tcapUnidirectionalIndication received"];
         }
-        if(dialog.tcapTransactionId == NULL)
-        {
-            dialog.tcapTransactionId = transactionId;
-        }
-        if(dialog.tcapRemoteTransactionId == NULL)
-        {
-            dialog.tcapRemoteTransactionId = remoteTransactionId;
-        }
-        dialog.remoteAddress = src;
-        dialog.localAddress = dst;
-        NSMutableDictionary *xoptions = [options mutableCopy];
-        xoptions[@"sccp-calling-address"] = src;
-        xoptions[@"sccp-called-address"] = dst;;
-        options = xoptions;
 
         @try
         {
-            [dialog MAP_ProcessComponents:components
-                                  options:options
-                                  willEnd:YES];
+            [user queueMAP_Unidirectional_Ind:options
+                               callingAddress:src
+                                calledAddress:dst
+                              dialoguePortion:xdialoguePortion
+                                transactionId:localTransactionId
+                          remoteTransactionId:remoteTransactionId];
+        }
+        @catch(NSException *ex)
+        {
+            [self.logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
+        }
+    }
+}
+
+- (void)tcapUAbortIndication:(UMTCAP_UserDialogIdentifier  *)tcapUserId
+           tcapTransactionId:(NSString *)localTransactionId
+     tcapRemoteTransactionId:(NSString *)remoteTransactionId
+                     variant:(UMTCAP_Variant)variant
+              callingAddress:(SccpAddress *)src
+               calledAddress:(SccpAddress *)dst
+             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
+                callingLayer:(UMLayer *)tcapLayer
+                        asn1:(UMASN1Object *)asn1
+                     options:(NSDictionary *)options
+{
+    @autoreleasepool
+    {
+        UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
+
+        if(self.logLevel <= UMLOG_DEBUG)
+        {
+            [self.logFeed debugText:@"tcapUAbortIndication received"];
+        }
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"tcapUAbortIndication: Dialog %@ not found for transaction [local %@ remote %@]",tcapUserId,localTransactionId,remoteTransactionId]];
+            return;
+        }
+
+        dialog.tcapTransactionId = localTransactionId;
+        @try
+        {
+            [dialog MAP_U_Abort_Ind:options
+                     callingAddress:src
+                       calledAddress:dst
+                    dialoguePortion:xdialoguePortion
+                      transactionId:localTransactionId
+                 remoteTransactionId:remoteTransactionId];
         }
         @catch(NSException *ex)
         {
@@ -321,87 +422,6 @@
     }
 }
 
-- (void)tcapUnidirectionalIndication:(UMTCAP_UserDialogIdentifier *)tcapUserId
-                   tcapTransactionId:(NSString *)localTransactionId
-             tcapRemoteTransactionId:(NSString *)remoteTransactionId
-                             variant:(UMTCAP_Variant)var
-                      callingAddress:(SccpAddress *)src
-                       calledAddress:(SccpAddress *)dst
-                     dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
-                        callingLayer:(UMLayerTCAP *)tcapLayer
-                          components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
-                             options:(NSDictionary *)options
-{
-    //UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
-
-    if(self.logLevel <= UMLOG_DEBUG)
-    {
-        [self.logFeed debugText:@"tcapUnidirectionalIndication received"];
-    }
-
-    @try
-    {
-        [user queueMAP_Unidirectional_Ind:options
-                           callingAddress:src
-                            calledAddress:dst
-                          dialoguePortion:xdialoguePortion
-                            transactionId:localTransactionId
-                      remoteTransactionId:remoteTransactionId];
-    }
-    @catch(NSException *ex)
-    {
-        [self.logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
-    }
-}
-
-- (void)tcapUAbortIndication:(UMTCAP_UserDialogIdentifier  *)tcapUserId
-           tcapTransactionId:(NSString *)localTransactionId
-     tcapRemoteTransactionId:(NSString *)remoteTransactionId
-                     variant:(UMTCAP_Variant)variant
-              callingAddress:(SccpAddress *)src
-               calledAddress:(SccpAddress *)dst
-             dialoguePortion:(UMTCAP_asn1_dialoguePortion *)xdialoguePortion
-                callingLayer:(UMLayer *)tcapLayer
-                        asn1:(UMASN1Object *)asn1
-                     options:(NSDictionary *)options
-{
-    UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
-
-    if(self.logLevel <= UMLOG_DEBUG)
-    {
-        [self.logFeed debugText:@"tcapUAbortIndication received"];
-    }
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    if(dialog==NULL)
-    {
-        [self.logFeed minorErrorText:[NSString stringWithFormat:@"tcapUAbortIndication: Dialog %@ not found for transaction [local %@ remote %@]",tcapUserId,localTransactionId,remoteTransactionId]];
-        return;
-    }
-
-    dialog.tcapTransactionId = localTransactionId;
-    @try
-    {
-        [dialog MAP_U_Abort_Ind:options
-                 callingAddress:src
-                   calledAddress:dst
-                dialoguePortion:xdialoguePortion
-                  transactionId:localTransactionId
-             remoteTransactionId:remoteTransactionId];
-    }
-    @catch(NSException *ex)
-    {
-        [self.logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
-    }
-    @try
-    {
-        [dialog MAP_Close_Ind:options];
-    }
-    @catch(NSException *ex)
-    {
-        [self.logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
-    }
-}
-
 
 - (void)tcapPAbortIndication:(UMTCAP_UserDialogIdentifier *)tcapUserId
            tcapTransactionId:(NSString *)localTransactionId
@@ -414,34 +434,36 @@
                         asn1:(UMASN1Object *)asn1
                      options:(NSDictionary *)options
 {
-    UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
+    @autoreleasepool
+    {
+        UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
+        if(self.logLevel <=UMLOG_DEBUG)
+        {
+            [self.logFeed debugText:[NSString stringWithFormat:@"tcapPAbortIndication for dialog %@",dialogId]];
+        }
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"tcapPAbortIndication: Dialog %@ not found for transaction [local %@ remote %@]",dialogId,localTransactionId,remoteTransactionId]];
+            return;
+        }
 
-    if(self.logLevel <=UMLOG_DEBUG)
-    {
-        [self.logFeed debugText:[NSString stringWithFormat:@"tcapPAbortIndication for dialog %@",dialogId]];
-    }
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    if(dialog==NULL)
-    {
-        [self.logFeed minorErrorText:[NSString stringWithFormat:@"tcapPAbortIndication: Dialog %@ not found for transaction [local %@ remote %@]",dialogId,localTransactionId,remoteTransactionId]];
-        return;
-    }
+        dialog.tcapTransactionId = localTransactionId;
 
-    dialog.tcapTransactionId = localTransactionId;
-
-    @try
-    {
-        [dialog MAP_P_Abort_Ind:options
-                 callingAddress:src
-                  calledAddress:dst
-                dialoguePortion:xdialoguePortion
-                  transactionId:localTransactionId
-            remoteTransactionId:remoteTransactionId];
-        /* this is an implicit close */
-    }
-    @catch(NSException *ex)
-    {
-        [self.logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
+        @try
+        {
+            [dialog MAP_P_Abort_Ind:options
+                     callingAddress:src
+                      calledAddress:dst
+                    dialoguePortion:xdialoguePortion
+                      transactionId:localTransactionId
+                remoteTransactionId:remoteTransactionId];
+            /* this is an implicit close */
+        }
+        @catch(NSException *ex)
+        {
+            [self.logFeed majorErrorText:[NSString stringWithFormat:@"Exception: %@",ex]];
+        }
     }
 }
 
@@ -458,13 +480,16 @@
                       reason:(SCCP_ReturnCause)reason
                      options:(NSDictionary *)options;
 {
-    UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
+    @autoreleasepool
+    {
+        UMGSMMAP_DialogIdentifier *dialogId =   [[UMGSMMAP_DialogIdentifier alloc] initWithTcapUserDialogIdentifier:tcapUserId];
 
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
 
-    [dialog MAP_Notice_Ind:options
-         tcapTransactionId:localTransactionId
-                    reason:reason];
+        [dialog MAP_Notice_Ind:options
+             tcapTransactionId:localTransactionId
+                        reason:reason];
+    }
 }
 
 -(void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMLayerGSMMAPApplicationContextProtocol>)appContext
@@ -539,60 +564,69 @@
                operationName:(NSString **)operationName
                      context:(id)context
 {
-    UMASN1Object<UMGSMMAP_asn1_protocol>  *o;
-    if(params)
+    @autoreleasepool
     {
-        UMGSMMAP_asn1 *asn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:params context:context];
-        NSString *name = NULL;
-        o = [asn1 decodeASN1opcode:opcode
-                     operationType:operationType
-                     operationName:&name
-                       withContext:context];
+        UMASN1Object<UMGSMMAP_asn1_protocol>  *o;
+        if(params)
+        {
+            UMGSMMAP_asn1 *asn1 = [[UMGSMMAP_asn1 alloc]initWithASN1Object:params context:context];
+            NSString *name = NULL;
+            o = [asn1 decodeASN1opcode:opcode
+                         operationType:operationType
+                         operationName:&name
+                           withContext:context];
+        }
+        else
+        {
+            UMGSMMAP_asn1 *asn1 = [[UMGSMMAP_asn1 alloc]init];
+            NSString *name = NULL;
+            o = [asn1 decodeASN1opcode:opcode
+                         operationType:operationType
+                         operationName:&name
+                           withContext:context];
+            o = NULL;
+        }
+        return o;
     }
-    else
-    {
-        UMGSMMAP_asn1 *asn1 = [[UMGSMMAP_asn1 alloc]init];
-        NSString *name = NULL;
-        o = [asn1 decodeASN1opcode:opcode
-                     operationType:operationType
-                     operationName:&name
-                       withContext:context];
-        o = NULL;
-    }
-    return o;
 }
-
 
 
 
 - (UMGSMMAP_DialogIdentifier *)getNewUserDialogId
 {
-    static int64_t lastDialogId =1;
-    int64_t did;
-    [_dialogIdLock lock];
-    lastDialogId = (lastDialogId + 1 ) % 0x7FFFFFFF;
-    did = lastDialogId;
-    [_dialogIdLock unlock];
-    return [[UMGSMMAP_DialogIdentifier alloc]initWithString: [NSString stringWithFormat:@"D%08llX",(long long)did]];
+    @autoreleasepool
+    {
+        static int64_t lastDialogId =1;
+        int64_t did;
+        [_dialogIdLock lock];
+        lastDialogId = (lastDialogId + 1 ) % 0x7FFFFFFF;
+        did = lastDialogId;
+        [_dialogIdLock unlock];
+        return [[UMGSMMAP_DialogIdentifier alloc]initWithString: [NSString stringWithFormat:@"D%08llX",(long long)did]];
+    }
 }
 
 - (UMLayerGSMMAP_Dialog *)getNewDialogForUser:(id<UMLayerGSMMAP_UserProtocol>)u withId:(UMGSMMAP_DialogIdentifier *)dialogId
 {
-    UMLayerGSMMAP_Dialog *d = [[UMLayerGSMMAP_Dialog alloc]init];
-    d.userDialogId = dialogId;
-    d.tcapLayer = tcap;
-    d.gsmmapLayer = self;
-    d.mapUser = u;
-    d.logFeed = self.logFeed;
-    d.logLevel = self.logLevel;
-    if(self.dialogTimeout > 0.0)
+    @autoreleasepool
     {
-        d.timeoutInSeconds = self.dialogTimeout;
+        UMLayerGSMMAP_Dialog *d = [[UMLayerGSMMAP_Dialog alloc]init];
+        d.userDialogId = dialogId;
+        d.tcapLayer = tcap;
+        d.gsmmapLayer = self;
+        d.mapUser = u;
+        d.logFeed = self.logFeed;
+        d.logLevel = self.logLevel;
+        if(self.dialogTimeout > 0.0)
+        {
+            d.timeoutInSeconds = self.dialogTimeout;
+        }
+        dialogs[d.userDialogId.description] = d;
+        [d touch];
+        return d;
     }
-    dialogs[d.userDialogId.description] = d;
-    [d touch];
-    return d;
 }
+
 - (NSUInteger)dialogsCount
 {
     return dialogs.count;
@@ -835,14 +869,17 @@
                     userInfo:(UMTCAP_asn1_userInformation *)userInfo
                        cause:(int64_t)cause
 {
-    UMGSMMAP_U_Abort_Req_Task *task = [[UMGSMMAP_U_Abort_Req_Task alloc]initWithInstance:self
-                                                                                 dialog:dialogId
-                                                                                options:options
-                                                                                 result:result
-                                                                             diagnostic:result_source_diagnostic
-                                                                               userInfo:userInfo
-                                                                                   cause:cause];
-    [self queueFromUpper:task];
+    @autoreleasepool
+    {
+        UMGSMMAP_U_Abort_Req_Task *task = [[UMGSMMAP_U_Abort_Req_Task alloc]initWithInstance:self
+                                                                                     dialog:dialogId
+                                                                                    options:options
+                                                                                     result:result
+                                                                                 diagnostic:result_source_diagnostic
+                                                                                   userInfo:userInfo
+                                                                                       cause:cause];
+        [self queueFromUpper:task];
+    }
 }
 
 -(void) executeMAP_U_Abort_Req:(UMGSMMAP_DialogIdentifier *)dialogId
@@ -852,23 +889,25 @@
                       userInfo:(UMTCAP_asn1_userInformation *)userInfo
                          cause:(int64_t)cause
 {
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    if(dialog==NULL)
+    @autoreleasepool
     {
-        [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_U_Abort_Req: Dialog ID %@ not found. Ignoring",dialogId]];
-        return;
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_U_Abort_Req: Dialog ID %@ not found. Ignoring",dialogId]];
+            return;
+        }
+        
+
+        [dialog MAP_U_Abort_Req:options
+                 callingAddress:NULL
+                  calledAddress:NULL
+                          cause:cause
+                         result:result
+                     diagnostic:result_source_diagnostic
+                       userInfo:userInfo];
     }
-    
-
-    [dialog MAP_U_Abort_Req:options
-             callingAddress:NULL
-              calledAddress:NULL
-                      cause:cause
-                     result:result
-                 diagnostic:result_source_diagnostic
-                   userInfo:userInfo];
 }
-
 
 
 -(UMGSMMAP_DialogIdentifier *) executeMAP_Open_Req_forUser:(id<UMLayerGSMMAP_UserProtocol>)xuser
@@ -880,18 +919,21 @@
                                             userIdentifier:(UMGSMMAP_UserIdentifier *)xuserIdentifier
                                                    options:(NSDictionary *)options
 {
-    UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:xuser];
-    [dialog MAP_Open_Req_forUser:xuser
-                            tcap:self.tcap
-                             map:self
-                         variant:variant
-                  callingAddress:src
-                   calledAddress:dst
-              applicationContext:appContext
-                        userInfo:xuserInfo
-                  userIdentifier:xuserIdentifier
-                         options:options];
-    return dialog.userDialogId;
+    @autoreleasepool
+    {
+        UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:xuser];
+        [dialog MAP_Open_Req_forUser:xuser
+                                tcap:self.tcap
+                                 map:self
+                             variant:variant
+                      callingAddress:src
+                       calledAddress:dst
+                  applicationContext:appContext
+                            userInfo:xuserInfo
+                      userIdentifier:xuserIdentifier
+                             options:options];
+        return dialog.userDialogId;
+    }
 }
 
 -(void) queueMAP_Delimiter_Req:(UMGSMMAP_DialogIdentifier *)dialogId
@@ -901,14 +943,18 @@
                         result:(UMTCAP_asn1_Associate_result *)result
                     diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
-    UMGSMMAP_Delimiter_Req_Task *task = [[UMGSMMAP_Delimiter_Req_Task alloc]initWithInstance:self
-                                                                                      dialog:dialogId
-                                                                              callingAddress:src
-                                                                               calledAddress:dst
-                                                                                     options:options
-                                                                                      result:result
-                                                                                  diagnostic:result_source_diagnostic];
-    [self queueFromUpper:task];
+    @autoreleasepool
+    {
+
+        UMGSMMAP_Delimiter_Req_Task *task = [[UMGSMMAP_Delimiter_Req_Task alloc]initWithInstance:self
+                                                                                          dialog:dialogId
+                                                                                  callingAddress:src
+                                                                                   calledAddress:dst
+                                                                                         options:options
+                                                                                          result:result
+                                                                                      diagnostic:result_source_diagnostic];
+        [self queueFromUpper:task];
+    }
 }
 
 -(void) executeMAP_Delimiter_Req:(UMGSMMAP_DialogIdentifier *)dialogId
@@ -918,34 +964,39 @@
                           result:(UMTCAP_asn1_Associate_result *)result
                       diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
-    
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    
-    
-
-    if(dialog==NULL)
+    @autoreleasepool
     {
-        [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req: Dialog ID %@ not found. Ignoring",dialogId]];
-        return;
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        
+        
+
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req: Dialog ID %@ not found. Ignoring",dialogId]];
+            return;
+        }
+        [dialog setOptions:options];
+        [dialog MAP_Delimiter_Req:options
+                   callingAddress:src
+                    calledAddress:dst
+                           result:result
+                       diagnostic:result_source_diagnostic];
     }
-    [dialog setOptions:options];
-    [dialog MAP_Delimiter_Req:options
-               callingAddress:src
-                calledAddress:dst
-                       result:result
-                   diagnostic:result_source_diagnostic];
 }
 
 -(void) MAP_Delimiter_Req:(UMGSMMAP_DialogIdentifier *)dialogId
                   options:(NSDictionary *)options;
 {
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    if(dialog==NULL)
+    @autoreleasepool
     {
-        [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req1: Dialog ID %@ not found. Ignoring",dialogId]];
-        return;
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req1: Dialog ID %@ not found. Ignoring",dialogId]];
+            return;
+        }
+        [dialog MAP_Delimiter_Req:options];
     }
-    [dialog MAP_Delimiter_Req:options];
 }
 
 
@@ -956,14 +1007,17 @@
                       result:(UMTCAP_asn1_Associate_result *)result
                   diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
-    UMGSMMAP_Close_Req_Task *task = [[UMGSMMAP_Close_Req_Task alloc]initWithInstance:self
-                                                                              dialog:(UMGSMMAP_DialogIdentifier *)dialogId
-                                                                      callingAddress:(SccpAddress *)src
-                                                                       calledAddress:(SccpAddress *)dst
-                                                                             options:(NSDictionary *)options
-                                                                              result:(UMTCAP_asn1_Associate_result *)result
-                                                                          diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic];
-    [self queueFromUpper:task];
+    @autoreleasepool
+    {
+        UMGSMMAP_Close_Req_Task *task = [[UMGSMMAP_Close_Req_Task alloc]initWithInstance:self
+                                                                                  dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+                                                                          callingAddress:(SccpAddress *)src
+                                                                           calledAddress:(SccpAddress *)dst
+                                                                                 options:(NSDictionary *)options
+                                                                                  result:(UMTCAP_asn1_Associate_result *)result
+                                                                              diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic];
+        [self queueFromUpper:task];
+    }
 }
 
 - (void)executeMAP_Close_Req:(UMGSMMAP_DialogIdentifier *)dialogId
@@ -973,18 +1027,21 @@
                       result:(UMTCAP_asn1_Associate_result *)result
                   diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    if((dialog==NULL) || (dialog.dialogIsClosed))
+    @autoreleasepool
     {
-        /* the dialog is already closed from the remote. so we can safely ignore it */
-        //[self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Close_Req: Dialog ID %@ not found. Ignoring",dialogId]];
-        return;
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        if((dialog==NULL) || (dialog.dialogIsClosed))
+        {
+            /* the dialog is already closed from the remote. so we can safely ignore it */
+            //[self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Close_Req: Dialog ID %@ not found. Ignoring",dialogId]];
+            return;
+        }
+        [dialog MAP_Close_Req:options
+               callingAddress:src
+                calledAddress:dst
+                       result:result
+                   diagnostic:result_source_diagnostic];
     }
-    [dialog MAP_Close_Req:options
-           callingAddress:src
-            calledAddress:dst
-                   result:result
-               diagnostic:result_source_diagnostic];
 }
 
 - (void) queueMAP_Invoke_Req:(UMASN1Object *)param
@@ -995,15 +1052,18 @@
                         last:(int64_t)last
                      options:(NSDictionary *)options
 {
-    UMGSMMAP_Invoke_Req_Task *task = [[UMGSMMAP_Invoke_Req_Task alloc]initWithInstance:self
-                                                                                 param:param
-                                                                                dialog:dialogId
-                                                                              invokeId:invokeId
-                                                                              linkedId:linkedId
-                                                                                opCode:opcode
-                                                                                  last:last
-                                                                               options:options];
-    [self queueFromUpper:task];
+    @autoreleasepool
+    {
+        UMGSMMAP_Invoke_Req_Task *task = [[UMGSMMAP_Invoke_Req_Task alloc]initWithInstance:self
+                                                                                     param:param
+                                                                                    dialog:dialogId
+                                                                                  invokeId:invokeId
+                                                                                  linkedId:linkedId
+                                                                                    opCode:opcode
+                                                                                      last:last
+                                                                                   options:options];
+        [self queueFromUpper:task];
+    }
 }
 
 - (void) executeMAP_Invoke_Req:(UMASN1Object *)param
@@ -1037,17 +1097,19 @@
                                 last:(int64_t)last
                              options:(NSDictionary *)options
 {
-    UMGSMMAP_ReturnResult_Req_Task *task = [[UMGSMMAP_ReturnResult_Req_Task alloc] initWithInstance:self
-                                                                                              param:param
-                                                                                             dialog:dialogId
-                                                                                           invokeId:invokeId
-                                                                                           linkedId:linkedId
-                                                                                             opCode:opcode
-                                                                                               last:last
-                                                                                            options:options];
-    [self queueFromUpper:task];
+    @autoreleasepool
+    {
+        UMGSMMAP_ReturnResult_Req_Task *task = [[UMGSMMAP_ReturnResult_Req_Task alloc] initWithInstance:self
+                                                                                                  param:param
+                                                                                                 dialog:dialogId
+                                                                                               invokeId:invokeId
+                                                                                               linkedId:linkedId
+                                                                                                 opCode:opcode
+                                                                                                   last:last
+                                                                                                options:options];
+        [self queueFromUpper:task];
+    }
 }
-
 
 - (void) executeMAP_ReturnResult_Req:(UMASN1Object *)xparam
                               dialog:(UMGSMMAP_DialogIdentifier *)dialogId
@@ -1057,20 +1119,22 @@
                                 last:(int64_t)xlast
                              options:(NSDictionary *)xoptions
 {
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
-    if(dialog==NULL)
+    @autoreleasepool
     {
-        [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_ReturnResult_Req: Dialog ID %@ not found. Ignoring",dialogId]];
-        return;
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_ReturnResult_Req: Dialog ID %@ not found. Ignoring",dialogId]];
+            return;
+        }
+        [dialog MAP_ReturnResult_Req:xparam
+                            invokeId:xinvokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
+                            linkedId:xlinkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
+                              opCode:xopcode
+                                last:xlast
+                             options:xoptions];
     }
-    [dialog MAP_ReturnResult_Req:xparam
-                        invokeId:xinvokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
-                        linkedId:xlinkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
-                          opCode:xopcode
-                            last:xlast
-                         options:xoptions];
 }
-
 
 - (void)queueMAP_ReturnError_Req:(UMASN1Object *)param
                           dialog:(UMGSMMAP_DialogIdentifier *)dialogId
@@ -1080,15 +1144,18 @@
                        errorCode:(int64_t)error
                          options:(NSDictionary *)options
 {
-    UMGSMMAP_ReturnError_Req_Task *task = [[UMGSMMAP_ReturnError_Req_Task alloc] initWithInstance:self
-                                                                                            param:param
-                                                                                           dialog:dialogId
-                                                                                         invokeId:invokeId
-                                                                                         linkedId:linkedId
-                                                                                           opCode:opcode
-                                                                                            error:error
-                                                                                          options:options];
-    [self queueFromUpper:task];
+    @autoreleasepool
+    {
+        UMGSMMAP_ReturnError_Req_Task *task = [[UMGSMMAP_ReturnError_Req_Task alloc] initWithInstance:self
+                                                                                                param:param
+                                                                                               dialog:dialogId
+                                                                                             invokeId:invokeId
+                                                                                             linkedId:linkedId
+                                                                                               opCode:opcode
+                                                                                                error:error
+                                                                                              options:options];
+        [self queueFromUpper:task];
+    }
 }
 
 - (void)executeMAP_ReturnError_Req:(UMASN1Object *)xparam
@@ -1099,18 +1166,21 @@
                          errorCode:(int64_t)xerrorCode
                            options:(NSDictionary *)xoptions
 {
-    UMLayerGSMMAP_Dialog *dialog = [self dialogById:xdialogId];
-    if(dialog==NULL)
+    @autoreleasepool
     {
-        [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_ReturnError_Req: Dialog ID %@ not found. Ignoring",xdialogId]];
-        return;
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:xdialogId];
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_ReturnError_Req: Dialog ID %@ not found. Ignoring",xdialogId]];
+            return;
+        }
+        [dialog MAP_ReturnError_Req:xparam
+                           invokeId:xinvokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
+                           linkedId:xlinkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
+                             opCode:xopcode
+                          errorCode:xerrorCode
+                            options:xoptions];
     }
-    [dialog MAP_ReturnError_Req:xparam
-                       invokeId:xinvokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
-                       linkedId:xlinkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */
-                         opCode:xopcode
-                      errorCode:xerrorCode
-                        options:xoptions];
 }
 
 - (NSString *)status
@@ -1120,10 +1190,10 @@
 
 - (void)housekeepingTask
 {
-    UMGSMMAP_HousekeepingTask *task = [[UMGSMMAP_HousekeepingTask alloc]initForGSMMAP:self];
-    //[self queueFromLower:task];
     @autoreleasepool
     {
+        UMGSMMAP_HousekeepingTask *task = [[UMGSMMAP_HousekeepingTask alloc]initForGSMMAP:self];
+        //[self queueFromLower:task];
         [task main];
     }
 }
@@ -1131,29 +1201,33 @@
 
 - (void)housekeeping
 {
-    if(self.housekeeping_running)
+    @autoreleasepool
     {
-        [_houseKeepingTimerRun touch];
-        return;
-    }
-    self.housekeeping_running = YES;
 
-    NSArray *keys = [dialogs allKeys];
-    for(NSString *key in keys)
-    {
-        UMLayerGSMMAP_Dialog *dialog = dialogs[key];
-        if(dialog.dialogIsClosed)
+        if(self.housekeeping_running)
         {
-            [dialogs removeObjectForKey:key];
+            [_houseKeepingTimerRun touch];
+            return;
         }
-        else if([dialog isTimedOut]==YES)
-        {
+        self.housekeeping_running = YES;
 
-            UMGSMMAP_TimeoutTask *task = [[UMGSMMAP_TimeoutTask alloc]initForGSMMAP:self dialog:dialog];
-            [self queueFromAdmin:task];
+        NSArray *keys = [dialogs allKeys];
+        for(NSString *key in keys)
+        {
+            UMLayerGSMMAP_Dialog *dialog = dialogs[key];
+            if(dialog.dialogIsClosed)
+            {
+                [dialogs removeObjectForKey:key];
+            }
+            else if([dialog isTimedOut]==YES)
+            {
+
+                UMGSMMAP_TimeoutTask *task = [[UMGSMMAP_TimeoutTask alloc]initForGSMMAP:self dialog:dialog];
+                [self queueFromAdmin:task];
+            }
         }
+        self.housekeeping_running = NO;
     }
-    self.housekeeping_running = NO;
 }
 
 - (void)dump:(NSFileHandle *)filehandler
