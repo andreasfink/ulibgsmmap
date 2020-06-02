@@ -1,22 +1,22 @@
+// Release 15 113 3GPP TS 29.002 V15.1.0 (2017-09)   section 8.1.2.2 page 112
 UpdateLocationArg ::= SEQUENCE {
-	imsi IMSI,
-	msc-Number [1] ISDN-AddressString,
-	vlr-Number ISDN-AddressString,
-	lmsi [10] LMSI OPTIONAL,
-	extensionContainer ExtensionContainer OPTIONAL,
+	imsi                                    IMSI,
+	msc-Number                              [1] ISDN-AddressString,
+	vlr-Number                              ISDN-AddressString,
+	lmsi                                    [10] LMSI                       OPTIONAL,
+	extensionContainer                      ExtensionContainer              OPTIONAL,
 	... ,
-	vlr-Capability [6] VLR-Capability OPTIONAL,
-
-    informPreviousNetworkEntity     [11] NULL,
-    cs-LCS-NotSupportedByUE         [12]    NULL        OPTIONAL,
-    v-gmlc-Address                  [2]    GSN-Address    OPTIONAL,
-    add-info                        [13] ADD-Info    OPTIONAL,
-    pagingArea                      [14] PagingArea    OPTIONAL,
-    skipSubscriberDataUpdate        [15] NULL        OPTIONAL,
+	vlr-Capability                          [6] VLR-Capability              OPTIONAL,
+    informPreviousNetworkEntity             [11] NULL,
+    cs-LCS-NotSupportedByUE                 [12] NULL                       OPTIONAL,
+    v-gmlc-Address                          [2] GSN-Address                 OPTIONAL,
+    add-info                                [13] ADD-Info                   OPTIONAL,
+    pagingArea                              [14] PagingArea                 OPTIONAL,
+    skipSubscriberDataUpdate                [15] NULL                       OPTIONAL,
     -- The skipSubscriberDataUpdate parameter in the UpdateLocationArg and the ADD-Info
     -- structures carry the same semantic.
-    restorationIndicator            [16]    NULL        OPTIONAL,
-    eplmn-List                      [3] EPLMN-List    OPTIONAL,
-    mme-DiameterAddress             [4] NetworkNodeDiameterAddress    OPTIONAL
+    restorationIndicator                    [16] NULL                       OPTIONAL,
+    eplmn-List                              [3] EPLMN-List                  OPTIONAL,
+    mme-DiameterAddress                     [4] NetworkNodeDiameterAddress  OPTIONAL
 }
 

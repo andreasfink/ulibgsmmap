@@ -22,9 +22,9 @@
 @interface UMGSMMAP_VLR_Capability : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	UMGSMMAP_SupportedCamelPhases *supportedCamelPhases;
-	UMGSMMAP_ExtensionContainer *extensionContainer;
-	BOOL solsaSupportIndicator;
+	UMGSMMAP_SupportedCamelPhases   *_supportedCamelPhases;
+	UMGSMMAP_ExtensionContainer     *_extensionContainer;
+	BOOL                            _solsaSupportIndicator;
     UMGSMMAP_IST_SupportIndicator *_istSupportIndicator;
     UMGSMMAP_SuperChargerInfo *_superChargerSupportedInServingNetworkEntity;
     BOOL _longFTNSupported;
