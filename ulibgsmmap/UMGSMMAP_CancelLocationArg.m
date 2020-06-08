@@ -18,7 +18,6 @@
 @synthesize	cancellationType;
 @synthesize	extensionContainer;
 
-
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
@@ -95,7 +94,6 @@
 {
     return self;
 }
-
 
 @end
 
