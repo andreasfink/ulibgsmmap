@@ -12,4 +12,5 @@
 
 @protocol UMLayerGSMMAPApplicationContextProtocol<NSObject>
 - (UMLayerTCAP *)getTCAP:(NSString *)name;
+- (UMSynchronizedDictionary *)dbPools;
 @end

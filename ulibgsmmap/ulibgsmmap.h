@@ -503,3 +503,6 @@
 #import "UMGSMMAP_FTSExtension.h"
 #import "UMGSMMAP_FTSExtensionList.h"
 
+#import "UMGSMMAP_StatisticDb.h"
+#import "UMGSMMAP_StatisticDbRecord.h"
+
