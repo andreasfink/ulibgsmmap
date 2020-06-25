@@ -19,5 +19,6 @@
 @property(readwrite,strong,atomic)  UMGSMMAP_DiameterIdentity *diameter_Name;
 @property(readwrite,strong,atomic)  UMGSMMAP_DiameterIdentity *diameter_Realm;
 
+- (UMGSMMAP_NetworkNodeDiameterAddress *)initWithString:(NSString *)str;
 
 @end

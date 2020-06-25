@@ -19,5 +19,6 @@
 
 @property(readwrite,strong,atomic) UMGSMMAP_IMEI *imeisv;
 @property(readwrite,assign,atomic) BOOL skipSubscriberDataUpdate;
+- (UMGSMMAP_ADD_Info *)initWithString:(NSString *)str;
 
 @end

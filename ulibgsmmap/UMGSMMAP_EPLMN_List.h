@@ -19,6 +19,8 @@
 - (UMGSMMAP_PLMN_Id *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;
 - (id)objectValue;
+- (UMGSMMAP_EPLMN_List *)initWithString:(NSString *)str;
+
 @property(readwrite,strong,atomic) NSMutableArray *sequenceEntries;
 
 @end

@@ -16,7 +16,7 @@
 
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_LAIFixedLength";
+	return @"LAIFixedLength";
 }
 
 

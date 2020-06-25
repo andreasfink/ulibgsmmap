@@ -81,6 +81,8 @@
 		A668F16E20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.m in Sources */ = {isa = PBXBuildFile; fileRef = A668F16C20F3FD6E0002A48C /* UMGSMMAP_PLMN_Id.m */; };
 		A668F17720F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h in Headers */ = {isa = PBXBuildFile; fileRef = A668F17520F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A668F17820F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m in Sources */ = {isa = PBXBuildFile; fileRef = A668F17620F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m */; };
+		A678AF5F24A4D5D90009699E /* UMGSMMAP_LAC.h in Headers */ = {isa = PBXBuildFile; fileRef = A678AF5D24A4D5D90009699E /* UMGSMMAP_LAC.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A678AF6024A4D5D90009699E /* UMGSMMAP_LAC.m in Sources */ = {isa = PBXBuildFile; fileRef = A678AF5E24A4D5D90009699E /* UMGSMMAP_LAC.m */; };
 		A679006F2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.h in Headers */ = {isa = PBXBuildFile; fileRef = A679006D2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A67900702046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.m in Sources */ = {isa = PBXBuildFile; fileRef = A679006E2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.m */; };
 		A67900732046F28C00A34B1E /* UMGSMMAP_UESBI_Iu.h in Headers */ = {isa = PBXBuildFile; fileRef = A67900712046F28C00A34B1E /* UMGSMMAP_UESBI_Iu.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1272,6 +1274,10 @@
 		A668F17520F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_MT_SMS_TPDU_Type.h; sourceTree = "<group>"; };
 		A668F17620F49B8B0002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_MT_SMS_TPDU_Type.m; sourceTree = "<group>"; };
 		A668F17920F49BD40002A48C /* UMGSMMAP_MT_SMS_TPDU_Type.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_MT_SMS_TPDU_Type.asn; sourceTree = "<group>"; };
+		A678AF5C24A4C8E80009699E /* UMGSMMAP_OfferedCamel4CSIs.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = UMGSMMAP_OfferedCamel4CSIs.asn; sourceTree = "<group>"; };
+		A678AF5D24A4D5D90009699E /* UMGSMMAP_LAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_LAC.h; sourceTree = "<group>"; };
+		A678AF5E24A4D5D90009699E /* UMGSMMAP_LAC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_LAC.m; sourceTree = "<group>"; };
+		A678AF6124A4D5EB0009699E /* UMGSMMAP_LAC.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = UMGSMMAP_LAC.asn; sourceTree = "<group>"; };
 		A67900632046F1B500A34B1E /* UMGSMMAP_RequestedEquipmentInfo.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_RequestedEquipmentInfo.asn; sourceTree = "<group>"; };
 		A67900652046F1BD00A34B1E /* UMGSMMAP_UESBI_IuA.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_UESBI_IuA.asn; sourceTree = "<group>"; };
 		A67900662046F1BE00A34B1E /* UMGSMMAP_UESBI_IuB.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_UESBI_IuB.asn; sourceTree = "<group>"; };
@@ -3988,6 +3994,9 @@
 				A6EE6A6C1D3B6BEE00211137 /* UMGSMMAP_LAIFixedLength.asn */,
 				A6EE6A6B1D3B6BEE00211137 /* UMGSMMAP_LAIFixedLength.h */,
 				A6EE6A6A1D3B6BEE00211137 /* UMGSMMAP_LAIFixedLength.m */,
+				A678AF6124A4D5EB0009699E /* UMGSMMAP_LAC.asn */,
+				A678AF5D24A4D5D90009699E /* UMGSMMAP_LAC.h */,
+				A678AF5E24A4D5D90009699E /* UMGSMMAP_LAC.m */,
 				A6EE6A691D3B6BEE00211137 /* UMGSMMAP_LCS_ClientID.asn */,
 				A6EE6A681D3B6BEE00211137 /* UMGSMMAP_LCS_ClientID.h */,
 				A6EE6A671D3B6BEE00211137 /* UMGSMMAP_LCS_ClientID.m */,
@@ -4315,6 +4324,7 @@
 				A695955A1D7E9B3500211137 /* UMGSMMAP_ODB_Info.asn */,
 				A69595581D7E9B3500211137 /* UMGSMMAP_ODB_Info.h */,
 				A69595591D7E9B3500211137 /* UMGSMMAP_ODB_Info.m */,
+				A678AF5C24A4C8E80009699E /* UMGSMMAP_OfferedCamel4CSIs.asn */,
 				A69596081D7FAAB900211137 /* UMGSMMAP_OfferedCamel4CSIs.h */,
 				A69596091D7FAAB900211137 /* UMGSMMAP_OfferedCamel4CSIs.m */,
 				A61A5AE6227ECC8600E45384 /* UMGSMMAP_OfferedCamel4Functionalities.h */,
@@ -5574,6 +5584,7 @@
 				A69595BA1D7FA46100211137 /* UMGSMMAP_GPRS_CamelTDPData.h in Headers */,
 				A6EE6E111D3B6BFE00211137 /* UMGSMMAP_ServiceIndicator.h in Headers */,
 				A6EE708E1D3B6BFF00211137 /* UMGSMMAP_HLR_Id.h in Headers */,
+				A678AF5F24A4D5D90009699E /* UMGSMMAP_LAC.h in Headers */,
 				A6EE6E531D3B6BFE00211137 /* UMGSMMAP_ResumeCallHandlingArg.h in Headers */,
 				A6EE6E0B1D3B6BFE00211137 /* UMGSMMAP_SetReportingStateArg.h in Headers */,
 				A6EE72191D3B6BFF00211137 /* UMGSMMAP_CallTypeCriteria.h in Headers */,
@@ -6389,6 +6400,7 @@
 				A6EE72711D3B6BFF00211137 /* UMGSMMAP_AuthenticationFailureReportArg.m in Sources */,
 				A6EE709E1D3B6BFF00211137 /* UMGSMMAP_gprsSupportIndicator.m in Sources */,
 				A6EE6DDB1D3B6BFE00211137 /* UMGSMMAP_SS_CamelData.m in Sources */,
+				A678AF6024A4D5D90009699E /* UMGSMMAP_LAC.m in Sources */,
 				A69596031D7FAA1C00211137 /* UMGSMMAP_MT_smsCAMELTDP_CriteriaList.m in Sources */,
 				A6EE6D631D3B6BFE00211137 /* UMGSMMAP_TeleservNotProvParam.m in Sources */,
 				A6EE70F11D3B6BFF00211137 /* UMGSMMAP_ExternalClientList.m in Sources */,

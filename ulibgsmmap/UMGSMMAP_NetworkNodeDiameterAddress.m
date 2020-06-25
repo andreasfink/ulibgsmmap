@@ -87,6 +87,26 @@
     return self;
 }
 
-
+- (UMGSMMAP_NetworkNodeDiameterAddress *)initWithString:(NSString *)str;
+{
+    self = [super init];
+    if(self)
+    {
+        NSArray *a = [str componentsSeparatedByString:@"@"];
+        if(a.count>=1)
+        {
+            NSString *a1 = a[0];
+            if(a1.length > 0)
+            {
+                _diameter_Name = [[UMGSMMAP_DiameterIdentity alloc]initWithString:a[0]];
+            }
+        }
+        if(a.count>=2)
+        {
+            _diameter_Realm = [[UMGSMMAP_DiameterIdentity alloc]initWithString:a[1]];
+        }
+    }
+    return self;
+}
 @end
 

@@ -22,19 +22,19 @@
 @interface UMGSMMAP_VLR_Capability : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	UMGSMMAP_SupportedCamelPhases   *_supportedCamelPhases;
-	UMGSMMAP_ExtensionContainer     *_extensionContainer;
-	BOOL                            _solsaSupportIndicator;
-    UMGSMMAP_IST_SupportIndicator *_istSupportIndicator;
-    UMGSMMAP_SuperChargerInfo *_superChargerSupportedInServingNetworkEntity;
-    BOOL _longFTNSupported;
-    UMGSMMAP_SupportedLCS_CapabilitySets *_supportedLCS_CapabilitySets;
-    UMGSMMAP_OfferedCamel4CSIs *_offeredCamel4CSIs;
-    UMGSMMAP_SupportedRAT_Types *_supportedRAT_TypesIndicator;
-    BOOL _longGroupID_Supported;
-    BOOL _mtRoamingForwardingSupported;
-    BOOL _msisdn_lessOperation_Supported;
-    BOOL _reset_ids_Supported;
+	UMGSMMAP_SupportedCamelPhases           *_supportedCamelPhases;
+	UMGSMMAP_ExtensionContainer             *_extensionContainer;
+	BOOL                                    _solsaSupportIndicator;
+    UMGSMMAP_IST_SupportIndicator           *_istSupportIndicator;
+    UMGSMMAP_SuperChargerInfo               *_superChargerSupportedInServingNetworkEntity;
+    BOOL                                    _longFTNSupported;
+    UMGSMMAP_SupportedLCS_CapabilitySets    *_supportedLCS_CapabilitySets;
+    UMGSMMAP_OfferedCamel4CSIs              *_offeredCamel4CSIs;
+    UMGSMMAP_SupportedRAT_Types             *_supportedRAT_TypesIndicator;
+    BOOL                                    _longGroupID_Supported;
+    BOOL                                    _mtRoamingForwardingSupported;
+    BOOL                                    _msisdn_lessOperation_Supported;
+    BOOL                                    _reset_ids_Supported;
 }
 
 @property(readwrite,strong)    NSString *operationName;
@@ -42,8 +42,6 @@
 @property(readwrite,strong)	UMGSMMAP_SupportedCamelPhases *supportedCamelPhases;
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
 @property(readwrite,assign)	BOOL solsaSupportIndicator;
-
-
 @property(readwrite,strong)    UMGSMMAP_IST_SupportIndicator *istSupportIndicator;
 @property(readwrite,strong)    UMGSMMAP_SuperChargerInfo *superChargerSupportedInServingNetworkEntity;
 @property(readwrite,assign)    BOOL longFTNSupported;

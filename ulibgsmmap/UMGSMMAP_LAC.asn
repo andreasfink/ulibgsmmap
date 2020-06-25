@@ -1,0 +1,4 @@
+LAC ::= OCTET STRING (SIZE (2))
+    -- Refers to Location Area Code of the Location Area Identification defined in
+    -- 3GPP TS 23.003 [17].
+    -- Location Area Code according to 3GPP TS 24.008 [35]

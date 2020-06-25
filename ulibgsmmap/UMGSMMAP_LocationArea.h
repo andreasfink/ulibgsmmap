@@ -13,4 +13,5 @@
 
 @interface UMGSMMAP_LocationArea : UMASN1Choice
 
+- (UMGSMMAP_LocationArea *)initWithString:(NSString *)str;
 @end

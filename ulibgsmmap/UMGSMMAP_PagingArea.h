@@ -26,5 +26,5 @@
 - (NSString *)objectName;
 - (id)objectValue;
 - (void)addEntry:(UMGSMMAP_LocationArea *)la;
-
+- (UMGSMMAP_PagingArea *)initWithString:(NSString *)str;
 @end

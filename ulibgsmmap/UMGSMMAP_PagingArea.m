@@ -75,4 +75,24 @@
     [_sequenceEntries addObject:la];
 }
 
+- (UMGSMMAP_PagingArea *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        _sequenceEntries = [[NSMutableArray alloc]init];
+
+         NSArray *a = [str componentsSeparatedByString:@","];
+         for(NSString *s in a)
+         {
+             UMGSMMAP_LocationArea *la = [[UMGSMMAP_LocationArea alloc]initWithString:s];
+             if(la)
+             {
+                 [_sequenceEntries addObject:la];
+             }
+         }
+    }
+    return self;
+}
+
 @end

@@ -81,6 +81,15 @@
     return self;
 }
 
+- (UMGSMMAP_ADD_Info *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        /* TODO: do something with the passed string */
+    }
+    return self;
+}
 
 @end
 

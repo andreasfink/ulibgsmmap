@@ -21,4 +21,6 @@
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop
                                                withContext:(id)context;
+
+- (UMGSMMAP_OfferedCamel4CSIs *)initWithString:(NSString *)str;
 @end

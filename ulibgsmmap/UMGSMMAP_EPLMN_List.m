@@ -62,4 +62,25 @@
 {
     return self;
 }
+
+- (UMGSMMAP_EPLMN_List *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        _sequenceEntries = [[NSMutableArray alloc]init];
+
+        NSArray *a = [str componentsSeparatedByString:@","];
+        for(NSString *s in a)
+        {
+            UMGSMMAP_PLMN_Id *p = [[UMGSMMAP_PLMN_Id alloc]initWithString:s];
+            if(p)
+            {
+                [_sequenceEntries addObject:p];
+            }
+        }
+    }
+    return self;
+}
+
 @end

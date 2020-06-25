@@ -10,4 +10,7 @@
 
 @interface UMGSMMAP_SupportedRAT_Types : UMASN1BitString
 
+
+- (UMGSMMAP_SupportedRAT_Types *)initWithString:(NSString *)str;
+
 @end

@@ -10,4 +10,14 @@
 
 @implementation UMGSMMAP_SuperChargerInfo
 
+
+- (UMGSMMAP_SuperChargerInfo *)initWithString:(NSString *)str
+{
+    self = [super init];
+    if(self)
+    {
+        /* TODO: do something with the passed string */
+    }
+    return self;
+}
 @end

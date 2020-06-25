@@ -12,10 +12,12 @@
 
 @interface UMGSMMAP_SuperChargerInfo : UMASN1Choice
 {
-    BOOL _sendSubscriberData;
-    UMGSMMAP_AgeIndicator *_subscriberDataStored;
+    BOOL                    _sendSubscriberData;
+    UMGSMMAP_AgeIndicator   *_subscriberDataStored;
 }
 @property(readwrite,assign) BOOL sendSubscriberData;
 @property(readwrite,strong) UMGSMMAP_AgeIndicator *subscriberDataStored;
+
+- (UMGSMMAP_SuperChargerInfo *)initWithString:(NSString *)str;
 
 @end

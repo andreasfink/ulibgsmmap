@@ -10,7 +10,24 @@
 //
 
 #import "UMGSMMAP_LocationArea.h"
+#import "UMGSMMAP_LAIFixedLength.h"
+#import "UMGSMMAP_LAC.h"
 
 @implementation UMGSMMAP_LocationArea
 
+
+- (UMGSMMAP_LocationArea *)initWithString:(NSString *)str
+{
+    if(str.length == 10) /* 5 bytes */
+    {
+        UMGSMMAP_LAIFixedLength *laifl = [[UMGSMMAP_LAIFixedLength alloc]initWithString:str];
+        laifl.asn1_tag.tagClass =UMASN1Class_ContextSpecific;
+        laifl.asn1_tag.tagNumber = 0;
+        return (UMGSMMAP_LocationArea *)laifl;
+    }
+    UMGSMMAP_LAC *lac = [[UMGSMMAP_LAC alloc]initWithString:str];
+    lac.asn1_tag.tagClass =UMASN1Class_ContextSpecific;
+    lac.asn1_tag.tagNumber = 1;
+    return (UMGSMMAP_LocationArea *)lac;
+}
 @end
