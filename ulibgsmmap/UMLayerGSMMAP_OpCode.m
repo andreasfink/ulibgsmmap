@@ -13,16 +13,13 @@
 
 @implementation UMLayerGSMMAP_OpCode
 
-@synthesize operation;
-@synthesize family;
-@synthesize national;
-
 - (UMLayerGSMMAP_OpCode *)initWithOperationCode:(int64_t)op
 {
     self = [super init];
     if(self)
     {
-        operation = op;
+        _operation = op;
+        _familyOrEncoding = UMTCAP_itu_operationCodeEncoding_default;
     }
     return self;
 }
@@ -32,21 +29,21 @@
     self = [super init];
     if(self)
     {
-        operation = op;
-        family = UMTCAP_itu_operationCodeFamily_Global;
+        _operation = op;
+        _familyOrEncoding = UMTCAP_itu_operationCodeEncoding_Global;
     }
     return self;
 }
 
 - (NSString *)description
 {
-    if((family == 0) && (national == NO))
+    if((_familyOrEncoding == 0) && (_national == NO))
     {
-        return [NSString stringWithFormat:@"%ld",(long)operation];
+        return [NSString stringWithFormat:@"%ld",(long)_operation];
     }
     return [NSString stringWithFormat:@"{ operation: %ld, family: %ld, national: %@ }",
-            (long)operation,
-            (long)family,
-            (national ? @"YES" : @"NO")];
+            (long)_operation,
+            (long)_familyOrEncoding,
+            (_national ? @"YES" : @"NO")];
 }
 @end

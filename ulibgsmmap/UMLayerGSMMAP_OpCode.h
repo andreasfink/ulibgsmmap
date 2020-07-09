@@ -13,16 +13,16 @@
 
 @interface UMLayerGSMMAP_OpCode : UMObject
 {
-    int64_t operation;
-    int64_t family;
+    int64_t                 _operation;
+    int64_t                 _familyOrEncoding;
     UMASN1ObjectIdentifier *_globalOperation;
-    BOOL national;
+    BOOL                    _national;
 }
 
-@property (readwrite,assign) int64_t operation;
-@property (readwrite,assign) int64_t family;
-@property (readwrite,assign) BOOL national;
+@property (readwrite,assign) int64_t                operation;
+@property (readwrite,assign) int64_t                familyOrEncoding;
 @property (readwrite,strong) UMASN1ObjectIdentifier *globalOperation;
+@property (readwrite,assign) BOOL                   national;
 
 - (UMLayerGSMMAP_OpCode *)initWithOperationCode:(int64_t)op;
 - (UMLayerGSMMAP_OpCode *)initWithGlobalOperationCode:(int64_t)op;

@@ -205,6 +205,7 @@
     }
     self.initiatedOutgoing = YES;
     self.openEstablished = NO;
+    [t setOptions:xoptions];
     pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
     pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
 }
@@ -431,6 +432,7 @@
         if(tcapTransactionId == NULL)
         {
             UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self.gsmmapLayer];
+            [t setOptions:_outboundOptions];
             tcapTransactionId = t.localTransactionId;
         }
     }
@@ -956,7 +958,7 @@
                                         linkedId:linkedId
                                      useLinkedId: ((linkedId == TCAP_UNDEFINED_LINKED_ID) ? NO : YES)
                                      opCodeValue:opcode.operation
-                                    opCodeFamily:opcode.family
+                          opCodeFamilyOrEncoding:opcode.familyOrEncoding
                                     opCodeGlobal:opcode.globalOperation
                                   opCodeNational:opcode.national
                                             last:last];
@@ -989,6 +991,7 @@
     {
 
         UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self];
+        [t setOptions:_outboundOptions];
         tcapTransactionId = t.localTransactionId;
     }
     /* FIXME: is this correct here?? */
@@ -1006,7 +1009,7 @@
                                      linkedId:linkedId
                                   useLinkedId: ((linkedId == TCAP_UNDEFINED_LINKED_ID) ? NO : YES)
                                   opCodeValue:opcode.operation
-                                 opCodeFamily:opcode.family
+                       opCodeFamilyOrEncoding:opcode.familyOrEncoding
                                  opCodeGlobal:opcode.globalOperation
                                opCodeNational:opcode.national];
     }
@@ -1018,7 +1021,7 @@
                                         linkedId:linkedId
                                      useLinkedId: ((linkedId == TCAP_UNDEFINED_LINKED_ID) ? NO : YES)
                                      opCodeValue:opcode.operation
-                                    opCodeFamily:opcode.family
+                          opCodeFamilyOrEncoding:opcode.familyOrEncoding
                                     opCodeGlobal:opcode.globalOperation
                                   opCodeNational:opcode.national];
     }
@@ -1061,6 +1064,7 @@
     {
 
         UMTCAP_Transaction *t = [tcapLayer getNewOutgoingTransactionForUserDialogId:userDialogId user:self];
+        [t setOptions:_outboundOptions];
         tcapTransactionId = t.localTransactionId;
     }
     /* FIXME: is this correct here?? */
@@ -1227,7 +1231,7 @@
     {
         UMLayerGSMMAP_OpCode *op = [[UMLayerGSMMAP_OpCode alloc]init];
         op.operation = component.operationCode;
-        op.family = component.operationCodeFamily;
+        op.familyOrEncoding = component.operationCodeFamilyOrEncoding;
         op.national = component.operationNational;
         
         switch(component.asn1_tag.tagNumber)

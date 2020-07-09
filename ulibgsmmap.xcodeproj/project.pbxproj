@@ -3222,6 +3222,7 @@
 		A641CED91B42019900854472 = {
 			isa = PBXGroup;
 			children = (
+				A6F6940D1B4E843B0090FC94 /* VERSION */,
 				A6EE343B20A2CBF100C77EC8 /* doc */,
 				A6F694091B4E843B0090FC94 /* configure.in */,
 				A6ED5C6F1B435AF000854472 /* Frameworks */,
@@ -3237,7 +3238,6 @@
 				A6EE6CE21D3B6BFE00211137 /* ulibgsmmap.h */,
 				A6F6940C1B4E843B0090FC94 /* ulibgsmmap.pc.in */,
 				A641CEF21B42019900854472 /* ulibgsmmapTests */,
-				A6F6940D1B4E843B0090FC94 /* VERSION */,
 			);
 			sourceTree = "<group>";
 		};
