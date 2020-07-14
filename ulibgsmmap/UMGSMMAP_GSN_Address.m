@@ -12,20 +12,15 @@
 
 @implementation UMGSMMAP_GSN_Address
 
-@synthesize operationName;
 
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_GSN_Address";
+	return @"GSN_Address";
 }
 
 - (UMGSMMAP_GSN_Address *)initWithString:(NSString *)s
 {
-    self = [super init];
-    if(self)
-    {
-        self.value = [s dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    }
+    self = [super initWithString:s];
     return self;
 }
 
@@ -33,14 +28,6 @@
 {
     NSString *s = [[NSString alloc]initWithData:self.value encoding:NSASCIIStringEncoding ];
     return s;
-}
-
-- (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
-                                             operationType:(UMTCAP_InternalOperation)operation
-                                             operationName:(NSString **)xop
-                                               withContext:(id)context
-{
-    return self;
 }
 
 @end

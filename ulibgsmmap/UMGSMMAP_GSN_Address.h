@@ -10,12 +10,11 @@
 //
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
+#import "UMGSMMAP_AddressString.h"
 
-@interface UMGSMMAP_GSN_Address : UMASN1OctetString<UMGSMMAP_asn1_protocol>
+@interface UMGSMMAP_GSN_Address : UMGSMMAP_AddressString
 {
-	NSString *operationName;
 }
-@property(readwrite,strong)    NSString *operationName;
 
 - (UMGSMMAP_GSN_Address *)initWithString:(NSString *)string;
 - (NSString *)stringValue;

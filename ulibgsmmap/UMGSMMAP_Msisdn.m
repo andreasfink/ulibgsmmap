@@ -10,4 +10,8 @@
 
 @implementation UMGSMMAP_Msisdn
 
+- (NSString *) objectName
+{
+    return @"Msisdn";
+}
 @end
