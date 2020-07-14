@@ -28,4 +28,16 @@
     return self;
 }
 
+
+- (void)setEnumDefinition
+{
+    _enumDefinition = @ {
+        @"utran" : @(UMGSMMAP_Used_RAT_Type_utran),
+        @"geran" : @(UMGSMMAP_Used_RAT_Type_geran),
+        @"gan" : @(UMGSMMAP_Used_RAT_Type_gan),
+        @"i-hspa-evolution" : @(UMGSMMAP_Used_RAT_Type_i_hspa_evolution),
+        @"e-utran" : @(UMGSMMAP_Used_RAT_Type_e_utran),
+    };
+}
+
 @end

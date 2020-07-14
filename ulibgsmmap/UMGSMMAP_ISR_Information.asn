@@ -1,0 +1,9 @@
+
+ISR-Information::= BIT STRING
+ {
+    updateLocation (0),
+    cancelSGSN (1),
+    initialAttachIndicator (2)
+} (SIZE (3..8))
+
+-- exception handling: reception of unknown bit assignments in the -- ISR-Information data type shall be discarded by the receiver

@@ -1,4 +1,6 @@
-SGSN-Capability ::= SEQUENCE { 
+
+
+SGSN-Capability ::= SEQUENCE {
    solsaSupportIndicator NULL OPTIONAL, 
    extensionContainer [1] ExtensionContainer OPTIONAL, 
    ... }

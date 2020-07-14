@@ -1,0 +1,7 @@
+
+UE-SRVCC-Capability::= ENUMERATED
+{
+    ue-srvcc-not-supported (0),
+    ue-srvcc-supported (1),
+    ...
+}

@@ -1,0 +1,6 @@
+
+EPS-Info ::= CHOICE{
+{
+    pdn-gw-update   [0] PDN-GW-Update,
+    isr-Information [1] ISR-Information
+}

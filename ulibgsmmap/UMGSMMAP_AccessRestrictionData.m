@@ -66,4 +66,43 @@
     return self;
 }
 
+
+- (id) objectValue
+{
+    NSMutableArray *a = [[NSMutableArray alloc]init];
+    if([self bit:0])
+    {
+        [a addObject:@"utranNotAllowed"];
+    }
+    if([self bit:1])
+    {
+        [a addObject:@"geranNotAllowed"];
+    }
+    if([self bit:2])
+    {
+        [a addObject:@"i-hspa-evolutionNotAllowed"];
+    }
+    if([self bit:3])
+    {
+        [a addObject:@"i-hspa-evolutionNotAllowed"];
+    }
+    if([self bit:4])
+    {
+        [a addObject:@"wb-e-utranNotAllowed"];
+    }
+    if([self bit:5])
+    {
+        [a addObject:@"ho-toNon3GPP-AccessNotAllowed"];
+    }
+    if([self bit:6])
+    {
+        [a addObject:@"nb-iotNotAllowed"];
+    }
+    if([self bit:7])
+    {
+        [a addObject:@"enhancedCoverageNotAllowed"];
+    }
+    NSString *s = [a componentsJoinedByString:@","];
+    return s;
+}
 @end

@@ -29,6 +29,8 @@
 - (UMGSMMAP_SGSN_Capability *)processAfterDecodeWithContext:(id)context;
 - (NSString *)objectName;
 - (id)objectValue;
+- (UMGSMMAP_SGSN_Capability *)initWithString:(NSString *)string;
+
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop

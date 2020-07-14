@@ -1,0 +1,2 @@
+
+EPLMN-List ::= SEQUENCE SIZE (1..50) OF PLMN-Id

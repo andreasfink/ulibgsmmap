@@ -17,6 +17,35 @@
 @synthesize	solsaSupportIndicator;
 @synthesize	extensionContainer;
 
+- (UMGSMMAP_SGSN_Capability *)initWithString:(NSString *)string
+{
+    self = [super init];
+    if(self)
+    {
+        NSArray *a = [string componentsSeparatedByString:@","];
+        for(NSString *s in a)
+        {
+            NSString *var=NULL;
+            NSString *val = NULL;
+            NSArray *b = [s componentsSeparatedByString:@"="];
+            if(b.count == 1)
+            {
+                var = b[0];
+            }
+            if(b.count >= 2)
+            {
+                var = b[0];
+                val = b[1];
+            }
+            if([var isEqualToString:@"solsa-support-indicator"])
+            {
+                solsaSupportIndicator = [val boolValue];
+            }
+        
+        }
+    }
+    return self;
+}
 
 - (void) processBeforeEncode
 {

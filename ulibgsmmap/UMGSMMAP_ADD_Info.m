@@ -81,12 +81,37 @@
     return self;
 }
 
-- (UMGSMMAP_ADD_Info *)initWithString:(NSString *)str
+- (UMGSMMAP_ADD_Info *)initWithString:(NSString *)string
 {
     self = [super init];
     if(self)
     {
-        /* TODO: do something with the passed string */
+        NSArray *a = [string componentsSeparatedByString:@","];
+        for(NSString *s in a)
+        {
+            NSString *var=NULL;
+            NSString *val = NULL;
+            NSArray *b = [s componentsSeparatedByString:@"="];
+            if(b.count == 1)
+            {
+                var = b[0];
+            }
+            if(b.count >= 2)
+            {
+                var = b[0];
+                val = b[1];
+            }
+            if([var isEqualToString:@"skipSubscriberDataUpdate"])
+            {
+                _skipSubscriberDataUpdate = [val boolValue];
+            }
+            if([var isEqualToString:@"imeisv"])
+            {
+                _imeisv = [[UMGSMMAP_IMEI alloc]initWithString:val];
+            }
+        
+
+        }
     }
     return self;
 }
