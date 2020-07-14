@@ -12,7 +12,7 @@
 #import "UMGSMMAP_asn1_protocol.h"
 #import "UMGSMMAP_AddressString.h"
 
-@interface UMGSMMAP_GSN_Address : UMGSMMAP_AddressString
+@interface UMGSMMAP_GSN_Address : UMASN1OctetString
 {
 }
 
