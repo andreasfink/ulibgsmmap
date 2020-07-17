@@ -201,7 +201,10 @@
     self.tcapOperationGlobal = NULL;
     if(xoptions[@"tcap-operation-global"])
     {
-        self.tcapOperationGlobal = xoptions[@"tcap-operation-global"];
+        if([xoptions[@"tcap-operation-global"] intValue]>0)
+        {
+            self.tcapOperationGlobal = xoptions[@"tcap-operation-global"];
+        }
     }
     self.initiatedOutgoing = YES;
     self.openEstablished = NO;
