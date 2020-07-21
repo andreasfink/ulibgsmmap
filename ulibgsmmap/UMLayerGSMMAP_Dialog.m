@@ -1216,7 +1216,7 @@
 {
     if(self.logLevel <= UMLOG_DEBUG)
     {
-        [self.logFeed debugText:@"MAP_ProcessComponents backtrace"];
+        [self.logFeed debugText:@"MAP_ProcessComponents"];
     }
 
     [self touch];
@@ -1226,7 +1226,7 @@
         self.dialogIsClosed = YES;
         if(self.logLevel <= UMLOG_DEBUG)
         {
-            [self.logFeed debugText:@"MAP_ProcessComponents"];
+            [self.logFeed debugText:@"MAP_ProcessComponents willEnd"];
         }
 
     }
