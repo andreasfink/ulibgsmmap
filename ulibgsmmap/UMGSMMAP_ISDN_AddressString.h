@@ -13,5 +13,4 @@
     
 }
 
-- (UMGSMMAP_AddressString *)initWithString:(NSString *)msisdn;
 @end

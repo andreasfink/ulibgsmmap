@@ -16,12 +16,6 @@
     return @"ISDN-AddressString";
 }
 
-- (UMGSMMAP_AddressString *)initWithString:(NSString *)msisdn
-{
-    self = [super initWithString:msisdn];
-    return self;
-}
-
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation
                                              operationName:(NSString **)xop

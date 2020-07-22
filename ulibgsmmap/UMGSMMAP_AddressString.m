@@ -144,13 +144,6 @@ static inline unsigned char	nibble2hex(unsigned char b)
             _ton = 0;
             _npi = 0;
         }
-        else if([digits hasPrefix:@":MISSING:"])
-        {
-            _address = [digits substringFromIndex:4];
-            _ton = GSMMAP_TON_MISSING;
-            _npi = GSMMAP_NPI_E214;
-        }
-
         else if([digits hasPrefix:@"mgt:"])
         {
             _address = [digits substringFromIndex:4];
@@ -189,6 +182,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
         }
         else if ([digits isEqualToString:@":MISSING:"])
         {
+            return NULL;
             _address = @":MISSING:";
             _ton = GSMMAP_TON_MISSING;
             _npi = GSMMAP_NPI_UNKNOWN;
