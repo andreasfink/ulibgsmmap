@@ -28,6 +28,7 @@ typedef	enum GSMMAP_TonType
     GSMMAP_TON_EMPTY                = 104,
     GSMMAP_TON_MISSING              = 105,
     GSMMAP_TON_EMPTY2               = 106,
+    GSMMAP_TON_EMPTY3               = 103,
 
 } GSMMAP_TonType;
 

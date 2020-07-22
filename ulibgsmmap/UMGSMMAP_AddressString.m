@@ -186,6 +186,12 @@ static inline unsigned char	nibble2hex(unsigned char b)
             _ton = GSMMAP_TON_EMPTY2;
             _npi = GSMMAP_NPI_UNKNOWN;
         }
+        else if ([digits isEqualToString:@":EMPTY3:"])
+        {
+            _address = @":EMPTY3:";
+            _ton = GSMMAP_TON_EMPTY3;
+            _npi = GSMMAP_NPI_UNKNOWN;
+        }
         else if ([digits isEqualToString:@":MISSING:"])
         {
             return NULL;
@@ -346,9 +352,14 @@ static inline unsigned char	nibble2hex(unsigned char b)
         _asn1_data = data;
         return;
     }
-    if((_ton==GSMMAP_TON_EMPTY2)
+    if(_ton==GSMMAP_TON_EMPTY2)
     {
         [data appendByte:0x81]; /* ton=0/npi = 1,no extension */
+        _asn1_data = data;
+        return;
+    }
+    if(_ton==GSMMAP_TON_EMPTY3)
+    {
         _asn1_data = data;
         return;
     }
