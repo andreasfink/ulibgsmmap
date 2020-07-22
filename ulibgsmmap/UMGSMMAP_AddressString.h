@@ -37,6 +37,7 @@ typedef enum GSMMAP_NpiType
     GSMMAP_NPI_DATA_X121			= 3,	 	/* was 2 */
     GSMMAP_NPI_TELEX 				= 4, 		/* was 3 */
     GSMMAP_NPI_E212                 = 6, /* imsi */
+    GSMMAP_NPI_E214                 = 7, /* mgt */
     GSMMAP_NPI_NATIONAL             = 8,
     GSMMAP_NPI_PRIVATE				= 9,
     GSMMAP_NPI_ERMES 				= 10,
@@ -69,5 +70,7 @@ typedef enum GSMMAP_NpiType
 - (UMGSMMAP_AddressString *)initWithAddress:(NSString *)msisdn ton:(GSMMAP_TonType)ton npi:(GSMMAP_NpiType)npi;
 - (NSString *)stringValue;
 - (UMGSMMAP_AddressString *)initWithAlpha:(NSString *)digits;
+
+- (NSData *)berEncoded;
 
 @end

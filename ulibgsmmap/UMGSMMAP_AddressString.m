@@ -144,19 +144,38 @@ static inline unsigned char	nibble2hex(unsigned char b)
             _ton = 0;
             _npi = 0;
         }
-        else if ([digits compare:@"+" options:NSLiteralSearch range:NSMakeRange(0,1)] == NSOrderedSame )
+        else if([digits hasPrefix:@":MISSING:"])
+        {
+            _address = [digits substringFromIndex:4];
+            _ton = GSMMAP_TON_MISSING;
+            _npi = GSMMAP_NPI_E214;
+        }
+
+        else if([digits hasPrefix:@"mgt:"])
+        {
+            _address = [digits substringFromIndex:4];
+            _ton = GSMMAP_TON_INTERNATIONAL;
+            _npi = GSMMAP_NPI_E214;
+        }
+        else if([digits hasPrefix:@"imsi:"])
+        {
+            _address = [digits substringFromIndex:5];
+            _ton = GSMMAP_TON_INTERNATIONAL;
+            _npi = GSMMAP_NPI_E212;
+        }
+        else if ([digits hasPrefix:@"+"])
         {
             _address = [digits substringFromIndex:1];
             _ton = GSMMAP_TON_INTERNATIONAL;
             _npi = GSMMAP_NPI_ISDN_E164;
         }
-        else if(([digits length] >= 2) && ( [digits compare:@"00" options:NSLiteralSearch  range:NSMakeRange(0,2)] == NSOrderedSame ))
+        else if(([digits length] >= 2) && [digits hasPrefix:@"00"])
         {
             _address = [digits substringFromIndex:2];
             _ton = GSMMAP_TON_INTERNATIONAL;
             _npi = GSMMAP_NPI_ISDN_E164;
         }
-        else if ( [digits compare:@"0" options:NSLiteralSearch range:NSMakeRange(0,1)] == NSOrderedSame )
+        else if(([digits length] >= 1) && [digits hasPrefix:@"0"])
         {
             _address = [digits substringFromIndex:1];
             _ton = GSMMAP_TON_NATIONAL;
@@ -166,6 +185,12 @@ static inline unsigned char	nibble2hex(unsigned char b)
         {
             _address = @":EMPTY:";
             _ton = GSMMAP_TON_EMPTY;
+            _npi = GSMMAP_NPI_UNKNOWN;
+        }
+        else if ([digits isEqualToString:@":MISSING:"])
+        {
+            _address = @":MISSING:";
+            _ton = GSMMAP_TON_MISSING;
             _npi = GSMMAP_NPI_UNKNOWN;
         }
         else if ([digits compare:@":" options:NSLiteralSearch range:NSMakeRange(0,1)] == NSOrderedSame )
@@ -321,7 +346,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
         _asn1_data = data;
         return;
     }
-    
+
     c = (_ton & 0x07) << 4;
     c |= (_npi & 0x0F);
     c |= 0x80;	/* no extension */
@@ -455,6 +480,16 @@ static inline unsigned char	nibble2hex(unsigned char b)
                                                withContext:(id)context
 {
     return self;
+}
+
+
+- (NSData *)berEncoded
+{
+    if(_ton == GSMMAP_TON_MISSING)
+    {
+        return [[NSData alloc]init];
+    }
+    return [super berEncoded];
 }
 
 @end
