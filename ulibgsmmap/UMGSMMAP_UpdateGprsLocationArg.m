@@ -65,13 +65,13 @@
     {
         _add_info.asn1_tag.tagNumber = 4;
         _add_info.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [_asn1_list addObject:_v_gmlc_Address];
+        [_asn1_list addObject:_add_info];
     }
     if(_eps_info != NULL)
     {
         _eps_info.asn1_tag.tagNumber = 5;
         _eps_info.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [_asn1_list addObject:_v_gmlc_Address];
+        [_asn1_list addObject:_eps_info];
     }
     if(_servingNodeTypeIndicator)
     {
@@ -91,7 +91,7 @@
     {
         _usedRAT_Type.asn1_tag.tagNumber = 8;
         _usedRAT_Type.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [_asn1_list addObject:_v_gmlc_Address];
+        [_asn1_list addObject:_usedRAT_Type];
     }
     if(_gprsSubscriptionDataNotNeeded)
     {
@@ -138,19 +138,19 @@
     {
         _eplmn_List.asn1_tag.tagNumber = 15;
         _eplmn_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [_asn1_list addObject:_ue_srvcc_Capability];
+        [_asn1_list addObject:_eplmn_List];
     }
     if(_mmeNumberforMTSMS)
     {
         _mmeNumberforMTSMS.asn1_tag.tagNumber = 16;
         _mmeNumberforMTSMS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [_asn1_list addObject:_ue_srvcc_Capability];
+        [_asn1_list addObject:_mmeNumberforMTSMS];
     }
     if(_smsRegisterRequest)
     {
         _smsRegisterRequest.asn1_tag.tagNumber = 17;
         _smsRegisterRequest.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-        [_asn1_list addObject:_ue_srvcc_Capability];
+        [_asn1_list addObject:_smsRegisterRequest];
     }
     if(_sms_Only)
     {

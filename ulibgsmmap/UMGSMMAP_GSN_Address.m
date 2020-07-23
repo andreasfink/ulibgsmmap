@@ -51,7 +51,6 @@
 {
     if ([s hasPrefix:@"ipv4:"])
     {
-        
         int a,b,c,d;
         sscanf(s.UTF8String,"ipv4:%d.%d.%d.%d",&a,&b,&c,&d);
         uint8_t bytes[5];
@@ -75,18 +74,24 @@
     else
     {
         NSArray *arr = [s componentsSeparatedByString:@"."];
+        int a=0;
+        int b=0;
+        int c=0;
+        int d=0;
         if(arr.count==4)
         {
-            int a,b,c,d;
-            sscanf(s.UTF8String,"%d.%d.%d.%d",&a,&b,&c,&d);
-            uint8_t bytes[5];
-            bytes[0] = 0x04;
-            bytes[1] = a & 0xFF;
-            bytes[2] = b & 0xFF;
-            bytes[3] = c & 0xFF;
-            bytes[4] = d & 0xFF;
-            _asn1_data = [NSData dataWithBytes:bytes length:5];
+            a = [arr[0] intValue];
+            b = [arr[1] intValue];
+            c = [arr[2] intValue];
+            d = [arr[3] intValue];
         }
+        uint8_t bytes[5];
+        bytes[0] = 0x04;
+        bytes[1] = a & 0xFF;
+        bytes[2] = b & 0xFF;
+        bytes[3] = c & 0xFF;
+        bytes[4] = d & 0xFF;
+        _asn1_data = [NSData dataWithBytes:bytes length:5];
     }
 }
 
