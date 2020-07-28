@@ -6,7 +6,6 @@
 //
 //
 
-
 typedef enum UMLayerGSMMAP_ErrorCode
 {
     UMLayerGSMMAP_ErrorCode_unknownSubscriber = 1,

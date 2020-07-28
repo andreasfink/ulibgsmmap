@@ -195,9 +195,6 @@ static inline unsigned char	nibble2hex(unsigned char b)
         else if ([digits isEqualToString:@":MISSING:"])
         {
             return NULL;
-            _address = @":MISSING:";
-            _ton = GSMMAP_TON_MISSING;
-            _npi = GSMMAP_NPI_UNKNOWN;
         }
         else if ([digits compare:@":" options:NSLiteralSearch range:NSMakeRange(0,1)] == NSOrderedSame )
         {
