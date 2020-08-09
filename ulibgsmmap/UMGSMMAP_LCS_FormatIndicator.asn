@@ -1,0 +1,8 @@
+LCS-FormatIndicator ::= ENUMERATED {
+    logicalName (0),
+    e-mailAddress (1),
+    msisdn (2),
+    url (3),
+    sipUrl (4),
+    ...,
+}

@@ -1,0 +1,1 @@
+RequestorIDString ::= USSD-String (SIZE (1..maxRequestorIDStringLength))

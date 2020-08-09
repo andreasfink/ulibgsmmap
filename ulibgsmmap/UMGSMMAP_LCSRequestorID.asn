@@ -1,0 +1,6 @@
+LCSRequestorID ::= SEQUENCE {
+ dataCodingScheme [0] USSD-DataCodingScheme,
+ requestorIDString [1] RequestorIDString,
+ ...,
+ lcs-FormatIndicator [2] LCS-FormatIndicator OPTIONAL 
+}
