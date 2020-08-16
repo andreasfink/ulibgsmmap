@@ -60,7 +60,6 @@
     BOOL    _startWithContinue;
     BOOL    _noDestinationTransationIdInContinue;
     BOOL    _doubleOriginationTransationIdInContinue;
-    BOOL    _invoke8;
 }
 
 #pragma mark -
