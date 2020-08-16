@@ -3,5 +3,7 @@ ProvideSubscriberInfoArg ::= SEQUENCE {
    lmsi [1] LMSI OPTIONAL,
    requestedInfo [2] RequestedInfo,
    extensionContainer [3] ExtensionContainer OPTIONAL,
-   ... }
+   ... ,
+   callPriority [4] EMLPP-Priority
+}
 
