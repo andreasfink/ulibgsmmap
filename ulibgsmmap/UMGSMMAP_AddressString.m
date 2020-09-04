@@ -341,7 +341,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
     NSUInteger i=0;
     NSUInteger len=0;
     int odd=0;
-    
+        
     if((_ton==GSMMAP_TON_EMPTY) || (_ton==GSMMAP_TON_MISSING))
     {
         [data appendByte:0x81]; /* ton=0/npi = 1,no extension */
@@ -349,13 +349,13 @@ static inline unsigned char	nibble2hex(unsigned char b)
         _asn1_data = data;
         return;
     }
-    if(_ton==GSMMAP_TON_EMPTY2)
+    else if(_ton==GSMMAP_TON_EMPTY2)
     {
         [data appendByte:0x81]; /* ton=0/npi = 1,no extension */
         _asn1_data = data;
         return;
     }
-    if(_ton==GSMMAP_TON_EMPTY3)
+    else if(_ton==GSMMAP_TON_EMPTY3)
     {
         _asn1_data = data;
         return;
@@ -363,8 +363,10 @@ static inline unsigned char	nibble2hex(unsigned char b)
     c = (_ton & 0x07) << 4;
     c |= (_npi & 0x0F);
     c |= 0x80;	/* no extension */
-    [data appendByte:c];
-    
+    if(!_skipTypeByte)
+    {
+        [data appendByte:c];
+    }
     NSData *ad = [_address dataUsingEncoding:NSUTF8StringEncoding];
     len = ad.length;
     const uint8_t *bytes = ad.bytes;

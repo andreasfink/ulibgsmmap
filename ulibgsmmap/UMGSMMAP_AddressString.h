@@ -59,21 +59,21 @@ typedef enum GSMMAP_NpiType
     GSMMAP_TonType _ton;
     GSMMAP_NpiType _npi;
     NSString *_address;
+    BOOL _skipTypeByte;
 }
 
 @property(readwrite,assign,atomic)  GSMMAP_TonType ton;
 @property(readwrite,assign,atomic)  GSMMAP_NpiType npi;
 @property(readwrite,strong,atomic)  NSString *address;
+@property(readwrite,assign,atomic)  BOOL skipTypeByte;
 
 @property(readwrite,strong)    NSString *operationName;
 - (UMGSMMAP_AddressString *)initWithString:(NSString *)msisdn;
 - (UMGSMMAP_AddressString *)initWithMsisdn:(NSString *)msisdn; /* legacy wrapper */
 - (UMGSMMAP_AddressString *)initWithImsi:(NSString *)digits;
-
 - (UMGSMMAP_AddressString *)initWithAddress:(NSString *)msisdn ton:(GSMMAP_TonType)ton npi:(GSMMAP_NpiType)npi;
 - (NSString *)stringValue;
 - (UMGSMMAP_AddressString *)initWithAlpha:(NSString *)digits;
-
 - (NSData *)berEncoded;
 
 @end
