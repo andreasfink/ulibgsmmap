@@ -1,1 +1,37 @@
-AddressString ::= OCTET STRING ( SIZE( 1 .. maxAddressLength ) )
+
+
+AddressString ::= OCTET STRING (SIZE (1..maxAddressLength))
+    -- This type is used to represent a number for addressing
+    -- purposes. It is composed of
+    --    a)    one octet for nature of address, and numbering plan
+    --        indicator.
+    --    b)    digits of an address encoded as TBCD-String.
+    -- a)    The first octet includes a one bit extension indicator, a
+    --        3 bits nature of address indicator and a 4 bits numbering
+    --        plan indicator, encoded as follows:
+    -- bit 8: 1  (no extension)
+    -- bits 765: nature of address indicator
+    --    000  unknown
+    --    001  international number
+    --    010  national significant number
+    --    011  network specific number
+    --    100  subscriber number
+    --    101  reserved
+    --    110  abbreviated number
+    --    111  reserved for extension
+    -- bits 4321: numbering plan indicator
+    --    0000  unknown
+    --    0001  ISDN/Telephony Numbering Plan (Rec ITU-T E.164)
+    --    0010  spare
+    --    0011  data numbering plan (ITU-T Rec X.121)
+    --    0100  telex numbering plan (ITU-T Rec F.69)
+    --    0101  spare
+    --    0110  land mobile numbering plan (ITU-T Rec E.212)
+    --    0111  spare
+    --    1000  national numbering plan
+    --    1001  private numbering plan
+    --    1111  reserved for extension
+    --    all other values are reserved.
+    -- b)    The following octets representing digits of an address
+    --        encoded as a TBCD-STRING.
+maxAddressLength  INTEGER ::= 20

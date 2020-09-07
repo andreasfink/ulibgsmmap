@@ -56,9 +56,9 @@
         uint8_t bytes[5];
         bytes[0] = 0x04;
         bytes[1] = a & 0xFF;
-        bytes[2] = a & 0xFF;
-        bytes[3] = a & 0xFF;
-        bytes[4] = a & 0xFF;
+        bytes[2] = b & 0xFF;
+        bytes[3] = c & 0xFF;
+        bytes[4] = d & 0xFF;
         _asn1_data = [NSData dataWithBytes:bytes length:5];
     }
     else if ([s hasPrefix:@"ipv6:"])
@@ -70,6 +70,28 @@
         bytes[0] = 0x1 << 6 | 0x10;
         memcpy(&bytes[1],&sa6->sin6_addr.s6_addr[0],16);
         _asn1_data = [NSData dataWithBytes:bytes length:17];
+    }
+    else
+    {
+        NSArray *arr = [s componentsSeparatedByString:@"."];
+        int a=0;
+        int b=0;
+        int c=0;
+        int d=0;
+        if(arr.count==4)
+        {
+            a = [arr[0] intValue];
+            b = [arr[1] intValue];
+            c = [arr[2] intValue];
+            d = [arr[3] intValue];
+        }
+        uint8_t bytes[5];
+        bytes[0] = 0x04;
+        bytes[1] = a & 0xFF;
+        bytes[2] = b & 0xFF;
+        bytes[3] = c & 0xFF;
+        bytes[4] = d & 0xFF;
+        _asn1_data = [NSData dataWithBytes:bytes length:5];
     }
 }
 

@@ -49,6 +49,34 @@
 		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[_asn1_list addObject:extensionContainer];
 	}
+    if(_callPriority)
+    {
+        _callPriority.asn1_tag.tagNumber = 4;
+        _callPriority.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:extensionContainer];
+    }
+    if(_flag65711)
+    {
+        UMASN1Object *a6 = [[UMASN1Object alloc]init];
+        a6.asn1_tag.tagNumber = 6;
+        a6.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:a6];
+
+        UMASN1Object *a5 = [[UMASN1Object alloc]init];
+        a5.asn1_tag.tagNumber = 6;
+        a5.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:a5];
+
+        UMASN1Object *a7 = [[UMASN1Object alloc]init];
+        a7.asn1_tag.tagNumber = 7;
+        a7.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:a7];
+
+        UMASN1Object *a11 = [[UMASN1Object alloc]init];
+        a11.asn1_tag.tagNumber = 11;
+        a11.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:a11];
+    }
 }
 
 
@@ -79,6 +107,14 @@
 	while(o)
 	{
         /* ... */
+        if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _callPriority = [[UMGSMMAP_EMLPP_Priority alloc]initWithASN1Object:o context:context];
+        }
+        if((o) && (o.asn1_tag.tagNumber == 5) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+        {
+            _callPriority = [[UMGSMMAP_EMLPP_Priority alloc]initWithASN1Object:o context:context];
+        }
         o = [self getObjectAtPosition:p++];
     }
 	return self;

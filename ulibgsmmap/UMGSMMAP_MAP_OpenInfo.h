@@ -18,13 +18,18 @@
 {
 	NSString *operationName;
 	UMGSMMAP_AddressString *destinationReference;
-	UMGSMMAP_AddressString *originationReference;
+    UMGSMMAP_AddressString *originationReference;
+    UMGSMMAP_AddressString *_unknownMapOpen2;
+    UMGSMMAP_AddressString *_unknownMapOpen3;
 	UMGSMMAP_ExtensionContainer *extensionContainer;
 }
 @property(readwrite,strong)    NSString *operationName;
 
 @property(readwrite,strong)	UMGSMMAP_AddressString *destinationReference;
 @property(readwrite,strong)	UMGSMMAP_AddressString *originationReference;
+@property(readwrite,strong) UMGSMMAP_AddressString *unknownMapOpen2;
+@property(readwrite,strong) UMGSMMAP_AddressString *unknownMapOpen3;
+
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
 
 

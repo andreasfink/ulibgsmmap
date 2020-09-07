@@ -36,6 +36,19 @@
 		originationReference.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[_asn1_list addObject:originationReference];
 	}
+    if(_unknownMapOpen2)
+    {
+        _unknownMapOpen2.asn1_tag.tagNumber = 2;
+        _unknownMapOpen2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_unknownMapOpen2];
+    }
+    if(_unknownMapOpen3)
+    {
+        _unknownMapOpen3.asn1_tag.tagNumber = 3;
+        _unknownMapOpen3.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_unknownMapOpen3];
+    }
+    
 	if(extensionContainer)
 	{
 		[_asn1_list addObject:extensionContainer];
@@ -59,9 +72,19 @@
 		originationReference = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
+    if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+    {
+        _unknownMapOpen2 = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
+    if((o) && (o.asn1_tag.tagNumber == 3) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+    {
+        _unknownMapOpen3 = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
 	while(o)
 	{
-		if(o)
+        if((o) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
 		{
 			extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
@@ -89,6 +112,14 @@
 	{
 		dict[@"originationReference"] = originationReference.objectValue;
 	}
+    if(_unknownMapOpen2)
+    {
+        dict[@"_unknownMapOpen2"] = _unknownMapOpen2.objectValue;
+    }
+    if(_unknownMapOpen3)
+    {
+        dict[@"_unknownMapOpen3"] = _unknownMapOpen3.objectValue;
+    }
 	if(extensionContainer)
 	{
 		dict[@"extensionContainer"] = extensionContainer.objectValue;
@@ -103,7 +134,6 @@
 {
     return self;
 }
-
 
 @end
 

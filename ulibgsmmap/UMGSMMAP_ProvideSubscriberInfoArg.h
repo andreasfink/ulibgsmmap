@@ -15,6 +15,7 @@
 #import "UMGSMMAP_LMSI.h"
 #import "UMGSMMAP_RequestedInfo.h"
 #import "UMGSMMAP_ExtensionContainer.h"
+#import "UMGSMMAP_EMLPP_Priority.h"
 
 @interface UMGSMMAP_ProvideSubscriberInfoArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
@@ -23,13 +24,18 @@
 	UMGSMMAP_LMSI *lmsi;
 	UMGSMMAP_RequestedInfo *requestedInfo;
 	UMGSMMAP_ExtensionContainer *extensionContainer;
+    UMGSMMAP_EMLPP_Priority *_callPriority;
+    BOOL    _flag65711;
+
 }
 @property(readwrite,strong)    NSString *operationName;
 
 @property(readwrite,strong)	UMGSMMAP_IMSI *imsi;
 @property(readwrite,strong)	UMGSMMAP_LMSI *lmsi;
 @property(readwrite,strong)	UMGSMMAP_RequestedInfo *requestedInfo;
-@property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
+@property(readwrite,strong)    UMGSMMAP_ExtensionContainer *extensionContainer;
+@property(readwrite,strong)    UMGSMMAP_EMLPP_Priority *callPriority;
+@property(readwrite,assign)    BOOL    flag65711;
 
 
 - (void)processBeforeEncode;
