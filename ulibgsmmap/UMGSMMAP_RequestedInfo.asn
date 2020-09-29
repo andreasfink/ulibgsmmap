@@ -4,15 +4,15 @@ RequestedInfo ::= SEQUENCE {
     extensionContainer  [2] IMPLICIT ExtensionContainer OPTIONAL,
     ... ,
     currentLocation                    [3] IMPLICIT NULL OPTIONAL,
-	 requestedDomain                    [4] IMPLICIT INTEGER OPTIONAL, 
-	 imei                               [6] IMPLICIT NULL OPTIONAL, 
-	 ms-classmark                       [5] IMPLICIT NULL OPTIONAL, 
-	 mnpRequestedInfo                   [7] IMPLICIT NULL OPTIONAL, 
-	 locationInformationEPS-Supported   [11] IMPLICIT NULL OPTIONAL,
-	 t-adsData                          [8] IMPLICIT NULL OPTIONAL, 
-	 requestedNodes                     [9] IMPLICIT BIT STRING OPTIONAL, 
-	 servingNodeIndication              [10] IMPLICIT NULL OPTIONAL, 
-	 localTimeZoneRequest               [12] IMPLICIT NULL OPTIONAL
+    requestedDomain                    [4] IMPLICIT INTEGER OPTIONAL,
+    imei                               [6] IMPLICIT NULL OPTIONAL,
+    ms-classmark                       [5] IMPLICIT NULL OPTIONAL,
+    mnpRequestedInfo                   [7] IMPLICIT NULL OPTIONAL,
+    locationInformationEPS-Supported   [11] IMPLICIT NULL OPTIONAL,
+    t-adsData                          [8] IMPLICIT NULL OPTIONAL,
+    requestedNodes                     [9] IMPLICIT BIT STRING OPTIONAL,
+    servingNodeIndication              [10] IMPLICIT NULL OPTIONAL,
+    localTimeZoneRequest               [12] IMPLICIT NULL OPTIONAL
 }
 
 
