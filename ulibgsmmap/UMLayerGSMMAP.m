@@ -966,7 +966,8 @@
 {
     @autoreleasepool
     {
-        NSLog(@"**** DEBUG*** executeMAP_Delimiter_Req:\n%@",UMBacktrace(NULL,0));
+        NSString *s = UMBacktrace(NULL,0);
+        NSLog(@"**** DEBUG*** executeMAP_Delimiter_Req:\n%@",s);
         UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
         
         
