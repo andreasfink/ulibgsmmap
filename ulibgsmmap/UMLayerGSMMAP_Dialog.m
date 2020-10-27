@@ -422,7 +422,7 @@
     _shouldSendContinue = YES;
     _pendingResult = result;
     _pendingDiagnostic = result_source_diagnostic;
-    _pendingUserInfo = xUserInfo;
+    _pendingUserInfo = xuserInfo;
 }
 
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions

@@ -1007,7 +1007,8 @@
                            callingAddress:src
                             calledAddress:dst
                                    result:result
-                               diagnostic:result_source_diagnostic];
+                               diagnostic:result_source_diagnostic
+				 userInfo:NULL];
     }
 }
 
