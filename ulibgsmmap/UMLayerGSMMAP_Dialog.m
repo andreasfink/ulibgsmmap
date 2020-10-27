@@ -402,6 +402,29 @@
                    userInfo:_requestUserInfo];
 }
 
+
+- (void)MAP_Delimiter_Req_Prepare:(NSDictionary *)xoptions
+                   callingAddress:(SccpAddress *)src
+                    calledAddress:(SccpAddress *)dst
+                           result:(UMTCAP_asn1_Associate_result *)result
+                       diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+                         userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
+
+{
+    if(src)
+    {
+        localAddress = src;
+    }
+    if(dst)
+    {
+        remoteAddress = dst;
+    }
+    _shouldSendContinue = YES;
+    _pendingResult = result;
+    _pendingDiagnostic = result_source_diagnostic;
+    _pendingUserInfo = xUserInfo;
+}
+
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
            callingAddress:(SccpAddress *)src
             calledAddress:(SccpAddress *)dst
@@ -410,6 +433,21 @@
                  userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
 
 {
+    if(xuserInfo == NULL)
+    {
+        xuserInfo=_pendingUserInfo;
+        _pendingUserInfo = NULL;
+    }
+    if(result_source_diagnostic == NULL)
+    {
+        result_source_diagnostic = _pendingDiagnostic;
+        _pendingDiagnostic = NULL;
+    }
+    if(result==NULL)
+    {
+        result = _pendingResult;
+        _pendingResult = NULL;
+    }
     if(src)
     {
         localAddress = src;
@@ -1222,13 +1260,17 @@
     [self touch];
     if(willEnd)
     {
+        _shouldSendContinue = NO;
         /* we have to set this before processing components as the callbacks by the components might call close req and if this is not set, we would send a tcap end out to a transaction already closed */
         self.dialogIsClosed = YES;
         if(self.logLevel <= UMLOG_DEBUG)
         {
             [self.logFeed debugText:@"MAP_ProcessComponents willEnd"];
         }
-
+    }
+    else
+    {
+        _shouldSendContinue = YES;
     }
     for(UMTCAP_generic_asn1_componentPDU *component in components)
     {
@@ -1297,6 +1339,12 @@
                 break;
             }
         }
+    }
+    if((self.shouldSendContinue) && (willEnd==NO))
+    {
+       [self MAP_Delimiter_Req:xoptions
+                        result:NULL
+                    diagnostic:NULL];
     }
 }
 

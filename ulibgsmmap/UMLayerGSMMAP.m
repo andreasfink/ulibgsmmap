@@ -986,6 +986,31 @@
     }
 }
 
+
+-(void) executeMAP_Delimiter_Req_Prepare:(UMGSMMAP_DialogIdentifier *)dialogId
+                  callingAddress:(SccpAddress *)src
+                   calledAddress:(SccpAddress *)dst
+                         options:(NSDictionary *)options
+                          result:(UMTCAP_asn1_Associate_result *)result
+                      diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+{
+    @autoreleasepool
+    {
+        UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+        if(dialog==NULL)
+        {
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req: Dialog ID %@ not found. Ignoring",dialogId]];
+            return;
+        }
+        [dialog setOptions:options];
+        [dialog MAP_Delimiter_Req_Prepare:options
+                           callingAddress:src
+                            calledAddress:dst
+                                   result:result
+                               diagnostic:result_source_diagnostic];
+    }
+}
+
 -(void) MAP_Delimiter_Req:(UMGSMMAP_DialogIdentifier *)dialogId
                   options:(NSDictionary *)options;
 {

@@ -60,6 +60,11 @@
     BOOL    _startWithContinue;
     BOOL    _noDestinationTransationIdInContinue;
     BOOL    _doubleOriginationTransationIdInContinue;
+    
+    BOOL                                    _shouldSendContinue;
+    UMTCAP_asn1_Associate_result            *_pendingResult;
+    UMTCAP_asn1_Associate_source_diagnostic *_pendingDiagnostic;
+    UMTCAP_asn1_userInformation             *_pendingUserInfo;
 }
 
 #pragma mark -
@@ -95,6 +100,7 @@
 @property(readwrite,assign,atomic) BOOL startWithContinue;
 @property(readwrite,assign,atomic) BOOL noDestinationTransationIdInContinue;
 @property(readwrite,assign,atomic) BOOL doubleOriginationTransationIdInContinue;
+@property(readwrite,assign,atomic) BOOL shouldSendContinue;
 
 - (NSTimeInterval)timeoutInSeconds;
 - (void)setTimeoutInSeconds:(NSTimeInterval)to;
@@ -136,6 +142,13 @@
            calledAddress:(SccpAddress *)dst
                    result:(UMTCAP_asn1_Associate_result *)result
                diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic;
+
+- (void)MAP_Delimiter_Req_Prepare:(NSDictionary *)xoptions
+                   callingAddress:(SccpAddress *)src
+                    calledAddress:(SccpAddress *)dst
+                           result:(UMTCAP_asn1_Associate_result *)result
+                       diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
+                         userInfo:(UMTCAP_asn1_userInformation *)xuserInfo;
 
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
            callingAddress:(SccpAddress *)src
