@@ -996,10 +996,11 @@
 {
     @autoreleasepool
     {
+        NSLog(@"executeMAP_Delimiter_Req_Prepare");
         UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
         if(dialog==NULL)
         {
-            [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req: Dialog ID %@ not found. Ignoring",dialogId]];
+            [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Delimiter_Req_Prepare: Dialog ID %@ not found. Ignoring",dialogId]];
             return;
         }
         [dialog setOptions:options];
@@ -1008,13 +1009,15 @@
                             calledAddress:dst
                                    result:result
                                diagnostic:result_source_diagnostic
-				 userInfo:NULL];
+                                 userInfo:NULL];
+        NSLog(@"executeMAP_Delimiter_Req_Prepare(done)");
     }
 }
 
 -(void) MAP_Delimiter_Req:(UMGSMMAP_DialogIdentifier *)dialogId
                   options:(NSDictionary *)options;
 {
+    
     @autoreleasepool
     {
         UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
