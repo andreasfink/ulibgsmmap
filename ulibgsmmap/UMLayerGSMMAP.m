@@ -142,6 +142,7 @@
                   dialoguePortion:xdialoguePortion
                     transactionId:localTransactionId
               remoteTransactionId:remoteTransactionId];
+        /* tcap handshake is now donw in MAP_ProcessComponents
         if(components.count==0)
         {
             UMTCAP_asn1_Associate_result *r = [[UMTCAP_asn1_Associate_result alloc]initWithValue:0];
@@ -151,6 +152,7 @@
                                result:r
                            diagnostic:d];
         }
+        */
     }
 }
 
