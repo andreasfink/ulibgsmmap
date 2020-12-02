@@ -259,6 +259,7 @@
             /* FIXME: verify here if we accept the dialog by application context here and potentially reject */
             _pendingResult = [[UMTCAP_asn1_Associate_result alloc]initWithValue:0];
             _pendingDiagnostic = [[UMTCAP_asn1_Associate_source_diagnostic alloc]init];
+            _pendingDiagnostic.dialogue_service_user =[[UMASN1Integer alloc]initWithValue:0];
         }
     }
     self.tcapRemoteTransactionId = remoteTransactionId;
