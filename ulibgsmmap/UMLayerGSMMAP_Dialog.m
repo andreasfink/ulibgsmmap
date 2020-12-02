@@ -254,6 +254,12 @@
         self.applicationContext = itu.dialogRequest.objectIdentifier;
         self.requestUserInfo = itu.dialogRequest.user_information;
         self.dialogProtocolVersion = itu.dialogRequest.protocolVersion;
+        if(self.applicationContext)
+        {
+            /* FIXME: verify here if we accept the dialog by application context here and potentially reject */
+            _pendingResult = [[UMTCAP_asn1_Associate_result alloc]initWithValue:0];
+            _pendingDiagnostic = [[UMTCAP_asn1_Associate_source_diagnostic alloc]init];
+        }
     }
     self.tcapRemoteTransactionId = remoteTransactionId;
     self.tcapTransactionId = localTransactionId;
@@ -1342,9 +1348,14 @@
     }
     if((self.shouldSendContinue) && (willEnd==NO))
     {
+        UMTCAP_asn1_Associate_result *r = [[UMTCAP_asn1_Associate_result alloc]initWithValue:0];
+        UMTCAP_asn1_Associate_source_diagnostic *d = [[UMTCAP_asn1_Associate_source_diagnostic alloc]init];
+
        [self MAP_Delimiter_Req:xoptions
-                        result:NULL
-                    diagnostic:NULL];
+                        result:_pendingResult
+                    diagnostic:_pendingDiagnostic];
+        _pendingResult = NULL;
+        _pendingDiagnostic = NULL;
     }
 }
 
