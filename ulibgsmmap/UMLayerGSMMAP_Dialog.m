@@ -1348,9 +1348,6 @@
     }
     if((self.shouldSendContinue) && (willEnd==NO))
     {
-        UMTCAP_asn1_Associate_result *r = [[UMTCAP_asn1_Associate_result alloc]initWithValue:0];
-        UMTCAP_asn1_Associate_source_diagnostic *d = [[UMTCAP_asn1_Associate_source_diagnostic alloc]init];
-
        [self MAP_Delimiter_Req:xoptions
                         result:_pendingResult
                     diagnostic:_pendingDiagnostic];
