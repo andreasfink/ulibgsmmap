@@ -53,6 +53,7 @@
     BOOL    _dialogRequestRequired;
     BOOL    _dialogResponseRequired;
     BOOL    _dialogIsClosed;
+    BOOL    _dialogIsClosing;
     BOOL    _dialogShallClose;
     BOOL    _tcapContinueSeen;
     NSString *_tcapOperationGlobal;
@@ -94,6 +95,7 @@
 @property(readwrite,assign,atomic) BOOL    dialogRequestRequired;
 @property(readwrite,assign,atomic) BOOL    dialogResponseRequired;
 @property(readwrite,assign,atomic) BOOL    dialogIsClosed;
+@property(readwrite,assign,atomic) BOOL    dialogIsClosing;
 @property(readwrite,assign,atomic) BOOL    dialogShallClose;
 @property(readwrite,assign,atomic) UMLogLevel logLevel;
 @property(readwrite,assign,atomic) BOOL tcapContinueSeen;

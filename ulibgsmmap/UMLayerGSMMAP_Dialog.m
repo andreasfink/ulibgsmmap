@@ -627,6 +627,7 @@
            diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
              userInfo:(UMTCAP_asn1_userInformation *)userInfo
 {
+    self.dialogIsClosing = YES;
     if(src)
     {
         localAddress = src;
@@ -1277,7 +1278,10 @@
     }
     else
     {
-        _shouldSendContinue = YES;
+        if(components.count == 0)
+        {
+            _shouldSendContinue = YES;
+        }
     }
     for(UMTCAP_generic_asn1_componentPDU *component in components)
     {
@@ -1347,7 +1351,7 @@
             }
         }
     }
-    if((self.shouldSendContinue) && (willEnd==NO))
+    if((self.shouldSendContinue) && (willEnd==NO) && (self.dialogIsClosed==NO) && (self.dialogIsClosing==NO))
     {
        [self MAP_Delimiter_Req:xoptions
                         result:_pendingResult
