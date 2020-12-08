@@ -203,6 +203,7 @@
         if(dialog==NULL)
         {
             [self.logFeed minorErrorText:[NSString stringWithFormat:@"tcapContinueIndication: DialogNotFound %@ for transaction [local %@ remote %@]",dialogId,xlocalTransactionId,xremoteTransactionId]];
+            /* FIXME: send abort here */
             return;
         }
         else
