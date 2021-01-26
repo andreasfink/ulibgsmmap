@@ -69,7 +69,7 @@
         _startDate = [NSDate new];
         _lastActivity = [[UMAtomicDate alloc]init];
         _logLevel = UMLOG_MAJOR;
-        _lock = [[UMMutex alloc]init];
+        _lock = [[UMMutex alloc]initWithName:@"dialog-lock"];
     }
     return self;
 }
