@@ -1358,6 +1358,7 @@
                     diagnostic:_pendingDiagnostic];
         _pendingResult = NULL;
         _pendingDiagnostic = NULL;
+        _shouldSendContinue=NO;
     }
 }
 
