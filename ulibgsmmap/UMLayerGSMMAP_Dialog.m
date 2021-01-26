@@ -69,6 +69,7 @@
         _startDate = [NSDate new];
         _lastActivity = [[UMAtomicDate alloc]init];
         _logLevel = UMLOG_MAJOR;
+        _lock = [[UMMutex alloc]init];
     }
     return self;
 }
@@ -76,10 +77,11 @@
 
 - (int64_t)nextInvokeId
 {
-
+    [_lock lock];
     int64_t inv = _nextInvokeId;
     _nextInvokeId++;
     _nextInvokeId = _nextInvokeId % 0xFF;
+    [_lock unlock];
     return inv;
 }
 
@@ -104,6 +106,8 @@
                  components:(TCAP_NSARRAY_OF_COMPONENT_PDU *)components
                     options:(NSDictionary *)options
 {
+    [_lock lock];
+    [_lock unlock];
 
 }
 
@@ -160,6 +164,7 @@
               userIdentifier:(UMGSMMAP_UserIdentifier *)xuserIdentifier
                      options:(NSDictionary *)xoptions
 {
+    [_lock lock];
 
     self.logLevel = xgsmmap.logLevel;
     self.logFeed = xgsmmap.logFeed;
@@ -211,6 +216,8 @@
     [t setOptions:xoptions];
     pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
     pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
+    [_lock unlock];
+
 }
 
 
@@ -225,6 +232,8 @@
          remoteTransactionId:(NSString *)remoteTransactionId
                      options:(NSDictionary *)xoptions
 {
+    [_lock lock];
+
     self.logLevel = xgsmmap.logLevel;
     self.logFeed = xgsmmap.logFeed;
     if(self.logLevel <= UMLOG_DEBUG)
@@ -307,6 +316,7 @@
               calledAddress:dst
             dialoguePortion:xdialoguePortion
                     options:xoptions];
+    [_lock unlock];
 }
 
 -(void) MAP_Open_Resp_forUser:(id<UMLayerGSMMAP_UserProtocol>)user
@@ -320,6 +330,8 @@
           remoteTransactionId:(NSString *)remoteTransactionId
                       options:(NSDictionary *)xoptions
 {
+    [_lock lock];
+
     [self touch];
     self.logLevel = xgsmmap.logLevel;
 
@@ -375,6 +387,7 @@
                     calledAddress:dst
                   dialoguePortion:xdialoguePortion
                           options:options];
+    [_lock unlock];
 }
 
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
@@ -418,6 +431,7 @@
                          userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
 
 {
+    [_lock lock];
     if(src)
     {
         localAddress = src;
@@ -430,6 +444,7 @@
     _pendingResult = result;
     _pendingDiagnostic = result_source_diagnostic;
     _pendingUserInfo = xuserInfo;
+    [_lock unlock];
 }
 
 - (void)MAP_Delimiter_Req:(NSDictionary *)xoptions
@@ -440,6 +455,8 @@
                  userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
 
 {
+    [_lock lock];
+
     if(xuserInfo == NULL)
     {
         xuserInfo=_pendingUserInfo;
@@ -489,6 +506,7 @@
         if(tcapTransactionId == NULL)
         {
             [gsmmapLayer.logFeed minorErrorText:@"MAP_Continue_Req: continuing a non existing transation"];
+            [_lock unlock];
             return;
         }
     }
@@ -580,6 +598,7 @@
         self.dialogRequestRequired = NO;
         self.dialogResponseRequired = NO;
     }
+    [_lock unlock];
 }
 
 
@@ -587,11 +606,13 @@
                result:(UMTCAP_asn1_Associate_result *)result
            diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
+    [_lock lock];
     [self MAP_Close_Req:xoptions
          callingAddress:NULL
           calledAddress:NULL
                  result:result
              diagnostic:result_source_diagnostic];
+    [_lock unlock];
 }
 
 -(void) MAP_Close_Req:(NSDictionary *)xoptions
