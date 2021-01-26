@@ -1008,6 +1008,7 @@
                    last:(BOOL)last
                 options:(NSDictionary *)options
 {
+    [_lock lock];
     [self touch];
     if(tcapTransactionId == NULL)
     {
@@ -1034,6 +1035,7 @@
                                   opCodeNational:opcode.national
                                             last:last];
     [pendingOutgoingComponents addObject:invoke];
+    [_lock unlock];
 }
 
 - (void) MAP_ReturnResult_Req:(UMASN1Object *)param
@@ -1043,7 +1045,7 @@
                          last:(BOOL)last
                       options:(NSDictionary *)options;
 {
-
+    [_lock lock];
     if(self.logLevel <= UMLOG_DEBUG)
     {
         [self.logFeed debugText:[NSString stringWithFormat:@"MAP_ReturnResult_Req:\n"
@@ -1097,6 +1099,7 @@
                                   opCodeNational:opcode.national];
     }
     [pendingOutgoingComponents addObject:r];
+    [_lock unlock];
 }
 
 - (void)MAP_Error_Req:(UMASN1Object *)param
@@ -1106,8 +1109,10 @@
             operation:(int64_t)operation
               options:(NSDictionary *)options
 {
+    [_lock lock];
     [self touch];
     [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_Error_Req"];
+    [_lock unlock];
 }
 
 
@@ -1119,8 +1124,10 @@
                problem:(UMGSMMAP_asn1 *)problem
                options:(NSDictionary *)options
 {
+    [_lock lock];
     [self touch];
     [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_Reject_Req"];
+    [_lock unlock];
 }
 
 - (void)MAP_ReturnError_Req:(UMASN1Object *)param
@@ -1130,6 +1137,7 @@
                   errorCode:(int64_t)errorCode
                     options:(NSDictionary *)options
 {
+    [_lock lock];
     [self touch];
     if(tcapTransactionId == NULL)
     {
@@ -1151,6 +1159,7 @@
                             errorCode:errorCode
                        isPrivateError:NO];
     [pendingOutgoingComponents addObject:r];
+    [_lock unlock];
 }
 
 - (void)MAP_ReturnError_Ind:(UMGSMMAP_asn1 *)params
@@ -1160,8 +1169,10 @@
                   errorCode:(int64_t)errorCode
                     options:(NSDictionary *)options
 {
+    [_lock lock];
     [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_ReturnError_Ind"];
     [self touch];
+    [_lock unlock];
 }
 
 - (void)MAP_Reject_Ind:(UMGSMMAP_asn1 *)params
@@ -1171,8 +1182,10 @@
              errorCode:(int64_t)errorCode
                options:(NSDictionary *)options
 {
+    [_lock lock];
     [self touch];
     [gsmmapLayer.logFeed majorErrorText:@"Missing implementation: MAP_Reject_Ind"];
+    [_lock unlock];
 }
 
 #pragma mark -
@@ -1185,6 +1198,7 @@
                   last:(BOOL)xlast
                options:(NSDictionary *)xoptions
 {
+    [_lock lock];
     [self touch];
     NSMutableDictionary *yoptions;
     if(xoptions)
@@ -1217,6 +1231,7 @@
                           linkedId:xlinkedId
                               last:xlast
                            options:yoptions];
+    [_lock unlock];
 }
 
 
@@ -1227,6 +1242,7 @@
                          last:(BOOL)xlast
                       options:(NSDictionary *)xoptions
 {
+    [_lock lock];
     [self touch];
     [mapUser executeMAP_ReturnResult_Resp:params
                                    userId:userIdentifier
@@ -1237,6 +1253,7 @@
                                  linkedId:xlinkedId
                                      last:xlast
                                   options:xoptions];
+    [_lock unlock];
 }
 
 - (void)MAP_ReturnError_Resp:(UMGSMMAP_asn1 *)params
@@ -1246,6 +1263,7 @@
                    errorCode:(int64_t)xerrorCode
                      options:(NSDictionary *)xoptions
 {
+    [_lock lock];
     [self touch];
     [mapUser executeMAP_ReturnError_Resp:params
                                   userId:userIdentifier
@@ -1256,6 +1274,7 @@
                                 linkedId:xlinkedId
                                errorCode:xerrorCode
                                  options:xoptions];
+    [_lock unlock];
 }
 
 - (void)MAP_Reject_Resp:(UMGSMMAP_asn1 *)params
@@ -1265,6 +1284,7 @@
               errorCode:(int64_t)xerrorCode
                 options:(NSDictionary *)xoptions
 {
+    [_lock lock];
     [self touch];
     [mapUser executeMAP_Reject_Resp:params
                       userId:userIdentifier
@@ -1275,6 +1295,7 @@
                     linkedId:xlinkedId
                    errorCode:xerrorCode
                      options:xoptions];
+    [_lock unlock];
 }
 
 
@@ -1282,6 +1303,7 @@
                       options:(NSDictionary *)xoptions
                       willEnd:(BOOL)willEnd
 {
+    [_lock lock];
     if(self.logLevel <= UMLOG_DEBUG)
     {
         [self.logFeed debugText:@"MAP_ProcessComponents"];
@@ -1382,6 +1404,7 @@
         _pendingDiagnostic = NULL;
         _shouldSendContinue = NO;
     }
+    [_lock unlock];
 }
 
 
