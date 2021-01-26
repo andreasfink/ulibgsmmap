@@ -254,13 +254,15 @@
                       dialoguePortion:xdialoguePortion
                         transactionId:xlocalTransactionId
                   remoteTransactionId:xremoteTransactionId];
-
+#if 0
+            /* do we need this here ? it should be triggered from above */
             [dialog MAP_Continue_Ind:options
                       callingAddress:src
                        calledAddress:dst
                      dialoguePortion:xdialoguePortion
                        transactionId:xlocalTransactionId
                  remoteTransactionId:xremoteTransactionId];
+#endif
         }
     }
 }
@@ -967,6 +969,7 @@
                           result:(UMTCAP_asn1_Associate_result *)result
                       diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
+    
     @autoreleasepool
     {
 //      NSString *s = UMBacktrace(NULL,0);

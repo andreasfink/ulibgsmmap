@@ -66,6 +66,7 @@
     UMTCAP_asn1_Associate_result            *_pendingResult;
     UMTCAP_asn1_Associate_source_diagnostic *_pendingDiagnostic;
     UMTCAP_asn1_userInformation             *_pendingUserInfo;
+    UMMutex *_lock;
 }
 
 #pragma mark -
