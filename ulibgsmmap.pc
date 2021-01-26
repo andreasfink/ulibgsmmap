@@ -1,0 +1,16 @@
+# pkg-config source file
+
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Cflags: -I${includedir} 
+Libs: -l:libulibgsmmap.dylib.1.12
+
+Name: ulibgsmmap
+Description: universal SS7 GSMMAP library
+Version: 1.12.1
+Requires: ulib ulibtcap
+
+

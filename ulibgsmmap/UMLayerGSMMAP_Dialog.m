@@ -598,6 +598,7 @@
         self.dialogRequestRequired = NO;
         self.dialogResponseRequired = NO;
     }
+    _shouldSendContinue = NO;
     [_lock unlock];
 }
 
@@ -1379,7 +1380,7 @@
                     diagnostic:_pendingDiagnostic];
         _pendingResult = NULL;
         _pendingDiagnostic = NULL;
-        _shouldSendContinue=NO;
+        _shouldSendContinue = NO;
     }
 }
 
