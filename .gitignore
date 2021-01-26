@@ -6,14 +6,14 @@
 Makefile
 Makefile.linux
 Makefile.osx
-#Makefile.freebsd
+Makefile.freebsd
 config.h
 config.log
 config.status
 stamp-h1
 autom4te.cache
-#ulibgsmmap.pc
-#ulibgsmmap_config.h
+ulibgsmmap.pc
+ulibgsmmap_config.h
 
 #########################
 # .gitignore file for Xcode4 and Xcode5 Source projects
