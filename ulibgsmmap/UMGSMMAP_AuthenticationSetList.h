@@ -17,13 +17,12 @@
 @interface UMGSMMAP_AuthenticationSetList : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	UMGSMMAP_AuthenticationTripletList *tripletList;
-	UMGSMMAP_AuthenticationQuintupletList *quintupletList;
+	UMGSMMAP_AuthenticationTripletList *_tripletList;
+	UMGSMMAP_AuthenticationQuintupletList *_quintupletList;
 }
-@property(readwrite,strong)    NSString *operationName;
-
-@property(readwrite,strong)	UMGSMMAP_AuthenticationTripletList *tripletList;
-@property(readwrite,strong)	UMGSMMAP_AuthenticationQuintupletList *quintupletList;
+@property(readwrite,strong) NSString *operationName;
+@property(readwrite,strong)	UMGSMMAP_AuthenticationTripletList      *tripletList;
+@property(readwrite,strong)	UMGSMMAP_AuthenticationQuintupletList   *quintupletList;
 
 
 - (void)processBeforeEncode;

@@ -14,9 +14,6 @@
 
 
 @synthesize	operationName;
-@synthesize	tripletList;
-@synthesize	quintupletList;
-
 
 - (void) processBeforeEncode
 {
@@ -28,52 +25,52 @@
 		_asn1_tag.isConstructed=YES;
 		_asn1_list = [[NSMutableArray alloc]init];
 	}
-	if(tripletList)
+	if(_tripletList)
 	{
-		[tripletList processBeforeEncode];
+		[_tripletList processBeforeEncode];
 		if(isImplicit)
 		{
 			self.asn1_tag.tagNumber = 0;
 			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = tripletList.asn1_tag.isConstructed;
+			self.asn1_tag.isConstructed = _tripletList.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
-				self.asn1_list = [tripletList.asn1_list copy];
+				self.asn1_list = [_tripletList.asn1_list copy];
 			}
 			else
 			{
-				self.asn1_data = [tripletList.asn1_data copy];
+				self.asn1_data = [_tripletList.asn1_data copy];
 			}
 		}
 		else
 		{
-			tripletList.asn1_tag.tagNumber = 0;
-			tripletList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[_asn1_list addObject:tripletList];
+			_tripletList.asn1_tag.tagNumber = 0;
+			_tripletList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+			[_asn1_list addObject:_tripletList];
 		}
 	}
-	else if(quintupletList)
+	else if(_quintupletList)
 	{
-		[quintupletList processBeforeEncode];
+		[_quintupletList processBeforeEncode];
 		if(isImplicit)
 		{
 			self.asn1_tag.tagNumber = 1;
 			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = quintupletList.asn1_tag.isConstructed;
+			self.asn1_tag.isConstructed = _quintupletList.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
-				self.asn1_list = [quintupletList.asn1_list copy];
+				self.asn1_list = [_quintupletList.asn1_list copy];
 			}
 			else
 			{
-				self.asn1_data = [quintupletList.asn1_data copy];
+				self.asn1_data = [_quintupletList.asn1_data copy];
 			}
 		}
 		else
 		{
-			quintupletList.asn1_tag.tagNumber = 1;
-			quintupletList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[_asn1_list addObject:quintupletList];
+			_quintupletList.asn1_tag.tagNumber = 1;
+			_quintupletList.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+			[_asn1_list addObject:_quintupletList];
 		}
 	}
 	else
@@ -89,13 +86,15 @@
 {
     UMASN1Object *o = self;
 	
-	if((o) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
+	if((o) && (o.asn1_tag.tagNumber == 0)
+           && (o.asn1_tag.tagNumber == UMASN1Class_ContextSpecific))
 	{
-		tripletList = [[UMGSMMAP_AuthenticationTripletList alloc]initWithASN1Object:o context:context];
+		_tripletList = [[UMGSMMAP_AuthenticationTripletList alloc]initWithASN1Object:o context:context];
 	}
-	else if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+	else if((o) && (o.asn1_tag.tagNumber == 1)
+                && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		quintupletList = [[UMGSMMAP_AuthenticationQuintupletList alloc]initWithASN1Object:o context:context];
+		_quintupletList = [[UMGSMMAP_AuthenticationQuintupletList alloc]initWithASN1Object:o context:context];
 	}
 	return self;
 }
@@ -104,16 +103,17 @@
 {
 	return @"AuthenticationSetList";
 }
+
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(tripletList)
+	if(_tripletList)
 	{
-		dict[@"tripletList"] = tripletList.objectValue;
+		dict[@"tripletList"] = _tripletList.objectValue;
 	}
-	if(quintupletList)
+	if(_quintupletList)
 	{
-		dict[@"quintupletList"] = quintupletList.objectValue;
+		dict[@"quintupletList"] = _quintupletList.objectValue;
 	}
 	return dict;
 }
