@@ -16,5 +16,6 @@
 	NSString *operationName;
 }
 @property(readwrite,strong)    NSString *operationName;
++ (UMSynchronizedSortedDictionary *)decodeECGI:(NSData *)data;
 
 @end
