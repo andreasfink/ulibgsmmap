@@ -84,7 +84,6 @@
 	}
 }
 
-
 - (UMGSMMAP_Ext_BasicServiceCode *) processAfterDecodeWithContext:(id)context
 {
 	int p=0;
