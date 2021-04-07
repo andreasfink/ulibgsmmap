@@ -16,7 +16,7 @@
 
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_Ext_TeleserviceCode";
+	return @"Ext_TeleserviceCode";
 }
 
 

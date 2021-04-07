@@ -125,7 +125,42 @@
 	}
 	if(ext_Teleservice)
 	{
-		dict[@"ext-Teleservice"] = ext_Teleservice.objectValue;
+        dict[@"ext-Teleservice"] = ext_Teleservice.objectValue;
+        NSData *d = ext_Teleservice.value;
+        if(d.length == 1)
+        {
+            const uint8_t *bytes = d.bytes;
+            switch (bytes[0])
+            {
+                case 0x11:
+                    dict[@"ext-Teleservice-description"] = @"speech";
+                    break;
+                case 0x12:
+                    dict[@"ext-Teleservice-description"] = @"emergency-calls";
+                    break;
+                case 0x21:
+                    dict[@"ext-Teleservice-description"] = @"sms-mt";
+                    break;
+                case 0x22:
+                    dict[@"ext-Teleservice-description"] = @"sms-mo";
+                    break;
+                case 0x23:
+                    dict[@"ext-Teleservice-description"] = @"cell-broadcast-service";
+                    break;
+                case 0x61:
+                    dict[@"ext-Teleservice-description"] = @"alternate-speech-and-facsimile-group-3";
+                    break;
+                case 0x62:
+                    dict[@"ext-Teleservice-description"] = @"automatic-facsimile-group-3";
+                    break;
+                case 0x91:
+                    dict[@"ext-Teleservice-description"] = @"voice-group-call-service";
+                    break;
+                case 0x92:
+                    dict[@"ext-Teleservice-description"] = @"voice-broadcast-service";
+                    break;
+            }
+        }
 	}
 	return dict;
 }
