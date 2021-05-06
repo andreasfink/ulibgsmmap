@@ -154,7 +154,7 @@
     }
     if([context respondsToSelector:@selector(operationType)])
     {
-        operation = (UMTCAP_InternalOperation)[context performSelector:@selector(operationType)];
+        operation =  (UMTCAP_InternalOperation)[context performSelector:@selector(context)];
     }
     else
     {
