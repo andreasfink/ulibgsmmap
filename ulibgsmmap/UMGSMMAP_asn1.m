@@ -148,10 +148,6 @@
     {
         opcode = (int64_t)[context performSelector:@selector(operationCode)];
     }
-    else
-    {
-        return self;
-    }
     if([context respondsToSelector:@selector(operationType)])
     {
         operation =  (UMTCAP_InternalOperation)[context performSelector:@selector(operationType)];
