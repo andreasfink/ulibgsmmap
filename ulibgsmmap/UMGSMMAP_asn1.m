@@ -154,11 +154,7 @@
     }
     if([context respondsToSelector:@selector(operationType)])
     {
-        operation =  (UMTCAP_InternalOperation)[context performSelector:@selector(context)];
-    }
-    else
-    {
-        return self;
+        operation =  (UMTCAP_InternalOperation)[context performSelector:@selector(operationType)];
     }
     NSString *name = NULL;
     UMASN1Object<UMGSMMAP_asn1_protocol> *o = [self decodeASN1opcode:opcode
