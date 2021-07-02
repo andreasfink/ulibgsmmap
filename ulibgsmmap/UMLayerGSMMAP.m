@@ -41,6 +41,16 @@
     return tcap.variant;
 }
 
+- (UMLayerGSMMAP *)initWithoutExecutionQueue:(NSString *)name
+{
+    self = [super initWithoutExecutionQueue:name];
+    if(self)
+    {
+        //[self genericInitialisation];
+    }
+    return self;
+}
+
 - (UMLayerGSMMAP *)initWithTaskQueueMulti:(UMTaskQueueMulti *)tq name:(NSString *)name
 {
     @autoreleasepool

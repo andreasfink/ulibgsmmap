@@ -47,6 +47,7 @@
 
 -(UMMTP3Variant) variant;
 
+- (UMLayerGSMMAP *)initWithoutExecutionQueue:(NSString *)name;
 - (void) setConfig:(NSDictionary *)cfg applicationContext:(id<UMLayerGSMMAPApplicationContextProtocol>)appContext;
 - (void) startUp;
 - (NSString *)status;
