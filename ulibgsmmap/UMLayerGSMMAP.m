@@ -41,40 +41,12 @@
     return tcap.variant;
 }
 
-- (UMLayerGSMMAP *)init
-{
-    @autoreleasepool
-    {
-        self = [super init];
-        if(self)
-        {
-            dialogs = [[UMSynchronizedDictionary alloc]init];
-            _dialogIdLock = [[UMMutex alloc]initWithName:@"gsmmap-dialog-id-lock"];
-            _dialogTimeout = 70.0;
-            _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
-            _houseKeepingTimer = [[UMTimer alloc]initWithTarget:self
-                                                       selector:@selector(housekeepingTask)
-                                                         object:NULL
-                                                       seconds:2.8
-                                                           name:@"housekeeping"
-                                                        repeats:YES];
-            [_houseKeepingTimer start];
-
-        }
-        return self;
-    }
-}
-
-- (UMLayerGSMMAP *)initWithTaskQueueMulti:(UMTaskQueueMulti *)tq
-{
-    return [self initWithTaskQueueMulti:tq name:@""];
-}
-
 - (UMLayerGSMMAP *)initWithTaskQueueMulti:(UMTaskQueueMulti *)tq name:(NSString *)name
 {
     @autoreleasepool
     {
-        self = [super initWithTaskQueueMulti:tq name:name];
+        NSString *s = [NSString stringWithFormat:@"gsmmap/%@",name];
+        self = [super initWithTaskQueueMulti:tq name:s];
         if(self)
         {
             dialogs = [[UMSynchronizedDictionary alloc]init];
