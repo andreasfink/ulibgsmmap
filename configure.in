@@ -5,7 +5,7 @@ dnl  * ====================================================================
 dnl  */ 
 dnl initialization
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.71])
 AC_INIT([ulibgsmmap],[1.0],[afink])
 dnl generic parameters
 COPYRIGHT="Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved."
@@ -24,7 +24,7 @@ export PKG_CONFIG_PATH
 AC_SUBST(SHELL)
 AC_CONFIG_AUX_DIR(.)
 AC_SET_TERMINAL_SEQUENCES()
-AC_CONFIG_HEADER(${CONFIG_HEADER})
+AC_CONFIG_HEADERS([${CONFIG_HEADER}])
 AC_SUBST(COPYRIGHT)
 AC_SUBST(PROJECT_NAME)
 AC_SUBST(AUTHOR)
@@ -222,7 +222,20 @@ AC_CONFIG_FILES([Makefile.osx])
 AC_CONFIG_FILES([Makefile.linux])
 AC_CONFIG_FILES([Makefile.freebsd])
 AC_CONFIG_FILES([ulibgsmmap.pc])
+AC_CONFIG_FILES([make_buildnr.sh])
 AC_OUTPUT
+
+chmod 755 make_buildnr.sh
+
+if [[ -f BUILDNR ]]
+then
+	echo "Buildnumber: `cat BUILDNR`"
+else
+	echo "1" > BUILDNR
+	echo "Buildnumber: 1"
+	./make_buildnr.sh
+fi
+
 case "$host" in
   *apple-darwin*) 
     cp Makefile.osx Makefile
