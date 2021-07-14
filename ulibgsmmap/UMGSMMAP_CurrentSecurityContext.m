@@ -20,68 +20,68 @@
 
 - (void) processBeforeEncode
 {
-	[super processBeforeEncode];
-	BOOL isImplicit = YES;
-	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
-	{
-		isImplicit = NO;
-		_asn1_tag.isConstructed=YES;
-		_asn1_list = [[NSMutableArray alloc]init];
-	}
-	if(gsm_SecurityContextData)
-	{
-		[gsm_SecurityContextData processBeforeEncode];
-		if(isImplicit)
-		{
-			self.asn1_tag.tagNumber = 0;
-			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = gsm_SecurityContextData.asn1_tag.isConstructed;
-			if(self.asn1_tag.isConstructed)
-			{
-				self.asn1_list = [gsm_SecurityContextData.asn1_list copy];
-			}
-			else
-			{
-				self.asn1_data = [gsm_SecurityContextData.asn1_data copy];
-			}
-		}
-		else
-		{
-			gsm_SecurityContextData.asn1_tag.tagNumber = 0;
-			gsm_SecurityContextData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[_asn1_list addObject:gsm_SecurityContextData];
-		}
-	}
-	else if(umts_SecurityContextData)
-	{
-		[umts_SecurityContextData processBeforeEncode];
-		if(isImplicit)
-		{
-			self.asn1_tag.tagNumber = 1;
-			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = umts_SecurityContextData.asn1_tag.isConstructed;
-			if(self.asn1_tag.isConstructed)
-			{
-				self.asn1_list = [umts_SecurityContextData.asn1_list copy];
-			}
-			else
-			{
-				self.asn1_data = [umts_SecurityContextData.asn1_data copy];
-			}
-		}
-		else
-		{
-			umts_SecurityContextData.asn1_tag.tagNumber = 1;
-			umts_SecurityContextData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[_asn1_list addObject:umts_SecurityContextData];
-		}
-	}
-	else
-	{
-	    @throw([NSException exceptionWithName:@"PARAMETER_MISSING"
-	                                   reason:@"UMGSMMAP_CurrentSecurityContext choice missing"
-	                                userInfo:@{    @"backtrace": UMBacktrace(NULL,0)}]);
-	}
+    [super processBeforeEncode];
+    BOOL isImplicit = YES;
+    if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
+    {
+        isImplicit = NO;
+        _asn1_tag.isConstructed=YES;
+        _asn1_list = [[NSMutableArray alloc]init];
+    }
+    if(gsm_SecurityContextData)
+    {
+        [gsm_SecurityContextData processBeforeEncode];
+        if(isImplicit)
+        {
+            self.asn1_tag.tagNumber = 0;
+            self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+            self.asn1_tag.isConstructed = gsm_SecurityContextData.asn1_tag.isConstructed;
+            if(self.asn1_tag.isConstructed)
+            {
+                self.asn1_list = [gsm_SecurityContextData.asn1_list copy];
+            }
+            else
+            {
+                self.asn1_data = [gsm_SecurityContextData.asn1_data copy];
+            }
+        }
+        else
+        {
+            gsm_SecurityContextData.asn1_tag.tagNumber = 0;
+            gsm_SecurityContextData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+            [_asn1_list addObject:gsm_SecurityContextData];
+        }
+    }
+    else if(umts_SecurityContextData)
+    {
+        [umts_SecurityContextData processBeforeEncode];
+        if(isImplicit)
+        {
+            self.asn1_tag.tagNumber = 1;
+            self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+            self.asn1_tag.isConstructed = umts_SecurityContextData.asn1_tag.isConstructed;
+            if(self.asn1_tag.isConstructed)
+            {
+                self.asn1_list = [umts_SecurityContextData.asn1_list copy];
+            }
+            else
+            {
+                self.asn1_data = [umts_SecurityContextData.asn1_data copy];
+            }
+        }
+        else
+        {
+            umts_SecurityContextData.asn1_tag.tagNumber = 1;
+            umts_SecurityContextData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+            [_asn1_list addObject:umts_SecurityContextData];
+        }
+    }
+    else
+    {
+        @throw([NSException exceptionWithName:@"PARAMETER_MISSING"
+                                       reason:@"UMGSMMAP_CurrentSecurityContext choice missing"
+                                    userInfo:@{    @"backtrace": UMBacktrace(NULL,0)}]);
+    }
 }
 
 
