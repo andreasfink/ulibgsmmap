@@ -5,7 +5,7 @@ dnl  * ====================================================================
 dnl  */ 
 dnl initialization
 
-AC_PREREQ([2.71])
+AC_PREREQ([2.69])
 AC_INIT([ulibgsmmap],[1.0],[afink])
 dnl generic parameters
 COPYRIGHT="Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved."
@@ -78,12 +78,12 @@ case "$host" in
 	LDFLAGS=-framework CoreFoundation -framework IOKit -framework Security -F/Library/Application\ Support/FinkTelecomServices/frameworks ${FRAMEWORKS}
 	LIBTOOL="libtool -static -o" 
 	SHARED_LIBRARY_EXTENSION=dylib
-	XARCH=`arch`
+	XARCH="`arch`"
     ;;
 
   *-linux-*)
     PLATFORM=linux
-	XARCH=`arch`
+	XARCH="`arch`"
 	CFLAGS="$CFLAGS -std=c99 -fPIC -DLINUX -D_XOPEN_SOURCE=700 -D_POSIX_SOURCE"
 	DEBIAN_VERSION=`cat /etc/debian_version | cut -f1 -d.`
 	if [[ "$DEBIAN_VERSION" == "8" ]]
@@ -113,7 +113,7 @@ case "$host" in
     SHARED_FLAGS="-shared"
     ;;
   *-freebsd*)
-	XARCH=`sysctl -a | egrep -i 'hw.machine_arch' | cut -f2 -d: | sed 's/ //g'"`
+	XARCH=`sysctl -a | egrep -i 'hw.machine_arch' | cut -f2 -d: | sed 's/ //g'`
 	CFLAGS="$CFLAGS -std=c99 -fPIC -DFREEBSD"
 	FREEBSD_VERSION=`uname -r`
 	CFLAGS="$CFLAGS  -Wno-trigraphs  -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties"
