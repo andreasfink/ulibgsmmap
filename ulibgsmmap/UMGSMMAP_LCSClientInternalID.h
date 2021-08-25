@@ -11,6 +11,15 @@
 #import <ulibasn1/ulibasn1.h>
 #import "UMGSMMAP_asn1_protocol.h"
 
+typedef enum UMGSMMAP_LCSClientInternalID_enum
+{
+    UMGSMMAP_LCSClientInternalID_broadcastService           = 0,
+    UMGSMMAP_LCSClientInternalID_o_andM_HPLMN               = 1,
+    UMGSMMAP_LCSClientInternalID_o_andM_VPLMN               = 2,
+    UMGSMMAP_LCSClientInternalID_anonymousLocation          = 3,
+    UMGSMMAP_LCSClientInternalID_targetMSsubscribedService  = 4,
+} UMGSMMAP_LCSClientInternalID_enum;
+
 @interface UMGSMMAP_LCSClientInternalID : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;

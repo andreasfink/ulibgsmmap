@@ -19,6 +19,17 @@
 	return @"UMGSMMAP_LCSClientInternalID";
 }
 
+- (void)setEnumDefinition
+{
+    _enumDefinition = @ {
+        @"broadcastService"          : @(UMGSMMAP_LCSClientInternalID_broadcastService),
+        @"o-andM-HPLMN"              : @(UMGSMMAP_LCSClientInternalID_o_andM_HPLMN),
+        @"o-andM-VPLMN"              : @(UMGSMMAP_LCSClientInternalID_o_andM_VPLMN),
+        @"anonymousLocation"         : @(UMGSMMAP_LCSClientInternalID_anonymousLocation),
+        @"targetMSsubscribedService" : @(UMGSMMAP_LCSClientInternalID_targetMSsubscribedService),
+    };
+}
+
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation
