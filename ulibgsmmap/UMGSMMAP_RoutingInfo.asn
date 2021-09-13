@@ -1,4 +1,6 @@
-RoutingInfo ::= CHOICE { 
+RoutingInfo ::= CHOICE
+{
    roamingNumber ISDN-AddressString, 
-   forwardingData ForwardingData}
+   forwardingData ForwardingData
+}
 
