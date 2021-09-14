@@ -1,0 +1,5 @@
+SendingNode-Number ::= CHOICE
+{
+    hlr-Number  ISDN-AddressString,
+    css-Number  [1] ISDN-AddressString,
+}

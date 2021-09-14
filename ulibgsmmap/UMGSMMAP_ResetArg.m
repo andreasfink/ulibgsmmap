@@ -14,25 +14,39 @@
 
 
 @synthesize	operationName;
-@synthesize	hlr_Number;
-@synthesize	hlr_List;
-
 
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	[_asn1_tag setTagIsConstructed];
 	_asn1_list = [[NSMutableArray alloc]init];
-	if(hlr_Number)
+	if(_sendingNodenumber)
 	{
-		[_asn1_list addObject:hlr_Number];
+		[_asn1_list addObject:_sendingNodenumber];
 	}
-	if(hlr_List)
+	if(_hlr_List)
 	{
-		[_asn1_list addObject:hlr_List];
+		[_asn1_list addObject:_hlr_List];
 	}
+    if(_reset_Id_List)
+    {
+        _reset_Id_List.asn1_tag.tagNumber = 1;
+        _reset_Id_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_reset_Id_List];
+    }
+    if(_subscriptionData)
+    {
+        _subscriptionData.asn1_tag.tagNumber = 2;
+        _subscriptionData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_subscriptionData];
+    }
+    if(_subscriptionDataDeletion)
+    {
+        _subscriptionDataDeletion.asn1_tag.tagNumber = 3;
+        _subscriptionDataDeletion.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_subscriptionDataDeletion];
+    }
 }
-
 
 - (UMGSMMAP_ResetArg *) processAfterDecodeWithContext:(id)context
 {
@@ -40,18 +54,49 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if(o)
 	{
-		hlr_Number = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
+		_sendingNodenumber = [[UMGSMMAP_SendingNode_Number alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
-	if(o)
+	if((o) && (o.asn1_tag.tagClass == UMASN1Class_Universal) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence))
 	{
-		hlr_List = [[UMGSMMAP_HLR_List alloc]initWithASN1Object:o context:context];
+		_hlr_List = [[UMGSMMAP_HLR_List alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	while(o)
 	{
+        if((o) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific) && (o.asn1_tag.tagNumber == 1))
+        {
+            _reset_Id_List = [[UMGSMMAP_Reset_Id_List alloc]initWithASN1Object:o context:context];
+        }
+        else if((o) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific) && (o.asn1_tag.tagNumber == 2))
+        {
+            _subscriptionData = [[UMGSMMAP_InsertSubscriberDataArg alloc]initWithASN1Object:o context:context];
+        }
+        else if((o) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific) && (o.asn1_tag.tagNumber == 3))
+        {
+            _subscriptionDataDeletion = [[UMGSMMAP_DeleteSubscriberDataArg alloc]initWithASN1Object:o context:context];
+        }
         /* ... */
         o = [self getObjectAtPosition:p++];
+    }
+    
+    if(_reset_Id_List)
+    {
+        _reset_Id_List.asn1_tag.tagNumber = 1;
+        _reset_Id_List.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_reset_Id_List];
+    }
+    if(_subscriptionData)
+    {
+        _subscriptionData.asn1_tag.tagNumber = 2;
+        _subscriptionData.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_subscriptionData];
+    }
+    if(_subscriptionDataDeletion)
+    {
+        _subscriptionDataDeletion.asn1_tag.tagNumber = 3;
+        _subscriptionDataDeletion.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_subscriptionDataDeletion];
     }
 	return self;
 }
@@ -60,17 +105,30 @@
 {
 	return @"ResetArg";
 }
+
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(hlr_Number)
+	if(_sendingNodenumber)
 	{
-		dict[@"hlr-Number"] = hlr_Number.objectValue;
+		dict[@"sendingNodenumber"] = _sendingNodenumber.objectValue;
 	}
-	if(hlr_List)
+	if(_hlr_List)
 	{
-		dict[@"hlr-List"] = hlr_List.objectValue;
+		dict[@"hlr-List"] = _hlr_List.objectValue;
 	}
+    if(_reset_Id_List)
+    {
+        dict[@"reset-Id-List"] = _reset_Id_List.objectValue;
+    }
+    if(_subscriptionData)
+    {
+        dict[@"subscriptionData"] = _subscriptionData.objectValue;
+    }
+    if(_subscriptionDataDeletion)
+    {
+        dict[@"subscriptionDataDeletion"] = _subscriptionDataDeletion.objectValue;
+    }
 	return dict;
 }
 
