@@ -1,5 +1,9 @@
 ResetArg ::= SEQUENCE {
-   hlr-Number ISDN-AddressString,
-   hlr-List HLR-List OPTIONAL,
-   ... }
-
+    sendingNodenumber           SendingNode-Number,
+    hlr-List HLR-List           OPTIONAL,
+    extensionContainer          [0] ExtensionContainer          OPTIONAL,
+    ...,
+    reset-Id-List               [1] Reset-Id-List               OPTIONAL,
+    subscriptionData            [2] InsertSubscriberDataArg     OPTIONAL,
+    subscriptionDataDeletion    [3] DeleteSubscriberDataArg     OPTIONAL
+}

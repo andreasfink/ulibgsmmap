@@ -53,6 +53,13 @@
 		A621711920A2D643008A7E70 /* UMGSMMAP_SIP_URI.h in Headers */ = {isa = PBXBuildFile; fileRef = A621711720A2D643008A7E70 /* UMGSMMAP_SIP_URI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A621711A20A2D643008A7E70 /* UMGSMMAP_SIP_URI.m in Sources */ = {isa = PBXBuildFile; fileRef = A621711820A2D643008A7E70 /* UMGSMMAP_SIP_URI.m */; };
 		A621711D20A2DD53008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.h in Headers */ = {isa = PBXBuildFile; fileRef = A621710D20A2D48A008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6323D0826F0DA7400137112 /* UMGSMMAP_SendingNode_Number.h in Headers */ = {isa = PBXBuildFile; fileRef = A6323D0526F0DA7300137112 /* UMGSMMAP_SendingNode_Number.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6323D0926F0DA7400137112 /* UMGSMMAP_SendingNode_Number.asn in Resources */ = {isa = PBXBuildFile; fileRef = A6323D0626F0DA7300137112 /* UMGSMMAP_SendingNode_Number.asn */; };
+		A6323D0A26F0DA7400137112 /* UMGSMMAP_SendingNode_Number.m in Sources */ = {isa = PBXBuildFile; fileRef = A6323D0726F0DA7400137112 /* UMGSMMAP_SendingNode_Number.m */; };
+		A6323D0D26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.h in Headers */ = {isa = PBXBuildFile; fileRef = A6323D0B26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6323D0E26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.m in Sources */ = {isa = PBXBuildFile; fileRef = A6323D0C26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.m */; };
+		A6323D1126F0E26C00137112 /* UMGSMMAP_Reset_Id.h in Headers */ = {isa = PBXBuildFile; fileRef = A6323D0F26F0E26C00137112 /* UMGSMMAP_Reset_Id.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6323D1226F0E26C00137112 /* UMGSMMAP_Reset_Id.m in Sources */ = {isa = PBXBuildFile; fileRef = A6323D1026F0E26C00137112 /* UMGSMMAP_Reset_Id.m */; };
 		A641CEF61B42019900854472 /* ulibgsmmapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A641CEF51B42019900854472 /* ulibgsmmapTests.m */; };
 		A6590EF51FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6590EF31FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6590EF61FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6590EF41FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m */; };
@@ -1256,6 +1263,13 @@
 		A621711720A2D643008A7E70 /* UMGSMMAP_SIP_URI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_SIP_URI.h; sourceTree = "<group>"; };
 		A621711820A2D643008A7E70 /* UMGSMMAP_SIP_URI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_SIP_URI.m; sourceTree = "<group>"; };
 		A621711B20A2DC17008A7E70 /* UMGSMMAP_SM_DeliveryNotIntended.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = UMGSMMAP_SM_DeliveryNotIntended.asn; sourceTree = "<group>"; };
+		A6323D0526F0DA7300137112 /* UMGSMMAP_SendingNode_Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_SendingNode_Number.h; sourceTree = "<group>"; };
+		A6323D0626F0DA7300137112 /* UMGSMMAP_SendingNode_Number.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_SendingNode_Number.asn; sourceTree = "<group>"; };
+		A6323D0726F0DA7400137112 /* UMGSMMAP_SendingNode_Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_SendingNode_Number.m; sourceTree = "<group>"; };
+		A6323D0B26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Reset_Id_List.h; sourceTree = "<group>"; };
+		A6323D0C26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Reset_Id_List.m; sourceTree = "<group>"; };
+		A6323D0F26F0E26C00137112 /* UMGSMMAP_Reset_Id.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Reset_Id.h; sourceTree = "<group>"; };
+		A6323D1026F0E26C00137112 /* UMGSMMAP_Reset_Id.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Reset_Id.m; sourceTree = "<group>"; };
 		A641CEE31B42019900854472 /* ulibgsmmap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ulibgsmmap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A641CEE71B42019900854472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A641CEEE1B42019900854472 /* ulibgsmmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ulibgsmmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4538,6 +4552,10 @@
 				A60A540C1D56B93D00211137 /* UMGSMMAP_Reason.asn */,
 				A60A540D1D56B93D00211137 /* UMGSMMAP_Reason.h */,
 				A60A540E1D56B93D00211137 /* UMGSMMAP_Reason.m */,
+				A6323D0B26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.h */,
+				A6323D0C26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.m */,
+				A6323D0F26F0E26C00137112 /* UMGSMMAP_Reset_Id.h */,
+				A6323D1026F0E26C00137112 /* UMGSMMAP_Reset_Id.m */,
 				A6EE68B51D3B6BE600211137 /* UMGSMMAP_RegionalSubscriptionResponse.asn */,
 				A6EE68B41D3B6BE600211137 /* UMGSMMAP_RegionalSubscriptionResponse.h */,
 				A6EE68B31D3B6BE600211137 /* UMGSMMAP_RegionalSubscriptionResponse.m */,
@@ -4692,6 +4710,9 @@
 				A6EE683E1D3B6BE500211137 /* UMGSMMAP_ServiceKey.asn */,
 				A6EE683D1D3B6BE500211137 /* UMGSMMAP_ServiceKey.h */,
 				A6EE683C1D3B6BE500211137 /* UMGSMMAP_ServiceKey.m */,
+				A6323D0626F0DA7300137112 /* UMGSMMAP_SendingNode_Number.asn */,
+				A6323D0526F0DA7300137112 /* UMGSMMAP_SendingNode_Number.h */,
+				A6323D0726F0DA7400137112 /* UMGSMMAP_SendingNode_Number.m */,
 				A6EE683B1D3B6BE500211137 /* UMGSMMAP_SetReportingStateArg.asn */,
 				A6EE683A1D3B6BE500211137 /* UMGSMMAP_SetReportingStateArg.h */,
 				A6EE68391D3B6BE500211137 /* UMGSMMAP_SetReportingStateArg.m */,
@@ -5614,6 +5635,7 @@
 				A69596161D7FAB4500211137 /* UMGSMMAP_MSISDN_BS_List.h in Headers */,
 				A6EE6F351D3B6BFE00211137 /* UMGSMMAP_NumberOfForwarding.h in Headers */,
 				A6EE71601D3B6BFF00211137 /* UMGSMMAP_EquipmentStatus.h in Headers */,
+				A6323D0D26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.h in Headers */,
 				A69595FF1D7FAA1C00211137 /* UMGSMMAP_MG_CSI.h in Headers */,
 				A6EE72041D3B6BFF00211137 /* UMGSMMAP_Category.h in Headers */,
 				A69629AF1D56CE5700211137 /* GsmCharSet.h in Headers */,
@@ -5743,6 +5765,7 @@
 				A6EE6D2F1D3B6BFE00211137 /* UMGSMMAP_UpdateLocationArg.h in Headers */,
 				A6EE70AF1D3B6BFF00211137 /* UMGSMMAP_GPRSChargingID.h in Headers */,
 				A6EE6E711D3B6BFE00211137 /* UMGSMMAP_ReportingState.h in Headers */,
+				A6323D0826F0DA7400137112 /* UMGSMMAP_SendingNode_Number.h in Headers */,
 				A6EE6DFF1D3B6BFE00211137 /* UMGSMMAP_SignalInfo.h in Headers */,
 				A6EE710C1D3B6BFF00211137 /* UMGSMMAP_Ext2_QoS_Subscribed.h in Headers */,
 				A6EE72931D3B6BFF00211137 /* UMGSMMAP_AlertReason.h in Headers */,
@@ -5764,6 +5787,7 @@
 				A6EE6D321D3B6BFE00211137 /* UMGSMMAP_UpdateGprsLocationRes.h in Headers */,
 				A69596231D7FB47200211137 /* UMGSMMAP_DefaultGPRS_Handling.h in Headers */,
 				A6ADB8FB21E68B0600C16A7D /* UMGSMMAP_SentParameter.h in Headers */,
+				A6323D1126F0E26C00137112 /* UMGSMMAP_Reset_Id.h in Headers */,
 				A6EE6D751D3B6BFE00211137 /* UMGSMMAP_TA_Id.h in Headers */,
 				A695957B1D7E9D6F00211137 /* UMGSMMAP_WrongPasswordAttemptsCounter.h in Headers */,
 				A6EE6D971D3B6BFE00211137 /* UMGSMMAP_SubscriberLocationReport_Res.h in Headers */,
@@ -6120,6 +6144,7 @@
 				A619641C239420DB00304D7F /* UMGSMMAP_DomainType.asn in Resources */,
 				A61F7DEA2433542B00C82247 /* UMGSMMAP_FTSExtension.asn in Resources */,
 				A61F7DF0243354BE00C82247 /* UMGSMMAP_FTSExtensionList.asn in Resources */,
+				A6323D0926F0DA7400137112 /* UMGSMMAP_SendingNode_Number.asn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6255,6 +6280,7 @@
 				A6EE723B1D3B6BFF00211137 /* UMGSMMAP_BearerServNotProvParam.m in Sources */,
 				A6EE6D2B1D3B6BFE00211137 /* UMGSMMAP_UpdateLocationRes.m in Sources */,
 				A6EE715F1D3B6BFF00211137 /* UMGSMMAP_EquipmentStatus.m in Sources */,
+				A6323D0A26F0DA7400137112 /* UMGSMMAP_SendingNode_Number.m in Sources */,
 				A69595CD1D7FA58C00211137 /* UMGSMMAP_SMS_CAMEL_TDP_DataList.m in Sources */,
 				A6EE6F751D3B6BFF00211137 /* UMGSMMAP_MSRadioAccessCapability.m in Sources */,
 				A6EE70611D3B6BFF00211137 /* UMGSMMAP_InsertSubscriberDataRes.m in Sources */,
@@ -6580,6 +6606,7 @@
 				A6EE709B1D3B6BFF00211137 /* UMGSMMAP_GroupId.m in Sources */,
 				A6EE70E21D3B6BFF00211137 /* UMGSMMAP_ForwardGroupCallSignallingArg.m in Sources */,
 				A6AF2AF724BDAD6200541B74 /* UMGSMMAP_UE_SRVCC_Capability.m in Sources */,
+				A6323D1226F0E26C00137112 /* UMGSMMAP_Reset_Id.m in Sources */,
 				A6EE6D6B1D3B6BFE00211137 /* UMGSMMAP_TeleserviceCode.m in Sources */,
 				A6EE6F801D3B6BFF00211137 /* UMGSMMAP_MonitoringMode.m in Sources */,
 				A6EE721B1D3B6BFF00211137 /* UMGSMMAP_CallReportData.m in Sources */,
@@ -6665,6 +6692,7 @@
 				A6EE6DBF1D3B6BFE00211137 /* UMGSMMAP_Ss_Info.m in Sources */,
 				A6EE6D881D3B6BFE00211137 /* UMGSMMAP_SupportedGADShapes.m in Sources */,
 				A6EE72B01D3B6BFF00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.m in Sources */,
+				A6323D0E26F0E0F900137112 /* UMGSMMAP_Reset_Id_List.m in Sources */,
 				A6EE720F1D3B6BFF00211137 /* UMGSMMAP_CamelRoutingInfo.m in Sources */,
 				A6EE6DF21D3B6BFE00211137 /* UMGSMMAP_SM_DeliveryOutcome.m in Sources */,
 				A6EE70A31D3B6BFF00211137 /* UMGSMMAP_GPRSSubscriptionData.m in Sources */,
