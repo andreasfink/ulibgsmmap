@@ -55,7 +55,6 @@
 	UMGSMMAP_LSAInformation *lsaInformation;
 	BOOL lmu_Indicator;
 	UMGSMMAP_LCSInformation *lcsInformation;
-
     /* from release 14 */
     UMGSMMAP_AccessRestrictionData *_accessRestrictionData;
 }
@@ -83,7 +82,6 @@
 @property(readwrite,assign)	BOOL lmu_Indicator;
 @property(readwrite,strong)	UMGSMMAP_LCSInformation *lcsInformation;
 @property(readwrite,strong) UMGSMMAP_AccessRestrictionData *accessRestrictionData;
-
 
 - (void)processBeforeEncode;
 - (UMGSMMAP_InsertSubscriberDataArg *)processAfterDecodeWithContext:(id)context;
