@@ -85,6 +85,18 @@
     return inv;
 }
 
+- (int64_t)nextNegativeInvokeId
+{
+    [_lock lock];
+    int64_t inv = _nextInvokeId;
+    _nextInvokeId--;
+    _nextInvokeId = _nextInvokeId % 0xFFFF;
+    [_lock unlock];
+    return inv;
+}
+
+
+
 - (void) setThisInvokeId:(int64_t)iid
 {
     _nextInvokeId = (iid + 1) % 0xFF;
@@ -179,6 +191,18 @@
         [xgsmmap.logFeed debugText:s];
     }
 
+    NSArray<NSString *>* as = xoptions[@"gsmmap-options"];
+    if(as.count > 0)
+    {
+        for (NSString *s in as)
+        {
+            if([s isEqualToString:@"nid"])
+            {
+                _useNegativeId=YES;
+                _nextInvokeId = -1;
+            }
+        }
+    }
     [self touch];
 
     self.mapUser = user;
@@ -1017,7 +1041,18 @@
     }
     if(xinvokeId == AUTO_ASSIGN_INVOKE_ID)
     {
-        xinvokeId = [self nextInvokeId];
+        if(_useNegativeId)
+        {
+            xinvokeId = [self nextNegativeInvokeId];
+            if(xinvokeId==0)
+            {
+                xinvokeId = [self nextNegativeInvokeId];
+            }
+        }
+        else
+        {
+            xinvokeId = [self nextInvokeId];
+        }
     }
     else
     {
