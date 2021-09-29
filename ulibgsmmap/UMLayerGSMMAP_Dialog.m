@@ -191,7 +191,7 @@
         [xgsmmap.logFeed debugText:s];
     }
 
-    NSArray<NSString *>* as = xoptions[@"gsmmap-options"];
+    NSArray<NSString *>* as = xoptions[@"map-options"];
     if(as.count > 0)
     {
         for (NSString *s in as)
