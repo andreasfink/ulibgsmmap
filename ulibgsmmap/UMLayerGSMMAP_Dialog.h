@@ -57,6 +57,7 @@
     BOOL    _dialogShallClose;
     BOOL    _tcapContinueSeen;
     NSString *_tcapOperationGlobal;
+    BOOL    _useNegativeId;
     
     BOOL    _startWithContinue;
     BOOL    _noDestinationTransationIdInContinue;
