@@ -23,26 +23,28 @@
 
 @interface UMLayerGSMMAP : UMLayer<UMTCAP_UserProtocol,UMLayerGSMMAP_ProviderProtocol>
 {
-    UMLayerTCAP *tcap;
-    NSString *address;
-    UMSynchronizedArray *operations;
-    id<UMLayerGSMMAP_UserProtocol> user;
-    UMTimer *houseKeepingTimer;
-    UMSynchronizedDictionary *dialogs;
-    BOOL _housekeeping_running;
-    UMMutex *_dialogIdLock;
-    UMAtomicDate *_houseKeepingTimerRun;
-    UMTimer *_houseKeepingTimer;
-    NSTimeInterval _dialogTimeout;
+    UMLayerTCAP         *_tcap;
+    NSString            *_address;
+    SccpSubSystemNumber *_ssn;
+
+    UMSynchronizedArray             *_operations;
+    id<UMLayerGSMMAP_UserProtocol>  _user;
+    UMTimer                         *_houseKeepingTimer;
+    UMSynchronizedDictionary        *_dialogs;
+    BOOL                            _housekeeping_running;
+    UMMutex                         *_dialogIdLock;
+    UMAtomicDate                    *_houseKeepingTimerRun;
+    NSTimeInterval                  _dialogTimeout;
 }
 
-@property(readwrite,strong) UMLayerTCAP *tcap;
-@property(readwrite,strong) NSString *address;
-@property(readwrite,strong) SccpSubSystemNumber *ssn;
-@property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> user;
-@property(readwrite,assign,atomic) BOOL housekeeping_running;
-@property(readwrite,strong) UMAtomicDate *houseKeepingTimerRun;
-@property(readwrite,assign,atomic) NSTimeInterval dialogTimeout;
+@property(readwrite,strong)         UMLayerTCAP                     *tcap;
+@property(readwrite,strong)         NSString                        *address;
+@property(readwrite,strong)         SccpSubSystemNumber             *ssn;
+
+@property(readwrite,strong)         id<UMLayerGSMMAP_UserProtocol>  user;
+@property(readwrite,assign,atomic)  BOOL                            housekeeping_running;
+@property(readwrite,strong)         UMAtomicDate                    *houseKeepingTimerRun;
+@property(readwrite,assign,atomic)  NSTimeInterval                  dialogTimeout;
 
 
 -(UMMTP3Variant) variant;

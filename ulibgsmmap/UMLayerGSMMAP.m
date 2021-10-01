@@ -31,14 +31,10 @@
 
 @implementation UMLayerGSMMAP
 
-@synthesize tcap;
-@synthesize address;
-@synthesize ssn;
-@synthesize user;
 
 -(UMMTP3Variant) variant
 {
-    return tcap.variant;
+    return _tcap.variant;
 }
 
 - (UMLayerGSMMAP *)initWithoutExecutionQueue:(NSString *)name
@@ -59,7 +55,7 @@
         self = [super initWithTaskQueueMulti:tq name:s];
         if(self)
         {
-            dialogs = [[UMSynchronizedDictionary alloc]init];
+            _dialogs = [[UMSynchronizedDictionary alloc]init];
             _dialogIdLock = [[UMMutex alloc]initWithName:@"gsmmap-dialog-id-lock"];
             _dialogTimeout = 70.0;
             _houseKeepingTimerRun = [[UMAtomicDate alloc]init];
@@ -90,13 +86,13 @@
     {
         UMGSMMAP_DialogIdentifier *dialogId = [[UMGSMMAP_DialogIdentifier alloc]initWithTcapUserDialogIdentifier:tcapUserId];
 
-        UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:user withId:dialogId];
+        UMLayerGSMMAP_Dialog *dialog = [self getNewDialogForUser:_user withId:dialogId];
 
         if(self.logLevel <= UMLOG_DEBUG)
         {
             [self.logFeed debugText:[NSString stringWithFormat:@"tcapBeginIndication creates a new dialogId: %@\n",dialog.userDialogId]];
         }
-        [dialog MAP_Open_Ind_forUser:user
+        [dialog MAP_Open_Ind_forUser:_user
                                 tcap:tcapLayer
                                  map:self
                              variant:var
@@ -164,13 +160,13 @@
             */
             if(dialogId)
             {
-                dialog = [self getNewDialogForUser:user withId:dialogId];
+                dialog = [self getNewDialogForUser:_user withId:dialogId];
             }
             else
             {
-                dialog = [self getNewDialogForUser:user];
+                dialog = [self getNewDialogForUser:_user];
             }
-            [dialog MAP_Open_Ind_forUser:user
+            [dialog MAP_Open_Ind_forUser:_user
                                     tcap:tcapLayer
                                      map:self
                                  variant:var
@@ -344,7 +340,7 @@
 
         @try
         {
-            [user queueMAP_Unidirectional_Ind:options
+            [_user queueMAP_Unidirectional_Ind:options
                                callingAddress:src
                                 calledAddress:dst
                               dialoguePortion:xdialoguePortion
@@ -484,23 +480,23 @@
     [self readLayerConfig:cfg];
     if (cfg[@"address"])
     {
-        address =  [cfg[@"address"] stringValue];
+        _address =  [cfg[@"address"] stringValue];
     }
     if (cfg[@"operations"])
     {
         NSString *operations_string =  [cfg[@"operations"] stringValue];
         if([operations_string isEqualToString:@"any"])
         {
-            operations = NULL;
+            _operations = NULL;
         }
         else
         {
-            operations = [[UMSynchronizedArray alloc]init];
+            _operations = [[UMSynchronizedArray alloc]init];
             NSArray *operations_array = [operations_string componentsSeparatedByString:@","];
             for(NSString *entry in operations_array)
             {
                 int64_t op = [entry longLongValue];
-                [operations addObject:@(op)];
+                [_operations addObject:@(op)];
             }
         }
     }
@@ -529,17 +525,17 @@
 
 - (void)startUp
 {
-    if(operations == NULL)
+    if(_operations == NULL)
     {
-        [tcap setDefaultUser:self];
+        [_tcap setDefaultUser:self];
     }
     else
     {
-        NSUInteger n = [operations count];
+        NSUInteger n = [_operations count];
         for(NSUInteger i=0;i<n;i++)
         {
-            NSNumber *op = operations[i];
-            [tcap setUser:self forOperation:[op longLongValue]];
+            NSNumber *op = _operations[i];
+            [_tcap setUser:self forOperation:[op longLongValue]];
         }
     }
     /* lets call housekeeping  */
@@ -599,7 +595,7 @@
     {
         UMLayerGSMMAP_Dialog *d = [[UMLayerGSMMAP_Dialog alloc]init];
         d.userDialogId = dialogId;
-        d.tcapLayer = tcap;
+        d.tcapLayer = _tcap;
         d.gsmmapLayer = self;
         d.mapUser = u;
         d.logFeed = self.logFeed;
@@ -608,7 +604,7 @@
         {
             d.timeoutInSeconds = self.dialogTimeout;
         }
-        dialogs[d.userDialogId.description] = d;
+        _dialogs[d.userDialogId.description] = d;
         [d touch];
         return d;
     }
@@ -616,7 +612,7 @@
 
 - (NSUInteger)dialogsCount
 {
-    return dialogs.count;
+    return _dialogs.count;
 }
 
 - (UMLayerGSMMAP_Dialog *)getNewDialogForUser:(id<UMLayerGSMMAP_UserProtocol>)u
@@ -628,7 +624,7 @@
 
 - (UMLayerGSMMAP_Dialog *)dialogById:(UMGSMMAP_DialogIdentifier *)did
 {
-    return dialogs[did.description];
+    return _dialogs[did.description];
 }
 
 - (NSString *)decodeError:(int)err
@@ -1201,7 +1197,7 @@
 
 - (NSString *)status
 {
-    return [NSString stringWithFormat:@"IS:%lu",(unsigned long)[dialogs count]];
+    return [NSString stringWithFormat:@"IS:%lu",(unsigned long)[_dialogs count]];
 }
 
 - (void)housekeepingTask
@@ -1227,13 +1223,13 @@
         }
         self.housekeeping_running = YES;
 
-        NSArray *keys = [dialogs allKeys];
+        NSArray *keys = [_dialogs allKeys];
         for(NSString *key in keys)
         {
-            UMLayerGSMMAP_Dialog *dialog = dialogs[key];
+            UMLayerGSMMAP_Dialog *dialog = _dialogs[key];
             if(dialog.dialogIsClosed)
             {
-                [dialogs removeObjectForKey:key];
+                [_dialogs removeObjectForKey:key];
             }
             else if([dialog isTimedOut]==YES)
             {
@@ -1250,7 +1246,7 @@
 {
     [super dump:filehandler];
     
-    NSArray *allDialogs = [dialogs allKeys];
+    NSArray *allDialogs = [_dialogs allKeys];
     for(NSString *did in allDialogs)
     {
         NSMutableString *s = [[NSMutableString alloc]init];
@@ -1258,7 +1254,7 @@
         [s appendFormat:@"    MAP Dialog: %@\n",did];
         [s appendString:@"    ----------------------------------------------------------------------------\n"];
         [filehandler writeData: [s dataUsingEncoding:NSUTF8StringEncoding]];
-        UMLayerGSMMAP_Dialog *d = dialogs[did];
+        UMLayerGSMMAP_Dialog *d = _dialogs[did];
         [d dump:filehandler];
     }
 }
