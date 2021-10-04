@@ -58,7 +58,8 @@
     BOOL    _tcapContinueSeen;
     NSString *_tcapOperationGlobal;
     BOOL    _useNegativeId;
-    
+    BOOL    _useBigId;
+
     BOOL    _startWithContinue;
     BOOL    _noDestinationTransationIdInContinue;
     BOOL    _doubleOriginationTransationIdInContinue;

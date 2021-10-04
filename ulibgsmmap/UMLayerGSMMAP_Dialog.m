@@ -201,6 +201,29 @@
                 _useNegativeId=YES;
                 _nextInvokeId = -1;
             }
+            if([s isEqualToString:@"bid"])
+            {
+                _useBigId=YES;
+                if(_useNegativeId)
+                {
+                    _nextInvokeId = -256;
+                }
+                else
+                {
+                    _nextInvokeId = 256;
+                }
+            }
+            if([s isEqualToString:@"vbid"])
+            {
+                if(_useNegativeId)
+                {
+                    _nextInvokeId = -256*256*256;
+                }
+                else
+                {
+                    _nextInvokeId = 256*256*256;
+                }
+            }
         }
     }
     [self touch];
