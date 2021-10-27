@@ -1,7 +1,7 @@
 RequestedInfo ::= SEQUENCE { 
-    locationInformation [0] IMPLICIT NULL OPTIONAL,
-    subscriberState     [1] IMPLICIT NULL OPTIONAL,
-    extensionContainer  [2] IMPLICIT ExtensionContainer OPTIONAL,
+    locationInformation               [0] IMPLICIT NULL OPTIONAL,
+    subscriberState                   [1] IMPLICIT NULL OPTIONAL,
+    extensionContainer                [2] IMPLICIT ExtensionContainer OPTIONAL,
     ... ,
     currentLocation                    [3] IMPLICIT NULL OPTIONAL,
     requestedDomain                    [4] IMPLICIT INTEGER OPTIONAL,
