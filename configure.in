@@ -196,6 +196,7 @@ AC_ARG_ENABLE(debug,
 [
 	echo Using Release target
 	CFLAGS="$CFLAGS -g -O2 -D${CONFIG_DEFINE}=Release"
+	LDFLAGS="$LDFLAGS -g"
 	CONFIGURATION="-configuration Release"
 ])])
 
