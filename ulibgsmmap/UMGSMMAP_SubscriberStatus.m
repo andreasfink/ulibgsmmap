@@ -12,6 +12,7 @@
 
 @implementation UMGSMMAP_SubscriberStatus
 
+
 @synthesize operationName;
 
 - (NSString *) objectName
@@ -27,10 +28,10 @@
     return self;
 }
 
-
 - (void)setEnumDefinition
 {
-    _enumDefinition = @ {
+    _enumDefinition =
+    @{
         @"serviceGranted" : @(UMGSMMAP_SubscriberStatus_serviceGranted),
         @"operatorDeterminedBarring" : @(UMGSMMAP_SubscriberStatus_operatorDeterminedBarring),
     };

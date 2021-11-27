@@ -14,10 +14,9 @@
 
 typedef enum UMGSMMAP_SubscriberStatus_enum
 {
-   UMGSMMAP_SubscriberStatus_serviceGranted = 0,
-   UMGSMMAP_SubscriberStatus_operatorDeterminedBarring = 1,
+    UMGSMMAP_SubscriberStatus_serviceGranted            = 0,
+    UMGSMMAP_SubscriberStatus_operatorDeterminedBarring = 1,
 }  UMGSMMAP_SubscriberStatus_enum;
-
 
 @interface UMGSMMAP_SubscriberStatus : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
