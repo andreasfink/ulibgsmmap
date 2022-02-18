@@ -15,8 +15,8 @@
 
 @interface UMGSMMAP_FTSExtensionList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
-    NSString *_operationName;
-    NSMutableArray *_sequenceEntries;
+    NSString        *_operationName;
+    NSMutableArray  *_sequenceEntries;
 }
 @property(readwrite,strong)    NSString         *operationName;
 @property(readwrite,strong)    NSMutableArray   *sequenceEntries;
