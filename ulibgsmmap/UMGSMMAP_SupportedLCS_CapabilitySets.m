@@ -58,4 +58,26 @@
     return self;
 }
 
+- (void)setBitStringDefinition
+{
+    /* this is overridden normally */
+    /* this metod should _bitStringDefintionBitToName to a dictionary stringValue -> @(number) */
+    
+    _bitStringDefintionBitToName = @{
+        @(0) : @"lcsCapabilitySet1" ,
+        @(1) : @"lcsCapabilitySet2" ,
+        @(2) : @"lcsCapabilitySet3" ,
+        @(3) : @"lcsCapabilitySet4" ,
+        @(4) : @"lcsCapabilitySet5",
+        @(5) : @"nb-iot" ,
+    };
+    _bitStringDefintionNameToBit = @{
+        @"lcsCapabilitySet1" : @(0) ,
+        @"lcsCapabilitySet2" : @(1) ,
+        @"lcsCapabilitySet3" : @(2) ,
+        @"lcsCapabilitySet4" : @(3) ,
+        @"lcsCapabilitySet5" : @(4),
+    };
+}
+
 @end

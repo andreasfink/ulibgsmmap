@@ -1,0 +1,9 @@
+
+ SupportedLCS-CapabilitySets ::= BIT STRING
+ {
+    lcsCapabilitySet1 (0) ,
+    lcsCapabilitySet2 (1) ,
+    lcsCapabilitySet3 (2) ,
+    lcsCapabilitySet4 (3) ,
+    lcsCapabilitySet5 (4) ,
+} (SIZE (2..16))

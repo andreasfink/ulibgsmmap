@@ -1,0 +1,10 @@
+
+SupportedRAT-Types::= BIT STRING {
+    utran (0),
+    geran (1),
+    gan (2),
+    i-hspa-evolution (3),
+    e-utran (4),
+    nb-iot (5)
+}
+-- exception handling: bits 6 to 7 shall be ignored if received and not understood

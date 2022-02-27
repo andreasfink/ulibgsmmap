@@ -102,6 +102,8 @@
 		A6790F461D92629A00304445 /* UMLayerGSMMAP_OpCode.m in Sources */ = {isa = PBXBuildFile; fileRef = A6790F441D92629A00304445 /* UMLayerGSMMAP_OpCode.m */; };
 		A67BA19D1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A67BA19B1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A67BA1A11D86CFB9007FF9E5 /* UMLayerGSMMAP_ProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A67BA19F1D86CFB9007FF9E5 /* UMLayerGSMMAP_ProviderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68F269E27CBC7D8005EE315 /* UMGSMMAP_SupportedLCS_CapabilitySets.asn in Resources */ = {isa = PBXBuildFile; fileRef = A68F269D27CBC7D8005EE315 /* UMGSMMAP_SupportedLCS_CapabilitySets.asn */; };
+		A68F26A027CBC7F4005EE315 /* UMGSMMAP_SupportedRAT_Types.asn in Resources */ = {isa = PBXBuildFile; fileRef = A68F269F27CBC7F4005EE315 /* UMGSMMAP_SupportedRAT_Types.asn */; };
 		A69595331D7E379500211137 /* UMGSMMAP_SuppressMTSS.h in Headers */ = {isa = PBXBuildFile; fileRef = A695952A1D7E379500211137 /* UMGSMMAP_SuppressMTSS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A69595341D7E379500211137 /* UMGSMMAP_SuppressMTSS.m in Sources */ = {isa = PBXBuildFile; fileRef = A695952B1D7E379500211137 /* UMGSMMAP_SuppressMTSS.m */; };
 		A69595361D7E379500211137 /* UMGSMMAP_CallDiversionTreatmentIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = A695952D1D7E379500211137 /* UMGSMMAP_CallDiversionTreatmentIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1326,6 +1328,8 @@
 		A6790F441D92629A00304445 /* UMLayerGSMMAP_OpCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMLayerGSMMAP_OpCode.m; sourceTree = "<group>"; };
 		A67BA19B1D86CFA9007FF9E5 /* UMLayerGSMMAP_UserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAP_UserProtocol.h; sourceTree = "<group>"; };
 		A67BA19F1D86CFB9007FF9E5 /* UMLayerGSMMAP_ProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMLayerGSMMAP_ProviderProtocol.h; sourceTree = "<group>"; };
+		A68F269D27CBC7D8005EE315 /* UMGSMMAP_SupportedLCS_CapabilitySets.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_SupportedLCS_CapabilitySets.asn; sourceTree = "<group>"; };
+		A68F269F27CBC7F4005EE315 /* UMGSMMAP_SupportedRAT_Types.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_SupportedRAT_Types.asn; sourceTree = "<group>"; };
 		A695952A1D7E379500211137 /* UMGSMMAP_SuppressMTSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_SuppressMTSS.h; sourceTree = "<group>"; };
 		A695952B1D7E379500211137 /* UMGSMMAP_SuppressMTSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_SuppressMTSS.m; sourceTree = "<group>"; };
 		A695952C1D7E379500211137 /* UMGSMMAP_SuppressMTSS.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_SuppressMTSS.asn; sourceTree = "<group>"; };
@@ -3309,8 +3313,10 @@
 		A641CEE51B42019900854472 /* ulibgsmmap */ = {
 			isa = PBXGroup;
 			children = (
+				A68F269F27CBC7F4005EE315 /* UMGSMMAP_SupportedRAT_Types.asn */,
 				A659496B204D2F3E00484FBC /* UMGSMMAP_SupportedRAT_Types.h */,
 				A659496C204D2F3E00484FBC /* UMGSMMAP_SupportedRAT_Types.m */,
+				A68F269D27CBC7D8005EE315 /* UMGSMMAP_SupportedLCS_CapabilitySets.asn */,
 				A6594967204D2E7400484FBC /* UMGSMMAP_SupportedLCS_CapabilitySets.h */,
 				A6594968204D2E7400484FBC /* UMGSMMAP_SupportedLCS_CapabilitySets.m */,
 				A6594963204D2A7F00484FBC /* UMGSMMAP_AgeIndicator.h */,
@@ -6142,8 +6148,10 @@
 			files = (
 				A6AF2B0124BDAF9F00541B74 /* UMGSMMAP_EPLMN_List.asn in Resources */,
 				A619641C239420DB00304D7F /* UMGSMMAP_DomainType.asn in Resources */,
+				A68F269E27CBC7D8005EE315 /* UMGSMMAP_SupportedLCS_CapabilitySets.asn in Resources */,
 				A61F7DEA2433542B00C82247 /* UMGSMMAP_FTSExtension.asn in Resources */,
 				A61F7DF0243354BE00C82247 /* UMGSMMAP_FTSExtensionList.asn in Resources */,
+				A68F26A027CBC7F4005EE315 /* UMGSMMAP_SupportedRAT_Types.asn in Resources */,
 				A6323D0926F0DA7400137112 /* UMGSMMAP_SendingNode_Number.asn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
