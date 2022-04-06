@@ -55,6 +55,20 @@
         self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
         self.asn1_data = [u8.asn1_data copy];
     }
+    else if (_msgid)
+    {
+        UMASN1UTF8String *u8 = [[UMASN1UTF8String alloc]initWithValue:_msgid];
+        self.asn1_tag.tagNumber = UMGSMMAP_FTSExtension_msgid;
+        self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        self.asn1_data = [u8.asn1_data copy];
+    }
+    else if (_ulibtransportContainer)
+    {
+        UMASN1OctetString *o8 = [[UMASN1OctetString alloc]initWithValue:_ulibtransportContainer];
+        self.asn1_tag.tagNumber = UMGSMMAP_FTSExtension_ulibtransport_container;
+        self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        self.asn1_data = [o8.asn1_data copy];
+    }
 }
 
 
