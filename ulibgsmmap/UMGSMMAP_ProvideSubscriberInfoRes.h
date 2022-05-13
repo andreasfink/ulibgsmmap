@@ -21,7 +21,6 @@
 	UMGSMMAP_ExtensionContainer *_extensionContainer;
 }
 @property(readwrite,strong)    NSString *operationName;
-
 @property(readwrite,strong)	UMGSMMAP_SubscriberInfo *subscriberInfo;
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
 

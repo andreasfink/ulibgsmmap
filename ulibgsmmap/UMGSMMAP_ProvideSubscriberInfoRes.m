@@ -21,13 +21,13 @@
 	[super processBeforeEncode];
 	[_asn1_tag setTagIsConstructed];
 	_asn1_list = [[NSMutableArray alloc]init];
-	if(subscriberInfo)
+	if(_subscriberInfo)
 	{
-		[_asn1_list addObject:subscriberInfo];
+		[_asn1_list addObject:_subscriberInfo];
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		[_asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:_extensionContainer];
 	}
 }
 
@@ -38,12 +38,12 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if(o)
 	{
-		subscriberInfo = [[UMGSMMAP_SubscriberInfo alloc]initWithASN1Object:o context:context];
+		_subscriberInfo = [[UMGSMMAP_SubscriberInfo alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if(o)
 	{
-		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
+		_extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	while(o)
@@ -62,14 +62,14 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(subscriberInfo)
+	if(_subscriberInfo)
 	{
-		dict[@"subscriberInfo"] = subscriberInfo.objectValue;
+		dict[@"subscriberInfo"] = _subscriberInfo.objectValue;
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		dict[@"extensionContainer"] = extensionContainer.objectValue;
-	}
+		dict[@"extensionContainer"] = _extensionContainer.objectValue;
+	}	
 	return dict;
 }
 
