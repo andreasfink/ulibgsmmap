@@ -14,8 +14,6 @@
 
 
 @synthesize	operationName;
-@synthesize	subscriberInfo;
-@synthesize	extensionContainer;
 
 
 - (void) processBeforeEncode
@@ -60,6 +58,7 @@
 {
 	return @"ProvideSubscriberInfoRes";
 }
+
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];

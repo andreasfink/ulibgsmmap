@@ -16,9 +16,9 @@
 
 @interface UMGSMMAP_ProvideSubscriberInfoRes : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
-	NSString *operationName;
-	UMGSMMAP_SubscriberInfo *subscriberInfo;
-	UMGSMMAP_ExtensionContainer *extensionContainer;
+	NSString                    *operationName;
+	UMGSMMAP_SubscriberInfo     *_subscriberInfo;
+	UMGSMMAP_ExtensionContainer *_extensionContainer;
 }
 @property(readwrite,strong)    NSString *operationName;
 
