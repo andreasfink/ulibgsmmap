@@ -88,18 +88,21 @@
                              longitude:(double)longitude
                       uncertanity_code:(int)uncertainity_code
 {
-    long long lat = 93206.75555555555556 / latitude;
     if(longitude<0.0)
     {
         longitude = longitude + 360.0;
     }
-    long long lon = 46603.37777777777778 / longitude;
+    long long lat = (long long)( latitude / 93206.75555555555556);
+    long long lon =(long long) ( longitude / 46603.37777777777778);
     int sign = 0;
     if(lat < 0)
     {
         sign = 1;
         lat = -lat;
     }
+    
+    1809  = 0.01941 °
+    129 = 0.00277°   1 = 0.000021472868217
     uint8_t bytes[8];
     bytes[0] = 0x01; /* Ellipsoid point with uncertainty Circle */
     bytes[1] = ((lat >> 16 ) & 0x7F) | (sign ? 0x80 : 0x00);
