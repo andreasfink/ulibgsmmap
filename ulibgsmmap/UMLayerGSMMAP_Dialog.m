@@ -1724,7 +1724,7 @@
     {
         for(NSString *option in tcap_options)
         {
-            if([option isEqualToString:@"handshake"])
+            if([option hasSuffix:@"handshake"])
             {
                 _useHandshake = YES;
             }
