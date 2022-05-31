@@ -1724,7 +1724,11 @@
     {
         for(NSString *option in tcap_options)
         {
-            if([option isEqualToString:@"start-with-continue"])
+            if([option isEqualToString:@"handshake"])
+            {
+                _useHandshake = YES;
+            }
+            else if([option isEqualToString:@"start-with-continue"])
             {
                 _startWithContinue = YES;
             }

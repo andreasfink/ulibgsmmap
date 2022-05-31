@@ -63,6 +63,7 @@
     BOOL    _startWithContinue;
     BOOL    _noDestinationTransationIdInContinue;
     BOOL    _doubleOriginationTransationIdInContinue;
+    BOOL    _useHandshake;
     
     BOOL                                    _shouldSendContinue;
     UMTCAP_asn1_Associate_result            *_pendingResult;
@@ -106,6 +107,7 @@
 @property(readwrite,assign,atomic) BOOL noDestinationTransationIdInContinue;
 @property(readwrite,assign,atomic) BOOL doubleOriginationTransationIdInContinue;
 @property(readwrite,assign,atomic) BOOL shouldSendContinue;
+@property(readwrite,assign,atomic) BOOL useHandshake;
 
 - (NSTimeInterval)timeoutInSeconds;
 - (void)setTimeoutInSeconds:(NSTimeInterval)to;
