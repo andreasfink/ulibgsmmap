@@ -46,6 +46,7 @@
 	return self;
 }
 
+
 - (NSString *) objectName
 {
 	return @"ActivateTraceModeRes";
