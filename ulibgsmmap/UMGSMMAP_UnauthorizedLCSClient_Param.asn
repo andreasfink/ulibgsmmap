@@ -1,5 +1,5 @@
-UnauthorizedLCSClient-Param ::= SEQUENCE {
-unauthorizedLCSClient-Diagnostic [0] UnauthorizedLCSClient-Diagnostic OPTIONAL,
+UnauthorisedLCSClient-Param ::= SEQUENCE {
+unauthorisedLCSClient-Diagnostic [0] UnauthorisedLCSClient-Diagnostic OPTIONAL,
 extensionContainer [1] ExtensionContainer OPTIONAL,
 ... }
 

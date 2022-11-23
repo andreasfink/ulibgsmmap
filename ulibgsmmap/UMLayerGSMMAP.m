@@ -820,9 +820,9 @@
         case 51:
             return @"resourceLimitation";
         case 52:
-            return @"unauthorizedRequestingNetwork";
+            return @"unauthorisedRequestingNetwork";
         case 53:
-            return @"unauthorizedLCSClient";
+            return @"unauthorisedLCSClient";
         case 54:
             return @"positionMethodFailure";
         case 58:

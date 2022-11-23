@@ -1,4 +1,4 @@
-UnauthorizedLCSClient-Diagnostic ::= ENUMERATED { 
+UnauthorisedLCSClient-Diagnostic ::= ENUMERATED { 
    noAdditionalInformation (0), 
    clientNotInMSPrivacyExceptionList (1), 
    callToClientNotSetup (2), 

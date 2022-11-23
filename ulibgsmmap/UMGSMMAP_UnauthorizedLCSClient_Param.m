@@ -69,7 +69,7 @@
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
 	if(unauthorizedLCSClient_Diagnostic)
 	{
-		dict[@"unauthorizedLCSClient-Diagnostic"] = unauthorizedLCSClient_Diagnostic.objectValue;
+		dict[@"unauthorisedLCSClient-Diagnostic"] = unauthorizedLCSClient_Diagnostic.objectValue;
 	}
 	if(extensionContainer)
 	{

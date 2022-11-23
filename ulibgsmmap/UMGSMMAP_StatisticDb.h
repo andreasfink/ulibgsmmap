@@ -8,10 +8,10 @@
 
 #import <ulib/ulib.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 
 @interface UMGSMMAP_StatisticDb : UMObject
 
 @end
 
-NS_ASSUME_NONNULL_END
+

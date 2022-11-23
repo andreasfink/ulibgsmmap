@@ -1,4 +1,4 @@
 T-BcsmTriggerDetectionPoint ::= ENUMERATED { 
-   termAttemptAuthorized(12), 
+   termAttemptAuthorised(12), 
    ...}
 

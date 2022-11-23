@@ -16,7 +16,7 @@
 
 - (NSString *) objectName
 {
-	return @"UMGSMMAP_UnauthorizedLCSClient_Diagnostic";
+	return @"UnauthorizedLCSClient_Diagnostic";
 }
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode

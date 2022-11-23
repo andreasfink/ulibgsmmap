@@ -1,4 +1,4 @@
-UnauthorizedRequestingNetwork-Param ::= SEQUENCE {
+UnauthorisedRequestingNetwork-Param ::= SEQUENCE {
    extensionContainer ExtensionContainer  OPTIONAL,
    ... } 
 
