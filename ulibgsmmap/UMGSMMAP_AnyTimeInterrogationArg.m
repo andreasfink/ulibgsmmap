@@ -14,10 +14,10 @@
 
 
 @synthesize	operationName;
-@synthesize	subscriberIdentity;
-@synthesize	requestedInfo;
-@synthesize	gsmSCF_Address;
-@synthesize	extensionContainer;
+@synthesize	_subscriberIdentity;
+@synthesize	_requestedInfo;
+@synthesize	_gsmSCF_Address;
+@synthesize	_extensionContainer;
 
 
 - (void) processBeforeEncode
@@ -25,29 +25,29 @@
 	[super processBeforeEncode];
 	[_asn1_tag setTagIsConstructed];
 	_asn1_list = [[NSMutableArray alloc]init];
-	if(subscriberIdentity)
+	if(_subscriberIdentity)
 	{
-		subscriberIdentity.asn1_tag.tagNumber = 0;
-		subscriberIdentity.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:subscriberIdentity];
+		_subscriberIdentity.asn1_tag.tagNumber = 0;
+		_subscriberIdentity.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_subscriberIdentity];
 	}
-	if(requestedInfo)
+	if(_requestedInfo)
 	{
-		requestedInfo.asn1_tag.tagNumber = 1;
-		requestedInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:requestedInfo];
+		_requestedInfo.asn1_tag.tagNumber = 1;
+		_requestedInfo.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_requestedInfo];
 	}
-	if(gsmSCF_Address)
+	if(_gsmSCF_Address)
 	{
-		gsmSCF_Address.asn1_tag.tagNumber = 3;
-		gsmSCF_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:gsmSCF_Address];
+		_gsmSCF_Address.asn1_tag.tagNumber = 3;
+		_gsmSCF_Address.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_gsmSCF_Address];
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		extensionContainer.asn1_tag.tagNumber = 2;
-		extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:extensionContainer];
+		_extensionContainer.asn1_tag.tagNumber = 2;
+		_extensionContainer.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_extensionContainer];
 	}
 }
 
@@ -58,22 +58,22 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		subscriberIdentity = [[UMGSMMAP_SubscriberIdentity alloc]initWithASN1Object:o context:context];
+		_subscriberIdentity = [[UMGSMMAP_SubscriberIdentity alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		requestedInfo = [[UMGSMMAP_RequestedInfo alloc]initWithASN1Object:o context:context];
+		_requestedInfo = [[UMGSMMAP_RequestedInfo alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 3) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		gsmSCF_Address = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
+		_gsmSCF_Address = [[UMASN1OctetString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
+		_extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	while(o)
@@ -91,21 +91,21 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(subscriberIdentity)
+	if(_subscriberIdentity)
 	{
-		dict[@"subscriberIdentity"] = subscriberIdentity.objectValue;
+		dict[@"subscriberIdentity"] = _subscriberIdentity.objectValue;
 	}
-	if(requestedInfo)
+	if(_requestedInfo)
 	{
-		dict[@"requestedInfo"] = requestedInfo.objectValue;
+		dict[@"requestedInfo"] = _requestedInfo.objectValue;
 	}
-	if(gsmSCF_Address)
+	if(_gsmSCF_Address)
 	{
-		dict[@"gsmSCF-Address"] = gsmSCF_Address.objectValue;
+		dict[@"gsmSCF-Address"] = _gsmSCF_Address.objectValue;
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		dict[@"extensionContainer"] = extensionContainer.objectValue;
+		dict[@"extensionContainer"] = _extensionContainer.objectValue;
 	}
 	return dict;
 }
