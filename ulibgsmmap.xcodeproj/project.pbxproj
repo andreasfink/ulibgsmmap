@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1182,7 +1182,7 @@
 		A6FDF9D5249B8CA6001C11DC /* ulibsctp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9D4249B8CA6001C11DC /* ulibsctp.framework */; };
 		A6FDF9D7249B8CAF001C11DC /* sctp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9D6249B8CAF001C11DC /* sctp.framework */; };
 		A6FDF9D9249B8CB7001C11DC /* ulibmtp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9D8249B8CB7001C11DC /* ulibmtp3.framework */; };
-		A6FDF9DB249B8CC0001C11DC /* ulibsccp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9DA249B8CC0001C11DC /* ulibsccp.framework */; };
+		A6FDF9DB249B8CC0001C11DC /* frameworks in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9DA249B8CC0001C11DC /* frameworks */; };
 		A6FDF9DD249B8CC8001C11DC /* ulibtcap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9DC249B8CC8001C11DC /* ulibtcap.framework */; };
 		A6FDF9DE249B8CD3001C11DC /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9CF249B8C70001C11DC /* ulibasn1.framework */; };
 		A6FDF9DF249B8CD3001C11DC /* ulibdb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9CE249B8C63001C11DC /* ulibdb.framework */; };
@@ -3243,7 +3243,7 @@
 		A6FDF9D4249B8CA6001C11DC /* ulibsctp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibsctp.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulibsctp.framework"; sourceTree = "<group>"; };
 		A6FDF9D6249B8CAF001C11DC /* sctp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sctp.framework; path = "../Application Support/FinkTelecomServices/frameworks/sctp.framework"; sourceTree = "<group>"; };
 		A6FDF9D8249B8CB7001C11DC /* ulibmtp3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibmtp3.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulibmtp3.framework"; sourceTree = "<group>"; };
-		A6FDF9DA249B8CC0001C11DC /* ulibsccp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibsccp.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulibsccp.framework"; sourceTree = "<group>"; };
+		A6FDF9DA249B8CC0001C11DC /* frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = frameworks; path = "/Library/Application Support/FinkTelecomServices/frameworks"; sourceTree = "<absolute>"; };
 		A6FDF9DC249B8CC8001C11DC /* ulibtcap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibtcap.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulibtcap.framework"; sourceTree = "<group>"; };
 		A6FDF9E0249BBE90001C11DC /* UMGSMMAP_StatisticDb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_StatisticDb.h; sourceTree = "<group>"; };
 		A6FDF9E1249BBE90001C11DC /* UMGSMMAP_StatisticDb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_StatisticDb.m; sourceTree = "<group>"; };
@@ -3264,7 +3264,7 @@
 				A6FDF9D5249B8CA6001C11DC /* ulibsctp.framework in Frameworks */,
 				A6FDF9DE249B8CD3001C11DC /* ulibasn1.framework in Frameworks */,
 				A6FDF9DD249B8CC8001C11DC /* ulibtcap.framework in Frameworks */,
-				A6FDF9DB249B8CC0001C11DC /* ulibsccp.framework in Frameworks */,
+				A6FDF9DB249B8CC0001C11DC /* frameworks in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5059,7 +5059,7 @@
 			isa = PBXGroup;
 			children = (
 				A6FDF9DC249B8CC8001C11DC /* ulibtcap.framework */,
-				A6FDF9DA249B8CC0001C11DC /* ulibsccp.framework */,
+				A6FDF9DA249B8CC0001C11DC /* frameworks */,
 				A6FDF9D8249B8CB7001C11DC /* ulibmtp3.framework */,
 				A6FDF9D6249B8CAF001C11DC /* sctp.framework */,
 				A6FDF9D4249B8CA6001C11DC /* ulibsctp.framework */,
@@ -6107,7 +6107,8 @@
 		A641CEDA1B42019900854472 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1400;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Andreas Fink (andreas@fink.org)";
 				TargetAttributes = {
 					A641CEE21B42019900854472 = {
@@ -6925,7 +6926,11 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "supporting-files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.16.3;
 				PRODUCT_BUNDLE_IDENTIFIER = me.fink.ulibgsmmap;
@@ -6961,7 +6966,11 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "supporting-files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.16.3;
 				PRODUCT_BUNDLE_IDENTIFIER = me.fink.ulibgsmmap;
@@ -6988,7 +6997,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ulibgsmmapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -7007,7 +7020,11 @@
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = ulibgsmmapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.fink.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
