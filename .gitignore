@@ -16,6 +16,8 @@ ulibgsmmap.pc
 ulibgsmmap_config.h
 BUILDNR
 make_buildnr.sh
+buildnumber.c
+buildnumber.h
 
 #########################
 # .gitignore file for Xcode4 and Xcode5 Source projects
