@@ -9,17 +9,17 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_Ext_GeographicalInformation.h"
-#import "UMGSMMAP_AgeOfLocationInformation.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_Add_GeographicalInformation.h"
-#import "UMGSMMAP_PositioningDataInformation.h"
-#import "UMGSMMAP_UtranPositioningDataInfo.h"
-#import "UMGSMMAP_CellGlobalIdOrServiceAreaIdOrLAI.h"
-#import "UMGSMMAP_AccuracyFulfilmentIndicator.h"
-#import "UMGSMMAP_VelocityEstimate.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_GeographicalInformation.h>
+#import <ulibgsmmap/UMGSMMAP_AgeOfLocationInformation.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_Add_GeographicalInformation.h>
+#import <ulibgsmmap/UMGSMMAP_PositioningDataInformation.h>
+#import <ulibgsmmap/UMGSMMAP_UtranPositioningDataInfo.h>
+#import <ulibgsmmap/UMGSMMAP_CellGlobalIdOrServiceAreaIdOrLAI.h>
+#import <ulibgsmmap/UMGSMMAP_AccuracyFulfilmentIndicator.h>
+#import <ulibgsmmap/UMGSMMAP_VelocityEstimate.h>
 
 @interface UMGSMMAP_ProvideSubscriberLocation_Res : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_IST_CommandRes.h"
+#import <ulibgsmmap/UMGSMMAP_IST_CommandRes.h>
 
 @implementation UMGSMMAP_IST_CommandRes
 

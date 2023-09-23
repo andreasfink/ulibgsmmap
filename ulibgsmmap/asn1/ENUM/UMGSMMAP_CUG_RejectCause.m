@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CUG_RejectCause.h"
+#import <ulibgsmmap/UMGSMMAP_CUG_RejectCause.h>
 
 @implementation UMGSMMAP_CUG_RejectCause
 

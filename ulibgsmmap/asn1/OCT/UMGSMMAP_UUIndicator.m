@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UUIndicator.h"
+#import <ulibgsmmap/UMGSMMAP_UUIndicator.h>
 
 @implementation UMGSMMAP_UUIndicator
 

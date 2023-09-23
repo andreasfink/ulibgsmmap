@@ -9,10 +9,10 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_RoutingInfo.h"
-#import "UMGSMMAP_CamelRoutingInfo.h"
+#import <ulibgsmmap/UMGSMMAP_RoutingInfo.h>
+#import <ulibgsmmap/UMGSMMAP_CamelRoutingInfo.h>
 
 @interface UMGSMMAP_ExtendedRoutingInfo : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_EventReportData.h"
+#import <ulibgsmmap/UMGSMMAP_EventReportData.h>
 
 @implementation UMGSMMAP_EventReportData
 

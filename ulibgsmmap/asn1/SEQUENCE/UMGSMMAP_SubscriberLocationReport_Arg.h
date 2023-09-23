@@ -7,17 +7,17 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_LCS_Event.h"
-#import "UMGSMMAP_LCS_ClientID.h"
-#import "UMGSMMAP_LCSLocationInfo.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_IMEI.h"
-#import "UMGSMMAP_Ext_GeographicalInformation.h"
-#import "UMGSMMAP_AgeOfLocationInformation.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_LCS_Event.h>
+#import <ulibgsmmap/UMGSMMAP_LCS_ClientID.h>
+#import <ulibgsmmap/UMGSMMAP_LCSLocationInfo.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_IMEI.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_GeographicalInformation.h>
+#import <ulibgsmmap/UMGSMMAP_AgeOfLocationInformation.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_SubscriberLocationReport_Arg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

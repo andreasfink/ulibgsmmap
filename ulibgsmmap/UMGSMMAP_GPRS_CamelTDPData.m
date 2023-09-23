@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_GPRS_CamelTDPData.h"
+#import <ulibgsmmap/UMGSMMAP_GPRS_CamelTDPData.h>
 
 @implementation UMGSMMAP_GPRS_CamelTDPData
 

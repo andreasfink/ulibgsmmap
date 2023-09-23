@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_EraseCC_EntryArg.h"
+#import <ulibgsmmap/UMGSMMAP_EraseCC_EntryArg.h>
 
 @implementation UMGSMMAP_EraseCC_EntryArg
 

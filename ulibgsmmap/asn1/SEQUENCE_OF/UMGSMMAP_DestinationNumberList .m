@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_DestinationNumberList .h"
+#import <ulibgsmmap/UMGSMMAP_DestinationNumberList .h>
 
 @implementation UMGSMMAP_DestinationNumberList 
 

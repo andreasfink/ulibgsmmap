@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ODB_HPLMN_Data.h"
+#import <ulibgsmmap/UMGSMMAP_ODB_HPLMN_Data.h>
 
 @implementation UMGSMMAP_ODB_HPLMN_Data
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ExtendedRoutingInfo.h"
+#import <ulibgsmmap/UMGSMMAP_ExtendedRoutingInfo.h>
 
 @implementation UMGSMMAP_ExtendedRoutingInfo
 

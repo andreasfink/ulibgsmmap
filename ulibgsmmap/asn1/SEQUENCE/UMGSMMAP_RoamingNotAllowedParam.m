@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RoamingNotAllowedParam.h"
+#import <ulibgsmmap/UMGSMMAP_RoamingNotAllowedParam.h>
 
 @implementation UMGSMMAP_RoamingNotAllowedParam
 

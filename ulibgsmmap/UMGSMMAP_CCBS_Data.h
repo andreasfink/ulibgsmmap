@@ -9,12 +9,12 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_CCBS_Feature.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_ServiceIndicator.h"
-#import "UMGSMMAP_ExternalSignalInfo.h"
+#import <ulibgsmmap/UMGSMMAP_CCBS_Feature.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_ServiceIndicator.h>
+#import <ulibgsmmap/UMGSMMAP_ExternalSignalInfo.h>
 
 @interface UMGSMMAP_CCBS_Data : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

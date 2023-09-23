@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ShortTermDenialParam.h"
+#import <ulibgsmmap/UMGSMMAP_ShortTermDenialParam.h>
 
 @implementation UMGSMMAP_ShortTermDenialParam
 

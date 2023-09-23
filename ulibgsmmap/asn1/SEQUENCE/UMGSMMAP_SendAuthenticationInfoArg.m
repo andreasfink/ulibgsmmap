@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SendAuthenticationInfoArg.h"
+#import <ulibgsmmap/UMGSMMAP_SendAuthenticationInfoArg.h>
 
 @implementation UMGSMMAP_SendAuthenticationInfoArg
 

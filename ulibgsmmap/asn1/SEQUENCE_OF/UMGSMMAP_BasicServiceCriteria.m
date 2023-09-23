@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_BasicServiceCriteria.h"
+#import <ulibgsmmap/UMGSMMAP_BasicServiceCriteria.h>
 
 @implementation UMGSMMAP_BasicServiceCriteria
 

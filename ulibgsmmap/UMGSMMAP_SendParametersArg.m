@@ -6,9 +6,9 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_SendParametersArg.h"
-#import "UMGSMMAP_SubscriberIdentity.h"
-#import "UMGSMMAP_RequestParameterList.h"
+#import <ulibgsmmap/UMGSMMAP_SendParametersArg.h>
+#import <ulibgsmmap/UMGSMMAP_SubscriberIdentity.h>
+#import <ulibgsmmap/UMGSMMAP_RequestParameterList.h>
 
 @implementation UMGSMMAP_SendParametersArg
 

@@ -9,15 +9,15 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_E_UTRAN_CGI.h"
-#import "UMGSMMAP_TA_Id.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_GeographicalInformation.h"
-#import "UMGSMMAP_GeodeticInformation.h"
-#import "UMGSMMAP_AgeOfLocationInformation.h"
-#import "UMGSMMAP_DiameterIdentity.h"
+#import <ulibgsmmap/UMGSMMAP_E_UTRAN_CGI.h>
+#import <ulibgsmmap/UMGSMMAP_TA_Id.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_GeographicalInformation.h>
+#import <ulibgsmmap/UMGSMMAP_GeodeticInformation.h>
+#import <ulibgsmmap/UMGSMMAP_AgeOfLocationInformation.h>
+#import <ulibgsmmap/UMGSMMAP_DiameterIdentity.h>
 
 @interface UMGSMMAP_LocationInformationEPS : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -8,8 +8,8 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-#import "UMGSMMAP_HLR_Id.h"
-#import "UMGSMMAP_SIP_URI.h"
+#import <ulibgsmmap/UMGSMMAP_HLR_Id.h>
+#import <ulibgsmmap/UMGSMMAP_SIP_URI.h>
 
 @interface UMGSMMAP_CorrelationID : UMASN1Sequence
 {

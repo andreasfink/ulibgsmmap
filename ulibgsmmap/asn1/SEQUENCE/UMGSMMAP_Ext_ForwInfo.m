@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ext_ForwInfo.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_ForwInfo.h>
 
 @implementation UMGSMMAP_Ext_ForwInfo
 

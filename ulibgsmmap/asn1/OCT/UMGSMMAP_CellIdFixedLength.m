@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CellIdFixedLength.h"
+#import <ulibgsmmap/UMGSMMAP_CellIdFixedLength.h>
 
 @implementation UMGSMMAP_CellIdFixedLength
 

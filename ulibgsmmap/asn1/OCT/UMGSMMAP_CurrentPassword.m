@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CurrentPassword.h"
+#import <ulibgsmmap/UMGSMMAP_CurrentPassword.h>
 
 @implementation UMGSMMAP_CurrentPassword
 

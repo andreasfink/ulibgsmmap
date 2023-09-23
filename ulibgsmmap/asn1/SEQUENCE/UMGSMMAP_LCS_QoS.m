@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCS_QoS.h"
+#import <ulibgsmmap/UMGSMMAP_LCS_QoS.h>
 
 @implementation UMGSMMAP_LCS_QoS
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RUF_Outcome.h"
+#import <ulibgsmmap/UMGSMMAP_RUF_Outcome.h>
 
 @implementation UMGSMMAP_RUF_Outcome
 

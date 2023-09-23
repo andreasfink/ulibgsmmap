@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_GSN_Address.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_GSN_Address.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_FailureReportRes : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

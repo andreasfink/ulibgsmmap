@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_DefaultCallHandling.h"
+#import <ulibgsmmap/UMGSMMAP_DefaultCallHandling.h>
 
 @implementation UMGSMMAP_DefaultCallHandling
 

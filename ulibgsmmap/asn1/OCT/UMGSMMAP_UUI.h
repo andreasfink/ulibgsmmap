@@ -7,7 +7,7 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
 @interface UMGSMMAP_UUI : UMASN1OctetString<UMGSMMAP_asn1_protocol>
 {

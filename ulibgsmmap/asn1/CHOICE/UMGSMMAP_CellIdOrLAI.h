@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_CellIdFixedLength.h"
-#import "UMGSMMAP_LAIFixedLength.h"
+#import <ulibgsmmap/UMGSMMAP_CellIdFixedLength.h>
+#import <ulibgsmmap/UMGSMMAP_LAIFixedLength.h>
 
 @interface UMGSMMAP_CellIdOrLAI : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

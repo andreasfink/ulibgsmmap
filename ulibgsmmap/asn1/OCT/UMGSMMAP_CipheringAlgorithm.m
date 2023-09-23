@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CipheringAlgorithm.h"
+#import <ulibgsmmap/UMGSMMAP_CipheringAlgorithm.h>
 
 @implementation UMGSMMAP_CipheringAlgorithm
 

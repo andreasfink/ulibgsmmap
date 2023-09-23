@@ -7,19 +7,19 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_ExtendedRoutingInfo.h"
-#import "UMGSMMAP_CUG_CheckInfo.h"
-#import "UMGSMMAP_SubscriberInfo.h"
-#import "UMGSMMAP_SS_List.h"
-#import "UMGSMMAP_Ext_BasicServiceCode.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_NAEA_PreferredCI.h"
-#import "UMGSMMAP_CCBS_Indicators.h"
-#import "UMGSMMAP_NumberPortabilityStatus.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_ExtendedRoutingInfo.h>
+#import <ulibgsmmap/UMGSMMAP_CUG_CheckInfo.h>
+#import <ulibgsmmap/UMGSMMAP_SubscriberInfo.h>
+#import <ulibgsmmap/UMGSMMAP_SS_List.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_BasicServiceCode.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_NAEA_PreferredCI.h>
+#import <ulibgsmmap/UMGSMMAP_CCBS_Indicators.h>
+#import <ulibgsmmap/UMGSMMAP_NumberPortabilityStatus.h>
 
 @interface UMGSMMAP_SendRoutingInfoRes : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

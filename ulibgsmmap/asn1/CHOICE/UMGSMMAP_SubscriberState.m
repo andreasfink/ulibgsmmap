@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SubscriberState.h"
+#import <ulibgsmmap/UMGSMMAP_SubscriberState.h>
 
 @implementation UMGSMMAP_SubscriberState
 

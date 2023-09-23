@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCS_PrivacyExceptionList .h"
+#import <ulibgsmmap/UMGSMMAP_LCS_PrivacyExceptionList .h>
 
 @implementation UMGSMMAP_LCS_PrivacyExceptionList 
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_DaylightSavingTime.h"
+#import <ulibgsmmap/UMGSMMAP_DaylightSavingTime.h>
 
 @implementation UMGSMMAP_DaylightSavingTime
 

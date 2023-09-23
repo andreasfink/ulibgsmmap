@@ -9,20 +9,20 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_ExternalSignalInfo.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_SupportedCamelPhases.h"
-#import "UMGSMMAP_Ext_ExternalSignalInfo.h"
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_LMSI.h"
-#import "UMGSMMAP_CallReferenceNumber.h"
-#import "UMGSMMAP_AlertingPattern.h"
-#import "UMGSMMAP_OfferedCamel4CSIs.h"
-#import "UMGSMMAP_PagingArea.h"
-#import "UMGSMMAP_EMLPP_Priority.h"
+#import <ulibgsmmap/UMGSMMAP_ExternalSignalInfo.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_SupportedCamelPhases.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_ExternalSignalInfo.h>
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_LMSI.h>
+#import <ulibgsmmap/UMGSMMAP_CallReferenceNumber.h>
+#import <ulibgsmmap/UMGSMMAP_AlertingPattern.h>
+#import <ulibgsmmap/UMGSMMAP_OfferedCamel4CSIs.h>
+#import <ulibgsmmap/UMGSMMAP_PagingArea.h>
+#import <ulibgsmmap/UMGSMMAP_EMLPP_Priority.h>
 
 @interface UMGSMMAP_ProvideRoamingNumberArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

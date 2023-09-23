@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_SuperChargerInfo.h"
+#import <ulibgsmmap/UMGSMMAP_SuperChargerInfo.h>
 
 @implementation UMGSMMAP_SuperChargerInfo
 

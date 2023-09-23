@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UpdateGprsLocationArg.h"
+#import <ulibgsmmap/UMGSMMAP_UpdateGprsLocationArg.h>
 
 @implementation UMGSMMAP_UpdateGprsLocationArg
 

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_RequestorIDString.h"
+#import <ulibgsmmap/UMGSMMAP_RequestorIDString.h>
 
 @implementation UMGSMMAP_RequestorIDString
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ZoneCode.h"
+#import <ulibgsmmap/UMGSMMAP_ZoneCode.h>
 
 @implementation UMGSMMAP_ZoneCode
 

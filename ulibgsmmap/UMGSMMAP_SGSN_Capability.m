@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_SGSN_Capability.h"
+#import <ulibgsmmap/UMGSMMAP_SGSN_Capability.h>
 
 @implementation UMGSMMAP_SGSN_Capability
 

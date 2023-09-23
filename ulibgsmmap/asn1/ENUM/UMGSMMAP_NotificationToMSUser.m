@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NotificationToMSUser.h"
+#import <ulibgsmmap/UMGSMMAP_NotificationToMSUser.h>
 
 @implementation UMGSMMAP_NotificationToMSUser
 

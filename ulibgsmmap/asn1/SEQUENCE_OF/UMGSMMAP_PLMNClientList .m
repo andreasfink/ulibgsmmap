@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PLMNClientList .h"
+#import <ulibgsmmap/UMGSMMAP_PLMNClientList .h>
 
 @implementation UMGSMMAP_PLMNClientList 
 

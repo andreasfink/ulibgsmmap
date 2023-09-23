@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LSAInformationWithdraw.h"
+#import <ulibgsmmap/UMGSMMAP_LSAInformationWithdraw.h>
 
 @implementation UMGSMMAP_LSAInformationWithdraw
 

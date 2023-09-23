@@ -9,16 +9,16 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_Ext_TeleserviceCode.h"
-#import "UMGSMMAP_ASCI_CallReference.h"
-#import "UMGSMMAP_CODEC_Info.h"
-#import "UMGSMMAP_CipheringAlgorithm.h"
-#import "UMGSMMAP_GroupKeyNumber.h"
-#import "UMGSMMAP_Kc.h"
-#import "UMGSMMAP_EMLPP_Priority.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_TeleserviceCode.h>
+#import <ulibgsmmap/UMGSMMAP_ASCI_CallReference.h>
+#import <ulibgsmmap/UMGSMMAP_CODEC_Info.h>
+#import <ulibgsmmap/UMGSMMAP_CipheringAlgorithm.h>
+#import <ulibgsmmap/UMGSMMAP_GroupKeyNumber.h>
+#import <ulibgsmmap/UMGSMMAP_Kc.h>
+#import <ulibgsmmap/UMGSMMAP_EMLPP_Priority.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_PrepareGroupCallArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

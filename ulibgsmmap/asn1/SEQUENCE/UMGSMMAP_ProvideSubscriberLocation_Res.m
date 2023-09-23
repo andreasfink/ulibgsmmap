@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ProvideSubscriberLocation_Res.h"
+#import <ulibgsmmap/UMGSMMAP_ProvideSubscriberLocation_Res.h>
 
 @implementation UMGSMMAP_ProvideSubscriberLocation_Res
 

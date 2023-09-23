@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CellIdOrLAI.h"
+#import <ulibgsmmap/UMGSMMAP_CellIdOrLAI.h>
 
 @implementation UMGSMMAP_CellIdOrLAI
 

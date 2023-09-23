@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MS_Classmark2.h"
+#import <ulibgsmmap/UMGSMMAP_MS_Classmark2.h>
 
 @implementation UMGSMMAP_MS_Classmark2
 

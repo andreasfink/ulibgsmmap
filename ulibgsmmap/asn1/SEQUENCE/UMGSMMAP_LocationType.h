@@ -7,9 +7,9 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_LocationEstimateType.h"
+#import <ulibgsmmap/UMGSMMAP_LocationEstimateType.h>
 
 @interface UMGSMMAP_LocationType : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

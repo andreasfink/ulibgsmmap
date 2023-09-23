@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCSClientInternalID.h"
+#import <ulibgsmmap/UMGSMMAP_LCSClientInternalID.h>
 
 @implementation UMGSMMAP_LCSClientInternalID
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_APN.h"
+#import <ulibgsmmap/UMGSMMAP_APN.h>
 
 @implementation UMGSMMAP_APN
 

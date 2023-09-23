@@ -8,9 +8,9 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_PrivateExtension.h"
-#import "UMGSMMAP_FTSExtensionList.h"
-#import "UMGSMMAP_FTSExtension.h"
+#import <ulibgsmmap/UMGSMMAP_PrivateExtension.h>
+#import <ulibgsmmap/UMGSMMAP_FTSExtensionList.h>
+#import <ulibgsmmap/UMGSMMAP_FTSExtension.h>
 
 @implementation UMGSMMAP_PrivateExtension
 

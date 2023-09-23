@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ForwardingViolationParam.h"
+#import <ulibgsmmap/UMGSMMAP_ForwardingViolationParam.h>
 
 @implementation UMGSMMAP_ForwardingViolationParam
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GeodeticInformation.h"
+#import <ulibgsmmap/UMGSMMAP_GeodeticInformation.h>
 
 @implementation UMGSMMAP_GeodeticInformation
 

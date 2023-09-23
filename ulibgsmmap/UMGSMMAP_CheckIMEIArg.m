@@ -6,11 +6,11 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_CheckIMEIArg.h"
-#import "UMGSMMAP_RequestedEquipmentInfo.h"
-#import "UMGSMMAP_IMEI.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_IMSI.h"
+#import <ulibgsmmap/UMGSMMAP_CheckIMEIArg.h>
+#import <ulibgsmmap/UMGSMMAP_RequestedEquipmentInfo.h>
+#import <ulibgsmmap/UMGSMMAP_IMEI.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
 
 @implementation UMGSMMAP_CheckIMEIArg
     

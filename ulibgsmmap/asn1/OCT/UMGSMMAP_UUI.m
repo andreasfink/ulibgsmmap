@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UUI.h"
+#import <ulibgsmmap/UMGSMMAP_UUI.h>
 
 @implementation UMGSMMAP_UUI
 

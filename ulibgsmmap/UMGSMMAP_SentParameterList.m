@@ -6,8 +6,8 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_SentParameterList.h"
-#import "UMGSMMAP_SentParameter.h"
+#import <ulibgsmmap/UMGSMMAP_SentParameterList.h>
+#import <ulibgsmmap/UMGSMMAP_SentParameter.h>
 
 @implementation UMGSMMAP_SentParameterList
 

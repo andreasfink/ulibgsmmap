@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_USSD_String.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_USSD_String.h>
 
 
 @interface UMGSMMAP_NameString : UMGSMMAP_USSD_String<UMGSMMAP_asn1_protocol>

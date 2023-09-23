@@ -8,8 +8,8 @@
 
 #import <ulibtcap/ulibtcap.h>
 
-#import "UMGSMMAP_DialogIdentifier.h"
-#import "UMGSMMAP_UserIdentifier.h"
+#import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
+#import <ulibgsmmap/UMGSMMAP_UserIdentifier.h>
 
 @class UMLayerGSMMAP;
 

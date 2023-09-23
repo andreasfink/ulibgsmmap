@@ -9,11 +9,11 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_RAND.h"
-#import "UMGSMMAP_SRES.h"
-#import "UMGSMMAP_Kc.h"
+#import <ulibgsmmap/UMGSMMAP_RAND.h>
+#import <ulibgsmmap/UMGSMMAP_SRES.h>
+#import <ulibgsmmap/UMGSMMAP_Kc.h>
 
 @interface UMGSMMAP_AuthenticationTriplet : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

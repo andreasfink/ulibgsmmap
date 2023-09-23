@@ -6,9 +6,9 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_Close_Req_Task.h"
+#import <ulibgsmmap/UMGSMMAP_Close_Req_Task.h>
 #import "UMLayerGSMMAP.h"
-#import "UMGSMMAP_DialogIdentifier.h"
+#import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
 
 @implementation UMGSMMAP_Close_Req_Task
 

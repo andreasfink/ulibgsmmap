@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_CauseValue.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_CauseValue.h>
 
 @interface UMGSMMAP_T_CauseValueCriteria : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

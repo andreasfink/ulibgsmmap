@@ -7,11 +7,11 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_USSD_DataCodingScheme.h"
-#import "UMGSMMAP_USSD_String.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
+#import <ulibgsmmap/UMGSMMAP_USSD_DataCodingScheme.h>
+#import <ulibgsmmap/UMGSMMAP_USSD_String.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
 
 @interface UMGSMMAP_Ussd_Arg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

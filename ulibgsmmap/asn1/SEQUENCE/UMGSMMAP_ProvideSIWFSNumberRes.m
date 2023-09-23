@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ProvideSIWFSNumberRes.h"
+#import <ulibgsmmap/UMGSMMAP_ProvideSIWFSNumberRes.h>
 
 @implementation UMGSMMAP_ProvideSIWFSNumberRes
 

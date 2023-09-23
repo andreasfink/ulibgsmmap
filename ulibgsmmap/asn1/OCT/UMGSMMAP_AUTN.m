@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AUTN.h"
+#import <ulibgsmmap/UMGSMMAP_AUTN.h>
 
 @implementation UMGSMMAP_AUTN
 

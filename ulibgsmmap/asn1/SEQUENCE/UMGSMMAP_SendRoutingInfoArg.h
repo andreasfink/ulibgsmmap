@@ -7,22 +7,22 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_CUG_CheckInfo.h"
-#import "UMGSMMAP_NumberOfForwarding.h"
-#import "UMGSMMAP_InterrogationType.h"
-#import "UMGSMMAP_OR_Phase.h"
-#import "UMGSMMAP_CallReferenceNumber.h"
-#import "UMGSMMAP_ForwardingReason.h"
-#import "UMGSMMAP_Ext_BasicServiceCode.h"
-#import "UMGSMMAP_ExternalSignalInfo.h"
-#import "UMGSMMAP_CamelInfo.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_AlertingPattern.h"
-#import "UMGSMMAP_SupportedCCBS_Phase.h"
-#import "UMGSMMAP_Ext_ExternalSignalInfo.h"
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_CUG_CheckInfo.h>
+#import <ulibgsmmap/UMGSMMAP_NumberOfForwarding.h>
+#import <ulibgsmmap/UMGSMMAP_InterrogationType.h>
+#import <ulibgsmmap/UMGSMMAP_OR_Phase.h>
+#import <ulibgsmmap/UMGSMMAP_CallReferenceNumber.h>
+#import <ulibgsmmap/UMGSMMAP_ForwardingReason.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_BasicServiceCode.h>
+#import <ulibgsmmap/UMGSMMAP_ExternalSignalInfo.h>
+#import <ulibgsmmap/UMGSMMAP_CamelInfo.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_AlertingPattern.h>
+#import <ulibgsmmap/UMGSMMAP_SupportedCCBS_Phase.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_ExternalSignalInfo.h>
 
 @interface UMGSMMAP_SendRoutingInfoArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

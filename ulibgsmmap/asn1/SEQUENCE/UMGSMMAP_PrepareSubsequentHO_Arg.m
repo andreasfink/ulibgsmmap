@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PrepareSubsequentHO_Arg.h"
+#import <ulibgsmmap/UMGSMMAP_PrepareSubsequentHO_Arg.h>
 
 @implementation UMGSMMAP_PrepareSubsequentHO_Arg
 

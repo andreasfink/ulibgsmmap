@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CallReferenceNumber.h"
+#import <ulibgsmmap/UMGSMMAP_CallReferenceNumber.h>
 
 @implementation UMGSMMAP_CallReferenceNumber
 

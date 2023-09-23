@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SM_EnumeratedDeliveryFailureCause.h"
+#import <ulibgsmmap/UMGSMMAP_SM_EnumeratedDeliveryFailureCause.h>
 
 @implementation UMGSMMAP_SM_EnumeratedDeliveryFailureCause
 

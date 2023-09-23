@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ForwardingReason.h"
+#import <ulibgsmmap/UMGSMMAP_ForwardingReason.h>
 
 @implementation UMGSMMAP_ForwardingReason
 

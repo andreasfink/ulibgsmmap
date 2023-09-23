@@ -6,7 +6,7 @@
 //  Copyright © 2020 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_FQDN.h"
+#import <ulibgsmmap/UMGSMMAP_FQDN.h>
 
 @implementation UMGSMMAP_FQDN
 

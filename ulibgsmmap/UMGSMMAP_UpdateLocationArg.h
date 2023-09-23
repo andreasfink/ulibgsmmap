@@ -9,18 +9,18 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_LMSI.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_VLR_Capability.h"
-#import "UMGSMMAP_GSN_Address.h"
-#import "UMGSMMAP_ADD_Info.h"
-#import "UMGSMMAP_EPLMN_List.h"
-#import "UMGSMMAP_NetworkNodeDiameterAddress.h"
-#import "UMGSMMAP_PagingArea.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_LMSI.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_VLR_Capability.h>
+#import <ulibgsmmap/UMGSMMAP_GSN_Address.h>
+#import <ulibgsmmap/UMGSMMAP_ADD_Info.h>
+#import <ulibgsmmap/UMGSMMAP_EPLMN_List.h>
+#import <ulibgsmmap/UMGSMMAP_NetworkNodeDiameterAddress.h>
+#import <ulibgsmmap/UMGSMMAP_PagingArea.h>
 
 @interface UMGSMMAP_UpdateLocationArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

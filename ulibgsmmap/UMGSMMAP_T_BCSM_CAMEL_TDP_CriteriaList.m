@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_T_BCSM_CAMEL_TDP_CriteriaList.h"
+#import <ulibgsmmap/UMGSMMAP_T_BCSM_CAMEL_TDP_CriteriaList.h>
 
 @implementation UMGSMMAP_T_BCSM_CAMEL_TDP_CriteriaList
 

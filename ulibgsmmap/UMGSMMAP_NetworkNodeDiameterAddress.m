@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_NetworkNodeDiameterAddress.h"
+#import <ulibgsmmap/UMGSMMAP_NetworkNodeDiameterAddress.h>
 
 @implementation UMGSMMAP_NetworkNodeDiameterAddress
 

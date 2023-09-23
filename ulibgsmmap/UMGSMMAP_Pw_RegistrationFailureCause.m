@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_Pw_RegistrationFailureCause.h"
+#import <ulibgsmmap/UMGSMMAP_Pw_RegistrationFailureCause.h>
 
 @implementation UMGSMMAP_Pw_RegistrationFailureCause
 

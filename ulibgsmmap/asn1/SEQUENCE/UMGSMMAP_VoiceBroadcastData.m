@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_VoiceBroadcastData.h"
+#import <ulibgsmmap/UMGSMMAP_VoiceBroadcastData.h>
 
 @implementation UMGSMMAP_VoiceBroadcastData
 

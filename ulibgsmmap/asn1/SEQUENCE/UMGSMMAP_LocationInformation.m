@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LocationInformation.h"
+#import <ulibgsmmap/UMGSMMAP_LocationInformation.h>
 
 @implementation UMGSMMAP_LocationInformation
 

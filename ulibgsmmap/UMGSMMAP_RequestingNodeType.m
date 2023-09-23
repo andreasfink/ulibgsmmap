@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_RequestingNodeType.h"
+#import <ulibgsmmap/UMGSMMAP_RequestingNodeType.h>
 
 @implementation UMGSMMAP_RequestingNodeType
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RegionalSubscriptionResponse.h"
+#import <ulibgsmmap/UMGSMMAP_RegionalSubscriptionResponse.h>
 
 @implementation UMGSMMAP_RegionalSubscriptionResponse
 

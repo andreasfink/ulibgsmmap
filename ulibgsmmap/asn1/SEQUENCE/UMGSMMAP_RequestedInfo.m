@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RequestedInfo.h"
+#import <ulibgsmmap/UMGSMMAP_RequestedInfo.h>
 
 @implementation UMGSMMAP_RequestedInfo
 

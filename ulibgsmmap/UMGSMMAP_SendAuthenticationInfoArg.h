@@ -9,13 +9,13 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_NumberOfRequestedVectors.h"
-#import "UMGSMMAP_Re_SynchronisationInfo.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_RequestingNodeType.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_NumberOfRequestedVectors.h>
+#import <ulibgsmmap/UMGSMMAP_Re_SynchronisationInfo.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_RequestingNodeType.h>
 @interface UMGSMMAP_SendAuthenticationInfoArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;

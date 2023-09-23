@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Eps_AuthenticationSetList .h"
+#import <ulibgsmmap/UMGSMMAP_Eps_AuthenticationSetList .h>
 
 @implementation UMGSMMAP_Eps_AuthenticationSetList 
 

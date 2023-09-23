@@ -7,12 +7,12 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_T_CSI.h"
-#import "UMGSMMAP_O_CSI.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_O_BcsmCamelTDPCriteriaList.h"
+#import <ulibgsmmap/UMGSMMAP_T_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_O_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_O_BcsmCamelTDPCriteriaList.h>
 
 @interface UMGSMMAP_GmscCamelSubscriptionInfo : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

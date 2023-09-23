@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCS_ReferenceNumber.h"
+#import <ulibgsmmap/UMGSMMAP_LCS_ReferenceNumber.h>
 
 @implementation UMGSMMAP_LCS_ReferenceNumber
 

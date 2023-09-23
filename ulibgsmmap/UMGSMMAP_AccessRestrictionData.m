@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_AccessRestrictionData.h"
+#import <ulibgsmmap/UMGSMMAP_AccessRestrictionData.h>
 
 @implementation UMGSMMAP_AccessRestrictionData
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CUG_FeatureList.h"
+#import <ulibgsmmap/UMGSMMAP_CUG_FeatureList.h>
 
 @implementation UMGSMMAP_CUG_FeatureList
 

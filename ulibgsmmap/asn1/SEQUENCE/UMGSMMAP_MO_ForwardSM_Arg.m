@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MO_ForwardSM_Arg.h"
+#import <ulibgsmmap/UMGSMMAP_MO_ForwardSM_Arg.h>
 
 @implementation UMGSMMAP_MO_ForwardSM_Arg
 

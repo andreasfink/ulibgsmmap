@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_UserIdentifier.h"
+#import <ulibgsmmap/UMGSMMAP_UserIdentifier.h>
 
 
 @implementation UMGSMMAP_UserIdentifier

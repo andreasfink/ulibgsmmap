@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Category.h"
+#import <ulibgsmmap/UMGSMMAP_Category.h>
 
 @implementation UMGSMMAP_Category
 

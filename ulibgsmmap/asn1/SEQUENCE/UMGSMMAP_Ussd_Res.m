@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ussd_Res.h"
+#import <ulibgsmmap/UMGSMMAP_Ussd_Res.h>
 
 @implementation UMGSMMAP_Ussd_Res
 

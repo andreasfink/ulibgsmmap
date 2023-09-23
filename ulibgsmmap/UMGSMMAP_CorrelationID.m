@@ -6,9 +6,9 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_CorrelationID.h"
-#import "UMGSMMAP_HLR_Id.h"
-#import "UMGSMMAP_SIP_URI.h"
+#import <ulibgsmmap/UMGSMMAP_CorrelationID.h>
+#import <ulibgsmmap/UMGSMMAP_HLR_Id.h>
+#import <ulibgsmmap/UMGSMMAP_SIP_URI.h>
 
 /*
 CorrelationID ::= SEQUENCE

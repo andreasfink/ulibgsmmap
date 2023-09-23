@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_InterrogateSS_Res.h"
+#import <ulibgsmmap/UMGSMMAP_InterrogateSS_Res.h>
 
 @implementation UMGSMMAP_InterrogateSS_Res
 

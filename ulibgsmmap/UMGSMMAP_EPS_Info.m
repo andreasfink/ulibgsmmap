@@ -7,7 +7,7 @@
 //
 
 
-#import "UMGSMMAP_EPS_Info.h"
+#import <ulibgsmmap/UMGSMMAP_EPS_Info.h>
 
 @implementation UMGSMMAP_EPS_Info
 

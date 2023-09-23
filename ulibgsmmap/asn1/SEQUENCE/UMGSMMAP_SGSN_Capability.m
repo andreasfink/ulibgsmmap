@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SGSN_Capability.h"
+#import <ulibgsmmap/UMGSMMAP_SGSN_Capability.h>
 
 @implementation UMGSMMAP_SGSN_Capability
 

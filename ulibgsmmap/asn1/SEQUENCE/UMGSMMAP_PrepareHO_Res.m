@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PrepareHO_Res.h"
+#import <ulibgsmmap/UMGSMMAP_PrepareHO_Res.h>
 
 @implementation UMGSMMAP_PrepareHO_Res
 

@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_Eps_AuthenticationSet.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_Eps_AuthenticationSet.h>
 
 @interface UMGSMMAP_Eps_AuthenticationSetList  : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

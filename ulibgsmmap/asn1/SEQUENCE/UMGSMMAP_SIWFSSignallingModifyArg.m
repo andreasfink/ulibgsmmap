@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SIWFSSignallingModifyArg.h"
+#import <ulibgsmmap/UMGSMMAP_SIWFSSignallingModifyArg.h>
 
 @implementation UMGSMMAP_SIWFSSignallingModifyArg
 

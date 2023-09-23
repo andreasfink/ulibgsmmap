@@ -9,11 +9,11 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_GMLC_List.h"
-#import "UMGSMMAP_LCS_PrivacyExceptionList.h"
-#import "UMGSMMAP_MOLR_List.h"
+#import <ulibgsmmap/UMGSMMAP_GMLC_List.h>
+#import <ulibgsmmap/UMGSMMAP_LCS_PrivacyExceptionList.h>
+#import <ulibgsmmap/UMGSMMAP_MOLR_List.h>
 
 @interface UMGSMMAP_LCSInformation : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -10,8 +10,8 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_LocationArea.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_LocationArea.h>
 
 @interface UMGSMMAP_PagingArea : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

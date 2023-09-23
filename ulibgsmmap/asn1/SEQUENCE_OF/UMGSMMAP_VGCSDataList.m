@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_VGCSDataList.h"
+#import <ulibgsmmap/UMGSMMAP_VGCSDataList.h>
 
 @implementation UMGSMMAP_VGCSDataList
 

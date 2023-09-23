@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Or_NotAllowedParam.h"
+#import <ulibgsmmap/UMGSMMAP_Or_NotAllowedParam.h>
 
 @implementation UMGSMMAP_Or_NotAllowedParam
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_InformServiceCentreArg.h"
+#import <ulibgsmmap/UMGSMMAP_InformServiceCentreArg.h>
 
 @implementation UMGSMMAP_InformServiceCentreArg
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ChargingCharacteristics.h"
+#import <ulibgsmmap/UMGSMMAP_ChargingCharacteristics.h>
 
 @implementation UMGSMMAP_ChargingCharacteristics
 

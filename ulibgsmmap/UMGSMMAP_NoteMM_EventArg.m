@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_NoteMM_EventArg.h"
+#import <ulibgsmmap/UMGSMMAP_NoteMM_EventArg.h>
 
 @implementation UMGSMMAP_NoteMM_EventArg
 

@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_Re_SynchronisationInfo.h"
+#import <ulibgsmmap/UMGSMMAP_Re_SynchronisationInfo.h>
 
 @implementation UMGSMMAP_Re_SynchronisationInfo
 

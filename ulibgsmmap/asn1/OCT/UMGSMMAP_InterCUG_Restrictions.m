@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_InterCUG_Restrictions.h"
+#import <ulibgsmmap/UMGSMMAP_InterCUG_Restrictions.h>
 
 @implementation UMGSMMAP_InterCUG_Restrictions
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PrepareGroupCallRes.h"
+#import <ulibgsmmap/UMGSMMAP_PrepareGroupCallRes.h>
 
 @implementation UMGSMMAP_PrepareGroupCallRes
 

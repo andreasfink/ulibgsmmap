@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_BusySubscriberParam.h"
+#import <ulibgsmmap/UMGSMMAP_BusySubscriberParam.h>
 
 @implementation UMGSMMAP_BusySubscriberParam
 

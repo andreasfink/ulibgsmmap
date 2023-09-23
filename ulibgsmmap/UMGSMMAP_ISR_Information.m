@@ -6,7 +6,7 @@
 //  Copyright © 2020 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_ISR_Information.h"
+#import <ulibgsmmap/UMGSMMAP_ISR_Information.h>
 
 @implementation UMGSMMAP_ISR_Information
 

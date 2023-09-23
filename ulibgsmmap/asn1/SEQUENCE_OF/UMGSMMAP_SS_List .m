@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SS_List .h"
+#import <ulibgsmmap/UMGSMMAP_SS_List .h>
 
 @implementation UMGSMMAP_SS_List 
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ASNTime.h"
+#import <ulibgsmmap/UMGSMMAP_ASNTime.h>
 
 @implementation UMGSMMAP_ASNTime
 

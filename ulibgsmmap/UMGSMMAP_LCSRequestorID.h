@@ -8,9 +8,9 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-#import "UMGSMMAP_USSD_DataCodingScheme.h"
-#import "UMGSMMAP_LCS_FormatIndicator.h"
-#import "UMGSMMAP_RequestorIDString.h"
+#import <ulibgsmmap/UMGSMMAP_USSD_DataCodingScheme.h>
+#import <ulibgsmmap/UMGSMMAP_LCS_FormatIndicator.h>
+#import <ulibgsmmap/UMGSMMAP_RequestorIDString.h>
 
 @interface UMGSMMAP_LCSRequestorID : UMASN1Sequence
 {

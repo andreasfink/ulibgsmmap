@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UnknownSubscriberDiagnostic.h"
+#import <ulibgsmmap/UMGSMMAP_UnknownSubscriberDiagnostic.h>
 
 @implementation UMGSMMAP_UnknownSubscriberDiagnostic
 

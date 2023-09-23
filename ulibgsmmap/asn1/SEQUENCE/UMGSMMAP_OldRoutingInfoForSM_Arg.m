@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_OldRoutingInfoForSM_Arg.h"
+#import <ulibgsmmap/UMGSMMAP_OldRoutingInfoForSM_Arg.h>
 
 @implementation UMGSMMAP_OldRoutingInfoForSM_Arg
 

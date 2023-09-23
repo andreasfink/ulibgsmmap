@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_O_BcsmTriggerDetectionPoint.h"
+#import <ulibgsmmap/UMGSMMAP_O_BcsmTriggerDetectionPoint.h>
 
 @implementation UMGSMMAP_O_BcsmTriggerDetectionPoint
 

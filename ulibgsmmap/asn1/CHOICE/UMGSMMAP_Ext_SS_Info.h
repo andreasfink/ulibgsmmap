@@ -7,13 +7,13 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_Ext_ForwInfo.h"
-#import "UMGSMMAP_Ext_CallBarInfo.h"
-#import "UMGSMMAP_CUG_Info.h"
-#import "UMGSMMAP_Ext_SS_Data.h"
-#import "UMGSMMAP_EMLPP_Info.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_ForwInfo.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_CallBarInfo.h>
+#import <ulibgsmmap/UMGSMMAP_CUG_Info.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_SS_Data.h>
+#import <ulibgsmmap/UMGSMMAP_EMLPP_Info.h>
 
 @interface UMGSMMAP_Ext_SS_Info : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

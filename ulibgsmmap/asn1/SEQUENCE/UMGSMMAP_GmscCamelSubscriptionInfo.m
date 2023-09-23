@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GmscCamelSubscriptionInfo.h"
+#import <ulibgsmmap/UMGSMMAP_GmscCamelSubscriptionInfo.h>
 
 @implementation UMGSMMAP_GmscCamelSubscriptionInfo
 

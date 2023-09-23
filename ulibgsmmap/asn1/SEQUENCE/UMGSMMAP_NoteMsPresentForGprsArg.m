@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NoteMsPresentForGprsArg.h"
+#import <ulibgsmmap/UMGSMMAP_NoteMsPresentForGprsArg.h>
 
 @implementation UMGSMMAP_NoteMsPresentForGprsArg
 

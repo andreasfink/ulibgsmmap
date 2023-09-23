@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GPRSDataList.h"
+#import <ulibgsmmap/UMGSMMAP_GPRSDataList.h>
 
 @implementation UMGSMMAP_GPRSDataList
 

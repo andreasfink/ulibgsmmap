@@ -9,10 +9,10 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_NetworkResource.h"
-#import "UMGSMMAP_ExtensibleSystemFailureParam.h"
+#import <ulibgsmmap/UMGSMMAP_NetworkResource.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensibleSystemFailureParam.h>
 
 @interface UMGSMMAP_SystemFailureParam : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {

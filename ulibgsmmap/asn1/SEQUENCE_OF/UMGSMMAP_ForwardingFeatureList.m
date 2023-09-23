@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ForwardingFeatureList.h"
+#import <ulibgsmmap/UMGSMMAP_ForwardingFeatureList.h>
 
 @implementation UMGSMMAP_ForwardingFeatureList
 

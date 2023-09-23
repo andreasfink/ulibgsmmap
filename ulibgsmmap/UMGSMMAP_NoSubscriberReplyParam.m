@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_NoSubscriberReplyParam.h"
+#import <ulibgsmmap/UMGSMMAP_NoSubscriberReplyParam.h>
 
 @implementation UMGSMMAP_NoSubscriberReplyParam
 

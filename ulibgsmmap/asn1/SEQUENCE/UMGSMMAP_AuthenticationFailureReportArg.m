@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AuthenticationFailureReportArg.h"
+#import <ulibgsmmap/UMGSMMAP_AuthenticationFailureReportArg.h>
 
 @implementation UMGSMMAP_AuthenticationFailureReportArg
 

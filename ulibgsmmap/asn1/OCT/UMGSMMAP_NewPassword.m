@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NewPassword.h"
+#import <ulibgsmmap/UMGSMMAP_NewPassword.h>
 
 @implementation UMGSMMAP_NewPassword
 

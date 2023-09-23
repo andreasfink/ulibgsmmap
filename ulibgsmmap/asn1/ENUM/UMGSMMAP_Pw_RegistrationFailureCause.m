@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Pw_RegistrationFailureCause.h"
+#import <ulibgsmmap/UMGSMMAP_Pw_RegistrationFailureCause.h>
 
 @implementation UMGSMMAP_Pw_RegistrationFailureCause
 

@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_SignalInfo.h"
+#import <ulibgsmmap/UMGSMMAP_SignalInfo.h>
 #import "UMLayerGSMMAP_UserProtocol.h"
 #import "UMLayerGSMMAP.h"
 

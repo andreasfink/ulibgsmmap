@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TracingBufferFullParam.h"
+#import <ulibgsmmap/UMGSMMAP_TracingBufferFullParam.h>
 
 @implementation UMGSMMAP_TracingBufferFullParam
 

@@ -7,17 +7,17 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_CallReferenceNumber.h"
-#import "UMGSMMAP_Ext_BasicServiceCode.h"
-#import "UMGSMMAP_ForwardingData.h"
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_CUG_CheckInfo.h"
-#import "UMGSMMAP_O_CSI.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_UU_Data.h"
+#import <ulibgsmmap/UMGSMMAP_CallReferenceNumber.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_BasicServiceCode.h>
+#import <ulibgsmmap/UMGSMMAP_ForwardingData.h>
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_CUG_CheckInfo.h>
+#import <ulibgsmmap/UMGSMMAP_O_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_UU_Data.h>
 
 @interface UMGSMMAP_ResumeCallHandlingArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

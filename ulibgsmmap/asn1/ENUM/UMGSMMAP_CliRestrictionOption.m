@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CliRestrictionOption.h"
+#import <ulibgsmmap/UMGSMMAP_CliRestrictionOption.h>
 
 @implementation UMGSMMAP_CliRestrictionOption
 

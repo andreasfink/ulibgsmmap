@@ -9,7 +9,7 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 @class UMGSMMAP_Ext_SS_Info;
 
 @interface UMGSMMAP_Ext_SS_InfoList : UMASN1Sequence<UMGSMMAP_asn1_protocol>

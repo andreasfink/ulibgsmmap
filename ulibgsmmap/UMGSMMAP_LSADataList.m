@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_LSADataList.h"
+#import <ulibgsmmap/UMGSMMAP_LSADataList.h>
 
 @implementation UMGSMMAP_LSADataList
 

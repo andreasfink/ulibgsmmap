@@ -8,8 +8,8 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_AuthenticationTripletList.h"
-#import "UMGSMMAP_AuthenticationTriplet.h"
+#import <ulibgsmmap/UMGSMMAP_AuthenticationTripletList.h>
+#import <ulibgsmmap/UMGSMMAP_AuthenticationTriplet.h>
 
 @implementation UMGSMMAP_AuthenticationTripletList
 

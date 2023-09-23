@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_Opcodes.h"
+#import <ulibgsmmap/UMGSMMAP_Opcodes.h>
 
 
 const char *umgsmmap_opcode_string(int opcode)

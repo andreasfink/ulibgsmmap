@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CancellationType.h"
+#import <ulibgsmmap/UMGSMMAP_CancellationType.h>
 
 @implementation UMGSMMAP_CancellationType
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LocationInformationGPRS.h"
+#import <ulibgsmmap/UMGSMMAP_LocationInformationGPRS.h>
 
 @implementation UMGSMMAP_LocationInformationGPRS
 

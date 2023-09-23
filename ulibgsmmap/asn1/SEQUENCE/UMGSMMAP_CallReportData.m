@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CallReportData.h"
+#import <ulibgsmmap/UMGSMMAP_CallReportData.h>
 
 @implementation UMGSMMAP_CallReportData
 

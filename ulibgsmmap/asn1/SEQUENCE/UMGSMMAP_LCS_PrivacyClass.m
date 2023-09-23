@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCS_PrivacyClass.h"
+#import <ulibgsmmap/UMGSMMAP_LCS_PrivacyClass.h>
 
 @implementation UMGSMMAP_LCS_PrivacyClass
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GPRSSubscriptionData.h"
+#import <ulibgsmmap/UMGSMMAP_GPRSSubscriptionData.h>
 
 @implementation UMGSMMAP_GPRSSubscriptionData
 

@@ -9,10 +9,10 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_ResourceUnavailableReason.h"
-#import "UMGSMMAP_ProcedureCancellationReason.h"
+#import <ulibgsmmap/UMGSMMAP_ResourceUnavailableReason.h>
+#import <ulibgsmmap/UMGSMMAP_ProcedureCancellationReason.h>
 
 @interface UMGSMMAP_MAP_UserAbortChoice : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {

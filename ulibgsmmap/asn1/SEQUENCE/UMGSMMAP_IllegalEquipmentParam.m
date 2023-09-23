@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_IllegalEquipmentParam.h"
+#import <ulibgsmmap/UMGSMMAP_IllegalEquipmentParam.h>
 
 @implementation UMGSMMAP_IllegalEquipmentParam
 

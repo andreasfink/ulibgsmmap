@@ -9,14 +9,14 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_SS_Code.h"
-#import "UMGSMMAP_BasicServiceCode.h"
-#import "UMGSMMAP_AddressString.h"
-#import "UMGSMMAP_ISDN_SubaddressString.h"
-#import "UMGSMMAP_NoReplyConditionTime.h"
-#import "UMGSMMAP_EMLPP_Priority.h"
+#import <ulibgsmmap/UMGSMMAP_SS_Code.h>
+#import <ulibgsmmap/UMGSMMAP_BasicServiceCode.h>
+#import <ulibgsmmap/UMGSMMAP_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_SubaddressString.h>
+#import <ulibgsmmap/UMGSMMAP_NoReplyConditionTime.h>
+#import <ulibgsmmap/UMGSMMAP_EMLPP_Priority.h>
 
 @interface UMGSMMAP_RegisterSS_Arg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

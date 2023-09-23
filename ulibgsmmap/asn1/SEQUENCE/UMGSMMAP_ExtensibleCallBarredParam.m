@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ExtensibleCallBarredParam.h"
+#import <ulibgsmmap/UMGSMMAP_ExtensibleCallBarredParam.h>
 
 @implementation UMGSMMAP_ExtensibleCallBarredParam
 

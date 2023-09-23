@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_VLR_Capability.h"
+#import <ulibgsmmap/UMGSMMAP_VLR_Capability.h>
 
 @implementation UMGSMMAP_VLR_Capability
 

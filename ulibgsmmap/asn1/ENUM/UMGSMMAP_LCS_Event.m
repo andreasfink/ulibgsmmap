@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCS_Event.h"
+#import <ulibgsmmap/UMGSMMAP_LCS_Event.h>
 
 @implementation UMGSMMAP_LCS_Event
 

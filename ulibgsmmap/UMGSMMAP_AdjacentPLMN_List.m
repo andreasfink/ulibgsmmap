@@ -6,7 +6,7 @@
 //  Copyright © 2020 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_AdjacentPLMN_List.h"
+#import <ulibgsmmap/UMGSMMAP_AdjacentPLMN_List.h>
 
 @implementation UMGSMMAP_AdjacentPLMN_List
 

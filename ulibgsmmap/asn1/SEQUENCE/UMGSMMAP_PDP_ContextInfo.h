@@ -7,24 +7,24 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_ContextId.h"
-#import "UMGSMMAP_PDP_Type.h"
-#import "UMGSMMAP_PDP_Address.h"
-#import "UMGSMMAP_APN.h"
-#import "UMGSMMAP_NSAPI.h"
-#import "UMGSMMAP_TransactionId.h"
-#import "UMGSMMAP_TEID.h"
-#import "UMGSMMAP_GSN_Address.h"
-#import "UMGSMMAP_Ext_QoS_Subscribed.h"
-#import "UMGSMMAP_GPRSChargingID.h"
-#import "UMGSMMAP_ChargingCharacteristics.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_Ext2_QoS_Subscribed.h"
-#import "UMGSMMAP_Ext3_QoS_Subscribed.h"
-#import "UMGSMMAP_Ext4_QoS_Subscribed.h"
-#import "UMGSMMAP_Ext_PDP_Type.h"
+#import <ulibgsmmap/UMGSMMAP_ContextId.h>
+#import <ulibgsmmap/UMGSMMAP_PDP_Type.h>
+#import <ulibgsmmap/UMGSMMAP_PDP_Address.h>
+#import <ulibgsmmap/UMGSMMAP_APN.h>
+#import <ulibgsmmap/UMGSMMAP_NSAPI.h>
+#import <ulibgsmmap/UMGSMMAP_TransactionId.h>
+#import <ulibgsmmap/UMGSMMAP_TEID.h>
+#import <ulibgsmmap/UMGSMMAP_GSN_Address.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_QoS_Subscribed.h>
+#import <ulibgsmmap/UMGSMMAP_GPRSChargingID.h>
+#import <ulibgsmmap/UMGSMMAP_ChargingCharacteristics.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_Ext2_QoS_Subscribed.h>
+#import <ulibgsmmap/UMGSMMAP_Ext3_QoS_Subscribed.h>
+#import <ulibgsmmap/UMGSMMAP_Ext4_QoS_Subscribed.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_PDP_Type.h>
 
 @interface UMGSMMAP_PDP_ContextInfo : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NAEA_CIC.h"
+#import <ulibgsmmap/UMGSMMAP_NAEA_CIC.h>
 
 @implementation UMGSMMAP_NAEA_CIC
 

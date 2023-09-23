@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CancelLocationArg.h"
+#import <ulibgsmmap/UMGSMMAP_CancelLocationArg.h>
 
 @implementation UMGSMMAP_CancelLocationArg
 

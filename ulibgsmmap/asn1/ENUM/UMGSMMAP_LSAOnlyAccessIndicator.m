@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LSAOnlyAccessIndicator.h"
+#import <ulibgsmmap/UMGSMMAP_LSAOnlyAccessIndicator.h>
 
 @implementation UMGSMMAP_LSAOnlyAccessIndicator
 

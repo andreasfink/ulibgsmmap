@@ -8,8 +8,8 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_FTSExtension.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_FTSExtension.h>
 
 #define FTS_OID @"2.16.756.5.40"
 

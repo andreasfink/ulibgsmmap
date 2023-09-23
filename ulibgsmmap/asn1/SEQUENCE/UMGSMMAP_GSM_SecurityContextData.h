@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_Kc.h"
-#import "UMGSMMAP_CKSN.h"
+#import <ulibgsmmap/UMGSMMAP_Kc.h>
+#import <ulibgsmmap/UMGSMMAP_CKSN.h>
 
 @interface UMGSMMAP_GSM_SecurityContextData : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

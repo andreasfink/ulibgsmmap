@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UnexpectedDataParam.h"
+#import <ulibgsmmap/UMGSMMAP_UnexpectedDataParam.h>
 
 @implementation UMGSMMAP_UnexpectedDataParam
 

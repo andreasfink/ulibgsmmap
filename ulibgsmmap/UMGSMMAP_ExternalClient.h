@@ -9,12 +9,12 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_LCSClientExternalID.h"
-#import "UMGSMMAP_GMLC_Restriction.h"
-#import "UMGSMMAP_NotificationToMSUser.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_LCSClientExternalID.h>
+#import <ulibgsmmap/UMGSMMAP_GMLC_Restriction.h>
+#import <ulibgsmmap/UMGSMMAP_NotificationToMSUser.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_ExternalClient : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

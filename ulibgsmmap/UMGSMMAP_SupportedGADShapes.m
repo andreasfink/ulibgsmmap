@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SupportedGADShapes.h"
+#import <ulibgsmmap/UMGSMMAP_SupportedGADShapes.h>
 
 @implementation UMGSMMAP_SupportedGADShapes
 

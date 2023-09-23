@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GlobalCellId.h"
+#import <ulibgsmmap/UMGSMMAP_GlobalCellId.h>
 
 @implementation UMGSMMAP_GlobalCellId
 

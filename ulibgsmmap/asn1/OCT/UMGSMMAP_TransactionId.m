@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TransactionId.h"
+#import <ulibgsmmap/UMGSMMAP_TransactionId.h>
 
 @implementation UMGSMMAP_TransactionId
 

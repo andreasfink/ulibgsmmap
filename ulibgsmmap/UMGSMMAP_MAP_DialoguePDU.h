@@ -9,14 +9,14 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_MAP_OpenInfo.h"
-#import "UMGSMMAP_MAP_AcceptInfo.h"
-#import "UMGSMMAP_MAP_CloseInfo.h"
-#import "UMGSMMAP_MAP_RefuseInfo.h"
-#import "UMGSMMAP_MAP_UserAbortInfo.h"
-#import "UMGSMMAP_MAP_ProviderAbortInfo.h"
+#import <ulibgsmmap/UMGSMMAP_MAP_OpenInfo.h>
+#import <ulibgsmmap/UMGSMMAP_MAP_AcceptInfo.h>
+#import <ulibgsmmap/UMGSMMAP_MAP_CloseInfo.h>
+#import <ulibgsmmap/UMGSMMAP_MAP_RefuseInfo.h>
+#import <ulibgsmmap/UMGSMMAP_MAP_UserAbortInfo.h>
+#import <ulibgsmmap/UMGSMMAP_MAP_ProviderAbortInfo.h>
 
 @interface UMGSMMAP_MAP_DialoguePDU : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {

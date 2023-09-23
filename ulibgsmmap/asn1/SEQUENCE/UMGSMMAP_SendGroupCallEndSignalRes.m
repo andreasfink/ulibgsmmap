@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SendGroupCallEndSignalRes.h"
+#import <ulibgsmmap/UMGSMMAP_SendGroupCallEndSignalRes.h>
 
 @implementation UMGSMMAP_SendGroupCallEndSignalRes
 

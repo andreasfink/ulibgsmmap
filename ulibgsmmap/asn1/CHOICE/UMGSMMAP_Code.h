@@ -7,9 +7,9 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_OBJECT IDENTIFIER.h"
+#import <ulibgsmmap/UMGSMMAP_OBJECT IDENTIFIER.h>
 
 @interface UMGSMMAP_Code : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

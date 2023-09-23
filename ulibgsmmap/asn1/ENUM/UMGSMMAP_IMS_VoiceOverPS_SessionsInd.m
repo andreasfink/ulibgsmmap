@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_IMS_VoiceOverPS_SessionsInd.h"
+#import <ulibgsmmap/UMGSMMAP_IMS_VoiceOverPS_SessionsInd.h>
 
 @implementation UMGSMMAP_IMS_VoiceOverPS_SessionsInd
 

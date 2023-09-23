@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PositionMethodFailure_Diagnostic.h"
+#import <ulibgsmmap/UMGSMMAP_PositionMethodFailure_Diagnostic.h>
 
 @implementation UMGSMMAP_PositionMethodFailure_Diagnostic
 

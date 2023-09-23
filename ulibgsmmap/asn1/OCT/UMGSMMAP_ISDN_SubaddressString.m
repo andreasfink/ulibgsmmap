@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ISDN_SubaddressString.h"
+#import <ulibgsmmap/UMGSMMAP_ISDN_SubaddressString.h>
 
 @implementation UMGSMMAP_ISDN_SubaddressString
 

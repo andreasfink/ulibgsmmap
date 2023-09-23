@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_UnknownSubscriberDiagnostic.h"
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_UnknownSubscriberDiagnostic.h>
 
 @interface UMGSMMAP_UnknownSubscriberParam : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

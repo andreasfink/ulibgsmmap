@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AnyTimeInterrogationArg.h"
+#import <ulibgsmmap/UMGSMMAP_AnyTimeInterrogationArg.h>
 
 @implementation UMGSMMAP_AnyTimeInterrogationArg
 

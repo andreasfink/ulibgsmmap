@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NumberChangedParam.h"
+#import <ulibgsmmap/UMGSMMAP_NumberChangedParam.h>
 
 @implementation UMGSMMAP_NumberChangedParam
 

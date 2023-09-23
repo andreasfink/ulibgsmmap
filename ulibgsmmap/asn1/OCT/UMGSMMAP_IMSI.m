@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_IMSI.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
 
 @implementation UMGSMMAP_IMSI
 

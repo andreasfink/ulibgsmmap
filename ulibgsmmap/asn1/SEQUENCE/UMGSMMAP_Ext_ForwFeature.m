@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ext_ForwFeature.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_ForwFeature.h>
 
 @implementation UMGSMMAP_Ext_ForwFeature
 

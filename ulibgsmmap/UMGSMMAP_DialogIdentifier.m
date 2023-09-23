@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_DialogIdentifier.h"
+#import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
 
 
 @implementation UMGSMMAP_DialogIdentifier

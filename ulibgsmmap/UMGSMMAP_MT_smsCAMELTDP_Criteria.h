@@ -9,10 +9,10 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_SMS_TriggerDetectionPoint.h"
-#import "UMGSMMAP_TPDU_TypeCriterion.h"
+#import <ulibgsmmap/UMGSMMAP_SMS_TriggerDetectionPoint.h>
+#import <ulibgsmmap/UMGSMMAP_TPDU_TypeCriterion.h>
 
 @interface UMGSMMAP_MT_smsCAMELTDP_Criteria : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_GPRS_CamelTDPData.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_GPRS_CamelTDPData.h>
 
 @interface UMGSMMAP_GPRS_CamelTDPDataList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

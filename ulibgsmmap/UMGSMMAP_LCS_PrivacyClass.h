@@ -9,14 +9,14 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_SS_Code.h"
-#import "UMGSMMAP_Ext_SS_Status.h"
-#import "UMGSMMAP_NotificationToMSUser.h"
-#import "UMGSMMAP_ExternalClientList.h"
-#import "UMGSMMAP_PLMNClientList.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_SS_Code.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_SS_Status.h>
+#import <ulibgsmmap/UMGSMMAP_NotificationToMSUser.h>
+#import <ulibgsmmap/UMGSMMAP_ExternalClientList.h>
+#import <ulibgsmmap/UMGSMMAP_PLMNClientList.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_LCS_PrivacyClass : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

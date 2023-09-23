@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_IncompatibleTerminalParam.h"
+#import <ulibgsmmap/UMGSMMAP_IncompatibleTerminalParam.h>
 
 @implementation UMGSMMAP_IncompatibleTerminalParam
 

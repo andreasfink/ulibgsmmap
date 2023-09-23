@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PurgeMS_Res.h"
+#import <ulibgsmmap/UMGSMMAP_PurgeMS_Res.h>
 
 @implementation UMGSMMAP_PurgeMS_Res
 

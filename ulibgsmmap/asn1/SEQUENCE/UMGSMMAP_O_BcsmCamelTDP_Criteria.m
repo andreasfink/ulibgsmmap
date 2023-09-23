@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_O_BcsmCamelTDP_Criteria.h"
+#import <ulibgsmmap/UMGSMMAP_O_BcsmCamelTDP_Criteria.h>
 
 @implementation UMGSMMAP_O_BcsmCamelTDP_Criteria
 

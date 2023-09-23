@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RAND.h"
+#import <ulibgsmmap/UMGSMMAP_RAND.h>
 
 @implementation UMGSMMAP_RAND
 

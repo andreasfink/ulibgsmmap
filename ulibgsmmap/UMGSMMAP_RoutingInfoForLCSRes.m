@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RoutingInfoForLCSRes.h"
+#import <ulibgsmmap/UMGSMMAP_RoutingInfoForLCSRes.h>
 
 @implementation UMGSMMAP_RoutingInfoForLCSRes
 

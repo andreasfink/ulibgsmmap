@@ -9,13 +9,13 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_RAND.h"
-#import "UMGSMMAP_XRES.h"
-#import "UMGSMMAP_CK.h"
-#import "UMGSMMAP_IK.h"
-#import "UMGSMMAP_AUTN.h"
+#import <ulibgsmmap/UMGSMMAP_RAND.h>
+#import <ulibgsmmap/UMGSMMAP_XRES.h>
+#import <ulibgsmmap/UMGSMMAP_CK.h>
+#import <ulibgsmmap/UMGSMMAP_IK.h>
+#import <ulibgsmmap/UMGSMMAP_AUTN.h>
 
 @interface UMGSMMAP_AuthenticationQuintuplet : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

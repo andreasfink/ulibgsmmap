@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_BasicServiceCode.h"
+#import <ulibgsmmap/UMGSMMAP_BasicServiceCode.h>
 
 @implementation UMGSMMAP_BasicServiceCode
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MatchType.h"
+#import <ulibgsmmap/UMGSMMAP_MatchType.h>
 
 @implementation UMGSMMAP_MatchType
 

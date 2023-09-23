@@ -6,10 +6,10 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_CheckIMEIRes.h"
-#import "UMGSMMAP_EquipmentStatus.h"
-#import "UMGSMMAP_UESBI_Iu.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_CheckIMEIRes.h>
+#import <ulibgsmmap/UMGSMMAP_EquipmentStatus.h>
+#import <ulibgsmmap/UMGSMMAP_UESBI_Iu.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 /*
  CheckIMEI-Res ::= SEQUENCE {

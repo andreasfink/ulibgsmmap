@@ -7,15 +7,15 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_Ext_BasicServiceCode.h"
-#import "UMGSMMAP_Ext_SS_Status.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_ISDN_SubaddressString.h"
-#import "UMGSMMAP_Ext_ForwOptions.h"
-#import "UMGSMMAP_Ext_NoRepCondTime.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_BasicServiceCode.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_SS_Status.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_SubaddressString.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_ForwOptions.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_NoRepCondTime.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_Ext_ForwFeature : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_Ss_IncompatibilityCause.h"
+#import <ulibgsmmap/UMGSMMAP_Ss_IncompatibilityCause.h>
 
 @implementation UMGSMMAP_Ss_IncompatibilityCause
 

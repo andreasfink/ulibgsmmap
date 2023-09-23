@@ -6,7 +6,7 @@
 //  Copyright © 2020 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_UE_SRVCC_Capability.h"
+#import <ulibgsmmap/UMGSMMAP_UE_SRVCC_Capability.h>
 
 @implementation UMGSMMAP_UE_SRVCC_Capability
 

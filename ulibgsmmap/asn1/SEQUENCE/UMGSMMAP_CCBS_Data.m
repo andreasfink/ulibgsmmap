@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CCBS_Data.h"
+#import <ulibgsmmap/UMGSMMAP_CCBS_Data.h>
 
 @implementation UMGSMMAP_CCBS_Data
 

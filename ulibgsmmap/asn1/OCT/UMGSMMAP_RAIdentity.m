@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RAIdentity.h"
+#import <ulibgsmmap/UMGSMMAP_RAIdentity.h>
 
 @implementation UMGSMMAP_RAIdentity
 

@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_T_BcsmCamelTDPData.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_T_BcsmCamelTDPData.h>
 
 @interface UMGSMMAP_T_BcsmCamelTDPDataList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

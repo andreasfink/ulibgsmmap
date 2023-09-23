@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_DiameterIdentity.h"
+#import <ulibgsmmap/UMGSMMAP_DiameterIdentity.h>
 
 @implementation UMGSMMAP_DiameterIdentity
 

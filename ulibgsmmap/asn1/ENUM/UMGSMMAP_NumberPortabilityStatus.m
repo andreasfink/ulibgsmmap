@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NumberPortabilityStatus.h"
+#import <ulibgsmmap/UMGSMMAP_NumberPortabilityStatus.h>
 
 @implementation UMGSMMAP_NumberPortabilityStatus
 

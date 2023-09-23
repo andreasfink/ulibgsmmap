@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Used_RAT_Type.h"
+#import <ulibgsmmap/UMGSMMAP_Used_RAT_Type.h>
 
 @implementation UMGSMMAP_Used_RAT_Type
 

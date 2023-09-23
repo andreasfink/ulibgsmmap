@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ServiceKey.h"
+#import <ulibgsmmap/UMGSMMAP_ServiceKey.h>
 
 @implementation UMGSMMAP_ServiceKey
 

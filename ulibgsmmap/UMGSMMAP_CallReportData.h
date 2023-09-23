@@ -9,11 +9,11 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_MonitoringMode.h"
-#import "UMGSMMAP_CallOutcome.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_MonitoringMode.h>
+#import <ulibgsmmap/UMGSMMAP_CallOutcome.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_CallReportData : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

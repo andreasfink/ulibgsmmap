@@ -8,10 +8,10 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-#import "UMGSMMAP_APN.h"
-#import "UMGSMMAP_PDN_GW_Identity.h"
-#import "UMGSMMAP_ContextId.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_APN.h>
+#import <ulibgsmmap/UMGSMMAP_PDN_GW_Identity.h>
+#import <ulibgsmmap/UMGSMMAP_ContextId.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_PDN_GW_Update : UMASN1Sequence
 {

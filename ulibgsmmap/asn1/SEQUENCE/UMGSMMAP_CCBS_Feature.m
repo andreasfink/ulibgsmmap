@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CCBS_Feature.h"
+#import <ulibgsmmap/UMGSMMAP_CCBS_Feature.h>
 
 @implementation UMGSMMAP_CCBS_Feature
 

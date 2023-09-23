@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ResourceLimitationParam.h"
+#import <ulibgsmmap/UMGSMMAP_ResourceLimitationParam.h>
 
 @implementation UMGSMMAP_ResourceLimitationParam
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ActivateTraceModeArg.h"
+#import <ulibgsmmap/UMGSMMAP_ActivateTraceModeArg.h>
 
 @implementation UMGSMMAP_ActivateTraceModeArg
 

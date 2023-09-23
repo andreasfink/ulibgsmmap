@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CCBS_Indicators.h"
+#import <ulibgsmmap/UMGSMMAP_CCBS_Indicators.h>
 
 @implementation UMGSMMAP_CCBS_Indicators
 

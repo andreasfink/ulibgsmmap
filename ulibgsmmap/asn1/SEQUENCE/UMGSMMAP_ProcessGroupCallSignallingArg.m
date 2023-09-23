@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ProcessGroupCallSignallingArg.h"
+#import <ulibgsmmap/UMGSMMAP_ProcessGroupCallSignallingArg.h>
 
 @implementation UMGSMMAP_ProcessGroupCallSignallingArg
 

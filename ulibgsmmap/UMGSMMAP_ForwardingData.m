@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_ForwardingData.h"
+#import <ulibgsmmap/UMGSMMAP_ForwardingData.h>
 
 @implementation UMGSMMAP_ForwardingData
 

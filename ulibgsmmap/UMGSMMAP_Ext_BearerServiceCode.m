@@ -20,7 +20,7 @@ BearerServiceCode ::= OCTET STRING (SIZE (1))
 -- bits 7654321: group (bits 7654), and rate, if applicable -- (bits 321)
 
 */
-#import "UMGSMMAP_Ext_BearerServiceCode.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_BearerServiceCode.h>
 
 @implementation UMGSMMAP_Ext_BearerServiceCode
 

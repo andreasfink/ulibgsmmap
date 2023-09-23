@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UnauthorizedLCSClient_Diagnostic.h"
+#import <ulibgsmmap/UMGSMMAP_UnauthorizedLCSClient_Diagnostic.h>
 
 @implementation UMGSMMAP_UnauthorizedLCSClient_Diagnostic
 

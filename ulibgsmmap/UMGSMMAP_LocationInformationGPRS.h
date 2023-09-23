@@ -9,17 +9,17 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_CellGlobalIdOrServiceAreaIdOrLAI.h"
-#import "UMGSMMAP_RAIdentity.h"
-#import "UMGSMMAP_GeographicalInformation.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_LSAIdentity.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_GeodeticInformation.h"
-#import "UMGSMMAP_AgeOfLocationInformation.h"
-#import "UMGSMMAP_UserCSGInformation.h"
+#import <ulibgsmmap/UMGSMMAP_CellGlobalIdOrServiceAreaIdOrLAI.h>
+#import <ulibgsmmap/UMGSMMAP_RAIdentity.h>
+#import <ulibgsmmap/UMGSMMAP_GeographicalInformation.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_LSAIdentity.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_GeodeticInformation.h>
+#import <ulibgsmmap/UMGSMMAP_AgeOfLocationInformation.h>
+#import <ulibgsmmap/UMGSMMAP_UserCSGInformation.h>
 
 @interface UMGSMMAP_LocationInformationGPRS : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

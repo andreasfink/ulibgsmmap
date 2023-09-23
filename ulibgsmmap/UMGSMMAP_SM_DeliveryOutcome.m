@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_SM_DeliveryOutcome.h"
+#import <ulibgsmmap/UMGSMMAP_SM_DeliveryOutcome.h>
 
 @implementation UMGSMMAP_SM_DeliveryOutcome
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SubBusyForMT_SMS_Param.h"
+#import <ulibgsmmap/UMGSMMAP_SubBusyForMT_SMS_Param.h>
 
 @implementation UMGSMMAP_SubBusyForMT_SMS_Param
 

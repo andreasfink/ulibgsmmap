@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TA_Id.h"
+#import <ulibgsmmap/UMGSMMAP_TA_Id.h>
 
 @implementation UMGSMMAP_TA_Id
 

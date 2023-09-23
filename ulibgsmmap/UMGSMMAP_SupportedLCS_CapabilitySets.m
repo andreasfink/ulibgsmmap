@@ -15,7 +15,7 @@
  lcsCapabilitySet5 (4) } (SIZE (2..16))
  
  */
-#import "UMGSMMAP_SupportedLCS_CapabilitySets.h"
+#import <ulibgsmmap/UMGSMMAP_SupportedLCS_CapabilitySets.h>
 
 @implementation UMGSMMAP_SupportedLCS_CapabilitySets
 

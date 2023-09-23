@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_UtranPositioningDataInfo.h"
+#import <ulibgsmmap/UMGSMMAP_UtranPositioningDataInfo.h>
 
 @implementation UMGSMMAP_UtranPositioningDataInfo
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MOLR_Class.h"
+#import <ulibgsmmap/UMGSMMAP_MOLR_Class.h>
 
 @implementation UMGSMMAP_MOLR_Class
 

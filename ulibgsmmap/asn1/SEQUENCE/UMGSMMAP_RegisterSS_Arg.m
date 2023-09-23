@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RegisterSS_Arg.h"
+#import <ulibgsmmap/UMGSMMAP_RegisterSS_Arg.h>
 
 @implementation UMGSMMAP_RegisterSS_Arg
 

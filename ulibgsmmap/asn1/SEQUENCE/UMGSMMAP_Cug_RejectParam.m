@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Cug_RejectParam.h"
+#import <ulibgsmmap/UMGSMMAP_Cug_RejectParam.h>
 
 @implementation UMGSMMAP_Cug_RejectParam
 

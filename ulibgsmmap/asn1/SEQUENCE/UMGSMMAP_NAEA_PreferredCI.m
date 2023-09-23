@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NAEA_PreferredCI.h"
+#import <ulibgsmmap/UMGSMMAP_NAEA_PreferredCI.h>
 
 @implementation UMGSMMAP_NAEA_PreferredCI
 

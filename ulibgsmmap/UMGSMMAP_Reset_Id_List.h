@@ -7,7 +7,7 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_Reset_Id.h"
+#import <ulibgsmmap/UMGSMMAP_Reset_Id.h>
 
 @interface UMGSMMAP_Reset_Id_List : UMASN1Sequence
 {

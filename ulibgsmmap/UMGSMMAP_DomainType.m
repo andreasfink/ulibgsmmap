@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_DomainType.h"
+#import <ulibgsmmap/UMGSMMAP_DomainType.h>
 
 @implementation UMGSMMAP_DomainType
 

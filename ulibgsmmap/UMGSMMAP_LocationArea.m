@@ -9,9 +9,9 @@
 // the author.
 //
 
-#import "UMGSMMAP_LocationArea.h"
-#import "UMGSMMAP_LAIFixedLength.h"
-#import "UMGSMMAP_LAC.h"
+#import <ulibgsmmap/UMGSMMAP_LocationArea.h>
+#import <ulibgsmmap/UMGSMMAP_LAIFixedLength.h>
+#import <ulibgsmmap/UMGSMMAP_LAC.h>
 
 @implementation UMGSMMAP_LocationArea
 

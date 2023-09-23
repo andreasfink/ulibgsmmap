@@ -9,13 +9,13 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_SendingNode_Number.h"
-#import "UMGSMMAP_HLR_List.h"
-#import "UMGSMMAP_Reset_Id_List.h"
-#import "UMGSMMAP_InsertSubscriberDataArg.h"
-#import "UMGSMMAP_DeleteSubscriberDataArg.h"
+#import <ulibgsmmap/UMGSMMAP_SendingNode_Number.h>
+#import <ulibgsmmap/UMGSMMAP_HLR_List.h>
+#import <ulibgsmmap/UMGSMMAP_Reset_Id_List.h>
+#import <ulibgsmmap/UMGSMMAP_InsertSubscriberDataArg.h>
+#import <ulibgsmmap/UMGSMMAP_DeleteSubscriberDataArg.h>
 
 @interface UMGSMMAP_ResetArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

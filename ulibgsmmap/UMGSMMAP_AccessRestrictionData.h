@@ -8,7 +8,7 @@
 
 #import <ulibasn1/ulibasn1.h>
 #import <ulibtcap/ulibtcap.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
 @interface UMGSMMAP_AccessRestrictionData : UMASN1BitString
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCSRequestorID.h"
+#import <ulibgsmmap/UMGSMMAP_LCSRequestorID.h>
 
 @implementation UMGSMMAP_LCSRequestorID
 

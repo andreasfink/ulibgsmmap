@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_OR_Phase.h"
+#import <ulibgsmmap/UMGSMMAP_OR_Phase.h>
 
 @implementation UMGSMMAP_OR_Phase
 

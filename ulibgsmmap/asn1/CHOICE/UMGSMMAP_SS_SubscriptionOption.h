@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_CliRestrictionOption.h"
-#import "UMGSMMAP_OverrideCategory.h"
+#import <ulibgsmmap/UMGSMMAP_CliRestrictionOption.h>
+#import <ulibgsmmap/UMGSMMAP_OverrideCategory.h>
 
 @interface UMGSMMAP_SS_SubscriptionOption : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

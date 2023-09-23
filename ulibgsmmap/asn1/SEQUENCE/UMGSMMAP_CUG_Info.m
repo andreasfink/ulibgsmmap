@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CUG_Info.h"
+#import <ulibgsmmap/UMGSMMAP_CUG_Info.h>
 
 @implementation UMGSMMAP_CUG_Info
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Horizontal_Accuracy.h"
+#import <ulibgsmmap/UMGSMMAP_Horizontal_Accuracy.h>
 
 @implementation UMGSMMAP_Horizontal_Accuracy
 

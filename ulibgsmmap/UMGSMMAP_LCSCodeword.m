@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCSCodeword.h"
+#import <ulibgsmmap/UMGSMMAP_LCSCodeword.h>
 
 @implementation UMGSMMAP_LCSCodeword
 

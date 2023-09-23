@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NSAPI.h"
+#import <ulibgsmmap/UMGSMMAP_NSAPI.h>
 
 @implementation UMGSMMAP_NSAPI
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Re_SynchronisationInfo.h"
+#import <ulibgsmmap/UMGSMMAP_Re_SynchronisationInfo.h>
 
 @implementation UMGSMMAP_Re_SynchronisationInfo
 

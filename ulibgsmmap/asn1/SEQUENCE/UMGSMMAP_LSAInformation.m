@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LSAInformation.h"
+#import <ulibgsmmap/UMGSMMAP_LSAInformation.h>
 
 @implementation UMGSMMAP_LSAInformation
 

@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_ForwardGroupCallSignallingArg.h"
+#import <ulibgsmmap/UMGSMMAP_ForwardGroupCallSignallingArg.h>
 
 @implementation UMGSMMAP_ForwardGroupCallSignallingArg
 

@@ -9,10 +9,10 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_IMSI_WithLMSI.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_IMSI_WithLMSI.h>
 
 @interface UMGSMMAP_Identity : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {

@@ -8,9 +8,9 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-#import "UMGSMMAP_PDP_Address.h"
-#import "UMGSMMAP_FQDN.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_PDP_Address.h>
+#import <ulibgsmmap/UMGSMMAP_FQDN.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_PDN_GW_Identity : UMASN1Sequence
 {

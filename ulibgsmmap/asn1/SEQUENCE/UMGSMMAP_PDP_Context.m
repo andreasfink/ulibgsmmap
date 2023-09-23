@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PDP_Context.h"
+#import <ulibgsmmap/UMGSMMAP_PDP_Context.h>
 
 @implementation UMGSMMAP_PDP_Context
 

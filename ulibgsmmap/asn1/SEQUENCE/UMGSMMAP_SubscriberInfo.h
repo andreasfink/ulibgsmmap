@@ -7,23 +7,23 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_LocationInformation.h"
-#import "UMGSMMAP_SubscriberState.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_LocationInformationGPRS.h"
-#import "UMGSMMAP_PS_SubscriberState.h"
-#import "UMGSMMAP_IMEI.h"
-#import "UMGSMMAP_MS_Classmark2.h"
-#import "UMGSMMAP_GPRSMSClass.h"
-#import "UMGSMMAP_MNPInfoRes.h"
-#import "UMGSMMAP_IMS_VoiceOverPS_SessionsInd.h"
-#import "UMGSMMAP_ASNTime.h"
-#import "UMGSMMAP_Used_RAT_Type.h"
-#import "UMGSMMAP_LocationInformationEPS.h"
-#import "UMGSMMAP_ASNTimeZone.h"
-#import "UMGSMMAP_DaylightSavingTime.h"
+#import <ulibgsmmap/UMGSMMAP_LocationInformation.h>
+#import <ulibgsmmap/UMGSMMAP_SubscriberState.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_LocationInformationGPRS.h>
+#import <ulibgsmmap/UMGSMMAP_PS_SubscriberState.h>
+#import <ulibgsmmap/UMGSMMAP_IMEI.h>
+#import <ulibgsmmap/UMGSMMAP_MS_Classmark2.h>
+#import <ulibgsmmap/UMGSMMAP_GPRSMSClass.h>
+#import <ulibgsmmap/UMGSMMAP_MNPInfoRes.h>
+#import <ulibgsmmap/UMGSMMAP_IMS_VoiceOverPS_SessionsInd.h>
+#import <ulibgsmmap/UMGSMMAP_ASNTime.h>
+#import <ulibgsmmap/UMGSMMAP_Used_RAT_Type.h>
+#import <ulibgsmmap/UMGSMMAP_LocationInformationEPS.h>
+#import <ulibgsmmap/UMGSMMAP_ASNTimeZone.h>
+#import <ulibgsmmap/UMGSMMAP_DaylightSavingTime.h>
 
 @interface UMGSMMAP_SubscriberInfo : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

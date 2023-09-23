@@ -9,11 +9,11 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_T_BcsmTriggerDetectionPoint.h"
-#import "UMGSMMAP_BasicServiceCriteria.h"
-#import "UMGSMMAP_T_CauseValueCriteria.h"
+#import <ulibgsmmap/UMGSMMAP_T_BcsmTriggerDetectionPoint.h>
+#import <ulibgsmmap/UMGSMMAP_BasicServiceCriteria.h>
+#import <ulibgsmmap/UMGSMMAP_T_CauseValueCriteria.h>
 
 @interface UMGSMMAP_T_BCSM_CAMEL_TDP_Criteria : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

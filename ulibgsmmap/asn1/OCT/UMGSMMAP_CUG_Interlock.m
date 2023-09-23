@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CUG_Interlock.h"
+#import <ulibgsmmap/UMGSMMAP_CUG_Interlock.h>
 
 @implementation UMGSMMAP_CUG_Interlock
 

@@ -9,14 +9,14 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_ContextId.h"
-#import "UMGSMMAP_PDP_Type.h"
-#import "UMGSMMAP_PDP_Address.h"
-#import "UMGSMMAP_QoS_Subscribed.h"
-#import "UMGSMMAP_APN.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_ContextId.h>
+#import <ulibgsmmap/UMGSMMAP_PDP_Type.h>
+#import <ulibgsmmap/UMGSMMAP_PDP_Address.h>
+#import <ulibgsmmap/UMGSMMAP_QoS_Subscribed.h>
+#import <ulibgsmmap/UMGSMMAP_APN.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_PDP_Context : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_LCS_FormatIndicator.h"
+#import <ulibgsmmap/UMGSMMAP_LCS_FormatIndicator.h>
 
 
 @implementation UMGSMMAP_LCS_FormatIndicator

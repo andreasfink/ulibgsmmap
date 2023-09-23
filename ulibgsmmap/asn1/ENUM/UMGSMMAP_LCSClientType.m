@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCSClientType.h"
+#import <ulibgsmmap/UMGSMMAP_LCSClientType.h>
 
 @implementation UMGSMMAP_LCSClientType
 

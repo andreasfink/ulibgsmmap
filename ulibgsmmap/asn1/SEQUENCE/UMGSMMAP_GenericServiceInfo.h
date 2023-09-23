@@ -7,12 +7,12 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_SS_Status.h"
-#import "UMGSMMAP_CliRestrictionOption.h"
-#import "UMGSMMAP_EMLPP_Priority.h"
-#import "UMGSMMAP_CCBS_FeatureList.h"
+#import <ulibgsmmap/UMGSMMAP_SS_Status.h>
+#import <ulibgsmmap/UMGSMMAP_CliRestrictionOption.h>
+#import <ulibgsmmap/UMGSMMAP_EMLPP_Priority.h>
+#import <ulibgsmmap/UMGSMMAP_CCBS_FeatureList.h>
 
 @interface UMGSMMAP_GenericServiceInfo : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

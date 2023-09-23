@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SetReportingStateRes.h"
+#import <ulibgsmmap/UMGSMMAP_SetReportingStateRes.h>
 
 @implementation UMGSMMAP_SetReportingStateRes
 

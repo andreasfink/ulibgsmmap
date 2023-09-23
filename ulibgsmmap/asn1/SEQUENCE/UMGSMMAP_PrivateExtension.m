@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PrivateExtension.h"
+#import <ulibgsmmap/UMGSMMAP_PrivateExtension.h>
 
 @implementation UMGSMMAP_PrivateExtension
 

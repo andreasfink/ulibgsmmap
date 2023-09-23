@@ -7,12 +7,12 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_EventReportData.h"
-#import "UMGSMMAP_CallReportData.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_EventReportData.h>
+#import <ulibgsmmap/UMGSMMAP_CallReportData.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_StatusReportArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

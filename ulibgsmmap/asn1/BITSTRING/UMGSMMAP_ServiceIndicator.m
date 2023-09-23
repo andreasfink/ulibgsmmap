@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ServiceIndicator.h"
+#import <ulibgsmmap/UMGSMMAP_ServiceIndicator.h>
 
 @implementation UMGSMMAP_ServiceIndicator
 

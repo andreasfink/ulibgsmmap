@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TraceType.h"
+#import <ulibgsmmap/UMGSMMAP_TraceType.h>
 
 @implementation UMGSMMAP_TraceType
 

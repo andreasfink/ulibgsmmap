@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_gprsSupportIndicator.h"
+#import <ulibgsmmap/UMGSMMAP_gprsSupportIndicator.h>
 
 @implementation UMGSMMAP_gprsSupportIndicator
 

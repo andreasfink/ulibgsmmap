@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_MT_smsCAMELTDP_Criteria.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_MT_smsCAMELTDP_Criteria.h>
 
 @interface UMGSMMAP_MT_smsCAMELTDP_CriteriaList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

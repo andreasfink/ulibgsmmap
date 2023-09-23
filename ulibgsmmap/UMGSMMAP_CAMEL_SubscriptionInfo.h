@@ -9,21 +9,21 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_O_CSI.h"
-#import "UMGSMMAP_O_BcsmCamelTDPCriteriaList.h"
-#import "UMGSMMAP_D_CSI.h"
-#import "UMGSMMAP_T_CSI.h"
-#import "UMGSMMAP_T_BCSM_CAMEL_TDP_CriteriaList.h"
-#import "UMGSMMAP_GPRS_CSI.h"
-#import "UMGSMMAP_SMS_CSI.h"
-#import "UMGSMMAP_SS_CSI.h"
-#import "UMGSMMAP_M_CSI.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_SpecificCSI_Withdraw.h"
-#import "UMGSMMAP_MT_smsCAMELTDP_CriteriaList.h"
-#import "UMGSMMAP_MG_CSI.h"
+#import <ulibgsmmap/UMGSMMAP_O_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_O_BcsmCamelTDPCriteriaList.h>
+#import <ulibgsmmap/UMGSMMAP_D_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_T_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_T_BCSM_CAMEL_TDP_CriteriaList.h>
+#import <ulibgsmmap/UMGSMMAP_GPRS_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_SMS_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_SS_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_M_CSI.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_SpecificCSI_Withdraw.h>
+#import <ulibgsmmap/UMGSMMAP_MT_smsCAMELTDP_CriteriaList.h>
+#import <ulibgsmmap/UMGSMMAP_MG_CSI.h>
 
 @interface UMGSMMAP_CAMEL_SubscriptionInfo : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

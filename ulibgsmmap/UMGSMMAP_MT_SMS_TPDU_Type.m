@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_MT_SMS_TPDU_Type.h"
+#import <ulibgsmmap/UMGSMMAP_MT_SMS_TPDU_Type.h>
 
 @implementation UMGSMMAP_MT_SMS_TPDU_Type
 

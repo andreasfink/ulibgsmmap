@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_NetworkResource.h"
+#import <ulibgsmmap/UMGSMMAP_NetworkResource.h>
 
 @implementation UMGSMMAP_NetworkResource
 

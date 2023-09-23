@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_MT_SMS_TPDU_Type.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_MT_SMS_TPDU_Type.h>
 
 
 @interface UMGSMMAP_TPDU_TypeCriterion : UMASN1Sequence<UMGSMMAP_asn1_protocol>

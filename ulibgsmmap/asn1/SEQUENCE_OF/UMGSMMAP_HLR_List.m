@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_HLR_List.h"
+#import <ulibgsmmap/UMGSMMAP_HLR_List.h>
 
 @implementation UMGSMMAP_HLR_List
 

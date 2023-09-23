@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CallOutcome.h"
+#import <ulibgsmmap/UMGSMMAP_CallOutcome.h>
 
 @implementation UMGSMMAP_CallOutcome
 

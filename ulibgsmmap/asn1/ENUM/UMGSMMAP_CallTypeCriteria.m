@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CallTypeCriteria.h"
+#import <ulibgsmmap/UMGSMMAP_CallTypeCriteria.h>
 
 @implementation UMGSMMAP_CallTypeCriteria
 

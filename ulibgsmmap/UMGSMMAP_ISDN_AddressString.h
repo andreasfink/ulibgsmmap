@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AddressString.h"
+#import <ulibgsmmap/UMGSMMAP_AddressString.h>
 
 @interface UMGSMMAP_ISDN_AddressString : UMGSMMAP_AddressString
 {

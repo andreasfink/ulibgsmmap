@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_RoutingInfoForLCS_Res.h"
+#import <ulibgsmmap/UMGSMMAP_RoutingInfoForLCS_Res.h>
 
 @implementation UMGSMMAP_RoutingInfoForLCS_Res
 

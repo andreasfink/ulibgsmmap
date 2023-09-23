@@ -7,26 +7,26 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_Category.h"
-#import "UMGSMMAP_SubscriberStatus.h"
-#import "UMGSMMAP_BearerServiceList.h"
-#import "UMGSMMAP_TeleserviceList.h"
-#import "UMGSMMAP_Ext_SS_InfoList.h"
-#import "UMGSMMAP_ODB_Data.h"
-#import "UMGSMMAP_ZoneCodeList.h"
-#import "UMGSMMAP_VBSDataList.h"
-#import "UMGSMMAP_VGCSDataList.h"
-#import "UMGSMMAP_VlrCamelSubscriptionInfo.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_NAEA_PreferredCI.h"
-#import "UMGSMMAP_GPRSSubscriptionData.h"
-#import "UMGSMMAP_NetworkAccessMode.h"
-#import "UMGSMMAP_LSAInformation.h"
-#import "UMGSMMAP_LCSInformation.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_Category.h>
+#import <ulibgsmmap/UMGSMMAP_SubscriberStatus.h>
+#import <ulibgsmmap/UMGSMMAP_BearerServiceList.h>
+#import <ulibgsmmap/UMGSMMAP_TeleserviceList.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_SS_InfoList.h>
+#import <ulibgsmmap/UMGSMMAP_ODB_Data.h>
+#import <ulibgsmmap/UMGSMMAP_ZoneCodeList.h>
+#import <ulibgsmmap/UMGSMMAP_VBSDataList.h>
+#import <ulibgsmmap/UMGSMMAP_VGCSDataList.h>
+#import <ulibgsmmap/UMGSMMAP_VlrCamelSubscriptionInfo.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_NAEA_PreferredCI.h>
+#import <ulibgsmmap/UMGSMMAP_GPRSSubscriptionData.h>
+#import <ulibgsmmap/UMGSMMAP_NetworkAccessMode.h>
+#import <ulibgsmmap/UMGSMMAP_LSAInformation.h>
+#import <ulibgsmmap/UMGSMMAP_LCSInformation.h>
 
 @interface UMGSMMAP_InsertSubscriberDataArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

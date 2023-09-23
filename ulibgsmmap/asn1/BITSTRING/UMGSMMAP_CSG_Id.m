@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CSG_Id.h"
+#import <ulibgsmmap/UMGSMMAP_CSG_Id.h>
 
 @implementation UMGSMMAP_CSG_Id
 

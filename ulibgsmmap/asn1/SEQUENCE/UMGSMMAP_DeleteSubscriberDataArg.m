@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_DeleteSubscriberDataArg.h"
+#import <ulibgsmmap/UMGSMMAP_DeleteSubscriberDataArg.h>
 
 @implementation UMGSMMAP_DeleteSubscriberDataArg
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_IK.h"
+#import <ulibgsmmap/UMGSMMAP_IK.h>
 
 @implementation UMGSMMAP_IK
 

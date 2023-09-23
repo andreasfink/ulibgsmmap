@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_EMLPP_Info.h"
+#import <ulibgsmmap/UMGSMMAP_EMLPP_Info.h>
 
 @implementation UMGSMMAP_EMLPP_Info
 

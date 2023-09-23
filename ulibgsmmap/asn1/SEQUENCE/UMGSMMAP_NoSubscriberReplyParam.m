@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NoSubscriberReplyParam.h"
+#import <ulibgsmmap/UMGSMMAP_NoSubscriberReplyParam.h>
 
 @implementation UMGSMMAP_NoSubscriberReplyParam
 

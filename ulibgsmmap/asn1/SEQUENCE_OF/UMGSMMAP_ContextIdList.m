@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ContextIdList.h"
+#import <ulibgsmmap/UMGSMMAP_ContextIdList.h>
 
 @implementation UMGSMMAP_ContextIdList
 

@@ -9,12 +9,12 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_Horizontal_Accuracy.h"
-#import "UMGSMMAP_Vertical_Accuracy.h"
-#import "UMGSMMAP_ResponseTime.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_Horizontal_Accuracy.h>
+#import <ulibgsmmap/UMGSMMAP_Vertical_Accuracy.h>
+#import <ulibgsmmap/UMGSMMAP_ResponseTime.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_LCS_QoS : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AuthenticationTriplet.h"
+#import <ulibgsmmap/UMGSMMAP_AuthenticationTriplet.h>
 
 @implementation UMGSMMAP_AuthenticationTriplet
 

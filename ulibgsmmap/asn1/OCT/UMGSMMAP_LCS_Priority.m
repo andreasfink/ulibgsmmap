@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCS_Priority.h"
+#import <ulibgsmmap/UMGSMMAP_LCS_Priority.h>
 
 @implementation UMGSMMAP_LCS_Priority
 

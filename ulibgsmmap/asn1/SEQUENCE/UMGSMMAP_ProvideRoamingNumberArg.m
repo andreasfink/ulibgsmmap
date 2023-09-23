@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ProvideRoamingNumberArg.h"
+#import <ulibgsmmap/UMGSMMAP_ProvideRoamingNumberArg.h>
 
 @implementation UMGSMMAP_ProvideRoamingNumberArg
 

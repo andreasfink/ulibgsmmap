@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ext3_QoS_Subscribed.h"
+#import <ulibgsmmap/UMGSMMAP_Ext3_QoS_Subscribed.h>
 
 @implementation UMGSMMAP_Ext3_QoS_Subscribed
 

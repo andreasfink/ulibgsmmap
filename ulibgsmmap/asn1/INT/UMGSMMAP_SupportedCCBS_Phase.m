@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SupportedCCBS_Phase.h"
+#import <ulibgsmmap/UMGSMMAP_SupportedCCBS_Phase.h>
 
 @implementation UMGSMMAP_SupportedCCBS_Phase
 

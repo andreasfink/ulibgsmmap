@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SupportedCamelPhases.h"
+#import <ulibgsmmap/UMGSMMAP_SupportedCamelPhases.h>
 
 @implementation UMGSMMAP_SupportedCamelPhases
 

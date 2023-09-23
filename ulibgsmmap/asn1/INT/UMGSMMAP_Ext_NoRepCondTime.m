@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ext_NoRepCondTime.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_NoRepCondTime.h>
 
 @implementation UMGSMMAP_Ext_NoRepCondTime
 

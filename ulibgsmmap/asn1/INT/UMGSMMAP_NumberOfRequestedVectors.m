@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NumberOfRequestedVectors.h"
+#import <ulibgsmmap/UMGSMMAP_NumberOfRequestedVectors.h>
 
 @implementation UMGSMMAP_NumberOfRequestedVectors
 

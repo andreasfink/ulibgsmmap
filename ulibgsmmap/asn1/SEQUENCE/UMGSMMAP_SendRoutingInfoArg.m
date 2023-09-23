@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SendRoutingInfoArg.h"
+#import <ulibgsmmap/UMGSMMAP_SendRoutingInfoArg.h>
 
 @implementation UMGSMMAP_SendRoutingInfoArg
 

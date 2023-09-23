@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UnknownOrUnreachableLCSClient_Param.h"
+#import <ulibgsmmap/UMGSMMAP_UnknownOrUnreachableLCSClient_Param.h>
 
 @implementation UMGSMMAP_UnknownOrUnreachableLCSClient_Param
 

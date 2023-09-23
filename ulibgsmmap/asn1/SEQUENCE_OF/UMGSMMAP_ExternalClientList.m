@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ExternalClientList.h"
+#import <ulibgsmmap/UMGSMMAP_ExternalClientList.h>
 
 @implementation UMGSMMAP_ExternalClientList
 

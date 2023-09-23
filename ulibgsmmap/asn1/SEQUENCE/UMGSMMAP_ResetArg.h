@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_HLR_List.h"
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_HLR_List.h>
 
 @interface UMGSMMAP_ResetArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_OfferedCamel4CSIs.h"
+#import <ulibgsmmap/UMGSMMAP_OfferedCamel4CSIs.h>
 
 @implementation UMGSMMAP_OfferedCamel4CSIs
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_O_BcsmCamelTDPCriteriaList.h"
+#import <ulibgsmmap/UMGSMMAP_O_BcsmCamelTDPCriteriaList.h>
 
 @implementation UMGSMMAP_O_BcsmCamelTDPCriteriaList
 

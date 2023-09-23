@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ResetArg.h"
+#import <ulibgsmmap/UMGSMMAP_ResetArg.h>
 
 @implementation UMGSMMAP_ResetArg
 

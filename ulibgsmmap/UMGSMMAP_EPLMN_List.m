@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_EPLMN_List.h"
+#import <ulibgsmmap/UMGSMMAP_EPLMN_List.h>
 
 @implementation UMGSMMAP_EPLMN_List
 

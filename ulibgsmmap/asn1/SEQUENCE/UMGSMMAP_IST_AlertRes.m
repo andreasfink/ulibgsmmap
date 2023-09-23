@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_IST_AlertRes.h"
+#import <ulibgsmmap/UMGSMMAP_IST_AlertRes.h>
 
 @implementation UMGSMMAP_IST_AlertRes
 

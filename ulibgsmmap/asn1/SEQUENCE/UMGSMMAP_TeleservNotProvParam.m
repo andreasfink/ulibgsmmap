@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TeleservNotProvParam.h"
+#import <ulibgsmmap/UMGSMMAP_TeleservNotProvParam.h>
 
 @implementation UMGSMMAP_TeleservNotProvParam
 

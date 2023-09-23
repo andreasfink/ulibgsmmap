@@ -9,13 +9,13 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_TraceReference.h"
-#import "UMGSMMAP_TraceType.h"
-#import "UMGSMMAP_AddressString.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_TraceReference.h>
+#import <ulibgsmmap/UMGSMMAP_TraceType.h>
+#import <ulibgsmmap/UMGSMMAP_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_ActivateTraceModeArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

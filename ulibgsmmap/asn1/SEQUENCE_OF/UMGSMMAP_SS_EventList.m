@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SS_EventList.h"
+#import <ulibgsmmap/UMGSMMAP_SS_EventList.h>
 
 @implementation UMGSMMAP_SS_EventList
 

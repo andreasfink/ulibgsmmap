@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SignalInfo.h"
+#import <ulibgsmmap/UMGSMMAP_SignalInfo.h>
 
 @implementation UMGSMMAP_SignalInfo
 

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_StatisticDbRecord.h"
+#import <ulibgsmmap/UMGSMMAP_StatisticDbRecord.h>
 
 @implementation UMGSMMAP_StatisticDbRecord
 

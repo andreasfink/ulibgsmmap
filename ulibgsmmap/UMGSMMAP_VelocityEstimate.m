@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_VelocityEstimate.h"
+#import <ulibgsmmap/UMGSMMAP_VelocityEstimate.h>
 /*
  -- Refers to Velocity description defined in 3GPP TS 23.032.
  -- This is composed of 4 or more octets with an internal structure according to -- 3GPP TS 23.032

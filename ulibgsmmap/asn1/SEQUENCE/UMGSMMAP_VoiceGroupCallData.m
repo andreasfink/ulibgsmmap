@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_VoiceGroupCallData.h"
+#import <ulibgsmmap/UMGSMMAP_VoiceGroupCallData.h>
 
 @implementation UMGSMMAP_VoiceGroupCallData
 

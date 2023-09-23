@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LSAIdentity.h"
+#import <ulibgsmmap/UMGSMMAP_LSAIdentity.h>
 
 @implementation UMGSMMAP_LSAIdentity
 

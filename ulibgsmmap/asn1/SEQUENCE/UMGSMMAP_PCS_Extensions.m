@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PCS_Extensions.h"
+#import <ulibgsmmap/UMGSMMAP_PCS_Extensions.h>
 
 @implementation UMGSMMAP_PCS_Extensions
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SRES.h"
+#import <ulibgsmmap/UMGSMMAP_SRES.h>
 
 @implementation UMGSMMAP_SRES
 

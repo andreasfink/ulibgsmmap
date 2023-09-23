@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_USSD_DataCodingScheme.h"
-#import "UMGSMMAP_USSD_String.h"
+#import <ulibgsmmap/UMGSMMAP_USSD_DataCodingScheme.h>
+#import <ulibgsmmap/UMGSMMAP_USSD_String.h>
 
 @interface UMGSMMAP_Ussd_Res : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_EquipmentStatus.h"
-#import "UMGSMMAP_UESBI_Iu.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_EquipmentStatus.h>
+#import <ulibgsmmap/UMGSMMAP_UESBI_Iu.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_CheckIMEIRes : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

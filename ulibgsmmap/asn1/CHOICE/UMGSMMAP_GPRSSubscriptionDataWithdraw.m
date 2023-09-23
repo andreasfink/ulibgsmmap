@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GPRSSubscriptionDataWithdraw.h"
+#import <ulibgsmmap/UMGSMMAP_GPRSSubscriptionDataWithdraw.h>
 
 @implementation UMGSMMAP_GPRSSubscriptionDataWithdraw
 

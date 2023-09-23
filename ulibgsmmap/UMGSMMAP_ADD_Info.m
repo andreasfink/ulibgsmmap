@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_ADD_Info.h"
+#import <ulibgsmmap/UMGSMMAP_ADD_Info.h>
 
 @implementation UMGSMMAP_ADD_Info
 @synthesize operationName;

@@ -7,11 +7,11 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_CUG_SubscriptionList.h"
-#import "UMGSMMAP_CUG_FeatureList.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_CUG_SubscriptionList.h>
+#import <ulibgsmmap/UMGSMMAP_CUG_FeatureList.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_CUG_Info : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

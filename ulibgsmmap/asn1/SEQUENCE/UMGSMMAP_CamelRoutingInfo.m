@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CamelRoutingInfo.h"
+#import <ulibgsmmap/UMGSMMAP_CamelRoutingInfo.h>
 
 @implementation UMGSMMAP_CamelRoutingInfo
 

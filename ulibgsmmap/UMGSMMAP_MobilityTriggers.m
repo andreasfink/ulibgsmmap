@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_MobilityTriggers.h"
+#import <ulibgsmmap/UMGSMMAP_MobilityTriggers.h>
 
 @implementation UMGSMMAP_MobilityTriggers
 

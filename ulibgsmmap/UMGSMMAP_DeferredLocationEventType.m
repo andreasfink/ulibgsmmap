@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_DeferredLocationEventType.h"
+#import <ulibgsmmap/UMGSMMAP_DeferredLocationEventType.h>
 
 @implementation UMGSMMAP_DeferredLocationEventType
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SS_CamelData.h"
+#import <ulibgsmmap/UMGSMMAP_SS_CamelData.h>
 
 @implementation UMGSMMAP_SS_CamelData
 

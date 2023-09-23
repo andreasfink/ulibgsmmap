@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ext_ExternalSignalInfo.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_ExternalSignalInfo.h>
 
 @implementation UMGSMMAP_Ext_ExternalSignalInfo
 

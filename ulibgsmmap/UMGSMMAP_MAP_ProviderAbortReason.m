@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_MAP_ProviderAbortReason.h"
+#import <ulibgsmmap/UMGSMMAP_MAP_ProviderAbortReason.h>
 
 @implementation UMGSMMAP_MAP_ProviderAbortReason
 @synthesize operationName;

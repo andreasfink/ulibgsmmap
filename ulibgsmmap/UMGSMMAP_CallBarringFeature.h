@@ -9,10 +9,10 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_BasicServiceCode.h"
-#import "UMGSMMAP_SS_Status.h"
+#import <ulibgsmmap/UMGSMMAP_BasicServiceCode.h>
+#import <ulibgsmmap/UMGSMMAP_SS_Status.h>
 
 @interface UMGSMMAP_CallBarringFeature : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ext_CallBarringFeature.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_CallBarringFeature.h>
 
 @implementation UMGSMMAP_Ext_CallBarringFeature
 

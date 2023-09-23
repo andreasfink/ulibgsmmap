@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UMTS_SecurityContextData.h"
+#import <ulibgsmmap/UMGSMMAP_UMTS_SecurityContextData.h>
 
 @implementation UMGSMMAP_UMTS_SecurityContextData
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ss_IncompatibilityCause.h"
+#import <ulibgsmmap/UMGSMMAP_Ss_IncompatibilityCause.h>
 
 @implementation UMGSMMAP_Ss_IncompatibilityCause
 

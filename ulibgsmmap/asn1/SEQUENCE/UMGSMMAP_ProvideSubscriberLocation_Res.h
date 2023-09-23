@@ -7,11 +7,11 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_Ext_GeographicalInformation.h"
-#import "UMGSMMAP_AgeOfLocationInformation.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_GeographicalInformation.h>
+#import <ulibgsmmap/UMGSMMAP_AgeOfLocationInformation.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_ProvideSubscriberLocation_Res : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NetworkAccessMode.h"
+#import <ulibgsmmap/UMGSMMAP_NetworkAccessMode.h>
 
 @implementation UMGSMMAP_NetworkAccessMode
 

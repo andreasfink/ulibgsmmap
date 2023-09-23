@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LSAAttributes.h"
+#import <ulibgsmmap/UMGSMMAP_LSAAttributes.h>
 
 @implementation UMGSMMAP_LSAAttributes
 

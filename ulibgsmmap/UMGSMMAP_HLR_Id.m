@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_HLR_Id.h"
+#import <ulibgsmmap/UMGSMMAP_HLR_Id.h>
 
 @implementation UMGSMMAP_HLR_Id
 

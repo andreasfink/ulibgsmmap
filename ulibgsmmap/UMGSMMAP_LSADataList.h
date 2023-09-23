@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_LSAData.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_LSAData.h>
 
 @interface UMGSMMAP_LSADataList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

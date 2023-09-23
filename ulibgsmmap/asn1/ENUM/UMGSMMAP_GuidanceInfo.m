@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GuidanceInfo.h"
+#import <ulibgsmmap/UMGSMMAP_GuidanceInfo.h>
 
 @implementation UMGSMMAP_GuidanceInfo
 

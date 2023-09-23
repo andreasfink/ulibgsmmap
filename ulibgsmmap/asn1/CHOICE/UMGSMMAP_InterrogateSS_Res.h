@@ -7,12 +7,12 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_SS_Status.h"
-#import "UMGSMMAP_BasicServiceGroupList.h"
-#import "UMGSMMAP_ForwardingFeatureList.h"
-#import "UMGSMMAP_GenericServiceInfo.h"
+#import <ulibgsmmap/UMGSMMAP_SS_Status.h>
+#import <ulibgsmmap/UMGSMMAP_BasicServiceGroupList.h>
+#import <ulibgsmmap/UMGSMMAP_ForwardingFeatureList.h>
+#import <ulibgsmmap/UMGSMMAP_GenericServiceInfo.h>
 
 @interface UMGSMMAP_InterrogateSS_Res : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

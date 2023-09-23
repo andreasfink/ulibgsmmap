@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GPRSChargingID.h"
+#import <ulibgsmmap/UMGSMMAP_GPRSChargingID.h>
 
 @implementation UMGSMMAP_GPRSChargingID
 

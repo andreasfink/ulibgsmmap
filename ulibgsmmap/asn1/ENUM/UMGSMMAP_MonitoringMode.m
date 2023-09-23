@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MonitoringMode.h"
+#import <ulibgsmmap/UMGSMMAP_MonitoringMode.h>
 
 @implementation UMGSMMAP_MonitoringMode
 

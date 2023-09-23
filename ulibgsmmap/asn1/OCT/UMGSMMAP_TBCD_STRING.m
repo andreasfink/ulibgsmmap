@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TBCD_STRING.h"
+#import <ulibgsmmap/UMGSMMAP_TBCD_STRING.h>
 
 @implementation UMGSMMAP_TBCD_STRING
 

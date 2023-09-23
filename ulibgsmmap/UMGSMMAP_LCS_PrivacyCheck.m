@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LCS_PrivacyCheck.h"
+#import <ulibgsmmap/UMGSMMAP_LCS_PrivacyCheck.h>
 
 @implementation UMGSMMAP_LCS_PrivacyCheck
 

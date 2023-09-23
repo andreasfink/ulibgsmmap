@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_SS_CSI.h"
+#import <ulibgsmmap/UMGSMMAP_SS_CSI.h>
 
 @implementation UMGSMMAP_SS_CSI
 

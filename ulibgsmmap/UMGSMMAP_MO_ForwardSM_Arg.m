@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_MO_ForwardSM_Arg.h"
+#import <ulibgsmmap/UMGSMMAP_MO_ForwardSM_Arg.h>
 
 @implementation UMGSMMAP_MO_ForwardSM_Arg
 

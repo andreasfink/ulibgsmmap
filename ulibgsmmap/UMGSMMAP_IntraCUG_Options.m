@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_IntraCUG_Options.h"
+#import <ulibgsmmap/UMGSMMAP_IntraCUG_Options.h>
 
 @implementation UMGSMMAP_IntraCUG_Options
 

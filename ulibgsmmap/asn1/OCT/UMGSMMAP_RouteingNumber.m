@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RouteingNumber.h"
+#import <ulibgsmmap/UMGSMMAP_RouteingNumber.h>
 
 @implementation UMGSMMAP_RouteingNumber
 

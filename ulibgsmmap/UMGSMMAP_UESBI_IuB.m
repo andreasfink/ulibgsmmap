@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_UESBI_IuB.h"
+#import <ulibgsmmap/UMGSMMAP_UESBI_IuB.h>
 
 @implementation UMGSMMAP_UESBI_IuB
 

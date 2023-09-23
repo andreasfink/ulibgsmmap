@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_BearerServiceList .h"
+#import <ulibgsmmap/UMGSMMAP_BearerServiceList .h>
 
 @implementation UMGSMMAP_BearerServiceList 
 

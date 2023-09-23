@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_FacilityNotSupParam.h"
+#import <ulibgsmmap/UMGSMMAP_FacilityNotSupParam.h>
 
 @implementation UMGSMMAP_FacilityNotSupParam
 

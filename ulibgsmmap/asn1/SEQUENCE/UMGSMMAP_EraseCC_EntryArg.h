@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_SS_Code.h"
-#import "UMGSMMAP_CCBS_Index.h"
+#import <ulibgsmmap/UMGSMMAP_SS_Code.h>
+#import <ulibgsmmap/UMGSMMAP_CCBS_Index.h>
 
 @interface UMGSMMAP_EraseCC_EntryArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ForwardGroupCallSignallingArg.h"
+#import <ulibgsmmap/UMGSMMAP_ForwardGroupCallSignallingArg.h>
 
 @implementation UMGSMMAP_ForwardGroupCallSignallingArg
 

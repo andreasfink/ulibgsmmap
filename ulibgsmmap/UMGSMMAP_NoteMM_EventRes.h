@@ -8,7 +8,7 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_NoteMM_EventRes : UMASN1Sequence
 {

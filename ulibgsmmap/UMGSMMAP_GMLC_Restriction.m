@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_GMLC_Restriction.h"
+#import <ulibgsmmap/UMGSMMAP_GMLC_Restriction.h>
 
 @implementation UMGSMMAP_GMLC_Restriction
 

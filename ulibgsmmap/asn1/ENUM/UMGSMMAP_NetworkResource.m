@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NetworkResource.h"
+#import <ulibgsmmap/UMGSMMAP_NetworkResource.h>
 
 @implementation UMGSMMAP_NetworkResource
 

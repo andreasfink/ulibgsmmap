@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ext_CallBarInfo.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_CallBarInfo.h>
 
 @implementation UMGSMMAP_Ext_CallBarInfo
 

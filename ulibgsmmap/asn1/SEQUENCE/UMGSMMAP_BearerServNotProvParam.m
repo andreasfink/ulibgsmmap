@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_BearerServNotProvParam.h"
+#import <ulibgsmmap/UMGSMMAP_BearerServNotProvParam.h>
 
 @implementation UMGSMMAP_BearerServNotProvParam
 

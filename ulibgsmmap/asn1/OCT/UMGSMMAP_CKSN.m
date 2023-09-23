@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CKSN.h"
+#import <ulibgsmmap/UMGSMMAP_CKSN.h>
 
 @implementation UMGSMMAP_CKSN
 

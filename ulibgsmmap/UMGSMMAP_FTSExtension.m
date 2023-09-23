@@ -6,8 +6,8 @@
 //  Copyright © 2020 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_FTSExtension.h"
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_FTSExtension.h>
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
 @implementation UMGSMMAP_FTSExtension
 

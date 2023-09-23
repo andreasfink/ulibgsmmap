@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_USSD_DataCodingScheme.h"
+#import <ulibgsmmap/UMGSMMAP_USSD_DataCodingScheme.h>
 
 @implementation UMGSMMAP_USSD_DataCodingScheme
 

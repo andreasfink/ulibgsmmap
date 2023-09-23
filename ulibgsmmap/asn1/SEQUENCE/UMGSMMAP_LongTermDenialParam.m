@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LongTermDenialParam.h"
+#import <ulibgsmmap/UMGSMMAP_LongTermDenialParam.h>
 
 @implementation UMGSMMAP_LongTermDenialParam
 

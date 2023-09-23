@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UnidentifiedSubParam.h"
+#import <ulibgsmmap/UMGSMMAP_UnidentifiedSubParam.h>
 
 @implementation UMGSMMAP_UnidentifiedSubParam
 

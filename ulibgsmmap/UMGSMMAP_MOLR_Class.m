@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_MOLR_Class.h"
+#import <ulibgsmmap/UMGSMMAP_MOLR_Class.h>
 
 @implementation UMGSMMAP_MOLR_Class
 

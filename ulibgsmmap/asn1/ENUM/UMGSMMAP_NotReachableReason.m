@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NotReachableReason.h"
+#import <ulibgsmmap/UMGSMMAP_NotReachableReason.h>
 
 @implementation UMGSMMAP_NotReachableReason
 

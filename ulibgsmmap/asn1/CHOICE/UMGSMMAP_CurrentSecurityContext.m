@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CurrentSecurityContext.h"
+#import <ulibgsmmap/UMGSMMAP_CurrentSecurityContext.h>
 
 @implementation UMGSMMAP_CurrentSecurityContext
 

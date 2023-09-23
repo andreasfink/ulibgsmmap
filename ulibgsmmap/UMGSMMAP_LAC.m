@@ -6,7 +6,7 @@
 //  Copyright © 2020 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_LAC.h"
+#import <ulibgsmmap/UMGSMMAP_LAC.h>
 
 @implementation UMGSMMAP_LAC
 

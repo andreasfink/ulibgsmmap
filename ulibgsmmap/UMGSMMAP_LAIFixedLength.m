@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_LAIFixedLength.h"
+#import <ulibgsmmap/UMGSMMAP_LAIFixedLength.h>
 
 @implementation UMGSMMAP_LAIFixedLength
 

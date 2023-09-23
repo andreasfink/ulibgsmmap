@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Additional_Number.h"
+#import <ulibgsmmap/UMGSMMAP_Additional_Number.h>
 
 @implementation UMGSMMAP_Additional_Number
 

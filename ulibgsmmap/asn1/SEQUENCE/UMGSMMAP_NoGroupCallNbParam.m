@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NoGroupCallNbParam.h"
+#import <ulibgsmmap/UMGSMMAP_NoGroupCallNbParam.h>
 
 @implementation UMGSMMAP_NoGroupCallNbParam
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MSRadioAccessCapability.h"
+#import <ulibgsmmap/UMGSMMAP_MSRadioAccessCapability.h>
 
 @implementation UMGSMMAP_MSRadioAccessCapability
 

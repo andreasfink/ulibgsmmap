@@ -7,15 +7,15 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_TeleserviceList.h"
-#import "UMGSMMAP_BearerServiceList.h"
-#import "UMGSMMAP_SS_List.h"
-#import "UMGSMMAP_ODB_GeneralData.h"
-#import "UMGSMMAP_RegionalSubscriptionResponse.h"
-#import "UMGSMMAP_SupportedCamelPhases.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_TeleserviceList.h>
+#import <ulibgsmmap/UMGSMMAP_BearerServiceList.h>
+#import <ulibgsmmap/UMGSMMAP_SS_List.h>
+#import <ulibgsmmap/UMGSMMAP_ODB_GeneralData.h>
+#import <ulibgsmmap/UMGSMMAP_RegionalSubscriptionResponse.h>
+#import <ulibgsmmap/UMGSMMAP_SupportedCamelPhases.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_InsertSubscriberDataRes : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

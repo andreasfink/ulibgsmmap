@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ReportSM_DeliveryStatusRes.h"
+#import <ulibgsmmap/UMGSMMAP_ReportSM_DeliveryStatusRes.h>
 
 @implementation UMGSMMAP_ReportSM_DeliveryStatusRes
 

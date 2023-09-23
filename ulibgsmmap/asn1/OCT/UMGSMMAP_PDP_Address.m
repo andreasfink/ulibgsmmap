@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PDP_Address.h"
+#import <ulibgsmmap/UMGSMMAP_PDP_Address.h>
 
 @implementation UMGSMMAP_PDP_Address
 

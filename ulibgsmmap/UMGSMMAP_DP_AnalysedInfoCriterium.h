@@ -9,12 +9,12 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_ServiceKey.h"
-#import "UMGSMMAP_DefaultCallHandling.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_ServiceKey.h>
+#import <ulibgsmmap/UMGSMMAP_DefaultCallHandling.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_DP_AnalysedInfoCriterium : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

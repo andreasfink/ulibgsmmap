@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ext_PDP_Type.h"
+#import <ulibgsmmap/UMGSMMAP_Ext_PDP_Type.h>
 
 @implementation UMGSMMAP_Ext_PDP_Type
 

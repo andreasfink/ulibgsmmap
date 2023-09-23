@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GroupKeyNumber.h"
+#import <ulibgsmmap/UMGSMMAP_GroupKeyNumber.h>
 
 @implementation UMGSMMAP_GroupKeyNumber
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_O_BcsmCamelTDPData.h"
+#import <ulibgsmmap/UMGSMMAP_O_BcsmCamelTDPData.h>
 
 @implementation UMGSMMAP_O_BcsmCamelTDPData
 

@@ -9,16 +9,16 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_CallForwardingData.h"
-#import "UMGSMMAP_CallBarringData.h"
-#import "UMGSMMAP_ODB_Info.h"
-#import "UMGSMMAP_CAMEL_SubscriptionInfo.h"
-#import "UMGSMMAP_SupportedCamelPhases.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_OfferedCamel4CSIs.h"
-#import "UMGSMMAP_MSISDN_BS_List.h"
+#import <ulibgsmmap/UMGSMMAP_CallForwardingData.h>
+#import <ulibgsmmap/UMGSMMAP_CallBarringData.h>
+#import <ulibgsmmap/UMGSMMAP_ODB_Info.h>
+#import <ulibgsmmap/UMGSMMAP_CAMEL_SubscriptionInfo.h>
+#import <ulibgsmmap/UMGSMMAP_SupportedCamelPhases.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_OfferedCamel4CSIs.h>
+#import <ulibgsmmap/UMGSMMAP_MSISDN_BS_List.h>
 
 @interface UMGSMMAP_AnyTimeSubscriptionInterrogationRes : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

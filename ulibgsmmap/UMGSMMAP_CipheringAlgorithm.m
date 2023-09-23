@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_CipheringAlgorithm.h"
+#import <ulibgsmmap/UMGSMMAP_CipheringAlgorithm.h>
 
 @implementation UMGSMMAP_CipheringAlgorithm
 

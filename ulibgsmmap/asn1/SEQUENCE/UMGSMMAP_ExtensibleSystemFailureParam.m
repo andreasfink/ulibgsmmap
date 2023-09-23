@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ExtensibleSystemFailureParam.h"
+#import <ulibgsmmap/UMGSMMAP_ExtensibleSystemFailureParam.h>
 
 @implementation UMGSMMAP_ExtensibleSystemFailureParam
 

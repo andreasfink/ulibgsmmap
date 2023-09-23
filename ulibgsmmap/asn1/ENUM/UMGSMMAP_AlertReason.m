@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AlertReason.h"
+#import <ulibgsmmap/UMGSMMAP_AlertReason.h>
 
 @implementation UMGSMMAP_AlertReason
 

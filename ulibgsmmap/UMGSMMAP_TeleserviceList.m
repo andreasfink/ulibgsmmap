@@ -8,8 +8,8 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_TeleserviceList.h"
-#import "UMGSMMAP_Ext_TeleserviceCode.h"
+#import <ulibgsmmap/UMGSMMAP_TeleserviceList.h>
+#import <ulibgsmmap/UMGSMMAP_Ext_TeleserviceCode.h>
 
 @implementation UMGSMMAP_TeleserviceList
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ODB_GeneralData.h"
+#import <ulibgsmmap/UMGSMMAP_ODB_GeneralData.h>
 
 @implementation UMGSMMAP_ODB_GeneralData
 

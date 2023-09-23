@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1.h"
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_LocationInfoWithLMSI.h"
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_asn1.h>
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_LocationInfoWithLMSI.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 /*
  RoutingInfoForSM-Res ::= SEQUENCE

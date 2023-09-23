@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GeographicalInformation.h"
+#import <ulibgsmmap/UMGSMMAP_GeographicalInformation.h>
 
 @implementation UMGSMMAP_GeographicalInformation
 

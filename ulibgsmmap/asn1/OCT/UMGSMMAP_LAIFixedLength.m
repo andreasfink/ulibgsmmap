@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LAIFixedLength.h"
+#import <ulibgsmmap/UMGSMMAP_LAIFixedLength.h>
 
 @implementation UMGSMMAP_LAIFixedLength
 

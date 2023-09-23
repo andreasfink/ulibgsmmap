@@ -9,10 +9,10 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_BearerServiceCode.h"
-#import "UMGSMMAP_TeleserviceCode.h"
+#import <ulibgsmmap/UMGSMMAP_BearerServiceCode.h>
+#import <ulibgsmmap/UMGSMMAP_TeleserviceCode.h>
 
 @interface UMGSMMAP_BasicServiceCode : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {

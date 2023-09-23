@@ -8,8 +8,8 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_SendingNode_Number.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
+#import <ulibgsmmap/UMGSMMAP_SendingNode_Number.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
 
 @implementation UMGSMMAP_SendingNode_Number
 

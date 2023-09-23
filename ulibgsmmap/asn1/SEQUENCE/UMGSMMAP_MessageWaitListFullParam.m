@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MessageWaitListFullParam.h"
+#import <ulibgsmmap/UMGSMMAP_MessageWaitListFullParam.h>
 
 @implementation UMGSMMAP_MessageWaitListFullParam
 

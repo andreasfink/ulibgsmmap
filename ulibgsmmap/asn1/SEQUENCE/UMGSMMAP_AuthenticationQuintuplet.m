@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AuthenticationQuintuplet.h"
+#import <ulibgsmmap/UMGSMMAP_AuthenticationQuintuplet.h>
 
 @implementation UMGSMMAP_AuthenticationQuintuplet
 

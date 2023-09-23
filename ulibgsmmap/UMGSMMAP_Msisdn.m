@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Msisdn.h"
+#import <ulibgsmmap/UMGSMMAP_Msisdn.h>
 
 @implementation UMGSMMAP_Msisdn
 

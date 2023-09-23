@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_LocationEstimateType.h"
+#import <ulibgsmmap/UMGSMMAP_LocationEstimateType.h>
 
 @implementation UMGSMMAP_LocationEstimateType
 

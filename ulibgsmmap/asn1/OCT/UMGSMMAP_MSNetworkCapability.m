@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MSNetworkCapability.h"
+#import <ulibgsmmap/UMGSMMAP_MSNetworkCapability.h>
 
 @implementation UMGSMMAP_MSNetworkCapability
 

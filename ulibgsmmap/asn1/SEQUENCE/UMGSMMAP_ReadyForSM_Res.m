@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ReadyForSM_Res.h"
+#import <ulibgsmmap/UMGSMMAP_ReadyForSM_Res.h>
 
 @implementation UMGSMMAP_ReadyForSM_Res
 

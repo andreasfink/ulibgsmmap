@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CCBS_SubscriberStatus.h"
+#import <ulibgsmmap/UMGSMMAP_CCBS_SubscriberStatus.h>
 
 @implementation UMGSMMAP_CCBS_SubscriberStatus
 

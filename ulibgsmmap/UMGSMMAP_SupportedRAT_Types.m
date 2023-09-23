@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_SupportedRAT_Types.h"
+#import <ulibgsmmap/UMGSMMAP_SupportedRAT_Types.h>
 
 @implementation UMGSMMAP_SupportedRAT_Types
 

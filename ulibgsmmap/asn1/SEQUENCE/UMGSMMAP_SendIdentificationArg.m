@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SendIdentificationArg.h"
+#import <ulibgsmmap/UMGSMMAP_SendIdentificationArg.h>
 
 @implementation UMGSMMAP_SendIdentificationArg
 

@@ -7,9 +7,9 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_ContextIdList.h"
+#import <ulibgsmmap/UMGSMMAP_ContextIdList.h>
 
 @interface UMGSMMAP_GPRSSubscriptionDataWithdraw : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

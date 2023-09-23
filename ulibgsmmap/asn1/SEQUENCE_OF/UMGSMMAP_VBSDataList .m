@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_VBSDataList .h"
+#import <ulibgsmmap/UMGSMMAP_VBSDataList .h>
 
 @implementation UMGSMMAP_VBSDataList 
 

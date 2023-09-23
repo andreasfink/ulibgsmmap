@@ -7,7 +7,7 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_IMSI.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
 
 @interface UMGSMMAP_HLR_Id : UMGSMMAP_IMSI
 

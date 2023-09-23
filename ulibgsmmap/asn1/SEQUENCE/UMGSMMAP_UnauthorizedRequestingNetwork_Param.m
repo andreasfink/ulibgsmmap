@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_UnauthorizedRequestingNetwork_Param.h"
+#import <ulibgsmmap/UMGSMMAP_UnauthorizedRequestingNetwork_Param.h>
 
 @implementation UMGSMMAP_UnauthorizedRequestingNetwork_Param
 

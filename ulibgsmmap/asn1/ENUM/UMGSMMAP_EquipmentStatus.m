@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_EquipmentStatus.h"
+#import <ulibgsmmap/UMGSMMAP_EquipmentStatus.h>
 
 @implementation UMGSMMAP_EquipmentStatus
 

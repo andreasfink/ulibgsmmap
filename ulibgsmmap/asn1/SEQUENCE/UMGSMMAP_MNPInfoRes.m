@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MNPInfoRes.h"
+#import <ulibgsmmap/UMGSMMAP_MNPInfoRes.h>
 
 @implementation UMGSMMAP_MNPInfoRes
 

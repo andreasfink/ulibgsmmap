@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_RequestedEquipmentInfo.h"
+#import <ulibgsmmap/UMGSMMAP_RequestedEquipmentInfo.h>
 
 @implementation UMGSMMAP_RequestedEquipmentInfo
 

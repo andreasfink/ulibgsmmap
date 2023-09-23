@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_Ki.h"
+#import <ulibgsmmap/UMGSMMAP_Ki.h>
 
 @implementation UMGSMMAP_Ki
 

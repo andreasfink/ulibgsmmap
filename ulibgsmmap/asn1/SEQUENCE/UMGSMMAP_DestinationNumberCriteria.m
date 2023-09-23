@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_DestinationNumberCriteria.h"
+#import <ulibgsmmap/UMGSMMAP_DestinationNumberCriteria.h>
 
 @implementation UMGSMMAP_DestinationNumberCriteria
 

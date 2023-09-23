@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ResponseTimeCategory.h"
+#import <ulibgsmmap/UMGSMMAP_ResponseTimeCategory.h>
 
 @implementation UMGSMMAP_ResponseTimeCategory
 

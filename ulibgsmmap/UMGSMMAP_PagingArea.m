@@ -10,8 +10,8 @@
 //
 
 
-#import "UMGSMMAP_PagingArea.h"
-#import "UMGSMMAP_LocationArea.h"
+#import <ulibgsmmap/UMGSMMAP_PagingArea.h>
+#import <ulibgsmmap/UMGSMMAP_LocationArea.h>
 
 @implementation UMGSMMAP_PagingArea
 

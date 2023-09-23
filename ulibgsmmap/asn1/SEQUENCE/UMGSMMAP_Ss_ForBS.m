@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ss_ForBS.h"
+#import <ulibgsmmap/UMGSMMAP_Ss_ForBS.h>
 
 @implementation UMGSMMAP_Ss_ForBS
 

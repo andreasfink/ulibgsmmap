@@ -11,8 +11,8 @@
 #import <ulib/ulib.h>
 #import <ulibtcap/ulibtcap.h>
 #import "UMLayerGSMMAP_OpCode.h"
-#import "UMGSMMAP_DialogIdentifier.h"
-#import "UMGSMMAP_UserIdentifier.h"
+#import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
+#import <ulibgsmmap/UMGSMMAP_UserIdentifier.h>
 
 @protocol UMLayerGSMMAP_UserProtocol;
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TraceReference.h"
+#import <ulibgsmmap/UMGSMMAP_TraceReference.h>
 
 @implementation UMGSMMAP_TraceReference
 

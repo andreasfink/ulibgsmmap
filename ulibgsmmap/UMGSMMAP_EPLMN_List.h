@@ -7,8 +7,8 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_PLMN_Id.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_PLMN_Id.h>
 
 @interface UMGSMMAP_EPLMN_List : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

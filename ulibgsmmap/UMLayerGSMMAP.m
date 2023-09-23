@@ -12,22 +12,22 @@
 #import <ulibgt/ulibgt.h>
 #import <ulibsccp/ulibsccp.h>
 #import <ulibtcap/ulibtcap.h>
-#import "UMGSMMAP_RoutingInfoForSM_Arg.h"
-#import "UMGSMMAP_Opcodes.h"
-#import "UMGSMMAP_AddressString.h"
-#import "UMGSMMAP_asn1.h"
+#import <ulibgsmmap/UMGSMMAP_RoutingInfoForSM_Arg.h>
+#import <ulibgsmmap/UMGSMMAP_Opcodes.h>
+#import <ulibgsmmap/UMGSMMAP_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_asn1.h>
 #import "UMLayerGSMMAP_Dialog.h"
 #import "UMLayerGSMMAP_OpCode.h"
 #import "UMLayerGSMMAPApplicationContextProtocol.h"
-#import "UMGSMMAP_HousekeepingTask.h"
-#import "UMGSMMAP_TimeoutTask.h"
-#import "UMGSMMAP_U_Abort_Req_Task.h"
-#import "UMGSMMAP_Delimiter_Req_Task.h"
-#import "UMGSMMAP_Close_Req_Task.h"
-#import "UMGSMMAP_U_Abort_Req_Task.h"
-#import "UMGSMMAP_Invoke_Req_Task.h"
-#import "UMGSMMAP_ReturnResult_Req_Task.h"
-#import "UMGSMMAP_ReturnError_Req_Task.h"
+#import <ulibgsmmap/UMGSMMAP_HousekeepingTask.h>
+#import <ulibgsmmap/UMGSMMAP_TimeoutTask.h>
+#import <ulibgsmmap/UMGSMMAP_U_Abort_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_Delimiter_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_Close_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_U_Abort_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_Invoke_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_ReturnResult_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_ReturnError_Req_Task.h>
 
 @implementation UMLayerGSMMAP
 

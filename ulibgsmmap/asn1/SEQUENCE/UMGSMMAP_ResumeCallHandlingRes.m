@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ResumeCallHandlingRes.h"
+#import <ulibgsmmap/UMGSMMAP_ResumeCallHandlingRes.h>
 
 @implementation UMGSMMAP_ResumeCallHandlingRes
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TEID.h"
+#import <ulibgsmmap/UMGSMMAP_TEID.h>
 
 @implementation UMGSMMAP_TEID
 

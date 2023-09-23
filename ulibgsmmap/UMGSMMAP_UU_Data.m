@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_UU_Data.h"
+#import <ulibgsmmap/UMGSMMAP_UU_Data.h>
 
 @implementation UMGSMMAP_UU_Data
 

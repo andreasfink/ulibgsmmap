@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_OfferedCamel4Functionalities.h"
+#import <ulibgsmmap/UMGSMMAP_OfferedCamel4Functionalities.h>
 
 @implementation UMGSMMAP_OfferedCamel4Functionalities
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RemoteUserFreeRes.h"
+#import <ulibgsmmap/UMGSMMAP_RemoteUserFreeRes.h>
 
 @implementation UMGSMMAP_RemoteUserFreeRes
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NetDetNotReachable.h"
+#import <ulibgsmmap/UMGSMMAP_NetDetNotReachable.h>
 
 @implementation UMGSMMAP_NetDetNotReachable
 

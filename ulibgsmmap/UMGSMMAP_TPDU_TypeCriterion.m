@@ -8,8 +8,8 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_TPDU_TypeCriterion.h"
-#import "UMGSMMAP_MT_SMS_TPDU_Type.h"
+#import <ulibgsmmap/UMGSMMAP_TPDU_TypeCriterion.h>
+#import <ulibgsmmap/UMGSMMAP_MT_SMS_TPDU_Type.h>
 
 @implementation UMGSMMAP_TPDU_TypeCriterion
 

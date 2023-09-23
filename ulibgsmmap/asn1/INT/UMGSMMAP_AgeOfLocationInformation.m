@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AgeOfLocationInformation.h"
+#import <ulibgsmmap/UMGSMMAP_AgeOfLocationInformation.h>
 
 @implementation UMGSMMAP_AgeOfLocationInformation
 

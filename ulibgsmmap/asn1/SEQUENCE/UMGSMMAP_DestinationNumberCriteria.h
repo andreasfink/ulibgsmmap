@@ -7,11 +7,11 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_MatchType.h"
-#import "UMGSMMAP_DestinationNumberList.h"
-#import "UMGSMMAP_DestinationNumberLengthList.h"
+#import <ulibgsmmap/UMGSMMAP_MatchType.h>
+#import <ulibgsmmap/UMGSMMAP_DestinationNumberList.h>
+#import <ulibgsmmap/UMGSMMAP_DestinationNumberLengthList.h>
 
 @interface UMGSMMAP_DestinationNumberCriteria : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_PeriodicLDRInfo.h"
+#import <ulibgsmmap/UMGSMMAP_PeriodicLDRInfo.h>
 
 @implementation UMGSMMAP_PeriodicLDRInfo
 

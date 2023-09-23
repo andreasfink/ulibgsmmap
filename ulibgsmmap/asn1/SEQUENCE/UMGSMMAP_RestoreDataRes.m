@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_RestoreDataRes.h"
+#import <ulibgsmmap/UMGSMMAP_RestoreDataRes.h>
 
 @implementation UMGSMMAP_RestoreDataRes
 

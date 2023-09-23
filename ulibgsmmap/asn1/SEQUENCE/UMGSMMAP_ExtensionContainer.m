@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @implementation UMGSMMAP_ExtensionContainer
 

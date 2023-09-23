@@ -6,7 +6,7 @@
 //  Copyright © 2019 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_RequestParameter.h"
+#import <ulibgsmmap/UMGSMMAP_RequestParameter.h>
 
 @implementation UMGSMMAP_RequestParameter
 

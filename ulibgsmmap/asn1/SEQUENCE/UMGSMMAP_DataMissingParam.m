@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_DataMissingParam.h"
+#import <ulibgsmmap/UMGSMMAP_DataMissingParam.h>
 
 @implementation UMGSMMAP_DataMissingParam
 

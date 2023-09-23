@@ -8,15 +8,15 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_LocationInformation.h"
-#import "UMGSMMAP_LocationInformationGPRS.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_SupportedCamelPhases.h"
-#import "UMGSMMAP_MM_Code.h"
-#import "UMGSMMAP_ServiceKey.h"
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_OfferedCamel4Functionalities.h"
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_LocationInformation.h>
+#import <ulibgsmmap/UMGSMMAP_LocationInformationGPRS.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_SupportedCamelPhases.h>
+#import <ulibgsmmap/UMGSMMAP_MM_Code.h>
+#import <ulibgsmmap/UMGSMMAP_ServiceKey.h>
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_OfferedCamel4Functionalities.h>
 
 @interface UMGSMMAP_NoteMM_EventArg : UMASN1Sequence
 {

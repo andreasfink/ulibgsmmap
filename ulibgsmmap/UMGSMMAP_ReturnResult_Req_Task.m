@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_ReturnResult_Req_Task.h"
+#import <ulibgsmmap/UMGSMMAP_ReturnResult_Req_Task.h>
 #import "UMLayerGSMMAP.h"
 
 @implementation UMGSMMAP_ReturnResult_Req_Task

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_IntraCUG_Options.h"
+#import <ulibgsmmap/UMGSMMAP_IntraCUG_Options.h>
 
 @implementation UMGSMMAP_IntraCUG_Options
 

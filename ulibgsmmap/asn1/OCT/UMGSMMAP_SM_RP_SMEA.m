@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_SM_RP_SMEA.h"
+#import <ulibgsmmap/UMGSMMAP_SM_RP_SMEA.h>
 
 @implementation UMGSMMAP_SM_RP_SMEA
 

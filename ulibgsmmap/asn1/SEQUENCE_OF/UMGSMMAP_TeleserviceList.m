@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TeleserviceList.h"
+#import <ulibgsmmap/UMGSMMAP_TeleserviceList.h>
 
 @implementation UMGSMMAP_TeleserviceList
 

@@ -9,21 +9,21 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_IMSI.h"
-#import "UMGSMMAP_ISDN_AddressString.h"
-#import "UMGSMMAP_GSN_Address.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_SGSN_Capability.h"
-#import "UMGSMMAP_ADD_Info.h"
-#import "UMGSMMAP_EPS_Info.h"
-#import "UMGSMMAP_AdjacentPLMN_List.h"
-#import "UMGSMMAP_UE_SRVCC_Capability.h"
-#import "UMGSMMAP_SMSRegisterRequest.h"
-#import "UMGSMMAP_EPLMN_List.h"
-#import "UMGSMMAP_DiameterIdentity.h"
-#import "UMGSMMAP_Used_RAT_Type.h"
+#import <ulibgsmmap/UMGSMMAP_IMSI.h>
+#import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
+#import <ulibgsmmap/UMGSMMAP_GSN_Address.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_SGSN_Capability.h>
+#import <ulibgsmmap/UMGSMMAP_ADD_Info.h>
+#import <ulibgsmmap/UMGSMMAP_EPS_Info.h>
+#import <ulibgsmmap/UMGSMMAP_AdjacentPLMN_List.h>
+#import <ulibgsmmap/UMGSMMAP_UE_SRVCC_Capability.h>
+#import <ulibgsmmap/UMGSMMAP_SMSRegisterRequest.h>
+#import <ulibgsmmap/UMGSMMAP_EPLMN_List.h>
+#import <ulibgsmmap/UMGSMMAP_DiameterIdentity.h>
+#import <ulibgsmmap/UMGSMMAP_Used_RAT_Type.h>
 
 @interface UMGSMMAP_UpdateGprsLocationArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

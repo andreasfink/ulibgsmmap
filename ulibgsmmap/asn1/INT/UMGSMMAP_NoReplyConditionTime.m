@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_NoReplyConditionTime.h"
+#import <ulibgsmmap/UMGSMMAP_NoReplyConditionTime.h>
 
 @implementation UMGSMMAP_NoReplyConditionTime
 

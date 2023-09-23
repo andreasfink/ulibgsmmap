@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CK.h"
+#import <ulibgsmmap/UMGSMMAP_CK.h>
 
 @implementation UMGSMMAP_CK
 

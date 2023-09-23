@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_PurgeMS_Res.h"
+#import <ulibgsmmap/UMGSMMAP_PurgeMS_Res.h>
 
 @implementation UMGSMMAP_PurgeMS_Res
 

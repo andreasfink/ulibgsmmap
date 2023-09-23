@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_InterrogationType.h"
+#import <ulibgsmmap/UMGSMMAP_InterrogationType.h>
 
 @implementation UMGSMMAP_InterrogationType
 

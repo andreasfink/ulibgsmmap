@@ -7,10 +7,10 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_MSNetworkCapability.h"
-#import "UMGSMMAP_MSRadioAccessCapability.h"
+#import <ulibgsmmap/UMGSMMAP_MSNetworkCapability.h>
+#import <ulibgsmmap/UMGSMMAP_MSRadioAccessCapability.h>
 
 @interface UMGSMMAP_GPRSMSClass : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

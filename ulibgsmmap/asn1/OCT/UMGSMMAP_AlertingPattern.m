@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AlertingPattern.h"
+#import <ulibgsmmap/UMGSMMAP_AlertingPattern.h>
 
 @implementation UMGSMMAP_AlertingPattern
 

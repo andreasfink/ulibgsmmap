@@ -9,15 +9,15 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_SupportedCamelPhases.h"
-#import "UMGSMMAP_ExtensionContainer.h"
-#import "UMGSMMAP_SuperChargerInfo.h"
-#import "UMGSMMAP_IST_SupportIndicator.h"
-#import "UMGSMMAP_SupportedLCS_CapabilitySets.h"
-#import "UMGSMMAP_OfferedCamel4CSIs.h"
-#import "UMGSMMAP_SupportedRAT_Types.h"
+#import <ulibgsmmap/UMGSMMAP_SupportedCamelPhases.h>
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
+#import <ulibgsmmap/UMGSMMAP_SuperChargerInfo.h>
+#import <ulibgsmmap/UMGSMMAP_IST_SupportIndicator.h>
+#import <ulibgsmmap/UMGSMMAP_SupportedLCS_CapabilitySets.h>
+#import <ulibgsmmap/UMGSMMAP_OfferedCamel4CSIs.h>
+#import <ulibgsmmap/UMGSMMAP_SupportedRAT_Types.h>
 
 @interface UMGSMMAP_VLR_Capability : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

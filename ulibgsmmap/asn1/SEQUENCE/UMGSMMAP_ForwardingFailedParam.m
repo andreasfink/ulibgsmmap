@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ForwardingFailedParam.h"
+#import <ulibgsmmap/UMGSMMAP_ForwardingFailedParam.h>
 
 @implementation UMGSMMAP_ForwardingFailedParam
 

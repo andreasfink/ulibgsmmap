@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Ss_InvocationNotificationRes.h"
+#import <ulibgsmmap/UMGSMMAP_Ss_InvocationNotificationRes.h>
 
 @implementation UMGSMMAP_Ss_InvocationNotificationRes
 

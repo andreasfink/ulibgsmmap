@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GPRSMSClass.h"
+#import <ulibgsmmap/UMGSMMAP_GPRSMSClass.h>
 
 @implementation UMGSMMAP_GPRSMSClass
 

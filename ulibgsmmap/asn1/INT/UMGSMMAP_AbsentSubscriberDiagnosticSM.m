@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_AbsentSubscriberDiagnosticSM.h"
+#import <ulibgsmmap/UMGSMMAP_AbsentSubscriberDiagnosticSM.h>
 
 @implementation UMGSMMAP_AbsentSubscriberDiagnosticSM
 

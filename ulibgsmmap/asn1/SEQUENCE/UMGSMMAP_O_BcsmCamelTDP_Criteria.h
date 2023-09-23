@@ -7,12 +7,12 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_O_BcsmTriggerDetectionPoint.h"
-#import "UMGSMMAP_DestinationNumberCriteria.h"
-#import "UMGSMMAP_BasicServiceCriteria.h"
-#import "UMGSMMAP_CallTypeCriteria.h"
+#import <ulibgsmmap/UMGSMMAP_O_BcsmTriggerDetectionPoint.h>
+#import <ulibgsmmap/UMGSMMAP_DestinationNumberCriteria.h>
+#import <ulibgsmmap/UMGSMMAP_BasicServiceCriteria.h>
+#import <ulibgsmmap/UMGSMMAP_CallTypeCriteria.h>
 
 @interface UMGSMMAP_O_BcsmCamelTDP_Criteria : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

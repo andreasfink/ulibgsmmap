@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ReportingPLMNList.h"
+#import <ulibgsmmap/UMGSMMAP_ReportingPLMNList.h>
 
 @implementation UMGSMMAP_ReportingPLMNList
 

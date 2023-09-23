@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_ProtocolId.h"
+#import <ulibgsmmap/UMGSMMAP_ProtocolId.h>
 
 @implementation UMGSMMAP_ProtocolId
 

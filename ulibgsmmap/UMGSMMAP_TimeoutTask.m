@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_TimeoutTask.h"
+#import <ulibgsmmap/UMGSMMAP_TimeoutTask.h>
 #import "UMLayerGSMMAP.h"
 
 @implementation UMGSMMAP_TimeoutTask

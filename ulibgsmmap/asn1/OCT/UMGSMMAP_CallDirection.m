@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CallDirection.h"
+#import <ulibgsmmap/UMGSMMAP_CallDirection.h>
 
 @implementation UMGSMMAP_CallDirection
 

@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_KSI.h"
+#import <ulibgsmmap/UMGSMMAP_KSI.h>
 
 @implementation UMGSMMAP_KSI
 

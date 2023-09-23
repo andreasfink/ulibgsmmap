@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
-#import "UMGSMMAP_CUG_Subscription.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
+#import <ulibgsmmap/UMGSMMAP_CUG_Subscription.h>
 @interface UMGSMMAP_CUG_SubscriptionList : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;

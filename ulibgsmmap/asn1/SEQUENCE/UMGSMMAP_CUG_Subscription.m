@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_CUG_Subscription.h"
+#import <ulibgsmmap/UMGSMMAP_CUG_Subscription.h>
 
 @implementation UMGSMMAP_CUG_Subscription
 

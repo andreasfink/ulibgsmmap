@@ -7,7 +7,7 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
 @interface UMGSMMAP_SS_EventSpecification  : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {

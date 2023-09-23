@@ -12,9 +12,9 @@
 #import <ulibtcap/ulibtcap.h>
 #import "UMLayerGSMMAP_OpCode.h"
 #import "UMLayerGSMMAP_UserProtocol.h"
-#import "UMGSMMAP_asn1.h"
-#import "UMGSMMAP_DialogIdentifier.h"
-#import "UMGSMMAP_UserIdentifier.h"
+#import <ulibgsmmap/UMGSMMAP_asn1.h>
+#import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
+#import <ulibgsmmap/UMGSMMAP_UserIdentifier.h>
 
 #define AUTO_ASSIGN_INVOKE_ID   INT16_MAX
 

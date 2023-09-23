@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_GMLC_Restriction.h"
+#import <ulibgsmmap/UMGSMMAP_GMLC_Restriction.h>
 
 @implementation UMGSMMAP_GMLC_Restriction
 

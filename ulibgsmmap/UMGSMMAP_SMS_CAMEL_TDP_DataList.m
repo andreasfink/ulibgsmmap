@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_SMS_CAMEL_TDP_DataList.h"
+#import <ulibgsmmap/UMGSMMAP_SMS_CAMEL_TDP_DataList.h>
 
 @implementation UMGSMMAP_SMS_CAMEL_TDP_DataList
 

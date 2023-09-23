@@ -8,8 +8,8 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-#import "UMGSMMAP_PDN_GW_Update.h"
-#import "UMGSMMAP_ISR_Information.h"
+#import <ulibgsmmap/UMGSMMAP_PDN_GW_Update.h>
+#import <ulibgsmmap/UMGSMMAP_ISR_Information.h>
 
 @interface UMGSMMAP_EPS_Info : UMASN1Choice
 {

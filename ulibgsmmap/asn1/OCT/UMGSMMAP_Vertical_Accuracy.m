@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_Vertical_Accuracy.h"
+#import <ulibgsmmap/UMGSMMAP_Vertical_Accuracy.h>
 
 @implementation UMGSMMAP_Vertical_Accuracy
 

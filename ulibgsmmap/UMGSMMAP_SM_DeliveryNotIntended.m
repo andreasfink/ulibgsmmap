@@ -6,7 +6,7 @@
 //  Copyright © 2018 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import "UMGSMMAP_SM_DeliveryNotIntended.h"
+#import <ulibgsmmap/UMGSMMAP_SM_DeliveryNotIntended.h>
 
 @implementation UMGSMMAP_SM_DeliveryNotIntended
 

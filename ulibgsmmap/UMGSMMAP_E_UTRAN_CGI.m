@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_E_UTRAN_CGI.h"
+#import <ulibgsmmap/UMGSMMAP_E_UTRAN_CGI.h>
 
 @implementation UMGSMMAP_E_UTRAN_CGI
 

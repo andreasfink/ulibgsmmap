@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_MAP_PDU.h"
+#import <ulibgsmmap/UMGSMMAP_MAP_PDU.h>
 
 @implementation UMGSMMAP_MAP_PDU
 

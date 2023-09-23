@@ -6,7 +6,7 @@
 //
 //
 
-#import "UMGSMMAP_IllegalSubscriberParam.h"
+#import <ulibgsmmap/UMGSMMAP_IllegalSubscriberParam.h>
 
 @implementation UMGSMMAP_IllegalSubscriberParam
 

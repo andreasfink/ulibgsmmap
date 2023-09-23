@@ -9,10 +9,10 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_PDP_ContextInfoList.h"
-#import "UMGSMMAP_NotReachableReason.h"
+#import <ulibgsmmap/UMGSMMAP_PDP_ContextInfoList.h>
+#import <ulibgsmmap/UMGSMMAP_NotReachableReason.h>
 
 @interface UMGSMMAP_PS_SubscriberState : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {

@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMGSMMAP_OverrideCategory.h"
+#import <ulibgsmmap/UMGSMMAP_OverrideCategory.h>
 
 @implementation UMGSMMAP_OverrideCategory
 

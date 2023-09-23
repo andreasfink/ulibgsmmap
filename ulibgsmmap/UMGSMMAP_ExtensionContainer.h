@@ -9,10 +9,10 @@
 // the author.
 //
 #import <ulibasn1/ulibasn1.h>
-#import "UMGSMMAP_asn1_protocol.h"
+#import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
-#import "UMGSMMAP_PrivateExtensionList.h"
-#import "UMGSMMAP_PCS_Extensions.h"
+#import <ulibgsmmap/UMGSMMAP_PrivateExtensionList.h>
+#import <ulibgsmmap/UMGSMMAP_PCS_Extensions.h>
 
 @interface UMGSMMAP_ExtensionContainer : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
