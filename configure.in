@@ -1,14 +1,14 @@
 /dnl /* ==================================================================== 
-dnl  * Project "ulibtcap"
-dnl  * Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
-dnl  * ==================================================================== 
+dnl  * Project "ulibgsmmap"
+dnl  * Copyright © 2023 Andreas Fink (andreas@fink.org). All rights reserved.
+dnl  * ====================================================================
 dnl  */ 
 dnl initialization
 
 AC_PREREQ([2.69])
 AC_INIT([ulibgsmmap],[1.0],[afink])
 dnl generic parameters
-COPYRIGHT="Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved."
+COPYRIGHT="Copyright © 2023 Andreas Fink (andreas@fink.org). All rights reserved."
 PROJECT_NAME="ulibgsmmap"
 AUTHOR="Andreas Fink <andreas@fink.org>"
 CONFIG_DEFINE="ULIBGSMMAP_CONFIG"
@@ -16,7 +16,7 @@ VERSION=`head -n 1 VERSION`
 MAJORVER=`echo $VERSION | cut -f1 -d.`
 MINORVER=`echo $VERSION | cut -f2 -d.`
 REVISION=`echo $VERSION | cut -f3 -d.`
-CONFIG_HEADER=ulibgsmmap_config.h
+CONFIG_HEADER=${PROJECT_NAME}/ulibgsmmap_config.h
 DEPENDENT_PKGCONFIGS="ulibtcap ulibasn1"
 PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 export PKG_CONFIG_PATH
