@@ -9,7 +9,7 @@
 #import <ulibasn1/ulibasn1.h>
 #import <ulibgsmmap/UMGSMMAP_SubscriberIdentity.h>
 #import <ulibgsmmap/UMGSMMAP_LCSLocationInfo.h>
-#include "UMGSMMAP_ExtensionContainer.h"
+#import <ulibgsmmap/UMGSMMAP_ExtensionContainer.h>
 
 @interface UMGSMMAP_RoutingInfoForLCSRes : UMASN1Object
 {
