@@ -7,7 +7,7 @@
 //
 
 #import <ulibgsmmap/UMGSMMAP_Close_Req_Task.h>
-#import "UMLayerGSMMAP.h"
+#import <ulibgsmmap/UMLayerGSMMAP.h>
 #import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
 
 @implementation UMGSMMAP_Close_Req_Task

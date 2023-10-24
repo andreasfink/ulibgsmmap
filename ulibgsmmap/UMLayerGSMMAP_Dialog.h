@@ -10,8 +10,8 @@
 //
 #import <ulib/ulib.h>
 #import <ulibtcap/ulibtcap.h>
-#import "UMLayerGSMMAP_OpCode.h"
-#import "UMLayerGSMMAP_UserProtocol.h"
+#import <ulibgsmmap/UMLayerGSMMAP_OpCode.h>
+#import <ulibgsmmap/UMLayerGSMMAP_UserProtocol.h>
 #import <ulibgsmmap/UMGSMMAP_asn1.h>
 #import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
 #import <ulibgsmmap/UMGSMMAP_UserIdentifier.h>
@@ -64,7 +64,7 @@
     BOOL    _noDestinationTransationIdInContinue;
     BOOL    _doubleOriginationTransationIdInContinue;
     BOOL    _useHandshake;
-    
+
     BOOL                                    _shouldSendContinue;
     UMTCAP_asn1_Associate_result            *_pendingResult;
     UMTCAP_asn1_Associate_source_diagnostic *_pendingDiagnostic;

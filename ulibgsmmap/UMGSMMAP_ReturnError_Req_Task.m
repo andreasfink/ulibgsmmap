@@ -7,7 +7,7 @@
 //
 
 #import <ulibgsmmap/UMGSMMAP_ReturnError_Req_Task.h>
-#import "UMLayerGSMMAP.h"
+#import <ulibgsmmap/UMLayerGSMMAP.h>
 #import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
 
 @implementation UMGSMMAP_ReturnError_Req_Task

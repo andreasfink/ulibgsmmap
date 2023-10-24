@@ -8,8 +8,8 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMLayerGSMMAP_Dialog.h"
-#import "UMLayerGSMMAP.h"
+#import <ulibgsmmap/UMLayerGSMMAP_Dialog.h>
+#import <ulibgsmmap/UMLayerGSMMAP.h>
 
 @implementation UMLayerGSMMAP_Dialog
 
@@ -238,7 +238,7 @@
     self.requestUserInfo = xuserInfo;
     self.userIdentifier = xuserIdentifier;
     self.outboundOptions = xoptions;
-    
+
     if((appContext) || (xuserInfo))
     {
         self.dialogRequestRequired=YES;
@@ -414,7 +414,7 @@
 
     UMGSMMAP_UserIdentifier *uid = [user getNewUserIdentifier];
     self.userIdentifier = uid;
-    
+
     NSMutableDictionary *options = [xoptions mutableCopy];
     options[@"gsmmap-timestamp"] = [NSDate new];
 
@@ -582,7 +582,7 @@
             NSMutableDictionary *xoptions2 = [xoptions mutableCopy];
             xoptions2[@"new-transation"] = @(YES);
 
-            
+
             [tcapLayer tcapContinueRequest:tcapTransactionId
                               userDialogId:userDialogId
                                    variant:self.variant
@@ -1391,7 +1391,7 @@
         op.operation = component.operationCode;
         op.familyOrEncoding = component.operationCodeFamilyOrEncoding;
         op.national = component.operationNational;
-        
+
         switch(component.asn1_tag.tagNumber)
         {
             case TCAP_ITU_COMPONENT_INVOKE:

@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibgsmmap/UMGSMMAP_AddressString.h>
-#import "NSString+map.h"
-#import "NSData+map.h"
+#import <ulibgsmmap/NSString+map.h>
+#import <ulibgsmmap/NSData+map.h>
 
 #define MAXADDRLEN  63
 
@@ -200,20 +200,20 @@ static inline unsigned char	nibble2hex(unsigned char b)
         {
             int aton;
             int anpi;
-            
+
             char number[257];
             char numstr[257];
             memset(number,0,sizeof(number) );
             memset(numstr,0,sizeof(numstr));
             strncpy(numstr,[digits UTF8String],(sizeof(numstr)-1));
-            
+
             /* this should do somehting like this sscanf(numstr,":%d:%d:%s",&aton,&anpi,number);
              but it should be safe to have additional : in the remaining string part */
             size_t i=0;
             size_t n=strlen(numstr);
             size_t colon_pos[3];
             int colon_index=0;
-            
+
             for(i=0;i<n;i++)
             {
                 if(numstr[i]==':')
@@ -237,7 +237,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
             aton = atoi(&numstr[colon_pos[0]+1]);
             anpi = atoi(&numstr[colon_pos[1]+1]);
             strncpy(number,&numstr[colon_pos[2]+1],(sizeof(number)-1));
-            
+
             _ton = aton % 8;
             _npi = anpi % 16;
             size_t len = strlen(number);
@@ -341,7 +341,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
     NSUInteger i=0;
     NSUInteger len=0;
     int odd=0;
-        
+
     if((_ton==GSMMAP_TON_EMPTY) || (_ton==GSMMAP_TON_MISSING))
     {
         [data appendByte:0x81]; /* ton=0/npi = 1,no extension */
@@ -370,7 +370,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
     NSData *ad = [_address dataUsingEncoding:NSUTF8StringEncoding];
     len = ad.length;
     const uint8_t *bytes = ad.bytes;
-    
+
     if(_ton == 5) /* alpha */
     {
         for(i=1;i<len;i++)
@@ -416,7 +416,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
     unsigned char c;
     unsigned char a;
     unsigned char b;
-    
+
     NSUInteger pos=0;
     NSUInteger len = _asn1_data.length;
     const uint8_t *str = _asn1_data.bytes;
@@ -437,7 +437,7 @@ static inline unsigned char	nibble2hex(unsigned char b)
         c = str[pos++];
         a =  c & 0x0F;
         b =  ((c & 0xF0) >> 4);
-        
+
         if((b == 0x0F) && (len < 2))
         {
             [tmp appendByte:nibble2hex(a)];

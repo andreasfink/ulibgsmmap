@@ -9,10 +9,10 @@
 // the author.
 //
 
-#import "NSData+map.h"
-#import "NSString+map.h"
-#import "GsmCharSet.h"
-#import "stdint.h"
+#import <ulibgsmmap/NSData+map.h>
+#import <ulibgsmmap/NSString+map.h>
+#import <ulibgsmmap/GsmCharSet.h>
+#import <stdint.h>
 
 #define NRP '?'
 
@@ -30,7 +30,7 @@
         [result appendFormat:@"%02X",((unsigned char *)[self bytes])[i]];
     }
     return result;
-    
+
 }
 
 - (NSString *) gsmHexString
@@ -78,7 +78,7 @@
     int b;
     int c;
     const unsigned char *src;
-    
+
     n = [self length]/2;
     r = [[NSMutableData alloc]initWithCapacity: n];
     src = [self bytes];
@@ -101,10 +101,10 @@
     ssize_t n;
     const unsigned char *src;
     char *dst;
-    
+
     r = [[NSMutableData alloc]initWithCapacity: 2 *[self length]];
     n = [self length];
-    
+
     src = [self bytes];
     dst = [r mutableBytes];
     for(i=0;i<n;i++)
@@ -325,10 +325,10 @@
     unichar			*uni = NULL;
     NSMutableData	*ubuf = NULL;
     NSString		*r = NULL;
-    
+
     b = [self bytes];
     n = [self length];
-    
+
     ubuf = [[NSMutableData  alloc]initWithCapacity: ((n+1) * 2)];
     uni = (unichar *)[ubuf bytes];
     j = 0;
@@ -389,7 +389,7 @@
     const unsigned char	*b;
     NSString			*s;
     int					nibblelen;
-    
+
     if([self length]< 2)
         return @"";
     b = [self bytes];
@@ -417,7 +417,7 @@
     int	total_bitcount;
     const unsigned char *bytes;
     unsigned char ob;
-    
+
    	len = [self length];
     result = [[NSMutableData alloc]initWithCapacity: (len*8/7)+1];
     i = 0;
@@ -425,7 +425,7 @@
     bo = 0;
     bytes = (const unsigned char *)[self bytes];
     inbyte = bytes[i++];
-    
+
     total_bitcount = nibblelen * 4;
     while (total_bitcount--)
     {
@@ -453,7 +453,7 @@
         }
     }
     return result;
-    
+
 }
 
 - (NSMutableData *)gsm8to7:(int *)nibblelen;
@@ -466,11 +466,11 @@
     ssize_t	len2=0;
     const unsigned char *bytes;
     unsigned char b;
-    
+
     len    = [self length];
     result = [[NSMutableData alloc]init];
     bytes  = [self bytes];
-	
+
     len2 = (len * 7 + 3) / 4;
     if(len2 > 0x7F)
     {
@@ -481,20 +481,20 @@
         *nibblelen = len2 & 0xFF;
     }
     //[result appendBytes:&b	length:1];
-    
-    value = 0;       
-    numbits = 0;      
+
+    value = 0;
+    numbits = 0;
     for (i = 0; i < len; i++)
-    {              
+    {
         value += bytes[i]<< numbits;
         numbits += 7;
         if (numbits >= 8)
-        {    
+        {
             b = value & 0xFF;
             [result appendBytes:&b	length:1];
             value >>= 8;
             numbits -= 8;
-        }       
+        }
     }
     if (numbits > 0)
     {

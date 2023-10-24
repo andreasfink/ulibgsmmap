@@ -10,7 +10,7 @@
 //
 
 #import <ulibasn1/ulibasn1.h>
-#import "NSString+map.h"
+#import <ulibgsmmap/NSString+map.h>
 
 @interface NSData (map)
 

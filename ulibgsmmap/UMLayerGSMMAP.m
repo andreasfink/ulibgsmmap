@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "UMLayerGSMMAP.h"
+#import <ulibgsmmap/UMLayerGSMMAP.h>
 #import <ulibgt/ulibgt.h>
 #import <ulibsccp/ulibsccp.h>
 #import <ulibtcap/ulibtcap.h>
@@ -16,9 +16,9 @@
 #import <ulibgsmmap/UMGSMMAP_Opcodes.h>
 #import <ulibgsmmap/UMGSMMAP_AddressString.h>
 #import <ulibgsmmap/UMGSMMAP_asn1.h>
-#import "UMLayerGSMMAP_Dialog.h"
-#import "UMLayerGSMMAP_OpCode.h"
-#import "UMLayerGSMMAPApplicationContextProtocol.h"
+#import <ulibgsmmap/UMLayerGSMMAP_Dialog.h>
+#import <ulibgsmmap/UMLayerGSMMAP_OpCode.h>
+#import <ulibgsmmap/UMLayerGSMMAPApplicationContextProtocol.h>
 #import <ulibgsmmap/UMGSMMAP_HousekeepingTask.h>
 #import <ulibgsmmap/UMGSMMAP_TimeoutTask.h>
 #import <ulibgsmmap/UMGSMMAP_U_Abort_Req_Task.h>
@@ -215,11 +215,11 @@
                 int tt = dialog.remoteAddress.tt.tt;
                 dialog.remoteAddress = src;
                 dialog.remoteAddress.tt.tt = tt;
-                
+
                 tt = dialog.localAddress.tt.tt;
                 dialog.localAddress = dst;
                 dialog.localAddress.tt.tt = tt;
-                
+
                 dialog.tcapContinueSeen=YES;
             }
             [dialog MAP_ProcessComponents:components
@@ -634,7 +634,7 @@
 
 - (void)tcBeginIndication
 {
-    
+
 }
 
 
@@ -880,7 +880,7 @@
             [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_U_Abort_Req: Dialog ID %@ not found. Ignoring",dialogId]];
             return;
         }
-        
+
 
         [dialog MAP_U_Abort_Req:options
                  callingAddress:NULL
@@ -947,7 +947,7 @@
                           result:(UMTCAP_asn1_Associate_result *)result
                       diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
 {
-    
+
     @autoreleasepool
     {
 //      NSString *s = UMBacktrace(NULL,0);
@@ -998,7 +998,7 @@
 -(void) MAP_Delimiter_Req:(UMGSMMAP_DialogIdentifier *)dialogId
                   options:(NSDictionary *)options;
 {
-    
+
     @autoreleasepool
     {
         UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
@@ -1245,7 +1245,7 @@
 - (void)dump:(NSFileHandle *)filehandler
 {
     [super dump:filehandler];
-    
+
     NSArray *allDialogs = [_dialogs allKeys];
     for(NSString *did in allDialogs)
     {

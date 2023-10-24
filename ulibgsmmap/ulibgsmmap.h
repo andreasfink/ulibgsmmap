@@ -11,17 +11,17 @@
 
 #import <ulibtcap/ulibtcap.h>
 
-#import "GsmCharSet.h"
-#import "NSString+map.h"
-#import "NSData+map.h"
-#import "UMLayerGSMMAP.h"
-#import "UMLayerGSMMAPApplicationContextProtocol.h"
+#import <ulibgsmmap/GsmCharSet.h>
+#import <ulibgsmmap/NSString+map.h>
+#import <ulibgsmmap/NSData+map.h>
+#import <ulibgsmmap/UMLayerGSMMAP.h>
+#import <ulibgsmmap/UMLayerGSMMAPApplicationContextProtocol.h>
 
-#import "UMLayerGSMMAP_Dialog.h"
-#import "UMLayerGSMMAP_UserProtocol.h"
-#import "UMLayerGSMMAP_ProviderProtocol.h"
-#import "UMLayerGSMMAP_OpCode.h"
-#import "UMLayerGSMMAP_ErrorCode.h"
+#import <ulibgsmmap/UMLayerGSMMAP_Dialog.h>
+#import <ulibgsmmap/UMLayerGSMMAP_UserProtocol.h>
+#import <ulibgsmmap/UMLayerGSMMAP_ProviderProtocol.h>
+#import <ulibgsmmap/UMLayerGSMMAP_OpCode.h>
+#import <ulibgsmmap/UMLayerGSMMAP_ErrorCode.h>
 #import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
 #import <ulibgsmmap/UMGSMMAP_UserIdentifier.h>
 
@@ -121,7 +121,7 @@
 #import <ulibgsmmap/UMGSMMAP_DestinationNumberCriteria.h>
 #import <ulibgsmmap/UMGSMMAP_DestinationNumberLengthList.h>
 #import <ulibgsmmap/UMGSMMAP_DestinationNumberList.h>
-#import "UMLayerGSMMAP_Dialog.h"
+#import <ulibgsmmap/UMLayerGSMMAP_Dialog.h>
 #import <ulibgsmmap/UMGSMMAP_DiameterIdentity.h>
 #import <ulibgsmmap/UMGSMMAP_EMLPP_Info.h>
 #import <ulibgsmmap/UMGSMMAP_EMLPP_Priority.h>

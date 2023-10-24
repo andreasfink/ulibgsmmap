@@ -7,7 +7,7 @@
 //
 
 #import <ulibgsmmap/UMGSMMAP_HousekeepingTask.h>
-#import "UMLayerGSMMAP.h"
+#import <ulibgsmmap/UMLayerGSMMAP.h>
 
 @implementation UMGSMMAP_HousekeepingTask
 

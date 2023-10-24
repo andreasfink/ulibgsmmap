@@ -9,7 +9,7 @@
 // the author.
 //
 #import <ulib/ulib.h>
-#import "UMLayerGSMMAP_OpCode.h"
+#import  <ulibgsmmap/UMLayerGSMMAP_OpCode.h>
 
 @class UMGSMMAP_DialogIdentifier;
 @class UMGSMMAP_UserIdentifier;

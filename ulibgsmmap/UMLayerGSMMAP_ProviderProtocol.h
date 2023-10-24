@@ -10,7 +10,7 @@
 //
 #import <ulib/ulib.h>
 #import <ulibtcap/ulibtcap.h>
-#import "UMLayerGSMMAP_OpCode.h"
+#import  <ulibgsmmap/UMLayerGSMMAP_OpCode.h>
 #import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
 #import <ulibgsmmap/UMGSMMAP_UserIdentifier.h>
 

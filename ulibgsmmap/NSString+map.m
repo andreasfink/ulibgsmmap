@@ -8,10 +8,9 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import "NSString+map.h"
-#import "NSData+map.h"
-
-#import "GsmCharSet.h"
+#import <ulibgsmmap/NSString+map.h>
+#import <ulibgsmmap/NSData+map.h>
+#import <ulibgsmmap/GsmCharSet.h>
 
 @implementation NSString (map)
 
@@ -22,7 +21,7 @@
     long n;
     unsigned char *b;
     NSString *str;
-    
+
     d = [ NSMutableData dataWithData: [ self dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES ]];
     n = [ d length ];
     b = [ d mutableBytes ];
@@ -33,7 +32,7 @@
     }
     str = [[ NSString alloc ] initWithBytes:b length:n encoding:NSASCIIStringEncoding ];
     return str;
-    
+
 }
 
 
@@ -122,8 +121,8 @@
     int a;
     int b;
     unichar c;
-    
-    
+
+
     r = [[ NSMutableData alloc] initWithCapacity: [ self length ]/2];
     n = [self length];
     for(i=0;i<n;i+=2)
@@ -147,7 +146,7 @@
     NSMutableData *result = NULL;
     int16_t	c;
     unsigned char outchar[4];
-    
+
     n = [self length];
     result = [[NSMutableData alloc] init ];
     for(i=0;i<n;i++)
@@ -181,7 +180,7 @@
                 c = 0x2714;
                 break;
             default:
-                
+
                 for(j=0;j<256;j++)
                 {
                     if(gsmToUnicode[j] == u)
@@ -220,7 +219,7 @@
     NSMutableData *d;
     d = [[ self gsm8 ] gsm8to7:&nibblelen ];
     b = nibblelen & 0xFF;
-    
+
     [ d replaceBytesInRange:NSMakeRange(0,0) withBytes:&b length:1 ];
     if((b==11) && (d.length > 7))
     {
@@ -241,7 +240,7 @@
     unichar u;
     NSMutableData *result = NULL;
     unsigned char outchar[4];
-    
+
     n = [ self length ];
     result = [[ NSMutableData alloc] initWithCapacity: ([ self length] * 2) ];
     for(i=0;i<n;i++)
@@ -252,7 +251,7 @@
         [ result appendBytes:outchar length:2 ];
     }
     return result;
-    
+
 }
 
 @end

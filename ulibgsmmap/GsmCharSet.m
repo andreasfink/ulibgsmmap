@@ -8,7 +8,7 @@
 // the author.
 //
 #import <Foundation/Foundation.h>
-#import "GsmCharSet.h"
+#import <ulibgsmmap/GsmCharSet.h>
 
 
 const unichar gsmToUnicode[] =

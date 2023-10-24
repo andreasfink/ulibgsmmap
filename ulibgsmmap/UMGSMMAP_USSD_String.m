@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibgsmmap/UMGSMMAP_USSD_String.h>
-#import "NSString+map.h"
-#import "NSData+map.h"
+#import <ulibgsmmap/NSString+map.h>
+#import <ulibgsmmap/NSData+map.h>
 
 @implementation UMGSMMAP_USSD_String
 

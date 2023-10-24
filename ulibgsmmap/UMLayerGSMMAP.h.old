@@ -14,11 +14,11 @@
 #import <ulibsccp/ulibsccp.h>
 #import <ulibtcap/ulibtcap.h>
 
-#import "UMLayerGSMMAP_UserProtocol.h"
-#import "UMLayerGSMMAP_ProviderProtocol.h"
-#import "UMLayerGSMMAP_Dialog.h"
-#import "UMLayerGSMMAPApplicationContextProtocol.h"
- 
+#import <ulibgsmmap/UMLayerGSMMAP_UserProtocol.h>
+#import <ulibgsmmap/UMLayerGSMMAP_ProviderProtocol.h>
+#import <ulibgsmmap/UMLayerGSMMAP_Dialog.h>
+#import <ulibgsmmap/UMLayerGSMMAPApplicationContextProtocol.h>
+
 @class UMLayerGSMMAP_Dialog;
 
 @interface UMLayerGSMMAP : UMLayer<UMTCAP_UserProtocol,UMLayerGSMMAP_ProviderProtocol>

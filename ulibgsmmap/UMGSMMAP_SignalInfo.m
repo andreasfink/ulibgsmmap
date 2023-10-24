@@ -9,8 +9,8 @@
 // the author.
 //
 #import <ulibgsmmap/UMGSMMAP_SignalInfo.h>
-#import "UMLayerGSMMAP_UserProtocol.h"
-#import "UMLayerGSMMAP.h"
+#import <ulibgsmmap/UMLayerGSMMAP_UserProtocol.h>
+#import <ulibgsmmap/UMLayerGSMMAP.h>
 
 @implementation UMGSMMAP_SignalInfo
 

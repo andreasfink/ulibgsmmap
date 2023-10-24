@@ -7,7 +7,7 @@
 //
 
 #import <ulibgsmmap/UMGSMMAP_ReturnResult_Req_Task.h>
-#import "UMLayerGSMMAP.h"
+#import <ulibgsmmap/UMLayerGSMMAP.h>
 
 @implementation UMGSMMAP_ReturnResult_Req_Task
 
