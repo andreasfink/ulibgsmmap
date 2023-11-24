@@ -2468,8 +2468,8 @@ case "$host" in
 	else
 		GNUSTEP_CONFIG=/usr/bin/gnustep-config
 	fi
-	CFLAGS="$CFLAGS `$GNUSTEP_CONFIG --objc-flags`"
-	LDFLAGS="$LDFLAGS `/usr/local/bin/gnustep-config --base-libs --objc-libs`"
+	CFLAGS="$CFLAGS `${GNUSTEP_CONFIG} --objc-flags`"
+	LDFLAGS="$LDFLAGS `${GNUSTEP_CONFIG} --base-libs --objc-libs`"
 	CFLAGS="$CFLAGS `pkg-config  --cflags ${DEPENDENT_PKGCONFIGS}`"
 	LDFLAGS="$LDFLAGS `pkg-config --libs ${DEPENDENT_PKGCONFIGS}`"
     SHARED_LIBRARY_EXTENSION=so
