@@ -127,7 +127,7 @@ case "$host" in
 	if [[ -x /usr/GNUstep/System/Tools/gnustep-config ]]
 	then
 		GNUSTEP_CONFIG=/usr/GNUstep/System/Tools/gnustep-config
-		CFLAGS="${CFLAGS} -I/usr/include/GNUstep"
+		CFLAGS="${CFLAGS} -I/usr/GNUstep/System/Library/Headers/"
 	else
 		if [[ -x /usr/local/bin/gnustep-config ]]
 		then
