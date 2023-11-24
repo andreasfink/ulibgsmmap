@@ -124,21 +124,21 @@ case "$host" in
 	CFLAGS="$CFLAGS -Wno-deprecated-implementations -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion "
 	CFLAGS="$CFLAGS -fobjc-arc"
 	SHARED_LIBRARY_EXTENSION="so"
-	if [[ -x /usr/local/GNUstep/System/Tools/gnustep-config ]]
+	if [[ -x /usr/GNUstep/System/Tools/gnustep-config ]]
 	then
-		GNUSTEP_CONFIG=/usr/local/GNUstep/System/Tools/gnustep-config
-		
+		GNUSTEP_CONFIG=/usr/GNUstep/System/Tools/gnustep-config
+		CFLAGS="${CFLAGS} -I/usr/include/GNUstep"
 	else
-		if [[ -x /usr/local/bin/gnustep-config ]] 
+		if [[ -x /usr/local/bin/gnustep-config ]]
 		then
 			GNUSTEP_CONFIG=/usr/local/bin/gnustep-config
 		else
 			GNUSTEP_CONFIG=/usr/bin/gnustep-config
 		fi
 	fi
-	
-	CFLAGS="$CFLAGS `$GNUSTEP_CONFIG --objc-flags`"
-	LDFLAGS="$LDFLAGS `/usr/local/bin/gnustep-config --base-libs --objc-libs`"
+	CFLAGS="$CFLAGS `${GNUSTEP_CONFIG}  --objc-flags`"
+    LDFLAGS="$LDFLAGS `${GNUSTEP_CONFIG}  --base-libs --objc-libs`"
+    
 	CFLAGS="$CFLAGS -DHAVE_OPENSSL=1"
 	CFLAGS="$CFLAGS `pkg-config --cflags libssl libcrypto`"
 	LDFLAGS="$LDFLAGS `pkg-config --libs libssl libcrypto`"
