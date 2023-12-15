@@ -6926,6 +6926,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "supporting-files/Info.plist";
+				INSTALL_PATH = FinkTelecomServices/frameworks;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -6967,6 +6968,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "supporting-files/Info.plist";
+				INSTALL_PATH = FinkTelecomServices/frameworks;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
