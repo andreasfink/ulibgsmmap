@@ -505,4 +505,5 @@
 
 #import <ulibgsmmap/UMGSMMAP_StatisticDb.h>
 #import <ulibgsmmap/UMGSMMAP_StatisticDbRecord.h>
+#import <ulibgsmmap/UMGSMMAP_Reject.h>
 

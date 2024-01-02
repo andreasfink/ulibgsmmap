@@ -1,0 +1,3 @@
+Problem ::= ENUMERATED {
+   mistypedComponent (1),
+}

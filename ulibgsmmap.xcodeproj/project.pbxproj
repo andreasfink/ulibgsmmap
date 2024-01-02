@@ -61,6 +61,10 @@
 		A6323D1126F0E26C00137112 /* UMGSMMAP_Reset_Id.h in Headers */ = {isa = PBXBuildFile; fileRef = A6323D0F26F0E26C00137112 /* UMGSMMAP_Reset_Id.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6323D1226F0E26C00137112 /* UMGSMMAP_Reset_Id.m in Sources */ = {isa = PBXBuildFile; fileRef = A6323D1026F0E26C00137112 /* UMGSMMAP_Reset_Id.m */; };
 		A641CEF61B42019900854472 /* ulibgsmmapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A641CEF51B42019900854472 /* ulibgsmmapTests.m */; };
+		A64AE32E2B44C4FA00B0FE06 /* UMGSMMAP_Reject.h in Headers */ = {isa = PBXBuildFile; fileRef = A64AE32C2B44C4FA00B0FE06 /* UMGSMMAP_Reject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A64AE32F2B44C4FA00B0FE06 /* UMGSMMAP_Reject.m in Sources */ = {isa = PBXBuildFile; fileRef = A64AE32D2B44C4FA00B0FE06 /* UMGSMMAP_Reject.m */; };
+		A64AE3342B44C56600B0FE06 /* UMGSMMAP_Problem.h in Headers */ = {isa = PBXBuildFile; fileRef = A64AE3322B44C56600B0FE06 /* UMGSMMAP_Problem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A64AE3352B44C56600B0FE06 /* UMGSMMAP_Problem.m in Sources */ = {isa = PBXBuildFile; fileRef = A64AE3332B44C56600B0FE06 /* UMGSMMAP_Problem.m */; };
 		A6590EF51FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6590EF31FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6590EF61FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A6590EF41FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m */; };
 		A6590EF91FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = A6590EF71FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1277,6 +1281,12 @@
 		A641CEEE1B42019900854472 /* ulibgsmmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ulibgsmmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A641CEF41B42019900854472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A641CEF51B42019900854472 /* ulibgsmmapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ulibgsmmapTests.m; sourceTree = "<group>"; };
+		A64AE32C2B44C4FA00B0FE06 /* UMGSMMAP_Reject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Reject.h; sourceTree = "<group>"; };
+		A64AE32D2B44C4FA00B0FE06 /* UMGSMMAP_Reject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Reject.m; sourceTree = "<group>"; };
+		A64AE3302B44C51A00B0FE06 /* UMGSMMAP_Reject.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = UMGSMMAP_Reject.asn; sourceTree = "<group>"; };
+		A64AE3322B44C56600B0FE06 /* UMGSMMAP_Problem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Problem.h; sourceTree = "<group>"; };
+		A64AE3332B44C56600B0FE06 /* UMGSMMAP_Problem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Problem.m; sourceTree = "<group>"; };
+		A64AE3362B44C57200B0FE06 /* UMGSMMAP_Problem.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = UMGSMMAP_Problem.asn; sourceTree = "<group>"; };
 		A6590EF31FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_DialogIdentifier.h; sourceTree = "<group>"; };
 		A6590EF41FE074FB004C8A74 /* UMGSMMAP_DialogIdentifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_DialogIdentifier.m; sourceTree = "<group>"; };
 		A6590EF71FE07588004C8A74 /* UMGSMMAP_UserIdentifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_UserIdentifier.h; sourceTree = "<group>"; };
@@ -4423,6 +4433,9 @@
 				A6EE69321D3B6BE800211137 /* UMGSMMAP_OverrideCategory.h */,
 				A6EE69311D3B6BE800211137 /* UMGSMMAP_OverrideCategory.m */,
 				A69EDF771DF7EFAB00E486B7 /* UMGSMMAP_PagingArea.asn */,
+				A64AE3362B44C57200B0FE06 /* UMGSMMAP_Problem.asn */,
+				A64AE3322B44C56600B0FE06 /* UMGSMMAP_Problem.h */,
+				A64AE3332B44C56600B0FE06 /* UMGSMMAP_Problem.m */,
 				A69EDF6E1DF7EBCD00E486B7 /* UMGSMMAP_PagingArea.h */,
 				A69EDF6F1DF7EBCD00E486B7 /* UMGSMMAP_PagingArea.m */,
 				A69595741D7E9D1D00211137 /* UMGSMMAP_Password.asn */,
@@ -4596,6 +4609,9 @@
 				A6EE68981D3B6BE600211137 /* UMGSMMAP_RequestedInfo.asn */,
 				A6EE68971D3B6BE600211137 /* UMGSMMAP_RequestedInfo.h */,
 				A6EE68961D3B6BE600211137 /* UMGSMMAP_RequestedInfo.m */,
+				A64AE3302B44C51A00B0FE06 /* UMGSMMAP_Reject.asn */,
+				A64AE32C2B44C4FA00B0FE06 /* UMGSMMAP_Reject.h */,
+				A64AE32D2B44C4FA00B0FE06 /* UMGSMMAP_Reject.m */,
 				A69595801D7E9E3F00211137 /* UMGSMMAP_RequestedSubscriptionInfo.asn */,
 				A695957E1D7E9E3F00211137 /* UMGSMMAP_RequestedSubscriptionInfo.h */,
 				A695957F1D7E9E3F00211137 /* UMGSMMAP_RequestedSubscriptionInfo.m */,
@@ -5704,6 +5720,7 @@
 				A6EE72471D3B6BFF00211137 /* UMGSMMAP_BasicServiceList.h in Headers */,
 				A6EE6E621D3B6BFE00211137 /* UMGSMMAP_ResourceLimitationParam.h in Headers */,
 				A6EE6D1F1D3B6BFE00211137 /* UMGSMMAP_USSD_DataCodingScheme.h in Headers */,
+				A64AE3342B44C56600B0FE06 /* UMGSMMAP_Problem.h in Headers */,
 				A6EE6FD51D3B6BFF00211137 /* UMGSMMAP_LSAOnlyAccessIndicator.h in Headers */,
 				A6EE71D01D3B6BFF00211137 /* UMGSMMAP_Constants.h in Headers */,
 				A679006F2046F1EA00A34B1E /* UMGSMMAP_CheckIMEIRes.h in Headers */,
@@ -5914,6 +5931,7 @@
 				A6EE6DED1D3B6BFE00211137 /* UMGSMMAP_SM_RP_DA.h in Headers */,
 				A6EE6D721D3B6BFE00211137 /* UMGSMMAP_TBCD_STRING.h in Headers */,
 				A6EE6EEF1D3B6BFE00211137 /* UMGSMMAP_PDP_Type.h in Headers */,
+				A64AE32E2B44C4FA00B0FE06 /* UMGSMMAP_Reject.h in Headers */,
 				A6EE6DC61D3B6BFE00211137 /* UMGSMMAP_Ss_ForBS.h in Headers */,
 				A6EE70161D3B6BFF00211137 /* UMGSMMAP_LCSCodeword.h in Headers */,
 				A6EE72101D3B6BFF00211137 /* UMGSMMAP_CamelRoutingInfo.h in Headers */,
@@ -6108,7 +6126,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "Andreas Fink (andreas@fink.org)";
 				TargetAttributes = {
 					A641CEE21B42019900854472 = {
@@ -6194,6 +6212,7 @@
 				A6EE6F431D3B6BFE00211137 /* UMGSMMAP_NoteMsPresentForGprsRes.m in Sources */,
 				A69595881D7E9EB400211137 /* UMGSMMAP_SS_ForBS_Code.m in Sources */,
 				A6EE70B71D3B6BFF00211137 /* UMGSMMAP_GMLC_List.m in Sources */,
+				A64AE3352B44C56600B0FE06 /* UMGSMMAP_Problem.m in Sources */,
 				A6EE71051D3B6BFF00211137 /* UMGSMMAP_Ext4_QoS_Subscribed.m in Sources */,
 				A6EE6D7D1D3B6BFE00211137 /* UMGSMMAP_T_BcsmCamelTDPDataList.m in Sources */,
 				A6EE705B1D3B6BFF00211137 /* UMGSMMAP_InterrogateSS_Res.m in Sources */,
@@ -6441,6 +6460,7 @@
 				A6AF2AE024BDA4E100541B74 /* UMGSMMAP_ISR_Information.m in Sources */,
 				A6EE6E341D3B6BFE00211137 /* UMGSMMAP_RoutingInfoForSM_Res.m in Sources */,
 				A6EE713A1D3B6BFF00211137 /* UMGSMMAP_Ext_ForwFeature.m in Sources */,
+				A64AE32F2B44C4FA00B0FE06 /* UMGSMMAP_Reject.m in Sources */,
 				A6EE6CEB1D3B6BFE00211137 /* UMGSMMAP_ZoneCodeList.m in Sources */,
 				A6EE70381D3B6BFF00211137 /* UMGSMMAP_LCS_ClientID.m in Sources */,
 				A6EE6DF81D3B6BFE00211137 /* UMGSMMAP_SIWFSSignallingModifyRes.m in Sources */,
