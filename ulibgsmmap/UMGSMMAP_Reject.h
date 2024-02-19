@@ -8,16 +8,14 @@
 
 #import <ulibasn1/ulibasn1.h>
 
-
-
 @interface UMGSMMAP_Reject : UMASN1Sequence
 {
     UMASN1Integer   *_invokeRejID;
-    UMASN1Problem   *_problem;
+    UMASN1Object    *_problem;
 }
 
 @property(readwrite,strong,atomic)  UMASN1Integer   *invokeRejID;
-@property(readwrite,strong,atomic)  UMASN1Problem   *problem;
+@property(readwrite,strong,atomic)  UMASN1Object    *problem;
 
 @end
 
