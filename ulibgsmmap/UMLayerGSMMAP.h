@@ -123,12 +123,12 @@
                 options:(NSDictionary *)options;
 
 - (void) executeMAP_Invoke_Req:(UMASN1Object *)param
-                      dialog:(UMGSMMAP_DialogIdentifier *)dialogId
-                    invokeId:(int64_t)xinvokeId
-                    linkedId:(int64_t)linkedId
-                      opCode:(UMLayerGSMMAP_OpCode *)opcode
-                        last:(int64_t)last
-                     options:(NSDictionary *)options;
+                        dialog:(UMGSMMAP_DialogIdentifier *)dialogId
+                      invokeId:(int64_t)xinvokeId
+                      linkedId:(int64_t)xlinkedId
+                        opCode:(UMLayerGSMMAP_OpCode *)xopcode
+                          last:(int64_t)last
+                       options:(NSDictionary *)options;
 
 - (void) queueMAP_ReturnResult_Req:(UMASN1Object *)xparam
                               dialog:(UMGSMMAP_DialogIdentifier *)dialogId
