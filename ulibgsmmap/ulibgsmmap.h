@@ -507,3 +507,16 @@
 #import <ulibgsmmap/UMGSMMAP_StatisticDbRecord.h>
 #import <ulibgsmmap/UMGSMMAP_Reject.h>
 
+#import <ulibgsmmap/UMGSMMAP_AgeIndicator.h>
+#import <ulibgsmmap/UMGSMMAP_Close_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_Delimiter_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_HousekeepingTask.h>
+#import <ulibgsmmap/UMGSMMAP_Invoke_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_LAC.h>
+#import <ulibgsmmap/UMGSMMAP_MySubscriberINfo.h>
+#import <ulibgsmmap/UMGSMMAP_NoteMM_EventArg.h>
+#import <ulibgsmmap/UMGSMMAP_NoteMM_EventRes.h>
+#import <ulibgsmmap/UMGSMMAP_OfferedCamel4Functionalities.h>
+#import <ulibgsmmap/UMGSMMAP_Problem.h>
+#import <ulibgsmmap/UMGSMMAP_TimeoutTask.h>
+#import <ulibgsmmap/UMGSMMAP_U_Abort_Req_Task.h>
