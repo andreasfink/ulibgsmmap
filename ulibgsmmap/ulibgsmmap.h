@@ -513,7 +513,7 @@
 #import <ulibgsmmap/UMGSMMAP_HousekeepingTask.h>
 #import <ulibgsmmap/UMGSMMAP_Invoke_Req_Task.h>
 #import <ulibgsmmap/UMGSMMAP_LAC.h>
-#import <ulibgsmmap/UMGSMMAP_MySubscriberINfo.h>
+#import <ulibgsmmap/UMGSMMAP_MySubscriberInfo.h>
 #import <ulibgsmmap/UMGSMMAP_NoteMM_EventArg.h>
 #import <ulibgsmmap/UMGSMMAP_NoteMM_EventRes.h>
 #import <ulibgsmmap/UMGSMMAP_OfferedCamel4Functionalities.h>
