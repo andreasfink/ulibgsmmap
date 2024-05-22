@@ -18,7 +18,11 @@ BUILDNR
 make_buildnr.sh
 buildnumber.c
 buildnumber.h
-*.m.d
+*.d
+install
+libulibgsmmap.so
+libulibgsmmap.a
+
 
 #########################
 # .gitignore file for Xcode4 and Xcode5 Source projects
