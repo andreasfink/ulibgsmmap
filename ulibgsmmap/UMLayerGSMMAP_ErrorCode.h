@@ -8,6 +8,7 @@
 
 typedef enum UMLayerGSMMAP_ErrorCode
 {
+    UMLayerGSMMAP_ErrorCode_ok = 0,
     UMLayerGSMMAP_ErrorCode_unknownSubscriber = 1,
     UMLayerGSMMAP_ErrorCode_unknownBaseStation = 2, // old
     UMLayerGSMMAP_ErrorCode_unknownMSC = 3,
