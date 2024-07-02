@@ -5,5 +5,7 @@ FTSExtension ::= CHOICE
     vas_ip   					[1] IMPLICIT UTF8String,
     msg_id   					[2] IMPLICIT UTF8String,
     ulib_transport_container   	[3] IMPLICIT OCTET STRING,
+    serial					   	[4] IMPLICIT UTF8String,
+    debug					   	[5] IMPLICIT OCTET STRING,
     ...,
 }

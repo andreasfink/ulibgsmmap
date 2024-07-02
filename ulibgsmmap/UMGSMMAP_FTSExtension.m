@@ -31,7 +31,22 @@
             {
                 _vas_ip = val;
             }
-
+            else if([var isEqualToString:@"msgid"])
+            {
+                _msgid = val;
+            }
+            else if([var isEqualToString:@"ulibtransportContainer"])
+            {
+                _ulibtransportContainer = (NSData *)val;
+            }
+            else if([var isEqualToString:@"serial"])
+            {
+                _serial = val;
+            }
+            else if([var isEqualToString:@"debug"])
+            {
+                _debug = (NSData *)val;
+            }
         }
     }
     return self;
@@ -69,6 +84,20 @@
         self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
         self.asn1_data = [o8.asn1_data copy];
     }
+    else if (_serial)
+    {
+        UMASN1UTF8String *u8 = [[UMASN1UTF8String alloc]initWithValue:_serial];
+        self.asn1_tag.tagNumber = UMGSMMAP_FTSExtension_serial;
+        self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        self.asn1_data = [u8.asn1_data copy];
+    }
+    else if (_debug)
+    {
+        UMASN1OctetString *d = [[UMASN1OctetString alloc]initWithValue:_debug];
+        self.asn1_tag.tagNumber = UMGSMMAP_FTSExtension_debug;
+        self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        self.asn1_data = [d.asn1_data copy];
+    }
 }
 
 
@@ -85,6 +114,26 @@
         {
             UMASN1UTF8String *u8 = [[UMASN1UTF8String alloc]initWithASN1Object:self context:context];
             _vas_ip = u8.value;
+        }
+        else if(_asn1_tag.tagNumber == UMGSMMAP_FTSExtension_msgid)
+        {
+            UMASN1UTF8String *u8 = [[UMASN1UTF8String alloc]initWithASN1Object:self context:context];
+            _msgid = u8.value;
+        }
+        else if(_asn1_tag.tagNumber == UMGSMMAP_FTSExtension_ulibtransport_container)
+        {
+            UMASN1OctetString *d = [[UMASN1OctetString alloc]initWithASN1Object:self context:context];
+            _ulibtransportContainer = d.value;
+        }
+        else if(_asn1_tag.tagNumber == UMGSMMAP_FTSExtension_serial)
+        {
+            UMASN1UTF8String *u8 = [[UMASN1UTF8String alloc]initWithASN1Object:self context:context];
+            _serial = u8.value;
+        }
+        else if(_asn1_tag.tagNumber == UMGSMMAP_FTSExtension_debug)
+        {
+            UMASN1OctetString *d = [[UMASN1OctetString alloc]initWithASN1Object:self context:context];
+            _debug = d.value;
         }
     }
     return self;
@@ -105,6 +154,22 @@
     if(_vas_ip)
     {
         dict[@"vas-ip"] = _vas_ip;
+    }
+    if(_msgid)
+    {
+        dict[@"msgid"] = _msgid;
+    }
+    if(_ulibtransportContainer)
+    {
+        dict[@"ulibtransportContainer"] = _ulibtransportContainer;
+    }
+    if(_serial)
+    {
+        dict[@"serial"] = _serial;
+    }
+    if(_debug)
+    {
+        dict[@"debug"] = _debug;
     }
     return dict;
 }
