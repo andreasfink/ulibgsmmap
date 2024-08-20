@@ -42,7 +42,7 @@ const unichar gsmToUnicode[] =
     0x3A3,		/* GREEK CAPITAL LETTER SIGMA */
     0x398,		/* GREEK CAPITAL LETTER THETA */
     0x39E,		/* GREEK CAPITAL LETTER XI */
-    0x27,		/* ESCAPE */
+    0x1B,		/* ESCAPE */
     0xC6,		/* AE ligature */
     0xE6,		/* ae ligature */
     0xDF,		/* sharp S */
