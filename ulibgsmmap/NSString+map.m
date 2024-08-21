@@ -251,7 +251,6 @@
         [ result appendBytes:outchar length:2 ];
     }
     return result;
-
 }
 
 @end
