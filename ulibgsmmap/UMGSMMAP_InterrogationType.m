@@ -19,6 +19,14 @@
 	return @"UMGSMMAP_InterrogationType";
 }
 
+- (void)setEnumDefinition
+{
+    _enumDefinition  = @ {
+        @"basicCall" : @(0),
+        @"forwarding" : @(1),
+    };
+    
+}
 
 - (UMASN1Object<UMGSMMAP_asn1_protocol> *)decodeASN1opcode:(int64_t)opcode
                                              operationType:(UMTCAP_InternalOperation)operation
@@ -29,3 +37,5 @@
 }
 
 @end
+    
+    
