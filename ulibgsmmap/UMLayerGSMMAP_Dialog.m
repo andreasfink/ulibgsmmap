@@ -264,7 +264,6 @@
     pendingOutgoingComponents = [[UMSynchronizedArray alloc]init];
     pendingIncomingComponents = [[UMSynchronizedArray alloc]init];
     ummutex_unlock(_dialogLock);
-
 }
 
 
