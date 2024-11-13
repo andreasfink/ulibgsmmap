@@ -24,7 +24,8 @@
 {
 	UMGSMMAP_ISDN_AddressString     *_msisdn;
 	UMASN1Boolean                   *_sm_RP_PRI;
-	UMGSMMAP_AddressString          *_serviceCentreAddress;
+    UMGSMMAP_AddressString          *_serviceCentreAddress;
+    UMGSMMAP_AddressString          *_serviceCentreAddress2;
 	UMGSMMAP_ExtensionContainer     *_extensionContainer;
 	BOOL                            _gprsSupportIndicator;
 	UMGSMMAP_SM_RP_MTI              *_sm_RP_MTI;
@@ -41,7 +42,8 @@
 
 @property(readwrite,strong)	UMGSMMAP_ISDN_AddressString     *msisdn;
 @property(readwrite,strong)	UMASN1Boolean                   *sm_RP_PRI;
-@property(readwrite,strong)	UMGSMMAP_AddressString          *serviceCentreAddress;
+@property(readwrite,strong) UMGSMMAP_AddressString          *serviceCentreAddress;
+@property(readwrite,strong) UMGSMMAP_AddressString          *serviceCentreAddress2;
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer     *extensionContainer;
 @property(readwrite,assign) BOOL                            gprsSupportIndicator;
 @property(readwrite,strong) UMGSMMAP_SM_RP_MTI              *sm_RP_MTI;

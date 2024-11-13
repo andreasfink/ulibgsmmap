@@ -20,14 +20,16 @@
 	NSString *operationName;
 	UMGSMMAP_IMSI *imsi;
 	UMGSMMAP_LMSI *lmsi;
-	UMGSMMAP_AddressString *serviceCentreAddressDA;
+    UMGSMMAP_AddressString *serviceCentreAddressDA;
+    UMGSMMAP_AddressString *serviceCentreAddressDA2;
 	BOOL noSM_RP_DA;
 }
 @property(readwrite,strong)    NSString *operationName;
 
 @property(readwrite,strong)	UMGSMMAP_IMSI *imsi;
 @property(readwrite,strong)	UMGSMMAP_LMSI *lmsi;
-@property(readwrite,strong)	UMGSMMAP_AddressString *serviceCentreAddressDA;
+@property(readwrite,strong)    UMGSMMAP_AddressString *serviceCentreAddressDA;
+@property(readwrite,strong)    UMGSMMAP_AddressString *serviceCentreAddressDA2;
 @property(readwrite,assign)	BOOL noSM_RP_DA;
 
 

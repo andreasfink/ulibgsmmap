@@ -96,6 +96,30 @@
 			serviceCentreAddressOA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 			[_asn1_list addObject:serviceCentreAddressOA];
 		}
+        if(serviceCentreAddressOA2)
+        {
+            [serviceCentreAddressOA2 processBeforeEncode];
+            if(isImplicit)
+            {
+                self.asn1_tag.tagNumber = 4;
+                self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+                self.asn1_tag.isConstructed = serviceCentreAddressOA2.asn1_tag.isConstructed;
+                if(self.asn1_tag.isConstructed)
+                {
+                    self.asn1_list = [serviceCentreAddressOA2.asn1_list copy];
+                }
+                else
+                {
+                    self.asn1_data = [serviceCentreAddressOA2.asn1_data copy];
+                }
+            }
+            else
+            {
+                serviceCentreAddressOA2.asn1_tag.tagNumber = 4;
+                serviceCentreAddressOA2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+                [_asn1_list addObject:serviceCentreAddressOA2];
+            }
+        }
 	}
 	else if(noSM_RP_OA)
 	{
@@ -164,10 +188,17 @@
 		msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
-	{
+    {
         //UMASN1Object *o2 = [o getObjectAtPosition:0];
-        serviceCentreAddressOA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
-	}
+        if(serviceCentreAddressOA==NULL)
+        {
+            serviceCentreAddressOA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+        }
+        else
+        {
+            serviceCentreAddressOA2 = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+        }
+    }
 	else if((o) && (o.asn1_tag.tagNumber == 5) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
 		noSM_RP_OA = YES;
@@ -190,6 +221,10 @@
 	{
 		dict[@"serviceCentreAddressOA"] = serviceCentreAddressOA.objectValue;
 	}
+    if(serviceCentreAddressOA2)
+    {
+        dict[@"serviceCentreAddressOA2"] = serviceCentreAddressOA2.objectValue;
+    }
 	if(noSM_RP_OA)
 	{
 		dict[@"noSM-RP-OA"] = @(YES);

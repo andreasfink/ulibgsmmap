@@ -18,13 +18,15 @@
 {
 	NSString *operationName;
 	UMGSMMAP_ISDN_AddressString *msisdn;
-	UMGSMMAP_AddressString *serviceCentreAddressOA;
+    UMGSMMAP_AddressString *serviceCentreAddressOA;
+    UMGSMMAP_AddressString *serviceCentreAddressOA2;
 	BOOL noSM_RP_OA;
 }
 @property(readwrite,strong)    NSString *operationName;
 
 @property(readwrite,strong)	UMGSMMAP_ISDN_AddressString *msisdn;
-@property(readwrite,strong)	UMGSMMAP_AddressString *serviceCentreAddressOA;
+@property(readwrite,strong)    UMGSMMAP_AddressString *serviceCentreAddressOA;
+@property(readwrite,strong)    UMGSMMAP_AddressString *serviceCentreAddressOA2;
 @property(readwrite,assign)	BOOL noSM_RP_OA;
 
 

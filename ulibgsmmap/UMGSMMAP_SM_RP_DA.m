@@ -121,6 +121,30 @@
 			serviceCentreAddressDA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 			[_asn1_list addObject:serviceCentreAddressDA];
 		}
+        if(serviceCentreAddressDA2)
+        {
+            [serviceCentreAddressDA2 processBeforeEncode];
+            if(isImplicit)
+            {
+                self.asn1_tag.tagNumber = 4;
+                self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+                self.asn1_tag.isConstructed = serviceCentreAddressDA.asn1_tag.isConstructed;
+                if(self.asn1_tag.isConstructed)
+                {
+                    self.asn1_list = [serviceCentreAddressDA2.asn1_list copy];
+                }
+                else
+                {
+                    self.asn1_data = [serviceCentreAddressDA2.asn1_data copy];
+                }
+            }
+            else
+            {
+                serviceCentreAddressDA2.asn1_tag.tagNumber = 4;
+                serviceCentreAddressDA2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+                [_asn1_list addObject:serviceCentreAddressDA2];
+            }
+        }
 	}
 	else if(noSM_RP_DA)
 	{

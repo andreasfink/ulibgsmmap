@@ -18,21 +18,20 @@
 
 @interface UMGSMMAP_MT_ForwardSM_Arg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
-	NSString *operationName;
-	UMGSMMAP_SM_RP_DA *sm_RP_DA;
-	UMGSMMAP_SM_RP_OA *sm_RP_OA;
-	UMGSMMAP_SignalInfo *sm_RP_UI;
-	BOOL moreMessagesToSend;
-	UMGSMMAP_ExtensionContainer *extensionContainer;
-/* FIXME:   
+	NSString *_operationName;
+    UMGSMMAP_SM_RP_DA *_sm_RP_DA;
+    UMGSMMAP_SM_RP_OA *_sm_RP_OA;
+    UMGSMMAP_SignalInfo *_sm_RP_UI;
+	BOOL _moreMessagesToSend;
+	UMGSMMAP_ExtensionContainer *_extensionContainer;
+/* FIXME:
     UMGSMMAP_SM_DeliveryTimerValue *smDeliveryTimer;
     UMGSMMAP_Time *smDeliveryStartTime; 
 */
 }
 @property(readwrite,strong) NSString *operationName;
-
 @property(readwrite,strong)	UMGSMMAP_SM_RP_DA *sm_RP_DA;
-@property(readwrite,strong)	UMGSMMAP_SM_RP_OA *sm_RP_OA;
+@property(readwrite,strong) UMGSMMAP_SM_RP_OA *sm_RP_OA;
 @property(readwrite,strong)	UMGSMMAP_SignalInfo *sm_RP_UI;
 @property(readwrite,assign)	BOOL moreMessagesToSend;
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;

@@ -37,6 +37,12 @@
 		_serviceCentreAddress.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[_asn1_list addObject:_serviceCentreAddress];
 	}
+    if(_serviceCentreAddress2)
+    {
+        _serviceCentreAddress2.asn1_tag.tagNumber = 2;
+        _serviceCentreAddress2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_serviceCentreAddress2];
+    }
 	if(_extensionContainer)
 	{
 		_extensionContainer.asn1_tag.tagNumber = 6;
@@ -126,7 +132,14 @@
 	}
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		_serviceCentreAddress = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+        if((_serviceCentreAddress == NULL) || (_serviceCentreAddress.stringValue.length == 0))
+        {
+            _serviceCentreAddress = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+        }
+        else
+        {
+            _serviceCentreAddress2 = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+        }
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 6) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
@@ -171,6 +184,10 @@
 	{
 		dict[@"serviceCentreAddress"] = _serviceCentreAddress.objectValue;
 	}
+    if(_serviceCentreAddress2)
+    {
+        dict[@"serviceCentreAddress2"] = _serviceCentreAddress2.objectValue;
+    }
 	if(_extensionContainer)
 	{
 		dict[@"extensionContainer"] = _extensionContainer.objectValue;
