@@ -14,69 +14,63 @@
 
 
 @synthesize	operationName;
-@synthesize	msisdn;
-@synthesize	serviceCentreAddress;
-@synthesize	sm_DeliveryOutcome;
-@synthesize	absentSubscriberDiagnosticSM;
-@synthesize	extensionContainer;
-@synthesize	gprsSupportIndicator;
-@synthesize	deliveryOutcomeIndicator;
-@synthesize	additionalSM_DeliveryOutcome;
-@synthesize	additionalAbsentSubscriberDiagnosticSM;
-
 
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	[_asn1_tag setTagIsConstructed];
 	_asn1_list = [[NSMutableArray alloc]init];
-	if(msisdn)
+	if(_msisdn == NULL)
 	{
-		[_asn1_list addObject:msisdn];
+        _msisdn = [[UMGSMMAP_ISDN_AddressString alloc]init];
+		[_asn1_list addObject:_msisdn];
 	}
-	if(serviceCentreAddress)
+    if(_serviceCentreAddress ==NULL)
+    {
+        _serviceCentreAddress = [[UMGSMMAP_AddressString alloc]initWithString:@"+"];
+    }
+    [_asn1_list addObject:_serviceCentreAddress];
+    if(_sm_DeliveryOutcome==NULL)
+    {
+        _sm_DeliveryOutcome = [[UMGSMMAP_SM_DeliveryOutcome alloc]init];
+    }
+    [_asn1_list addObject:_sm_DeliveryOutcome];
+
+    if(_absentSubscriberDiagnosticSM)
 	{
-		[_asn1_list addObject:serviceCentreAddress];
+		_absentSubscriberDiagnosticSM.asn1_tag.tagNumber = 0;
+		_absentSubscriberDiagnosticSM.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_absentSubscriberDiagnosticSM];
 	}
-	if(sm_DeliveryOutcome)
+	if(_extensionContainer)
 	{
-		[_asn1_list addObject:sm_DeliveryOutcome];
+		[_asn1_list addObject:_extensionContainer];
 	}
-	if(absentSubscriberDiagnosticSM)
-	{
-		absentSubscriberDiagnosticSM.asn1_tag.tagNumber = 0;
-		absentSubscriberDiagnosticSM.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:absentSubscriberDiagnosticSM];
-	}
-	if(extensionContainer)
-	{
-		[_asn1_list addObject:extensionContainer];
-	}
-	if(gprsSupportIndicator)
+	if(_gprsSupportIndicator)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 2;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[_asn1_list addObject:n];
 	}
-	if(deliveryOutcomeIndicator)
+	if(_deliveryOutcomeIndicator)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 3;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[_asn1_list addObject:n];
 	}
-	if(additionalSM_DeliveryOutcome)
+	if(_additionalSM_DeliveryOutcome)
 	{
-		additionalSM_DeliveryOutcome.asn1_tag.tagNumber = 4;
-		additionalSM_DeliveryOutcome.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:additionalSM_DeliveryOutcome];
+		_additionalSM_DeliveryOutcome.asn1_tag.tagNumber = 4;
+		_additionalSM_DeliveryOutcome.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_additionalSM_DeliveryOutcome];
 	}
-	if(additionalAbsentSubscriberDiagnosticSM)
+	if(_additionalAbsentSubscriberDiagnosticSM)
 	{
-		additionalAbsentSubscriberDiagnosticSM.asn1_tag.tagNumber = 5;
-		additionalAbsentSubscriberDiagnosticSM.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:additionalAbsentSubscriberDiagnosticSM];
+		_additionalAbsentSubscriberDiagnosticSM.asn1_tag.tagNumber = 5;
+		_additionalAbsentSubscriberDiagnosticSM.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_additionalAbsentSubscriberDiagnosticSM];
 	}
 }
 
@@ -87,49 +81,49 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if(o)
 	{
-		msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
+        _msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if(o)
 	{
-		serviceCentreAddress = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+		_serviceCentreAddress = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if(o)
 	{
-		sm_DeliveryOutcome = [[UMGSMMAP_SM_DeliveryOutcome alloc]initWithASN1Object:o context:context];
+		_sm_DeliveryOutcome = [[UMGSMMAP_SM_DeliveryOutcome alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		absentSubscriberDiagnosticSM = [[UMGSMMAP_AbsentSubscriberDiagnosticSM alloc]initWithASN1Object:o context:context];
+		_absentSubscriberDiagnosticSM = [[UMGSMMAP_AbsentSubscriberDiagnosticSM alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if(o)
 	{
-		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
+		_extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	while(o)
 	{
 		if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 		{
-			gprsSupportIndicator = YES;
+			_gprsSupportIndicator = YES;
 			o = [self getObjectAtPosition:p++];
 		}
 		else if((o) && (o.asn1_tag.tagNumber == 3) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 		{
-			deliveryOutcomeIndicator = YES;
+			_deliveryOutcomeIndicator = YES;
 			o = [self getObjectAtPosition:p++];
 		}
 		else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 		{
-			additionalSM_DeliveryOutcome = [[UMGSMMAP_SM_DeliveryOutcome alloc]initWithASN1Object:o context:context];
+			_additionalSM_DeliveryOutcome = [[UMGSMMAP_SM_DeliveryOutcome alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
 		}
 		else if((o) && (o.asn1_tag.tagNumber == 5) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 		{
-			additionalAbsentSubscriberDiagnosticSM = [[UMGSMMAP_AbsentSubscriberDiagnosticSM alloc]initWithASN1Object:o context:context];
+			_additionalAbsentSubscriberDiagnosticSM = [[UMGSMMAP_AbsentSubscriberDiagnosticSM alloc]initWithASN1Object:o context:context];
 			o = [self getObjectAtPosition:p++];
 		}
         else
@@ -147,41 +141,41 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(msisdn)
+	if(_msisdn)
 	{
-		dict[@"msisdn"] = msisdn.objectValue;
+		dict[@"msisdn"] = _msisdn.objectValue;
 	}
-	if(serviceCentreAddress)
+	if(_serviceCentreAddress)
 	{
-		dict[@"serviceCentreAddress"] = serviceCentreAddress.objectValue;
+		dict[@"serviceCentreAddress"] = _serviceCentreAddress.objectValue;
 	}
-	if(sm_DeliveryOutcome)
+	if(_sm_DeliveryOutcome)
 	{
-		dict[@"sm-DeliveryOutcome"] = sm_DeliveryOutcome.objectValue;
+		dict[@"sm-DeliveryOutcome"] = _sm_DeliveryOutcome.objectValue;
 	}
-	if(absentSubscriberDiagnosticSM)
+	if(_absentSubscriberDiagnosticSM)
 	{
-		dict[@"absentSubscriberDiagnosticSM"] = absentSubscriberDiagnosticSM.objectValue;
+		dict[@"absentSubscriberDiagnosticSM"] = _absentSubscriberDiagnosticSM.objectValue;
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		dict[@"extensionContainer"] = extensionContainer.objectValue;
+		dict[@"extensionContainer"] = _extensionContainer.objectValue;
 	}
-	if(gprsSupportIndicator)
+	if(_gprsSupportIndicator)
 	{
-		dict[@"gprsSupportIndicator"] = @(YES);
+		dict[@"_gprsSupportIndicator"] = @(YES);
 	}
-	if(deliveryOutcomeIndicator)
+	if(_deliveryOutcomeIndicator)
 	{
 		dict[@"deliveryOutcomeIndicator"] = @(YES);
 	}
-	if(additionalSM_DeliveryOutcome)
+	if(_additionalSM_DeliveryOutcome)
 	{
-		dict[@"additionalSM-DeliveryOutcome"] = additionalSM_DeliveryOutcome.objectValue;
+        dict[@"additionalSM-DeliveryOutcome"] = _additionalSM_DeliveryOutcome.objectValue;
 	}
-	if(additionalAbsentSubscriberDiagnosticSM)
+	if(_additionalAbsentSubscriberDiagnosticSM)
 	{
-		dict[@"additionalAbsentSubscriberDiagnosticSM"] = additionalAbsentSubscriberDiagnosticSM.objectValue;
+		dict[@"additionalAbsentSubscriberDiagnosticSM"] = _additionalAbsentSubscriberDiagnosticSM.objectValue;
 	}
 	return dict;
 }
@@ -193,7 +187,6 @@
 {
     return self;
 }
-
 
 @end
 
