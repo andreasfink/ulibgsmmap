@@ -19,28 +19,28 @@
 
 @interface UMGSMMAP_ReportSM_DeliveryStatusArg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
-	NSString *operationName;
-	UMGSMMAP_ISDN_AddressString *_msisdn;  /* mandatory */
-	UMGSMMAP_AddressString *_serviceCentreAddress;  /* mandatory */
-	UMGSMMAP_SM_DeliveryOutcome *_sm_DeliveryOutcome;  /* mandatory */
-	UMGSMMAP_AbsentSubscriberDiagnosticSM *_absentSubscriberDiagnosticSM; /* mandatory */
-	UMGSMMAP_ExtensionContainer *_extensionContainer; /* opional */
-	BOOL _gprsSupportIndicator; /* opional */
-	BOOL _deliveryOutcomeIndicator; /* opional */
-	UMGSMMAP_SM_DeliveryOutcome *_additionalSM_DeliveryOutcome; /* opional */
-	UMGSMMAP_AbsentSubscriberDiagnosticSM *_additionalAbsentSubscriberDiagnosticSM; /* opional */
+    NSString                                    *operationName;
+    UMGSMMAP_ISDN_AddressString                 *_msisdn;  /* mandatory */
+    UMGSMMAP_AddressString                      *_serviceCentreAddress;  /* mandatory */
+    UMGSMMAP_SM_DeliveryOutcome                 *_sm_DeliveryOutcome;  /* mandatory */
+    UMGSMMAP_AbsentSubscriberDiagnosticSM       *_absentSubscriberDiagnosticSM; /* mandatory */
+    UMGSMMAP_ExtensionContainer                 *_extensionContainer; /* opional */
+    BOOL                                        _gprsSupportIndicator; /* opional */
+    BOOL                                        _deliveryOutcomeIndicator; /* opional */
+    UMGSMMAP_SM_DeliveryOutcome                 *_additionalSM_DeliveryOutcome; /* opional */
+    UMGSMMAP_AbsentSubscriberDiagnosticSM       *_additionalAbsentSubscriberDiagnosticSM; /* opional */
 }
-@property(readwrite,strong)    NSString *operationName;
+@property(readwrite,strong) NSString *operationName;
 
-@property(readwrite,strong)	UMGSMMAP_ISDN_AddressString *msisdn;
-@property(readwrite,strong)	UMGSMMAP_AddressString *serviceCentreAddress;
-@property(readwrite,strong)	UMGSMMAP_SM_DeliveryOutcome *sm_DeliveryOutcome;
-@property(readwrite,strong)	UMGSMMAP_AbsentSubscriberDiagnosticSM *absentSubscriberDiagnosticSM;
-@property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
-@property(readwrite,assign)	BOOL gprsSupportIndicator;
-@property(readwrite,assign)	BOOL deliveryOutcomeIndicator;
-@property(readwrite,strong)	UMGSMMAP_SM_DeliveryOutcome *additionalSM_DeliveryOutcome;
-@property(readwrite,strong)	UMGSMMAP_AbsentSubscriberDiagnosticSM *additionalAbsentSubscriberDiagnosticSM;
+@property(readwrite,strong)    UMGSMMAP_ISDN_AddressString             *msisdn;
+@property(readwrite,strong)    UMGSMMAP_AddressString                  *serviceCentreAddress;
+@property(readwrite,strong)    UMGSMMAP_SM_DeliveryOutcome             *sm_DeliveryOutcome;
+@property(readwrite,strong)    UMGSMMAP_AbsentSubscriberDiagnosticSM   *absentSubscriberDiagnosticSM;
+@property(readwrite,strong)    UMGSMMAP_ExtensionContainer             *extensionContainer;
+@property(readwrite,assign)    BOOL                                    gprsSupportIndicator;
+@property(readwrite,assign)    BOOL                                    deliveryOutcomeIndicator;
+@property(readwrite,strong)    UMGSMMAP_SM_DeliveryOutcome             *additionalSM_DeliveryOutcome;
+@property(readwrite,strong)    UMGSMMAP_AbsentSubscriberDiagnosticSM   *additionalAbsentSubscriberDiagnosticSM;
 
 
 - (void)processBeforeEncode;
@@ -53,3 +53,6 @@
                                                withContext:(id)context;
 
 @end
+
+
+

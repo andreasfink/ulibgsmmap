@@ -12,7 +12,6 @@
 
 @implementation UMGSMMAP_ReportSM_DeliveryStatusArg
 
-
 @synthesize	operationName;
 
 - (void) processBeforeEncode
@@ -21,10 +20,10 @@
 	[_asn1_tag setTagIsConstructed];
 	_asn1_list = [[NSMutableArray alloc]init];
 	if(_msisdn == NULL)
-	{
+    {
         _msisdn = [[UMGSMMAP_ISDN_AddressString alloc]init];
-		[_asn1_list addObject:_msisdn];
-	}
+    }
+    [_asn1_list addObject:_msisdn];
     if(_serviceCentreAddress ==NULL)
     {
         _serviceCentreAddress = [[UMGSMMAP_AddressString alloc]initWithString:@"+"];
