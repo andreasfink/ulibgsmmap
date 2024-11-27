@@ -11,10 +11,18 @@
 #import <ulibasn1/ulibasn1.h>
 #import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 
+typedef enum UMGSMMAP_SM_DeliveryOutcome_enum
+{
+    UMGSMMAP_SM_DeliveryOutcome_memoryCapacityExceeded  = 0,
+    UMGSMMAP_SM_DeliveryOutcome_absentSubscriber        = 1,
+    UMGSMMAP_SM_DeliveryOutcome_successfulTransfer      = 2,
+} UMGSMMAP_SM_DeliveryOutcome_enum;
+
 @interface UMGSMMAP_SM_DeliveryOutcome : UMASN1Enumerated<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
 }
+
 @property(readwrite,strong)    NSString *operationName;
 
 @end

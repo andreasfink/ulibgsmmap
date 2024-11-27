@@ -27,4 +27,14 @@
     return self;
 }
 
+
+- (void)setEnumDefinition
+{
+    _enumDefinition = @ {
+        @"memory-capacity-exceeded" : @(UMGSMMAP_SM_DeliveryOutcome_memoryCapacityExceeded),
+        @"absent-subscriber" : @(UMGSMMAP_SM_DeliveryOutcome_absentSubscriber),
+        @"successful-transfer" : @(UMGSMMAP_SM_DeliveryOutcome_successfulTransfer)
+    };
+}
+
 @end
