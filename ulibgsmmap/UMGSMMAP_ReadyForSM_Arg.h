@@ -31,7 +31,7 @@
 @property(readwrite,strong) UMGSMMAP_AlertReason            *alertReason;
 @property(readwrite,assign) BOOL                            alertReasonIndicator;
 @property(readwrite,strong) UMGSMMAP_ExtensionContainer     *extensionContainer;
-@property(readwrite,assign) BOOL                            additinalAlertReasonIndicator;
+@property(readwrite,assign) BOOL                            additionalAlertReasonIndicator;
 
 
 - (void)processBeforeEncode;
