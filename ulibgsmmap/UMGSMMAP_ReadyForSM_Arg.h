@@ -18,17 +18,20 @@
 @interface UMGSMMAP_ReadyForSM_Arg : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
 	NSString *operationName;
-	UMGSMMAP_IMSI *imsi;
-	UMGSMMAP_AlertReason *alertReason;
-	BOOL alertReasonIndicator;
-	UMGSMMAP_ExtensionContainer *extensionContainer;
+	UMGSMMAP_IMSI *_imsi;
+	UMGSMMAP_AlertReason *_alertReason;
+	BOOL _alertReasonIndicator;
+    BOOL _additionalAlertReasonIndicator;
+	UMGSMMAP_ExtensionContainer *_extensionContainer;
 }
+
 @property(readwrite,strong)    NSString *operationName;
 
-@property(readwrite,strong)	UMGSMMAP_IMSI *imsi;
-@property(readwrite,strong)	UMGSMMAP_AlertReason *alertReason;
-@property(readwrite,assign)	BOOL alertReasonIndicator;
-@property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
+@property(readwrite,strong)	UMGSMMAP_IMSI                   *imsi;
+@property(readwrite,strong) UMGSMMAP_AlertReason            *alertReason;
+@property(readwrite,assign) BOOL                            alertReasonIndicator;
+@property(readwrite,strong) UMGSMMAP_ExtensionContainer     *extensionContainer;
+@property(readwrite,assign) BOOL                            additinalAlertReasonIndicator;
 
 
 - (void)processBeforeEncode;

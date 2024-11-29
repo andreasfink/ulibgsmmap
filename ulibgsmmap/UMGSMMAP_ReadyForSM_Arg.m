@@ -14,42 +14,43 @@
 
 
 @synthesize	operationName;
-@synthesize	imsi;
-@synthesize	alertReason;
-@synthesize	alertReasonIndicator;
-@synthesize	extensionContainer;
-
 
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	[_asn1_tag setTagIsConstructed];
 	_asn1_list = [[NSMutableArray alloc]init];
-	if(imsi)
+	if(_imsi)
 	{
-		imsi.asn1_tag.tagNumber = 0;
-		imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:imsi];
+		_imsi.asn1_tag.tagNumber = 0;
+        _imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+		[_asn1_list addObject:_imsi];
 	}
-	if(alertReason)
+	if(_alertReason)
 	{
-        alertReason.asn1_tag.tagNumber = UMASN1Primitive_enumerated;
-        alertReason.asn1_tag.tagClass = UMASN1Class_Universal;
-		[_asn1_list addObject:alertReason];
+        _alertReason.asn1_tag.tagNumber = UMASN1Primitive_enumerated;
+        _alertReason.asn1_tag.tagClass = UMASN1Class_Universal;
+		[_asn1_list addObject:_alertReason];
 	}
-	if(alertReasonIndicator)
+	if(_alertReasonIndicator)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
-		n.asn1_tag.tagNumber = -1;
-		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        n.asn1_tag.tagNumber = UMASN1Primitive_null;
+		n.asn1_tag.tagClass = UMASN1Class_Universal;
 		[_asn1_list addObject:n];
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		[_asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:_extensionContainer];
 	}
+    if(_additionalAlertReasonIndicator)
+    {
+        UMASN1Null *n = [[UMASN1Null alloc]init];
+        n.asn1_tag.tagNumber = 1;
+        n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:n];
+    }
 }
-
 
 - (UMGSMMAP_ReadyForSM_Arg *) processAfterDecodeWithContext:(id)context
 {
@@ -57,24 +58,30 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
+		_imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if(o)
 	{
-		alertReason = [[UMGSMMAP_AlertReason alloc]initWithASN1Object:o context:context];
+		_alertReason = [[UMGSMMAP_AlertReason alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
-	if(o)
+    if((o) && (o.asn1_tag.tagNumber == UMASN1Primitive_null) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
 	{
-		alertReasonIndicator = YES;
+		_alertReasonIndicator = YES;
 		o = [self getObjectAtPosition:p++];
 	}
-	if(o)
+    if((o) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence) && (o.asn1_tag.tagClass == UMASN1Class_Universal))
 	{
-		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
+		_extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
+    if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+    {
+        _additionalAlertReasonIndicator = YES;
+        o = [self getObjectAtPosition:p++];
+    }
+
 	while(o)
 	{
         /* ... */
@@ -90,22 +97,27 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(imsi)
+	if(_imsi)
 	{
-		dict[@"imsi"] = imsi.objectValue;
+		dict[@"imsi"] = _imsi.objectValue;
 	}
-	if(alertReason)
+	if(_alertReason)
 	{
-		dict[@"alertReason"] = alertReason.objectValue;
+		dict[@"alertReason"] = _alertReason.objectValue;
 	}
-	if(alertReasonIndicator)
+	if(_alertReasonIndicator)
 	{
 		dict[@"alertReasonIndicator"] = @(YES);
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		dict[@"extensionContainer"] = extensionContainer.objectValue;
+		dict[@"extensionContainer"] = _extensionContainer.objectValue;
 	}
+    if(_additionalAlertReasonIndicator)
+    {
+        dict[@"additionalAlertReasonIndicator"] = @(YES);
+    }
+
 	return dict;
 }
 
