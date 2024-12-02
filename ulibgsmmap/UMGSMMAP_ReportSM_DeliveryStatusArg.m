@@ -16,10 +16,10 @@
 
 - (void) processBeforeEncode
 {
-	[super processBeforeEncode];
-	[_asn1_tag setTagIsConstructed];
-	_asn1_list = [[NSMutableArray alloc]init];
-	if(_msisdn == NULL)
+    [super processBeforeEncode];
+    [_asn1_tag setTagIsConstructed];
+    _asn1_list = [[NSMutableArray alloc]init];
+    if(_msisdn == NULL)
     {
         _msisdn = [[UMGSMMAP_ISDN_AddressString alloc]init];
     }
@@ -29,12 +29,10 @@
         _serviceCentreAddress = [[UMGSMMAP_AddressString alloc]initWithString:@"+"];
     }
     [_asn1_list addObject:_serviceCentreAddress];
-    if(_sm_DeliveryOutcome==NULL)
+    if(_sm_DeliveryOutcome)
     {
-        _sm_DeliveryOutcome = [[UMGSMMAP_SM_DeliveryOutcome alloc]init];
+        [_asn1_list addObject:_sm_DeliveryOutcome];
     }
-    [_asn1_list addObject:_sm_DeliveryOutcome];
-
     if(_absentSubscriberDiagnosticSM)
 	{
 		_absentSubscriberDiagnosticSM.asn1_tag.tagNumber = 0;
