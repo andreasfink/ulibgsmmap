@@ -620,7 +620,7 @@
     }
     else
     {
-        if(self.dialogResponseRequired)
+        if((self.dialogResponseRequired) && (useApplicationContext==YES))
         {
             itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
             itu_dialoguePortion.dialogResponse = [[UMTCAP_asn1_AARE_apdu alloc]init];
