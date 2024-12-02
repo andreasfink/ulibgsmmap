@@ -505,6 +505,14 @@
     {
         useApplicationContext = NO;
     }
+    
+    if(xoptions[@"replace-application-context"])
+    {
+        _responseApplicationContext = xoptions[@"replace-application-context"];
+        applicationContext = _responseApplicationContext;
+        useApplicationContext = YES;
+    }
+
     ummutex_lock(_dialogLock);
 
     if(xuserInfo == NULL)
