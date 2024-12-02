@@ -499,8 +499,12 @@
                    result:(UMTCAP_asn1_Associate_result *)result
                diagnostic:(UMTCAP_asn1_Associate_source_diagnostic *)result_source_diagnostic
                  userInfo:(UMTCAP_asn1_userInformation *)xuserInfo
-
 {
+    BOOL useApplicationContext = YES;
+    if(xoptions[@"clear-application-context"])
+    {
+        useApplicationContext = NO;
+    }
     ummutex_lock(_dialogLock);
 
     if(xuserInfo == NULL)
@@ -563,7 +567,7 @@
     UMTCAP_itu_asn1_dialoguePortion *itu_dialoguePortion = NULL;
     if(self.openEstablished==NO)
     {
-        if(self.dialogRequestRequired)
+        if((self.dialogRequestRequired) && (useApplicationContext==YES))
         {
             itu_dialoguePortion = [[UMTCAP_itu_asn1_dialoguePortion alloc]init];
             itu_dialoguePortion.dialogRequest = [[UMTCAP_asn1_AARQ_apdu alloc]init];
