@@ -154,7 +154,7 @@ const char *umgsmmap_opcode_string(int opcode)
     case UMGSMMAP_Opcode_noteSubscriberPresent:
         return "noteSubscriberPresent";
         break;
-    case UMGSMMAP_Opcode_alertServiceCentreWihoutResult:
+    case UMGSMMAP_Opcode_alertServiceCentreWithoutResult:
         return "alertServiceCentreWithoutResult";
         break;
     case UMGSMMAP_Opcode_activateTraceMode:
