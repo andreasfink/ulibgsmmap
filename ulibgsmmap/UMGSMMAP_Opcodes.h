@@ -57,7 +57,7 @@ typedef enum UMGSMMAP_Opcode
     UMGSMMAP_Opcode_mo_forwardSM = 46,
     UMGSMMAP_Opcode_reportSM_DeliveryStatus = 47,
     UMGSMMAP_Opcode_noteSubscriberPresent = 48,     // old
-    UMGSMMAP_Opcode_alertServiceCentreOld = 49,     // old
+    UMGSMMAP_Opcode_alertServiceCentreWithoutResult = 49,     // old
     UMGSMMAP_Opcode_activateTraceMode = 50,
     UMGSMMAP_Opcode_deactivateTraceMode = 51,
     UMGSMMAP_Opcode_traceSubscriberActivity = 52,   // old
