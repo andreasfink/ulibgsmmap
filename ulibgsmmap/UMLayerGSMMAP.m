@@ -1101,6 +1101,17 @@
                    options:options];
 }
 
+- (void) executeMAP_AddEmptyComponentForDialog:(UMGSMMAP_DialogIdentifier *)dialogId
+{
+    UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
+    if(dialog==NULL)
+    {
+        [self.logFeed minorErrorText:[NSString stringWithFormat:@"MAP_Invoke_Req: Dialog ID %@ not found. Ignoring",dialogId]];
+        return;
+    }
+    [dialog MAP_AddEmptyComponent];
+}
+
 - (void) queueMAP_ReturnResult_Req:(UMASN1Object *)param
                               dialog:(UMGSMMAP_DialogIdentifier *)dialogId
                             invokeId:(int64_t)invokeId

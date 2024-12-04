@@ -222,6 +222,7 @@
 #pragma mark -
 #pragma mark Component Handling
 
+- (void)MAP_AddEmptyComponent;
 - (void) MAP_Invoke_Req:(UMASN1Object *)param
                invokeId:(int64_t)invokeId  /* if not used: AUTO_ASSIGN_INVOKE_ID */
                linkedId:(int64_t)linkedId  /* if not used: TCAP_UNDEFINED_LINKED_ID */

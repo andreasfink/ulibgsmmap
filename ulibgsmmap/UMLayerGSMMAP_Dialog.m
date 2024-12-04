@@ -1058,6 +1058,13 @@
 #pragma mark -
 #pragma mark component handling: Outgoing Requests
 #pragma mark -
+- (void)MAP_AddEmptyComponent
+{
+    ummutex_lock(_dialogLock);
+    UMASN1Sequence *component = [[UMASN1Sequence alloc]init];
+    [pendingOutgoingComponents addObject:component];
+    ummutex_unlock(_dialogLock);
+}
 
 - (void) MAP_Invoke_Req:(UMASN1Object *)param
                invokeId:(int64_t)xinvokeId

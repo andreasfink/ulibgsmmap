@@ -177,6 +177,7 @@
                     userInfo:(UMTCAP_asn1_userInformation *)userInfo
                          cause:(int64_t)cause;
 
+- (void) executeMAP_AddEmptyComponentForDialog:(UMGSMMAP_DialogIdentifier *)dialogId;
 
 - (UMLayerGSMMAP_Dialog *)dialogById:(UMGSMMAP_DialogIdentifier *)did;
 - (void)housekeeping;
