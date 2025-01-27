@@ -115,7 +115,6 @@
     return result;
 }
 
-
 - (NSString *)stringFromGsm8
 {
     NSMutableString *out = [[NSMutableString alloc]init];
@@ -514,7 +513,5 @@
     [n appendData:m];
     return n;
 }
-
-
 
 @end
