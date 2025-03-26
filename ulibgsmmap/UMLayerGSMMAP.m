@@ -31,7 +31,6 @@
 
 @implementation UMLayerGSMMAP
 
-
 -(UMMTP3Variant) variant
 {
     return _tcap.variant;
@@ -593,20 +592,20 @@
 {
     @autoreleasepool
     {
-        UMLayerGSMMAP_Dialog *d = [[UMLayerGSMMAP_Dialog alloc]init];
-        d.userDialogId = dialogId;
-        d.tcapLayer = _tcap;
-        d.gsmmapLayer = self;
-        d.mapUser = u;
-        d.logFeed = self.logFeed;
-        d.logLevel = self.logLevel;
+        UMLayerGSMMAP_Dialog *dialog = [[UMLayerGSMMAP_Dialog alloc]init];
+        dialog.userDialogId = dialogId;
+        dialog.tcapLayer = _tcap;
+        dialog.gsmmapLayer = self;
+        dialog.mapUser = u;
+        dialog.logFeed = self.logFeed;
+        dialog.logLevel = self.logLevel;
         if(self.dialogTimeout > 0.0)
         {
-            d.timeoutInSeconds = self.dialogTimeout;
+            dialog.timeoutInSeconds = self.dialogTimeout;
         }
-        _dialogs[d.userDialogId.description] = d;
-        [d touch];
-        return d;
+        _dialogs[dialog.userDialogId.description] = dialog;
+        [dialog touch];
+        return dialog;
     }
 }
 

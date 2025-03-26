@@ -23,48 +23,46 @@
 
 @interface UMLayerGSMMAP_Dialog : UMObject<UMTCAP_UserProtocol>
 {
-    UMGSMMAP_DialogIdentifier *userDialogId;
-    NSString *tcapTransactionId;
-    NSString *tcapRemoteTransactionId;
-    UMGSMMAP_UserIdentifier *userIdentifier;
-    id<UMLayerGSMMAP_UserProtocol> mapUser;
-    UMLayerTCAP *tcapLayer;
-    UMLayerGSMMAP *gsmmapLayer;
-    UMTCAP_asn1_objectIdentifier *applicationContext;
-    UMTCAP_asn1_objectIdentifier *applicationContext2;
-    UMTCAP_asn1_userInformation *_requestUserInfo;
-    UMTCAP_asn1_userInformation *_responseUserInfo;
-    UMTCAP_asn1_objectIdentifier *_responseApplicationContext;
-    UMASN1BitString *dialogProtocolVersion;
-    SccpAddress *localAddress;
-    SccpAddress *remoteAddress;
-    int64_t  _nextInvokeId;
-    NSTimeInterval _timeoutInSeconds;
-    NSDate *_startDate;
-    UMAtomicDate *_lastActivity;
-    NSDictionary *_outboundOptions;
-    UMTCAP_Variant variant;
-    UMSynchronizedArray *pendingOutgoingComponents;
-    UMSynchronizedArray *pendingIncomingComponents;
-    UMLogLevel _logLevel;
-    BOOL    _initiatedOutgoing;
-    BOOL    _openEstablished;
-    BOOL    _returnResultLastSent;
-    BOOL    _dialogRequestRequired;
-    BOOL    _dialogResponseRequired;
-    BOOL    _dialogIsClosed;
-    BOOL    _dialogIsClosing;
-    BOOL    _dialogShallClose;
-    BOOL    _tcapContinueSeen;
-    NSString *_tcapOperationGlobal;
-    BOOL    _useNegativeId;
-    BOOL    _useBigId;
-
-    BOOL    _startWithContinue;
-    BOOL    _noDestinationTransationIdInContinue;
-    BOOL    _doubleOriginationTransationIdInContinue;
-    BOOL    _useHandshake;
-
+    UMGSMMAP_DialogIdentifier               *_userDialogId;
+    NSString                                *_tcapTransactionId;
+    NSString                                *_tcapRemoteTransactionId;
+    UMGSMMAP_UserIdentifier                 *_userIdentifier;
+    id<UMLayerGSMMAP_UserProtocol>          _mapUser;
+    UMLayerTCAP                             *_tcapLayer;
+    UMLayerGSMMAP                           *_gsmmapLayer;
+    UMTCAP_asn1_objectIdentifier            *_applicationContext;
+    UMTCAP_asn1_objectIdentifier            *_applicationContext2;
+    UMTCAP_asn1_userInformation             *_requestUserInfo;
+    UMTCAP_asn1_userInformation             *_responseUserInfo;
+    UMTCAP_asn1_objectIdentifier            *_responseApplicationContext;
+    UMASN1BitString                         *_dialogProtocolVersion;
+    SccpAddress                             *_localAddress;
+    SccpAddress                             *_remoteAddress;
+    int64_t                                 _nextInvokeId;
+    NSTimeInterval                          _timeoutInSeconds;
+    NSDate                                  *_startDate;
+    UMAtomicDate                            *_lastActivity;
+    NSDictionary                            *_outboundOptions;
+    UMTCAP_Variant                          _variant;
+    UMSynchronizedArray                     *_pendingOutgoingComponents;
+    UMSynchronizedArray                     *_pendingIncomingComponents;
+    UMLogLevel                              _logLevel;
+    BOOL                                    _initiatedOutgoing;
+    BOOL                                    _openEstablished;
+    BOOL                                    _returnResultLastSent;
+    BOOL                                    _dialogRequestRequired;
+    BOOL                                    _dialogResponseRequired;
+    BOOL                                    _dialogIsClosed;
+    BOOL                                    _dialogIsClosing;
+    BOOL                                    _dialogShallClose;
+    BOOL                                    _tcapContinueSeen;
+    NSString                                *_tcapOperationGlobal;
+    BOOL                                    _useNegativeId;
+    BOOL                                    _useBigId;
+    BOOL                                    _startWithContinue;
+    BOOL                                    _noDestinationTransationIdInContinue;
+    BOOL                                    _doubleOriginationTransationIdInContinue;
+    BOOL                                    _useHandshake;
     BOOL                                    _shouldSendContinue;
     UMTCAP_asn1_Associate_result            *_pendingResult;
     UMTCAP_asn1_Associate_source_diagnostic *_pendingDiagnostic;
@@ -75,44 +73,43 @@
 #pragma mark -
 #pragma mark Properties
 
-@property(readwrite,strong) UMGSMMAP_DialogIdentifier *userDialogId;
-@property(readwrite,strong) NSString *tcapTransactionId;
-@property(readwrite,strong) NSString *tcapOperationGlobal;
-@property(readwrite,strong) UMGSMMAP_UserIdentifier *userIdentifier;
-@property(readwrite,strong) id<UMLayerGSMMAP_UserProtocol> mapUser;
-@property(readwrite,strong) UMLayerTCAP *tcapLayer;
-@property(readwrite,strong) UMLayerGSMMAP *gsmmapLayer;
-@property(readwrite,strong) UMTCAP_asn1_objectIdentifier *applicationContext;
-@property(readwrite,strong) UMTCAP_asn1_objectIdentifier *applicationContext2;
-@property(readwrite,strong) UMTCAP_asn1_userInformation *requestUserInfo;
-@property(readwrite,strong) UMTCAP_asn1_userInformation *responseUserInfo;
-@property(readwrite,strong) UMTCAP_asn1_objectIdentifier *responseApplicationContext;
-@property(readwrite,strong) NSDictionary *outboundOptions;
-
-@property(readwrite,strong) UMASN1BitString *dialogProtocolVersion;
-@property(readwrite,strong,atomic) SccpAddress *localAddress;
-@property(readwrite,strong,atomic) SccpAddress *remoteAddress;
-@property(readwrite,assign) UMTCAP_Variant variant;
-@property(readwrite,assign,atomic) BOOL    initiatedOutgoing;
-@property(readwrite,assign,atomic) BOOL    openEstablished;
-@property(readwrite,assign,atomic) BOOL    returnResultLastSent;
-@property(readwrite,assign,atomic) BOOL    dialogRequestRequired;
-@property(readwrite,assign,atomic) BOOL    dialogResponseRequired;
-@property(readwrite,assign,atomic) BOOL    dialogIsClosed;
-@property(readwrite,assign,atomic) BOOL    dialogIsClosing;
-@property(readwrite,assign,atomic) BOOL    dialogShallClose;
-@property(readwrite,assign,atomic) UMLogLevel logLevel;
-@property(readwrite,assign,atomic) BOOL tcapContinueSeen;
-@property(readwrite,assign,atomic) BOOL startWithContinue;
-@property(readwrite,assign,atomic) BOOL noDestinationTransationIdInContinue;
-@property(readwrite,assign,atomic) BOOL doubleOriginationTransationIdInContinue;
-@property(readwrite,assign,atomic) BOOL shouldSendContinue;
-@property(readwrite,assign,atomic) BOOL useHandshake;
+@property(readwrite,strong,atomic) UMGSMMAP_DialogIdentifier        *userDialogId;
+@property(readwrite,strong,atomic) NSString                         *tcapTransactionId;
+@property(readwrite,strong,atomic) NSString                         *tcapOperationGlobal;
+@property(readwrite,strong,atomic) UMGSMMAP_UserIdentifier          *userIdentifier;
+@property(readwrite,strong,atomic) id<UMLayerGSMMAP_UserProtocol>   mapUser;
+@property(readwrite,strong,atomic) UMLayerTCAP                      *tcapLayer;
+@property(readwrite,strong,atomic) UMLayerGSMMAP                    *gsmmapLayer;
+@property(readwrite,strong,atomic) UMTCAP_asn1_objectIdentifier     *applicationContext;
+@property(readwrite,strong,atomic) UMTCAP_asn1_objectIdentifier     *applicationContext2;
+@property(readwrite,strong,atomic) UMTCAP_asn1_userInformation      *requestUserInfo;
+@property(readwrite,strong,atomic) UMTCAP_asn1_userInformation      *responseUserInfo;
+@property(readwrite,strong,atomic) UMTCAP_asn1_objectIdentifier     *responseApplicationContext;
+@property(readwrite,strong,atomic) NSDictionary                     *outboundOptions;
+@property(readwrite,strong,atomic) UMASN1BitString                  *dialogProtocolVersion;
+@property(readwrite,strong,atomic) SccpAddress                      *localAddress;
+@property(readwrite,strong,atomic) SccpAddress                      *remoteAddress;
+@property(readwrite,assign,atomic) UMTCAP_Variant                   variant;
+@property(readwrite,assign,atomic) BOOL                             initiatedOutgoing;
+@property(readwrite,assign,atomic) BOOL                             openEstablished;
+@property(readwrite,assign,atomic) BOOL                             returnResultLastSent;
+@property(readwrite,assign,atomic) BOOL                             dialogRequestRequired;
+@property(readwrite,assign,atomic) BOOL                             dialogResponseRequired;
+@property(readwrite,assign,atomic) BOOL                             dialogIsClosed;
+@property(readwrite,assign,atomic) BOOL                             dialogIsClosing;
+@property(readwrite,assign,atomic) BOOL                             dialogShallClose;
+@property(readwrite,assign,atomic) UMLogLevel                       logLevel;
+@property(readwrite,assign,atomic) BOOL                             tcapContinueSeen;
+@property(readwrite,assign,atomic) BOOL                             startWithContinue;
+@property(readwrite,assign,atomic) BOOL                             noDestinationTransationIdInContinue;
+@property(readwrite,assign,atomic) BOOL                             doubleOriginationTransationIdInContinue;
+@property(readwrite,assign,atomic) BOOL                             shouldSendContinue;
+@property(readwrite,assign,atomic) BOOL                             useHandshake;
+@property(readwrite,strong,atomic) NSString                         *tcapRemoteTransactionId;
 
 - (NSTimeInterval)timeoutInSeconds;
 - (void)setTimeoutInSeconds:(NSTimeInterval)to;
 
-@property(readwrite,strong)    NSString *tcapRemoteTransactionId;
 
 #pragma mark -
 #pragma mark Dialog Handling
