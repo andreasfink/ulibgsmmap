@@ -16,7 +16,8 @@
 @synthesize	operationName;
 @synthesize	imsi;
 @synthesize	lmsi;
-@synthesize	serviceCentreAddressDA;
+@synthesize    serviceCentreAddressDA;
+@synthesize    serviceCentreAddressDA2;
 @synthesize	noSM_RP_DA;
 
 
@@ -50,7 +51,7 @@
 		_asn1_tag.isConstructed=YES;
 		_asn1_list = [[NSMutableArray alloc]init];
 	}
-	if(imsi)
+	if(_imsi)
 	{
 		[imsi processBeforeEncode];
 		if(isImplicit)
@@ -60,35 +61,35 @@
 			self.asn1_tag.isConstructed = imsi.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
-				self.asn1_list = [imsi.asn1_list copy];
+				self.asn1_list = [_imsi.asn1_list copy];
 			}
 			else
 			{
-				self.asn1_data = [imsi.asn1_data copy];
+				self.asn1_data = [_imsi.asn1_data copy];
 			}
 		}
 		else
 		{
 			imsi.asn1_tag.tagNumber = 0;
 			imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[_asn1_list addObject:imsi];
+			[_asn1_list addObject:_imsi];
 		}
 	}
-	else if(lmsi)
+	else if(_lmsi)
 	{
-		[lmsi processBeforeEncode];
+		[_lmsi processBeforeEncode];
 		if(isImplicit)
 		{
 			self.asn1_tag.tagNumber = 1;
 			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = lmsi.asn1_tag.isConstructed;
+			self.asn1_tag.isConstructed = _lmsi.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
-				self.asn1_list = [lmsi.asn1_list copy];
+				self.asn1_list = [_lmsi.asn1_list copy];
 			}
 			else
 			{
-				self.asn1_data = [lmsi.asn1_data copy];
+				self.asn1_data = [_lmsi.asn1_data copy];
 			}
 		}
 		else
@@ -98,55 +99,55 @@
 			[_asn1_list addObject:lmsi];
 		}
 	}
-	else if(serviceCentreAddressDA)
+	else if(_serviceCentreAddressDA)
 	{
-		[serviceCentreAddressDA processBeforeEncode];
+		[_serviceCentreAddressDA processBeforeEncode];
 		if(isImplicit)
 		{
 			self.asn1_tag.tagNumber = 4;
 			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = serviceCentreAddressDA.asn1_tag.isConstructed;
+			self.asn1_tag.isConstructed = _serviceCentreAddressDA.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
-				self.asn1_list = [serviceCentreAddressDA.asn1_list copy];
+				self.asn1_list = [_serviceCentreAddressDA.asn1_list copy];
 			}
 			else
 			{
-				self.asn1_data = [serviceCentreAddressDA.asn1_data copy];
+				self.asn1_data = [_serviceCentreAddressDA.asn1_data copy];
 			}
 		}
 		else
 		{
-			serviceCentreAddressDA.asn1_tag.tagNumber = 4;
-			serviceCentreAddressDA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[_asn1_list addObject:serviceCentreAddressDA];
+            _serviceCentreAddressDA.asn1_tag.tagNumber = 4;
+            _serviceCentreAddressDA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+			[_asn1_list addObject:_serviceCentreAddressDA];
 		}
-        if(serviceCentreAddressDA2)
+        if(_serviceCentreAddressDA2)
         {
-            [serviceCentreAddressDA2 processBeforeEncode];
+            [_serviceCentreAddressDA2 processBeforeEncode];
             if(isImplicit)
             {
                 self.asn1_tag.tagNumber = 4;
                 self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-                self.asn1_tag.isConstructed = serviceCentreAddressDA.asn1_tag.isConstructed;
+                self.asn1_tag.isConstructed = _serviceCentreAddressDA2.asn1_tag.isConstructed;
                 if(self.asn1_tag.isConstructed)
                 {
-                    self.asn1_list = [serviceCentreAddressDA2.asn1_list copy];
+                    self.asn1_list = [_serviceCentreAddressDA2.asn1_list copy];
                 }
                 else
                 {
-                    self.asn1_data = [serviceCentreAddressDA2.asn1_data copy];
+                    self.asn1_data = [_serviceCentreAddressDA2.asn1_data copy];
                 }
             }
             else
             {
-                serviceCentreAddressDA2.asn1_tag.tagNumber = 4;
-                serviceCentreAddressDA2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-                [_asn1_list addObject:serviceCentreAddressDA2];
+                _serviceCentreAddressDA2.asn1_tag.tagNumber = 4;
+                _serviceCentreAddressDA2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+                [_asn1_list addObject:_serviceCentreAddressDA2];
             }
         }
 	}
-	else if(noSM_RP_DA)
+	else if(_noSM_RP_DA)
 	{
 		if(isImplicit)
 		{
@@ -208,19 +209,19 @@
 	
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
+		_imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		lmsi = [[UMGSMMAP_LMSI alloc]initWithASN1Object:o context:context];
+		_lmsi = [[UMGSMMAP_LMSI alloc]initWithASN1Object:o context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		serviceCentreAddressDA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+		_serviceCentreAddressDA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 5) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		noSM_RP_DA = YES;
+		_noSM_RP_DA = YES;
 	}
 	return self;
 }
@@ -233,19 +234,19 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(imsi)
+	if(_imsi)
 	{
-		dict[@"imsi"] = imsi.objectValue;
+		dict[@"imsi"] = _imsi.objectValue;
 	}
-	if(lmsi)
+	if(_lmsi)
 	{
-		dict[@"lmsi"] = lmsi.objectValue;
+		dict[@"lmsi"] = _lmsi.objectValue;
 	}
-	if(serviceCentreAddressDA)
+	if(_serviceCentreAddressDA)
 	{
-		dict[@"serviceCentreAddressDA"] = serviceCentreAddressDA.objectValue;
+		dict[@"serviceCentreAddressDA"] = _serviceCentreAddressDA.objectValue;
 	}
-	if(noSM_RP_DA)
+	if(_noSM_RP_DA)
 	{
 		dict[@"noSM-RP-DA"] = @(YES);
 	}

@@ -17,12 +17,12 @@
 
 @interface UMGSMMAP_SM_RP_DA : UMASN1Choice<UMGSMMAP_asn1_protocol>
 {
-	NSString *operationName;
-	UMGSMMAP_IMSI *imsi;
-	UMGSMMAP_LMSI *lmsi;
-    UMGSMMAP_AddressString *serviceCentreAddressDA;
-    UMGSMMAP_AddressString *serviceCentreAddressDA2;
-	BOOL noSM_RP_DA;
+	NSString *_operationName;
+	UMGSMMAP_IMSI *_imsi;
+	UMGSMMAP_LMSI *_lmsi;
+    UMGSMMAP_AddressString *_serviceCentreAddressDA;
+    UMGSMMAP_AddressString *_serviceCentreAddressDA2;
+	BOOL _noSM_RP_DA;
 }
 @property(readwrite,strong)    NSString *operationName;
 
