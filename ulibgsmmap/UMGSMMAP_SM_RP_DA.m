@@ -14,12 +14,6 @@
 
 
 @synthesize	operationName;
-@synthesize	imsi;
-@synthesize	lmsi;
-@synthesize    serviceCentreAddressDA;
-@synthesize    serviceCentreAddressDA2;
-@synthesize	noSM_RP_DA;
-
 
 - (void) processBeforeEncode
 {
@@ -53,12 +47,12 @@
 	}
 	if(_imsi)
 	{
-		[imsi processBeforeEncode];
+		[_imsi processBeforeEncode];
 		if(isImplicit)
 		{
 			self.asn1_tag.tagNumber = 0;
 			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = imsi.asn1_tag.isConstructed;
+			self.asn1_tag.isConstructed =_imsi.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
 				self.asn1_list = [_imsi.asn1_list copy];
@@ -70,8 +64,8 @@
 		}
 		else
 		{
-			imsi.asn1_tag.tagNumber = 0;
-			imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+			_imsi.asn1_tag.tagNumber = 0;
+            _imsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 			[_asn1_list addObject:_imsi];
 		}
 	}
@@ -94,9 +88,9 @@
 		}
 		else
 		{
-			lmsi.asn1_tag.tagNumber = 1;
-			lmsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[_asn1_list addObject:lmsi];
+			_lmsi.asn1_tag.tagNumber = 1;
+            _lmsi.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+			[_asn1_list addObject:_lmsi];
 		}
 	}
 	else if(_serviceCentreAddressDA)
