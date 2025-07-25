@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import <Foundation/Foundation.h>
+#import <ulib/ulib.h>
 
 extern const unichar gsmToUnicode[];
 extern int gsmToUnicode_table_size;
