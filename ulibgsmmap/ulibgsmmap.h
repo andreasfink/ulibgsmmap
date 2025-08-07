@@ -520,3 +520,5 @@
 #import <ulibgsmmap/UMGSMMAP_Problem.h>
 #import <ulibgsmmap/UMGSMMAP_TimeoutTask.h>
 #import <ulibgsmmap/UMGSMMAP_U_Abort_Req_Task.h>
+#import <ulibgsmmap/UMGSMMAP_BeginSubscriberActivityArg.h>
+
