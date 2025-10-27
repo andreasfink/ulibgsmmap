@@ -15,16 +15,17 @@
 
 @interface UMGSMMAP_PurgeMS_Res : UMASN1Sequence<UMGSMMAP_asn1_protocol>
 {
-	NSString *operationName;
-	BOOL freezeTMSI;
-	BOOL freezeP_TMSI;
-	UMGSMMAP_ExtensionContainer *extensionContainer;
+	NSString                        *_operationName;
+	BOOL                            _freezeTMSI;
+	BOOL                            _freezeP_TMSI;
+	UMGSMMAP_ExtensionContainer     *_extensionContainer;
+    BOOL                            _freezeM_TMSI;
 }
-@property(readwrite,strong)    NSString *operationName;
-
-@property(readwrite,assign)	BOOL freezeTMSI;
-@property(readwrite,assign)	BOOL freezeP_TMSI;
+@property(readwrite,strong) NSString                    *operationName;
+@property(readwrite,assign)	BOOL                        freezeTMSI;
+@property(readwrite,assign)	BOOL                        freezeP_TMSI;
 @property(readwrite,strong)	UMGSMMAP_ExtensionContainer *extensionContainer;
+@property(readwrite,assign) BOOL                        freezeM_TMSI;
 
 
 - (void)processBeforeEncode;

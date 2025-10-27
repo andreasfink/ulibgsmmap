@@ -2,5 +2,5 @@ PurgeMS-Res ::= SEQUENCE {
 freezeTMSI [0] NULL OPTIONAL,
 freezeP-TMSI [1] NULL OPTIONAL,
 extensionContainer ExtensionContainer OPTIONAL,
-... }
-
+... ,
+freezeM-TMSI [2] NULL OPTIONAL }
