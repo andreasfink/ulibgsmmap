@@ -1072,6 +1072,37 @@
                    last:(BOOL)last
                 options:(NSDictionary *)options
 {
+    NSArray *optionNames = options.allKeys;
+    for(NSString *optionName in optionNames)
+    {
+        if([optionName hasPrefix:@"ct"])
+        {
+            NSString *contentType = [optionName substringFromIndex:2];
+            if([contentType isEqualToString:@"us"])
+            {
+                param.asn1_tag.tagNumber = UMASN1Primitive_sequence;
+                param.asn1_tag.tagClass = UMASN1Class_Universal;
+            }
+            else if ([contentType hasPrefix:@"c"])
+            {
+                NSString *contentTypeNumber = [contentType substringFromIndex:1];
+                param.asn1_tag.tagNumber = atoll(contentTypeNumber.UTF8String);
+                param.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+            }
+            else if ([contentType hasPrefix:@"p"])
+            {
+                NSString *contentTypeNumber = [contentType substringFromIndex:1];
+                param.asn1_tag.tagNumber = atoll(contentTypeNumber.UTF8String);
+                param.asn1_tag.tagClass = UMASN1Class_Private;
+            }
+            else if ([contentType hasPrefix:@"a"])
+            {
+                NSString *contentTypeNumber = [contentType substringFromIndex:1];
+                param.asn1_tag.tagNumber = atoll(contentTypeNumber.UTF8String);
+                param.asn1_tag.tagClass = UMASN1Class_Application;
+            }
+        }
+    }
     ummutex_lock(_dialogLock);
     [self touch];
     if(_tcapTransactionId == NULL)

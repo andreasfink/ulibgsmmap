@@ -16,6 +16,8 @@
 {
     [super processBeforeEncode];
     [_asn1_tag setTagIsConstructed];
+    _asn1_tag.tagNumber = 3;
+    _asn1_tag.tagClass  = UMASN1Class_ContextSpecific;
     _asn1_list = [[NSMutableArray alloc]init];
     if(_imsi)
     {
