@@ -1072,6 +1072,7 @@
                    last:(BOOL)last
                 options:(NSDictionary *)options
 {
+    NSLog(@"OPTIONS=%@",options);
     NSArray *optionNames = options.allKeys;
     for(NSString *optionName in optionNames)
     {
