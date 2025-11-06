@@ -976,7 +976,6 @@
 {
     @autoreleasepool
     {
-        NSLog(@"executeMAP_Delimiter_Req_Prepare");
         UMLayerGSMMAP_Dialog *dialog = [self dialogById:dialogId];
         if(dialog==NULL)
         {
@@ -990,7 +989,6 @@
                                    result:result
                                diagnostic:result_source_diagnostic
                                  userInfo:NULL];
-        NSLog(@"executeMAP_Delimiter_Req_Prepare(done)");
     }
 }
 
