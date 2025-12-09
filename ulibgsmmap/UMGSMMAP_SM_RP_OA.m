@@ -13,10 +13,6 @@
 @implementation UMGSMMAP_SM_RP_OA
 
 
-@synthesize	operationName;
-@synthesize	msisdn;
-@synthesize	serviceCentreAddressOA;
-@synthesize	noSM_RP_OA;
 
 
 - (void) processBeforeEncode
@@ -49,79 +45,79 @@
 		_asn1_tag.isConstructed=YES;
 		_asn1_list = [[NSMutableArray alloc]init];
 	}
-	if(msisdn)
+	if(_msisdn)
 	{
-		[msisdn processBeforeEncode];
+		[_msisdn processBeforeEncode];
 		if(isImplicit)
 		{
 			self.asn1_tag.tagNumber = 2;
 			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = msisdn.asn1_tag.isConstructed;
+			self.asn1_tag.isConstructed = _msisdn.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
-				self.asn1_list = [msisdn.asn1_list copy];
+				self.asn1_list = [_msisdn.asn1_list copy];
 			}
 			else
 			{
-				self.asn1_data = [msisdn.asn1_data copy];
+				self.asn1_data = [_msisdn.asn1_data copy];
 			}
 		}
 		else
 		{
-			msisdn.asn1_tag.tagNumber = 2;
-			msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[_asn1_list addObject:msisdn];
+			_msisdn.asn1_tag.tagNumber = 2;
+			_msisdn.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+			[_asn1_list addObject:_msisdn];
 		}
 	}
-	else if(serviceCentreAddressOA)
+	else if(_serviceCentreAddressOA)
 	{
-		[serviceCentreAddressOA processBeforeEncode];
+		[_serviceCentreAddressOA processBeforeEncode];
 		if(isImplicit)
 		{
 			self.asn1_tag.tagNumber = 4;
 			self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			self.asn1_tag.isConstructed = serviceCentreAddressOA.asn1_tag.isConstructed;
+			self.asn1_tag.isConstructed = _serviceCentreAddressOA.asn1_tag.isConstructed;
 			if(self.asn1_tag.isConstructed)
 			{
-				self.asn1_list = [serviceCentreAddressOA.asn1_list copy];
+				self.asn1_list = [_serviceCentreAddressOA.asn1_list copy];
 			}
 			else
 			{
-				self.asn1_data = [serviceCentreAddressOA.asn1_data copy];
+				self.asn1_data = [_serviceCentreAddressOA.asn1_data copy];
 			}
 		}
 		else
 		{
-			serviceCentreAddressOA.asn1_tag.tagNumber = 4;
-			serviceCentreAddressOA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-			[_asn1_list addObject:serviceCentreAddressOA];
+            _serviceCentreAddressOA.asn1_tag.tagNumber = 4;
+            _serviceCentreAddressOA.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+			[_asn1_list addObject:_serviceCentreAddressOA];
 		}
-        if(serviceCentreAddressOA2)
+        if(_serviceCentreAddressOA2)
         {
-            [serviceCentreAddressOA2 processBeforeEncode];
+            [_serviceCentreAddressOA2 processBeforeEncode];
             if(isImplicit)
             {
                 self.asn1_tag.tagNumber = 4;
                 self.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-                self.asn1_tag.isConstructed = serviceCentreAddressOA2.asn1_tag.isConstructed;
+                self.asn1_tag.isConstructed = _serviceCentreAddressOA2.asn1_tag.isConstructed;
                 if(self.asn1_tag.isConstructed)
                 {
-                    self.asn1_list = [serviceCentreAddressOA2.asn1_list copy];
+                    self.asn1_list = [_serviceCentreAddressOA2.asn1_list copy];
                 }
                 else
                 {
-                    self.asn1_data = [serviceCentreAddressOA2.asn1_data copy];
+                    self.asn1_data = [_serviceCentreAddressOA2.asn1_data copy];
                 }
             }
             else
             {
-                serviceCentreAddressOA2.asn1_tag.tagNumber = 4;
-                serviceCentreAddressOA2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-                [_asn1_list addObject:serviceCentreAddressOA2];
+                _serviceCentreAddressOA2.asn1_tag.tagNumber = 4;
+                _serviceCentreAddressOA2.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+                [_asn1_list addObject:_serviceCentreAddressOA2];
             }
         }
 	}
-	else if(noSM_RP_OA)
+	else if(_noSM_RP_OA)
 	{
 		if(isImplicit)
 		{
@@ -185,23 +181,23 @@
 	if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
         //UMASN1Object *o2 = [o getObjectAtPosition:0];
-		msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
+		_msisdn = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 	}
 	else if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
     {
         //UMASN1Object *o2 = [o getObjectAtPosition:0];
-        if(serviceCentreAddressOA==NULL)
+        if(_serviceCentreAddressOA==NULL)
         {
-            serviceCentreAddressOA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+            _serviceCentreAddressOA = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
         }
         else
         {
-            serviceCentreAddressOA2 = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
+            _serviceCentreAddressOA2 = [[UMGSMMAP_AddressString alloc]initWithASN1Object:o context:context];
         }
     }
 	else if((o) && (o.asn1_tag.tagNumber == 5) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		noSM_RP_OA = YES;
+		_noSM_RP_OA = YES;
 	}
 	return self;
 }
@@ -213,19 +209,19 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(msisdn)
+	if(_msisdn)
 	{
-		dict[@"msisdn"] = msisdn.objectValue;
+		dict[@"msisdn"] = _msisdn.objectValue;
 	}
-	if(serviceCentreAddressOA)
+	if(_serviceCentreAddressOA)
 	{
-		dict[@"serviceCentreAddressOA"] = serviceCentreAddressOA.objectValue;
+		dict[@"serviceCentreAddressOA"] = _serviceCentreAddressOA.objectValue;
 	}
-    if(serviceCentreAddressOA2)
+    if(_serviceCentreAddressOA2)
     {
-        dict[@"serviceCentreAddressOA2"] = serviceCentreAddressOA2.objectValue;
+        dict[@"serviceCentreAddressOA2"] = _serviceCentreAddressOA2.objectValue;
     }
-	if(noSM_RP_OA)
+	if(_noSM_RP_OA)
 	{
 		dict[@"noSM-RP-OA"] = @(YES);
 	}

@@ -475,11 +475,11 @@ static inline unsigned char	nibble2hex(unsigned char b)
     {
         return [NSString stringWithFormat:@"+%@",_address];
     }
-    else if(_ton==GSMMAP_NPI_UNKNOWN)
+    else if(_ton==GSMMAP_TON_UNKNOWN)
     {
         return _address;
     }
-    else if(_ton==GSMMAP_NPI_E212)
+    else if(_npi==GSMMAP_NPI_E212)
     {
         return [NSString stringWithFormat:@"imsi:%@",_address];
     }
