@@ -1,7 +1,10 @@
 PurgeMS-Arg ::= [3] IMPLICIT SEQUENCE {
-imsi IMSI,
-vlr-Number [0] ISDN-AddressString OPTIONAL,
-sgsn-Number [1] ISDN-AddressString OPTIONAL,
-extensionContainer ExtensionContainer OPTIONAL,
-... }
-
+imsi                    IMSI,
+vlr-Number              [0] ISDN-AddressString OPTIONAL,
+sgsn-Number             [1] ISDN-AddressString OPTIONAL,
+extensionContainer      ExtensionContainer OPTIONAL,
+... ,
+locationInformation     [2] LocationInformation OPTIONAL,
+locationInformationGPRS [3] LocationInformationGPRS OPTIONAL,
+locationInformationEPS  [4] LocationInformationEPS OPTIONAL
+}

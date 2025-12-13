@@ -13,35 +13,37 @@
 @implementation UMGSMMAP_PurgeMS_Res
 
 
-@synthesize	operationName;
-@synthesize	freezeTMSI;
-@synthesize	freezeP_TMSI;
-@synthesize	extensionContainer;
-
-
 - (void) processBeforeEncode
 {
 	[super processBeforeEncode];
 	[_asn1_tag setTagIsConstructed];
 	_asn1_list = [[NSMutableArray alloc]init];
-	if(freezeTMSI)
+	if(_freezeTMSI)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 0;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[_asn1_list addObject:n];
 	}
-	if(freezeP_TMSI)
+	if(_freezeP_TMSI)
 	{
 		UMASN1Null *n = [[UMASN1Null alloc]init];
 		n.asn1_tag.tagNumber = 1;
 		n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
 		[_asn1_list addObject:n];
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		[_asn1_list addObject:extensionContainer];
+		[_asn1_list addObject:_extensionContainer];
 	}
+    if(_freezeM_TMSI)
+    {
+        UMASN1Null *n = [[UMASN1Null alloc]init];
+        n.asn1_tag.tagNumber = 2;
+        n.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:n];
+    }
+
 }
 
 
@@ -51,19 +53,24 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		freezeTMSI = YES;
+		_freezeTMSI = YES;
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		freezeP_TMSI = YES;
+		_freezeP_TMSI = YES;
 		o = [self getObjectAtPosition:p++];
 	}
-	if(o)
+    if((o) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence) && (o.asn1_tag.tagClass==UMASN1Class_Universal))
 	{
-		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
+		_extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
+    if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+    {
+        _freezeM_TMSI = YES;
+        o = [self getObjectAtPosition:p++];
+    }
 	while(o)
 	{
         /* ... */
@@ -79,18 +86,23 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(freezeTMSI)
+	if(_freezeTMSI)
 	{
 		dict[@"freezeTMSI"] = @(YES);
 	}
-	if(freezeP_TMSI)
+	if(_freezeP_TMSI)
 	{
 		dict[@"freezeP-TMSI"] = @(YES);
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		dict[@"extensionContainer"] = extensionContainer.objectValue;
+		dict[@"extensionContainer"] = _extensionContainer.objectValue;
 	}
+    if(_freezeM_TMSI)
+    {
+        dict[@"freezeM-TMSI"] = @(YES);
+    }
+
 	return dict;
 }
 

@@ -12,39 +12,55 @@
 
 @implementation UMGSMMAP_PurgeMS_Arg
 
-
-@synthesize	operationName;
-@synthesize	imsi;
-@synthesize	vlr_Number;
-@synthesize	sgsn_Number;
-@synthesize	extensionContainer;
-
-
 - (void) processBeforeEncode
 {
-	[super processBeforeEncode];
-	[_asn1_tag setTagIsConstructed];
-	_asn1_list = [[NSMutableArray alloc]init];
-	if(imsi)
-	{
-		[_asn1_list addObject:imsi];
-	}
-	if(vlr_Number)
-	{
-		vlr_Number.asn1_tag.tagNumber = 0;
-		vlr_Number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:vlr_Number];
-	}
-	if(sgsn_Number)
-	{
-		sgsn_Number.asn1_tag.tagNumber = 1;
-		sgsn_Number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
-		[_asn1_list addObject:sgsn_Number];
-	}
-	if(extensionContainer)
-	{
-		[_asn1_list addObject:extensionContainer];
-	}
+    [super processBeforeEncode];
+    [_asn1_tag setTagIsConstructed];
+    _asn1_tag.tagNumber = 3;
+    _asn1_tag.tagClass  = UMASN1Class_ContextSpecific;
+    _asn1_list = [[NSMutableArray alloc]init];
+    if(_imsi)
+    {
+        [_asn1_list addObject:_imsi];
+    }
+    if(_vlr_Number)
+    {
+        _vlr_Number.asn1_tag.tagNumber = 0;
+        _vlr_Number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_vlr_Number];
+    }
+    if(_sgsn_Number)
+    {
+        _sgsn_Number.asn1_tag.tagNumber = 1;
+        _sgsn_Number.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_sgsn_Number];
+    }
+    if(_extensionContainer)
+    {
+        [_asn1_list addObject:_extensionContainer];
+    }
+    if(_locationInformation)
+    {
+        _locationInformation.asn1_tag.tagNumber = 2;
+        _locationInformation.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_locationInformation];
+        
+    }
+    if(_locationInformationGPRS)
+    {
+        _locationInformationGPRS.asn1_tag.tagNumber = 3;
+        _locationInformationGPRS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_locationInformationGPRS];
+        
+    }
+    if(_locationInformationEPS)
+    {
+        _locationInformationEPS.asn1_tag.tagNumber = 3;
+        _locationInformationEPS.asn1_tag.tagClass = UMASN1Class_ContextSpecific;
+        [_asn1_list addObject:_locationInformationEPS];
+
+    }
+
 }
 
 
@@ -54,24 +70,39 @@
 	UMASN1Object *o = [self getObjectAtPosition:p++];
 	if(o)
 	{
-		imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
+		_imsi = [[UMGSMMAP_IMSI alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 0) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		vlr_Number = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
+		_vlr_Number = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
 	if((o) && (o.asn1_tag.tagNumber == 1) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
 	{
-		sgsn_Number = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
+		_sgsn_Number = [[UMGSMMAP_ISDN_AddressString alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
-	if(o)
+	if((o) && (o.asn1_tag.tagNumber == UMASN1Primitive_sequence) && (o.asn1_tag.tagClass==UMASN1Class_Universal))
 	{
-		extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
+		_extensionContainer = [[UMGSMMAP_ExtensionContainer alloc]initWithASN1Object:o context:context];
 		o = [self getObjectAtPosition:p++];
 	}
+    if((o) && (o.asn1_tag.tagNumber == 2) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+    {
+        _locationInformation = [[UMGSMMAP_LocationInformation alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
+    if((o) && (o.asn1_tag.tagNumber == 3) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+    {
+        _locationInformationGPRS = [[UMGSMMAP_LocationInformationGPRS alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
+    if((o) && (o.asn1_tag.tagNumber == 4) && (o.asn1_tag.tagClass == UMASN1Class_ContextSpecific))
+    {
+        _locationInformationEPS = [[UMGSMMAP_LocationInformationEPS alloc]initWithASN1Object:o context:context];
+        o = [self getObjectAtPosition:p++];
+    }
 	while(o)
 	{
         /* ... */
@@ -87,22 +118,34 @@
 - (id) objectValue
 {
 	UMSynchronizedSortedDictionary *dict = [[UMSynchronizedSortedDictionary alloc]init];
-	if(imsi)
+	if(_imsi)
 	{
-		dict[@"imsi"] = imsi.objectValue;
+		dict[@"imsi"] = _imsi.objectValue;
 	}
-	if(vlr_Number)
+	if(_vlr_Number)
 	{
-		dict[@"vlr-Number"] = vlr_Number.objectValue;
+		dict[@"vlr-Number"] = _vlr_Number.objectValue;
 	}
-	if(sgsn_Number)
+	if(_sgsn_Number)
 	{
-		dict[@"sgsn-Number"] = sgsn_Number.objectValue;
+		dict[@"sgsn-Number"] = _sgsn_Number.objectValue;
 	}
-	if(extensionContainer)
+	if(_extensionContainer)
 	{
-		dict[@"extensionContainer"] = extensionContainer.objectValue;
+		dict[@"extensionContainer"] = _extensionContainer.objectValue;
 	}
+    if(_locationInformation)
+    {
+        dict[@"locationInformation"] = _locationInformation.objectValue;
+    }
+    if(_locationInformationGPRS)
+    {
+        dict[@"locationInformationGPRS"] = _locationInformationGPRS.objectValue;
+    }
+    if(_locationInformationEPS)
+    {
+        dict[@"locationInformationEPS"] = _locationInformationEPS.objectValue;
+    }
 	return dict;
 }
 
