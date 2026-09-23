@@ -6,7 +6,7 @@
 //
 //
 
-#import <ulib/ulib.h>
+#import <ulibtcap/ulibtcap.h>
 
 @class UMLayerTCAP;
 

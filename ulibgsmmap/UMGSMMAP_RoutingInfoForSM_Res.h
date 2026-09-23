@@ -6,7 +6,7 @@
 //
 //
 
-#import <ulibasn1/ulibasn1.h>
+#import <ulibtcap/ulibtcap.h>
 #import <ulibgsmmap/UMGSMMAP_asn1.h>
 #import <ulibgsmmap/UMGSMMAP_IMSI.h>
 #import <ulibgsmmap/UMGSMMAP_LocationInfoWithLMSI.h>

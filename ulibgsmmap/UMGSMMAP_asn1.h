@@ -6,7 +6,6 @@
 //
 //
 
-#import <ulibasn1/ulibasn1.h>
 #import <ulibtcap/ulibtcap.h>
 #import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 

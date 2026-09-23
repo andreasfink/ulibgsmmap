@@ -9,7 +9,7 @@
 // the author.
 //
 
-#import <ulib/ulib.h>
+#import <ulibtcap/ulibtcap.h>
 #import <XCTest/XCTest.h>
 #import "UMGSMMAP_SupportedCamelPhases.h"
 

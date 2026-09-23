@@ -8,9 +8,8 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import <ulib/ulib.h>
 #import <ulibtcap/ulibtcap.h>
-#import  <ulibgsmmap/UMLayerGSMMAP_OpCode.h>
+#import <ulibgsmmap/UMLayerGSMMAP_OpCode.h>
 #import <ulibgsmmap/UMGSMMAP_DialogIdentifier.h>
 #import <ulibgsmmap/UMGSMMAP_UserIdentifier.h>
 

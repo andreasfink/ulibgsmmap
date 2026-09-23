@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6006C3C2BBF69C900C34D40 /* ulibtcap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6006C3B2BBF69BC00C34D40 /* ulibtcap.framework */; };
 		A607C9F42363138E0026FCB1 /* UMGSMMAP_Opcodes.m in Sources */ = {isa = PBXBuildFile; fileRef = A607C9F32363138E0026FCB1 /* UMGSMMAP_Opcodes.m */; };
 		A60A53E61D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A60A53E31D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A60A53E71D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A60A53E41D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.m */; };
@@ -62,6 +61,14 @@
 		A6323D1126F0E26C00137112 /* UMGSMMAP_Reset_Id.h in Headers */ = {isa = PBXBuildFile; fileRef = A6323D0F26F0E26C00137112 /* UMGSMMAP_Reset_Id.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6323D1226F0E26C00137112 /* UMGSMMAP_Reset_Id.m in Sources */ = {isa = PBXBuildFile; fileRef = A6323D1026F0E26C00137112 /* UMGSMMAP_Reset_Id.m */; };
 		A641CEF61B42019900854472 /* ulibgsmmapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A641CEF51B42019900854472 /* ulibgsmmapTests.m */; };
+		A643D7DA3064204000F9798D /* libulib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A643D7D93064204000F9798D /* libulib.a */; };
+		A643D7DB3064204000F9798D /* libulib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A643D7D93064204000F9798D /* libulib.a */; };
+		A643D7DD3064204900F9798D /* libulibmtp3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A643D7DC3064204900F9798D /* libulibmtp3.a */; };
+		A643D7DE3064204900F9798D /* libulibmtp3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A643D7DC3064204900F9798D /* libulibmtp3.a */; };
+		A643D7E03064205000F9798D /* libulibsccp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A643D7DF3064205000F9798D /* libulibsccp.a */; };
+		A643D7E13064205000F9798D /* libulibsccp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A643D7DF3064205000F9798D /* libulibsccp.a */; };
+		A643D7E33064205700F9798D /* libulibtcap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A643D7E23064205700F9798D /* libulibtcap.a */; };
+		A643D7E43064205700F9798D /* libulibtcap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A643D7E23064205700F9798D /* libulibtcap.a */; };
 		A64AE32E2B44C4FA00B0FE06 /* UMGSMMAP_Reject.h in Headers */ = {isa = PBXBuildFile; fileRef = A64AE32C2B44C4FA00B0FE06 /* UMGSMMAP_Reject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A64AE32F2B44C4FA00B0FE06 /* UMGSMMAP_Reject.m in Sources */ = {isa = PBXBuildFile; fileRef = A64AE32D2B44C4FA00B0FE06 /* UMGSMMAP_Reject.m */; };
 		A64AE3342B44C56600B0FE06 /* UMGSMMAP_Problem.h in Headers */ = {isa = PBXBuildFile; fileRef = A64AE3322B44C56600B0FE06 /* UMGSMMAP_Problem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1185,13 +1192,6 @@
 		A6EE72B11D3B6BFF00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE6CE01D3B6BFE00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EE72B41D3B6BFF00211137 /* NSString+map.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE6CE31D3B6BFE00211137 /* NSString+map.m */; };
 		A6EE72C31D3B94EC00211137 /* NSData+map.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE72BD1D3B94EC00211137 /* NSData+map.m */; };
-		A6FDF9D1249B8C7E001C11DC /* ulibgt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9D0249B8C7D001C11DC /* ulibgt.framework */; };
-		A6FDF9D3249B8C98001C11DC /* ulib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9D2249B8C98001C11DC /* ulib.framework */; };
-		A6FDF9D5249B8CA6001C11DC /* ulibsctp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9D4249B8CA6001C11DC /* ulibsctp.framework */; };
-		A6FDF9D7249B8CAF001C11DC /* sctp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9D6249B8CAF001C11DC /* sctp.framework */; };
-		A6FDF9D9249B8CB7001C11DC /* ulibmtp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9D8249B8CB7001C11DC /* ulibmtp3.framework */; };
-		A6FDF9DE249B8CD3001C11DC /* ulibasn1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9CF249B8C70001C11DC /* ulibasn1.framework */; };
-		A6FDF9DF249B8CD3001C11DC /* ulibdb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FDF9CE249B8C63001C11DC /* ulibdb.framework */; };
 		A6FDF9E2249BBE90001C11DC /* UMGSMMAP_StatisticDb.h in Headers */ = {isa = PBXBuildFile; fileRef = A6FDF9E0249BBE90001C11DC /* UMGSMMAP_StatisticDb.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6FDF9E3249BBE90001C11DC /* UMGSMMAP_StatisticDb.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FDF9E1249BBE90001C11DC /* UMGSMMAP_StatisticDb.m */; };
 		A6FDF9E6249BBE9D001C11DC /* UMGSMMAP_StatisticDbRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = A6FDF9E4249BBE9D001C11DC /* UMGSMMAP_StatisticDbRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1209,7 +1209,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A6006C3B2BBF69BC00C34D40 /* ulibtcap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibtcap.framework; path = "/Library/Application Support/FinkTelecomServices/frameworks/ulibtcap.framework"; sourceTree = "<absolute>"; };
 		A607C9F32363138E0026FCB1 /* UMGSMMAP_Opcodes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Opcodes.m; sourceTree = "<group>"; };
 		A60A53E21D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_MAP_ProviderAbortInfo.asn; sourceTree = "<group>"; };
 		A60A53E31D56B32A00211137 /* UMGSMMAP_MAP_ProviderAbortInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_MAP_ProviderAbortInfo.h; sourceTree = "<group>"; };
@@ -1284,6 +1283,10 @@
 		A641CEEE1B42019900854472 /* ulibgsmmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ulibgsmmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A641CEF41B42019900854472 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A641CEF51B42019900854472 /* ulibgsmmapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ulibgsmmapTests.m; sourceTree = "<group>"; };
+		A643D7D93064204000F9798D /* libulib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libulib.a; path = /usr/local/lib/libulib.a; sourceTree = "<absolute>"; };
+		A643D7DC3064204900F9798D /* libulibmtp3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libulibmtp3.a; path = /usr/local/lib/libulibmtp3.a; sourceTree = "<absolute>"; };
+		A643D7DF3064205000F9798D /* libulibsccp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libulibsccp.a; path = /usr/local/lib/libulibsccp.a; sourceTree = "<absolute>"; };
+		A643D7E23064205700F9798D /* libulibtcap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libulibtcap.a; path = /usr/local/lib/libulibtcap.a; sourceTree = "<absolute>"; };
 		A64AE32C2B44C4FA00B0FE06 /* UMGSMMAP_Reject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Reject.h; sourceTree = "<group>"; };
 		A64AE32D2B44C4FA00B0FE06 /* UMGSMMAP_Reject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Reject.m; sourceTree = "<group>"; };
 		A64AE3302B44C51A00B0FE06 /* UMGSMMAP_Reject.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = UMGSMMAP_Reject.asn; sourceTree = "<group>"; };
@@ -3252,13 +3255,6 @@
 		A6F6940B1B4E843B0090FC94 /* Makefile.osx.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.osx.in; sourceTree = "<group>"; };
 		A6F6940C1B4E843B0090FC94 /* ulibgsmmap.pc.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = ulibgsmmap.pc.in; sourceTree = "<group>"; };
 		A6F6940D1B4E843B0090FC94 /* VERSION */ = {isa = PBXFileReference; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
-		A6FDF9CE249B8C63001C11DC /* ulibdb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibdb.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulibdb.framework"; sourceTree = "<group>"; };
-		A6FDF9CF249B8C70001C11DC /* ulibasn1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibasn1.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulibasn1.framework"; sourceTree = "<group>"; };
-		A6FDF9D0249B8C7D001C11DC /* ulibgt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibgt.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulibgt.framework"; sourceTree = "<group>"; };
-		A6FDF9D2249B8C98001C11DC /* ulib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulib.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulib.framework"; sourceTree = "<group>"; };
-		A6FDF9D4249B8CA6001C11DC /* ulibsctp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibsctp.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulibsctp.framework"; sourceTree = "<group>"; };
-		A6FDF9D6249B8CAF001C11DC /* sctp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = sctp.framework; path = "../Application Support/FinkTelecomServices/frameworks/sctp.framework"; sourceTree = "<group>"; };
-		A6FDF9D8249B8CB7001C11DC /* ulibmtp3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ulibmtp3.framework; path = "../Application Support/FinkTelecomServices/frameworks/ulibmtp3.framework"; sourceTree = "<group>"; };
 		A6FDF9E0249BBE90001C11DC /* UMGSMMAP_StatisticDb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_StatisticDb.h; sourceTree = "<group>"; };
 		A6FDF9E1249BBE90001C11DC /* UMGSMMAP_StatisticDb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_StatisticDb.m; sourceTree = "<group>"; };
 		A6FDF9E4249BBE9D001C11DC /* UMGSMMAP_StatisticDbRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_StatisticDbRecord.h; sourceTree = "<group>"; };
@@ -3270,14 +3266,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6FDF9D1249B8C7E001C11DC /* ulibgt.framework in Frameworks */,
-				A6FDF9DF249B8CD3001C11DC /* ulibdb.framework in Frameworks */,
-				A6006C3C2BBF69C900C34D40 /* ulibtcap.framework in Frameworks */,
-				A6FDF9D3249B8C98001C11DC /* ulib.framework in Frameworks */,
-				A6FDF9D9249B8CB7001C11DC /* ulibmtp3.framework in Frameworks */,
-				A6FDF9D7249B8CAF001C11DC /* sctp.framework in Frameworks */,
-				A6FDF9D5249B8CA6001C11DC /* ulibsctp.framework in Frameworks */,
-				A6FDF9DE249B8CD3001C11DC /* ulibasn1.framework in Frameworks */,
+				A643D7E13064205000F9798D /* libulibsccp.a in Frameworks */,
+				A643D7DA3064204000F9798D /* libulib.a in Frameworks */,
+				A643D7DD3064204900F9798D /* libulibmtp3.a in Frameworks */,
+				A643D7E33064205700F9798D /* libulibtcap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3285,7 +3277,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A643D7E03064205000F9798D /* libulibsccp.a in Frameworks */,
+				A643D7DE3064204900F9798D /* libulibmtp3.a in Frameworks */,
 				A668F15B20F3EFC50002A48C /* ulibgsmmap.framework in Frameworks */,
+				A643D7DB3064204000F9798D /* libulib.a in Frameworks */,
+				A643D7E43064205700F9798D /* libulibtcap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5080,14 +5076,10 @@
 		A6ED5C6F1B435AF000854472 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A6006C3B2BBF69BC00C34D40 /* ulibtcap.framework */,
-				A6FDF9D8249B8CB7001C11DC /* ulibmtp3.framework */,
-				A6FDF9D6249B8CAF001C11DC /* sctp.framework */,
-				A6FDF9D4249B8CA6001C11DC /* ulibsctp.framework */,
-				A6FDF9D2249B8C98001C11DC /* ulib.framework */,
-				A6FDF9D0249B8C7D001C11DC /* ulibgt.framework */,
-				A6FDF9CF249B8C70001C11DC /* ulibasn1.framework */,
-				A6FDF9CE249B8C63001C11DC /* ulibdb.framework */,
+				A643D7D93064204000F9798D /* libulib.a */,
+				A643D7DC3064204900F9798D /* libulibmtp3.a */,
+				A643D7DF3064205000F9798D /* libulibsccp.a */,
+				A643D7E23064205700F9798D /* libulibtcap.a */,
 			);
 			name = Frameworks;
 			path = /Library/Frameworks;
@@ -6835,12 +6827,12 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 2.1.1;
 				DEAD_CODE_STRIPPING = YES;
-				DSTROOT = "/Library/Application Support";
+				DSTROOT = "";
 				DYLIB_COMPATIBILITY_VERSION = 2.0.0;
 				DYLIB_CURRENT_VERSION = 2.1.1;
 				DYLIB_INSTALL_NAME_BASE = "$(DSTROOT)/$(INSTALL_PATH)";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"/Library/Application Support/FinkTelecomServices/frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -6856,12 +6848,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = /FinkTelecomServices/frameworks;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MARKETING_VERSION = 2.1.1;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/include;
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 				WARNING_CFLAGS = "-Wimplicit-fallthrough";
 			};
 			name = Debug;
@@ -6901,13 +6897,13 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 2.1.1;
 				DEAD_CODE_STRIPPING = YES;
-				DSTROOT = "/Library/Application Support";
+				DSTROOT = "";
 				DYLIB_COMPATIBILITY_VERSION = 2.0.0;
 				DYLIB_CURRENT_VERSION = 2.1.1;
 				DYLIB_INSTALL_NAME_BASE = "$(DSTROOT)/$(INSTALL_PATH)";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"/Library/Application Support/FinkTelecomServices/frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -6916,12 +6912,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = /FinkTelecomServices/frameworks;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
 				MARKETING_VERSION = 2.1.1;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/include;
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 				WARNING_CFLAGS = "-Wimplicit-fallthrough";
 			};
 			name = Release;
@@ -6938,24 +6938,10 @@
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DEVELOPMENT_TEAM = 38L827M334;
+				DSTROOT = "";
 				ENABLE_MODULE_VERIFIER = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "supporting-files/Info.plist";
-				INSTALL_PATH = FinkTelecomServices/frameworks;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -6984,24 +6970,10 @@
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DEVELOPMENT_TEAM = 38L827M334;
+				DSTROOT = "";
 				ENABLE_MODULE_VERIFIER = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LOCAL_LIBRARY_DIR)/Frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-					"$(LOCAL_LIBRARY_DIR)/Application\\ Support/FinkTelecomServices/frameworks",
-				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "supporting-files/Info.plist";
-				INSTALL_PATH = FinkTelecomServices/frameworks;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

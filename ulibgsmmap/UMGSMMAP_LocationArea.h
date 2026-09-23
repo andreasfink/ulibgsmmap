@@ -9,7 +9,7 @@
 // the author.
 //
 
-#import <ulibasn1/ulibasn1.h>
+#import <ulibtcap/ulibtcap.h>
 
 @interface UMGSMMAP_LocationArea : UMASN1Choice
 

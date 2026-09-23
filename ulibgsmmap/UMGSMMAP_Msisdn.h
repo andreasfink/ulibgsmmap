@@ -6,7 +6,7 @@
 //
 //
 
-#import <ulibasn1/ulibasn1.h>
+#import <ulibtcap/ulibtcap.h>
 #import <ulibgsmmap/UMGSMMAP_ISDN_AddressString.h>
 
 @interface UMGSMMAP_Msisdn : UMGSMMAP_ISDN_AddressString

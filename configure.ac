@@ -1,64 +1,62 @@
-/dnl /* ==================================================================== 
+dnl /* ==================================================================== 
 dnl  * Project "ulibgsmmap"
-dnl  * Copyright © 2023 Andreas Fink (andreas@fink.org). All rights reserved.
-dnl  * ====================================================================
+dnl  * Copyright © 2026 Andreas Fink (andreas@fink.org). All rights reserved.
+dnl  * ==================================================================== 
 dnl  */ 
+
+dnl
+dnl configure.ac -- main autoconf macro definition file
+dnl
+dnl Process this file with autoconf to produce a configure script.
+dnl
+
+
+dnl -----------------------------------------
 dnl initialization
+dnl -----------------------------------------
 
 AC_PREREQ([2.69])
 AC_INIT([ulibgsmmap],[1.0],[afink])
+AC_SUBST(SHELL)
+AC_CONFIG_AUX_DIR(.)
+AC_SET_TERMINAL_SEQUENCES()
+
+dnl -----------------------------------------
 dnl generic parameters
-COPYRIGHT="Copyright © 2023 Andreas Fink (andreas@fink.org). All rights reserved."
+dnl -----------------------------------------
+
+COPYRIGHT="Copyright 2026 Andreas Fink"
 PROJECT_NAME="ulibgsmmap"
 AUTHOR="Andreas Fink <andreas@fink.org>"
 CONFIG_DEFINE="ULIBGSMMAP_CONFIG"
+
+dnl -----------------------------------------
+dnl Check version number
+dnl -----------------------------------------
+./make_version
 VERSION=`head -n 1 VERSION`
 MAJORVER=`echo $VERSION | cut -f1 -d.`
 MINORVER=`echo $VERSION | cut -f2 -d.`
 REVISION=`echo $VERSION | cut -f3 -d.`
-CONFIG_HEADER=${PROJECT_NAME}/ulibgsmmap_config.h
-DEPENDENT_PKGCONFIGS="ulibtcap ulibasn1"
-PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-export PKG_CONFIG_PATH
+ULIBMTP3_VERSION=`head -n 1 VERSION`
 
-AC_SUBST(SHELL)
-AC_CONFIG_AUX_DIR(.)
-AC_SET_TERMINAL_SEQUENCES()
-AC_CONFIG_HEADERS([${CONFIG_HEADER}])
-AC_SUBST(COPYRIGHT)
-AC_SUBST(PROJECT_NAME)
-AC_SUBST(AUTHOR)
-AC_SUBST(CONFIG_DEFINE)
-AC_SUBST(CONFIG_HEADER)
-
+dnl -----------------------------------------
 dnl Set user who runs ./configure
+dnl -----------------------------------------
+
 CUSER=`id -un`
-AC_SUBST(VERSION)
-AC_SUBST(CUSER)
 
-AC_CONFIG_SECTION([Configuring for $PROJECT_NAME version $VERSION])
-
-dnl Checks system type.
-AC_CONFIG_SECTION([Running system checks])
-AC_CANONICAL_HOST
-
-dnl Apply system specific rules.
-dnl Executable extension for systems that need one, i.e. Cygwin
-dnl Set the LIBTOOL to be used to create libs
+dnl -----------------------------------------
+dnl tools
+dnl -----------------------------------------
 EXE_EXT=""
-LIBTOOL="ar rc"
+LIBTOOL="ar -rcs"
 RANLIB="ranlib"
+LIBS=
 LIBRARY_NAME=$PROJECT_NAME
 BUILD_DIR=.
-FRAMEWORKS="-framework ulib -framework ulibsctp -framework ulibm2pa -framework ulibmtp3 -framework ulibsccp -framework ulibtcap -ulibasn1"
-dnl Apply system specific rules.
-dnl Executable extension for systems that need one, i.e. Cygwin
-dnl Set the LIBTOOL to be used to create libs
-EXE_EXT=""
-LIBTOOL="ar rc"
-RANLIB="ranlib"
 #
-# we prefer clang over gcc
+# we require clang over gcc
 #
 if [[ "$CC" == "" ]]
 then
@@ -68,91 +66,88 @@ if [[ "$CXX" == "" ]]
 then 
 	CXX=clang++
 fi
-	
+
+dnl -----------------------------------------
+dnl setting up dependencies
+dnl -----------------------------------------
+
+DEPENDENT_PKGCONFIGS="ulibtcap"
+
+dnl -----------------------------------------
+dnl main work
+dnl -----------------------------------------
+
+AC_CONFIG_SECTION([Configuring for $PROJECT_NAME version $VERSION])
+
+dnl Checks system type.
+AC_CONFIG_SECTION([Running system checks])
+AC_CANONICAL_HOST
+
 case "$host" in
   *apple-darwin*) 
-	ARCH="-arch x86_64"
-	PLATFORM=macos
-	OSX_DEVTOOL_DIR=`xcode-select -p`
-	CFLAGS="$CFLAGS -D_REENTRANT=1 -DDARWIN=1 ${ARCH}"
-	LDFLAGS=-framework CoreFoundation -framework IOKit -framework Security -F/Library/Application\ Support/FinkTelecomServices/frameworks ${FRAMEWORKS}
-	LIBTOOL="libtool -static -o" 
-	SHARED_LIBRARY_EXTENSION=dylib
-	XARCH="`arch`"
+  	#  set(CMAKE_CXX_FLAGS "--sysroot ${CMAKE_OSX_SYSROOT} ${CMAKE_CXX_FLAGS}")
+  	if [[ "${SDK}" == "" ]] 
+  	then
+		SDK=/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk
+	fi
+	if [[ -d "${SDK}" ]]
+    then
+		CFLAGS="--sysroot ${SDK} ${CFLAGS}"
+		LDFLAGS="${LDFLAGS} -L ${SDK}/usr/lib"
+	fi
+	if [[ "${ARCH}" == "" ]]
+	then
+	    ARCH="-arch arm64 -arch x86_64"
+	fi
+	if [[ "${MACOSX_DEPLOYMENT_TARGET}" == "" ]]
+	then
+		MACOSX_DEPLOYMENT_TARGET=12.4
+	fi
+   	CFLAGS="${CFLAGS} `pkg-config  --cflags ${DEPENDENT_PKGCONFIGS}`"
+	LDFLAGS="${LDFLAGS} `pkg-config --libs ${DEPENDENT_PKGCONFIGS}`"
+    UR="`uname -r | cut -f1 -d.`"
+    DONE=0
+	if [[ -d "${SDK}" ]]
+    then
+		CFLAGS="${CFLAGS} --sysroot ${SDK} ${CFLAGS}"
+		LDFLAGS="${LDFLAGS} -L ${SDK}/usr/lib"
+	fi
+	if [[ "${MACOSX_DEPLOYMENT_TARGET}" != "" ]]
+	then
+		CFLAGS="${CFLAGS} -mmacos-version-min=${MACOSX_DEPLOYMENT_TARGET}"
+		LDFLAGS="${LDFLAGS} -mmacos-version-min=${MACOSX_DEPLOYMENT_TARGET}"
+	fi
+	CFLAGS="$CFLAGS -fobjc-arc -D_REENTRANT=1 -DDARWIN=1 -Iinclude ${ARCH}"
+    LDFLAGS="${LDFLAGS} -F/Library/Frameworks -framework Foundation -framework Security -framework IOKit"
+    BUILD_DIR="build/osx"
+    SHARED_LIBRARY_EXTENSION="dylib"
+    INSTALL_NAME_TOOL="install_name_tool"
+    SHARED_FLAGS="-dynamiclib -Wl,-dylib"
+    LDFLAGS="$LDFLAGS ${ARCH}"
+    LIBTOOL="libtool -static -o"
     ;;
 
   *-linux-*)
-	PLATFORM=linux
-	XARCH=`arch`
-	CFLAGS="$CFLAGS -fPIC -DLINUX -D_XOPEN_SOURCE=700 -D_POSIX_SOURCE"
-	DEBIAN_VERSION=`cat /etc/debian_version | cut -f1 -d.`
-	if [[ "$DEBIAN_VERSION" == "8" ]]
-	then
-        	CFLAGS="$CFLAGS -D_BSD_SOURCE"
-    	else
-        	CFLAGS="$CFLAGS -D_DEFAULT_SOURCE"
-	fi
-	CFLAGS="$CFLAGS  -Wno-trigraphs  -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties"
-	CFLAGS="$CFLAGS -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label"
-	CFLAGS="$CFLAGS -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow"
-	CFLAGS="$CFLAGS -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion"
-	CFLAGS="$CFLAGS -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector"
-	CFLAGS="$CFLAGS -Wno-deprecated-implementations -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion "
-	CFLAGS="${CFLAGS} -fobjc-arc"
-	if [[ -x /usr/GNUstep/System/Tools/gnustep-config ]]
-	then
-		GNUSTEP_CONFIG=/usr/GNUstep/System/Tools/gnustep-config
-		CFLAGS="${CFLAGS} -I/usr/GNUstep/System/Library/Headers/"
-	else
-		if [[ -x /usr/local/bin/gnustep-config ]]
-		then
-			GNUSTEP_CONFIG=/usr/local/bin/gnustep-config
-		else
-			GNUSTEP_CONFIG=/usr/bin/gnustep-config
-		fi
-	fi
-	CFLAGS="$CFLAGS `${GNUSTEP_CONFIG}  --objc-flags`"
-    	LDFLAGS="$LDFLAGS `${GNUSTEP_CONFIG}  --base-libs --objc-libs`"
-	LIBS="$LIBS -ldl"
-	LIBRARIES="-lsctp -lbsd -luuid"
+	CFLAGS="${CFLAGS} -fobjc-arc -fPIC -DLINUX -D_XOPEN_SOURCE=700 -D_DEFAULT_SOURCE"
+	CFLAGS="$CFLAGS `gnustep-config  --objc-flags`"
+    LDFLAGS="$LDFLAGS `gnustep-config --base-libs --objc-libs`"
+	#LIBRARIES="-lulib"
 	CFLAGS="$CFLAGS `pkg-config  --cflags ${DEPENDENT_PKGCONFIGS}`"
 	LDFLAGS="$LDFLAGS `pkg-config --libs ${DEPENDENT_PKGCONFIGS}`"
-    	CFLAGS="$CFLAGS -DHAVE_OPENSSL=1"
-    	AC_DEFINE(HAVE_OPENSSL)
-	SHARED_LIBRARY_EXTENSION="so"
-    	SHARED_FLAGS="-shared"
-    ;;
+  	SHARED_LIBRARY_EXTENSION="so"
+  	;;
+
   *-freebsd*)
-	XARCH=`sysctl -a | egrep -i 'hw.machine_arch' | cut -f2 -d: | sed 's/ //g'`
+	PATH=/opt/buildtools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/GNUstep/System/Tools
+	PKG_CONFIG_PATH=/usr/local/lib/pkg-config:/usr/libdata/pkgconfig:/usr/local/libdata/pkgconfig/
 	CFLAGS="$CFLAGS -std=c99 -fPIC -DFREEBSD"
 	FREEBSD_VERSION=`uname -r`
-	CFLAGS="$CFLAGS  -Wno-trigraphs  -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties"
-	CFLAGS="$CFLAGS -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label"
-	CFLAGS="$CFLAGS -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow"
-	CFLAGS="$CFLAGS -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion"
-	CFLAGS="$CFLAGS -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector"
-	CFLAGS="$CFLAGS -Wno-deprecated-implementations -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion "
-	CFLAGS="$CFLAGS -fobjc-arc"
 	SHARED_LIBRARY_EXTENSION="so"
-	if [[ -x /usr/GNUstep/System/Tools/gnustep-config ]]
-	then
-		GNUSTEP_CONFIG=/usr/GNUstep/System/Tools/gnustep-config
-		CFLAGS="${CFLAGS} -I/usr/GNUstep/System/Library/Headers/"
-	else
-		if [[ -x /usr/local/bin/gnustep-config ]]
-		then
-			GNUSTEP_CONFIG=/usr/local/bin/gnustep-config
-		else
-			GNUSTEP_CONFIG=/usr/bin/gnustep-config
-		fi
-	fi
-	CFLAGS="$CFLAGS `${GNUSTEP_CONFIG}  --objc-flags`"
-    LDFLAGS="$LDFLAGS `${GNUSTEP_CONFIG}  --base-libs --objc-libs`"
-    
-	CFLAGS="$CFLAGS -DHAVE_OPENSSL=1"
-	CFLAGS="$CFLAGS `pkg-config --cflags libssl libcrypto`"
-	LDFLAGS="$LDFLAGS `pkg-config --libs libssl libcrypto`"
-	AC_DEFINE(HAVE_OPENSSL)
+	CFLAGS="$CFLAGS `gnustep-config  --objc-flags`"
+    LDFLAGS="$LDFLAGS `gnustep-config  --base-libs --objc-libs`"
+	CFLAGS="$CFLAGS `pkg-config  --cflags ${DEPENDENT_PKGCONFIGS}`"
+	LDFLAGS="$LDFLAGS `pkg-config --libs ${DEPENDENT_PKGCONFIGS}`"
+	LIBRARIES=""
 	;;
 esac
 
@@ -168,22 +163,25 @@ AC_ARG_WITH(libs,
 [  --with-libs=FLAGS       use FLAGS for extra libraries],
 LIBS="$LIBS $withval")
 
-
+dnl -----------------------------------------
 dnl Checks for programs.
+dnl -----------------------------------------
 
 AC_PROG_CC
 AC_PROG_INSTALL
 AC_PROG_RANLIB
 
 
+dnl -----------------------------------------
 dnl Checks for libraries.
-dnl -------------------------------------
+dnl -----------------------------------------
 AC_CONFIG_SECTION([Checking libraries])
 AC_CHECK_LIB(ulib, ulib_cpu_count)
 
 
+dnl -----------------------------------------
 dnl Implement --enable-debug --enable-profiling options.
-dnl -------------------------------------
+dnl -----------------------------------------
 AC_ARG_ENABLE(profiling,
 [  --enable-profiling	  enable profiling  [disabled]], [
 	echo Using Debuging+profiling target
@@ -211,31 +209,32 @@ AC_ARG_ENABLE(debug,
 ])])
 
 
-
-dnl Checks for latest version.
-dnl -------------------------------------
-
-UPDATE_URL="http://universalss7.ch/version.php?version=${VERSION}&os=${PLATFORM}&module=${PROJECT_NAME}&user=${CUSER}&arch=${XARCH}"
-LATEST_VER=`curl --  "${UPDATE_URL}" 2> /dev/null`
-
-echo "Is it latest version: ${LATEST_VER}"
-
+dnl -----------------------------------------
 dnl Outputing
-dnl -------------------------------------
+dnl -----------------------------------------
+
 AC_CONFIG_SECTION([Generating output files]) 
 
-dnl Final Output
+TIMESTAMP=`date -u +%Y%m%d%H%M%S`
 AC_SUBST(CONFIGURATION)
+AC_SUBST(COPYRIGHT)
 AC_SUBST(PROJECT_NAME)
+AC_SUBST(AUTHOR)
 AC_SUBST(VERSION)
 AC_SUBST(MAJORVER)
 AC_SUBST(MINORVER)
 AC_SUBST(REVISION)
+AC_SUBST(STATIC_LIBS)
+AC_SUBST(LIBS)
 AC_SUBST(SHARED_LIBRARY_EXTENSION)
+AC_SUBST(LIBRARIES)
+AC_SUBST(ARCH)
+AC_SUBST(TIMESTAMP)
+AC_SUBST(VERSION)
+AC_SUBST(CUSER)
+
 AC_CONFIG_SECTION([Generating output files]) 
-AC_CONFIG_FILES([Makefile.osx])
-AC_CONFIG_FILES([Makefile.linux])
-AC_CONFIG_FILES([Makefile.freebsd])
+AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([ulibgsmmap.pc])
 AC_CONFIG_FILES([make_buildnr.sh])
 AC_OUTPUT
@@ -251,17 +250,6 @@ else
 	./make_buildnr.sh
 fi
 
-case "$host" in
-  *apple-darwin*) 
-    cp Makefile.osx Makefile
-    ;;
-  *-linux-*)
-    cp Makefile.linux Makefile
-    ;;
-  *-freebsd*)
-    cp Makefile.freebsd Makefile
-    ;;
-esac
 
 dnl LICENSE notice
 

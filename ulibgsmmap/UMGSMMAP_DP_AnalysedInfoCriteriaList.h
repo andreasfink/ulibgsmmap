@@ -8,7 +8,7 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import <ulibasn1/ulibasn1.h>
+#import <ulibtcap/ulibtcap.h>
 #import <ulibgsmmap/UMGSMMAP_asn1_protocol.h>
 #import <ulibgsmmap/UMGSMMAP_DP_AnalysedInfoCriterium.h>
 @interface UMGSMMAP_DP_AnalysedInfoCriteriaList : UMASN1Sequence<UMGSMMAP_asn1_protocol>

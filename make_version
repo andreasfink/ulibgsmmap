@@ -1,0 +1,11 @@
+#!/bin/bash
+# this script is called during the build process to generate header files such as version.h
+#
+echo "#define VERSION \"`cat VERSION`\"" > version.h
+BUILD=`git log | head -1 | cut -f2 -d" "`
+BUILDDATE=`git log | grep Date: | head -1 | cut -c9-99`
+COMPILEDATE=`date +%Y.%m.%d-%H:%M:%S`
+
+echo "#define BUILD \"$BUILD\""             >> version.h
+echo "#define BUILDDATE \"$BUILDDATE\""     >> version.h
+echo "#define COMPILEDATE \"$COMPILEDATE\"" >> version.h

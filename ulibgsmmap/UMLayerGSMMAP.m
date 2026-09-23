@@ -9,9 +9,6 @@
 // the author.
 //
 #import <ulibgsmmap/UMLayerGSMMAP.h>
-#import <ulibgt/ulibgt.h>
-#import <ulibsccp/ulibsccp.h>
-#import <ulibtcap/ulibtcap.h>
 #import <ulibgsmmap/UMGSMMAP_RoutingInfoForSM_Arg.h>
 #import <ulibgsmmap/UMGSMMAP_Opcodes.h>
 #import <ulibgsmmap/UMGSMMAP_AddressString.h>

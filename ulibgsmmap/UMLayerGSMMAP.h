@@ -8,10 +8,6 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import <ulib/ulib.h>
-#import <ulibgt/ulibgt.h>
-#import <ulibgt/ulibgt.h>
-#import <ulibsccp/ulibsccp.h>
 #import <ulibtcap/ulibtcap.h>
 
 #import <ulibgsmmap/UMLayerGSMMAP_UserProtocol.h>

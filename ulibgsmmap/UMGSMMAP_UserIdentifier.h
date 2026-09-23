@@ -6,7 +6,7 @@
 //  Copyright © 2017 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import <ulib/ulib.h>
+#import <ulibtcap/ulibtcap.h>
 
 @interface UMGSMMAP_UserIdentifier : UMObject
 {
