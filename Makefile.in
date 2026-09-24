@@ -15,6 +15,7 @@ REVISION=@REVISION@
 
 LIB=lib@PROJECT_NAME@.@SHARED_LIBRARY_EXTENSION@
 SLIB=lib@PROJECT_NAME@.a
+#LIBS=@LIBS@
 
 PKGCONFIGFILE=@PROJECT_NAME@.pc
 
@@ -23,11 +24,11 @@ HFILES = version.h $(wildcard @PROJECT_NAME@/*.h) $(wildcard @PROJECT_NAME@/*/*.
 MOFILES  = $(MFILES:.m=.m.o)
 OFILES = $(MOFILES)
 
-INCLUDEDIRS= -I. -I ulibmtp3 -I/usr/local/include
+INCLUDEDIRS= -I. -I @PROJECT_NAME@ -I/usr/local/include
 
 ${LIB}: ${OFILES}
 	./make_version
-	${CC} -shared -o ${LIB}  ${LDFLAGS} ${OFILES} ${LIBS} ${STATIC_LIBS}
+	${CC} -shared -o ${LIB} ${LDFLAGS}  ${OFILES} ${LIBS} ${STATIC_LIBS}
 
 ${SLIB}: ${OFILES}
 	ar rcs ${SLIB} ${OFILES}
@@ -59,8 +60,10 @@ clean:
 .SUFFIXES: .m.o .o .m .c
 
 %.m.o:	%.m
-	${CC} -c ${CFLAGS} -x objective-c -fobjc-arc $<  ${INCLUDEDIRS} -o $@
+	${CC} ${INCLUDEDIRS} -c ${CFLAGS} -x objective-c -fobjc-arc $< -o $@
 
+%.c.o:    %.c
+	${CC} ${INCLUDEDIRS} -c ${CFLAGS} -x c -std=c17 $<  -o $@
 
 
 
