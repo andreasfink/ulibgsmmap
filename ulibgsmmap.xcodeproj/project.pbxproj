@@ -1190,7 +1190,6 @@
 		A6EE72AE1D3B6BFF00211137 /* UMGSMMAP_AbsentSubscriberParam.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE6CDD1D3B6BFE00211137 /* UMGSMMAP_AbsentSubscriberParam.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6EE72B01D3B6BFF00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE6CDF1D3B6BFE00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.m */; };
 		A6EE72B11D3B6BFF00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.h in Headers */ = {isa = PBXBuildFile; fileRef = A6EE6CE01D3B6BFE00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6EE72B41D3B6BFF00211137 /* NSString+map.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE6CE31D3B6BFE00211137 /* NSString+map.m */; };
 		A6EE72C31D3B94EC00211137 /* NSData+map.m in Sources */ = {isa = PBXBuildFile; fileRef = A6EE72BD1D3B94EC00211137 /* NSData+map.m */; };
 		A6FDF9E2249BBE90001C11DC /* UMGSMMAP_StatisticDb.h in Headers */ = {isa = PBXBuildFile; fileRef = A6FDF9E0249BBE90001C11DC /* UMGSMMAP_StatisticDb.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6FDF9E3249BBE90001C11DC /* UMGSMMAP_StatisticDb.m in Sources */ = {isa = PBXBuildFile; fileRef = A6FDF9E1249BBE90001C11DC /* UMGSMMAP_StatisticDb.m */; };
@@ -1287,6 +1286,10 @@
 		A643D7DC3064204900F9798D /* libulibmtp3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libulibmtp3.a; path = /usr/local/lib/libulibmtp3.a; sourceTree = "<absolute>"; };
 		A643D7DF3064205000F9798D /* libulibsccp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libulibsccp.a; path = /usr/local/lib/libulibsccp.a; sourceTree = "<absolute>"; };
 		A643D7E23064205700F9798D /* libulibtcap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libulibtcap.a; path = /usr/local/lib/libulibtcap.a; sourceTree = "<absolute>"; };
+		A643D808306504B100F9798D /* configure.ac */ = {isa = PBXFileReference; lastKnownFileType = text; path = configure.ac; sourceTree = "<group>"; };
+		A643D809306504C200F9798D /* Makefile.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		A643D80A306504CF00F9798D /* ulibgsmmap.pc.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = ulibgsmmap.pc.in; sourceTree = "<group>"; };
+		A643D80B306504DB00F9798D /* VERSION */ = {isa = PBXFileReference; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
 		A64AE32C2B44C4FA00B0FE06 /* UMGSMMAP_Reject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_Reject.h; sourceTree = "<group>"; };
 		A64AE32D2B44C4FA00B0FE06 /* UMGSMMAP_Reject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UMGSMMAP_Reject.m; sourceTree = "<group>"; };
 		A64AE3302B44C51A00B0FE06 /* UMGSMMAP_Reject.asn */ = {isa = PBXFileReference; lastKnownFileType = text; path = UMGSMMAP_Reject.asn; sourceTree = "<group>"; };
@@ -3239,10 +3242,6 @@
 		A6EE6CE01D3B6BFE00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_AbsentSubscriberDiagnosticSM.h; sourceTree = "<group>"; };
 		A6EE6CE11D3B6BFE00211137 /* UMGSMMAP_AbsentSubscriberDiagnosticSM.asn */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UMGSMMAP_AbsentSubscriberDiagnosticSM.asn; sourceTree = "<group>"; };
 		A6EE6CE21D3B6BFE00211137 /* ulibgsmmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ulibgsmmap.h; path = ulibgsmmap/ulibgsmmap.h; sourceTree = "<group>"; };
-		A6EE6CE31D3B6BFE00211137 /* NSString+map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+map.m"; path = "ulibgsmmap/NSString+map.m"; sourceTree = "<group>"; };
-		A6EE6CE41D3B6BFE00211137 /* NSString+map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+map.h"; path = "ulibgsmmap/NSString+map.h"; sourceTree = "<group>"; };
-		A6EE6CE51D3B6BFE00211137 /* NSData+map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+map.m"; path = "ulibgsmmap/NSData+map.m"; sourceTree = "<group>"; };
-		A6EE6CE61D3B6BFE00211137 /* NSData+map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+map.h"; path = "ulibgsmmap/NSData+map.h"; sourceTree = "<group>"; };
 		A6EE72BA1D3B94EC00211137 /* GsmCharSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GsmCharSet.h; sourceTree = "<group>"; };
 		A6EE72BB1D3B94EC00211137 /* GsmCharSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GsmCharSet.m; sourceTree = "<group>"; };
 		A6EE72BC1D3B94EC00211137 /* NSData+map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+map.h"; sourceTree = "<group>"; };
@@ -3250,9 +3249,6 @@
 		A6EE72BE1D3B94EC00211137 /* NSString+map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+map.h"; sourceTree = "<group>"; };
 		A6EE72BF1D3B94EC00211137 /* NSString+map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+map.m"; sourceTree = "<group>"; };
 		A6EE72C61D3B94F300211137 /* ulibgsmmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ulibgsmmap.h; sourceTree = "<group>"; };
-		A6F694091B4E843B0090FC94 /* configure.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = configure.in; sourceTree = "<group>"; };
-		A6F6940A1B4E843B0090FC94 /* Makefile.linux.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.linux.in; sourceTree = "<group>"; };
-		A6F6940B1B4E843B0090FC94 /* Makefile.osx.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.osx.in; sourceTree = "<group>"; };
 		A6F6940C1B4E843B0090FC94 /* ulibgsmmap.pc.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = ulibgsmmap.pc.in; sourceTree = "<group>"; };
 		A6F6940D1B4E843B0090FC94 /* VERSION */ = {isa = PBXFileReference; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
 		A6FDF9E0249BBE90001C11DC /* UMGSMMAP_StatisticDb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMGSMMAP_StatisticDb.h; sourceTree = "<group>"; };
@@ -3293,14 +3289,11 @@
 			children = (
 				A6F6940D1B4E843B0090FC94 /* VERSION */,
 				A6EE343B20A2CBF100C77EC8 /* doc */,
-				A6F694091B4E843B0090FC94 /* configure.in */,
-				A6ED5C6F1B435AF000854472 /* Frameworks */,
-				A6F6940A1B4E843B0090FC94 /* Makefile.linux.in */,
-				A6F6940B1B4E843B0090FC94 /* Makefile.osx.in */,
-				A6EE6CE61D3B6BFE00211137 /* NSData+map.h */,
-				A6EE6CE51D3B6BFE00211137 /* NSData+map.m */,
-				A6EE6CE41D3B6BFE00211137 /* NSString+map.h */,
-				A6EE6CE31D3B6BFE00211137 /* NSString+map.m */,
+				A643D808306504B100F9798D /* configure.ac */,
+				A643D809306504C200F9798D /* Makefile.in */,
+				A643D80A306504CF00F9798D /* ulibgsmmap.pc.in */,
+				A643D80B306504DB00F9798D /* VERSION */,
+				A643D80C3065050400F9798D /* Libraries */,
 				A641CEE41B42019900854472 /* Products */,
 				A6EE67171D3B6B0E00211137 /* supporting-files */,
 				A641CEE51B42019900854472 /* ulibgsmmap */,
@@ -3385,6 +3378,17 @@
 				A641CEF41B42019900854472 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A643D80C3065050400F9798D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				A643D7D93064204000F9798D /* libulib.a */,
+				A643D7DC3064204900F9798D /* libulibmtp3.a */,
+				A643D7DF3064205000F9798D /* libulibsccp.a */,
+				A643D7E23064205700F9798D /* libulibtcap.a */,
+			);
+			path = Libraries;
 			sourceTree = "<group>";
 		};
 		A67BA1A71D86D5E9007FF9E5 /* asn1 */ = {
@@ -5073,18 +5077,6 @@
 			name = asn1;
 			sourceTree = "<group>";
 		};
-		A6ED5C6F1B435AF000854472 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A643D7D93064204000F9798D /* libulib.a */,
-				A643D7DC3064204900F9798D /* libulibmtp3.a */,
-				A643D7DF3064205000F9798D /* libulibsccp.a */,
-				A643D7E23064205700F9798D /* libulibtcap.a */,
-			);
-			name = Frameworks;
-			path = /Library/Frameworks;
-			sourceTree = "<absolute>";
-		};
 		A6EE343B20A2CBF100C77EC8 /* doc */ = {
 			isa = PBXGroup;
 			children = (
@@ -6124,7 +6116,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2700;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					A641CEE21B42019900854472 = {
@@ -6330,7 +6322,6 @@
 				A6EE6E1F1D3B6BFE00211137 /* UMGSMMAP_SendIdentificationRes.m in Sources */,
 				A6FDF9E3249BBE90001C11DC /* UMGSMMAP_StatisticDb.m in Sources */,
 				A6EE72151D3B6BFF00211137 /* UMGSMMAP_CamelCapabilityHandling.m in Sources */,
-				A6EE72B41D3B6BFF00211137 /* NSString+map.m in Sources */,
 				A6EE70951D3B6BFF00211137 /* UMGSMMAP_GSM_SecurityContextData.m in Sources */,
 				A6EE70021D3B6BFF00211137 /* UMGSMMAP_LocationInformation.m in Sources */,
 				A6EE6F881D3B6BFF00211137 /* UMGSMMAP_MOLR_Class.m in Sources */,
@@ -6827,11 +6818,13 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 2.1.1;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 38L827M334;
 				DSTROOT = "";
 				DYLIB_COMPATIBILITY_VERSION = 2.0.0;
 				DYLIB_CURRENT_VERSION = 2.1.1;
 				DYLIB_INSTALL_NAME_BASE = "$(DSTROOT)/$(INSTALL_PATH)";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -6855,6 +6848,7 @@
 				MARKETING_VERSION = 2.1.1;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/include;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
@@ -6897,6 +6891,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 2.1.1;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 38L827M334;
 				DSTROOT = "";
 				DYLIB_COMPATIBILITY_VERSION = 2.0.0;
 				DYLIB_CURRENT_VERSION = 2.1.1;
@@ -6919,6 +6914,7 @@
 				MARKETING_VERSION = 2.1.1;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = macosx;
 				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/include;
 				USER_HEADER_SEARCH_PATHS = /usr/local/include;
@@ -6937,7 +6933,6 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_LOCATION = YES;
-				DEVELOPMENT_TEAM = 38L827M334;
 				DSTROOT = "";
 				ENABLE_MODULE_VERIFIER = NO;
 				FRAMEWORK_VERSION = A;
@@ -6969,7 +6964,6 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEPLOYMENT_LOCATION = YES;
-				DEVELOPMENT_TEAM = 38L827M334;
 				DSTROOT = "";
 				ENABLE_MODULE_VERIFIER = NO;
 				FRAMEWORK_VERSION = A;
@@ -6997,7 +6991,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 38L827M334;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -7025,7 +7018,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 38L827M334;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
