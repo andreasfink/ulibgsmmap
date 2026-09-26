@@ -1,7 +1,0 @@
-SS-CamelData ::= SEQUENCE { 
-   ss-EventList SS-EventList, 
-   gsmSCF-Address ISDN-AddressString, 
-   extensionContainer [0] ExtensionContainer OPTIONAL, 
-   ... 
-} 
-

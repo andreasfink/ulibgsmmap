@@ -1,6 +1,0 @@
-DaylightSavingTime ::= ENUMERATED {
-            noAdjustment              ( 0 ), 
-            plusOneHourAdjustment     ( 1 ), 
-            plusTwoHoursAdjustment    ( 2 ) 
-            }
-

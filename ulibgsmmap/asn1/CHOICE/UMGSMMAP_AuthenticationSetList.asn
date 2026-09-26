@@ -1,5 +1,0 @@
-AuthenticationSetList ::= CHOICE {
-   tripletList [0] AuthenticationTripletList, 
-   quintupletList [1] AuthenticationQuintupletList
-}
-

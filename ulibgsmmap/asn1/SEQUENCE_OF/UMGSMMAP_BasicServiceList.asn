@@ -1,2 +1,0 @@
-BasicServiceList ::= SEQUENCE SIZE (1..maxNumOfBasicServices) OF Ext-BasicServiceCode
-

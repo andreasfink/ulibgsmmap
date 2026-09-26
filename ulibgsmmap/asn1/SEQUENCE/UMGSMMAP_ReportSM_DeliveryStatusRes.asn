@@ -1,5 +1,0 @@
-ReportSM-DeliveryStatusRes ::= SEQUENCE {
-storedMSISDN ISDN-AddressString OPTIONAL,
-extensionContainer ExtensionContainer OPTIONAL,
-... }
-

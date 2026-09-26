@@ -1,4 +1,0 @@
-TeleservNotProvParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

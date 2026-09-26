@@ -1,2 +1,0 @@
-GlobalCellId ::= OCTET STRING ( SIZE( 5 .. 7 ) )
-

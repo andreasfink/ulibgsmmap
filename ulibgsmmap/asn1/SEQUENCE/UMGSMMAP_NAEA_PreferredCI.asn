@@ -1,5 +1,0 @@
-NAEA-PreferredCI ::= SEQUENCE { 
-   naea-PreferredCIC [0] NAEA-CIC, 
-   extensionContainer [1] ExtensionContainer OPTIONAL, 
-   ...} 
-

@@ -1,2 +1,0 @@
-ExternalClientList ::= SEQUENCE SIZE (0..maxNumOfExternalClient) OF ExternalClient 
-

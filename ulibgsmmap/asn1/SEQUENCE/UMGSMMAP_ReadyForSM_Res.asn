@@ -1,4 +1,0 @@
-ReadyForSM-Res ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

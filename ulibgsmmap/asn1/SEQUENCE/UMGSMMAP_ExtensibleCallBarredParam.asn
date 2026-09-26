@@ -1,6 +1,0 @@
-ExtensibleCallBarredParam ::= SEQUENCE { 
-   callBarringCause CallBarringCause OPTIONAL, 
-   extensionContainer ExtensionContainer OPTIONAL, 
-   ... , 
-   unauthorisedMessageOriginator [1] NULL OPTIONAL}
-

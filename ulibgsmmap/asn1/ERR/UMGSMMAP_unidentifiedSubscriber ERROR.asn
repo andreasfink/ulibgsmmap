@@ -1,5 +1,0 @@
-unidentifiedSubscriber ERROR ::= {
-PARAMETER UnidentifiedSubParam
-CODE local:5 
-}
-

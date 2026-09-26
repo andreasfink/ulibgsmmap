@@ -1,5 +1,0 @@
-informServiceCentre OPERATION ::= {
-ARGUMENT InformServiceCentreArg
-CODE local:63   
-}
-

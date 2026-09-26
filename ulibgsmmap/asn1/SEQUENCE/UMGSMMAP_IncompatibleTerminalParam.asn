@@ -1,4 +1,0 @@
-IncompatibleTerminalParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

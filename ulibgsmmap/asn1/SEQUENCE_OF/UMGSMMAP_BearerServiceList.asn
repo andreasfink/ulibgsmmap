@@ -1,2 +1,0 @@
-BearerServiceList ::= SEQUENCE SIZE (1..maxNumOfBearerServices) OF Ext-BearerServiceCode 
-

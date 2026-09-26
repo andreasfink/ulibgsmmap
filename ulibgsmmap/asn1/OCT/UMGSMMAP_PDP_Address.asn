@@ -1,2 +1,0 @@
-PDP-Address ::= OCTET STRING (SIZE (1..16))
-

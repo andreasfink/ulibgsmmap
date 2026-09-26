@@ -1,6 +1,0 @@
-SIWFSSignallingModifyArg ::= SEQUENCE {
-   channelType [0] ExternalSignalInfo  OPTIONAL,
-   chosenChannel [1] ExternalSignalInfo  OPTIONAL,
-   extensionContainer [2] ExtensionContainer OPTIONAL,
-   ... }
-

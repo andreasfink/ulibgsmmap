@@ -1,5 +1,0 @@
-IST-CommandArg ::= SEQUENCE {
-	imsi                 [0] IMSI, 
-	extensionContainer   [1] ExtensionContainer OPTIONAL,
-	...
-}

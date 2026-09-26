@@ -1,5 +1,0 @@
-unauthorizedLCSClient ERROR ::= {
-PARAMETER UnauthorizedLCSClient-Param
-CODE local:53
-} 
-

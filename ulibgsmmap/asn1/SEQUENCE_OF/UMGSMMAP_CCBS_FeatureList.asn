@@ -1,2 +1,0 @@
-CCBS-FeatureList ::= SEQUENCE SIZE (1..maxNumOfCCBS-Requests) OF CCBS-Feature 
-

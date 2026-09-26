@@ -1,2 +1,0 @@
-PDP-ContextInfoList ::= SEQUENCE SIZE (1..maxNumOfPDP-Contexts) OF PDP-ContextInfo
-

@@ -1,5 +1,0 @@
-messageWaitingListFull ERROR ::= {
-PARAMETER MessageWaitListFullParam
-CODE local:33
-} 
-

@@ -1,5 +1,0 @@
-unknownSubscriber ERROR ::= {
-PARAMETER UnknownSubscriberParam
-CODE local:1
-} 
-

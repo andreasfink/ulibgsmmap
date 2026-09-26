@@ -1,4 +1,0 @@
-NoSubscriberReplyParam ::= SEQUENCE {                                      
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

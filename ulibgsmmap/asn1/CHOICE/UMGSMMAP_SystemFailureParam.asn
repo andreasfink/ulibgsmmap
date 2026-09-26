@@ -1,4 +1,0 @@
-SystemFailureParam ::= CHOICE {
-   networkResource NetworkResource,
-   extensibleSystemFailureParam ExtensibleSystemFailureParam}
-

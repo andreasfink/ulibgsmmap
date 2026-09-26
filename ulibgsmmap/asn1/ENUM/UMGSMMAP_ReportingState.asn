@@ -1,5 +1,0 @@
-ReportingState ::= ENUMERATED { 
-   stopMonitoring (0), 
-   startMonitoring (1), 
-   ...}
-

@@ -1,4 +1,0 @@
-BearerServNotProvParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

@@ -1,2 +1,0 @@
-Tmsi ::= OCTET STRING ( SIZE( 1 .. 4 ) )
-

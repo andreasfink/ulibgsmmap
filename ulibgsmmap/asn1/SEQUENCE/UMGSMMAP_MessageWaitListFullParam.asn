@@ -1,4 +1,0 @@
-MessageWaitListFullParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

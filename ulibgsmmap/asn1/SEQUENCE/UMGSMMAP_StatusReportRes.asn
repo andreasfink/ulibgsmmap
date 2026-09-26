@@ -1,4 +1,0 @@
-StatusReportRes ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

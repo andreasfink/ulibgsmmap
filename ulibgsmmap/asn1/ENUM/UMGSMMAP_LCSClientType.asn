@@ -1,7 +1,0 @@
-LCSClientType ::= ENUMERATED { 
-   emergencyServices (0), 
-   valueAddedServices (1), 
-   plmnOperatorServices (2), 
-   lawfulInterceptServices (3), 
-   ... }
-

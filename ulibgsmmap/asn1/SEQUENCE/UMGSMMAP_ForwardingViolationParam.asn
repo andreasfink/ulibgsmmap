@@ -1,4 +1,0 @@
-ForwardingViolationParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

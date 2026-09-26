@@ -1,5 +1,0 @@
-incompatibleTerminal ERROR ::= {
-PARAMETER IncompatibleTerminalParam
-CODE local:28
-} 
-

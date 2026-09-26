@@ -1,5 +1,0 @@
-CancellationType ::= ENUMERATED {
-updateProcedure ( 0 ),
-subscriptionWithdraw ( 1 ),
-... } 
-

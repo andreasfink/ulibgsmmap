@@ -1,2 +1,0 @@
-XRES ::= OCTET STRING ( SIZE( 4 .. 16 ) )
-

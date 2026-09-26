@@ -1,5 +1,0 @@
-ProvideSubscriberInfoRes ::= SEQUENCE {
-   subscriberInfo  SubscriberInfo,
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

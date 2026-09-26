@@ -1,2 +1,0 @@
-ContextId ::= INTEGER (1..maxNumOfPDP-Contexts)
-

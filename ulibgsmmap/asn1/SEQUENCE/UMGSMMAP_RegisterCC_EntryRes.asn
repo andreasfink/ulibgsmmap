@@ -1,4 +1,0 @@
-RegisterCC-EntryRes ::= SEQUENCE {
-   ccbs-Feature [0] CCBS-Feature OPTIONAL,
-   ... }
-

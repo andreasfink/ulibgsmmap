@@ -1,1 +1,0 @@
-Ext-QoS-Subscribed ::= OCTET STRING (SIZE (1..9))

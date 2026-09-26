@@ -1,5 +1,0 @@
-SIWFSSignallingModifyRes ::= SEQUENCE {
-   chosenChannel [0] ExternalSignalInfo OPTIONAL,
-   extensionContainer [1] ExtensionContainer OPTIONAL,
-   ... }
-

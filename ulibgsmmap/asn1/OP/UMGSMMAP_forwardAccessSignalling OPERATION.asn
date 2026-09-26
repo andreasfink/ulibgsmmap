@@ -1,5 +1,0 @@
-forwardAccessSignalling OPERATION ::= {
-ARGUMENT ExternalSignalInfo
-CODE local:34 
-}
-

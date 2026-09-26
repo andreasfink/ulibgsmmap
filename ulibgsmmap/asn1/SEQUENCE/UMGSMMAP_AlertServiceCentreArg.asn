@@ -1,5 +1,0 @@
-AlertServiceCentreArg ::= SEQUENCE {
-   msisdn ISDN-AddressString,
-   serviceCentreAddress AddressString,
-   ... }
-

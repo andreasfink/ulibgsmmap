@@ -1,5 +1,0 @@
-forwardingViolation ERROR ::= {
-PARAMETER ForwardingViolationParam
-CODE local:14
-} 
-

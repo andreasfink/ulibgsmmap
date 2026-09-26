@@ -1,4 +1,0 @@
-NoGroupCallNbParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

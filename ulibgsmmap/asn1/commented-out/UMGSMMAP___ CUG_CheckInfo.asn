@@ -1,6 +1,0 @@
--- CUG-CheckInfo ::= SEQUENCE { 
---   cug-Interlock CUG-Interlock, 
---   cug-OutgoingAccess NULL OPTIONAL, 
---   extensionContainer ExtensionContainer OPTIONAL, 
---   ...}
-

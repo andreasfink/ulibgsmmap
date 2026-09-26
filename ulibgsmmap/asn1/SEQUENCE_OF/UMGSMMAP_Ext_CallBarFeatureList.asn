@@ -1,2 +1,0 @@
-Ext-CallBarFeatureList ::= SEQUENCE SIZE (1..maxNumOfExt-BasicServiceGroups) OF Ext-CallBarringFeature 
-

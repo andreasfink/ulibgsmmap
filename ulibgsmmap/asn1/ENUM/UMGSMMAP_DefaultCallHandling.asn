@@ -1,5 +1,0 @@
-DefaultCallHandling ::= ENUMERATED { 
-   continueCall (0) , 
-   releaseCall (1) , 
-   ...}
-

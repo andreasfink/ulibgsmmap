@@ -1,2 +1,0 @@
-GPRSDataList ::= SEQUENCE SIZE (1..maxNumOfPDP-Contexts) OF PDP-Context 
-

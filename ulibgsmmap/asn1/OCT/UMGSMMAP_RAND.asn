@@ -1,2 +1,0 @@
-RAND ::= OCTET STRING ( SIZE( 16 ) )
-

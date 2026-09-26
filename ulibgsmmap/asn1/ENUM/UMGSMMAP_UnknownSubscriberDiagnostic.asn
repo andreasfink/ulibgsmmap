@@ -1,5 +1,0 @@
-UnknownSubscriberDiagnostic ::= ENUMERATED { 
-   imsiUnknown (0), 
-   gprsSubscriptionUnknown (1), 
-   ...}
-

@@ -1,5 +1,0 @@
-UMTS_SecurityContextData ::= SEQUENCE {
-			ck         CK, 
-			ik         IK, 
-			ksi        KSI, 
-		... }

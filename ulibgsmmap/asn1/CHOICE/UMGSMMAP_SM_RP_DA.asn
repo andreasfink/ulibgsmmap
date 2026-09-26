@@ -1,8 +1,0 @@
-SM-RP-DA ::= CHOICE
-{
-   imsi 					[0] IMSI,
-   lmsi						[1] LMSI,
-   serviceCentreAddressDA	[4] AddressString,
-   noSM-RP-DA				[5] NULL
-}
-

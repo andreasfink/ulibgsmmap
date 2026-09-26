@@ -1,5 +1,0 @@
-VoiceGroupCallData ::= SEQUENCE { 
-   groupId GroupId, 
-   extensionContainer ExtensionContainer OPTIONAL, 
-   ...}
-

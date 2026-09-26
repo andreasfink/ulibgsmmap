@@ -1,5 +1,0 @@
-EraseCC-EntryRes ::= SEQUENCE {
-   ss-Code [0] SS-Code,
-   ss-Status [1] SS-Status OPTIONAL,
-   ... }
-

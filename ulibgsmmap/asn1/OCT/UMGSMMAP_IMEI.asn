@@ -1,2 +1,0 @@
-IMEI ::= OCTET STRING ( SIZE( 8 ) )
-

@@ -1,5 +1,0 @@
-AbsentSubscriberParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... ,
-   absentSubscriberReason [0] AbsentSubscriberReason OPTIONAL}
-

@@ -1,4 +1,0 @@
-UnexpectedDataParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

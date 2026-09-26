@@ -1,5 +1,0 @@
-Ss-ForBS ::= SEQUENCE {
-   ss-Code SS-Code,
-   basicService BasicServiceCode OPTIONAL,
-   ... }
-

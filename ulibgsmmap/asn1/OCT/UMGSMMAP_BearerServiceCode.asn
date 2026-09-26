@@ -1,2 +1,0 @@
-BearerServiceCode ::= OCTET STRING (SIZE (1))
-

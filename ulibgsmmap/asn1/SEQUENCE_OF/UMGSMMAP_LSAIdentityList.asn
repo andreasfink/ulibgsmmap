@@ -1,2 +1,0 @@
-LSAIdentityList ::= SEQUENCE SIZE (1..maxNumOfLSAs) OF LSAIdentity
-

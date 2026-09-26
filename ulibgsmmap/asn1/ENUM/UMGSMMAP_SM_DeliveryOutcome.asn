@@ -1,5 +1,0 @@
-SM-DeliveryOutcome ::= ENUMERATED {
-   memoryCapacityExceeded ( 0 ),
-   absentSubscriber ( 1 ),
-   successfulTransfer ( 2 ) }
-

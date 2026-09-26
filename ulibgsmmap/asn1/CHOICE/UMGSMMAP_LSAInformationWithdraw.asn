@@ -1,4 +1,0 @@
-LSAInformationWithdraw ::= CHOICE { 
-   allLSAData NULL, 
-   lsaIdentityList LSAIdentityList } 
-

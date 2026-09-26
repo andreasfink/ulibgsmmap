@@ -1,2 +1,0 @@
-DestinationNumberList ::= SEQUENCE SIZE (1..maxNumOfCamelDestinationNumbers) OF ISDN-AddressString
-

@@ -1,2 +1,0 @@
-Ext-TeleserviceCode ::= OCTET STRING (SIZE (1..5))
-

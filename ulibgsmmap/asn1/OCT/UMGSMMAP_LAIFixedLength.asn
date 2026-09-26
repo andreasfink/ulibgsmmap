@@ -1,3 +1,0 @@
-LAIFixedLength ::= OCTET STRING (SIZE (5)) 
--- Refers to Location Area Identification defined in TS GSM 03.03.
-

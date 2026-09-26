@@ -1,4 +1,0 @@
-DeactivateTraceModeRes ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

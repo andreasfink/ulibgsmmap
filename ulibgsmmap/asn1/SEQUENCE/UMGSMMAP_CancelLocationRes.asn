@@ -1,4 +1,0 @@
-CancelLocationRes ::= SEQUENCE {
-extensionContainer ExtensionContainer OPTIONAL,
-... }
-

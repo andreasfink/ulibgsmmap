@@ -1,2 +1,0 @@
-AbsentSubscriberDiagnosticSM ::= INTEGER ( 0 .. 255 )
-

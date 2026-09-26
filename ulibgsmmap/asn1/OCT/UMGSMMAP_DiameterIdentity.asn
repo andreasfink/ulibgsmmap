@@ -1,2 +1,0 @@
-DiameterIdentity ::= OCTET STRING (SIZE(9..255))
-

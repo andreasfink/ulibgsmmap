@@ -1,2 +1,0 @@
-MOLR-List ::= SEQUENCE SIZE (1..maxNumOfMOLR-Class) OF MOLR-Class 
-

@@ -1,4 +1,0 @@
-GPRSSubscriptionDataWithdraw ::= CHOICE { 
-   allGPRSData NULL, 
-   contextIdList ContextIdList} 
-
