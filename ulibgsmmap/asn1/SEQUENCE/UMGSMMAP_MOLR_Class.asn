@@ -1,6 +1,0 @@
-MOLR-Class ::= SEQUENCE { 
-   ss-Code SS-Code, 
-   ss-Status Ext-SS-Status, 
-   extensionContainer [0] ExtensionContainer OPTIONAL, 
-   ...} 
-

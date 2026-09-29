@@ -1,2 +1,0 @@
-ASNTimeZone ::= OCTET STRING ( SIZE( 2 .. 3 ) ) 
-

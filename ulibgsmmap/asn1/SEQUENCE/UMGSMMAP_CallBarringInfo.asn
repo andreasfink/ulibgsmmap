@@ -1,5 +1,0 @@
-CallBarringInfo ::= SEQUENCE { 
-   ss-Code SS-Code OPTIONAL, 
-   callBarringFeatureList CallBarringFeatureList, 
-   ...} 
-

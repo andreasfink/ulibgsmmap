@@ -1,5 +1,0 @@
-or-NotAllowed ERROR ::= {
-PARAMETER Or-NotAllowedParam
-CODE local:48
-} 
-

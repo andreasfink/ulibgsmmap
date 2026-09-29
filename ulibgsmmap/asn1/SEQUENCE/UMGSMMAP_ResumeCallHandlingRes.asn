@@ -1,5 +1,0 @@
-ResumeCallHandlingRes ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-
-

@@ -1,5 +1,0 @@
-CurrentSecurityContext ::= CHOICE {
-	gsm-SecurityContextData      [0] GSM-SecurityContextData,
-	umts-SecurityContextData     [1] UMTS-SecurityContextData
-} 
-		

@@ -1,4 +1,0 @@
-SubscriberStatus ::= ENUMERATED { 
-   serviceGranted (0), 
-   operatorDeterminedBarring (1)}
-

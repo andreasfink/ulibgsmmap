@@ -1,2 +1,0 @@
-LCS-PrivacyExceptionList ::= SEQUENCE SIZE (1..maxNumOfPrivacyClass) OF LCS-PrivacyClass 
-

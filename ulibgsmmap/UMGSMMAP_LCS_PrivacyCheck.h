@@ -6,7 +6,7 @@
 //
 //
 
-#import <ulibasn1/ulibasn1.h>
+#import <ulibtcap/ulibtcap.h>
 
 @interface UMGSMMAP_LCS_PrivacyCheck : UMASN1Object
 

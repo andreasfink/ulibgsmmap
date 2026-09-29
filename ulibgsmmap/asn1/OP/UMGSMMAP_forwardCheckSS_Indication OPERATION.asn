@@ -1,4 +1,0 @@
-forwardCheckSS-Indication OPERATION ::= {
-CODE local:38
-}
-

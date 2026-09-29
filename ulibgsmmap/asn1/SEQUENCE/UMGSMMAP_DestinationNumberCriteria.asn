@@ -1,6 +1,0 @@
-DestinationNumberCriteria ::= SEQUENCE { 
-   matchType [0] MatchType, 
-   destinationNumberList [1] DestinationNumberList OPTIONAL, 
-   destinationNumberLengthList [2] DestinationNumberLengthList OPTIONAL,
-   ... }
-

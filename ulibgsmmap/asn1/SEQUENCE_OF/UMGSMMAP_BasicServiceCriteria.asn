@@ -1,2 +1,0 @@
-BasicServiceCriteria ::= SEQUENCE SIZE(1..maxNumOfCamelBasicServiceCriteria) OF Ext-BasicServiceCode
-

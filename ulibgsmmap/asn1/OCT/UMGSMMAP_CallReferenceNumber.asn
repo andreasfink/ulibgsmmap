@@ -1,2 +1,0 @@
-CallReferenceNumber ::= OCTET STRING (SIZE (1..8))
-

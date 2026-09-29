@@ -1,5 +1,0 @@
-SubBusyForMT-SMS-Param ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... ,
-   gprsConnectionSuspended NULL OPTIONAL}
-

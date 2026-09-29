@@ -1,5 +1,0 @@
-Ussd-Res ::= SEQUENCE {
-    ussd-DataCodingScheme USSD-DataCodingScheme,
-    ussd-String USSD-String,
-    ... }
-

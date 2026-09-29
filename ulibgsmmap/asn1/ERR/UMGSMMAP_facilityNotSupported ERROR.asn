@@ -1,5 +1,0 @@
-facilityNotSupported ERROR ::= {
-PARAMETER FacilityNotSupParam
-CODE local:21 
-}
-

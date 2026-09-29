@@ -1,5 +1,0 @@
-longTermDenial ERROR ::= {
-PARAMETER LongTermDenialParam
-CODE local:30
-} 
-

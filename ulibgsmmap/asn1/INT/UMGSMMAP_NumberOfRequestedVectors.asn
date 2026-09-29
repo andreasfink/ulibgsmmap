@@ -1,2 +1,0 @@
-NumberOfRequestedVectors ::= INTEGER ( 1 .. 5 )
-

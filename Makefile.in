@@ -1,0 +1,65 @@
+# File: Makefile
+# Project "@PROJECT_NAME@"
+# Copyright © 2026 Andreas Fink (andreas@fink.org). All rights reserved.
+# Create: Andreas Fink (andreas@fink.org)
+#
+#
+
+CC=@CC@
+CFLAGS=@CFLAGS@
+LDFLAGS=@LDFLAGS@
+PROJECT_NAME=@PROJECT_NAME@
+MAJORVER=@MAJORVER@
+MINORVER=@MINORVER@
+REVISION=@REVISION@
+
+LIB=lib@PROJECT_NAME@.@SHARED_LIBRARY_EXTENSION@
+SLIB=lib@PROJECT_NAME@.a
+#LIBS=@LIBS@
+
+PKGCONFIGFILE=@PROJECT_NAME@.pc
+
+MFILES = $(wildcard @PROJECT_NAME@/*.m) $(wildcard @PROJECT_NAME@/*/*.m)
+HFILES = version.h $(wildcard @PROJECT_NAME@/*.h) $(wildcard @PROJECT_NAME@/*/*.h)
+MOFILES  = $(MFILES:.m=.m.o)
+OFILES = $(MOFILES)
+
+INCLUDEDIRS= -I. -I @PROJECT_NAME@ -I/usr/local/include
+
+${LIB}: ${OFILES}
+	./make_version
+	${CC} -shared -o ${LIB} ${LDFLAGS}  ${OFILES} ${LIBS} ${STATIC_LIBS}
+
+${SLIB}: ${OFILES}
+	@LIBTOOL@ ${SLIB} ${OFILES}
+	@RANLIB@ ${SLIB}
+
+install: install_dev install_bin
+
+install_dev:
+	-mkdir -p ${DESTDIR}/usr/local/lib/pkgconfig
+	-install -b -g bin -o root -m 644 ${PKGCONFIGFILE} ${DESTDIR}/usr/local/lib/pkgconfig/
+	-mkdir -p ${DESTDIR}/usr/local/include/@PROJECT_NAME@
+	cp $(HFILES) ${DESTDIR}/usr/local/include/@PROJECT_NAME@
+	ldconfig
+
+install_bin: ${LIB} ${SLIB}
+	install -b -g bin -o root -m 644 "${SLIB}" "${DESTDIR}/usr/local/lib/${SLIB}"
+	ln -s "${LIB}.${MAJORVER}.${MINORVER}.${REVISION}" "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}"
+	ln -s "${LIB}.${MAJORVER}.${MINORVER}"             "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}"
+	ln -s "${LIB}.${MAJORVER}"                         "${DESTDIR}/usr/local/lib/${LIB}"
+	if [ -x /usr/sbin/ldconfig ] ; then ldconfig; fi
+	if [ -x /usr/bin/install_name_tool ]; then install_name_tool -id /usr/local/lib/${LIB}.${MAJORVER}.${MINORVER} ${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}.${REVISION}; fi
+clean:
+	rm -f $(LIB) $(OFILES) ${SLIB}
+
+.SUFFIXES: .m.o .o .m .c
+
+%.m.o:	%.m
+	${CC} ${INCLUDEDIRS} -c ${CFLAGS} -x objective-c -fobjc-arc $< -o $@
+
+%.c.o:    %.c
+	${CC} ${INCLUDEDIRS} -c ${CFLAGS} -x c -std=c17 $<  -o $@
+
+
+

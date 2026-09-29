@@ -1,3 +1,0 @@
-CellIdFixedLength ::= OCTET STRING (SIZE (7)) 
--- Refers to Cell Global Identification defined in TS GSM 03.03.
-

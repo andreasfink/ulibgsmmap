@@ -1,2 +1,0 @@
-TraceReference ::= OCTET STRING (SIZE (1..2)) 
-

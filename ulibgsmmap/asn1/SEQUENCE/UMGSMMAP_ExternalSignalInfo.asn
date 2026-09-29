@@ -1,6 +1,0 @@
-ExternalSignalInfo ::= SEQUENCE {
-   protocolId ProtocolId,
-   signalInfo SignalInfo,
-   extensionContainer ExtensionContainer OPTIONAL,                       
-   ... }
-

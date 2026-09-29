@@ -1,5 +1,0 @@
-LCS-Priority ::= OCTET STRING (SIZE (1)) 
--- 0 = highest priority 
--- 1 = normal priority 
--- all other values treated as 1
-

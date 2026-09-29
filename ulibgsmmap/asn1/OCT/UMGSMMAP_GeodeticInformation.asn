@@ -1,1 +1,0 @@
-GeodeticInformation ::= OCTET STRING ( SIZE( 10 ) )

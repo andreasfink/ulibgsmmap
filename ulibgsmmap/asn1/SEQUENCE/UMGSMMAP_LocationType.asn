@@ -1,4 +1,0 @@
-LocationType ::= SEQUENCE { 
-   locationEstimateType [0] LocationEstimateType, 
-   ... } 
-

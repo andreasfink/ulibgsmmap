@@ -1,2 +1,0 @@
-HLR-List ::= SEQUENCE SIZE (1..maxNumOfHLR-Id) OF HLR-Id 
-

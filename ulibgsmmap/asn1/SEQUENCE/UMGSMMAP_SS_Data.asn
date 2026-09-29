@@ -1,9 +1,0 @@
-SS-Data ::= SEQUENCE { 
-   ss-Code SS-Code OPTIONAL, 
-   ss-Status [4] SS-Status OPTIONAL, 
-   ss-SubscriptionOption SS-SubscriptionOption OPTIONAL, 
-   basicServiceGroupList BasicServiceGroupList OPTIONAL, 
-   ..., 
-   defaultPriority EMLPP-Priority OPTIONAL 
-}
-

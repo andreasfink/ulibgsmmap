@@ -1,4 +1,0 @@
---OverrideCategory ::= ENUMERATED { 
---   overrideEnabled (0), 
---   overrideDisabled (1)}
-

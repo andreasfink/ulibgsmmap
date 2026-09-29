@@ -1,2 +1,0 @@
-AlertingPattern ::= OCTET STRING (SIZE (1) )
-

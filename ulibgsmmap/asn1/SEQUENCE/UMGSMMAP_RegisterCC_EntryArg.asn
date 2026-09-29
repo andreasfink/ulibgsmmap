@@ -1,5 +1,0 @@
-RegisterCC-EntryArg ::= SEQUENCE {
-   ss-Code [0] SS-Code,
-   ccbs-Data [1] CCBS-Data OPTIONAL,
-   ... }
-

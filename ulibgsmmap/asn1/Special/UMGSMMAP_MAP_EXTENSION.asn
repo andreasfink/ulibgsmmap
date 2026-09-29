@@ -1,5 +1,0 @@
-MAP-EXTENSION ::= CLASS {
-  &ExtensionType 	OPTIONAL, 
-  &extensionId 		OBJECT IDENTIFIER 
-}
-

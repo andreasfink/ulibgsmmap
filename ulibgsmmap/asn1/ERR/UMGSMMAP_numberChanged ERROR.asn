@@ -1,5 +1,0 @@
-numberChanged ERROR ::= {
-PARAMETER NumberChangedParam
-CODE local:44 
-}
-

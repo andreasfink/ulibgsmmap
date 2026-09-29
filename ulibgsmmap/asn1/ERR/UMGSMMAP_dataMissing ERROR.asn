@@ -1,5 +1,0 @@
-dataMissing ERROR ::= {
-PARAMETER DataMissingParam
-CODE local:35
-} 
-

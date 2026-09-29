@@ -1,4 +1,0 @@
-subsequentHandoverFailure ERROR ::= {
-CODE local:26
-}
-

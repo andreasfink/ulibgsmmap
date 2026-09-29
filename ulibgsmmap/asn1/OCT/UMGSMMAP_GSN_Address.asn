@@ -1,3 +1,0 @@
-GSN-Address ::= OCTET STRING (SIZE (5..17)) 
--- Octets are coded according to TS GSM 03.03
-

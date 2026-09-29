@@ -1,5 +1,0 @@
-EquipmentStatus ::= ENUMERATED {
-whiteListed ( 0 ),
-blackListed ( 1 ),
-greyListed ( 2 ) }
-

@@ -1,4 +1,0 @@
-ForwardingFailedParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

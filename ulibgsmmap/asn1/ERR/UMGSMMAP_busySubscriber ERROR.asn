@@ -1,5 +1,0 @@
-busySubscriber ERROR ::= {
-PARAMETER BusySubscriberParam
-CODE local:45 
-}
-

@@ -1,5 +1,0 @@
-PositionMethodFailure-Param ::= SEQUENCE {
-   positionMethodFailure-Diagnostic [0] PositionMethodFailure-Diagnostic OPTIONAL,
-   extensionContainer [1] ExtensionContainer OPTIONAL,
-   ... } 
-

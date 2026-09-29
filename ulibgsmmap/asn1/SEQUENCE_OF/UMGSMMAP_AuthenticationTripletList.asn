@@ -1,1 +1,0 @@
-AuthenticationTripletList::=  SEQUENCE  ( SIZE( 1 .. 5 ) ) OF AuthenticationTriplet

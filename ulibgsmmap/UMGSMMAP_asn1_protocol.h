@@ -6,8 +6,6 @@
 //
 //
 
-#import <ulib/ulib.h>
-#import <ulibasn1/ulibasn1.h>
 #import <ulibtcap/ulibtcap.h>
 
 @protocol UMGSMMAP_asn1_protocol 

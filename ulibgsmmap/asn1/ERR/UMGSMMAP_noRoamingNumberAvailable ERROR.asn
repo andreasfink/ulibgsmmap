@@ -1,5 +1,0 @@
-noRoamingNumberAvailable ERROR ::= {
-PARAMETER NoRoamingNbParam
-CODE local:39 
-}
-

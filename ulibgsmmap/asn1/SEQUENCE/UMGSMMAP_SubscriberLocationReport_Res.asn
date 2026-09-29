@@ -1,4 +1,0 @@
-SubscriberLocationReport-Res ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

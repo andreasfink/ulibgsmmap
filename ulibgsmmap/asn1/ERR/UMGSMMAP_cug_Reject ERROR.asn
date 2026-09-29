@@ -1,5 +1,0 @@
-cug-Reject ERROR ::= {
-PARAMETER Cug-RejectParam
-CODE local:15
-} 
-

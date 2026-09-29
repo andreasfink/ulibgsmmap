@@ -1,2 +1,0 @@
-CUG-SubscriptionList ::= SEQUENCE SIZE (0..maxNumOfCUG) OF CUG-Subscription
-

@@ -1,4 +1,0 @@
-NoteMsPresentForGprsRes ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

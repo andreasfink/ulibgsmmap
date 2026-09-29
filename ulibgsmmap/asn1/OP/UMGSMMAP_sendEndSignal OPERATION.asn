@@ -1,5 +1,0 @@
-sendEndSignal OPERATION ::= {
-ARGUMENT ExternalSignalInfo
-CODE local:29
-} 
-

@@ -1,5 +1,0 @@
-IntraCUG-Options ::= ENUMERATED { 
-   noCUG-Restrictions (0), 
-   cugIC-CallBarred (1), 
-   cugOG-CallBarred (2)}
-

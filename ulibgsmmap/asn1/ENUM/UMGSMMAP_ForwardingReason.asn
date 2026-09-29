@@ -1,5 +1,0 @@
-ForwardingReason ::= ENUMERATED { 
-   notReachable (0), 
-   busy (1), 
-   noReply (2)}
-

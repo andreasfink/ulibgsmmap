@@ -9,7 +9,7 @@
 // the author.
 //
 
-#import <ulibasn1/ulibasn1.h>
+#import <ulibtcap/ulibtcap.h>
 #import <ulibgsmmap/NSString+map.h>
 
 @interface NSData (map)

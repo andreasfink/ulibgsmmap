@@ -1,5 +1,0 @@
-FailureReportRes ::= SEQUENCE {
-   ggsn-Address [0] GSN-Address OPTIONAL,
-   extensionContainer [1] ExtensionContainer OPTIONAL,
-   ... }
-

@@ -1,4 +1,0 @@
-UnidentifiedSubParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

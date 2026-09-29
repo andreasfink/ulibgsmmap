@@ -1,5 +1,0 @@
-PrepareGroupCallRes ::= SEQUENCE {
-   groupCallNumber ISDN-AddressString,
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

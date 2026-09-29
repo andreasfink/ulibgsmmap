@@ -1,5 +1,0 @@
-unknownOrUnreachableLCSClient ERROR ::= {
-PARAMETER UnknownOrUnreachableLCSClient-Param
-CODE local:58
-} 
-

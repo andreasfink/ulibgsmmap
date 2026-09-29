@@ -1,5 +1,0 @@
-GuidanceInfo ::= ENUMERATED {
-   enterPW ( 0 ),
-   enterNewPW ( 1 ),
-   enterNewPW-Again ( 2 ) }
-

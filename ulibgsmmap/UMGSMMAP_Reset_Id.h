@@ -8,7 +8,7 @@
 
 /* we have not found an ASN1 specification of Reset-Id  where is it?? */
 
-#import <ulibasn1/ulibasn1.h>
+#import <ulibtcap/ulibtcap.h>
 
 @interface UMGSMMAP_Reset_Id : UMASN1OctetString
 

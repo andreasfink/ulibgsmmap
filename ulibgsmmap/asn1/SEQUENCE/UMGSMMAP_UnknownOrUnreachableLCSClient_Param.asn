@@ -1,4 +1,0 @@
-UnknownOrUnreachableLCSClient-Param ::= SEQUENCE {
-   extensionContainer ExtensionContainer  OPTIONAL,
-   ... }
-

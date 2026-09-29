@@ -1,4 +1,0 @@
-MatchType ::= ENUMERATED { 
-   inhibiting (0), 
-   enabling (1)}
-

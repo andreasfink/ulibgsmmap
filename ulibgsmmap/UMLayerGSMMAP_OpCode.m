@@ -8,8 +8,8 @@
 // Version 3 from 29 June 2007 and other commercial licenses available by
 // the author.
 //
-#import <UMLayerGSMMAP_OpCode.h>
 #import <ulibtcap/ulibtcap.h>
+#import <ulibgsmmap/UMLayerGSMMAP_OpCode.h>
 
 @implementation UMLayerGSMMAP_OpCode
 

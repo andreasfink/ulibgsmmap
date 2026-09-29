@@ -6,7 +6,7 @@
 //
 //
 
-#import <ulibasn1/ulibasn1.h>
+#import <ulibtcap/ulibtcap.h>
 
 @interface UMGSMMAP_ReportingPLMNList : UMASN1Object
 

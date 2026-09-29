@@ -6,7 +6,7 @@
 //  Copyright © 2020 Andreas Fink (andreas@fink.org). All rights reserved.
 //
 
-#import <ulibasn1/ulibasn1.h>
+#import <ulibtcap/ulibtcap.h>
 
 #import <ulibgsmmap/UMGSMMAP_PDN_GW_Update.h>
 #import <ulibgsmmap/UMGSMMAP_ISR_Information.h>

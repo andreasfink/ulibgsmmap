@@ -1,5 +1,0 @@
-tracingBufferFull ERROR ::= {
-PARAMETER TracingBufferFullParam
-CODE local:40
-} 
-

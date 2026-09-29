@@ -1,4 +1,0 @@
-DataMissingParam ::= SEQUENCE {
-   extensionContainer ExtensionContainer OPTIONAL,
-   ... }
-

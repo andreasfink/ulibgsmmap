@@ -1,5 +1,0 @@
-callBarred ERROR ::= {
-PARAMETER CallBarredParam
-CODE local:13
-} 
-

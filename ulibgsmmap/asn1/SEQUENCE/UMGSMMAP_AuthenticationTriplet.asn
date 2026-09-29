@@ -1,6 +1,0 @@
-AuthenticationTriplet ::= SEQUENCE {
-   rand RAND,
-   sres SRES,
-   kc Kc,
-... }
-

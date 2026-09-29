@@ -1,2 +1,0 @@
-SS-List ::= SEQUENCE SIZE (1..maxNumOfSS) OF SS-Code 
-

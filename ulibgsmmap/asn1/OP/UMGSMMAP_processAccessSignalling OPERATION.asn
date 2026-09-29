@@ -1,5 +1,0 @@
-processAccessSignalling OPERATION ::= {
-ARGUMENT ExternalSignalInfo
-CODE local:33 
-}
-
