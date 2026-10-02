@@ -88,15 +88,12 @@
 {
 	int p=0;
 	UMASN1Object *o;
-	BOOL isImplicit = YES;
 	if(self.asn1_tag.tagClass == UMASN1Class_ContextSpecific)
 	{
-		isImplicit = YES;
         o = self;
     }
     else
     {
-        isImplicit = NO;
 		o = [self getObjectAtPosition:p++];
 	}
 
