@@ -109,7 +109,9 @@
     dst = [r mutableBytes];
     for(i=0;i<n;i++)
     {
-        snprintf(&dst[i*2],2,"%02X",src[i]);
+    	buf[3] = sprintf(buf,"%02X",src[i])
+    	dst[i*2] = buf[0];
+    	dst[i*2+1] = buf[1];
     }
     result = [NSData dataWithData: r];
     return result;
