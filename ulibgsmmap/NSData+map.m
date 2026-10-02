@@ -109,7 +109,7 @@
     dst = [r mutableBytes];
     for(i=0;i<n;i++)
     {
-    	uint8_t buf[3]={0,0,0};
+    	char buf[3]={0,0,0};
     	sprintf(&buf,"%02X",src[i])
     	dst[i*2] = buf[0];
     	dst[i*2+1] = buf[1];
