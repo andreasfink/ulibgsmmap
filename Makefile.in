@@ -34,15 +34,31 @@ ${SLIB}: ${OFILES}
 	@LIBTOOL@ ${SLIB} ${OFILES}
 	@RANLIB@ ${SLIB}
 
+<<<<<<< HEAD
 install: ${LIB} ${SLIB}
+=======
+install: ${SLIB} ${LIB} ${PKGCONFIGFILE}
+	-rm -f "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}.${REVISION}"
+	-rm -f "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}"
+	-rm -f "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}"
+	-rm -f "${DESTDIR}/usr/local/lib/${LIB}"
+	install -b -g bin -o root -m 644 "${LIB}"  "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}.${REVISION}"
+	ln -s "${LIB}.${MAJORVER}.${MINORVER}.${REVISION}" "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}"
+	ln -s "${LIB}.${MAJORVER}.${MINORVER}"             "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}"
+	ln -s "${LIB}.${MAJORVER}"                         "${DESTDIR}/usr/local/lib/${LIB}"
+	install -b -g bin -o root -m 644 "${SLIB}" "${DESTDIR}/usr/local/lib/${SLIB}"
+>>>>>>> a89fb9b1296d967be151ed600a6ec9e7f70298f9
 	-mkdir -p ${DESTDIR}/usr/local/lib/pkgconfig
 	-install -b -g bin -o root -m 644 ${PKGCONFIGFILE} ${DESTDIR}/usr/local/lib/pkgconfig/
 	-mkdir -p ${DESTDIR}/usr/local/include/@PROJECT_NAME@
 	cp $(HFILES) ${DESTDIR}/usr/local/include/@PROJECT_NAME@
+<<<<<<< HEAD
 	install -b -g bin -o root -m 644 "${SLIB}" "${DESTDIR}/usr/local/lib/${SLIB}"
 	ln -s "${LIB}.${MAJORVER}.${MINORVER}.${REVISION}" "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}"
 	ln -s "${LIB}.${MAJORVER}.${MINORVER}"             "${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}"
 	ln -s "${LIB}.${MAJORVER}"                         "${DESTDIR}/usr/local/lib/${LIB}"
+=======
+>>>>>>> a89fb9b1296d967be151ed600a6ec9e7f70298f9
 	if [ -x /usr/sbin/ldconfig ] ; then ldconfig; fi
 	if [ -x /usr/bin/install_name_tool ]; then install_name_tool -id /usr/local/lib/${LIB}.${MAJORVER}.${MINORVER} ${DESTDIR}/usr/local/lib/${LIB}.${MAJORVER}.${MINORVER}.${REVISION}; fi
 clean:
