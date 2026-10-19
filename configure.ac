@@ -90,11 +90,7 @@ case "$host" in
   	then
 		SDK=/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk
 	fi
-	if [[ -d "${SDK}" ]]
-    then
-		CFLAGS="--sysroot ${SDK} ${CFLAGS}"
-		LDFLAGS="${LDFLAGS} -L ${SDK}/usr/lib"
-	fi
+
 	if [[ "${ARCH}" == "" ]]
 	then
 	    ARCH="-arch arm64 -arch x86_64"
@@ -124,7 +120,7 @@ case "$host" in
     INSTALL_NAME_TOOL="install_name_tool"
     SHARED_FLAGS="-dynamiclib -Wl,-dylib"
     LDFLAGS="$LDFLAGS ${ARCH}"
-    LIBTOOL="libtool -static -o"
+    LIBTOOL="libtool -static -no_warning_for_no_symbols -o"
     ;;
 
   *-linux-*)
